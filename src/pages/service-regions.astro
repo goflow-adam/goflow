@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const regions = await getCollection('regions', ({ data }) => !data.draft);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GoFlow Plumbing",
+  "description": "Professional plumbing services in Sonoma and Marin County",
+  "areaServed": [
+    {
+      "@type": "County",
+      "name": "Sonoma County"
+    },
+    {
+      "@type": "County",
+      "name": "Marin County"
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Service Regions - GoFlow Plumbing"
+  description="Professional plumbing services throughout Sonoma and Marin Counties. Find your local plumbing experts."
+  schema={schema}
+>
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Our Service Regions</h1>
+    
+    <p class="text-lg mb-12">
+      GoFlow Plumbing proudly serves communities throughout Sonoma and Marin Counties.
+      Our local expertise and quick response times ensure you get the best plumbing
+      service in your area.
+    </p>
+
+    <div class="grid gap-8">
+      {regions.map((region) => (
+        <div class="bg-background rounded-lg shadow-lg overflow-hidden">
+          {region.data.heroImage && (
+            <img
+              src={region.data.heroImage}
+              alt={`Plumbing services in ${region.data.title}`}
+              class="w-full h-48 object-cover"
+            />
+          )}
+          <div class="p-8">
+            <h2 class="text-2xl font-bold mb-4">
+              <a href={`/${region.slug}`} class="text-primary hover:text-secondary transition-colors">
+                {region.data.title}
+              </a>
+            </h2>
+            <p class="text-lg mb-4">{region.data.description}</p>
+            <a href={`/${region.slug}`} class="btn btn-primary">
+              Learn More
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 bg-secondary text-background rounded-lg p-8">
+      <h2 class="text-2xl font-bold mb-4">Need a Plumber in Your Area?</h2>
+      <p class="text-lg mb-6">
+        We provide fast, reliable service throughout our service regions.
+        Contact us today for expert plumbing solutions.
+      </p>
+      <div class="space-x-4">
+        <a href="/contact-us" class="btn btn-primary">Contact Us Now</a>
+        <a href="/emergency-plumbing-services" class="btn btn-secondary">Emergency Service</a>
+      </div>
+    </div>
+
+    <div class="mt-16">
+      <h2 class="text-2xl font-bold mb-6">Why Choose GoFlow Plumbing?</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-background rounded-lg p-6 shadow-md">
+          <h3 class="text-xl font-bold mb-3">Local Expertise</h3>
+          <p>Deep knowledge of local plumbing systems and building codes.</p>
+        </div>
+        <div class="bg-background rounded-lg p-6 shadow-md">
+          <h3 class="text-xl font-bold mb-3">Fast Response</h3>
+          <p>Quick arrival times throughout our service areas.</p>
+        </div>
+        <div class="bg-background rounded-lg p-6 shadow-md">
+          <h3 class="text-xl font-bold mb-3">Community Focus</h3>
+          <p>Proud to serve and be part of our local communities.</p>
+        </div>
+        <div class="bg-background rounded-lg p-6 shadow-md">
+          <h3 class="text-xl font-bold mb-3">24/7 Availability</h3>
+          <p>Emergency service available any time, day or night.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

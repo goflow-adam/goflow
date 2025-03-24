@@ -1,0 +1,130 @@
+---
+interface Props {
+  isDesktop: boolean;
+}
+
+interface NavItem {
+  title: string;
+  path: string;
+  submenu?: NavItem[];
+}
+
+const { isDesktop } = Astro.props;
+
+const navigation: NavItem[] = [
+  {
+    title: "Services",
+    path: "/plumbing-services",
+    submenu: [
+      { title: "Water Heaters", path: "/water-heater-repair-and-replacement" },
+      { title: "Toilet Problems", path: "/clogged-or-running-toilets" },
+      { title: "Clogged Drains", path: "/clogged-drains-rootered" },
+      { title: "Leaking Pipes", path: "/leaking-pipes-repair" },
+      { title: "Garbage Disposals", path: "/garbage-disposal-repair-or-installation" },
+      { title: "Leaking Faucets", path: "/faucet-leaks-repaired" },
+      { title: "Instant Hot Water", path: "/instant-hot-water-installed-or-repaired" },
+      { title: "Emergencies", path: "/emergency-plumbing-services" },
+      { title: "Dishwashers", path: "/dishwasher-installation-or-leak-repair" }
+    ]
+  },
+  {
+    title: "Service Regions",
+    path: "/service-regions",
+    submenu: [
+      { title: "Sonoma County", path: "/sonoma-county-plumbing" },
+      { title: "Marin County", path: "/marin-county-plumbing" }
+    ]
+  },
+  { title: "Contact Us", path: "/contact-us" },
+  { title: "About Us", path: "/about-us" },
+  { title: "Our Team", path: "/team" },
+  { title: "FAQs", path: "/faqs" }
+];
+
+const currentPath = Astro.url.pathname;
+
+function isActive(path: string): boolean {
+  return currentPath === path || currentPath.startsWith(path + '/');
+}
+---
+
+{isDesktop ? (
+  <ul class="flex space-x-6">
+    {navigation.map(item => (
+      <li class="relative group">
+        <a
+          href={item.path}
+          class={`nav-link ${isActive(item.path) ? 'nav-active' : ''} ${item.submenu ? 'has-submenu' : ''}`}
+        >
+          {item.title}
+        </a>
+        {item.submenu && (
+          <div class="submenu-wrapper absolute top-full left-0 pt-2 w-64">
+            <ul class="hidden group-hover:block bg-secondary rounded-lg p-2 shadow-lg">
+              {item.submenu.map(subItem => (
+                <li>
+                  <a
+                    href={subItem.path}
+                    class={`block px-4 py-2 rounded-lg hover:bg-primary transition-colors duration-200 ${isActive(subItem.path) ? 'bg-primary' : ''} text-background hover:text-background`}
+                  >
+                    {subItem.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </li>
+    ))}
+  </ul>
+) : (
+  <div class="bg-secondary rounded-lg p-4">
+    <ul class="space-y-2">
+    {navigation.map(item => (
+      <li class="mobile-nav-item" data-has-submenu={!!item.submenu}>
+        {!item.submenu ? (
+          <a
+            href={item.path}
+            class={`block w-full px-4 py-2 rounded-lg transition-colors duration-200 ${isActive(item.path) ? 'bg-primary text-background' : 'text-background hover:bg-primary/10'}`}
+          >
+            {item.title}
+          </a>
+        ) : (
+          <div class="mobile-submenu">
+            <button
+              class={`w-full text-left px-4 py-2 rounded-lg flex justify-between items-center ${isActive(item.path) ? 'bg-primary text-background' : 'text-background hover:bg-primary/10'}`}
+              onclick="this.closest('.mobile-nav-item').classList.toggle('open')"
+            >
+              <span>{item.title}</span>
+              <span class="transform transition-transform duration-200 mobile-submenu-icon">▼</span>
+            </button>
+            <ul class="hidden pl-4 space-y-1 mt-1">
+              {item.submenu.map(subItem => (
+                <li>
+                  <a
+                    href={subItem.path}
+                    class={`block px-4 py-2 rounded-lg transition-colors duration-200 ${isActive(subItem.path) ? 'bg-primary text-background' : 'text-background hover:bg-primary/10'}`}
+                  >
+                    {subItem.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </li>
+    ))}
+  </ul>
+  </div>
+)}
+
+<style>
+  /* Mobile submenu animations */
+  .mobile-nav-item.open .mobile-submenu-icon {
+    transform: rotate(180deg);
+  }
+  
+  .mobile-nav-item.open .mobile-submenu ul {
+    display: block;
+  }
+</style>

@@ -1,0 +1,90 @@
+---
+import { getEntry } from 'astro:content';
+import PageLayout from '../layouts/PageLayout.astro';
+
+const page = await getEntry('pages', 'team');
+const { Content } = await page.render();
+---
+
+<PageLayout page={page}>
+  <div class="team-container">
+    <Content />
+
+    <!-- Career Section -->
+    <div class="mt-12 bg-background rounded-lg shadow-lg p-8">
+      <h2 class="text-2xl font-bold mb-6 text-primary">Join Our Team</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Current Openings</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+              Licensed Plumber
+            </li>
+            <li class="flex items-center">
+              <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+              Apprentice Plumber
+            </li>
+            <li class="flex items-center">
+              <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+              Service Technician
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Benefits</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+              Competitive Pay
+            </li>
+            <li class="flex items-center">
+              <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+              Health Insurance
+            </li>
+            <li class="flex items-center">
+              <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+              Paid Time Off
+            </li>
+            <li class="flex items-center">
+              <span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>
+              Training Programs
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-6">
+        <a
+          href="/contact-us"
+          class="inline-block bg-primary text-background px-6 py-3 rounded-lg font-bold hover:bg-secondary transition-colors"
+        >
+          Apply Now
+        </a>
+      </div>
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  /* Team page specific styles */
+  .team-container :global(h2) {
+    @apply text-2xl font-bold mt-12 mb-6 text-primary border-b border-secondary pb-2;
+  }
+
+  .team-container :global(h3) {
+    @apply text-xl font-bold mt-8 mb-3 text-primary;
+  }
+
+  .team-container :global(ul) {
+    @apply mb-8 space-y-2;
+  }
+
+  .team-container :global(li) {
+    @apply flex items-start;
+  }
+
+  .team-container :global(li::before) {
+    content: "•";
+    @apply text-secondary mr-2 font-bold;
+  }
+</style>

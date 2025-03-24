@@ -1,11 +1,105 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+interface ServiceFrontmatter {
+  featured: boolean;
+  draft: boolean;
+  title: string;
+  description: string;
+}
+
+const featuredServices = await getCollection('services', ({ data }: { data: ServiceFrontmatter }) => 
+  data.featured && !data.draft
+);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GoFlow Plumbing",
+  "description": "Professional plumbing services in Sonoma and Marin County",
+  "areaServed": ["Sonoma County", "Marin County"],
+  "url": "https://goflow.plumbing"
+};
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout 
+  title="GoFlow Plumbing - Professional Plumbing Services in Sonoma & Marin County"
+  description="Expert plumbing services including water heater repair, drain cleaning, and emergency plumbing in Sonoma and Marin County. Available 24/7."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-primary py-20 text-background">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Expert Plumbing Services</h1>
+      <p class="text-xl md:text-2xl mb-8">Available 24/7 for All Your Plumbing Needs</p>
+      <div class="space-x-4">
+        <a href="/contact-us" class="btn btn-primary">Contact Us Now</a>
+        <a href="/plumbing-services" class="btn btn-secondary">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Services -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {featuredServices.map((service: any) => (
+          <div class="bg-background rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold mb-4">{service.data.title}</h3>
+            <p class="mb-4">{service.data.description}</p>
+            <a href={`/${service.slug}`} class="btn btn-primary inline-block">Learn More</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="bg-secondary py-16 text-background">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Choose GoFlow Plumbing?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div>
+          <h3 class="text-xl font-bold mb-4">24/7 Emergency Service</h3>
+          <p>Available around the clock for all your plumbing emergencies</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Licensed & Insured</h3>
+          <p>Professional, experienced, and fully certified plumbers</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Fair & Honest Pricing</h3>
+          <p>Transparent pricing with no hidden fees or surprises</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-12">Service Areas</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <a href="/sonoma-county-plumbing" class="bg-primary text-background p-8 rounded-lg hover:opacity-90 transition-opacity">
+          <h3 class="text-2xl font-bold mb-4">Sonoma County</h3>
+          <p>Serving all of Sonoma County with expert plumbing services</p>
+        </a>
+        <a href="/marin-county-plumbing" class="bg-primary text-background p-8 rounded-lg hover:opacity-90 transition-opacity">
+          <h3 class="text-2xl font-bold mb-4">Marin County</h3>
+          <p>Professional plumbing services throughout Marin County</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-error py-16 text-background">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Need a Plumber?</h2>
+      <p class="text-xl mb-8">Contact us now for fast, reliable service</p>
+      <a href="/contact-us" class="btn btn-secondary inline-block">Get in Touch</a>
+    </div>
+  </section>
+</BaseLayout>

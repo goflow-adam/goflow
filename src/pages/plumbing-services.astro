@@ -1,0 +1,100 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface ServiceFrontmatter {
+  title: string;
+  description: string;
+  featured?: boolean;
+}
+
+const services = await getCollection('services', ({ data }) => !data.draft);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "GoFlow Plumbing Services",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "GoFlow Plumbing",
+    "areaServed": ["Sonoma County", "Marin County"]
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Plumbing Services",
+    "itemListElement": services.map(service => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": service.data.title,
+        "description": service.data.description
+      }
+    }))
+  }
+};
+---
+
+<BaseLayout
+  title="Professional Plumbing Services in Sonoma & Marin County | GoFlow Plumbing"
+  description="Comprehensive plumbing services including water heater repair, drain cleaning, emergency services, and more. Serving Sonoma and Marin County."
+  schema={schema}
+>
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Our Plumbing Services</h1>
+    
+    <p class="text-lg mb-12">
+      At GoFlow Plumbing, we offer a comprehensive range of professional plumbing services
+      for both residential and commercial properties in Sonoma and Marin County. Our team
+      of licensed plumbers is available 24/7 for all your plumbing needs.
+    </p>
+
+    <div class="grid gap-8">
+      {services.map((service) => (
+        <div class="bg-background rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+          <h2 class="text-2xl font-bold mb-4">
+            <a href={`/${service.slug}`} class="text-primary hover:text-secondary transition-colors">
+              {service.data.title}
+            </a>
+          </h2>
+          <p class="text-lg mb-4">{service.data.description}</p>
+          <a href={`/${service.slug}`} class="btn btn-primary">
+            Learn More
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 bg-secondary text-background rounded-lg p-8">
+      <h2 class="text-2xl font-bold mb-4">Need Emergency Plumbing Service?</h2>
+      <p class="text-lg mb-6">
+        We're available 24/7 for all your emergency plumbing needs in Sonoma and Marin County.
+      </p>
+      <div class="space-x-4">
+        <a href="/contact-us" class="btn btn-primary">Contact Us Now</a>
+        <a href="/emergency-plumbing-services" class="btn btn-secondary">Emergency Services</a>
+      </div>
+    </div>
+
+    <div class="mt-16">
+      <h2 class="text-2xl font-bold mb-6">Why Choose GoFlow Plumbing?</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-background rounded-lg p-6 shadow-md">
+          <h3 class="text-xl font-bold mb-3">Licensed & Insured</h3>
+          <p>All our plumbers are fully licensed, insured, and undergo regular training.</p>
+        </div>
+        <div class="bg-background rounded-lg p-6 shadow-md">
+          <h3 class="text-xl font-bold mb-3">24/7 Emergency Service</h3>
+          <p>Available around the clock for all your plumbing emergencies.</p>
+        </div>
+        <div class="bg-background rounded-lg p-6 shadow-md">
+          <h3 class="text-xl font-bold mb-3">Fair & Transparent Pricing</h3>
+          <p>No hidden fees or surprises. We provide upfront pricing for all services.</p>
+        </div>
+        <div class="bg-background rounded-lg p-6 shadow-md">
+          <h3 class="text-xl font-bold mb-3">Satisfaction Guaranteed</h3>
+          <p>We stand behind our work with a 100% satisfaction guarantee.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

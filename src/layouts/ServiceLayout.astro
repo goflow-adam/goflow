@@ -1,0 +1,37 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  service: CollectionEntry<'services'>;
+}
+
+const { service } = Astro.props;
+const { Content } = await service.render();
+---
+
+<BaseLayout 
+  title={service.data.title}
+  description={service.data.description}
+  schema={service.data.schema}
+>
+  <article class="prose prose-lg max-w-none">
+    <div class="mb-8">
+      {service.data.heroImage && (
+        <img
+          src={service.data.heroImage}
+          alt={service.data.title}
+          class="w-full h-64 object-cover rounded-lg shadow-lg"
+        />
+      )}
+    </div>
+    
+    <Content />
+
+    <div class="mt-8 space-y-4">
+      <h2 class="text-2xl font-bold">Ready to Get Started?</h2>
+      <p>Contact us today for professional plumbing services you can trust.</p>
+      <a href="/contact-us" class="btn btn-primary inline-block">Contact Us Now</a>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,150 @@
+---
+import { SEO } from 'astro-seo';
+import Navigation from '../components/Navigation.astro';
+import '../styles/navigation.css';
+interface Props {
+  title: string;
+  description: string;
+  schema?: object;
+}
+
+const { title, description, schema } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <SEO
+      title={title}
+      description={description}
+      openGraph={{
+        basic: {
+          title,
+          type: 'website',
+          image: '/og-image.jpg',
+        }
+      }}
+    />
+    {schema && (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-background text-text min-h-screen flex flex-col">
+    <header class="bg-primary">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+          <a href="/" class="text-2xl font-bold text-background">GoFlow Plumbing</a>
+          <!-- Mobile menu button -->
+          <button 
+            id="menuButton" 
+            class="md:hidden text-background p-2" 
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span class="block w-6 h-0.5 bg-background mb-1 transition-transform duration-200"></span>
+            <span class="block w-6 h-0.5 bg-background mb-1 transition-opacity duration-200"></span>
+            <span class="block w-6 h-0.5 bg-background transition-transform duration-200"></span>
+          </button>
+          <!-- Desktop Navigation -->
+          <div class="hidden md:block">
+            <Navigation isDesktop={true} />
+          </div>
+        </div>
+        <!-- Mobile menu container -->
+        <div 
+          id="mobileMenu" 
+          class="hidden md:hidden mt-4"
+          role="navigation"
+        >
+          <Navigation isDesktop={false} />
+        </div>
+      </div>
+    </header>
+
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuBars = menuButton?.querySelectorAll('span');
+
+        function toggleMenu(show) {
+          if (!menuButton || !mobileMenu || !menuBars?.length) return;
+
+          menuButton.setAttribute('aria-expanded', show ? 'true' : 'false');
+          mobileMenu.classList.toggle('hidden', !show);
+
+          // Animate hamburger icon
+          if (show) {
+            menuBars[0].style.transform = 'rotate(45deg) translate(4px, 5px)';
+            menuBars[1].style.opacity = '0';
+            menuBars[2].style.transform = 'rotate(-45deg) translate(4px, -5px)';
+          } else {
+            menuBars[0].style.transform = '';
+            menuBars[1].style.opacity = '';
+            menuBars[2].style.transform = '';
+          }
+        }
+
+        // Toggle menu on button click
+        menuButton?.addEventListener('click', () => {
+          const isCurrentlyExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+          toggleMenu(!isCurrentlyExpanded);
+        });
+
+        // Handle window resize
+        const handleResize = () => window.innerWidth >= 768 && toggleMenu(false);
+        window.addEventListener('resize', handleResize);
+
+        // Initial state
+        toggleMenu(false);
+      });
+    </script>
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+      <slot />
+    </main>
+
+    <footer class="bg-primary text-background mt-auto">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+            <p>24/7 Emergency Service Available</p>
+            <!-- Add phone and email -->
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Service Areas</h3>
+            <ul class="space-y-2">
+              <li><a href="/sonoma-county-plumbing" class="nav-link">Sonoma County</a></li>
+              <li><a href="/marin-county-plumbing" class="nav-link">Marin County</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a href="/privacy-policy" class="nav-link">Privacy Policy</a></li>
+              <li><a href="/about-us" class="nav-link">About Us</a></li>
+              <li><a href="/faqs" class="nav-link">FAQs</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <p>&copy; {new Date().getFullYear()} GoFlow Plumbing. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      menuButton?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

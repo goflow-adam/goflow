@@ -1,0 +1,7 @@
+
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#1f4a6f"/>
+  <text x="400" y="200" font-family="Arial" font-size="48" fill="#f4f7f5" text-anchor="middle" dominant-baseline="middle">
+    Sonoma County
+  </text>
+</svg>

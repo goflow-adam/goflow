@@ -1,0 +1,62 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+type ContentType = 'services' | 'regions' | 'pages';
+type ServiceEntry = CollectionEntry<'services'>;
+type RegionEntry = CollectionEntry<'regions'>;
+type PageEntry = CollectionEntry<'pages'>;
+type Entry = ServiceEntry | RegionEntry | PageEntry;
+
+interface Props {
+  entry: Entry;
+  type: 'service' | 'region' | 'page';
+}
+
+function isServiceEntry(entry: Entry): entry is ServiceEntry {
+  return entry.collection === 'services';
+}
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  const regions = await getCollection('regions');
+  const pages = await getCollection('pages');
+
+  const filterDrafts = (entries: Entry[]) => {
+    return entries.filter(entry => !entry.data.draft);
+  };
+
+  return [
+    ...filterDrafts(services).map((entry) => ({
+      params: { slug: entry.slug },
+      props: { entry, type: 'service' as const },
+    })),
+    ...filterDrafts(regions).map((entry) => ({
+      params: { slug: entry.slug },
+      props: { entry, type: 'region' as const },
+    })),
+    ...filterDrafts(pages).map((entry) => ({
+      params: { slug: entry.slug },
+      props: { entry, type: 'page' as const },
+    })),
+  ];
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+{isServiceEntry(entry) ? (
+  <ServiceLayout service={entry} />
+) : (
+  <BaseLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    schema={entry.data.schema}
+  >
+    <article class="prose prose-lg max-w-none">
+      <Content />
+    </article>
+  </BaseLayout>
+)}

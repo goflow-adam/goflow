@@ -1,0 +1,11 @@
+---
+import { getEntry } from 'astro:content';
+import PageLayout from '../layouts/PageLayout.astro';
+
+const page = await getEntry('pages', 'privacy-policy');
+const { Content } = await page.render();
+---
+
+<PageLayout page={page}>
+  <Content />
+</PageLayout>
