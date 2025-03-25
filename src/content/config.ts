@@ -17,7 +17,17 @@ const services = defineCollection({
 });
 
 const regions = defineCollection({
-  schema: baseSchema,
+  schema: baseSchema.extend({
+    region: z.string(),
+  }),
+});
+
+const articles = defineCollection({
+  schema: baseSchema.extend({
+    category: z.enum(['maintenance', 'repair', 'installation', 'emergency', 'general', 'pricing']),
+    tags: z.array(z.string()).default([]),
+    readingTime: z.number().optional(),
+  }),
 });
 
 const pages = defineCollection({
@@ -27,5 +37,6 @@ const pages = defineCollection({
 export const collections = {
   services,
   regions,
+  articles,
   pages,
 };

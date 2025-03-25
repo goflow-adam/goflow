@@ -1,6 +1,6 @@
 ---
-title: "Our Team"
-description: "Meet the expert plumbers at GoFlow Plumbing. Our skilled team serves Sonoma and Marin County with professional plumbing services."
+title: "Meet the GoFlow Plumbing Team"
+description: "Learn about our founders and the rest of the team here to quickly and cleanly alleviate your residential plumbing issues."
 pubDate: 2025-03-24
 schema: {
   "@context": "https://schema.org",
@@ -11,30 +11,38 @@ schema: {
     "member": [
       {
         "@type": "Person",
-        "name": "John Smith",
-        "jobTitle": "Master Plumber",
-        "description": "Over 20 years of plumbing experience"
+        "name": "Adam Bragg",
+        "jobTitle": "Founder & CEO",
+        "description": "Third generation plumbing entrepreneur, his grandfather started Bragg Plumbing in San Francisco. His son later expanded their services to the north bay. And now, Adam, will continue the tradition of improving the quality of results customers can come to expect.​​"
       },
       {
         "@type": "Person",
-        "name": "Sarah Johnson",
-        "jobTitle": "Service Manager",
-        "description": "15 years of customer service excellence"
+        "name": "Jarrod Stuckenbroker",
+        "jobTitle": "COO",
+        "description": "For the last 30 years, Jarrod has seen, experienced, and been part of the ins and outs of every level of plumbing in the bay area."
       }
     ]
   }
 }
 ---
 
-# Meet Our Team
+# Meet the GoFlow Plumbing Team
 
 ## Leadership
 
-### John Smith - Master Plumber & Owner
-With over 20 years of experience, John leads our team with expertise and dedication to quality service. His commitment to excellence sets the standard for our entire operation.
+### Adam Bragg
+#### Founder & CEO
+Third generation plumbing entrepreneur, his grandfather started Bragg Plumbing in San Francisco. His son later expanded their services to the north bay. And now, Adam, will continue the tradition of improving the quality of results customers can come to expect.​​
 
-### Sarah Johnson - Service Manager
-Sarah ensures smooth operations and exceptional customer service. With 15 years in the industry, she coordinates our team to provide timely, efficient service.
+### Jarrod Stuckenbroker
+#### COO
+For the last 30 years, Jarrod has seen, experienced, and been part of the ins and outs of every level of plumbing in the bay area. 
+
+### You
+#### Future Team Member
+Interested in joining an innovative plumbing company expanding around the bay area? Join the team and enjoy our many benefits and enhanced training to improve your professional worth.
+[(916) 719-1897](tel:+19167191897)
+[careers@goflow.plumbing](mailto:careers@goflow.plumbing)
 
 ## Our Plumbers
 

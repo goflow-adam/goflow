@@ -2,6 +2,11 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+interface RegionFrontmatter {
+  title: string;
+  description: string;
+}
+
 const regions = await getCollection('regions', ({ data }) => !data.draft);
 
 const schema = {
@@ -9,36 +14,29 @@ const schema = {
   "@type": "Organization",
   "name": "GoFlow Plumbing",
   "description": "Professional plumbing services in Sonoma and Marin County",
-  "areaServed": [
-    {
-      "@type": "County",
-      "name": "Sonoma County"
-    },
-    {
-      "@type": "County",
-      "name": "Marin County"
-    }
-  ]
+  "areaServed": regions.map(region => ({
+    "@type": "County",
+    "name": region.data.title,
+    "description": region.data.description
+  }))
 };
 ---
 
 <BaseLayout
-  title="Service Regions - GoFlow Plumbing"
+  title="Plumbing services in Sonoma, Marin, and Napa counties | GoFlow Plumbing"
   description="Professional plumbing services throughout Sonoma and Marin Counties. Find your local plumbing experts."
   schema={schema}
 >
   <div class="max-w-4xl mx-auto">
-    <h1 class="text-4xl font-bold mb-8">Our Service Regions</h1>
+    <h1 class="text-4xl font-bold mb-8">Servicing Sonoma, Marin, and Napa counties</h1>
     
     <p class="text-lg mb-12">
-      GoFlow Plumbing proudly serves communities throughout Sonoma and Marin Counties.
-      Our local expertise and quick response times ensure you get the best plumbing
-      service in your area.
+      If you are in Sonoma County, Marin County, or Napa county give us a call for upfront pricing on the remedy for your leak, tepid water heater, toilet clogs, or any other plumbing issue your home can throw at you.
     </p>
 
     <div class="grid gap-8">
       {regions.map((region) => (
-        <div class="bg-background rounded-lg shadow-lg overflow-hidden">
+        <div class="bg-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
           {region.data.heroImage && (
             <img
               src={region.data.heroImage}
@@ -53,8 +51,11 @@ const schema = {
               </a>
             </h2>
             <p class="text-lg mb-4">{region.data.description}</p>
-            <a href={`/${region.slug}`} class="btn btn-primary">
-              Learn More
+            <a 
+              href={`/${region.slug}`} 
+              class="inline-block bg-error hover:bg-error/90 text-background font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+            >
+              View Service Area
             </a>
           </div>
         </div>

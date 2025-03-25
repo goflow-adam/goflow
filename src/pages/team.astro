@@ -3,6 +3,9 @@ import { getEntry } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
 
 const page = await getEntry('pages', 'team');
+if (!page) {
+  throw new Error('Team page not found');
+}
 const { Content } = await page.render();
 ---
 
@@ -11,7 +14,7 @@ const { Content } = await page.render();
     <Content />
 
     <!-- Career Section -->
-    <div class="mt-12 bg-background rounded-lg shadow-lg p-8">
+    <!-- <div class="mt-12 bg-background rounded-lg shadow-lg p-8">
       <h2 class="text-2xl font-bold mb-6 text-primary">Join Our Team</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div>
@@ -60,7 +63,7 @@ const { Content } = await page.render();
         >
           Apply Now
         </a>
-      </div>
+      </div> -->
     </div>
   </div>
 </PageLayout>

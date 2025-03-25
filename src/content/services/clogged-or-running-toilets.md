@@ -1,7 +1,8 @@
 ---
-title: "Toilet Repair Services - Clogged & Running Toilets"
-description: "Professional toilet repair services in Sonoma and Marin County. We fix clogged toilets, running toilets, and all other toilet-related issues."
+title: "Clogged Toilets & Running Toilets Tamed"
+description: "Clogged Toilets or running toilets tamed by expert plumbers with upfront pricing and a clean result."
 pubDate: 2025-03-24
+featured: true
 schema: {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -17,16 +18,16 @@ schema: {
 
 # Expert Toilet Repair Services
 
-Don't let toilet problems disrupt your day. GoFlow Plumbing provides fast, reliable toilet repair services for both residential and commercial properties.
+When your toilet’s acting up, it’s not just an inconvenience—it’s a crisis! Whether it’s a stubborn clog, a phantom flush, or a leak that’s turning your bathroom into a wading pool, GoFlow Plumbing has you covered. Our expert team [diagnoses and fixes toilet troubles](/articles/toilet-leak-sources) fast, using clean, efficient methods that get things back in working order without the mess or the stress. So, don’t let a misbehaving toilet ruin your day—just call GoFlow, and we’ll handle the dirty work for you!
 
 ## Our Toilet Repair Services Include:
 
-- Clogged toilet repair
-- Running toilet fixes
-- Leak detection and repair
-- Toilet replacement
-- Flapper and fill valve replacement
-- Water-efficient toilet installation
+- Clogged toilets cleared
+- Running toilets fixed
+- Leaking toilets repaired
+- Toilet upgrades and replacements
+- Flapper and fill valve replacements
+- Water-efficient toilets installed
 
 ## Common Toilet Problems We Fix
 

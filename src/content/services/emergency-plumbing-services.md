@@ -1,6 +1,6 @@
 ---
 title: "24/7 Emergency Plumbing Services"
-description: "Round-the-clock emergency plumbing services in Sonoma and Marin County. Fast response for all plumbing emergencies, available 24/7."
+description: "Emergency plumbing issue or just urgent, you need prompt help with upfront pricing. We are on our way as soon as you call."
 pubDate: 2025-03-24
 featured: true
 schema: {
@@ -25,7 +25,7 @@ schema: {
 
 # 24/7 Emergency Plumbing Services
 
-When plumbing disasters strike, you need a reliable emergency plumber. GoFlow Plumbing provides immediate response to all plumbing emergencies, 24 hours a day, 7 days a week.
+Plumbing emergencies don’t wait for a convenient time, and neither do we. At GoFlow Plumbing, we’re ready to respond quickly when disaster strikes—whether it’s a burst pipe, an overflowing toilet, or a sudden water heater failure. Our skilled team arrives promptly, equipped to diagnose and resolve the issue with efficient, high-quality repairs that minimize damage and restore your home’s plumbing as quickly as possible. When every second counts, trust GoFlow to provide fast, reliable, and professional emergency plumbing services—day or night.
 
 ## Emergency Services We Provide
 

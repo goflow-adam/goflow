@@ -1,8 +1,8 @@
 ---
 title: "Instant Hot Water Installation & Repair"
-description: "Professional instant hot water system installation and repair services in Sonoma and Marin County. Get immediate hot water when you need it."
+description: "Get an instant hot water dispenser installed or have yours repaired by our expert plumbers with upfront pricing."
 pubDate: 2025-03-24
-featured: false
+featured: true
 schema: {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -18,7 +18,7 @@ schema: {
 
 # Instant Hot Water Solutions
 
-Tired of waiting for hot water? GoFlow Plumbing provides expert installation and repair of instant hot water systems for both residential and commercial properties.
+Tired of waiting for hot water at your sink? With an instant water heater, you get endless hot water on demand—and at GoFlow Plumbing, we make installation and repairs a breeze. Whether you’re upgrading to a tankless system or need an undersink InstantHot, our expert team handles it all quickly, cleanly, and efficiently. No more waiting for hot water—just fast, reliable hot water whenever you need it. Go with the Flow, and never wait for hot water again!
 
 ## Our Instant Hot Water Services
 

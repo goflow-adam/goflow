@@ -2,6 +2,7 @@
 title: "About GoFlow Plumbing"
 description: "Learn about GoFlow Plumbing's commitment to excellence in Sonoma and Marin County. Professional plumbing services backed by years of experience."
 pubDate: 2025-03-24
+draft: false
 schema: {
   "@context": "https://schema.org",
   "@type": "AboutPage",
@@ -19,7 +20,11 @@ schema: {
 
 ## Our Story
 
-Founded in 2010, GoFlow Plumbing has grown from a small local operation to become one of the most trusted plumbing companies in Sonoma and Marin Counties. Our success is built on a foundation of technical excellence, unwavering integrity, and exceptional customer service.
+GoFlow is third generation plumbing company. Our plumbing lineage started in 1959 and continues on today through GoFlow. Thats three generations of expertise in the field and in delivering beyond what you, our customer, needs when it comes to plumbing in your home.
+
+Our two founders created GoFlow to take a more customer-centric approach when it comes to plumbing. We know that if we solve your problem with the utmost communication, efficiency, and cleanliness we will be able to be proud of the work we did and we will have brought you peace of mind.
+
+​Take a moment to learn more about our two founders, [Adam Bragg and Jarrod Stuckenbroker and the rest of the team](/team).
 
 ## Our Mission
 

@@ -4,41 +4,41 @@ import type { CollectionEntry } from 'astro:content';
 import '../styles/markdown.css';
 
 interface Props {
-  service: CollectionEntry<'services'>;
+  article: CollectionEntry<'articles'>;
 }
 
-const { service } = Astro.props;
-const { Content } = await service.render();
+const { article } = Astro.props;
+const { Content } = await article.render();
 ---
 
 <BaseLayout 
-  title={service.data.title}
-  description={service.data.description}
-  schema={service.data.schema}
+  title={article.data.title}
+  description={article.data.description}
+  schema={article.data.schema}
 >
   <article class="container mx-auto px-4 py-8 max-w-4xl">
-    {service.data.heroImage && (
+    {article.data.heroImage && (
       <div class="mb-8">
         <img
-          src={service.data.heroImage}
-          alt={service.data.title}
+          src={article.data.heroImage}
+          alt={article.data.title}
           class="w-full h-64 object-cover rounded-lg shadow-lg"
         />
       </div>
     )}
     
-    <div class="markdown-content">
+    <div class="prose prose-lg max-w-none markdown-content">
       <Content />
     </div>
 
     <div class="mt-12 bg-secondary/10 rounded-lg p-8 text-center">
-      <h2 class="text-2xl font-bold text-primary mb-4">Ready to Get Started?</h2>
-      <p class="text-lg mb-6">Contact us today for professional plumbing services you can trust.</p>
+      <h2 class="text-2xl font-bold text-primary mb-4">Need Professional Plumbing Help?</h2>
+      <p class="text-lg mb-6">Our expert plumbers are ready to assist with any plumbing issue.</p>
       <a 
         href="/contact-us" 
         class="inline-block bg-error hover:bg-error/90 text-background font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
       >
-        Contact Us Now
+        Schedule Service
       </a>
     </div>
   </article>

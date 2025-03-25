@@ -1,4 +1,6 @@
 ---
+import '../styles/navigation.css';
+
 interface Props {
   isDesktop: boolean;
 }
@@ -36,8 +38,6 @@ const navigation: NavItem[] = [
     ]
   },
   { title: "Contact Us", path: "/contact-us" },
-  { title: "About Us", path: "/about-us" },
-  { title: "Our Team", path: "/team" },
   { title: "FAQs", path: "/faqs" }
 ];
 
@@ -59,13 +59,13 @@ function isActive(path: string): boolean {
           {item.title}
         </a>
         {item.submenu && (
-          <div class="submenu-wrapper absolute top-full left-0 pt-2 w-64">
-            <ul class="hidden group-hover:block bg-secondary rounded-lg p-2 shadow-lg">
+          <div class="submenu-wrapper">
+            <ul class="submenu-list">
               {item.submenu.map(subItem => (
                 <li>
                   <a
                     href={subItem.path}
-                    class={`block px-4 py-2 rounded-lg hover:bg-primary transition-colors duration-200 ${isActive(subItem.path) ? 'bg-primary' : ''} text-background hover:text-background`}
+                    class={`submenu-item ${isActive(subItem.path) ? 'active' : ''}`}
                   >
                     {subItem.title}
                   </a>
@@ -78,38 +78,40 @@ function isActive(path: string): boolean {
     ))}
   </ul>
 ) : (
-  <div class="bg-secondary rounded-lg p-4">
-    <ul class="space-y-2">
+  <div class="mobile-nav">
+    <ul class="mobile-nav-list">
     {navigation.map(item => (
       <li class="mobile-nav-item" data-has-submenu={!!item.submenu}>
         {!item.submenu ? (
           <a
             href={item.path}
-            class={`block w-full px-4 py-2 rounded-lg transition-colors duration-200 ${isActive(item.path) ? 'bg-primary text-background' : 'text-background hover:bg-primary/10'}`}
+            class={`mobile-nav-link ${isActive(item.path) ? 'active' : ''}`}
           >
             {item.title}
           </a>
         ) : (
           <div class="mobile-submenu">
             <button
-              class={`w-full text-left px-4 py-2 rounded-lg flex justify-between items-center ${isActive(item.path) ? 'bg-primary text-background' : 'text-background hover:bg-primary/10'}`}
+              class={`mobile-submenu-button ${isActive(item.path) ? 'active' : ''}`}
               onclick="this.closest('.mobile-nav-item').classList.toggle('open')"
             >
               <span>{item.title}</span>
-              <span class="transform transition-transform duration-200 mobile-submenu-icon">▼</span>
+              <span class="mobile-submenu-icon">▼</span>
             </button>
-            <ul class="hidden pl-4 space-y-1 mt-1">
-              {item.submenu.map(subItem => (
-                <li>
-                  <a
-                    href={subItem.path}
-                    class={`block px-4 py-2 rounded-lg transition-colors duration-200 ${isActive(subItem.path) ? 'bg-primary text-background' : 'text-background hover:bg-primary/10'}`}
-                  >
-                    {subItem.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div class="mobile-submenu-content">
+              <ul class="mobile-submenu-list">
+                {item.submenu.map(subItem => (
+                  <li>
+                    <a
+                      href={subItem.path}
+                      class={`mobile-nav-link ${isActive(subItem.path) ? 'active' : ''}`}
+                    >
+                      {subItem.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         )}
       </li>
@@ -118,13 +120,4 @@ function isActive(path: string): boolean {
   </div>
 )}
 
-<style>
-  /* Mobile submenu animations */
-  .mobile-nav-item.open .mobile-submenu-icon {
-    transform: rotate(180deg);
-  }
-  
-  .mobile-nav-item.open .mobile-submenu ul {
-    display: block;
-  }
-</style>
+

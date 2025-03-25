@@ -1,8 +1,8 @@
 ---
 title: "Faucet Leak Repair Services"
-description: "Professional faucet repair services in Sonoma and Marin County. We fix all types of faucet leaks and issues quickly and efficiently."
+description: "Professional faucet repair services in Sonoma and Marin County. Any type of faucet repaired by our expert plumbers with upfront pricing."
 pubDate: 2025-03-24
-featured: false
+featured: true
 schema: {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -18,7 +18,7 @@ schema: {
 
 # Expert Faucet Leak Repair Services
 
-Don't let a leaky faucet waste water and money. GoFlow Plumbing provides professional faucet repair services for all types and brands of faucets.
+Drip, drip, drip… That’s not just the sound of wasted water—it’s your hard-earned money going down the drain! A leaky faucet might seem like a minor annoyance, but left unchecked, it can lead to skyrocketing water bills and a constant reminder that something’s just… off. At GoFlow Plumbing, we make quick work of those pesky drips with fast, clean, and reliable service. No mess, no stress—just [a smoothly running faucet](/articles/choosing-the-right-faucet) and sweet, sweet silence. So, say goodbye to the drip-drip blues and hello to GoFlow!
 
 ## Our Faucet Repair Services
 

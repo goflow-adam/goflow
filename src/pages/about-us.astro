@@ -3,6 +3,11 @@ import { getEntry } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
 
 const page = await getEntry('pages', 'about-us');
+
+if (!page) {
+  throw new Error('About Us page content not found');
+}
+
 const { Content } = await page.render();
 ---
 

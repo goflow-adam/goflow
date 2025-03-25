@@ -1,6 +1,6 @@
 ---
 title: "Water Heater Repair and Replacement Services"
-description: "Expert water heater repair and replacement services in Sonoma and Marin County. 24/7 emergency service available for all your water heater needs."
+description: "GoFlow Plumbing offers expert water heater repair and water heater replacement services to keep your home comfortable and safe."
 pubDate: 2025-03-24
 featured: true
 schema: {
@@ -18,7 +18,11 @@ schema: {
 
 # Water Heater Repair and Replacement Services
 
-When your water heater fails, it can disrupt your entire household. At GoFlow Plumbing, we provide expert water heater repair and replacement services to get your hot water flowing again quickly and efficiently.
+Don't let the pre-sticker-shock of seeing your water heater leaking frighten you. We will take care of your leak with repair or with a [water heater replacement](/articles/water-heater-replacement-signs) quickly and cost effectively.
+
+​The experience our technicians have results in no-mess, no-worry rapid repair getting you back to your life with plenty of hot water, maybe even more.
+
+​We service all of Marin, Sonoma, and Napa counties. Please call for up front [water heater replacement pricing](/articles/water-heater-replacement-cost-reasons) and allow us to return your home back to its dry warm self. We love turning shock into smiles.
 
 ## Our Water Heater Services Include:
 

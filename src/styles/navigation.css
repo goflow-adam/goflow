@@ -1,4 +1,4 @@
-/* Navigation styles */
+/* Desktop Navigation */
 .nav-link {
   @apply px-4 py-2 rounded-lg text-background hover:text-background transition-colors duration-200;
 }
@@ -9,6 +9,26 @@
 
 .has-submenu {
   @apply pb-2;
+}
+
+.submenu-list {
+  @apply hidden bg-secondary rounded-lg p-2 shadow-lg;
+}
+
+.group:hover .submenu-list {
+  @apply block;
+}
+
+.submenu-item {
+  @apply block px-4 py-2 rounded-lg hover:bg-primary transition-colors duration-200 text-background hover:text-background group-hover:block;
+}
+
+.submenu-item.active {
+  @apply bg-primary;
+}
+
+.submenu-wrapper {
+  @apply absolute top-full left-0 pt-2 w-64;
 }
 
 /* Create a hover bridge between nav item and submenu */
@@ -29,4 +49,57 @@
 
 .group:hover .submenu-wrapper ul {
   @apply opacity-100 translate-y-0;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  @apply bg-secondary rounded-lg p-4;
+}
+
+.mobile-nav-list {
+  @apply space-y-2;
+}
+
+.mobile-nav-link {
+  @apply block w-full px-4 py-2 rounded-lg transition-colors duration-200 text-background hover:bg-primary/10;
+}
+
+.mobile-nav-link.active {
+  @apply bg-primary text-background;
+}
+
+.mobile-submenu {
+  @apply bg-secondary/50 rounded-lg overflow-hidden;
+}
+
+.mobile-submenu-button {
+  @apply w-full text-left px-4 py-2 rounded-lg flex justify-between items-center text-background hover:bg-primary/10;
+}
+
+.mobile-submenu-button.active {
+  @apply bg-primary text-background;
+}
+
+.mobile-submenu-icon {
+  @apply transform transition-transform duration-200;
+}
+
+.mobile-nav-item.open .mobile-submenu-icon {
+  @apply rotate-180;
+}
+
+.mobile-submenu-content {
+  @apply max-h-0 overflow-hidden transition-all duration-200 ease-in-out;
+}
+
+.mobile-nav-item.open .mobile-submenu-content {
+  @apply max-h-96;
+}
+
+.mobile-submenu-list {
+  @apply pl-4 space-y-1 py-2;
+}
+
+.mobile-submenu-list .mobile-nav-link {
+  @apply bg-secondary/50;
 }

@@ -1,26 +1,36 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import ServiceLayout from '../layouts/ServiceLayout.astro';
+import RegionLayout from '../layouts/RegionLayout.astro';
+import ArticleLayout from '../layouts/ArticleLayout.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-type ContentType = 'services' | 'regions' | 'pages';
 type ServiceEntry = CollectionEntry<'services'>;
 type RegionEntry = CollectionEntry<'regions'>;
+type ArticleEntry = CollectionEntry<'articles'>;
 type PageEntry = CollectionEntry<'pages'>;
-type Entry = ServiceEntry | RegionEntry | PageEntry;
+type Entry = ServiceEntry | RegionEntry | ArticleEntry | PageEntry;
 
 interface Props {
   entry: Entry;
-  type: 'service' | 'region' | 'page';
 }
 
 function isServiceEntry(entry: Entry): entry is ServiceEntry {
   return entry.collection === 'services';
 }
 
+function isRegionEntry(entry: Entry): entry is RegionEntry {
+  return entry.collection === 'regions';
+}
+
+function isArticleEntry(entry: Entry): entry is ArticleEntry {
+  return entry.collection === 'articles';
+}
+
 export async function getStaticPaths() {
   const services = await getCollection('services');
   const regions = await getCollection('regions');
+  const articles = await getCollection('articles');
   const pages = await getCollection('pages');
 
   const filterDrafts = (entries: Entry[]) => {
@@ -36,6 +46,10 @@ export async function getStaticPaths() {
       params: { slug: entry.slug },
       props: { entry, type: 'region' as const },
     })),
+    ...filterDrafts(articles).map((entry) => ({
+      params: { slug: `articles/${entry.slug}` },
+      props: { entry, type: 'article' as const },
+    })),
     ...filterDrafts(pages).map((entry) => ({
       params: { slug: entry.slug },
       props: { entry, type: 'page' as const },
@@ -49,6 +63,10 @@ const { Content } = await entry.render();
 
 {isServiceEntry(entry) ? (
   <ServiceLayout service={entry} />
+) : isRegionEntry(entry) ? (
+  <RegionLayout region={entry} />
+) : isArticleEntry(entry) ? (
+  <ArticleLayout article={entry} />
 ) : (
   <BaseLayout
     title={entry.data.title}

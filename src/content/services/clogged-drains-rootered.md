@@ -1,7 +1,8 @@
 ---
-title: "Professional Drain Cleaning & Rooter Services"
-description: "Expert drain cleaning and rooter services in Sonoma and Marin County. We clear tough clogs and tree root intrusions quickly and effectively."
+title: "Clogged Drains Cleared"
+description: "Our expert drain technicians will arrive promptly to clear that drain clean."
 pubDate: 2025-03-24
+featured: true
 schema: {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -15,9 +16,9 @@ schema: {
 }
 ---
 
-# Professional Drain Cleaning & Rooter Services
+# Get Your Clogged Drain Draining
 
-When you're dealing with stubborn clogs or slow drains, GoFlow Plumbing's professional drain cleaning services will get your plumbing flowing smoothly again.
+Maybe a crazed squirrel crawled in or some kid shoved their favorite lego creation in your toilet or maybe that beautiful tree has taken a liking to the liquid inside your sewer line. Whatever it is, we will find your [clogged drain problem](/articles/clogged-drains-service-advice) and clear it. Our technicians are armed with night vision, cameras, and squirrel traps. Give us a call so we can get your drains cleared, unclogged, and flowing again.
 
 ## Our Drain Cleaning Services
 

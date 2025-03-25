@@ -1,8 +1,8 @@
 ---
 title: "Dishwasher Installation & Leak Repair"
-description: "Expert dishwasher installation and leak repair services in Sonoma and Marin County. Professional plumbing solutions for all dishwasher issues."
+description: "Leaking dishwashers are troublesome and damaging. Let our expert plumbers repair the leak or replace your dishwasher, if you are ready, with upfront pricing."
 pubDate: 2025-03-24
-featured: false
+featured: true
 schema: {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -18,7 +18,7 @@ schema: {
 
 # Professional Dishwasher Services
 
-Trust GoFlow Plumbing for expert dishwasher installation and repair services. We ensure your dishwasher is properly installed and functioning efficiently.
+A dishwasher that won’t drain, leaks all over the floor, or leaves your dishes dirtier than before? That’s not cleaning—it’s chaos! At GoFlow Plumbing, we specialize in fast, clean, and reliable dishwasher repairs and installations. Whether your unit needs a quick fix or a full replacement, we’ll get it running smoothly in no time—without the mess or hassle. So, skip the sink full of dishes and Go with the Flow for a stress-free solution to your dishwasher woes!
 
 ## Our Dishwasher Services
 

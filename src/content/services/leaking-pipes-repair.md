@@ -1,6 +1,6 @@
 ---
 title: "Leaking Pipe Repair Services"
-description: "Expert pipe leak repair services in Sonoma and Marin County. Fast response for all types of pipe leaks, from small drips to major breaks."
+description: "Our leak detection masters will give you peace of mind with upfront pricing when repairing your leaking pipe."
 pubDate: 2025-03-24
 featured: true
 schema: {
@@ -16,9 +16,9 @@ schema: {
 }
 ---
 
-# Professional Pipe Leak Repair Services
+# Leaking Pipe Repair Services
 
-Don't let a leaking pipe cause water damage to your property. GoFlow Plumbing provides expert pipe leak detection and repair services for both residential and commercial properties.
+Hidden leaks? Not on our watch! At GoFlow Plumbing, we use state-of-the-art camera technology to track down sneaky leaks without tearing up your walls or floors. Our non-invasive approach means no unnecessary mess—just pinpoint accuracy and fast, clean repairs that stop water damage in its tracks. Whether it’s a tiny trickle or a major mystery, we’ll find it, fix it, and have your pipes flowing smoothly in no time. Because at GoFlow, we don’t just patch leaks—we solve them.
 
 ## Our Pipe Repair Services
 

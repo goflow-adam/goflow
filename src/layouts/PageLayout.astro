@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
+import '../styles/markdown.css';
 
 interface Props {
   page: CollectionEntry<'pages'>;
@@ -12,7 +13,7 @@ const { title, description, schema } = page.data;
 
 <BaseLayout title={title} description={description} schema={schema}>
   <article class="max-w-4xl mx-auto px-4 py-8">
-    <div class="prose prose-lg max-w-none">
+    <div class="markdown-content">
       <slot />
     </div>
 

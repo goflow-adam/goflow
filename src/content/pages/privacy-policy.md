@@ -114,8 +114,8 @@ California residents have additional rights under the CCPA, including:
 
 For privacy-related questions:
 - Email: privacy@goflow.plumbing
-- Phone: [Your Phone]
-- Address: [Your Address]
+- Phone: 916-719-187
+- Address: 10 Pine Ave, sonoma, CA 95476
 
 ## Legal Compliance
 

@@ -1,8 +1,8 @@
 ---
 title: "Garbage Disposal Repair & Installation Services"
-description: "Professional garbage disposal repair and installation services in Sonoma and Marin County. Expert solutions for all garbage disposal problems."
+description: "Get a garbage disposal installed or have yours repaired by our expert plumbers with upfront pricing."
 pubDate: 2025-03-24
-featured: false
+featured: true
 schema: {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -18,7 +18,7 @@ schema: {
 
 # Garbage Disposal Repair & Installation Services
 
-Keep your kitchen running smoothly with GoFlow Plumbing's professional garbage disposal services. We handle everything from repairs to new installations and replacements.
+Is your garbage disposal making more noise than progress? Whether it’s jammed, leaking, or just refusing to do its job, GoFlow Plumbing is here to get things back in motion—quickly and cleanly. Our expert team can diagnose, repair, or [replace your in-sink disposal](/articles/garbage-disposal-choices) with minimal mess and maximum efficiency. No more strange grinding sounds, no more mystery odors—just smooth, worry-free operation. So, if your disposal’s on strike, don’t stress—Go with the Flow and let us handle the fix!
 
 ## Our Garbage Disposal Services
 
