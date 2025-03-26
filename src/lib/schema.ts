@@ -12,7 +12,7 @@ export const businessInfo = {
     "postalCode": "95476",
     "addressCountry": "US"
   },
-  "geo": {
+  "location": {
     "@type": "GeoCoordinates",
     "latitude": "38.3147602",
     "longitude": "-122.4849469"
@@ -20,12 +20,7 @@ export const businessInfo = {
   "url": "https://goflow.plumbing",
   "priceRange": "$$",
   "areaServed": ["Sonoma County", "Marin County"],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    "opens": "00:00",
-    "closes": "23:59"
-  }
+  "openingHours": ["Mo-Su 00:00-23:59"]
 };
 
 export function createServiceSchema(serviceName: string, serviceType: string, serviceUrl: string) {
@@ -33,16 +28,10 @@ export function createServiceSchema(serviceName: string, serviceType: string, se
     "@context": "https://schema.org",
     "@type": "Service",
     "name": serviceName,
-    "provider": businessInfo,
+    "serviceProvider": businessInfo,
     "areaServed": ["Sonoma County", "Marin County"],
     "serviceType": serviceType,
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceType": serviceType,
-      "availabilityStarts": "00:00:01",
-      "availabilityEnds": "23:59:59",
-      "serviceUrl": serviceUrl
-    }
+    "url": serviceUrl
   };
 }
 
@@ -50,34 +39,25 @@ export function createServiceListSchema(services: { title: string; description: 
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "provider": {
-      ...businessInfo,
-      "areaServed": regions.map(region => ({
-        "@type": "County",
-        "name": region.data.title,
-        "description": region.data.description,
-        "containsPlace": region.data.containsPlace
-      }))
-    },
-    "itemListElement": services.map((service, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": service.title,
-      "description": service.description,
-      "url": service.url
-    })),
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Plumbing Services",
-      "itemListElement": services.map(service => ({
-        "@type": "Offer",
-        "itemOffered": {
+    "itemListElement": [
+      ...services.map((service, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
           "@type": "Service",
           "name": service.title,
-          "description": service.description
+          "description": service.description,
+          "url": service.url,
+          "serviceProvider": { "@id": "https://goflow.plumbing/#business" },
+          "areaServed": regions.map(region => ({
+            "@type": "County",
+            "name": region.data.title,
+            "description": region.data.description,
+            "containsPlace": region.data.containsPlace
+          }))
         }
       }))
-    }
+    ]
   }
 }
 
