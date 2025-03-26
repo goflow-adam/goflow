@@ -3,17 +3,6 @@ title: "Leaking Pipe Repair Services"
 description: "Our leak detection masters will give you peace of mind with upfront pricing when repairing your leaking pipe."
 pubDate: 2025-03-24
 featured: true
-schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Leaking Pipe Repair",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing"
-  },
-  "areaServed": ["Sonoma County", "Marin County"],
-  "serviceType": "Pipe Repair"
-}
 ---
 
 # Leaking Pipe Repair Services

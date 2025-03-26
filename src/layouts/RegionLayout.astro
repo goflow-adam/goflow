@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
+import { createRegionSchema } from '../lib/schema';
 import '../styles/markdown.css';
 import '../styles/regions.css';
 
@@ -10,22 +11,30 @@ interface Props {
 
 const { region } = Astro.props;
 const { Content } = await region.render();
+
+const schema = createRegionSchema({
+  title: region.data.title,
+  description: region.data.description,
+  region: region.data.region,
+  url: new URL(Astro.url.pathname, Astro.site).toString(),
+  containsPlace: region.data.containsPlace
+});
 ---
 
 <BaseLayout 
   title={region.data.title}
   description={region.data.description}
-  schema={region.data.schema}
+  schema={schema}
 >
   <article class="article max-w-4xl">
-    {region.data.heroImage && (
+    <!-- {region.data.heroImage && (
       <div class="mb-8">
         <img
           src={region.data.heroImage}
           alt={region.data.title}
         />
       </div>
-    )}
+    )} -->
     
     <div class="markdown-content">
       <Content />

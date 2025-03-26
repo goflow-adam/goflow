@@ -3,17 +3,6 @@ title: "Dishwasher Installation & Leak Repair"
 description: "Leaking dishwashers are troublesome and damaging. Let our expert plumbers repair the leak or replace your dishwasher, if you are ready, with upfront pricing."
 pubDate: 2025-03-24
 featured: true
-schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Dishwasher Plumbing Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing"
-  },
-  "areaServed": ["Sonoma County", "Marin County"],
-  "serviceType": "Appliance Installation and Repair"
-}
 ---
 
 # Professional Dishwasher Services

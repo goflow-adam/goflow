@@ -19,6 +19,7 @@ const services = defineCollection({
 const regions = defineCollection({
   schema: baseSchema.extend({
     region: z.string(),
+    containsPlace: z.array(z.string()).optional(),
   }),
 });
 

@@ -3,17 +3,6 @@ title: "Clogged Toilets & Running Toilets Tamed"
 description: "Clogged Toilets or running toilets tamed by expert plumbers with upfront pricing and a clean result."
 pubDate: 2025-03-24
 featured: true
-schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Toilet Repair Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing"
-  },
-  "areaServed": ["Sonoma County", "Marin County"],
-  "serviceType": "Toilet Repair"
-}
 ---
 
 # Expert Toilet Repair Services

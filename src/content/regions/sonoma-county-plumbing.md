@@ -2,19 +2,7 @@
 title: "Sonoma County Plumbing Services"
 description: "GoFlow is deeply experienced in these region-specific needs and will tailor our plumbing solutions to your home's specific needs."
 region: "Sonoma County"
-pubDate: 2025-03-24
-heroImage: "/images/sonoma-county.jpg"
-schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Sonoma County Plumbing Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": {
-      "@type": "County",
-      "name": "Sonoma County",
-      "containsPlace": [
+containsPlace: [
         "Cloverdale",
         "Cotati",
         "Healdsburg",
@@ -35,10 +23,8 @@ schema: {
         "Larkfield-Wikiup",
         "Occidental"
       ]
-    }
-  },
-  "serviceType": "Plumbing Service"
-}
+pubDate: 2025-03-24
+heroImage: "/images/sonoma-county.jpg"
 ---
 
 # Sonoma County Plumbing Services

@@ -18,7 +18,8 @@ const schema = {
   "areaServed": regions.map(region => ({
     "@type": "County",
     "name": region.data.title,
-    "description": region.data.description
+    "description": region.data.description,
+    "containsPlace": region.data.containsPlace
   }))
 };
 ---
@@ -38,12 +39,12 @@ const schema = {
     <div class="regions-container">
       {regions.map((region) => (
         <div>
-          {region.data.heroImage && (
+          {/* {region.data.heroImage && (
             <img
               src={region.data.heroImage}
               alt={`Plumbing services in ${region.data.title}`}
             />
-          )}
+          )} */}
           <div>
             <h2>
               <a href={`/${region.slug}`}>

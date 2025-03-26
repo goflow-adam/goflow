@@ -1,20 +1,8 @@
 ---
 title: "Marin County Plumbing Services"
-description: "GoFlow plumbers have the deep understanding of both the geography and Marin county’s strict building codes to ensure your home meets the regulations and your expectations of a long term GoFlow supplied solution."
+description: "GoFlow plumbers have the deep understanding of both the geography and Marin county's strict building codes to ensure your home meets the regulations and your expectations of a long term GoFlow supplied solution."
 region: "Marin County"
-pubDate: 2025-03-24
-heroImage: "/images/marin-county.jpg"
-schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Marin County Plumbing Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": {
-      "@type": "County",
-      "name": "Marin County",
-      "containsPlace": [
+containsPlace: [
         "San Rafael",
         "Novato",
         "Mill Valley",
@@ -39,10 +27,8 @@ schema: {
         "Woodacre",
         "Inverness"
       ]
-    }
-  },
-  "serviceType": "Plumbing Service"
-}
+pubDate: 2025-03-24
+heroImage: "/images/marin-county.jpg"
 ---
 
 # Marin County Plumbing Services

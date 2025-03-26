@@ -3,17 +3,6 @@ title: "Garbage Disposal Repair & Installation Services"
 description: "Get a garbage disposal installed or have yours repaired by our expert plumbers with upfront pricing."
 pubDate: 2025-03-24
 featured: true
-schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Garbage Disposal Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing"
-  },
-  "areaServed": ["Sonoma County", "Marin County"],
-  "serviceType": "Appliance Installation and Repair"
-}
 ---
 
 # Garbage Disposal Repair & Installation Services

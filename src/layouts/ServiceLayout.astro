@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
 import '../styles/markdown.css';
 import '../styles/services.css';
+import { createServiceSchema } from '../lib/schema';
 
 interface Props {
   service: CollectionEntry<'services'>;
@@ -10,12 +11,18 @@ interface Props {
 
 const { service } = Astro.props;
 const { Content } = await service.render();
+
+const schema = createServiceSchema(
+  service.data.title,
+  service.data.title,
+  `https://goflow.plumbing/${service.slug}`
+);
 ---
 
 <BaseLayout 
   title={service.data.title}
   description={service.data.description}
-  schema={service.data.schema}
+  schema={schema}
 >
   <article class="article max-w-4xl">
     {service.data.heroImage && (

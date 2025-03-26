@@ -14,14 +14,12 @@ const featuredServices = await getCollection('services', ({ data }: { data: Serv
   data.featured && !data.draft
 );
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "GoFlow Plumbing",
-  "description": "Professional plumbing services in Sonoma and Marin County",
-  "areaServed": ["Sonoma County", "Marin County"],
-  "url": "https://goflow.plumbing"
-};
+import { createOrganizationSchema, createWebSiteSchema } from '../lib/schema';
+
+const schema = [
+  createOrganizationSchema(),
+  createWebSiteSchema()
+];
 ---
 
 <BaseLayout

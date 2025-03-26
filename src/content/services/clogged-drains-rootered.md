@@ -3,17 +3,6 @@ title: "Clogged Drains Cleared"
 description: "Our expert drain technicians will arrive promptly to clear that drain clean."
 pubDate: 2025-03-24
 featured: true
-schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Drain Cleaning and Rooter Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing"
-  },
-  "areaServed": ["Sonoma County", "Marin County"],
-  "serviceType": "Drain Cleaning"
-}
 ---
 
 # Get Your Clogged Drain Draining

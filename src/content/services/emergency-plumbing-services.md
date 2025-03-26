@@ -3,24 +3,6 @@ title: "24/7 Emergency Plumbing Services"
 description: "Emergency plumbing issue or just urgent, you need prompt help with upfront pricing. We are on our way as soon as you call."
 pubDate: 2025-03-24
 featured: true
-schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Emergency Plumbing Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing"
-  },
-  "areaServed": ["Sonoma County", "Marin County"],
-  "serviceType": "Emergency Plumbing",
-  "availableChannel": {
-    "@type": "ServiceChannel",
-    "serviceType": "Emergency Service",
-    "availabilityStarts": "00:00:01",
-    "availabilityEnds": "23:59:59",
-    "serviceUrl": "https://goflow.plumbing/emergency-plumbing-services"
-  }
-}
 ---
 
 # 24/7 Emergency Plumbing Services

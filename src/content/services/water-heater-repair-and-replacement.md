@@ -3,17 +3,6 @@ title: "Water Heater Repair and Replacement Services"
 description: "GoFlow Plumbing offers expert water heater repair and water heater replacement services to keep your home comfortable and safe."
 pubDate: 2025-03-24
 featured: true
-schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Water Heater Repair and Replacement",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing"
-  },
-  "areaServed": ["Sonoma County", "Marin County"],
-  "serviceType": "Water Heater Services"
-}
 ---
 
 # Water Heater Repair and Replacement Services

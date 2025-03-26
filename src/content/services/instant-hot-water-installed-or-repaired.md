@@ -3,17 +3,6 @@ title: "Instant Hot Water Installation & Repair"
 description: "Get an instant hot water dispenser installed or have yours repaired by our expert plumbers with upfront pricing."
 pubDate: 2025-03-24
 featured: true
-schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Instant Hot Water Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing"
-  },
-  "areaServed": ["Sonoma County", "Marin County"],
-  "serviceType": "Hot Water System Installation and Repair"
-}
 ---
 
 # Instant Hot Water Solutions

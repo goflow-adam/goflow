@@ -3,17 +3,6 @@ title: "Faucet Leak Repair Services"
 description: "Professional faucet repair services in Sonoma and Marin County. Any type of faucet repaired by our expert plumbers with upfront pricing."
 pubDate: 2025-03-24
 featured: true
-schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Faucet Repair Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing"
-  },
-  "areaServed": ["Sonoma County", "Marin County"],
-  "serviceType": "Faucet Repair"
-}
 ---
 
 # Expert Faucet Leak Repair Services

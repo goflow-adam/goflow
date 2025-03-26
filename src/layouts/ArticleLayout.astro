@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
 import '../styles/articles.css';
 import '../styles/markdown.css';
+import { createArticleSchema } from '../lib/schema';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -10,12 +11,19 @@ interface Props {
 
 const { article } = Astro.props;
 const { Content } = await article.render();
+
+const schema = createArticleSchema({
+  title: article.data.title,
+  description: article.data.description,
+  pubDate: new Date(article.data.pubDate),
+  url: `https://goflow.plumbing/articles/${article.slug}`
+});
 ---
 
 <BaseLayout 
   title={article.data.title}
   description={article.data.description}
-  schema={article.data.schema}
+  schema={schema}
 >
   <article class="article max-w-4xl">
     {article.data.heroImage && (
