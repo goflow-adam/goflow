@@ -81,6 +81,33 @@ export function createServiceListSchema(services: { title: string; description: 
   }
 }
 
+export function createServiceRegionsSchema(regions: { data: { title: string; description: string; containsPlace?: string[] }, slug: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SearchResultsPage",
+    "mainEntity": {
+      ...businessInfo,
+      "areaServed": regions.map((region, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "Service",
+          "name": region.data.title,
+          "description": region.data.description,
+          "provider": { "@id": "https://goflow.plumbing/#business" },
+          "areaServed": {
+            "@type": "County",
+            "name": region.data.title,
+            "description": region.data.description,
+            ...(region.data.containsPlace && { "containsPlace": region.data.containsPlace })
+          },
+          "url": new URL(region.slug, "https://goflow.plumbing").toString()
+        }
+      }))
+    }
+  }
+}
+
 export function createArticleSchema(article: {
   title: string;
   description: string;

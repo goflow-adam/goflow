@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { createServiceRegionsSchema } from '../lib/schema';
 import '../styles/pages/service-regions.css';
 
 interface RegionFrontmatter {
@@ -9,19 +10,7 @@ interface RegionFrontmatter {
 }
 
 const regions = await getCollection('regions', ({ data }) => !data.draft);
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "GoFlow Plumbing",
-  "description": "Professional plumbing services in Sonoma and Marin County",
-  "areaServed": regions.map(region => ({
-    "@type": "County",
-    "name": region.data.title,
-    "description": region.data.description,
-    "containsPlace": region.data.containsPlace
-  }))
-};
+const schema = createServiceRegionsSchema(regions);
 ---
 
 <BaseLayout
