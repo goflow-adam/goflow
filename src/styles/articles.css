@@ -1,0 +1,21 @@
+article {
+  @apply container mx-auto px-4 py-8;
+}
+article img {
+  @apply w-full h-64 object-cover rounded-lg shadow-lg;
+}
+.prose-container {
+  @apply prose prose-lg max-w-none;
+}
+.article .pitch {
+  @apply mt-12 bg-secondary/10 rounded-lg p-8 text-center;
+}
+.article .pitch h2 {
+  @apply text-2xl font-bold mb-4 text-primary;
+}
+.article .pitch p {
+  @apply text-lg mb-6;
+}
+.article .pitch a {
+  @apply inline-block bg-error hover:bg-error/90 text-background font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl;
+}

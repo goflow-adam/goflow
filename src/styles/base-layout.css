@@ -1,0 +1,58 @@
+// Menu styles
+
+.mobile-menu-button {
+  @apply text-background p-2;
+}
+
+.mobile-menu-button span {
+  @apply block w-6 h-0.5 bg-background duration-200;
+}
+
+.desktop-menu-container {
+  @apply hidden md:block;
+}
+
+.page-body {
+  @apply bg-background text-text min-h-screen flex flex-col;
+}
+
+.page-body header {
+  @apply bg-primary;
+}
+
+.page-body header .header-container {
+  @apply container mx-auto px-4 py-4;
+}
+
+.page-body header .logo-container {
+  @apply flex justify-between items-center;
+}
+
+.page-body header .logo-container .logo {
+  @apply text-2xl font-bold text-background;
+}
+
+.page-body main {
+  @apply flex-grow container mx-auto px-4 py-8;
+}
+
+.page-body footer {
+  @apply bg-primary text-background mt-auto;
+}
+
+.footer-container {
+  @apply container mx-auto px-4 py-8;
+}
+
+.navigation-container {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.footer-container h3 {
+  @apply text-xl font-bold mb-4;
+}
+
+.copyright {
+  @apply mt-8 text-center;
+}
+  

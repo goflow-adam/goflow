@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
+import '../styles/articles.css';
 import '../styles/markdown.css';
 
 interface Props {
@@ -16,30 +17,24 @@ const { Content } = await article.render();
   description={article.data.description}
   schema={article.data.schema}
 >
-  <article class="container mx-auto px-4 py-8 max-w-4xl">
+  <article class="article max-w-4xl">
     {article.data.heroImage && (
       <div class="mb-8">
         <img
           src={article.data.heroImage}
           alt={article.data.title}
-          class="w-full h-64 object-cover rounded-lg shadow-lg"
         />
       </div>
     )}
     
-    <div class="prose prose-lg max-w-none markdown-content">
+    <div class="prose-container markdown-content">
       <Content />
     </div>
 
-    <div class="mt-12 bg-secondary/10 rounded-lg p-8 text-center">
-      <h2 class="text-2xl font-bold text-primary mb-4">Need Professional Plumbing Help?</h2>
-      <p class="text-lg mb-6">Our expert plumbers are ready to assist with any plumbing issue.</p>
-      <a 
-        href="/contact-us" 
-        class="inline-block bg-error hover:bg-error/90 text-background font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
-      >
-        Schedule Service
-      </a>
+    <div class="pitch">
+      <h2>Need Professional Plumbing Help?</h2>
+      <p>Our expert plumbers are ready to assist with any plumbing issue.</p>
+      <a href="/contact-us">Schedule Service</a>
     </div>
   </article>
 </BaseLayout>

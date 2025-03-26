@@ -14,5 +14,8 @@ export default defineConfig({
     shikiConfig: {
       theme: 'github-light'
     }
+  },
+  build: {
+    inlineStylesheets: 'never'
   }
 });

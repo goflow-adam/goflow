@@ -1,0 +1,79 @@
+.plumbing-services {
+  @apply max-w-4xl mx-auto;
+}
+
+.plumbing-services h1 {
+  @apply text-4xl font-bold mb-8;
+}
+
+.plumbing-services > p {
+  @apply text-lg mb-12;
+}
+
+.services-list {
+  @apply grid gap-8;
+}
+
+.services-list > div {
+  @apply bg-background rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow;
+}
+
+.services-list > div > h2 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.services-list h2 a {
+  @apply text-primary hover:text-secondary transition-colors;
+}
+
+.services-list > div > p {
+  @apply text-lg mb-4;
+}
+
+.services-list > div > a {
+  @apply btn btn-primary;
+}
+
+.emergency-services {
+  @apply mt-16 bg-secondary text-background rounded-lg p-8;
+}
+
+.emergency-services h2 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.emergency-services p {
+  @apply text-lg mb-6;
+}
+
+.emergency-services div {
+  @apply space-x-4;
+}
+
+.emergency-services a:nth-child(1) {
+  @apply btn btn-primary;
+}
+
+.emergency-services a:nth-child(2) {
+  @apply btn btn-secondary;
+}
+
+.why-choose-us {
+  @apply mt-16;
+}
+
+.why-choose-us h2 {
+  @apply text-2xl font-bold mb-6;
+}
+
+.why-choose-us > div {
+  @apply grid md:grid-cols-2 gap-6;
+}
+
+.why-choose-us > div > div {
+  @apply bg-background rounded-lg p-6 shadow-md;
+}
+
+.why-choose-us > div > div > h3 {
+  @apply text-xl font-bold mb-3;
+}

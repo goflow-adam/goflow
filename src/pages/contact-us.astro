@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/pages/contact-us.css';
 
 const schema = {
   "@context": "https://schema.org",
@@ -27,53 +28,53 @@ const schema = {
   description="Contact GoFlow Plumbing for professional plumbing services in Sonoma and Marin County. Available 24/7 for emergencies."
   schema={schema}
 >
-  <div class="max-w-4xl mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold mb-8">Contact Us</h1>
+  <div class="contact-us max-w-4xl">
+    <h1>Contact Us</h1>
 
-    <div class="grid md:grid-cols-2 gap-8">
+    <div class="grid-container">
       <!-- Contact Information -->
-      <div class="space-y-6">
-        <div class="bg-background p-6 rounded-lg shadow-md">
-          <h2 class="text-2xl font-bold mb-4">Get in Touch</h2>
-          <div class="space-y-4">
+      <div class="body-content">
+        <div class="row">
+          <h2>Get in Touch</h2>
+          <div class="contact-methods">
             <div>
-              <h3 class="font-bold">Phone</h3>
-              <p class="text-lg">
-                <a href="tel:916-719-187" class="text-primary hover:text-secondary">916-719-187</a>
+              <h3>Phone</h3>
+              <p>
+                <a href="tel:916-719-187">916-719-187</a>
               </p>
             </div>
             <div>
-              <h3 class="font-bold">Email</h3>
-              <p class="text-lg">
-                <a href="mailto:adam@goflow.plumbing" class="text-primary hover:text-secondary">
+              <h3>Email</h3>
+              <p>
+                <a href="mailto:adam@goflow.plumbing">
                   adam@goflow.plumbing
                 </a>
               </p>
             </div>
             <div>
-              <h3 class="font-bold">Address</h3>
-              <p class="text-lg">10 Pine Ave, sonoma, CA 95476</p>
+              <h3>Address</h3>
+              <p>10 Pine Ave, sonoma, CA 95476</p>
             </div>
             <div>
-              <h3 class="font-bold">Hours</h3>
-              <p class="text-lg">24/7 Emergency Service Available</p>
+              <h3>Hours</h3>
+              <p>24/7 Emergency Service Available</p>
               <p>Regular Hours: Mon-Fri 8am-6pm</p>
             </div>
           </div>
         </div>
 
-        <div class="bg-secondary text-background p-6 rounded-lg">
-          <h2 class="text-2xl font-bold mb-4">Emergency Service</h2>
-          <p class="mb-4">Need immediate assistance? Call our emergency line:</p>
-          <a href="tel:916-719-187" class="text-2xl font-bold hover:text-primary">
-            916-719-187
+        <div class="emergency-service">
+          <h2>Emergency Service</h2>
+          <p>Need immediate assistance? Call our emergency line:</p>
+          <a href="tel:916-719-1897" class="phone">
+            916-719-1897
           </a>
         </div>
       </div>
 
       <!-- Contact Form -->
-      <div class="bg-background p-6 rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold mb-4">Send Us a Message</h2>
+      <div class="row">
+        <h2>Send Us a Message</h2>
         <form class="space-y-4" id="contact-form">
           <div>
             <label for="name" class="block mb-1">Name</label>
@@ -82,7 +83,6 @@ const schema = {
               id="name"
               name="name"
               required
-              class="w-full p-2 border rounded focus:ring-2 focus:ring-primary"
             />
           </div>
           <div>
@@ -92,7 +92,6 @@ const schema = {
               id="email"
               name="email"
               required
-              class="w-full p-2 border rounded focus:ring-2 focus:ring-primary"
             />
           </div>
           <div>
@@ -102,7 +101,6 @@ const schema = {
               id="phone"
               name="phone"
               required
-              class="w-full p-2 border rounded focus:ring-2 focus:ring-primary"
             />
           </div>
           <div>
@@ -110,7 +108,6 @@ const schema = {
             <select
               id="service"
               name="service"
-              class="w-full p-2 border rounded focus:ring-2 focus:ring-primary"
             >
               <option value="">Select a Service</option>
               <option value="emergency">Emergency Service</option>
@@ -127,13 +124,9 @@ const schema = {
               name="message"
               rows="4"
               required
-              class="w-full p-2 border rounded focus:ring-2 focus:ring-primary"
             ></textarea>
           </div>
-          <button
-            type="submit"
-            class="w-full bg-primary text-background py-2 px-4 rounded hover:bg-secondary transition-colors"
-          >
+          <button type="submit">
             Send Message
           </button>
         </form>
@@ -141,20 +134,20 @@ const schema = {
     </div>
 
     <!-- Service Areas -->
-    <div class="mt-12">
-      <h2 class="text-2xl font-bold mb-6">Our Service Areas</h2>
+    <div class="service-areas">
+      <h2>Our Service Areas</h2>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-background p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-3">Sonoma County</h3>
+        <div class="row">
+          <h3>Sonoma County</h3>
           <p>Serving Santa Rosa, Petaluma, Rohnert Park, and surrounding areas.</p>
-          <a href="/sonoma-county-plumbing" class="text-primary hover:text-secondary">
+          <a href="/sonoma-county-plumbing">
             View Sonoma County Services →
           </a>
         </div>
-        <div class="bg-background p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-3">Marin County</h3>
+        <div class="row">
+          <h3>Marin County</h3>
           <p>Serving San Rafael, Novato, Mill Valley, and surrounding areas.</p>
-          <a href="/marin-county-plumbing" class="text-primary hover:text-secondary">
+          <a href="/marin-county-plumbing">
             View Marin County Services →
           </a>
         </div>

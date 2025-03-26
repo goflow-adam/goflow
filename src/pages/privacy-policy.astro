@@ -3,6 +3,10 @@ import { getEntry } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
 
 const page = await getEntry('pages', 'privacy-policy');
+if (!page) {
+  throw new Error('Privacy policy page not found');
+}
+
 const { Content } = await page.render();
 ---
 

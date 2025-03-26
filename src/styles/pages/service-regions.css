@@ -1,0 +1,91 @@
+.service-regions {
+  @apply max-w-4xl mx-auto;
+}
+
+.service-regions h1 {
+  @apply text-4xl font-bold mb-8;
+}
+
+.service-regions > p {
+  @apply text-lg mb-12;
+}
+
+.service-regions > div {
+  @apply grid gap-8;
+}
+
+.service-regions .regions-container {
+  @apply grid gap-8;
+}
+
+.service-regions .regions-container > div {
+  @apply bg-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200;
+}
+
+.service-regions .regions-container img {
+  @apply w-full h-48 object-cover;
+}
+
+.service-regions .regions-container > div > div {
+  @apply p-8;
+}
+
+.service-regions .regions-container > div > div > h2 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.service-regions .regions-container h2 a {
+  @apply text-primary hover:text-secondary transition-colors;
+}
+
+.service-regions .regions-container p {
+  @apply text-lg mb-4;
+}
+
+.service-regions .regions-container > div > div > a {
+  @apply inline-block bg-error hover:bg-error/90 text-background font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl;
+}
+
+.need-container {
+  @apply mt-16 bg-secondary text-background rounded-lg p-8;
+}
+
+.need-container h2 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.need-container p {
+  @apply text-lg mb-6;
+}
+
+.need-container div {
+  @apply space-x-4;
+}
+
+.need-container a:nth-child(1) {
+  @apply btn btn-primary;
+}
+
+.need-container a:nth-child(2) {
+  @apply btn btn-secondary;
+}
+
+.choose-us-container {
+    @apply mt-16;
+}
+
+.choose-us-container h2 {
+  @apply text-2xl font-bold mb-6;
+}
+
+.choose-us-container > div {
+  @apply grid md:grid-cols-2 gap-6;
+}
+
+.choose-us-container > div > div {
+  @apply bg-background rounded-lg p-6 shadow-md;
+}
+
+.choose-us-container > div > div > h3 {
+  @apply text-xl font-bold mb-3;
+}

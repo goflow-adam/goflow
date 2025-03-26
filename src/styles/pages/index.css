@@ -1,0 +1,113 @@
+
+
+.homepage .h3 {
+  @apply text-xl font-bold mb-6;
+}
+
+.hero {
+  @apply bg-primary py-20 text-background;
+}
+
+.hero-container {
+  @apply container mx-auto px-4 text-center;
+}
+
+.hero h1 {
+  @apply text-4xl md:text-6xl font-bold mb-6;
+}
+
+.hero p {
+  @apply text-xl md:text-2xl mb-8;
+}
+
+.services {
+  @apply py-16;
+}
+
+.services-container {
+  @apply container mx-auto px-4;
+}
+
+.services h2 {
+  @apply text-3xl font-bold text-center mb-12;
+}
+
+.services-container > div {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.services-container > div > div {
+  @apply bg-background rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow;
+}
+
+.services-container > div > div h3 {
+  @apply text-xl font-bold mb-4;
+}
+
+.services-container a {
+  @apply btn btn-primary inline-block;
+}
+  
+.choose-us {
+  @apply bg-secondary py-16 text-background;
+}
+
+.choose-us > div {
+  @apply container mx-auto px-4;
+}
+
+.choose-us h2 {
+  @apply text-3xl font-bold text-center mb-12;
+}
+
+.choose-us > div > div {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-8 text-center;
+}
+
+.choose-us h3 {
+  @apply text-xl font-bold mb-4;
+}
+
+.service-areas {
+  @apply py-16;
+}
+
+.service-areas > div {
+  @apply container mx-auto px-4 text-center;
+}
+
+.service-areas h2 {
+  @apply text-3xl font-bold mb-12;
+}
+
+.service-areas > div > div {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto;
+}
+
+.service-areas > div > div > a {
+  @apply bg-primary text-background p-8 rounded-lg hover:opacity-90 transition-opacity;
+}
+
+.service-areas h3 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.cta {
+  @apply bg-error py-16 text-background;
+}
+
+.cta > div {
+  @apply container mx-auto px-4 text-center;
+}
+
+.cta h2 {
+  @apply text-3xl font-bold mb-6;
+}
+
+.cta p {
+  @apply text-xl mb-8;
+}
+
+.cta > div > a {
+  @apply btn btn-secondary inline-block;
+}

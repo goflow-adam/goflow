@@ -1,0 +1,24 @@
+.team-container h2 {
+    @apply text-2xl font-bold mt-8 mb-4 text-primary;
+  }
+
+  .team-container h3 {
+    @apply text-xl font-bold mt-6 mb-3 text-primary;
+  }
+
+  .team-container p {
+    @apply mb-4;
+  }
+
+  .team-container ul {
+    @apply mb-6 space-y-2;
+  }
+
+  .team-container li {
+    @apply flex items-center;
+  }
+
+  .team-container li::before {
+    content: "•";
+    @apply text-secondary mr-2;
+  }

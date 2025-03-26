@@ -1,0 +1,75 @@
+.contact-us {
+  @apply mx-auto px-4 py-8;
+}
+
+.contact-us h1 {
+  @apply text-4xl font-bold mb-8;
+}
+
+.contact-us .grid-container {
+  @apply grid md:grid-cols-2 gap-8;
+}
+
+.contact-us .grid-container .body-content {
+  @apply space-y-6;
+}
+
+.contact-us .row {
+  @apply bg-background rounded-lg p-6 shadow-md;
+}
+
+.contact-us .row h2 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.contact-us .contact-methods {
+  @apply space-y-4;
+}
+
+.contact-methods h3 {
+  @apply font-bold;
+}
+
+.contact-methods p {
+  @apply text-lg;
+}
+
+.emergency-service {
+  @apply bg-secondary text-background p-6 rounded-lg;
+}
+
+.emergency-service h2 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.emergency-service p {
+  @apply mb-4;
+}
+
+.service-areas {
+  @apply mt-12;
+}
+
+.contact-us .service-areas h2 {
+  @apply text-2xl font-bold mb-6;
+}
+
+.contact-us .service-areas h3 {
+  @apply text-xl font-bold mb-3;
+}
+
+.contact-us a {
+  @apply text-primary hover:text-secondary;
+}
+
+.contact-us button {
+  @apply w-full bg-primary text-background py-2 px-4 rounded hover:bg-secondary transition-colors;
+}
+
+.contact-us .phone {
+  @apply text-2xl font-bold hover:text-primary text-background;
+}
+
+.contact-us input, select, textarea {
+  @apply w-full p-2 border rounded focus:ring-2 focus:ring-primary;
+}

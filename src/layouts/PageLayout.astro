@@ -2,6 +2,8 @@
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
 import '../styles/markdown.css';
+import '../styles/pages.css';
+import '../styles/prose.css';
 
 interface Props {
   page: CollectionEntry<'pages'>;
@@ -12,18 +14,18 @@ const { title, description, schema } = page.data;
 ---
 
 <BaseLayout title={title} description={description} schema={schema}>
-  <article class="max-w-4xl mx-auto px-4 py-8">
+  <article class="article">
     <div class="markdown-content">
       <slot />
     </div>
 
     <!-- Call to Action -->
-    <div class="mt-12 bg-secondary text-background rounded-lg p-8">
-      <h2 class="text-2xl font-bold mb-4">Need Professional Plumbing Service?</h2>
-      <p class="text-lg mb-6">
+    <div class="call-to-action">
+      <h2>Need Professional Plumbing Service?</h2>
+      <p>
         We're here to help with all your plumbing needs in Sonoma and Marin County.
       </p>
-      <div class="flex flex-wrap gap-4">
+      <div class="links-container">
         <a
           href="/contact-us"
           class="btn btn-primary"
@@ -40,85 +42,21 @@ const { title, description, schema } = page.data;
     </div>
 
     <!-- Service Areas -->
-    <div class="mt-12 grid md:grid-cols-2 gap-6">
-      <div class="bg-background rounded-lg p-6 shadow-md">
-        <h3 class="text-xl font-bold mb-3">Sonoma County Service</h3>
-        <p class="mb-4">Serving Santa Rosa, Petaluma, Rohnert Park, and surrounding areas.</p>
-        <a href="/sonoma-county-plumbing" class="text-primary hover:text-secondary">
+    <div class="service-areas">
+      <div>
+        <h3>Sonoma County Service</h3>
+        <p>Serving Santa Rosa, Petaluma, Rohnert Park, and surrounding areas.</p>
+        <a href="/sonoma-county-plumbing">
           View Sonoma Services →
         </a>
       </div>
-      <div class="bg-background rounded-lg p-6 shadow-md">
-        <h3 class="text-xl font-bold mb-3">Marin County Service</h3>
-        <p class="mb-4">Serving San Rafael, Novato, Mill Valley, and surrounding areas.</p>
-        <a href="/marin-county-plumbing" class="text-primary hover:text-secondary">
+      <div>
+        <h3>Marin County Service</h3>
+        <p>Serving San Rafael, Novato, Mill Valley, and surrounding areas.</p>
+        <a href="/marin-county-plumbing">
           View Marin Services →
         </a>
       </div>
     </div>
   </article>
 </BaseLayout>
-
-<style>
-  /* Style markdown content */
-  .prose {
-    --tw-prose-body: #000000;
-    --tw-prose-headings: #1f4a6f;
-    --tw-prose-links: #509cba;
-    --tw-prose-bold: #1f4a6f;
-    --tw-prose-bullets: #509cba;
-    --tw-prose-quotes: #1f4a6f;
-    --tw-prose-code: #1f4a6f;
-    --tw-prose-hr: #f4f7f5;
-    --tw-prose-th-borders: #509cba;
-    --tw-prose-td-borders: #f4f7f5;
-  }
-
-  .prose :global(h1) {
-    @apply text-4xl font-bold mb-8 text-primary;
-  }
-
-  .prose :global(h2) {
-    @apply text-2xl font-bold mt-8 mb-4 text-primary;
-  }
-
-  .prose :global(h3) {
-    @apply text-xl font-bold mt-6 mb-3 text-primary;
-  }
-
-  .prose :global(p) {
-    @apply mb-4;
-  }
-
-  .prose :global(ul) {
-    @apply mb-4 list-disc pl-6;
-  }
-
-  .prose :global(ol) {
-    @apply mb-4 list-decimal pl-6;
-  }
-
-  .prose :global(li) {
-    @apply mb-2;
-  }
-
-  .prose :global(a) {
-    @apply text-secondary hover:text-primary transition-colors;
-  }
-
-  .btn {
-    @apply inline-block px-6 py-3 rounded-lg font-bold transition-colors;
-  }
-
-  .btn-primary {
-    @apply bg-primary text-background hover:bg-secondary;
-  }
-
-  .btn-accent {
-    @apply bg-accent text-background hover:bg-secondary;
-  }
-
-  .btn-secondary {
-    @apply bg-secondary text-background hover:bg-primary;
-  }
-</style>

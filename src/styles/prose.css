@@ -1,0 +1,61 @@
+/* Style markdown content */
+.prose {
+    --tw-prose-body: #000000;
+    --tw-prose-headings: #1f4a6f;
+    --tw-prose-links: #509cba;
+    --tw-prose-bold: #1f4a6f;
+    --tw-prose-bullets: #509cba;
+    --tw-prose-quotes: #1f4a6f;
+    --tw-prose-code: #1f4a6f;
+    --tw-prose-hr: #f4f7f5;
+    --tw-prose-th-borders: #509cba;
+    --tw-prose-td-borders: #f4f7f5;
+  }
+
+  .prose :global(h1) {
+    @apply text-4xl font-bold mb-8 text-primary;
+  }
+
+  .prose :global(h2) {
+    @apply text-2xl font-bold mt-8 mb-4 text-primary;
+  }
+
+  .prose :global(h3) {
+    @apply text-xl font-bold mt-6 mb-3 text-primary;
+  }
+
+  .prose :global(p) {
+    @apply mb-4;
+  }
+
+  .prose :global(ul) {
+    @apply mb-4 list-disc pl-6;
+  }
+
+  .prose :global(ol) {
+    @apply mb-4 list-decimal pl-6;
+  }
+
+  .prose :global(li) {
+    @apply mb-2;
+  }
+
+  .prose :global(a) {
+    @apply text-secondary hover:text-primary transition-colors;
+  }
+
+  .btn {
+    @apply inline-block px-6 py-3 rounded-lg font-bold transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-background hover:bg-secondary;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-background hover:bg-secondary;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-background hover:bg-primary;
+  }

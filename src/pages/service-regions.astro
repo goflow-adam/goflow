@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/pages/service-regions.css';
 
 interface RegionFrontmatter {
   title: string;
@@ -27,70 +28,64 @@ const schema = {
   description="Professional plumbing services throughout Sonoma and Marin Counties. Find your local plumbing experts."
   schema={schema}
 >
-  <div class="max-w-4xl mx-auto">
-    <h1 class="text-4xl font-bold mb-8">Servicing Sonoma, Marin, and Napa counties</h1>
+  <div class="service-regions">
+    <h1>Servicing Sonoma, Marin, and Napa counties</h1>
     
     <p class="text-lg mb-12">
       If you are in Sonoma County, Marin County, or Napa county give us a call for upfront pricing on the remedy for your leak, tepid water heater, toilet clogs, or any other plumbing issue your home can throw at you.
     </p>
 
-    <div class="grid gap-8">
+    <div class="regions-container">
       {regions.map((region) => (
-        <div class="bg-background rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
+        <div>
           {region.data.heroImage && (
             <img
               src={region.data.heroImage}
               alt={`Plumbing services in ${region.data.title}`}
-              class="w-full h-48 object-cover"
             />
           )}
-          <div class="p-8">
-            <h2 class="text-2xl font-bold mb-4">
-              <a href={`/${region.slug}`} class="text-primary hover:text-secondary transition-colors">
+          <div>
+            <h2>
+              <a href={`/${region.slug}`}>
                 {region.data.title}
               </a>
             </h2>
-            <p class="text-lg mb-4">{region.data.description}</p>
-            <a 
-              href={`/${region.slug}`} 
-              class="inline-block bg-error hover:bg-error/90 text-background font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
-            >
-              View Service Area
-            </a>
+            <p>{region.data.description}</p>
+            <a href={`/${region.slug}`}>View Service Area</a>
           </div>
         </div>
       ))}
     </div>
 
-    <div class="mt-16 bg-secondary text-background rounded-lg p-8">
-      <h2 class="text-2xl font-bold mb-4">Need a Plumber in Your Area?</h2>
-      <p class="text-lg mb-6">
+    <div class="need-container">
+      <h2>Need a Plumber in Your Area?</h2>
+      <p>
         We provide fast, reliable service throughout our service regions.
         Contact us today for expert plumbing solutions.
       </p>
-      <div class="space-x-4">
-        <a href="/contact-us" class="btn btn-primary">Contact Us Now</a>
-        <a href="/emergency-plumbing-services" class="btn btn-secondary">Emergency Service</a>
+      <div>
+        <a href="/contact-us">Contact Us Now</a>
+        <a href="/emergency-plumbing-services">Emergency Service</a>
       </div>
     </div>
 
-    <div class="mt-16">
-      <h2 class="text-2xl font-bold mb-6">Why Choose GoFlow Plumbing?</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-background rounded-lg p-6 shadow-md">
-          <h3 class="text-xl font-bold mb-3">Local Expertise</h3>
+    <div class="choose-us-container">
+      <h2>Why Choose GoFlow Plumbing?</h2>
+      <div>
+        <div>
+          <h3>Local Expertise</h3>
           <p>Deep knowledge of local plumbing systems and building codes.</p>
         </div>
-        <div class="bg-background rounded-lg p-6 shadow-md">
-          <h3 class="text-xl font-bold mb-3">Fast Response</h3>
+        <div>
+          <h3>Fast Response</h3>
           <p>Quick arrival times throughout our service areas.</p>
         </div>
-        <div class="bg-background rounded-lg p-6 shadow-md">
-          <h3 class="text-xl font-bold mb-3">Community Focus</h3>
+        <div>
+          <h3>Community Focus</h3>
           <p>Proud to serve and be part of our local communities.</p>
         </div>
-        <div class="bg-background rounded-lg p-6 shadow-md">
-          <h3 class="text-xl font-bold mb-3">24/7 Availability</h3>
+        <div>
+          <h3>24/7 Availability</h3>
           <p>Emergency service available any time, day or night.</p>
         </div>
       </div>

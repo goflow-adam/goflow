@@ -1,0 +1,39 @@
+.article {
+  @apply max-w-4xl mx-auto px-4 py-8;
+}
+
+.call-to-action {
+  @apply mt-12 bg-secondary text-background rounded-lg p-8;
+}
+
+.call-to-action h2 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.call-to-action p {
+  @apply text-lg mb-6;
+}
+
+.links-container {
+  @apply flex flex-wrap gap-4;
+}
+
+.service-areas {
+  @apply mt-12 grid md:grid-cols-2 gap-6;
+}
+
+.service-areas div {
+  @apply bg-background rounded-lg p-6 shadow-md;
+}
+
+.service-areas h3 {
+  @apply text-xl font-bold mb-3;
+}
+
+.service-areas p {
+  @apply mb-4;
+}
+
+.service-areas a {
+  @apply text-primary hover:text-secondary;
+}

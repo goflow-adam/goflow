@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
 import '../styles/markdown.css';
+import '../styles/services.css';
 
 interface Props {
   service: CollectionEntry<'services'>;
@@ -16,13 +17,12 @@ const { Content } = await service.render();
   description={service.data.description}
   schema={service.data.schema}
 >
-  <article class="container mx-auto px-4 py-8 max-w-4xl">
+  <article class="article max-w-4xl">
     {service.data.heroImage && (
       <div class="mb-8">
         <img
           src={service.data.heroImage}
           alt={service.data.title}
-          class="w-full h-64 object-cover rounded-lg shadow-lg"
         />
       </div>
     )}
@@ -31,13 +31,10 @@ const { Content } = await service.render();
       <Content />
     </div>
 
-    <div class="mt-12 bg-secondary/10 rounded-lg p-8 text-center">
-      <h2 class="text-2xl font-bold text-primary mb-4">Ready to Get Started?</h2>
-      <p class="text-lg mb-6">Contact us today for professional plumbing services you can trust.</p>
-      <a 
-        href="/contact-us" 
-        class="inline-block bg-error hover:bg-error/90 text-background font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
-      >
+    <div class="call-to-action">
+      <h2>Ready to Get Started?</h2>
+      <p>Contact us today for professional plumbing services you can trust.</p>
+      <a href="/contact-us">
         Contact Us Now
       </a>
     </div>
