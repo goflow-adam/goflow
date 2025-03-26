@@ -1,26 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/pages/contact-us.css';
+import { createOrganizationSchema } from '../lib/schema';
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Contact GoFlow Plumbing",
-  "mainEntity": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "telephone": "[Your Phone]",
-    "email": "info@goflow.plumbing",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Santa Rosa",
-      "addressRegion": "CA",
-      "postalCode": "[Your Zip]",
-      "streetAddress": "[Your Address]"
-    },
-    "areaServed": ["Sonoma County", "Marin County"]
-  }
-};
+const schema = createOrganizationSchema();
 ---
 
 <BaseLayout

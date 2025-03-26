@@ -9,7 +9,8 @@ export const businessInfo = {
     "streetAddress": "10 Pine Ave",
     "addressLocality": "Sonoma",
     "addressRegion": "CA",
-    "postalCode": "95476"
+    "postalCode": "95476",
+    "addressCountry": "US"
   },
   "geo": {
     "@type": "GeoCoordinates",
@@ -45,6 +46,41 @@ export function createServiceSchema(serviceName: string, serviceType: string, se
   };
 }
 
+export function createServiceListSchema(services: { title: string; description: string; url: string }[], regions: { data: { title: string; description: string; containsPlace?: string[] } }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "provider": {
+      ...businessInfo,
+      "areaServed": regions.map(region => ({
+        "@type": "County",
+        "name": region.data.title,
+        "description": region.data.description,
+        "containsPlace": region.data.containsPlace
+      }))
+    },
+    "itemListElement": services.map((service, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": service.title,
+      "description": service.description,
+      "url": service.url
+    })),
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Plumbing Services",
+      "itemListElement": services.map(service => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": service.title,
+          "description": service.description
+        }
+      }))
+    }
+  }
+}
+
 export function createArticleSchema(article: {
   title: string;
   description: string;
@@ -72,7 +108,7 @@ export function createOrganizationSchema() {
     "@type": "Organization",
     ...rest,
     "sameAs": [
-      "https://www.facebook.com/goflowplumbing",
+      "https://www.facebook.com/profile.php?id=61574410838549",
       "https://www.yelp.com/biz/goflow-plumbing-sonoma"
     ]
   };

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { createServiceListSchema } from '../lib/schema';
 import '../styles/pages/plumbing-services.css';
 
 interface ServiceFrontmatter {
@@ -12,33 +13,13 @@ interface ServiceFrontmatter {
 const services = await getCollection('services', ({ data }) => !data.draft);
 const regions = await getCollection('regions', ({ data }) => !data.draft);
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "GoFlow Plumbing Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": regions.map(region => ({
-    "@type": "County",
-    "name": region.data.title,
-    "description": region.data.description,
-    "containsPlace": region.data.containsPlace
-  }))
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Plumbing Services",
-    "itemListElement": services.map(service => ({
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": service.data.title,
-        "description": service.data.description
-      }
-    }))
-  }
-};
+const serviceList = services.map(service => ({
+  title: service.data.title,
+  description: service.data.description,
+  url: new URL(service.slug, Astro.site).toString()
+}));
+
+const schema = createServiceListSchema(serviceList, regions);
 ---
 
 <BaseLayout
