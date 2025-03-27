@@ -36,29 +36,39 @@ export function createServiceSchema(serviceName: string, serviceType: string, se
 }
 
 export function createServiceListSchema(services: { title: string; description: string; url: string }[], regions: { data: { title: string; description: string; containsPlace?: string[] } }[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
-      ...services.map((service, index) => ({
-        "@type": "ListItem",
-        "position": index + 1,
-        "item": {
-          "@type": "Service",
-          "name": service.title,
-          "description": service.description,
-          "url": service.url,
-          "serviceProvider": { "@id": "https://goflow.plumbing/#business" },
-          "areaServed": regions.map(region => ({
-            "@type": "County",
-            "name": region.data.title,
-            "description": region.data.description,
-            "containsPlace": region.data.containsPlace
-          }))
-        }
+  const businessId = "https://goflow.plumbing/#business";
+  const { '@type': _, '@id': __, ...businessInfoWithoutTypeAndId } = businessInfo;
+  
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": businessId,
+      ...businessInfoWithoutTypeAndId
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://goflow.plumbing/plumbing-services",
+      "url": "https://goflow.plumbing/plumbing-services",
+      "name": "Professional Plumbing Services in Sonoma & Marin County",
+      "description": "Comprehensive plumbing services including water heater repair, drain cleaning, emergency services, and more.",
+      "provider": { "@id": businessId },
+      "about": services.map(service => ({
+        "@type": "Service",
+        "name": service.title,
+        "description": service.description,
+        "url": service.url,
+        "provider": { "@id": businessId },
+        "areaServed": regions.map(region => ({
+          "@type": "AdministrativeArea",
+          "name": region.data.title.replace(" Plumbing Services", ""),
+          "description": region.data.description,
+          "containsPlace": region.data.containsPlace
+        }))
       }))
-    ]
-  }
+    }
+  ];
 }
 
 export function createServiceRegionsSchema(regions: { data: { title: string; description: string; containsPlace?: string[] }, slug: string }[]) {

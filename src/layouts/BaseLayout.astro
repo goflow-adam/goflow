@@ -6,7 +6,7 @@ import '../styles/base-layout.css';
 interface Props {
   title: string;
   description: string;
-  schema?: object;
+  schema?: object | object[];
 }
 
 const { title, description, schema } = Astro.props;
@@ -28,7 +28,11 @@ const { title, description, schema } = Astro.props;
         }
       }}
     />
-    {schema && (
+    {schema && Array.isArray(schema) ? (
+      schema.map(item => (
+        <script type="application/ld+json" set:html={JSON.stringify(item)} />
+      ))
+    ) : schema && (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     )}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
