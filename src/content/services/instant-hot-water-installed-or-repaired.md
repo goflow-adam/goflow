@@ -1,5 +1,6 @@
 ---
 title: "Instant Hot Water Installation & Repair"
+linkText: "Instant Hot Water Installation & Repair Service"
 description: "Get an instant hot water dispenser installed or have yours repaired by our expert plumbers with upfront pricing."
 pubDate: 2025-03-24
 featured: true

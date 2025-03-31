@@ -48,7 +48,7 @@ const schema = [
           <div>
             <h3>{service.data.title}</h3>
             <p class="mb-4">{service.data.description}</p>
-            <a href={`/${service.slug}`}>Learn More</a>
+            <a href={`/${service.slug}`}>{`Get ${service.data.linkText}`||'Learn More'}</a>
           </div>
         ))}
       </div>

@@ -1,5 +1,6 @@
 ---
 title: "Leaking Pipe Repair Services"
+linkText: "Leaking Pipe Repair Service"
 description: "Our leak detection masters will give you peace of mind with upfront pricing when repairing your leaking pipe."
 pubDate: 2025-03-24
 featured: true

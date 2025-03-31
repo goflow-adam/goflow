@@ -1,5 +1,6 @@
 ---
 title: "Clogged Toilets & Running Toilets Tamed"
+linkText: "Clogged or Running Toilets Service"
 description: "Clogged Toilets or running toilets tamed by expert plumbers with upfront pricing and a clean result."
 pubDate: 2025-03-24
 featured: true

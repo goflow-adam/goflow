@@ -1,5 +1,6 @@
 ---
 title: "24/7 Emergency Plumbing Services"
+linkText: "Emergency Plumbing Service Now"
 description: "Emergency plumbing issue or just urgent, you need prompt help with upfront pricing. We are on our way as soon as you call."
 pubDate: 2025-03-24
 featured: true

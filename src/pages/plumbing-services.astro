@@ -46,7 +46,7 @@ const schema = createServiceListSchema(serviceList, regions);
           </h2>
           <p>{service.data.description}</p>
           <a href={`/${service.slug}`}>
-            Learn More
+            {`Get ${service.data.linkText}`||'Learn More'}
           </a>
         </div>
       ))}

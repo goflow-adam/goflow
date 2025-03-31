@@ -1,5 +1,6 @@
 ---
 title: "Faucet Leak Repair Services"
+linkText: "Faucet Repair Service"
 description: "Professional faucet repair services in Sonoma and Marin County. Any type of faucet repaired by our expert plumbers with upfront pricing."
 pubDate: 2025-03-24
 featured: true

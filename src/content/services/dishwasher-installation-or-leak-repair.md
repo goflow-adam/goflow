@@ -1,5 +1,6 @@
 ---
 title: "Dishwasher Installation & Leak Repair"
+linkText: "Dishwasher Installation & Leak Repair Service" 
 description: "Leaking dishwashers are troublesome and damaging. Let our expert plumbers repair the leak or replace your dishwasher, if you are ready, with upfront pricing."
 pubDate: 2025-03-24
 featured: true
