@@ -1,5 +1,5 @@
 ---
-title: "Choosing the Right Garbage Disposal"
+title: "Choose the Right Garbage Disposal"
 description: "Here’s what to consider when selecting a new disposal — and how GoFlow Plumbing can provide fast, affordable installation with upfront pricing you can trust."
 pubDate: 2025-03-25
 draft: false

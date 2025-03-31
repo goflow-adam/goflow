@@ -1,5 +1,5 @@
 ---
-title: "Why Does Replacing a Residential Water Heater Cost What It Costs?"
+title: "Residential Water Heater Costs Explained"
 description: "Get transparent pricing information about water heater replacement costs, including installation, removal, and potential savings."
 pubDate: 2025-03-25
 draft: false

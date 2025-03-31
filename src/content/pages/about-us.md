@@ -1,5 +1,5 @@
 ---
-title: "About GoFlow Plumbing"
+title: "GoFlow Plumbing Story and Mission"
 description: "Learn about GoFlow Plumbing's commitment to excellence in Sonoma and Marin County. Professional plumbing services backed by years of experience."
 pubDate: 2025-03-24
 draft: false

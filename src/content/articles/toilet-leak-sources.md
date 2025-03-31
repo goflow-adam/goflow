@@ -1,5 +1,5 @@
 ---
-title: "Common Toilet Leak Sources and Solutions"
+title: "Identify Toilet Leak Sources"
 description: "Discover the most common causes of toilet leaks and how GoFlow Plumbing can help fix them quickly and effectively."
 pubDate: 2025-03-25
 draft: false
@@ -9,7 +9,7 @@ readingTime: 5
 schema: {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Common Toilet Leak Sources and Solutions",
+  "headline": "Identify Toilet Leak Sources",
   "description": "Discover the most common causes of toilet leaks and how GoFlow Plumbing can help fix them quickly and effectively.",
   "author": {
     "@type": "Organization",

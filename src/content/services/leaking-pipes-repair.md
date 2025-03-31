@@ -1,12 +1,12 @@
 ---
-title: "Leaking Pipe Repair Services"
+title: "Leaking Pipe Repair Services for your home"
 linkText: "Leaking Pipe Repair Service"
 description: "Our leak detection masters will give you peace of mind with upfront pricing when repairing your leaking pipe."
 pubDate: 2025-03-24
 featured: true
 ---
 
-# Leaking Pipe Repair Services
+# Get your Leaking Pipe Repaired
 
 Hidden leaks? Not on our watch! At GoFlow Plumbing, we use state-of-the-art camera technology to track down sneaky leaks without tearing up your walls or floors. Our non-invasive approach means no unnecessary mess—just pinpoint accuracy and fast, clean repairs that stop water damage in its tracks. Whether it’s a tiny trickle or a major mystery, we’ll find it, fix it, and have your pipes flowing smoothly in no time. Because at GoFlow, we don’t just patch leaks—we solve them.
 

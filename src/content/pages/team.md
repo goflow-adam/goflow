@@ -1,5 +1,5 @@
 ---
-title: "Meet the GoFlow Plumbing Team"
+title: "Our GoFlow Plumbing Team"
 description: "Learn about our founders and the rest of the team here to quickly and cleanly alleviate your residential plumbing issues."
 pubDate: 2025-03-24
 schema: {

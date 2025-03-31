@@ -1,5 +1,5 @@
 ---
-title: "Novato Water Heater Disposal Prices 2025"
+title: "Novato Water Heater Disposal Prices Updated for 2025"
 description: "Our no-hassle water heater replacement services in Novato include disposal or recycling of your existing leaking or broken water heater."
 pubDate: 2025-03-25
 draft: false
@@ -20,7 +20,7 @@ schema: {
 }
 ---
 
-# Novato Water Heater Disposal Prices 2025
+# 2025 Novato Water Heater Disposal Prices
 
 Novato water heater disposal prices have been updated for 2025. When faced with the disposal of a water heater in the Novato or greater area, you have the options of self-disposal or allowing us to remove it for you. The Recology Sonoma Marin cost for disposing of a water heater depends on its size:
 * 32-Gallon Water Heater: $36.22 each

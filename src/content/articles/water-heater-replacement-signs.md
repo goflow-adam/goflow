@@ -1,5 +1,5 @@
 ---
-title: "Signs It’s Time to Replace Your Water Heater"
+title: "Check if your water heater needs to be replaced"
 description: "Experiencing any of these issues with your water heater, GoFlow Plumbing offers expert water heater repair and water heater replacement services to keep your home comfortable and safe."
 pubDate: 2025-03-25
 draft: false

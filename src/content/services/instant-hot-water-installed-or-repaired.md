@@ -1,12 +1,12 @@
 ---
-title: "Instant Hot Water Installation & Repair"
+title: "Instant Hot Water Installation & Repair for your home"
 linkText: "Instant Hot Water Installation & Repair Service"
 description: "Get an instant hot water dispenser installed or have yours repaired by our expert plumbers with upfront pricing."
 pubDate: 2025-03-24
 featured: true
 ---
 
-# Instant Hot Water Solutions
+# Get your Instant Hot Water Installed or Repaired
 
 Tired of waiting for hot water at your sink? With an instant water heater, you get endless hot water on demand—and at GoFlow Plumbing, we make installation and repairs a breeze. Whether you’re upgrading to a tankless system or need an undersink InstantHot, our expert team handles it all quickly, cleanly, and efficiently. No more waiting for hot water—just fast, reliable hot water whenever you need it. Go with the Flow, and never wait for hot water again!
 

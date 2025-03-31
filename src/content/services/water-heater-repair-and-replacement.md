@@ -1,12 +1,12 @@
 ---
-title: "Water Heater Repair and Replacement Services"
+title: "Water Heater Repair and Replacement Services for your home"
 linkText: "Water Heater Repair and Replacement Service"
 description: "GoFlow Plumbing offers expert water heater repair and water heater replacement services to keep your home comfortable and safe."
 pubDate: 2025-03-24
 featured: true
 ---
 
-# Water Heater Repair and Replacement Services
+# Get Water Heater Repair and Replacement Services
 
 Don't let the pre-sticker-shock of seeing your water heater leaking frighten you. We will take care of your leak with repair or with a [water heater replacement](/articles/water-heater-replacement-signs) quickly and cost effectively.
 

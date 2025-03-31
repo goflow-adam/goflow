@@ -1,5 +1,5 @@
 ---
-title: "Frequently Asked Questions"
+title: "Frequently Asked Questions about Plumbing Repair"
 description: "Find answers to common plumbing questions. Learn about our services, pricing, and policies at GoFlow Plumbing."
 pubDate: 2025-03-24
 draft: false
@@ -35,7 +35,7 @@ schema: {
 }
 ---
 
-# Frequently Asked Questions
+# Our Frequently Answered Questions about Plumbing Repair and Installation
 
 ## General Questions
 
