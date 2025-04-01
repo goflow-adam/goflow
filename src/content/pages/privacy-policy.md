@@ -5,8 +5,16 @@ pubDate: 2025-03-24
 schema: {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Privacy Policy",
-  "description": "GoFlow Plumbing's privacy policy explains how we collect, use, and protect your personal information."
+  "name": "Privacy Policy - GoFlow Plumbing",
+  "description": "Privacy policy and data protection information for GoFlow Plumbing website visitors and customers.",
+  "url": "https://goflow.plumbing/privacy-policy",
+  "lastReviewed": "2025-03-24",
+  "mainEntity": {
+    "@type": ["Organization", "Plumber"],
+    "name": "GoFlow Plumbing",
+    "url": "https://goflow.plumbing",
+    "email": "adam@goflow.plumbing"
+  }
 }
 ---
 

@@ -10,11 +10,104 @@ interface Props {
 }
 
 const { page } = Astro.props;
-const { title, description, schema } = page.data;
+const { title, description, schema, microdata, teamMembers, companyValues, certifications } = page.data;
 ---
 
 <BaseLayout title={title} description={description} schema={schema}>
-  <article class="article">
+  <article 
+    class="article"
+    itemscope
+    itemtype={microdata?.type ? `https://schema.org/${microdata.type}` : undefined}
+  >
+    {microdata?.properties && Object.entries(microdata.properties).map(([key, value]) => (
+      <meta itemprop={key} content={value} />
+    ))}
+
+    {teamMembers && (
+      <div class="team-section" itemscope itemtype="https://schema.org/Organization">
+        {teamMembers.map(member => (
+          <div class="team-member" itemscope itemtype="https://schema.org/Person" id={member.url?.split('#')[1]}>
+            <meta itemprop="name" content={member.name} />
+            {member.givenName && <meta itemprop="givenName" content={member.givenName} />}
+            {member.familyName && <meta itemprop="familyName" content={member.familyName} />}
+            <meta itemprop="jobTitle" content={member.jobTitle} />
+            <meta itemprop="description" content={member.description} />
+            {member.telephone && <meta itemprop="telephone" content={member.telephone} />}
+            {member.email && <meta itemprop="email" content={member.email} />}
+            {member.url && <meta itemprop="url" content={member.url} />}
+            
+            {member.address && (
+              <div itemscope itemtype="https://schema.org/PostalAddress">
+                <meta itemprop="streetAddress" content={member.address.streetAddress} />
+                <meta itemprop="addressLocality" content={member.address.addressLocality} />
+                <meta itemprop="addressRegion" content={member.address.addressRegion} />
+                <meta itemprop="postalCode" content={member.address.postalCode} />
+                <meta itemprop="addressCountry" content={member.address.addressCountry} />
+              </div>
+            )}
+
+            {member.alumniOf?.map(education => (
+              <div itemscope itemtype="https://schema.org/EducationalOrganization">
+                <meta itemprop="name" content={education.name} />
+                {education.degree && <meta itemprop="degree" content={education.degree} />}
+                {education.startDate && <meta itemprop="startDate" content={education.startDate} />}
+                {education.endDate && <meta itemprop="endDate" content={education.endDate} />}
+              </div>
+            ))}
+
+            {member.hasCredential?.map(credential => (
+              <div itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+                <meta itemprop="name" content={credential.name} />
+                <meta itemprop="credentialCategory" content="professional" />
+                <meta itemprop="recognizedBy" content={credential.issuer} />
+                {credential.dateIssued && <meta itemprop="dateCreated" content={credential.dateIssued.toISOString()} />}
+              </div>
+            ))}
+
+            {member.award?.map(award => (
+              <meta itemprop="award" content={award} />
+            ))}
+
+            {member.socialProfiles?.map(profile => (
+              <link itemprop="sameAs" href={profile.url} />
+            ))}
+          </div>
+        ))}
+      </div>
+    )}
+
+    {companyValues && (
+      <div class="values-section">
+        {companyValues.map(value => (
+          <div itemscope itemtype="https://schema.org/Thing">
+            <meta itemprop="name" content={value.name} />
+            <meta itemprop="description" content={value.description} />
+            {value.items && (
+              <div itemscope itemtype="https://schema.org/ItemList">
+                {value.items.map((item, index) => (
+                  <meta itemprop="itemListElement" content={item} />
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    )}
+
+    {certifications && (
+      <div class="certifications-section">
+        {certifications.map(cert => (
+          <div itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+            <meta itemprop="name" content={cert.name} />
+            <meta itemprop="credentialCategory" content="professional" />
+            <meta itemprop="recognizedBy" content={cert.issuer} />
+            {cert.dateIssued && <meta itemprop="dateCreated" content={cert.dateIssued.toISOString()} />}
+            {cert.validUntil && <meta itemprop="validUntil" content={cert.validUntil.toISOString()} />}
+          </div>
+        ))}
+      </div>
+    )}
+
     <div class="markdown-content">
       <slot />
     </div>

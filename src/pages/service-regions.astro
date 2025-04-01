@@ -18,43 +18,65 @@ const schema = createServiceRegionsSchema(regions);
   description="Professional plumbing services throughout Sonoma and Marin Counties. Find your local plumbing experts."
   schema={schema}
 >
-  <div class="service-regions">
+  <div class="service-regions" itemscope itemtype="https://schema.org/HomeAndConstructionBusiness">
+    <meta itemprop="name" content="GoFlow Plumbing" />
+    <meta itemprop="description" content="Professional plumbing services in Sonoma and Marin County" />
+    <meta itemprop="telephone" content="916-719-1897" />
+    <link itemprop="url" href="https://goflow.plumbing" />
+    <meta itemprop="priceRange" content="$$" />
+    <meta itemprop="@type" content="Plumber" />
+    
+    <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+      <meta itemprop="streetAddress" content="10 Pine Ave" />
+      <meta itemprop="addressLocality" content="Sonoma" />
+      <meta itemprop="addressRegion" content="CA" />
+      <meta itemprop="postalCode" content="95476" />
+      <meta itemprop="addressCountry" content="US" />
+    </div>
+
     <h1>Servicing Sonoma, Marin, and Napa counties</h1>
     
     <p class="text-lg mb-12">
       If you are in Sonoma County, Marin County, or Napa county give us a call for upfront pricing on the remedy for your leak, tepid water heater, toilet clogs, or any other plumbing issue your home can throw at you.
     </p>
 
-    <div class="regions-container">
+    <div class="regions-container" itemprop="areaServed" itemscope itemtype="https://schema.org/State">
+      <meta itemprop="name" content="California" />
       {regions.map((region) => (
-        <div>
-          {/* {region.data.heroImage && (
-            <img
-              src={region.data.heroImage}
-              alt={`Plumbing services in ${region.data.title}`}
-            />
-          )} */}
+        <div itemprop="containsPlace" itemscope itemtype="https://schema.org/AdministrativeArea">
+          <meta itemprop="@type" content="County" />
           <div>
             <h2>
-              <a href={`/${region.slug}`}>
-                {region.data.title}
+              <a href={`/${region.slug}`} itemprop="url">
+                <span itemprop="name">{region.data.title}</span>
               </a>
             </h2>
-            <p>{region.data.description}</p>
+            <p itemprop="description">{region.data.description}</p>
             <a href={`/${region.slug}`}>View Service Area</a>
+          </div>
+          <div itemprop="serviceArea" itemscope itemtype="https://schema.org/Service">
+            <meta itemprop="serviceType" content="Plumbing" />
+            <meta itemprop="provider" content="GoFlow Plumbing" />
+            <meta itemprop="areaServed" content={region.data.title} />
           </div>
         </div>
       ))}
     </div>
 
-    <div class="need-container">
+    <div class="need-container" itemscope itemtype="https://schema.org/Action">
+      <meta itemprop="name" content="Contact GoFlow Plumbing" />
+      <meta itemprop="description" content="Schedule plumbing service" />
       <h2>Need a Plumber in Your Area?</h2>
       <p>
         We provide fast, reliable service throughout our service regions.
         Contact us today for expert plumbing solutions.
       </p>
       <div>
-        <a href="/contact-us">Contact Us Now</a>
+        <a href="/contact-us" itemprop="target" itemscope itemtype="https://schema.org/EntryPoint">
+          <meta itemprop="urlTemplate" content="https://goflow.plumbing/contact-us" />
+          <meta itemprop="actionPlatform" content="http://schema.org/Website" />
+          Contact Us Now
+        </a>
         <a href="/emergency-plumbing-services">Emergency Service</a>
       </div>
     </div>

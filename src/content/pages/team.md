@@ -2,6 +2,85 @@
 title: "Our GoFlow Plumbing Team"
 description: "Learn about our founders and the rest of the team here to quickly and cleanly alleviate your residential plumbing issues."
 pubDate: 2025-03-24
+teamMembers:
+  - name: "Adam Bragg"
+    givenName: "Adam"
+    familyName: "Bragg"
+    jobTitle: "Founder & CEO"
+    description: "Third generation plumbing entrepreneur, his grandfather started Bragg Plumbing in San Francisco. His son later expanded their services to the north bay. And now, Adam, will continue the tradition of improving the quality of results customers can come to expect.​​"
+    telephone: "+19167191897"
+    email: "adam@goflow.plumbing"
+    url: "https://goflow.plumbing/team#adam-bragg"
+    # address:
+    #   streetAddress: "1234 Plumbing Way"
+    #   addressLocality: "Santa Rosa"
+    #   addressRegion: "CA"
+    #   postalCode: "95401"
+    #   addressCountry: "US"
+    # alumniOf:
+    #   - name: "California State University"
+    #     degree: "Business Administration"
+    #     endDate: "2015"
+    # hasCredential:
+    #   - name: "Master Plumber License"
+    #     issuer: "California State License Board"
+    #     dateIssued: 2020-01-01
+    #   - name: "Contractor's License"
+    #     issuer: "California State License Board"
+    #     dateIssued: 2020-01-01
+    # socialProfiles:
+    #   - type: "LinkedIn"
+    #     url: "https://linkedin.com/in/adam-bragg"
+  - name: "Jarrod Stuckenbroker"
+    givenName: "Jarrod"
+    familyName: "Stuckenbroker"
+    jobTitle: "Founder & COO"
+    description: "For the last 30 years, Jarrod has seen, experienced, and been part of the ins and outs of every level of plumbing in the bay area."
+    email: "jarrod@goflow.plumbing"
+    url: "https://goflow.plumbing/team#jarrod-stuckenbroker"
+    # hasCredential:
+    #   - name: "Master Plumber License"
+    #     issuer: "California State License Board"
+    #     dateIssued: 1995-01-01
+    # award: [
+    #   "Bay Area Best Plumber 2020",
+    #   "Excellence in Service 2021"
+    # ]
+companyValues:
+  - name: "Excellence"
+    description: "We strive for excellence in everything we do"
+    items:
+      - "Continuous training"
+      - "Latest techniques"
+      - "Quality tools"
+      - "Best practices"
+      - "Innovation focus"
+      - "Safety first"
+  - name: "Customer Service"
+    description: "We put our customers first"
+    items:
+      - "Clear communication"
+      - "Timely response"
+      - "Professional appearance"
+      - "Respectful conduct"
+      - "Solution-oriented"
+      - "Follow-up care"
+# certifications:
+#   - name: "General Plumbing"
+#     issuer: "California State License Board"
+#     dateIssued: 2024-01-01
+#   - name: "Water Heaters"
+#     issuer: "Industry Certification Board"
+#   - name: "Gas Fitting"
+#     issuer: "Safety Standards Association"
+#   - name: "Backflow Prevention"
+#     issuer: "Water Quality Board"
+microdata:
+  type: "Organization"
+  properties:
+    name: "GoFlow Plumbing"
+    description: "Professional plumbing services in Sonoma and Marin Counties"
+    foundingDate: "2024-01-01"
 schema: {
   "@context": "https://schema.org",
   "@type": "AboutPage",
@@ -18,7 +97,7 @@ schema: {
       {
         "@type": "Person",
         "name": "Jarrod Stuckenbroker",
-        "jobTitle": "COO",
+        "jobTitle": "Founder & COO",
         "description": "For the last 30 years, Jarrod has seen, experienced, and been part of the ins and outs of every level of plumbing in the bay area."
       }
     ]

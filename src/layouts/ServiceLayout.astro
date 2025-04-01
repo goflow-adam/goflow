@@ -24,24 +24,68 @@ const schema = createServiceSchema(
   description={service.data.description}
   schema={schema}
 >
-  <article class="article max-w-4xl">
+  <article itemscope itemtype="https://schema.org/HomeAndConstructionBusiness" class="article max-w-4xl">
+    <meta itemprop="name" content={service.data.title} />
+    <meta itemprop="serviceType" content="Plumbing Services" />
+    <meta itemprop="@type" content="Plumber" />
+    <meta itemprop="description" content={service.data.description} />
+    <link itemprop="url" href={`https://goflow.plumbing/${service.slug}`} />
+    
+    <div itemprop="provider" itemscope itemtype="https://schema.org/LocalBusiness">
+      <meta itemprop="name" content="GoFlow Plumbing" />
+      <meta itemprop="telephone" content="+19167191897" />
+      <meta itemprop="email" content="info@goflow.plumbing" />
+      <link itemprop="url" href="https://goflow.plumbing" />
+      <meta itemprop="priceRange" content="$$" />
+      
+      <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <meta itemprop="addressLocality" content="Santa Rosa" />
+        <meta itemprop="addressRegion" content="CA" />
+        <meta itemprop="postalCode" content="95401" />
+        <meta itemprop="addressCountry" content="US" />
+      </div>
+    </div>
+
+    <div itemprop="areaServed" itemscope itemtype="https://schema.org/State">
+      <meta itemprop="name" content="California" />
+      <div itemprop="containsPlace" itemscope itemtype="https://schema.org/AdministrativeArea">
+        <meta itemprop="name" content="Sonoma County" />
+      </div>
+      <div itemprop="containsPlace" itemscope itemtype="https://schema.org/AdministrativeArea">
+        <meta itemprop="name" content="Marin County" />
+      </div>
+    </div>
+
+    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+      <meta itemprop="availability" content="https://schema.org/InStock" />
+      <meta itemprop="priceCurrency" content="USD" />
+      <link itemprop="businessFunction" href="http://purl.org/goodrelations/v1#ProvideService" />
+    </div>
+    
     {service.data.heroImage && (
       <div class="mb-8">
         <img
+          itemprop="image"
           src={service.data.heroImage}
           alt={service.data.title}
         />
       </div>
     )}
     
-    <div class="markdown-content">
+    <div class="markdown-content" itemprop="description">
+      <h1 itemprop="name">{service.data.title}</h1>
       <Content />
     </div>
 
     <div class="call-to-action">
       <h2>Ready to Get Started?</h2>
       <p>Contact us today for professional plumbing services you can trust.</p>
-      <a href="/contact-us">
+      <div itemscope itemtype="https://schema.org/Action">
+        <meta itemprop="name" content="Contact GoFlow Plumbing" />
+        <meta itemprop="description" content="Schedule plumbing service" />
+        <a href="/contact-us" itemprop="target" itemscope itemtype="https://schema.org/EntryPoint">
+          <meta itemprop="urlTemplate" content="https://goflow.plumbing/contact-us" />
+          <meta itemprop="actionPlatform" content="http://schema.org/Website" />
         Contact Us Now
       </a>
     </div>

@@ -6,12 +6,52 @@ draft: false
 schema: {
   "@context": "https://schema.org",
   "@type": "AboutPage",
+  "name": "GoFlow Plumbing Story and Mission",
+  "description": "Learn about GoFlow Plumbing's commitment to excellence in Sonoma and Marin County. Professional plumbing services backed by years of experience.",
   "mainEntity": {
-    "@type": "Organization",
+    "@type": ["Organization", "Plumber"],
     "name": "GoFlow Plumbing",
     "description": "Professional plumbing services in Sonoma and Marin County",
-    "areaServed": ["Sonoma County", "Marin County"],
-    "foundingDate": "2010"
+    "foundingDate": "2010",
+    "email": "adam@goflow.plumbing",
+    "telephone": "916-719-1897",
+    "url": "https://goflow.plumbing",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Pine Ave",
+      "addressLocality": "Sonoma",
+      "addressRegion": "CA",
+      "postalCode": "95476",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "containsPlace": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Sonoma County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Marin County"
+        }
+      ]
+    },
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Adam Bragg",
+        "jobTitle": "Founder & CEO",
+        "url": "https://goflow.plumbing/team#adam-bragg"
+      },
+      {
+        "@type": "Person",
+        "name": "Jarrod Stuckenbroker",
+        "jobTitle": "Founder & COO",
+        "url": "https://goflow.plumbing/team#jarrod-stuckenbroker"
+      }
+    ]
   }
 }
 ---

@@ -103,6 +103,9 @@ export function createArticleSchema(article: {
   description: string;
   pubDate: Date;
   url: string;
+  heroImage?: string;
+  wordCount?: number;
+  keywords?: string[];
 }) {
   return {
     "@context": "https://schema.org",
@@ -111,10 +114,31 @@ export function createArticleSchema(article: {
     "description": article.description,
     "datePublished": article.pubDate.toISOString(),
     "dateModified": article.pubDate.toISOString(),
-    "author": businessInfo,
-    "publisher": businessInfo,
-    "mainEntityOfPage": article.url,
-    "image": "https://goflow.plumbing/GoFlow2.jpg"
+    "author": {
+      "@type": "Organization",
+      "@id": "https://goflow.plumbing/#organization",
+      "name": businessInfo.name,
+      "telephone": businessInfo.telephone,
+      "url": "https://goflow.plumbing"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://goflow.plumbing/#organization",
+      "name": businessInfo.name,
+      "telephone": businessInfo.telephone,
+      "url": "https://goflow.plumbing"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": article.url
+    },
+    "image": article.heroImage || "https://goflow.plumbing/GoFlow2.jpg",
+    "inLanguage": "en-US",
+    "isAccessibleForFree": true,
+    "keywords": article.keywords || [],
+    "wordCount": article.wordCount,
+    "articleSection": "Plumbing",
+    "genre": "Professional Services"
   };
 }
 

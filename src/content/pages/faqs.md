@@ -6,6 +6,27 @@ draft: false
 schema: {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "name": "GoFlow Plumbing FAQs",
+  "description": "Find answers to common plumbing questions. Learn about our services, pricing, and policies at GoFlow Plumbing.",
+  "provider": {
+    "@type": ["Organization", "Plumber"],
+    "name": "GoFlow Plumbing",
+    "url": "https://goflow.plumbing",
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "containsPlace": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Sonoma County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Marin County"
+        }
+      ]
+    }
+  },
   "mainEntity": [
     {
       "@type": "Question",

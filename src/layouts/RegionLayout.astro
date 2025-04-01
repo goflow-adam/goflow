@@ -26,24 +26,43 @@ const schema = createRegionSchema({
   description={region.data.description}
   schema={schema}
 >
-  <article class="article max-w-4xl">
-    <!-- {region.data.heroImage && (
+  <article itemscope itemtype="https://schema.org/Service" class="article max-w-4xl">
+    <meta itemprop="serviceType" content="Plumbing Services" />
+    <meta itemprop="areaServed" itemscope itemtype="https://schema.org/AdministrativeArea" content={region.data.region} />
+    <meta itemprop="provider" itemscope itemtype="https://schema.org/LocalBusiness" content="GoFlow Plumbing" />
+    
+    {region.data.heroImage && (
       <div class="mb-8">
         <img
+          itemprop="image"
           src={region.data.heroImage}
           alt={region.data.title}
         />
       </div>
-    )} -->
+    )}
     
-    <div class="markdown-content">
+    <div class="markdown-content" itemprop="description">
+      <h1 itemprop="name">{region.data.title}</h1>
       <Content />
     </div>
 
-    <div class="call-to-action">
+    <div itemscope itemtype="https://schema.org/Place" class="service-area">
+      <h2>Service Area in {region.data.region}</h2>
+      {region.data.containsPlace && (
+        <ul>
+          {region.data.containsPlace.map(place => (
+            <li itemprop="containsPlace" itemscope itemtype="https://schema.org/City">
+              <span itemprop="name">{place}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+
+    <div class="call-to-action" itemscope itemtype="https://schema.org/Action">
       <h2>Need Plumbing Service in {region.data.region}?</h2>
       <p>Our local experts are ready to help with all your plumbing needs.</p>
-      <a href="/contact-us">
+      <a href="/contact-us" itemprop="target">
         Schedule Service
       </a>
     </div>

@@ -27,7 +27,32 @@ const schema = createServiceListSchema(serviceList, regions);
   description="Comprehensive plumbing services including water heater repair, drain cleaning, emergency services, and more. Serving Sonoma and Marin County."
   schema={schema}
 >
-  <div class="plumbing-services">
+  <div class="plumbing-services" itemscope itemtype="https://schema.org/HomeAndConstructionBusiness">
+    <meta itemprop="name" content="GoFlow Plumbing" />
+    <meta itemprop="description" content="Professional plumbing services in Sonoma and Marin County" />
+    <meta itemprop="telephone" content="916-719-1897" />
+    <link itemprop="url" href="https://goflow.plumbing" />
+    <meta itemprop="priceRange" content="$$" />
+    <meta itemprop="@type" content="Plumber" />
+    
+    <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+      <meta itemprop="streetAddress" content="10 Pine Ave" />
+      <meta itemprop="addressLocality" content="Sonoma" />
+      <meta itemprop="addressRegion" content="CA" />
+      <meta itemprop="postalCode" content="95476" />
+      <meta itemprop="addressCountry" content="US" />
+    </div>
+
+    <div itemprop="areaServed" itemscope itemtype="https://schema.org/State">
+      <meta itemprop="name" content="California" />
+      <div itemprop="containsPlace" itemscope itemtype="https://schema.org/AdministrativeArea">
+        <meta itemprop="name" content="Sonoma County" />
+      </div>
+      <div itemprop="containsPlace" itemscope itemtype="https://schema.org/AdministrativeArea">
+        <meta itemprop="name" content="Marin County" />
+      </div>
+    </div>
+
     <h1>Our Plumbing Services</h1>
     
     <p>
@@ -36,15 +61,17 @@ const schema = createServiceListSchema(serviceList, regions);
       of licensed plumbers is available 24/7 for all your plumbing needs.
     </p>
 
-    <div class="services-list">
-      {services.map((service) => (
-        <div>
+    <div class="services-list" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+      {services.map((service, index) => (
+        <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
+          <meta itemprop="serviceType" content="Plumbing" />
+          <meta itemprop="provider" content="GoFlow Plumbing" />
           <h2>
-            <a href={`/${service.slug}`}>
-              {service.data.title}
+            <a href={`/${service.slug}`} itemprop="url">
+              <span itemprop="name">{service.data.title}</span>
             </a>
           </h2>
-          <p>{service.data.description}</p>
+          <p itemprop="description">{service.data.description}</p>
           <a href={`/${service.slug}`}>
             {`Get ${service.data.linkText}`||'Learn More'}
           </a>

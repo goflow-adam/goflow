@@ -16,7 +16,11 @@ const schema = createArticleSchema({
   title: article.data.title,
   description: article.data.description,
   pubDate: new Date(article.data.pubDate),
-  url: `https://goflow.plumbing/articles/${article.slug}`
+  url: `https://goflow.plumbing/articles/${article.slug}`,
+  heroImage: article.data.heroImage,
+  keywords: article.data.tags || [],
+  // Approximate word count from content length
+  wordCount: Math.round((article.body.length / 5))
 });
 ---
 
@@ -25,17 +29,40 @@ const schema = createArticleSchema({
   description={article.data.description}
   schema={schema}
 >
-  <article class="article max-w-4xl">
+  <article class="article max-w-4xl" itemscope itemtype="https://schema.org/Article">
+    <meta itemprop="headline" content={article.data.title} />
+    <meta itemprop="description" content={article.data.description} />
+    <meta itemprop="datePublished" content={new Date(article.data.pubDate).toISOString()} />
+    <meta itemprop="dateModified" content={new Date(article.data.pubDate).toISOString()} />
+    <meta itemprop="inLanguage" content="en-US" />
+    <meta itemprop="articleSection" content="Plumbing" />
+    {article.data.tags?.map(tag => (
+      <meta itemprop="keywords" content={tag} />
+    ))}
+    <link itemprop="mainEntityOfPage" href={`https://goflow.plumbing/articles/${article.slug}`} />
+    <div itemprop="author publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="GoFlow Plumbing" />
+      <meta itemprop="telephone" content="916-719-1897" />
+      <link itemprop="url" href="https://goflow.plumbing" />
+      <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <meta itemprop="streetAddress" content="10 Pine Ave" />
+        <meta itemprop="addressLocality" content="Sonoma" />
+        <meta itemprop="addressRegion" content="CA" />
+        <meta itemprop="postalCode" content="95476" />
+        <meta itemprop="addressCountry" content="US" />
+      </div>
+    </div>
     {article.data.heroImage && (
-      <div class="mb-8">
+      <div class="mb-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <img
           src={article.data.heroImage}
           alt={article.data.title}
+          itemprop="url contentUrl"
         />
       </div>
     )}
     
-    <div class="prose-container markdown-content">
+    <div class="prose-container markdown-content" itemprop="articleBody">
       <Content />
     </div>
 
