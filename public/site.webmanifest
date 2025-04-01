@@ -1,0 +1,48 @@
+{
+  "name": "GoFlow Plumbing",
+  "short_name": "GoFlow",
+  "description": "Professional plumbing services in Sonoma and Marin County",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1E40AF",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["business", "utilities", "home services"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Our Services",
+      "url": "/plumbing-services",
+      "description": "View all plumbing services we offer"
+    },
+    {
+      "name": "Service Areas",
+      "url": "/service-regions",
+      "description": "Check if we service your area"
+    },
+    {
+      "name": "Contact Us",
+      "url": "/contact-us",
+      "description": "Contact GoFlow Plumbing"
+    },
+    {
+      "name": "Emergency Service",
+      "url": "/emergency-plumbing-services",
+      "description": "24/7 Emergency Plumbing Services"
+    }
+  ]
+}
