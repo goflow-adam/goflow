@@ -22,27 +22,69 @@
   "scope": "/",
   "lang": "en-US",
   "categories": ["business", "utilities", "home services"],
-  "screenshots": [],
+  "screenshots": [
+  {
+    "src": "/screenshots/wide.png",
+    "sizes": "930x430",
+    "type": "image/png",
+    "form_factor": "wide",
+    "label": "Home screen showing main navigation and featured content"
+  },
+  {
+    "src": "/screenshots/tall.png",
+    "sizes": "428x936",
+    "type": "image/png",
+    "label": "Home screen showing main navigation and featured content"
+  }
+],
   "shortcuts": [
     {
       "name": "Our Services",
       "url": "/plumbing-services",
-      "description": "View all plumbing services we offer"
+      "description": "View all plumbing services we offer",
+      "icons": [
+        {
+          "src": "/favicon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Service Areas",
       "url": "/service-regions",
-      "description": "Check if we service your area"
+      "description": "Check if we service your area",
+      "icons": [
+        {
+          "src": "/favicon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Contact Us",
       "url": "/contact-us",
-      "description": "Contact GoFlow Plumbing"
+      "description": "Contact GoFlow Plumbing",
+      "icons": [
+        {
+          "src": "/favicon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Emergency Service",
       "url": "/emergency-plumbing-services",
-      "description": "24/7 Emergency Plumbing Services"
+      "description": "24/7 Emergency Plumbing Services",
+      "icons": [
+        {
+          "src": "/favicon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }
