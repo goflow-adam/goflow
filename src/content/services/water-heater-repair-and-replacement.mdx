@@ -1,0 +1,112 @@
+---
+title: "Water Heater Repair and Replacement Services for your home"
+linkText: "Water Heater Repair and Replacement Service"
+menuText: "Water Heater Repair"
+description: "GoFlow Plumbing offers expert water heater repair and water heater replacement services to keep your home comfortable and safe."
+pubDate: 2025-03-24
+featured: true
+waterHeaterServices:
+  - Emergency repairs
+  - Regular maintenance
+  - New water heater installation
+  - Tank and tankless options
+  - Energy-efficient upgrades
+  - Code compliance updates
+whyChoose:
+  - Available 24/7 for emergencies
+  - Upfront, honest pricing
+  - Experienced, licensed plumbers
+  - Guaranteed workmanship
+  - Clean, professional service
+schema: {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Water Heater Repair and Replacement Services",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "GoFlow Plumbing",
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "California"
+      },
+      {
+        "@type": "County",
+        "name": "Marin County"
+      },
+      {
+        "@type": "County",
+        "name": "Sonoma County"
+      },
+      {
+        "@type": "County",
+        "name": "Napa County"
+      }
+    ]
+  },
+  "serviceType": "Plumbing",
+  "description": "Expert water heater repair and replacement services for residential and commercial customers, including emergency repairs, maintenance, and new installations."
+}
+---
+
+<article itemScope itemType="https://schema.org/Service">
+<h1 itemProp="name">Get Water Heater Repair and Replacement Services</h1>
+
+<div itemProp="description">
+  <p>
+    Don't let the pre-sticker-shock of seeing your water heater leaking frighten you. We will take care of your leak with repair or with a [water heater replacement](/articles/water-heater-replacement-signs) quickly and cost effectively.
+  </p>
+
+  <p>
+    ​The experience our technicians have results in no-mess, no-worry rapid repair getting you back to your life with plenty of hot water, maybe even more.
+  </p>
+
+  <p>
+    ​We service all of Marin, Sonoma, and Napa counties. Please call for up front [water heater replacement pricing](/articles/water-heater-replacement-cost-reasons) and allow us to return your home back to its dry warm self. We love turning shock into smiles.
+  </p>
+</div>
+
+<section itemScope itemType="https://schema.org/OfferCatalog">
+  <h2 itemProp="name">Our Water Heater Services Include:</h2>
+
+  <ul itemProp="itemListElement" itemScope itemType="https://schema.org/OfferCatalog">
+    {frontmatter.waterHeaterServices.map(service => (
+      <li itemScope itemType="https://schema.org/Offer">
+        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemProp="name">{service}</span>
+        </span>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section itemScope itemType="https://schema.org/LocalBusiness">
+  <h2>Why Choose GoFlow Plumbing?</h2>
+
+  <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    {frontmatter.whyChoose.map(service => (
+      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemProp="name">{service}</span>
+        </span>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section itemProp="areaServed" itemScope itemType="https://schema.org/Place">
+  <h2>Service Areas</h2>
+
+  <p itemProp="description">
+    We proudly serve both Sonoma and Marin Counties, providing prompt and reliable water heater services to residential and commercial customers.
+  </p>
+</section>
+
+<section itemScope itemType="https://schema.org/ContactPoint">
+  <h2>Contact Us</h2>
+
+  <p itemProp="description">
+    Need water heater repair or replacement? Contact us today for a free consultation and estimate.
+  </p>
+</section>
+</article>

@@ -1,0 +1,124 @@
+---
+title: "Clogged Drains Cleared by GoFlow Plumbing"
+linkText: "Clogged Drains Service"
+menuText: "Clogged Drains"
+description: "Our expert drain technicians will arrive promptly to clear that drain clean."
+pubDate: 2025-03-24
+featured: true
+drainSolutions:
+  - "Kitchen sink drains"
+  - "Bathroom sink drains"
+  - "Shower and tub drains"
+  - "Floor drains"
+  - "Main sewer line cleaning"
+  - "Root removal services"
+advancedTechnology:
+  - "High-definition video inspection cameras"
+  - "Hydro-jetting equipment"
+  - "Professional-grade snake machines"
+  - "Root cutting equipment"
+drainCleaningSigns:
+  - "Slow draining sinks or tubs"
+  - "Gurgling sounds from drains"
+  - "Bad odors from drains"
+  - "Multiple clogged drains"
+  - "Backed up toilets"
+  - "Water backing up in sinks or tubs"
+schema: {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Professional Drain Cleaning Services",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "GoFlow Plumbing",
+    "areaServed": [
+      {
+        "@type": "County",
+        "name": "Marin County"
+      },
+      {
+        "@type": "County",
+        "name": "Sonoma County"
+      }
+    ]
+  },
+  "serviceType": "Plumbing",
+  "description": "Professional drain cleaning and unclogging services using state-of-the-art equipment including video inspection cameras, hydro-jetting, and root cutting equipment."
+}
+---
+
+<article itemScope itemType="https://schema.org/Service">
+<h1 itemProp="name">Get Your Clogged Drain Draining</h1>
+
+<div itemProp="description">
+  <p>
+    Maybe a crazed squirrel crawled in or some kid shoved their favorite lego creation in your toilet or maybe that beautiful tree has taken a liking to the liquid inside your sewer line. Whatever it is, we will find your [clogged drain problem](/articles/clogged-drains-service-advice) and clear it. Our technicians are armed with night vision, cameras, and squirrel traps. Give us a call so we can get your drains cleared, unclogged, and flowing again.
+  </p>
+</div>
+
+<section itemScope itemType="https://schema.org/OfferCatalog">
+  <h2>Our Drain Cleaning Services</h2>
+
+  <div>
+    <h3>Comprehensive Drain Solutions</h3>
+    <ul itemProp="itemListElement">
+      {frontmatter.drainSolutions.map(service => (
+        <li itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{service}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div>
+    <h3>Advanced Technology</h3>
+    <p>We use state-of-the-art equipment including:</p>
+    <ul itemProp="itemListElement">
+      {frontmatter.advancedTechnology.map(service => (
+        <li itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{service}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/LocalBusiness">
+  <h2>The GoFlow Advantage</h2>
+
+  <div itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <div>
+      <h3>Thorough Inspection</h3>
+      <p>Before starting any work, we perform a detailed inspection to identify the exact cause of your drain problems.</p>
+    </div>
+
+    <div>
+      <h3>Long-term Solutions</h3>
+      <p>We don't just clear the clog – we identify and address the root cause to prevent future problems.</p>
+    </div>
+
+    <div>
+      <h3>Clean Work Environment</h3>
+      <p>Our technicians protect your home and clean up thoroughly after completing the job.</p>
+    </div>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Common Signs You Need Drain Cleaning</h2>
+
+  <ul itemProp="serviceOutput">
+    {frontmatter.drainCleaningSigns.map(sign => (<li>{sign}</li>))}
+  </ul>
+</section>
+
+<section itemScope itemType="https://schema.org/ContactPoint">
+  <p>
+    Contact GoFlow Plumbing today for expert drain cleaning services you can trust.
+  </p>
+</section>
+</article>

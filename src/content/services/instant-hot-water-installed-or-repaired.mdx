@@ -1,0 +1,213 @@
+---
+title: "Instant Hot Water Installation & Repair for your home"
+linkText: "Instant Hot Water Installation & Repair Service"
+menuText: "Instant Hot Water"
+description: "Get an instant hot water dispenser installed or have yours repaired by our expert plumbers with upfront pricing."
+pubDate: 2025-03-24
+featured: true
+installationServices:
+  - Tankless water heaters
+  - Point-of-use heaters
+  - Hot water recirculation systems
+  - Under-sink instant hot water
+  - Whole-house solutions
+  - Energy-efficient systems
+repairServices:
+  - System diagnostics
+  - Component replacement
+  - Performance optimization
+  - Maintenance service
+  - Emergency repairs
+  - System upgrades
+energyBenefits:
+  - No standby energy loss
+  - Efficient operation
+  - Lower utility bills
+  - Reduced water waste
+  - Environmental benefits
+convenienceFeatures:
+  - Immediate hot water
+  - Consistent temperature
+  - Endless supply
+  - Space-saving design
+  - Multiple point usage
+installationProcess:
+  - [Site evaluation, Assessing your home's requirements]
+  - [System selection, Choosing the right solution]
+  - [Professional installation, Expert setup]
+  - [System testing, Verifying performance]
+  - [User training, Learning operation]
+  - [Ongoing support, Continued assistance]
+schema: {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Instant Hot Water Installation & Repair Services",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "GoFlow Plumbing",
+    "areaServed": [
+      {
+        "@type": "County",
+        "name": "Sonoma County"
+      },
+      {
+        "@type": "County",
+        "name": "Marin County"
+      }
+    ]
+  },
+  "serviceType": "Plumbing",
+  "description": "Professional instant hot water system installation and repair services. We provide efficient solutions for endless hot water on demand."
+}
+---
+
+<article itemScope itemType="https://schema.org/Service">
+<h1 itemProp="name">Get your Instant Hot Water Installed or Repaired</h1>
+
+<div itemProp="description">
+  <p>
+    Tired of waiting for hot water at your sink? With an instant water heater, you get endless hot water on demand—and at GoFlow Plumbing, we make installation and repairs a breeze. Whether you're upgrading to a tankless system or need an undersink InstantHot, our expert team handles it all quickly, cleanly, and efficiently. No more waiting for hot water—just fast, reliable hot water whenever you need it. Go with the Flow, and never wait for hot water again!
+  </p>
+</div>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Our Instant Hot Water Services</h2>
+
+  <div itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <h3>Installation Services</h3>
+    <ul>
+      {frontmatter.installationServices.map(service => (
+        <li key={service} itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{service}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+
+    <h3>Repair Services</h3>
+    <ul>
+      {frontmatter.repairServices.map(service => (
+        <li key={service} itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{service}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Benefits of Instant Hot Water</h2>
+
+  <div itemProp="serviceOutput">
+    <h3>Energy Savings</h3>
+    <ul>
+      {frontmatter.energyBenefits.map(benefit => (
+        <li key={benefit}>{benefit}</li>
+      ))}
+    </ul>
+
+    <h3>Convenience</h3>
+    <ul>
+      {frontmatter.convenienceFeatures.map(feature => (
+        <li key={feature}>{feature}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/Product">
+  <h2>System Options</h2>
+
+  <div itemScope itemType="https://schema.org/ItemList">
+    <h3>Tankless Water Heaters</h3>
+    <ul>
+      <li>Gas or electric models</li>
+      <li>Various sizes available</li>
+      <li>High-efficiency units</li>
+      <li>Smart technology options</li>
+      <li>Remote control capability</li>
+    </ul>
+
+    <h3>Recirculation Systems</h3>
+    <ul>
+      <li>Timer-based operation</li>
+      <li>On-demand activation</li>
+      <li>Smart controls</li>
+      <li>Retrofit solutions</li>
+      <li>New construction systems</li>
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/HowTo">
+  <h2 itemProp="name">Professional Installation Process</h2>
+
+  <ol>
+    {frontmatter.installationProcess.map(([step, description]) => (
+      <li key={step} itemScope itemType="https://schema.org/HowToStep">
+        <span itemProp="name">{step}</span>
+        <span itemProp="text">{description}</span>
+      </li>
+    ))}
+  </ol>
+
+  <div itemScope itemType="https://schema.org/ItemList">
+    <h3>Quality Assurance</h3>
+    <ul>
+      <li>Licensed installers</li>
+      <li>Permit handling</li>
+      <li>Code compliance</li>
+      <li>Warranty registration</li>
+      <li>Follow-up service</li>
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Maintenance Services</h2>
+
+  <div itemProp="serviceOutput">
+    <h3>Regular Service</h3>
+    <ul>
+      <li>Annual inspections</li>
+      <li>Filter changes</li>
+      <li>System cleaning</li>
+      <li>Performance checks</li>
+      <li>Safety testing</li>
+    </ul>
+
+    <h3>Preventive Care</h3>
+    <ul>
+      <li>Early problem detection</li>
+      <li>System optimization</li>
+      <li>Efficiency maintenance</li>
+      <li>Extended life span</li>
+      <li>Reduced repairs</li>
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/LocalBusiness">
+  <h2>Why Choose GoFlow?</h2>
+
+  <div itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <ol>
+      <li>Experienced technicians</li>
+      <li>Quality equipment</li>
+      <li>Professional installation</li>
+      <li>Competitive pricing</li>
+      <li>Warranty coverage</li>
+      <li>Ongoing support</li>
+    </ol>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/ContactPoint">
+  <p>
+    Contact GoFlow Plumbing today for instant hot water solutions in Sonoma and Marin County.
+  </p>
+</section>
+</article>

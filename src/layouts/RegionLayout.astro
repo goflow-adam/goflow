@@ -5,12 +5,12 @@ import { createRegionSchema } from '../lib/schema';
 import '../styles/markdown.css';
 import '../styles/regions.css';
 
+
 interface Props {
   region: CollectionEntry<'regions'>;
 }
 
 const { region } = Astro.props;
-const { Content } = await region.render();
 
 const schema = createRegionSchema({
   title: region.data.title,
@@ -19,6 +19,9 @@ const schema = createRegionSchema({
   url: new URL(Astro.url.pathname, Astro.site).toString(),
   containsPlace: region.data.containsPlace
 });
+
+const { Content } = await region.render();
+
 ---
 
 <BaseLayout 
@@ -30,7 +33,7 @@ const schema = createRegionSchema({
     <meta itemprop="serviceType" content="Plumbing Services" />
     <meta itemprop="areaServed" itemscope itemtype="https://schema.org/AdministrativeArea" content={region.data.region} />
     <meta itemprop="provider" itemscope itemtype="https://schema.org/LocalBusiness" content="GoFlow Plumbing" />
-    
+<!--     
     {region.data.heroImage && (
       <div class="mb-8">
         <img
@@ -40,23 +43,11 @@ const schema = createRegionSchema({
         />
       </div>
     )}
-    
+     -->
     <div class="markdown-content" itemprop="description">
-      <h1 itemprop="name">{region.data.title}</h1>
-      <Content />
-    </div>
-
-    <div itemscope itemtype="https://schema.org/Place" class="service-area">
-      <h2>Service Area in {region.data.region}</h2>
-      {region.data.containsPlace && (
-        <ul>
-          {region.data.containsPlace.map(place => (
-            <li itemprop="containsPlace" itemscope itemtype="https://schema.org/City">
-              <span itemprop="name">{place}</span>
-            </li>
-          ))}
-        </ul>
-      )}
+      <div itemscope itemtype="https://schema.org/Place">
+        <Content />
+      </div>
     </div>
 
     <div class="call-to-action" itemscope itemtype="https://schema.org/Action">

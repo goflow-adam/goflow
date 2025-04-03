@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import '../styles/navigation.css';
 
 interface Props {
@@ -13,21 +14,20 @@ interface NavItem {
 
 const { isDesktop } = Astro.props;
 
+// Get all service pages and sort them by title
+const services = await getCollection('services');
+const serviceMenu = services
+  .map(service => ({
+    title: service.data.menuText ||service.data.linkText || service.data.title,
+    path: `/${service.slug}`
+  }))
+  .sort((a, b) => a.title.localeCompare(b.title));
+
 const navigation: NavItem[] = [
   {
     title: "Services",
     path: "/plumbing-services",
-    submenu: [
-      { title: "Water Heaters", path: "/water-heater-repair-and-replacement" },
-      { title: "Toilet Problems", path: "/clogged-or-running-toilets" },
-      { title: "Clogged Drains", path: "/clogged-drains-rootered" },
-      { title: "Leaking Pipes", path: "/leaking-pipes-repair" },
-      { title: "Garbage Disposals", path: "/garbage-disposal-repair-or-installation" },
-      { title: "Leaking Faucets", path: "/faucet-leaks-repaired" },
-      { title: "Instant Hot Water", path: "/instant-hot-water-installed-or-repaired" },
-      { title: "Emergencies", path: "/emergency-plumbing-services" },
-      { title: "Dishwashers", path: "/dishwasher-installation-or-leak-repair" }
-    ]
+    submenu: serviceMenu
   },
   {
     title: "Service Regions",

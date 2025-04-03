@@ -1,0 +1,154 @@
+---
+title: "Leaking Pipe Repair Services for your home"
+linkText: "Leaking Pipe Repair Service"
+menuText: "Leaking Pipes"
+description: "Our leak detection masters will give you peace of mind with upfront pricing when repairing your leaking pipe."
+pubDate: 2025-03-24
+featured: true
+detectionTools:
+  - Advanced leak detection equipment
+  - Non-invasive inspection methods
+  - Accurate problem identification
+  - Hidden leak location
+  - Moisture mapping
+pipeLeakTypes:
+  - Copper pipe leaks
+  - PVC pipe repairs
+  - Main water line leaks
+  - Slab leaks
+  - Underground pipe leaks
+  - Wall pipe leaks
+  - Joint and fitting leaks
+repairSteps:
+  - [Thorough inspection, Complete assessment of the leak and surrounding area]
+  - [Accurate diagnosis, Identifying the exact cause and extent of the leak]
+  - [Clear repair options, Presenting cost-effective solutions]
+  - [Quality repairs, Expert pipe repair with quality materials]
+  - [Leak prevention, Providing advice to prevent future issues]
+preventiveMeasures:
+  - Inspecting surrounding pipework
+  - Identifying potential weak points
+  - Recommending preventive maintenance
+  - Providing pipe maintenance tips
+emergencyServices:
+  - 24/7 emergency response
+  - Weekend and holiday service
+  - Same-day repairs when possible
+  - Temporary solutions if needed
+schema: {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Leaking Pipe Repair Services",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "GoFlow Plumbing",
+    "areaServed": [
+      {
+        "@type": "County",
+        "name": "Sonoma County"
+      },
+      {
+        "@type": "County",
+        "name": "Marin County"
+      }
+    ]
+  },
+  "serviceType": "Plumbing",
+  "description": "Professional pipe leak repair services using advanced detection technology and non-invasive methods. We find and fix leaks quickly with minimal disruption."
+}
+---
+
+<article itemScope itemType="https://schema.org/Service">
+<h1 itemProp="name">Get your Leaking Pipe Repaired</h1>
+
+<div itemProp="description">
+  <p>
+    Hidden leaks? Not on our watch! At GoFlow Plumbing, we use state-of-the-art camera technology to track down sneaky leaks without tearing up your walls or floors. Our non-invasive approach means no unnecessary mess—just pinpoint accuracy and fast, clean repairs that stop water damage in its tracks. Whether it's a tiny trickle or a major mystery, we'll find it, fix it, and have your pipes flowing smoothly in no time. Because at GoFlow, we don't just patch leaks—we solve them.
+  </p>
+</div>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Our Pipe Repair Services</h2>
+
+  <div itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <h3>Comprehensive Leak Detection</h3>
+    <ul>
+      {frontmatter.detectionTools.map(tool => (
+        <li key={tool} itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{tool}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+
+    <h3>Types of Pipe Leaks We Fix</h3>
+    <ul>
+      {frontmatter.pipeLeakTypes.map(type => (
+        <li key={type} itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{type}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/LocalBusiness">
+  <h2>Why Choose Us for Pipe Leak Repair?</h2>
+
+  <div itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <h3>Fast Response</h3>
+    <p>Water leaks can cause significant damage quickly. We provide rapid response to minimize water damage and repair costs.</p>
+
+    <h3>Expert Solutions</h3>
+    <p>Our licensed plumbers are trained in the latest pipe repair techniques and use professional-grade equipment.</p>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/HowTo">
+  <h2 itemProp="name">Complete Service Process</h2>
+
+  <ol>
+    {frontmatter.repairSteps.map(([step, description]) => (
+      <li key={step} itemScope itemType="https://schema.org/HowToStep">
+        <span itemProp="name">{step}</span>
+        <span itemProp="text">{description}</span>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Preventing Future Leaks</h2>
+
+  <div itemProp="serviceOutput">
+    <p>We don't just fix the current leak – we help prevent future problems by:</p>
+    <ul>
+      {frontmatter.preventiveMeasures.map(measure => (
+        <li key={measure}>{measure}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Emergency Services Available</h2>
+
+  <div itemProp="serviceOutput">
+    <p>Pipe leaks don't wait for convenient times. We offer:</p>
+    <ul>
+      {frontmatter.emergencyServices.map(service => (
+        <li key={service}>{service}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/ContactPoint">
+  <p>
+    Contact GoFlow Plumbing today for fast, reliable pipe leak repair services in Sonoma and Marin County.
+  </p>
+</section>
+</article>

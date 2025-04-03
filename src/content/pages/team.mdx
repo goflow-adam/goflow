@@ -105,52 +105,84 @@ schema: {
 }
 ---
 
-# Meet the GoFlow Plumbing Team
+<div itemScope itemType="https://schema.org/Organization">
+  <h1>{frontmatter.title}</h1>
 
-## Leadership
+  <section>
+    <h2>Leadership</h2>
 
-### Adam Bragg
-#### Founder & CEO
-Third generation plumbing entrepreneur, his grandfather started Bragg Plumbing in San Francisco. His son later expanded their services to the north bay. And now, Adam, will continue the tradition of improving the quality of results customers can come to expect.​​
+    <article itemScope itemType="https://schema.org/Person">
+      <h3 itemProp="name">{frontmatter.teamMembers[0].name}</h3>
+      <h4 itemProp="jobTitle">{frontmatter.teamMembers[0].jobTitle}</h4>
+      <p itemProp="description">{frontmatter.teamMembers[0].description}</p>
+      <div itemProp="contactPoint" itemScope itemType="https://schema.org/ContactPoint">
+        <a href={`tel:${frontmatter.teamMembers[0].telephone}`} itemProp="telephone">{frontmatter.teamMembers[0].telephone}</a>
+        <br />
+        <a href={`mailto:${frontmatter.teamMembers[0].email}`} itemProp="email">{frontmatter.teamMembers[0].email}</a>
+      </div>
+    </article>
 
-### Jarrod Stuckenbroker
-#### COO
-For the last 30 years, Jarrod has seen, experienced, and been part of the ins and outs of every level of plumbing in the bay area. 
+    <article itemScope itemType="https://schema.org/Person">
+      <h3 itemProp="name">{frontmatter.teamMembers[1].name}</h3>
+      <h4 itemProp="jobTitle">{frontmatter.teamMembers[1].jobTitle}</h4>
+      <p itemProp="description">{frontmatter.teamMembers[1].description}</p>
+      <div itemProp="contactPoint" itemScope itemType="https://schema.org/ContactPoint">
+        <a href={`mailto:${frontmatter.teamMembers[1].email}`} itemProp="email">{frontmatter.teamMembers[1].email}</a>
+      </div>
+    </article>
 
-### You
-#### Future Team Member
-Interested in joining an innovative plumbing company expanding around the bay area? Join the team and enjoy our many benefits and enhanced training to improve your professional worth.
-[(916) 719-1897](tel:+19167191897)
-[careers@goflow.plumbing](mailto:careers@goflow.plumbing)
+    <article itemScope itemType="https://schema.org/JobPosting">
+      <h3>You</h3>
+      <h4 itemProp="title">Future Team Member</h4>
+      <p itemProp="description">Interested in joining an innovative plumbing company expanding around the bay area? Join the team and enjoy our many benefits and enhanced training to improve your professional worth.</p>
+      <div itemProp="contactPoint" itemScope itemType="https://schema.org/ContactPoint">
+        <a href="tel:+19167191897" itemProp="telephone">(916) 719-1897</a>
+        <br />
+        <a href="mailto:careers@goflow.plumbing" itemProp="email">careers@goflow.plumbing</a>
+      </div>
+    </article>
+  </section>
 
-## Our Plumbers
+  <section itemScope itemType="https://schema.org/ProfessionalService">
+    <h2>Our Plumbers</h2>
 
-### Certified Experts
-Our plumbers are:
-- Licensed and certified
-- Regularly trained
-- Background checked
-- Drug tested
-- Customer focused
-- Local experts
+    <div>
+      <h3>Certified Experts</h3>
+      <ul itemProp="hasCredential">
+        <li>Licensed and certified</li>
+        <li>Regularly trained</li>
+        <li>Background checked</li>
+        <li>Drug tested</li>
+        <li>Customer focused</li>
+        <li>Local experts</li>
+      </ul>
+    </div>
+  </section>
 
-## Team Values
+  <section>
+    <h2>Team Values</h2>
 
-### Excellence
-- Continuous training
-- Latest techniques
-- Quality tools
-- Best practices
-- Innovation focus
-- Safety first
+    <div itemScope itemType="https://schema.org/ItemList">
+      <h3 itemProp="name">{frontmatter.companyValues[0].name}</h3>
+      <p itemProp="description">{frontmatter.companyValues[0].description}</p>
+      <ul>
+        {frontmatter.companyValues[0].items.map((item) => (
+          <li key={item} itemProp="itemListElement">{item}</li>
+        ))}
+      </ul>
+    </div>
 
-### Customer Service
-- Clear communication
-- Timely response
-- Professional appearance
-- Respectful conduct
-- Solution-oriented
-- Follow-up care
+    <div itemScope itemType="https://schema.org/ItemList">
+      <h3 itemProp="name">{frontmatter.companyValues[1].name}</h3>
+      <p itemProp="description">{frontmatter.companyValues[1].description}</p>
+      <ul>
+        {frontmatter.companyValues[1].items.map((item) => (
+          <li key={item} itemProp="itemListElement">{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</div>
 
 ## Training & Development
 

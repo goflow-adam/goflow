@@ -1,0 +1,254 @@
+---
+title: "Professional Water Filtration & Treatment Services"
+linkText: "Water Filtration & Treatment Service"
+menuText: "Water Filtration"
+description: "Expert water filtration and treatment services in Sonoma and Marin County. We install and maintain systems for cleaner, healthier water."
+pubDate: 2025-03-24
+featured: true
+waterProblems:
+  - Hard water
+  - Bad taste
+  - Odors
+  - Discoloration
+  - Sediment
+  - Chlorine
+  - Contaminants
+  - Low pH
+filtrationTypes:
+  - Whole house filtration
+  - Point-of-use filters
+  - Reverse osmosis
+  - UV purification
+  - Water softeners
+  - Carbon filters
+treatmentMethods:
+  - pH balancing
+  - Mineral removal
+  - Chemical treatment
+  - Ion exchange
+  - Sediment filtration
+benefits:
+  - Better taste
+  - Cleaner water
+  - Healthier drinking
+  - Protected appliances
+  - Longer pipe life
+  - Softer skin and hair
+schema: {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Professional Water Filtration & Treatment Services",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "GoFlow Plumbing",
+    "areaServed": [
+      {
+        "@type": "County",
+        "name": "Sonoma County"
+      },
+      {
+        "@type": "County",
+        "name": "Marin County"
+      }
+    ]
+  },
+  "serviceType": "Plumbing",
+  "description": "Expert water filtration and treatment services providing cleaner, healthier water through advanced filtration systems and professional treatment solutions.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Water Quality Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Water Filtration"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Water Treatment"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Water Testing"
+        }
+      }
+    ]
+  }
+}
+---
+
+<article itemScope itemType="https://schema.org/Service">
+<h1 itemProp="name">Professional Water Filtration & Treatment Services</h1>
+
+<div itemProp="description">
+  <p>
+    Your water quality affects everything—from the taste of your morning coffee to the lifespan of your appliances. At GoFlow Plumbing, we specialize in comprehensive water filtration and treatment solutions that transform your water from questionable to exceptional. Using advanced filtration technology and professional treatment methods, we help you achieve the water quality you deserve. Say goodbye to hard water, bad tastes, and concerning contaminants, and hello to clean, fresh, healthy water throughout your home.
+  </p>
+</div>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Common Water Quality Issues</h2>
+
+  <div itemProp="serviceOutput">
+    <ul>
+      {waterProblems.map(problem => (
+        <li>{problem}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/OfferCatalog">
+  <h2>Our Filtration Solutions</h2>
+
+  <div>
+    <h3>Available Systems</h3>
+    <ul itemProp="itemListElement">
+      {filtrationTypes.map(type => (
+        <li itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{type}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/HowTo">
+  <h2 itemProp="name">Our Water Treatment Process</h2>
+
+  <div>
+    <ol>
+      <li itemScope itemType="https://schema.org/HowToStep">
+        <span itemProp="name">Water Testing</span>
+        <span itemProp="text">Comprehensive analysis of your water quality</span>
+      </li>
+      <li itemScope itemType="https://schema.org/HowToStep">
+        <span itemProp="name">Problem Identification</span>
+        <span itemProp="text">Determining specific water quality issues</span>
+      </li>
+      <li itemScope itemType="https://schema.org/HowToStep">
+        <span itemProp="name">Solution Design</span>
+        <span itemProp="text">Customizing the right treatment approach</span>
+      </li>
+      <li itemScope itemType="https://schema.org/HowToStep">
+        <span itemProp="name">System Installation</span>
+        <span itemProp="text">Professional setup of filtration equipment</span>
+      </li>
+      <li itemScope itemType="https://schema.org/HowToStep">
+        <span itemProp="name">Quality Verification</span>
+        <span itemProp="text">Testing to ensure desired results</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/OfferCatalog">
+  <h2>Treatment Methods</h2>
+
+  <div>
+    <ul itemProp="itemListElement">
+      {treatmentMethods.map(method => (
+        <li itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{method}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Benefits of Water Treatment</h2>
+
+  <div itemProp="serviceOutput">
+    <ul>
+      {benefits.map(benefit => (
+        <li>{benefit}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/LocalBusiness">
+  <h2>Why Choose GoFlow for Water Quality?</h2>
+
+  <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemProp="name">Expert water analysis</span>
+      </span>
+    </li>
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemProp="name">Custom solutions</span>
+      </span>
+    </li>
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemProp="name">Quality equipment</span>
+      </span>
+    </li>
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemProp="name">Professional installation</span>
+      </span>
+    </li>
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemProp="name">Ongoing support</span>
+      </span>
+    </li>
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemProp="name">System maintenance</span>
+      </span>
+    </li>
+  </ul>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Maintenance Services</h2>
+
+  <div itemProp="serviceOutput">
+    <ul>
+      <li>Filter replacement</li>
+      <li>System cleaning</li>
+      <li>Performance testing</li>
+      <li>Water quality checks</li>
+      <li>Equipment updates</li>
+      <li>Preventive care</li>
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Our Guarantee</h2>
+
+  <div itemProp="serviceOutput">
+    <ul>
+      <li>Quality equipment</li>
+      <li>Professional installation</li>
+      <li>Verified results</li>
+      <li>System warranty</li>
+      <li>Satisfaction guarantee</li>
+      <li>Expert support</li>
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/ContactPoint">
+  <p>
+    Contact GoFlow Plumbing today for expert water filtration and treatment services in Sonoma and Marin County. Experience the difference that truly clean, healthy water can make in your home.
+  </p>
+</section>
+</article>

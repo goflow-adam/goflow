@@ -1,5 +1,6 @@
 ---
 title: "Sonoma County Plumbing Services for your home"
+contentTitle: "Get your Plumbing Repaired in Sonoma County"
 description: "GoFlow is deeply experienced in these region-specific needs and will tailor our plumbing solutions to your home's specific needs."
 region: "Sonoma County"
 containsPlace: [
@@ -27,11 +28,11 @@ pubDate: 2025-03-24
 heroImage: "/images/sonoma-county.jpg"
 ---
 
-# Get your Plumbing Repaired in Sonoma County
+<h1 itemprop="name">{frontmatter.contentTitle}</h1>
 
-Sonoma County offers a diverse geography that influences the types of homes built here. terrain, wind, temperatures, moisture levels, and available sunlight as well as the cloud cover or fog have driven the architecture and composition of homes in Sonoma County. This, of course, impacts the heating and plumbing needs of our homes.
+{frontmatter.region} offers a diverse geography that influences the types of homes built here. terrain, wind, temperatures, moisture levels, and available sunlight as well as the cloud cover or fog have driven the architecture and composition of homes in {frontmatter.region}. This, of course, impacts the heating and plumbing needs of our homes.
 
-## Sonoma County Unique Plumbing Conditions
+<h2 itemprop="about">{frontmatter.region} Unique Plumbing Conditions</h2>
 
 Each of these geographic zones presents unique opportunities and challenges for residential homeowners when it comes to their plumbing. GoFlow is deeply experienced in these region-specific needs and will tailor our plumbing solutions to your home's specific needs.
 
@@ -41,45 +42,51 @@ In our valleys and lowlands like Santa Rosa, Petaluma, and Sonoma we have signif
 
 Our hilly and ridgeline areas like Glen Ellen, Kenwood, Sebastopol, while similar to our valleys and lowlands offer plumbing challenges such as septic placement and limited leach line installation options.
 
-Sonoma County's forested and mountainous Regions as well as our riverfront and wetland areas like Occidental, Cazadero, Healdsburg Highlands, Russian River, Valley Ford, and Gualala offer similar challenges while also requiring evermore robust supply and waste lines entering and leaving the homes due to their potential distance from local utilities. Moisture is also an issue here and this can alter plumbing options such that condensation does not further contribute to moisture accumulation in your home.
+{frontmatter.region}'s forested and mountainous Regions as well as our riverfront and wetland areas like Occidental, Cazadero, Healdsburg Highlands, Russian River, Valley Ford, and Gualala offer similar challenges while also requiring evermore robust supply and waste lines entering and leaving the homes due to their potential distance from local utilities. Moisture is also an issue here and this can alter plumbing options such that condensation does not further contribute to moisture accumulation in your home.
 
-## Areas We Serve in Sonoma County
+<div itemprop="areaServed" itemscope itemtype="https://schema.org/GeoCircle">
+  <h2>Areas We Serve in {frontmatter.region}</h2>
+  
+  <div itemprop="geoMidpoint" itemscope itemtype="https://schema.org/GeoCoordinates">
+    <meta itemprop="latitude" content="38.4404674" />
+    <meta itemprop="longitude" content="-122.7144314" />
+  </div>
+  
+  <h3 itemprop="serviceLocation">Major Cities</h3>
+  <ul>
+  {
+    frontmatter.containsPlace.map(place => (
+      <li itemprop="addressLocality" itemscope itemtype="https://schema.org/City">{place}</li>
+    ))
+  }
+  </ul>
 
-### Major Cities
-- Cloverdale
-- Cotati
-- Healdsburg
-- Petaluma
-- Rohnert Park
-- Santa Rosa
-- Sebastopol
-- Sonoma
-- Windsor
-- Bloomfield
-- Bodega
-- Forestville
-- Geyserville
-- Glen Ellen
-- Guerneville
-- Jenner
-- Kenwood
-- Larkfield-Wikiup
-- Occidental
+  <h3>Surrounding Communities</h3>
+  <p>We also serve all surrounding communities and unincorporated areas within {frontmatter.region}.</p>
+</div>
 
-### Surrounding Communities
-We also serve all surrounding communities and unincorporated areas within Sonoma County.
+<div itemprop="openingHoursSpecification" itemscope itemtype="https://schema.org/OpeningHoursSpecification">
+  <meta itemprop="dayOfWeek" content="Monday Tuesday Wednesday Thursday Friday Saturday Sunday" />
+  <meta itemprop="opens" content="00:00" />
+  <meta itemprop="closes" content="23:59" />
+  <p><strong>Available 24/7 for Emergency Services</strong></p>
+</div>
 
-## Our Services in Sonoma County
+## Our Services in {frontmatter.region}
 
-### Residential Plumbing
-- Water heater repair and replacement
-- Drain cleaning and rooter service
-- Leak detection and repair
-- Fixture installation and repair
-- Emergency plumbing service
-- Repiping services
-- Sewer line services
-- Water line services
+<div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+  <h3 itemprop="name">Residential Plumbing</h3>
+  <ul>
+    <li itemprop="serviceType">Water heater repair and replacement</li>
+    <li itemprop="serviceType">Drain cleaning and rooter service</li>
+    <li itemprop="serviceType">Leak detection and repair</li>
+    <li itemprop="serviceType">Fixture installation and repair</li>
+    <li itemprop="serviceType">Emergency plumbing service</li>
+    <li itemprop="serviceType">Repiping services</li>
+    <li itemprop="serviceType">Sewer line services</li>
+    <li itemprop="serviceType">Water line services</li>
+  </ul>
+</div>
 
 ### Commercial Plumbing
 - Restaurant plumbing
@@ -91,7 +98,7 @@ We also serve all surrounding communities and unincorporated areas within Sonoma
 - Emergency services
 - Preventive maintenance
 
-## Why Choose GoFlow in Sonoma County?
+## Why Choose GoFlow in {frontmatter.region}?
 
 ### Local Expertise
 - Knowledge of local building codes
@@ -111,7 +118,7 @@ We also serve all surrounding communities and unincorporated areas within Sonoma
 
 ## Emergency Services
 
-We provide 24/7 emergency plumbing services throughout Sonoma County:
+We provide 24/7 emergency plumbing services throughout {frontmatter.region}:
 - Immediate response
 - Any time, any day
 - Fast arrival
@@ -139,7 +146,7 @@ We provide 24/7 emergency plumbing services throughout Sonoma County:
 
 ## Contact Us
 
-Need plumbing service in Sonoma County? Contact GoFlow Plumbing for:
+Need plumbing service in {frontmatter.region}? Contact GoFlow Plumbing for:
 - Free estimates
 - Emergency service
 - Maintenance plans

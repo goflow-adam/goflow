@@ -1,0 +1,249 @@
+---
+title: "Get your Faucet Leak Repaired"
+linkText: "Faucet Repair Service"
+menuText: "Faucets"
+description: "Professional faucet repair services in Sonoma and Marin County. Any type of faucet repaired by our expert plumbers with upfront pricing."
+pubDate: 2025-03-24
+featured: true
+faucetTypes:
+  - Kitchen faucets
+  - Bathroom faucets
+  - Utility sink faucets
+  - Outdoor faucets
+  - Specialty faucets
+  - All major brands
+commonIssues:
+  - Dripping faucets
+  - Loose handles
+  - Low water pressure
+  - Hard-to-turn handles
+  - Base leaks
+  - Spray attachment problems
+  - Mineral buildup
+  - Squeaking or noise
+serviceSteps:
+  - Initial assessment
+  - Problem diagnosis
+  - Repair options
+  - Quality repairs
+  - Final testing
+  - Maintenance advice
+preventiveMaintenance:
+  - Regular maintenance
+  - Early problem signs
+  - Water conservation
+  - Proper usage
+  - When to replace
+newFaucetInstallation:
+  - Style consultation
+  - Brand recommendations
+  - Water-efficient options
+  - Professional installation
+  - Old faucet removal
+serviceOutput:
+  - Cost-effective solutions
+  - Energy efficiency
+  - Water conservation
+  - Long-term reliability
+  - Style updates
+  - Warranty service
+whyChoose:
+  - Licensed plumbers
+  - Years of experience
+  - All brands serviced
+  - Quality parts used
+  - Warranty provided
+customerConvenience:
+  - Same-day service available
+  - Upfront pricing
+  - Clean work area
+  - Professional appearance
+  - Respect for your home
+schema: {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Professional Faucet Repair Services",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "GoFlow Plumbing",
+    "areaServed": [
+      {
+        "@type": "County",
+        "name": "Sonoma County"
+      },
+      {
+        "@type": "County",
+        "name": "Marin County"
+      }
+    ]
+  },
+  "serviceType": "Plumbing",
+  "description": "Expert faucet repair and installation services for all types of faucets including kitchen, bathroom, utility, and outdoor. Same-day service available with upfront pricing.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Faucet Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Faucet Repair"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Faucet Installation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Preventive Maintenance"
+        }
+      }
+    ]
+  }
+}
+---
+
+<article itemScope itemType="https://schema.org/Service">
+<h1 itemProp="name">Faucet Leak Repair Services</h1>
+
+<div itemProp="description">
+  <p>
+    Drip, drip, drip… That's not just the sound of wasted water—it's your hard-earned money going down the drain! A leaky faucet might seem like a minor annoyance, but left unchecked, it can lead to skyrocketing water bills and a constant reminder that something's just… off. At GoFlow Plumbing, we make quick work of those pesky drips with fast, clean, and reliable service. No mess, no stress—just [a smoothly running faucet](/articles/choosing-the-right-faucet) and sweet, sweet silence. So, say goodbye to the drip-drip blues and hello to GoFlow!
+  </p>
+</div>
+
+<section itemScope itemType="https://schema.org/OfferCatalog">
+  <h2>Our Faucet Repair Services</h2>
+
+  <div>
+    <h3>Types of Faucets We Service</h3>
+    <ul itemProp="itemListElement">
+      {frontmatter.faucetTypes.map(faucetType => (
+        <li itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{faucetType}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div>
+    <h3>Common Issues We Fix</h3>
+    <ul itemProp="itemListElement">
+      {frontmatter.commonIssues.map(issue => (
+        <li itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{issue}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/HowTo">
+  <h2>Professional Solutions</h2>
+
+  <div>
+    <h3>Comprehensive Service</h3>
+    <ol itemProp="step">
+      {frontmatter.serviceSteps.map(step => (
+        <li itemScope itemType="https://schema.org/HowToStep">
+          <span itemProp="name">{step}</span>
+        </li>
+      ))}
+    </ol>
+  </div>
+
+  <div itemScope itemType="https://schema.org/Service">
+    <h3>Repair or Replace?</h3>
+    <p>We help you make informed decisions about:</p>
+    <ul itemProp="serviceOutput">
+      {frontmatter.serviceOutput.map(output => (
+        <li>{output}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/LocalBusiness">
+  <h2>Why Choose GoFlow for Faucet Repairs?</h2>
+
+  <div>
+    <h3>Expert Service</h3>
+    <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+      {frontmatter.whyChoose.map(service => (
+        <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{service}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div>
+    <h3>Customer Convenience</h3>
+    <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+      {frontmatter.customerConvenience.map(convenience => (
+        <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{convenience}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div>
+    <h3>Customer Convenience</h3>
+    <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+      {frontmatter.customerConvenience.map(convenience => (
+        <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{convenience}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Preventive Maintenance</h2>
+
+  <div itemProp="serviceOutput">
+    <p>We provide advice on:</p>
+    <ul>
+      {frontmatter.preventiveMaintenance.map(maintenance => (
+        <li>{maintenance}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>New Faucet Installation</h2>
+
+  <div itemProp="serviceOutput">
+    <ul>
+      {frontmatter.newFaucetInstallation.map(installation => (
+        <li>{installation}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/ContactPoint">
+  <p>
+    Contact GoFlow Plumbing today for expert faucet repair services in Sonoma and Marin County.
+  </p>
+</section>
+</article>

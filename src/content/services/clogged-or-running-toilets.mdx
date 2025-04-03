@@ -1,0 +1,110 @@
+---
+title: "Clogged Toilets & Running Toilets Fixed"
+linkText: "Clogged or Running Toilets Service"
+menuText: "Clogged or Running Toilets"
+description: "Clogged Toilets or running toilets tamed by expert plumbers with upfront pricing and a clean result."
+pubDate: 2025-03-24
+featured: true
+toiletServices:
+  - Clogged toilets cleared
+  - Running toilets fixed
+  - Leaking toilets repaired
+  - Toilet upgrades and replacements
+  - Flapper and fill valve replacements
+  - Water-efficient toilets installed
+whyChoose:
+  - Available 24/7 for emergencies
+  - Upfront, honest pricing
+  - Experienced, licensed plumbers
+  - Guaranteed workmanship
+  - Clean, professional service
+schema: {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Professional Toilet Repair Services",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "GoFlow Plumbing",
+    "areaServed": [
+      {
+        "@type": "County",
+        "name": "Sonoma County"
+      },
+      {
+        "@type": "County",
+        "name": "Marin County"
+      }
+    ]
+  },
+  "serviceType": "Plumbing",
+  "description": "Expert toilet repair services including clog removal, running toilet fixes, leak repairs, and installations. Available 24/7 for emergencies with upfront pricing.",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceType": "Emergency Service",
+    "availabilityTime": "24/7"
+  }
+}
+---
+
+<article itemScope itemType="https://schema.org/Service">
+<h1 itemProp="name">Get Toilet Repair Services</h1>
+
+<div itemProp="description">
+  <p>
+    When your toilet's acting up, it's not just an inconvenience—it's a crisis! Whether it's a stubborn clog, a phantom flush, or a leak that's turning your bathroom into a wading pool, GoFlow Plumbing has you covered. Our expert team [diagnoses and fixes toilet troubles](/articles/toilet-leak-sources) fast, using clean, efficient methods that get things back in working order without the mess or the stress. So, don't let a misbehaving toilet ruin your day—just call GoFlow, and we'll handle the dirty work for you!
+  </p>
+</div>
+
+<section itemScope itemType="https://schema.org/OfferCatalog">
+  <h2>Our Toilet Repair Services Include:</h2>
+
+  <ul itemProp="itemListElement">
+    {frontmatter.toiletServices.map(service => (
+      <li itemScope itemType="https://schema.org/Offer">
+        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemProp="name">{service}</span>
+        </span>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Common Toilet Problems We Fix</h2>
+
+  <div>
+    <h3>Clogged Toilets</h3>
+    <p itemProp="description">Our professional plumbers use the latest tools and techniques to clear even the most stubborn clogs quickly and effectively.</p>
+  </div>
+
+  <div>
+    <h3>Running Toilets</h3>
+    <p itemProp="description">A running toilet can waste hundreds of gallons of water. We'll diagnose and fix the issue to save you money on your water bill.</p>
+  </div>
+
+  <div>
+    <h3>Leaking Toilets</h3>
+    <p itemProp="description">From base leaks to tank leaks, we'll identify and repair the source of the problem.</p>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/LocalBusiness">
+  <h2>Why Choose GoFlow Plumbing?</h2>
+
+  <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+  {frontmatter.whyChoose.map(service => (
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemProp="name">{service}</span>
+      </span>
+    </li>
+  ))}
+  </ul>
+</section>
+
+<section itemScope itemType="https://schema.org/ContactPoint">
+  <p>
+    Contact us today for fast, reliable toilet repair services in Sonoma and Marin County.
+  </p>
+</section>
+</article>

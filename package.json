@@ -9,9 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.2.3",
     "@astrojs/sitemap": "^3.3.0",
     "astro": "^5.5.4",
-    "astro-seo": "^0.8.4"
+    "astro-seo": "^0.8.4",
+    "rehype-attr": "^4.0.2",
+    "remark-attr": "^0.11.1",
+    "remark-frontmatter": "^5.0.0",
+    "remark-parse": "^11.0.0"
   },
   "devDependencies": {
     "@astrojs/markdown-remark": "^6.3.1",

@@ -45,7 +45,7 @@ const schema = createServiceRegionsSchema(regions);
       {regions.map((region) => (
         <div itemprop="containsPlace" itemscope itemtype="https://schema.org/AdministrativeArea">
           <meta itemprop="@type" content="County" />
-          <div>
+          <div class="region-card">
             <h2>
               <a href={`/${region.slug}`} itemprop="url">
                 <span itemprop="name">{region.data.title}</span>

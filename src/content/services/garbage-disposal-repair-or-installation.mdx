@@ -1,0 +1,301 @@
+---
+title: "Garbage Disposal Repair & Installation Services"
+linkText: "Garbage Disposal Repair & Installation Service"
+menuText: "Garbage Disposals"
+description: "Get a garbage disposal installed or have yours repaired by our expert plumbers with upfront pricing."
+pubDate: 2025-03-24
+featured: true
+repairServices:
+  - Disposal jam removal
+  - Leak repairs
+  - Electrical issues
+  - Blade sharpening
+  - Noise reduction
+  - Clog removal
+  - Reset button issues
+installationServices:
+  - New disposal installation
+  - Disposal replacement
+  - Upgrade recommendations
+  - Brand selection assistance
+  - Proper sizing guidance
+commonProblems:
+  leakPoints:
+    - Top seal leaks
+    - Side leaks
+    - Bottom leaks
+    - Drain line leaks
+  noises:
+    - Grinding sounds
+    - Humming but not working
+    - Rattling noises
+    - Metal-on-metal sounds
+maintenanceTips:
+  - Proper disposal use
+  - What not to put in disposals
+  - Regular maintenance
+  - When to call for service
+  - How to prevent clogs
+whyChoose:
+  - Experienced technicians
+  - Same-day service available
+  - Fair, upfront pricing
+  - Warranty on parts and labor
+  - Professional installation
+  - Expert advice and maintenance tips
+newInstallations:
+  - Various horsepower options
+  - Quiet operation models
+  - Energy-efficient units
+  - Multiple brand choices
+  - Different price points
+replacementServices:
+  - Quick turnaround
+  - Minimal disruption
+  - Updated connections
+  - Proper disposal of old unit
+schema: {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Professional Garbage Disposal Services",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "GoFlow Plumbing",
+    "areaServed": [
+      {
+        "@type": "County",
+        "name": "Sonoma County"
+      },
+      {
+        "@type": "County",
+        "name": "Marin County"
+      }
+    ]
+  },
+  "serviceType": "Plumbing",
+  "description": "Expert garbage disposal repair and installation services including jam removal, leak repairs, and new installations. Same-day service available with warranty.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Garbage Disposal Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Garbage Disposal Repair"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Garbage Disposal Installation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Maintenance Services"
+        }
+      }
+    ]
+  }
+}
+---
+
+<article itemScope itemType="https://schema.org/Service">
+<h1 itemProp="name">Get your Garbage Disposal Repaired or have a New Garbage Disposal Installed</h1>
+
+<div itemProp="description">
+  <p>
+    Is your garbage disposal making more noise than progress? Whether it's jammed, leaking, or just refusing to do its job, GoFlow Plumbing is here to get things back in motion—quickly and cleanly. Our expert team can diagnose, repair, or [replace your in-sink disposal](/articles/garbage-disposal-choices) with minimal mess and maximum efficiency. No more strange grinding sounds, no more mystery odors—just smooth, worry-free operation. So, if your disposal's on strike, don't stress—Go with the Flow and let us handle the fix!
+  </p>
+</div>
+
+<section itemScope itemType="https://schema.org/OfferCatalog">
+  <h2>Our Garbage Disposal Services</h2>
+
+  <div>
+    <h3>Repair Services</h3>
+    <ul itemProp="itemListElement">
+      {frontmatter.repairServices.map(service => (
+        <li itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{service}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div>
+    <h3>Installation Services</h3>
+    <ul itemProp="itemListElement">
+      {frontmatter.installationServices.map(service => (
+        <li itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{service}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Common Garbage Disposal Problems We Fix</h2>
+
+  <div>
+    <h3>Disposal Won't Turn On</h3>
+    <p itemProp="description">Could be an electrical issue or jammed blades. We'll diagnose and fix the problem quickly.</p>
+  </div>
+
+  <div>
+    <h3>Disposal is Leaking</h3>
+    <p>We repair leaks from all points:</p>
+    <ul itemProp="serviceOutput">
+      {frontmatter.commonProblems.leakPoints.map(point => (
+        <li>{point}</li>
+      ))}
+    </ul>
+  </div>
+
+  <div>
+    <h3>Strange Noises</h3>
+    <ul itemProp="serviceOutput">
+      {frontmatter.commonProblems.noises.map(noise => (
+        <li>{noise}</li>
+      ))}
+    </ul>
+  </div>
+
+  <div>
+    <h3>Disposal Clogs</h3>
+    <p itemProp="description">We clear clogs and provide guidance on proper disposal use to prevent future issues.</p>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/OfferCatalog">
+  <h2>Installation Options</h2>
+
+  <div>
+    <h3>New Installations</h3>
+    <ul itemProp="itemListElement">
+      {frontmatter.newInstallations.map(service => (
+        <li itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{service}</span>
+          </span>
+        </li>
+      ))}
+      <li itemScope itemType="https://schema.org/Offer">
+        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemProp="name">Quiet operation models</span>
+        </span>
+      </li>
+      <li itemScope itemType="https://schema.org/Offer">
+        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemProp="name">Energy-efficient units</span>
+        </span>
+      </li>
+      <li itemScope itemType="https://schema.org/Offer">
+        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemProp="name">Multiple brand choices</span>
+        </span>
+      </li>
+      <li itemScope itemType="https://schema.org/Offer">
+        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemProp="name">Different price points</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Replacement Services</h3>
+    <ul itemProp="itemListElement">
+      {frontmatter.replacementServices.map(service => (
+        <li itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{service}</span>
+          </span>
+        </li>
+      ))}
+      <li itemScope itemType="https://schema.org/Offer">
+        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemProp="name">Minimal disruption</span>
+        </span>
+      </li>
+      <li itemScope itemType="https://schema.org/Offer">
+        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemProp="name">Updated connections</span>
+        </span>
+      </li>
+      <li itemScope itemType="https://schema.org/Offer">
+        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemProp="name">Proper disposal of old unit</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/LocalBusiness">
+  <h2>Why Choose GoFlow for Your Garbage Disposal Needs?</h2>
+
+  <ol itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    {frontmatter.whyChoose.map(service => (
+      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemProp="name">{service}</span>
+        </span>
+      </li>
+    ))}
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemProp="name">Same-day service available</span>
+      </span>
+    </li>
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemProp="name">Fair, upfront pricing</span>
+      </span>
+    </li>
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemProp="name">Warranty on parts and labor</span>
+      </span>
+    </li>
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemProp="name">Professional installation</span>
+      </span>
+    </li>
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemProp="name">Expert advice and maintenance tips</span>
+      </span>
+    </li>
+  </ol>
+</section>
+
+<section itemScope itemType="https://schema.org/Service">
+  <h2>Maintenance Tips</h2>
+
+  <div itemProp="serviceOutput">
+    <p>We'll provide guidance on:</p>
+    <ul>
+      {frontmatter.maintenanceTips.map(tip => (
+        <li>{tip}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section itemScope itemType="https://schema.org/ContactPoint">
+  <p>
+    Contact GoFlow Plumbing today for all your garbage disposal needs in Sonoma and Marin County.
+  </p>
+</section>
+</article>
