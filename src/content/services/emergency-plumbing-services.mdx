@@ -100,7 +100,7 @@ schema: {
   <div itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
     <h3>Available Services</h3>
     <ul>
-    {emergencyServices.map(service => (
+    {frontmatter.emergencyServices.map(service => (
       <li itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
         <span itemProp="name">{service}</span>
       </li>
@@ -116,7 +116,7 @@ schema: {
       <h3 itemProp="name">1. Initial Contact</h3>
       <div itemProp="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
         <ul>
-        {emergencyProcess1.map(service => (
+        {frontmatter.emergencyProcess1.map(service => (
           <li itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
             <span itemProp="name">{service}</span>
           </li>
@@ -129,7 +129,7 @@ schema: {
       <h3 itemProp="name">2. Assessment and Diagnosis</h3>
       <div itemProp="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
         <ul>
-        {emergencyProcess2.map(service => (
+        {frontmatter.emergencyProcess2.map(service => (
           <li itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
             <span itemProp="name">{service}</span>
           </li>
@@ -144,7 +144,7 @@ schema: {
   <div itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
     <h3>24/7 Availability</h3>
     <ul>
-    {available247.map(service => (
+    {frontmatter.available247.map(service => (
       <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
         <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
           <span itemProp="name">{service}</span>
@@ -154,7 +154,7 @@ schema: {
     </ul>
     <h3>Professional Service</h3>
     <ul>
-      {professionalService.map(service => (
+      {frontmatter.professionalService.map(service => (
         <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
           <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
             <span itemProp="name">{service}</span>
@@ -171,14 +171,14 @@ schema: {
   <div itemProp="serviceOutput">
     <h3>Follow-up Care</h3>
     <ul>
-    {followUpCare.map(service => (
+    {frontmatter.followUpCare.map(service => (
       <li>{service}</li>
     ))}
     </ul>
 
     <h3>Additional Services</h3>
     <ul>
-    {additionalServices.map(service => (
+    {frontmatter.additionalServices.map(service => (
       <li>{service}</li>
     ))}
     </ul>
@@ -192,7 +192,7 @@ schema: {
   <div itemProp="serviceOutput">
     <p>We provide guidance on:</p>
     <ul>
-    {emergencyPrevention.map(service => (
+    {frontmatter.emergencyPrevention.map(service => (
       <li>{service}</li>
     ))}
     </ul>

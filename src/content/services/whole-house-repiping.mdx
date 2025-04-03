@@ -34,6 +34,20 @@ benefits:
   - Lower maintenance
   - Increased home value
   - Peace of mind
+repipingGuarantee:
+  - Licensed and insured work
+  - Code-compliant installation
+  - Quality materials
+  - Expert workmanship
+  - Clean and careful service
+  - Long-term warranty
+expect:
+  - Minimal disruption to daily life
+  - Protected furniture and floors
+  - Daily cleanup
+  - Progress updates
+  - Water available at end of each day
+  - Professional communication
 schema: {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -98,7 +112,7 @@ schema: {
 
   <div itemProp="serviceOutput">
     <ul>
-      {repipingIndicators.map(indicator => (
+      {frontmatter.repipingIndicators.map(indicator => (
         <li>{indicator}</li>
       ))}
     </ul>
@@ -110,7 +124,7 @@ schema: {
 
   <div>
     <ol>
-      {repipingProcess.map((step, index) => (
+      {frontmatter.repipingProcess.map((step, index) => (
         <li itemScope itemType="https://schema.org/HowToStep">
           <span itemProp="name">{step}</span>
         </li>
@@ -125,7 +139,7 @@ schema: {
   <div>
     <h3>Available Materials</h3>
     <ul itemProp="itemListElement">
-      {pipingOptions.map(option => (
+      {frontmatter.pipingOptions.map(option => (
         <li itemScope itemType="https://schema.org/Offer">
           <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
             <span itemProp="name">{option}</span>
@@ -141,7 +155,7 @@ schema: {
 
   <div itemProp="serviceOutput">
     <ul>
-      {benefits.map(benefit => (
+      {frontmatter.benefits.map(benefit => (
         <li>{benefit}</li>
       ))}
     </ul>
@@ -190,12 +204,9 @@ schema: {
 
   <div itemProp="serviceOutput">
     <ul>
-      <li>Licensed and insured work</li>
-      <li>Code-compliant installation</li>
-      <li>Quality materials</li>
-      <li>Expert workmanship</li>
-      <li>Clean and careful service</li>
-      <li>Long-term warranty</li>
+      {frontmatter.repipingGuarantee.map(guarantee => (
+        <li>{guarantee}</li>
+      ))}
     </ul>
   </div>
 </section>
@@ -206,12 +217,9 @@ schema: {
   <div itemProp="serviceOutput">
     <h3>During Repiping</h3>
     <ul>
-      <li>Minimal disruption to daily life</li>
-      <li>Protected furniture and floors</li>
-      <li>Daily cleanup</li>
-      <li>Progress updates</li>
-      <li>Water available at end of each day</li>
-      <li>Professional communication</li>
+      {frontmatter.expect.map(expect => (
+        <li>{expect}</li>
+      ))}
     </ul>
   </div>
 </section>

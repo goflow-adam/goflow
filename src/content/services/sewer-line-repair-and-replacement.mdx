@@ -32,6 +32,22 @@ preventiveMeasures:
   - Line cleaning
   - Maintenance plans
   - Early detection
+benefits:
+  - Minimal excavation
+  - Faster completion
+  - Lower costs
+  - Preserved landscaping
+  - Less disruption
+  - Long-lasting results
+process:
+  - Thorough inspection
+  - Problem diagnosis
+  - Solution options
+  - Clear pricing
+  - Expert repairs
+  - Quality testing
+  - Final inspection
+  - Maintenance advice
 schema: {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -96,7 +112,7 @@ schema: {
 
   <div itemProp="serviceOutput">
     <ul>
-      {sewerProblems.map(problem => (
+      {frontmatter.sewerProblems.map(problem => (
         <li>{problem}</li>
       ))}
     </ul>
@@ -109,7 +125,7 @@ schema: {
   <div>
     <h3>Advanced Methods</h3>
     <ul>
-      {diagnosticMethods.map((method, index) => (
+      {frontmatter.diagnosticMethods.map((method, index) => (
         <li itemScope itemType="https://schema.org/HowToStep">
           <span itemProp="name">{method}</span>
         </li>
@@ -124,7 +140,7 @@ schema: {
   <div>
     <h3>Available Methods</h3>
     <ul itemProp="itemListElement">
-      {repairMethods.map(method => (
+      {frontmatter.repairMethods.map(method => (
         <li itemScope itemType="https://schema.org/Offer">
           <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
             <span itemProp="name">{method}</span>
@@ -141,12 +157,9 @@ schema: {
   <div itemProp="serviceOutput">
     <h3>Benefits</h3>
     <ul>
-      <li>Minimal excavation</li>
-      <li>Faster completion</li>
-      <li>Lower costs</li>
-      <li>Preserved landscaping</li>
-      <li>Less disruption</li>
-      <li>Long-lasting results</li>
+      {frontmatter.benefits.map(benefit => (
+        <li>{benefit}</li>
+      ))}
     </ul>
   </div>
 </section>
@@ -194,7 +207,7 @@ schema: {
   <div itemProp="serviceOutput">
     <p>We help prevent future problems with:</p>
     <ul>
-      {preventiveMeasures.map(measure => (
+      {frontmatter.preventiveMeasures.map(measure => (
         <li>{measure}</li>
       ))}
     </ul>
@@ -206,14 +219,9 @@ schema: {
 
   <div itemProp="serviceOutput">
     <ol>
-      <li>Thorough inspection</li>
-      <li>Problem diagnosis</li>
-      <li>Solution options</li>
-      <li>Clear pricing</li>
-      <li>Expert repairs</li>
-      <li>Quality testing</li>
-      <li>Final inspection</li>
-      <li>Maintenance advice</li>
+      {frontmatter.process.map(step => (
+        <li>{step}</li>
+      ))}
     </ol>
   </div>
 </section>

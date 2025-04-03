@@ -37,6 +37,19 @@ repairProcess:
   - Cost estimate
   - Professional repair
   - Quality testing
+repairTechniques:
+  - Pipe relining
+  - Pipe bursting
+  - CIPP lining
+  - Spot repairs
+  - Minimal excavation
+  - Fast restoration
+preventiveMeasures:
+  - Regular inspection
+  - Root treatment
+  - Line cleaning
+  - Maintenance plans
+  - Early detection
 schema: {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -101,7 +114,7 @@ schema: {
 
   <div>
     <ul itemProp="itemListElement">
-      {pipeTypes.map(type => (
+      {frontmatter.pipeTypes.map(type => (
         <li itemScope itemType="https://schema.org/Offer">
           <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
             <span itemProp="name">{type}</span>
@@ -117,7 +130,7 @@ schema: {
 
   <div itemProp="serviceOutput">
     <ul>
-      {commonIssues.map(issue => (
+      {frontmatter.commonIssues.map(issue => (
         <li>{issue}</li>
       ))}
     </ul>
@@ -129,7 +142,7 @@ schema: {
 
   <div>
     <ol>
-      {repairProcess.map((step, index) => (
+      {frontmatter.repairProcess.map((step, index) => (
         <li itemScope itemType="https://schema.org/HowToStep">
           <span itemProp="name">{step}</span>
         </li>
@@ -144,7 +157,7 @@ schema: {
   <div>
     <h3>Professional Services</h3>
     <ul itemProp="itemListElement">
-      {repairServices.map(service => (
+      {frontmatter.repairServices.map(service => (
         <li itemScope itemType="https://schema.org/Offer">
           <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
             <span itemProp="name">{service}</span>
@@ -161,12 +174,9 @@ schema: {
   <div itemProp="serviceOutput">
     <h3>Trenchless Solutions</h3>
     <ul>
-      <li>Pipe relining</li>
-      <li>Pipe bursting</li>
-      <li>CIPP lining</li>
-      <li>Spot repairs</li>
-      <li>Minimal excavation</li>
-      <li>Fast restoration</li>
+      {frontmatter.repairTechniques.map(technique => (
+        <li>{technique}</li>
+      ))}
     </ul>
   </div>
 </section>
@@ -213,13 +223,10 @@ schema: {
 
   <div itemProp="serviceOutput">
     <p>We help prevent future pipe problems with:</p>
-    <ul>
-      <li>Regular inspections</li>
-      <li>Pressure testing</li>
-      <li>Video diagnostics</li>
-      <li>Maintenance plans</li>
-      <li>Early detection</li>
-      <li>System upgrades</li>
+    <ul>  
+      {frontmatter.preventiveMeasures.map(measure => (
+        <li>{measure}</li>
+      ))}
     </ul>
   </div>
 </section>

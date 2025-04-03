@@ -34,6 +34,21 @@ benefits:
   - Protected appliances
   - Longer pipe life
   - Softer skin and hair
+maintenanceServices:
+  - Filter replacement
+  - System cleaning
+  - Performance testing
+  - Water quality checks
+  - Equipment updates
+  - Preventive care
+
+guarantee:
+  - Quality equipment
+  - Professional installation
+  - Verified results
+  - System warranty
+  - Satisfaction guarantee
+  - Expert support
 schema: {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -98,7 +113,7 @@ schema: {
 
   <div itemProp="serviceOutput">
     <ul>
-      {waterProblems.map(problem => (
+      {frontmatter.waterProblems.map(problem => (
         <li>{problem}</li>
       ))}
     </ul>
@@ -111,7 +126,7 @@ schema: {
   <div>
     <h3>Available Systems</h3>
     <ul itemProp="itemListElement">
-      {filtrationTypes.map(type => (
+      {frontmatter.filtrationTypes.map(type => (
         <li itemScope itemType="https://schema.org/Offer">
           <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
             <span itemProp="name">{type}</span>
@@ -156,7 +171,7 @@ schema: {
 
   <div>
     <ul itemProp="itemListElement">
-      {treatmentMethods.map(method => (
+      {frontmatter.treatmentMethods.map(method => (
         <li itemScope itemType="https://schema.org/Offer">
           <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
             <span itemProp="name">{method}</span>
@@ -172,7 +187,7 @@ schema: {
 
   <div itemProp="serviceOutput">
     <ul>
-      {benefits.map(benefit => (
+      {frontmatter.benefits.map(benefit => (
         <li>{benefit}</li>
       ))}
     </ul>
@@ -221,12 +236,9 @@ schema: {
 
   <div itemProp="serviceOutput">
     <ul>
-      <li>Filter replacement</li>
-      <li>System cleaning</li>
-      <li>Performance testing</li>
-      <li>Water quality checks</li>
-      <li>Equipment updates</li>
-      <li>Preventive care</li>
+      {frontmatter.maintenanceServices.map(service => (
+        <li>{service}</li>
+      ))}
     </ul>
   </div>
 </section>
@@ -236,12 +248,9 @@ schema: {
 
   <div itemProp="serviceOutput">
     <ul>
-      <li>Quality equipment</li>
-      <li>Professional installation</li>
-      <li>Verified results</li>
-      <li>System warranty</li>
-      <li>Satisfaction guarantee</li>
-      <li>Expert support</li>
+      {frontmatter.guarantee.map(guarantee => (
+        <li>{guarantee}</li>
+      ))}
     </ul>
   </div>
 </section>
