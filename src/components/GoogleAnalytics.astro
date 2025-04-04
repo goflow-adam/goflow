@@ -1,0 +1,19 @@
+---
+const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const isProd = import.meta.env.PROD;
+---
+
+<!-- Google Analytics Script - Only loads in production -->
+{measurementId && isProd && (
+  <Fragment>
+    <script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+    <script type="text/partytown" define:vars={{ measurementId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', measurementId);
+    </script>
+  </Fragment>
+)}

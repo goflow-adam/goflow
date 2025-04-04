@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import UnoCSS from 'unocss/astro'
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
+import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,7 +11,12 @@ export default defineConfig({
   integrations: [
     UnoCSS({injectReset: true}),
     sitemap(),
-    mdx()
+    mdx(),
+    partytown({
+      config: {
+        forward: ['dataLayer.push']
+      }
+    })
   ],
   markdown: {
     shikiConfig: {

@@ -1,6 +1,7 @@
 ---
 import { SEO } from 'astro-seo';
 import Navigation from '../components/Navigation.astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import '../styles/navigation.css';
 import '../styles/base-layout.css';
 interface Schema {
@@ -110,6 +111,7 @@ const baseSchema = {
     )}
     <link rel="icon shortcut" type="image/svg+xml" href="/favicon.ico" />
     <link rel="manifest" href="/site.webmanifest" />
+    <GoogleAnalytics />
   </head>
   <body class="page-body">
     <header>
