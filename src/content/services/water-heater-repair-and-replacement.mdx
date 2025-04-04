@@ -20,90 +20,71 @@ whyChoose:
   - Clean, professional service
 schema: {
     "@context": "https://schema.org",
-    "@type": "PlumbingService",
-    "@id": "https://goflow.plumbing/services/water-heater-repair-and-replacement",
-    "name": "Water Heater Repair and Replacement Services",
-    "description": "Expert water heater repair and replacement services for residential and commercial customers, including emergency repairs, maintenance, and new installations.",
-    "provider": {
-      "@type": "Plumber",
-      "@id": "https://goflow.plumbing",
-      "name": "GoFlow Plumbing",
-      "telephone": "+19167191897",
-      "url": "https://goflow.plumbing"
+    "@type": "Plumber",
+    "name": "GoFlow Plumbing",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Pine Ave",
+      "addressLocality": "Sonoma",
+      "addressRegion": "CA",
+      "postalCode": "95476",
+      "addressCountry": "US"
     },
-    "areaServed": {
-      "@type": "State",
-      "name": "California",
-      "containsPlace": [
+    "areaServed": [
+      {
+        "@type": "County",
+        "name": "Marin County"
+      },
+      {
+        "@type": "County",
+        "name": "Sonoma County"
+      },
+      {
+        "@type": "County",
+        "name": "Napa County"
+      }
+    ],
+    "description": "Expert water heater repair and replacement services for residential and commercial customers, including emergency repairs, maintenance, and new installations.",
+    "telephone": "+19167191897",
+    "url": "https://goflow.plumbing",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Water Heater Services",
+      "itemListElement": [
         {
-          "@type": "County",
-          "name": "Marin County"
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Emergency Water Heater Repair",
+            "description": "24/7 emergency repair service for all types of water heaters"
+          }
         },
         {
-          "@type": "County",
-          "name": "Sonoma County"
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Water Heater Replacement",
+            "description": "Complete water heater replacement with energy-efficient models"
+          }
         },
         {
-          "@type": "County",
-          "name": "Napa County"
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Preventive Maintenance",
+            "description": "Annual maintenance service to extend water heater life"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Code Compliance Updates",
+            "description": "Bringing your water heater up to current building codes"
+          }
         }
       ]
-    },
-    "offers": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "PlumbingService",
-          "name": "Emergency Water Heater Repair",
-          "description": "24/7 emergency repair service for all types of water heaters"
-        }
-        # ,
-        # "priceSpecification": {
-        #   "@type": "PriceSpecification",
-        #   "price": "199.00",
-        #   "priceCurrency": "USD",
-        #   "description": "Starting price for emergency repair service"
-        # }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "PlumbingService",
-          "name": "Water Heater Replacement",
-          "description": "Complete water heater replacement with energy-efficient models"
-        }
-        # ,
-        # "priceSpecification": {
-        #   "@type": "PriceSpecification",
-        #   "price": "1299.00",
-        #   "priceCurrency": "USD",
-        #   "description": "Starting price for standard tank water heater replacement"
-        # }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "PlumbingService",
-          "name": "Preventive Maintenance",
-          "description": "Annual maintenance service to extend water heater life"
-        }
-        # ,
-        # "priceSpecification": {
-        #   "@type": "PriceSpecification",
-        #   "price": "149.00",
-        #   "priceCurrency": "USD",
-        #   "description": "Annual maintenance service fee"
-        # }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "PlumbingService",
-          "name": "Code Compliance Updates",
-          "description": "Bringing your water heater up to current building codes"
-        }
-      }
-    ]
+    }
   }
 ---
 
@@ -138,7 +119,15 @@ schema: {
   </ul>
 </section>
 
-<section itemScope itemType="https://schema.org/LocalBusiness">
+<section itemScope itemType="https://schema.org/Plumber">
+  <meta itemProp="name" content="GoFlow Plumbing" />
+  <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+    <meta itemProp="streetAddress" content="10 Pine Ave" />
+    <meta itemProp="addressLocality" content="Sonoma" />
+    <meta itemProp="addressRegion" content="CA" />
+    <meta itemProp="postalCode" content="95476" />
+    <meta itemProp="addressCountry" content="US" />
+  </div>
   <h2>Why Choose GoFlow Plumbing?</h2>
 
   <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">

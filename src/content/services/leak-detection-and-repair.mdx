@@ -42,16 +42,19 @@ repairProcess:
   - [Maintenance advice,Providing recommendations for future prevention]
 schema: {
     "@context": "https://schema.org",
-    "@type": "PlumbingService",
+    "@type": "Plumber",
     "@id": "https://goflow.plumbing/services/leak-detection-and-repair",
-    "name": "Professional Leak Detection & Repair Services",
+    "name": "GoFlow Plumbing",
     "description": "Expert leak detection and repair services using advanced technology including thermal imaging, acoustic detection, and pressure testing. We find and fix hidden leaks fast to prevent water damage.",
-    "provider": {
-      "@type": "Plumber",
-      "@id": "https://goflow.plumbing",
-      "name": "GoFlow Plumbing",
-      "telephone": "+19167191897",
-      "url": "https://goflow.plumbing"
+    "url": "https://goflow.plumbing",
+    "telephone": "+19167191897",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Pine Ave",
+      "addressLocality": "Sonoma",
+      "addressRegion": "CA",
+      "postalCode": "95476",
+      "addressCountry": "US"
     },
     "areaServed": {
       "@type": "State",
@@ -67,20 +70,24 @@ schema: {
         }
       ]
     },
-    "offers": [
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Leak Detection Services",
+      "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "PlumbingService",
           "name": "Electronic Leak Detection",
           "description": "Advanced electronic equipment to precisely locate hidden leaks"
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "199.00",
-          "priceCurrency": "USD",
-          "description": "Starting price for electronic leak detection service"
         }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "199.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for electronic leak detection service"
+        # }
       },
       {
         "@type": "Offer",
@@ -98,7 +105,8 @@ schema: {
           "description": "24/7 emergency service for critical leaks"
         }
       }
-    ]
+      ]
+    }
   }
 ---
 
@@ -141,11 +149,12 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2>Our Leak Detection Process</h2>
+  <h2 itemProp="name">Professional Leak Detection Process</h2>
+  <div itemProp="description">Our step-by-step process to detect and locate hidden leaks in your plumbing system.</div>
 
   <ol>
     {frontmatter.detectionMethods.map(method => (
-      <li itemScope itemType="https://schema.org/HowToStep">
+      <li itemScope itemType="https://schema.org/HowToStep" itemProp="step">
         <span itemProp="name">{method}</span>
         <span itemProp="text">Using {method} to detect hidden leaks</span>
       </li>
@@ -154,11 +163,12 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2>Our Repair Process</h2>
+  <h2 itemProp="name">Leak Repair Process</h2>
+  <div itemProp="description">Our comprehensive process for repairing detected leaks efficiently and effectively.</div>
 
   <ol>
     {frontmatter.repairProcess.map(process => (
-      <li itemScope itemType="https://schema.org/HowToStep">
+      <li itemScope itemType="https://schema.org/HowToStep" itemProp="step">
         <span itemProp="name">{process[0]}</span>
         <span itemProp="text">{process[1]}</span>
       </li>

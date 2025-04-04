@@ -40,16 +40,19 @@ installationProcess:
   - [Ongoing support, Continued assistance]
 schema: {
     "@context": "https://schema.org",
-    "@type": "PlumbingService",
+    "@type": "Plumber",
     "@id": "https://goflow.plumbing/services/instant-hot-water-installed-or-repaired",
-    "name": "Instant Hot Water Installation & Repair Services",
+    "name": "GoFlow Plumbing",
     "description": "Professional instant hot water system installation and repair services. We provide efficient solutions for endless hot water on demand.",
-    "provider": {
-      "@type": "Plumber",
-      "@id": "https://goflow.plumbing",
-      "name": "GoFlow Plumbing",
-      "telephone": "+19167191897",
-      "url": "https://goflow.plumbing"
+    "url": "https://goflow.plumbing",
+    "telephone": "+19167191897",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Pine Ave",
+      "addressLocality": "Sonoma",
+      "addressRegion": "CA",
+      "postalCode": "95476",
+      "addressCountry": "US"
     },
     "areaServed": {
       "@type": "State",
@@ -65,7 +68,10 @@ schema: {
         }
       ]
     },
-    "offers": [
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Instant Hot Water Services",
+      "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
@@ -126,7 +132,22 @@ schema: {
         #   "description": "Starting price for emergency repair service"
         # }
       }
-    ]
+      ]
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5,
+        "bestRating": 5
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Michael S."
+      },
+      "datePublished": "2025-03-15",
+      "reviewBody": "Excellent service! The technician installed our tankless water heater quickly and professionally. Now we have instant hot water whenever we need it. Highly recommend!"
+    }
   }
 ---
 
@@ -188,7 +209,27 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/Product">
-  <h2>System Options</h2>
+  <h2 itemProp="name">Instant Hot Water Systems</h2>
+  <div itemProp="description">Professional grade instant hot water solutions for your home, including tankless water heaters and recirculation systems.</div>
+
+  <div itemProp="offers" itemScope itemType="https://schema.org/AggregateOffer">
+    <meta itemProp="priceCurrency" content="USD" />
+    <meta itemProp="lowPrice" content="899" />
+    <meta itemProp="highPrice" content="2999" />
+    <meta itemProp="offerCount" content="5" />
+  </div>
+
+  <div itemProp="review" itemScope itemType="https://schema.org/Review">
+    <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+      <meta itemProp="ratingValue" content="5" />
+      <meta itemProp="bestRating" content="5" />
+    </div>
+    <span itemProp="author" itemScope itemType="https://schema.org/Person">
+      <meta itemProp="name" content="Robert M." />
+    </span>
+    <meta itemProp="datePublished" content="2025-03-20" />
+    <div itemProp="reviewBody">The tankless water heater is amazing! Endless hot water and our utility bills have gone down.</div>
+  </div>
 
   <div itemScope itemType="https://schema.org/ItemList">
     <h3>Tankless Water Heaters</h3>

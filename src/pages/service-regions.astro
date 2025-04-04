@@ -18,13 +18,16 @@ const schema = createServiceRegionsSchema(regions);
   description="Professional plumbing services throughout Sonoma and Marin Counties. Find your local plumbing experts."
   schema={schema}
 >
-  <div class="service-regions" itemscope itemtype="https://schema.org/HomeAndConstructionBusiness">
+  <div class="service-regions" itemscope itemtype="https://schema.org/Plumber">
     <meta itemprop="name" content="GoFlow Plumbing" />
     <meta itemprop="description" content="Professional plumbing services in Sonoma and Marin County" />
     <meta itemprop="telephone" content="916-719-1897" />
     <link itemprop="url" href="https://goflow.plumbing" />
-    <meta itemprop="priceRange" content="$$" />
-    <meta itemprop="@type" content="Plumber" />
+    <div itemprop="openingHoursSpecification" itemscope itemtype="https://schema.org/OpeningHoursSpecification">
+      <meta itemprop="dayOfWeek" content="Monday Tuesday Wednesday Thursday Friday Saturday Sunday" />
+      <meta itemprop="opens" content="00:00" />
+      <meta itemprop="closes" content="23:59" />
+    </div>
     
     <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
       <meta itemprop="streetAddress" content="10 Pine Ave" />
@@ -44,7 +47,7 @@ const schema = createServiceRegionsSchema(regions);
       <meta itemprop="name" content="California" />
       {regions.map((region) => (
         <div itemprop="containsPlace" itemscope itemtype="https://schema.org/AdministrativeArea">
-          <meta itemprop="@type" content="County" />
+
           <div class="region-card">
             <h2>
               <a href={`/${region.slug}`} itemprop="url">

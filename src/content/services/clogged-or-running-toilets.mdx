@@ -20,16 +20,17 @@ whyChoose:
   - Clean, professional service
 schema: {
     "@context": "https://schema.org",
-    "@type": "PlumbingService",
+    "@type": "Plumber",
     "@id": "https://goflow.plumbing/services/clogged-or-running-toilets",
-    "name": "Professional Toilet Repair Services",
+    "name": "GoFlow Plumbing",
     "description": "Expert toilet repair services including clog removal, running toilet fixes, leak repairs, and installations. Available 24/7 for emergencies with upfront pricing.",
-    "provider": {
-      "@type": "Plumber",
-      "@id": "https://goflow.plumbing",
-      "name": "GoFlow Plumbing",
-      "telephone": "+19167191897",
-      "url": "https://goflow.plumbing"
+    "url": "https://goflow.plumbing",
+    "telephone": "+19167191897",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sonoma",
+      "addressRegion": "CA",
+      "addressCountry": "US"
     },
     "areaServed": {
       "@type": "State",
@@ -152,10 +153,10 @@ schema: {
   </div>
 </section>
 
-<section itemScope itemType="https://schema.org/LocalBusiness">
+<section itemScope itemType="https://schema.org/Service">
   <h2>Why Choose GoFlow Plumbing?</h2>
 
-  <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+  <ul itemScope itemType="https://schema.org/OfferCatalog">
   {frontmatter.whyChoose.map(service => (
     <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
       <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">

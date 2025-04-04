@@ -30,6 +30,54 @@ containsPlace: [
       ]
 pubDate: 2025-03-24
 heroImage: "/images/marin-county.jpg"
+schema: {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "GoFlow Plumbing",
+    "url": "https://goflow.plumbing",
+    "telephone": "+19167191897",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Pine Ave",
+      "addressLocality": "Sonoma",
+      "addressRegion": "CA",
+      "postalCode": "95476",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "containsPlace": [
+        {
+          "@type": "County",
+          "name": "Marin County"
+        }
+      ]
+    },
+    "description": "Expert plumbing services throughout Marin County. We understand the unique challenges of the region's geography and building codes.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Marin County Plumbing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Emergency Plumbing",
+            "description": "24/7 emergency plumbing services in Marin County"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Residential Plumbing",
+            "description": "Complete home plumbing services for Marin County residents"
+          }
+        }
+      ]
+    }
+}
 ---
 
 <h1 itemprop="name">{frontmatter.contentTitle}</h1>

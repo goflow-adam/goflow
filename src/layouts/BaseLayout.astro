@@ -3,10 +3,16 @@ import { SEO } from 'astro-seo';
 import Navigation from '../components/Navigation.astro';
 import '../styles/navigation.css';
 import '../styles/base-layout.css';
+interface Schema {
+  '@context': string;
+  '@type': string;
+  [key: string]: any;
+}
+
 interface Props {
   title: string;
   description: string;
-  schema?: object | object[];
+  schema?: Schema | Schema[];
 }
 
 const { title, description, schema } = Astro.props;
@@ -24,7 +30,7 @@ const baseSchema = {
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "123 Main Street",
-    "addressLocality": "Santa Rosa",
+    "addressLocality": "Sonoma",
     "addressRegion": "CA",
     "postalCode": "95401",
     "addressCountry": "US"
@@ -84,7 +90,9 @@ const baseSchema = {
       }}
     />
     {schema ? (
-      Array.isArray(schema) ? (
+      (schema as Schema)['@type'] === 'FAQPage' ? (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      ) : Array.isArray(schema) ? (
         <>
           <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
           {schema.map(item => (

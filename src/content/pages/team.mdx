@@ -84,36 +84,42 @@ microdata:
 schema: {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  "mainEntity": [
-    {
-      "@type": "Organization",
-      "name": "GoFlow Plumbing",
-      "foundingDate": "2024-01-01",
-      "description": "Professional plumbing services in Sonoma and Marin Counties",
-      "member": [
-        {
-          "@type": "Person",
-          "name": "Adam Bragg",
-          "givenName": "Adam",
-          "familyName": "Bragg",
-          "jobTitle": "Founder & CEO",
-          "description": "Third generation plumbing entrepreneur, his grandfather started Bragg Plumbing in San Francisco. His son later expanded their services to the north bay. And now, Adam, will continue the tradition of improving the quality of results customers can come to expect.​​",
-          "telephone": "+19167191897",
-          "email": "adam@goflow.plumbing",
-          "url": "https://goflow.plumbing/team#adam-bragg"
-        },
-        {
-          "@type": "Person",
-          "name": "Jarrod Stuckenbroker",
-          "givenName": "Jarrod",
-          "familyName": "Stuckenbroker",
-          "jobTitle": "Founder & COO",
-          "description": "For the last 30 years, Jarrod has seen, experienced, and been part of the ins and outs of every level of plumbing in the bay area.",
-          "email": "jarrod@goflow.plumbing",
-          "url": "https://goflow.plumbing/team#jarrod-stuckenbroker"
-        }
-      ]
-    }
+  "mainEntity": {
+    "@type": "Plumber",
+    "name": "GoFlow Plumbing",
+    "foundingDate": "2024-01-01",
+    "description": "Professional plumbing services in Sonoma and Marin Counties",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Pine Ave",
+      "addressLocality": "Sonoma",
+      "addressRegion": "CA",
+      "postalCode": "95476",
+      "addressCountry": "US"
+    },
+    "employee": [
+      {
+        "@type": "Person",
+        "name": "Adam Bragg",
+        "givenName": "Adam",
+        "familyName": "Bragg",
+        "jobTitle": "Founder & CEO",
+        "description": "Third generation plumbing entrepreneur, his grandfather started Bragg Plumbing in San Francisco. His son later expanded their services to the north bay. And now, Adam, will continue the tradition of improving the quality of results customers can come to expect.​​",
+        "telephone": "+19167191897",
+        "email": "adam@goflow.plumbing",
+        "url": "https://goflow.plumbing/team#adam-bragg"
+      },
+      {
+        "@type": "Person",
+        "name": "Jarrod Stuckenbroker",
+        "givenName": "Jarrod",
+        "familyName": "Stuckenbroker",
+        "jobTitle": "Founder & COO",
+        "description": "For the last 30 years, Jarrod has seen, experienced, and been part of the ins and outs of every level of plumbing in the bay area.",
+        "email": "jarrod@goflow.plumbing",
+        "url": "https://goflow.plumbing/team#jarrod-stuckenbroker"
+      }
+    ]
     # ,
     # {
     #   "@type": "JobPosting",
@@ -131,7 +137,7 @@ schema: {
     #     "@type": "Place",
     #     "address": {
     #       "@type": "PostalAddress",
-    #       "addressLocality": "Santa Rosa",
+    #       "addressLocality": "Sonoma",
     #       "addressRegion": "CA",
     #       "addressCountry": "US"
     #     }
@@ -151,8 +157,7 @@ schema: {
     #   "skills": "Plumbing, Water Heaters, Gas Fitting, Drain Cleaning, Customer Service",
     #   "benefits": "Health insurance, dental, vision, 401k, paid time off, ongoing training"
     # }
-  ]
-}
+}}
 ---
 
 <div itemScope itemType="https://schema.org/Organization">
@@ -227,11 +232,11 @@ schema: {
         </div>
       </div>
 
-      <div itemProp="contactPoint" itemScope itemType="https://schema.org/ContactPoint">
+      <div>
         <h5>Contact Us:</h5>
-        <a href="tel:+19167191897" itemProp="telephone">(916) 719-1897</a>
+        <a href="tel:+19167191897">(916) 719-1897</a>
         <br />
-        <a href="mailto:careers@goflow.plumbing" itemProp="email">careers@goflow.plumbing</a>
+        <a href="mailto:careers@goflow.plumbing">careers@goflow.plumbing</a>
       </div>
 
       <div>

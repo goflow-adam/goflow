@@ -26,16 +26,17 @@ drainCleaningSigns:
   - "Water backing up in sinks or tubs"
 schema: {
     "@context": "https://schema.org",
-    "@type": "PlumbingService",
+    "@type": "Plumber",
     "@id": "https://goflow.plumbing/services/clogged-drains-rootered",
-    "name": "Professional Drain Clearing Services",
+    "name": "GoFlow Plumbing",
     "description": "Professional drain cleaning and unclogging services using state-of-the-art equipment including video inspection cameras, hydro-jetting, and root cutting equipment.",
-    "provider": {
-      "@type": "Plumber",
-      "@id": "https://goflow.plumbing",
-      "name": "GoFlow Plumbing",
-      "telephone": "+19167191897",
-      "url": "https://goflow.plumbing"
+    "url": "https://goflow.plumbing",
+    "telephone": "+19167191897",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sonoma",
+      "addressRegion": "CA",
+      "addressCountry": "US"
     },
     "areaServed": {
       "@type": "State",
@@ -156,10 +157,10 @@ schema: {
   </div>
 </section>
 
-<section itemScope itemType="https://schema.org/LocalBusiness">
+<section itemScope itemType="https://schema.org/Service">
   <h2>The GoFlow Advantage</h2>
 
-  <div itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+  <div itemScope itemType="https://schema.org/OfferCatalog">
     <div>
       <h3>Thorough Inspection</h3>
       <p>Before starting any work, we perform a detailed inspection to identify the exact cause of your drain problems.</p>

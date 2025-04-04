@@ -63,16 +63,19 @@ additionalServices:
 - Maintenance plans
 schema: {
   "@context": "https://schema.org",
-  "@type": "PlumbingService",
+  "@type": "Plumber",
   "@id": "https://goflow.plumbing/services/emergency-plumbing-services",
-  "name": "24/7 Emergency Plumbing Services",
+  "name": "GoFlow Plumbing",
   "description": "24/7 emergency plumbing services for burst pipes, major leaks, flooding, sewer backups, and other urgent plumbing issues. Available nights, weekends, and holidays.",
-  "provider": {
-    "@type": "Plumber",
-    "@id": "https://goflow.plumbing",
-    "name": "GoFlow Plumbing",
-    "telephone": "+19167191897",
-    "url": "https://goflow.plumbing"
+  "url": "https://goflow.plumbing",
+  "telephone": "+19167191897",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10 Pine Ave",
+    "addressLocality": "Sonoma",
+    "addressRegion": "CA",
+    "postalCode": "95476",
+    "addressCountry": "US"
   },
   "areaServed": {
     "@type": "State",
@@ -94,44 +97,49 @@ schema: {
     "servicePhone": "+19167191897",
     "availableLanguage": ["en-US"]
   },
-  "offers": [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "PlumbingService",
-        "name": "Burst Pipe Repair",
-        "description": "24/7 emergency repair for burst pipes to prevent water damage"
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Burst Pipe Repair",
+          "description": "24/7 emergency repair for burst pipes to prevent water damage"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "150.00",
+          "priceCurrency": "USD",
+          "description": "Starting price for emergency service call"
+        }
       },
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "price": "150.00",
-        "priceCurrency": "USD",
-        "description": "Starting price for emergency service call"
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Major Leak Repair",
+          "description": "Emergency repair for major water leaks and flooding"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sewer Backup Resolution",
+          "description": "Emergency resolution for sewer backups and blockages"
+        }
       }
-    },
+    ]
+  },
+  "openingHoursSpecification": [
     {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "PlumbingService",
-        "name": "Major Leak Repair",
-        "description": "Emergency repair for major water leaks and flooding"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "PlumbingService",
-        "name": "Sewer Backup Resolution",
-        "description": "Emergency resolution for sewer backups and blockages"
-      }
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
     }
-  ],
-  "hoursAvailable": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    "opens": "00:00",
-    "closes": "23:59"
-  }
+  ]
 }
 ---
 

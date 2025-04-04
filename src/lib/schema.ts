@@ -1,5 +1,5 @@
 export const businessInfo = {
-  "@type": "LocalBusiness",
+  "@type": "Plumber",
   "@id": "https://goflow.plumbing/#business",
   "name": "GoFlow Plumbing",
   "telephone": "916-719-1897",
@@ -20,7 +20,14 @@ export const businessInfo = {
   "url": "https://goflow.plumbing",
   "priceRange": "$$",
   "areaServed": ["Sonoma County", "Marin County"],
-  "openingHours": ["Mo-Su 00:00-23:59"]
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ]
 };
 
 export function createServiceSchema(serviceName: string, serviceType: string, serviceUrl: string) {

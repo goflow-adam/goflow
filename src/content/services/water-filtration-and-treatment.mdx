@@ -51,23 +51,26 @@ guarantee:
   - Expert support
 schema: {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Professional Water Filtration & Treatment Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": [
-      {
-        "@type": "County",
-        "name": "Sonoma County"
-      },
-      {
-        "@type": "County",
-        "name": "Marin County"
-      }
-    ]
+  "@type": "Plumber",
+  "name": "GoFlow Plumbing",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10 Pine Ave",
+    "addressLocality": "Sonoma",
+    "addressRegion": "CA",
+    "postalCode": "95476",
+    "addressCountry": "US"
   },
-  "serviceType": "Plumbing",
+  "areaServed": [
+    {
+      "@type": "County",
+      "name": "Sonoma County"
+    },
+    {
+      "@type": "County",
+      "name": "Marin County"
+    }
+  ],
   "description": "Expert water filtration and treatment services providing cleaner, healthier water through advanced filtration systems and professional treatment solutions.",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -95,8 +98,7 @@ schema: {
         }
       }
     ]
-  }
-}
+  }}
 ---
 
 <article itemScope itemType="https://schema.org/Service">
@@ -139,26 +141,27 @@ schema: {
 
 <section itemScope itemType="https://schema.org/HowTo">
   <h2 itemProp="name">Our Water Treatment Process</h2>
+  <div itemProp="description">Professional water treatment process for optimal water quality.</div>
 
   <div>
     <ol>
-      <li itemScope itemType="https://schema.org/HowToStep">
+      <li key="step1" itemScope itemType="https://schema.org/HowToStep" itemProp="step">
         <span itemProp="name">Water Testing</span>
         <span itemProp="text">Comprehensive analysis of your water quality</span>
       </li>
-      <li itemScope itemType="https://schema.org/HowToStep">
+      <li key="step2" itemScope itemType="https://schema.org/HowToStep" itemProp="step">
         <span itemProp="name">Problem Identification</span>
         <span itemProp="text">Determining specific water quality issues</span>
       </li>
-      <li itemScope itemType="https://schema.org/HowToStep">
+      <li key="step3" itemScope itemType="https://schema.org/HowToStep" itemProp="step">
         <span itemProp="name">Solution Design</span>
         <span itemProp="text">Customizing the right treatment approach</span>
       </li>
-      <li itemScope itemType="https://schema.org/HowToStep">
+      <li key="step4" itemScope itemType="https://schema.org/HowToStep" itemProp="step">
         <span itemProp="name">System Installation</span>
         <span itemProp="text">Professional setup of filtration equipment</span>
       </li>
-      <li itemScope itemType="https://schema.org/HowToStep">
+      <li key="step5" itemScope itemType="https://schema.org/HowToStep" itemProp="step">
         <span itemProp="name">Quality Verification</span>
         <span itemProp="text">Testing to ensure desired results</span>
       </li>
@@ -194,7 +197,15 @@ schema: {
   </div>
 </section>
 
-<section itemScope itemType="https://schema.org/LocalBusiness">
+<section itemScope itemType="https://schema.org/Plumber">
+  <meta itemProp="name" content="GoFlow Plumbing" />
+  <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+    <meta itemProp="streetAddress" content="10 Pine Ave" />
+    <meta itemProp="addressLocality" content="Sonoma" />
+    <meta itemProp="addressRegion" content="CA" />
+    <meta itemProp="postalCode" content="95476" />
+    <meta itemProp="addressCountry" content="US" />
+  </div>
   <h2>Why Choose GoFlow for Water Quality?</h2>
 
   <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">

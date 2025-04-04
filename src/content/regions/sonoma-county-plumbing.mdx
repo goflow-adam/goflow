@@ -44,13 +44,23 @@ Our hilly and ridgeline areas like Glen Ellen, Kenwood, Sebastopol, while simila
 
 {frontmatter.region}'s forested and mountainous Regions as well as our riverfront and wetland areas like Occidental, Cazadero, Healdsburg Highlands, Russian River, Valley Ford, and Gualala offer similar challenges while also requiring evermore robust supply and waste lines entering and leaving the homes due to their potential distance from local utilities. Moisture is also an issue here and this can alter plumbing options such that condensation does not further contribute to moisture accumulation in your home.
 
-<div itemprop="areaServed" itemscope itemtype="https://schema.org/GeoCircle">
-  <h2>Areas We Serve in {frontmatter.region}</h2>
-  
-  <div itemprop="geoMidpoint" itemscope itemtype="https://schema.org/GeoCoordinates">
-    <meta itemprop="latitude" content="38.4404674" />
-    <meta itemprop="longitude" content="-122.7144314" />
+<div itemScope itemType="https://schema.org/Plumber">
+  <meta itemProp="name" content="GoFlow Plumbing" />
+  <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+    <meta itemProp="streetAddress" content="10 Pine Ave" />
+    <meta itemProp="addressLocality" content="Sonoma" />
+    <meta itemProp="addressRegion" content="CA" />
+    <meta itemProp="postalCode" content="95476" />
+    <meta itemProp="addressCountry" content="US" />
   </div>
+
+  <div itemprop="areaServed" itemscope itemtype="https://schema.org/GeoCircle">
+    <h2>Areas We Serve in {frontmatter.region}</h2>
+    
+    <div itemprop="geoMidpoint" itemscope itemtype="https://schema.org/GeoCoordinates">
+      <meta itemprop="latitude" content="38.4404674" />
+      <meta itemprop="longitude" content="-122.7144314" />
+    </div>
   
   <h3 itemprop="serviceLocation">Major Cities</h3>
   <ul>
@@ -63,6 +73,7 @@ Our hilly and ridgeline areas like Glen Ellen, Kenwood, Sebastopol, while simila
 
   <h3>Surrounding Communities</h3>
   <p>We also serve all surrounding communities and unincorporated areas within {frontmatter.region}.</p>
+  </div>
 </div>
 
 <div itemprop="openingHoursSpecification" itemscope itemtype="https://schema.org/OpeningHoursSpecification">

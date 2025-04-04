@@ -56,16 +56,19 @@ replacementServices:
   - Proper disposal of old unit
 schema: {
     "@context": "https://schema.org",
-    "@type": "PlumbingService",
+    "@type": "Plumber",
     "@id": "https://goflow.plumbing/services/garbage-disposal-repair-or-installation",
-    "name": "Professional Garbage Disposal Services",
+    "name": "GoFlow Plumbing",
     "description": "Expert garbage disposal repair and installation services including jam removal, leak repairs, and new installations. Same-day service available with warranty.",
-    "provider": {
-      "@type": "Plumber",
-      "@id": "https://goflow.plumbing",
-      "name": "GoFlow Plumbing",
-      "telephone": "+19167191897",
-      "url": "https://goflow.plumbing"
+    "url": "https://goflow.plumbing",
+    "telephone": "+19167191897",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Pine Ave",
+      "addressLocality": "Sonoma",
+      "addressRegion": "CA",
+      "postalCode": "95476",
+      "addressCountry": "US"
     },
     "areaServed": {
       "@type": "State",
@@ -81,7 +84,10 @@ schema: {
         }
       ]
     },
-    "offers": [
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Garbage Disposal Services",
+      "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
@@ -142,7 +148,8 @@ schema: {
         #   "description": "Disposal upgrade service"
         # }
       }
-    ]
+      ]
+    }
   }
 ---
 
@@ -231,26 +238,6 @@ schema: {
           </span>
         </li>
       ))}
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Quiet operation models</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Energy-efficient units</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Multiple brand choices</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Different price points</span>
-        </span>
-      </li>
     </ul>
   </div>
 
@@ -264,21 +251,6 @@ schema: {
           </span>
         </li>
       ))}
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Minimal disruption</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Updated connections</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Proper disposal of old unit</span>
-        </span>
-      </li>
     </ul>
   </div>
 </section>
@@ -294,31 +266,6 @@ schema: {
         </span>
       </li>
     ))}
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Same-day service available</span>
-      </span>
-    </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Fair, upfront pricing</span>
-      </span>
-    </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Warranty on parts and labor</span>
-      </span>
-    </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Professional installation</span>
-      </span>
-    </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Expert advice and maintenance tips</span>
-      </span>
-    </li>
   </ol>
 </section>
 

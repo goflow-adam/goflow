@@ -22,32 +22,73 @@ repairServices:
   - Hose repairs
   - Valve repairs
 commonProblems:
-  leakingIssues:
-    - Door seal leaks
-    - Hose leaks
-    - Connection leaks
-    - Drain problems
-    - Supply line issues
-    - Gasket failures
-  installationProblems:
-    - Improper leveling
-    - Poor connections
-    - Inadequate sealing
-    - Drain height issues
-    - Supply line kinks
-    - Disposal connection problems
+  - name: Leaking Issues
+    items:
+      - Door seal leaks
+      - Hose leaks
+      - Connection leaks
+      - Drain problems
+      - Supply line issues
+      - Gasket failures
+  - name: Installation Problems
+    items:
+      - Improper leveling
+      - Poor connections
+      - Inadequate sealing
+      - Drain height issues
+      - Supply line kinks
+      - Disposal connection problems
+installationProcess:
+  - name: Pre-Installation
+    items:
+      - Site inspection
+      - Measurements
+      - Water supply check
+      - Drain assessment
+      - Space preparation
+      - Material requirements
+  - name: Installation Steps
+    items:
+      - Old unit removal
+      - Area preparation
+      - New unit placement
+      - Water connection
+      - Drain connection
+      - Level adjustment
+      - Seal installation
+      - Testing
+maintenanceServices:
+  - name: Regular Maintenance
+    items:
+      - Connection checks
+      - Seal inspection
+      - Hose examination
+      - Drain cleaning
+      - Performance testing
+      - Preventive care
+  - name: Tips and Advice
+    items:
+      - Proper usage
+      - Cleaning recommendations
+      - Problem prevention
+      - When to call
+      - Emergency steps
+      - Efficiency tips
 schema: {
     "@context": "https://schema.org",
-    "@type": "PlumbingService",
+    "@type": "Plumber",
     "@id": "https://goflow.plumbing/services/dishwasher-installation-or-leak-repair",
-    "name": "Professional Dishwasher Installation and Repair Services",
+    "name": "GoFlow Plumbing",
     "description": "Expert dishwasher installation, repair, and maintenance services including leak detection, drain line cleaning, and new installations. Professional service with upfront pricing.",
-    "provider": {
-      "@type": "Plumber",
-      "@id": "https://goflow.plumbing",
-      "name": "GoFlow Plumbing",
-      "telephone": "+19167191897",
-      "url": "https://goflow.plumbing"
+    "url": "https://goflow.plumbing",
+    "telephone": "+19167191897",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Pine Ave",
+      "addressLocality": "Sonoma",
+      "addressRegion": "CA",
+      "postalCode": "95476",
+      "addressCountry": "US"
     },
     "areaServed": {
       "@type": "State",
@@ -63,68 +104,43 @@ schema: {
         }
       ]
     },
-    "offers": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "PlumbingService",
-          "name": "New Dishwasher Installation",
-          "description": "Professional installation of new dishwashers with proper connections"
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "New Dishwasher Installation",
+            "description": "Professional installation of new dishwashers with proper connections"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Emergency Leak Repair",
+            "description": "24/7 emergency service for dishwasher leaks and flooding"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Dishwasher Maintenance",
+            "description": "Regular maintenance and inspection of dishwasher systems"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Drain Line Service",
+            "description": "Clean and repair dishwasher drain lines"
+          }
         }
-        # ,
-        # "priceSpecification": {
-        #   "@type": "PriceSpecification",
-        #   "price": "299.00",
-        #   "priceCurrency": "USD",
-        #   "description": "Standard dishwasher installation service"
-        # }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "PlumbingService",
-          "name": "Emergency Leak Repair",
-          "description": "24/7 emergency service for dishwasher leaks and flooding"
-        }
-        # ,
-        # "priceSpecification": {
-        #   "@type": "PriceSpecification",
-        #   "price": "149.00",
-        #   "priceCurrency": "USD",
-        #   "description": "Emergency leak repair service"
-        # }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "PlumbingService",
-          "name": "Dishwasher Maintenance",
-          "description": "Regular maintenance and inspection of dishwasher systems"
-        }
-        # ,
-        # "priceSpecification": {
-        #   "@type": "PriceSpecification",
-        #   "price": "89.00",
-        #   "priceCurrency": "USD",
-        #   "description": "Maintenance service"
-        # }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "PlumbingService",
-          "name": "Drain Line Service",
-          "description": "Clean and repair dishwasher drain lines"
-        }
-        # ,
-        # "priceSpecification": {
-        #   "@type": "PriceSpecification",
-        #   "price": "129.00",
-        #   "priceCurrency": "USD",
-        #   "description": "Drain line service"
-        # }
-      }
-    ]
+      ]
+    }
     # # ,
     # "aggregateRating": {
     #   "@type": "AggregateRating",
@@ -165,146 +181,59 @@ schema: {
   <div>
     <h3>Installation Services</h3>
     <ul itemProp="itemListElement">
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">New dishwasher installation</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Replacement installation</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Water line installation</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Drain line setup</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Electrical connection coordination</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Cabinet modifications</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Disposal integration</span>
-        </span>
-      </li>
+      {frontmatter.installationServices.map(service => (
+        <li itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{service}</span>
+          </span>
+        </li>
+      ))}
     </ul>
   </div>
 
   <div>
     <h3>Repair Services</h3>
     <ul itemProp="itemListElement">
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Leak detection and repair</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Drain line cleaning</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Water supply issues</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Connection problems</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Seal replacements</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Hose repairs</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Valve repairs</span>
-        </span>
-      </li>
+      {frontmatter.repairServices.map(service => (
+        <li itemScope itemType="https://schema.org/Offer">
+          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">{service}</span>
+          </span>
+        </li>
+      ))}
     </ul>
   </div>
 </section>
 
 <section itemScope itemType="https://schema.org/Service">
   <h2>Common Dishwasher Problems</h2>
-
-  <div>
-    <h3>Leaking Issues</h3>
-    <ul itemProp="serviceOutput">
-      <li>Door seal leaks</li>
-      <li>Hose leaks</li>
-      <li>Connection leaks</li>
-      <li>Drain problems</li>
-      <li>Supply line issues</li>
-      <li>Gasket failures</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>Installation Problems</h3>
-    <ul itemProp="serviceOutput">
-      <li>Improper leveling</li>
-      <li>Poor connections</li>
-      <li>Inadequate sealing</li>
-      <li>Drain height issues</li>
-      <li>Supply line kinks</li>
-      <li>Disposal connection problems</li>
-    </ul>
-  </div>
+  {frontmatter.commonProblems.map(category => (
+    <div>
+      <h3>{category.name}</h3>
+      <ul itemProp="serviceOutput">
+        {category.items.map(item => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  ))}
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
   <h2 itemProp="name">Professional Installation Process</h2>
 
-  <div itemProp="step" itemScope itemType="https://schema.org/HowToStep">
-    <h3 itemProp="name">1. Pre-Installation</h3>
-    <div itemProp="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
-      <ul>
-        <li>Site inspection</li>
-        <li>Measurements</li>
-        <li>Water supply check</li>
-        <li>Drain assessment</li>
-        <li>Space preparation</li>
-        <li>Material requirements</li>
-      </ul>
+  {frontmatter.installationProcess.map(step => (
+    <div itemProp="step" itemScope itemType="https://schema.org/HowToStep">
+      <h3 itemProp="name">{step.name}</h3>
+      <div itemProp="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
+        <ul>
+          {step.items.map(item => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
     </div>
-  </div>
-
-  <div itemProp="step" itemScope itemType="https://schema.org/HowToStep">
-    <h3 itemProp="name">2. Installation Steps</h3>
-    <div itemProp="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
-      <ul>
-        <li>Old unit removal</li>
-        <li>Area preparation</li>
-        <li>New unit placement</li>
-        <li>Water connection</li>
-        <li>Drain connection</li>
-        <li>Level adjustment</li>
-        <li>Seal installation</li>
-        <li>Testing</li>
-      </ul>
-    </div>
-  </div>
+  ))}
 </section>
 
 <section itemScope itemType="https://schema.org/LocalBusiness">
@@ -386,29 +315,16 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Maintenance Services</h2>
 
-  <div>
-    <h3>Regular Maintenance</h3>
-    <ul itemProp="serviceOutput">
-      <li>Connection checks</li>
-      <li>Seal inspection</li>
-      <li>Hose examination</li>
-      <li>Drain cleaning</li>
-      <li>Performance testing</li>
-      <li>Preventive care</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>Tips and Advice</h3>
-    <ul itemProp="serviceOutput">
-      <li>Proper usage</li>
-      <li>Cleaning recommendations</li>
-      <li>Problem prevention</li>
-      <li>When to call</li>
-      <li>Emergency steps</li>
-      <li>Efficiency tips</li>
-    </ul>
-  </div>
+  {frontmatter.maintenanceServices.map(service => (
+    <div>
+      <h3>{service.name}</h3>
+      <ul itemProp="serviceOutput">
+        {service.items.map(item => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  ))}
 </section>
 
 <section itemScope itemType="https://schema.org/OfferCatalog">

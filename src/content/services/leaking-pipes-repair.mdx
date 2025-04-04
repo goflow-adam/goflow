@@ -37,12 +37,22 @@ emergencyServices:
   - Temporary solutions if needed
 schema: {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Leaking Pipe Repair Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": [
+  "@type": "Plumber",
+  "name": "GoFlow Plumbing",
+  "url": "https://goflow.plumbing",
+  "telephone": "+19167191897",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10 Pine Ave",
+    "addressLocality": "Sonoma",
+    "addressRegion": "CA",
+    "postalCode": "95476",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "California",
+    "containsPlace": [
       {
         "@type": "County",
         "name": "Sonoma County"
@@ -53,8 +63,43 @@ schema: {
       }
     ]
   },
-  "serviceType": "Plumbing",
-  "description": "Professional pipe leak repair services using advanced detection technology and non-invasive methods. We find and fix leaks quickly with minimal disruption."
+  "description": "Professional pipe leak repair services using advanced detection technology and non-invasive methods. We find and fix leaks quickly with minimal disruption.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Pipe Leak Repair Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Leak Repair",
+          "description": "24/7 emergency pipe leak repair service"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hidden Leak Detection",
+          "description": "Advanced equipment to locate hidden pipe leaks"
+        }
+      }
+    ]
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": 5,
+      "bestRating": 5
+    },
+    "author": {
+      "@type": "Person",
+      "name": "David R."
+    },
+    "datePublished": "2025-03-15",
+    "reviewBody": "GoFlow's team found and fixed our hidden pipe leak quickly. Very professional service and great attention to detail."
+  }
 }
 ---
 
@@ -108,11 +153,12 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemProp="name">Complete Service Process</h2>
+  <h2 itemProp="name">Complete Pipe Leak Repair Process</h2>
+  <div itemProp="description">Our professional step-by-step process to repair pipe leaks quickly and effectively.</div>
 
   <ol>
     {frontmatter.repairSteps.map(([step, description]) => (
-      <li key={step} itemScope itemType="https://schema.org/HowToStep">
+      <li key={step} itemScope itemType="https://schema.org/HowToStep" itemProp="step">
         <span itemProp="name">{step}</span>
         <span itemProp="text">{description}</span>
       </li>

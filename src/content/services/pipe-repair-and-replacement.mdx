@@ -52,17 +52,19 @@ preventiveMeasures:
   - Early detection
 schema: {
     "@context": "https://schema.org",
-    "@type": "PlumbingService",
-    "@id": "https://goflow.plumbing/services/pipe-repair-and-replacement",
-    "name": "Professional Pipe Repair & Replacement Services",
-    "description": "Expert pipe repair and replacement services for all types of pipes including water, drain, sewer, and gas lines. We use advanced techniques like pipe relining and trenchless repairs to minimize disruption.",
-    "provider": {
-      "@type": "Plumber",
-      "@id": "https://goflow.plumbing",
-      "name": "GoFlow Plumbing",
-      "telephone": "+19167191897",
-      "url": "https://goflow.plumbing"
+    "@type": "Plumber",
+    "name": "GoFlow Plumbing",
+    "url": "https://goflow.plumbing",
+    "telephone": "+19167191897",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Pine Ave",
+      "addressLocality": "Sonoma",
+      "addressRegion": "CA",
+      "postalCode": "95476",
+      "addressCountry": "US"
     },
+    "description": "Expert pipe repair and replacement services for all types of pipes including water, drain, sewer, and gas lines. We use advanced techniques like pipe relining and trenchless repairs to minimize disruption.",
     "areaServed": {
       "@type": "State",
       "name": "California",
@@ -77,7 +79,10 @@ schema: {
         }
       ]
     },
-    "offers": [
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Pipe Repair Services",
+      "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
@@ -161,7 +166,7 @@ schema: {
     #   "datePublished": "2025-03-15",
     #   "reviewBody": "GoFlow did an amazing job replacing our old pipes with minimal disruption. Their trenchless technology saved our landscaping and the work was completed quickly. Highly recommend!"
     # }
-  }
+  }}
 ---
 
 <article itemScope itemType="https://schema.org/Service">
@@ -202,17 +207,17 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemProp="name">Our Pipe Repair Process</h2>
+  <h2 itemProp="name">Professional Pipe Repair Process</h2>
+  <div itemProp="description">Our step-by-step process for repairing and replacing pipes efficiently and effectively.</div>
 
-  <div>
-    <ol>
-      {frontmatter.repairProcess.map((step, index) => (
-        <li itemScope itemType="https://schema.org/HowToStep">
-          <span itemProp="name">{step}</span>
-        </li>
-      ))}
-    </ol>
-  </div>
+  <ol>
+    {frontmatter.repairProcess.map((step, index) => (
+      <li key={step} itemScope itemType="https://schema.org/HowToStep" itemProp="step">
+        <span itemProp="name">{step}</span>
+        <span itemProp="text">Step {index + 1} of our pipe repair process: {step}</span>
+      </li>
+    ))}
+  </ol>
 </section>
 
 <section itemScope itemType="https://schema.org/OfferCatalog">

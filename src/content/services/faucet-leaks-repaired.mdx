@@ -61,16 +61,17 @@ customerConvenience:
   - Respect for your home
 schema: {
     "@context": "https://schema.org",
-    "@type": "PlumbingService",
+    "@type": "Plumber",
     "@id": "https://goflow.plumbing/services/faucet-leaks-repaired",
-    "name": "Professional Faucet Repair Services",
+    "name": "GoFlow Plumbing",
     "description": "Expert faucet repair and installation services for all types of faucets including kitchen, bathroom, utility, and outdoor. Same-day service available with upfront pricing.",
-    "provider": {
-      "@type": "Plumber",
-      "@id": "https://goflow.plumbing",
-      "name": "GoFlow Plumbing",
-      "telephone": "+19167191897",
-      "url": "https://goflow.plumbing"
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Sonoma",
+      "addressRegion": "CA",
+      "postalCode": "95401",
+      "addressCountry": "US"
     },
     "areaServed": {
       "@type": "State",
@@ -86,69 +87,45 @@ schema: {
         }
       ]
     },
-    "offers": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "PlumbingService",
-          "name": "Emergency Faucet Repair",
-          "description": "24/7 emergency service for leaking or broken faucets"
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Faucet Repair Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Emergency Faucet Repair",
+            "description": "24/7 emergency service for leaking or broken faucets"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Faucet Installation",
+            "description": "Professional installation of new water-efficient faucets"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Faucet Maintenance",
+            "description": "Regular maintenance and tune-up for all types of faucets"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cartridge Replacement",
+            "description": "Replace worn cartridges in any type of faucet"
+          }
         }
-        # ,
-        # "priceSpecification": {
-        #   "@type": "PriceSpecification",
-        #   "price": "129.00",
-        #   "priceCurrency": "USD",
-        #   "description": "Starting price for emergency faucet repair"
-        # }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "PlumbingService",
-          "name": "Faucet Installation",
-          "description": "Professional installation of new water-efficient faucets"
-        }
-        # ,
-        # "priceSpecification": {
-        #   "@type": "PriceSpecification",
-        #   "price": "199.00",
-        #   "priceCurrency": "USD",
-        #   "description": "New faucet installation service"
-        # }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "PlumbingService",
-          "name": "Faucet Maintenance",
-          "description": "Regular maintenance and tune-up for all types of faucets"
-        }
-        # ,
-        # "priceSpecification": {
-        #   "@type": "PriceSpecification",
-        #   "price": "89.00",
-        #   "priceCurrency": "USD",
-        #   "description": "Faucet maintenance service"
-        # }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "PlumbingService",
-          "name": "Cartridge Replacement",
-          "description": "Replace worn cartridges in any type of faucet"
-        }
-        # ,
-        # "priceSpecification": {
-        #   "@type": "PriceSpecification",
-        #   "price": "99.00",
-        #   "priceCurrency": "USD",
-        #   "description": "Faucet cartridge replacement service"
-        # }
-      }
     ]
   }
+}
 ---
 
 <article itemScope itemType="https://schema.org/Service">
@@ -191,7 +168,7 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2>Professional Solutions</h2>
+  <h2 itemProp="name">Professional Faucet Repair Process</h2>
 
   <div>
     <h3>Comprehensive Service</h3>
