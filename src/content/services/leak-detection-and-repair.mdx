@@ -110,10 +110,23 @@ schema: {
   }
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-<h1 itemProp="name">Expert Leak Detection & Repair Services</h1>
+<article itemScope itemType="https://schema.org/Plumber">
+<meta itemprop="name" content="GoFlow Plumbing" />
+<meta itemprop="image" content="https://goflow.plumbing/images/logo.png" />
+<meta itemprop="telephone" content="+19167191897" />
+<meta itemprop="priceRange" content="$$" />
+<div itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
+  <meta itemprop="streetAddress" content="10 Pine Ave" />
+  <meta itemprop="addressLocality" content="Sonoma" />
+  <meta itemprop="addressRegion" content="CA" />
+  <meta itemprop="postalCode" content="95476" />
+  <meta itemprop="addressCountry" content="US" />
+</div>
 
-<div itemProp="description">
+<div itemScope itemType="https://schema.org/Service">
+<h1 itemprop="name">Expert Leak Detection & Repair Services</h1>
+
+<div itemprop="description">
   <p>
     Don't let hidden leaks wreak havoc on your property! At GoFlow Plumbing, we use state-of-the-art technology to locate even the most elusive leaks—whether they're behind walls, under slabs, or in your yard. Our expert team combines advanced detection methods with years of experience to find and fix leaks fast, preventing water damage and saving you money on water bills. From pinhole leaks to major pipe breaks, we've got the tools and expertise to solve your leak problems efficiently and effectively.
   </p>
@@ -124,11 +137,11 @@ schema: {
 
   <div>
     <h3>Advanced Technology</h3>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       {frontmatter.detectionMethods.map(method => (
         <li itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{method}</span>
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{method}</span>
           </span>
         </li>
       ))}
@@ -139,7 +152,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Types of Leaks We Detect</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <ul>
       {frontmatter.leakTypes.map(type => (
         <li>{type}</li>
@@ -149,28 +162,28 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemProp="name">Professional Leak Detection Process</h2>
-  <div itemProp="description">Our step-by-step process to detect and locate hidden leaks in your plumbing system.</div>
+  <h2 itemprop="name">Professional Leak Detection Process</h2>
+  <div itemprop="description">Our step-by-step process to detect and locate hidden leaks in your plumbing system.</div>
 
   <ol>
     {frontmatter.detectionMethods.map(method => (
-      <li itemScope itemType="https://schema.org/HowToStep" itemProp="step">
-        <span itemProp="name">{method}</span>
-        <span itemProp="text">Using {method} to detect hidden leaks</span>
+      <li itemScope itemType="https://schema.org/HowToStep" itemprop="step">
+        <span itemprop="name">{method}</span>
+        <span itemprop="text">Using {method} to detect hidden leaks</span>
       </li>
     ))}
   </ol>
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemProp="name">Leak Repair Process</h2>
-  <div itemProp="description">Our comprehensive process for repairing detected leaks efficiently and effectively.</div>
+  <h2 itemprop="name">Leak Repair Process</h2>
+  <div itemprop="description">Our comprehensive process for repairing detected leaks efficiently and effectively.</div>
 
   <ol>
     {frontmatter.repairProcess.map(process => (
-      <li itemScope itemType="https://schema.org/HowToStep" itemProp="step">
-        <span itemProp="name">{process[0]}</span>
-        <span itemProp="text">{process[1]}</span>
+      <li itemScope itemType="https://schema.org/HowToStep" itemprop="step">
+        <span itemprop="name">{process[0]}</span>
+        <span itemprop="text">{process[1]}</span>
       </li>
     ))}
   </ol>
@@ -181,11 +194,11 @@ schema: {
 
   <div>
     <h3>Professional Services</h3>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       {frontmatter.repairServices.map(service => (
         <li itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{service}</span>
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{service}</span>
           </span>
         </li>
       ))}
@@ -196,35 +209,35 @@ schema: {
 <section itemScope itemType="https://schema.org/LocalBusiness">
   <h2>Why Choose GoFlow for Leak Detection?</h2>
 
-  <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Advanced detection equipment</span>
+  <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Advanced detection equipment</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Experienced technicians</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Experienced technicians</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Non-invasive methods</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Non-invasive methods</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Accurate diagnostics</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Accurate diagnostics</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Fast response times</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Fast response times</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Comprehensive solutions</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Comprehensive solutions</span>
       </span>
     </li>
   </ul>
@@ -233,7 +246,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Preventive Measures</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <p>We help prevent future leaks with:</p>
     <ul>
       {frontmatter.preventiveMeasures.map(measure => (
@@ -246,7 +259,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Benefits of Professional Leak Detection</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <ul>
       <li>Early problem detection</li>
       <li>Prevent water damage</li>
@@ -263,4 +276,5 @@ schema: {
     Contact GoFlow Plumbing today for expert leak detection and repair services in Sonoma and Marin County. The sooner you address a leak, the less damage and expense you'll face.
   </p>
 </section>
+</div>
 </article>

@@ -49,7 +49,7 @@ export function createServiceListSchema(services: { title: string; description: 
   return [
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "Plumber",
       "@id": businessId,
       ...businessInfoWithoutTypeAndId
     },
@@ -122,14 +122,14 @@ export function createArticleSchema(article: {
     "datePublished": article.pubDate.toISOString(),
     "dateModified": article.pubDate.toISOString(),
     "author": {
-      "@type": "Organization",
+      "@type": "Plumber",
       "@id": "https://goflow.plumbing/#organization",
       "name": businessInfo.name,
       "telephone": businessInfo.telephone,
       "url": "https://goflow.plumbing"
     },
     "publisher": {
-      "@type": "Organization",
+      "@type": "Plumber",
       "@id": "https://goflow.plumbing/#organization",
       "name": businessInfo.name,
       "telephone": businessInfo.telephone,
@@ -185,25 +185,41 @@ export function createRegionSchema(region: {
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": region.title,
+    "@type": "Plumber",
+    "name": businessInfo.name,
     "description": region.description,
-    "provider": {
-      ...businessInfo,
-      "areaServed": {
-        "@type": "County",
-        "name": region.region,
-        ...(region.containsPlace && { "containsPlace": region.containsPlace })
-      }
+    "image": businessInfo.image,
+    "telephone": businessInfo.telephone,
+    "priceRange": businessInfo.priceRange,
+    "address": businessInfo.address,
+    "url": region.url,
+    "areaServed": {
+      "@type": "County",
+      "name": region.region,
+      ...(region.containsPlace && { "containsPlace": region.containsPlace })
     },
-    "areaServed": region.region,
-    "serviceType": "Plumbing Service",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceType": "Plumbing Service",
-      "availabilityStarts": "00:00:01",
-      "availabilityEnds": "23:59:59",
-      "serviceUrl": region.url
+    "openingHoursSpecification": businessInfo.openingHoursSpecification,
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": `${region.region} Plumbing Services`,
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "PlumbingService",
+            "name": "Emergency Plumbing",
+            "description": `24/7 emergency plumbing services in ${region.region}`
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "PlumbingService",
+            "name": "Residential Plumbing",
+            "description": `Complete home plumbing services for ${region.region} residents`
+          }
+        }
+      ]
     }
   };
 }

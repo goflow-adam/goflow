@@ -129,9 +129,9 @@ schema: {
 ---
 
 <article itemScope itemType="https://schema.org/Service">
-<h1 itemProp="name">Faucet Leak Repair Services</h1>
+<h1 itemprop="name">Faucet Leak Repair Services</h1>
 
-<div itemProp="description">
+<div itemprop="description">
   <p>
     Drip, drip, drip… That's not just the sound of wasted water—it's your hard-earned money going down the drain! A leaky faucet might seem like a minor annoyance, but left unchecked, it can lead to skyrocketing water bills and a constant reminder that something's just… off. At GoFlow Plumbing, we make quick work of those pesky drips with fast, clean, and reliable service. No mess, no stress—just [a smoothly running faucet](/articles/choosing-the-right-faucet) and sweet, sweet silence. So, say goodbye to the drip-drip blues and hello to GoFlow!
   </p>
@@ -142,11 +142,11 @@ schema: {
 
   <div>
     <h3>Types of Faucets We Service</h3>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       {frontmatter.faucetTypes.map(faucetType => (
         <li itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{faucetType}</span>
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{faucetType}</span>
           </span>
         </li>
       ))}
@@ -155,11 +155,11 @@ schema: {
 
   <div>
     <h3>Common Issues We Fix</h3>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       {frontmatter.commonIssues.map(issue => (
         <li itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{issue}</span>
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{issue}</span>
           </span>
         </li>
       ))}
@@ -168,14 +168,14 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemProp="name">Professional Faucet Repair Process</h2>
+  <h2 itemprop="name">Professional Faucet Repair Process</h2>
 
   <div>
     <h3>Comprehensive Service</h3>
-    <ol itemProp="step">
+    <ol itemprop="step">
       {frontmatter.serviceSteps.map(step => (
         <li itemScope itemType="https://schema.org/HowToStep">
-          <span itemProp="name">{step}</span>
+          <span itemprop="name">{step}</span>
         </li>
       ))}
     </ol>
@@ -184,7 +184,7 @@ schema: {
   <div itemScope itemType="https://schema.org/Service">
     <h3>Repair or Replace?</h3>
     <p>We help you make informed decisions about:</p>
-    <ul itemProp="serviceOutput">
+    <ul itemprop="serviceOutput">
       {frontmatter.serviceOutput.map(output => (
         <li>{output}</li>
       ))}
@@ -197,11 +197,11 @@ schema: {
 
   <div>
     <h3>Expert Service</h3>
-    <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
       {frontmatter.whyChoose.map(service => (
-        <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{service}</span>
+        <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{service}</span>
           </span>
         </li>
       ))}
@@ -210,11 +210,11 @@ schema: {
 
   <div>
     <h3>Customer Convenience</h3>
-    <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
       {frontmatter.customerConvenience.map(convenience => (
-        <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{convenience}</span>
+        <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{convenience}</span>
           </span>
         </li>
       ))}
@@ -223,11 +223,11 @@ schema: {
 
   <div>
     <h3>Customer Convenience</h3>
-    <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
       {frontmatter.customerConvenience.map(convenience => (
-        <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{convenience}</span>
+        <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{convenience}</span>
           </span>
         </li>
       ))}
@@ -238,7 +238,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Preventive Maintenance</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <p>We provide advice on:</p>
     <ul>
       {frontmatter.preventiveMaintenance.map(maintenance => (
@@ -251,7 +251,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>New Faucet Installation</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <ul>
       {frontmatter.newFaucetInstallation.map(installation => (
         <li>{installation}</li>

@@ -24,26 +24,21 @@ const schema = createServiceSchema(
   description={service.data.description}
   schema={schema}
 >
-  <article itemscope itemtype="https://schema.org/HomeAndConstructionBusiness" class="article max-w-4xl">
-    <meta itemprop="name" content={service.data.title} />
+  <article itemscope itemtype="https://schema.org/Plumber" class="article max-w-4xl">
+    <meta itemprop="name" content="GoFlow Plumbing" />
     <meta itemprop="serviceType" content="Plumbing Services" />
-    <meta itemprop="@type" content="Plumber" />
     <meta itemprop="description" content={service.data.description} />
-    <link itemprop="url" href={`https://goflow.plumbing/${service.slug}`} />
+    <link itemprop="url" href="https://goflow.plumbing" />
+    <meta itemprop="telephone" content="+19167191897" />
+    <meta itemprop="email" content="info@goflow.plumbing" />
+    <meta itemprop="priceRange" content="$$" />
     
-    <div itemprop="provider" itemscope itemtype="https://schema.org/LocalBusiness">
-      <meta itemprop="name" content="GoFlow Plumbing" />
-      <meta itemprop="telephone" content="+19167191897" />
-      <meta itemprop="email" content="info@goflow.plumbing" />
-      <link itemprop="url" href="https://goflow.plumbing" />
-      <meta itemprop="priceRange" content="$$" />
-      
-      <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-        <meta itemprop="addressLocality" content="Santa Rosa" />
-        <meta itemprop="addressRegion" content="CA" />
-        <meta itemprop="postalCode" content="95401" />
-        <meta itemprop="addressCountry" content="US" />
-      </div>
+    <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+      <meta itemprop="streetAddress" content="10 Pine Ave" />
+      <meta itemprop="addressLocality" content="Sonoma" />
+      <meta itemprop="addressRegion" content="CA" />
+      <meta itemprop="postalCode" content="95476" />
+      <meta itemprop="addressCountry" content="US" />
     </div>
 
     <div itemprop="areaServed" itemscope itemtype="https://schema.org/State">

@@ -49,6 +49,15 @@ schema: {
     "postalCode": "95476",
     "addressCountry": "US"
   },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
+  "priceRange": "$$",
   "areaServed": {
     "@type": "State",
     "name": "California",
@@ -71,7 +80,7 @@ schema: {
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
+          "@type": "PlumbingService",
           "name": "Emergency Leak Repair",
           "description": "24/7 emergency pipe leak repair service"
         }
@@ -79,7 +88,7 @@ schema: {
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
+          "@type": "PlumbingService",
           "name": "Hidden Leak Detection",
           "description": "Advanced equipment to locate hidden pipe leaks"
         }
@@ -104,9 +113,9 @@ schema: {
 ---
 
 <article itemScope itemType="https://schema.org/Service">
-<h1 itemProp="name">Get your Leaking Pipe Repaired</h1>
+<h1 itemprop="name">Get your Leaking Pipe Repaired</h1>
 
-<div itemProp="description">
+<div itemprop="description">
   <p>
     Hidden leaks? Not on our watch! At GoFlow Plumbing, we use state-of-the-art camera technology to track down sneaky leaks without tearing up your walls or floors. Our non-invasive approach means no unnecessary mess—just pinpoint accuracy and fast, clean repairs that stop water damage in its tracks. Whether it's a tiny trickle or a major mystery, we'll find it, fix it, and have your pipes flowing smoothly in no time. Because at GoFlow, we don't just patch leaks—we solve them.
   </p>
@@ -115,13 +124,13 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Our Pipe Repair Services</h2>
 
-  <div itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+  <div itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
     <h3>Comprehensive Leak Detection</h3>
     <ul>
       {frontmatter.detectionTools.map(tool => (
-        <li key={tool} itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{tool}</span>
+        <li key={tool} itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{tool}</span>
           </span>
         </li>
       ))}
@@ -130,9 +139,9 @@ schema: {
     <h3>Types of Pipe Leaks We Fix</h3>
     <ul>
       {frontmatter.pipeLeakTypes.map(type => (
-        <li key={type} itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{type}</span>
+        <li key={type} itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{type}</span>
           </span>
         </li>
       ))}
@@ -143,7 +152,7 @@ schema: {
 <section itemScope itemType="https://schema.org/LocalBusiness">
   <h2>Why Choose Us for Pipe Leak Repair?</h2>
 
-  <div itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+  <div itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
     <h3>Fast Response</h3>
     <p>Water leaks can cause significant damage quickly. We provide rapid response to minimize water damage and repair costs.</p>
 
@@ -153,14 +162,14 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemProp="name">Complete Pipe Leak Repair Process</h2>
-  <div itemProp="description">Our professional step-by-step process to repair pipe leaks quickly and effectively.</div>
+  <h2 itemprop="name">Complete Pipe Leak Repair Process</h2>
+  <div itemprop="description">Our professional step-by-step process to repair pipe leaks quickly and effectively.</div>
 
   <ol>
     {frontmatter.repairSteps.map(([step, description]) => (
-      <li key={step} itemScope itemType="https://schema.org/HowToStep" itemProp="step">
-        <span itemProp="name">{step}</span>
-        <span itemProp="text">{description}</span>
+      <li key={step} itemScope itemType="https://schema.org/HowToStep" itemprop="step">
+        <span itemprop="name">{step}</span>
+        <span itemprop="text">{description}</span>
       </li>
     ))}
   </ol>
@@ -169,7 +178,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Preventing Future Leaks</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <p>We don't just fix the current leak – we help prevent future problems by:</p>
     <ul>
       {frontmatter.preventiveMeasures.map(measure => (
@@ -182,7 +191,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Emergency Services Available</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <p>Pipe leaks don't wait for convenient times. We offer:</p>
     <ul>
       {frontmatter.emergencyServices.map(service => (

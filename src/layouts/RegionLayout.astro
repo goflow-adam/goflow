@@ -29,10 +29,18 @@ const { Content } = await region.render();
   description={region.data.description}
   schema={schema}
 >
-  <article itemscope itemtype="https://schema.org/Service" class="article max-w-4xl">
-    <meta itemprop="serviceType" content="Plumbing Services" />
-    <meta itemprop="areaServed" itemscope itemtype="https://schema.org/AdministrativeArea" content={region.data.region} />
-    <meta itemprop="provider" itemscope itemtype="https://schema.org/LocalBusiness" content="GoFlow Plumbing" />
+  <article itemscope itemtype="https://schema.org/Plumber" class="article max-w-4xl">
+    <link itemprop="image" href="/GoFlow2.jpg" />
+    <meta itemprop="priceRange" content="$$" />
+    <meta itemprop="telephone" content="+19167191897" />
+    
+    <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+      <meta itemprop="streetAddress" content="10 Pine Ave" />
+      <meta itemprop="addressLocality" content="Sonoma" />
+      <meta itemprop="addressRegion" content="CA" />
+      <meta itemprop="postalCode" content="95476" />
+      <meta itemprop="addressCountry" content="US" />
+    </div>
 <!--     
     {region.data.heroImage && (
       <div class="mb-8">

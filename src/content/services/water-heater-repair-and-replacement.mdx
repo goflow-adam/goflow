@@ -88,10 +88,18 @@ schema: {
   }
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-<h1 itemProp="name">Get Water Heater Repair and Replacement Services</h1>
+<article itemScope itemType="https://schema.org/Plumber">
+  <meta itemprop="name" content="GoFlow Plumbing" />
+  <div itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
+    <meta itemprop="streetAddress" content="10 Pine Ave" />
+    <meta itemprop="addressLocality" content="Sonoma" />
+    <meta itemprop="addressRegion" content="CA" />
+    <meta itemprop="postalCode" content="95476" />
+    <meta itemprop="addressCountry" content="US" />
+  </div>
+<h1 itemprop="name">Get Water Heater Repair and Replacement Services</h1>
 
-<div itemProp="description">
+<div itemprop="description">
   <p>
     Don't let the pre-sticker-shock of seeing your water heater leaking frighten you. We will take care of your leak with repair or with a [water heater replacement](/articles/water-heater-replacement-signs) quickly and cost effectively.
   </p>
@@ -106,45 +114,37 @@ schema: {
 </div>
 
 <section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2 itemProp="name">Our Water Heater Services Include:</h2>
+  <h2 itemprop="name">Our Water Heater Services Include:</h2>
 
-  <ul itemProp="itemListElement" itemScope itemType="https://schema.org/OfferCatalog">
+  <ul itemprop="itemListElement" itemScope itemType="https://schema.org/OfferCatalog">
     {frontmatter.waterHeaterServices.map(service => (
       <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">{service}</span>
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">{service}</span>
         </span>
       </li>
     ))}
   </ul>
 </section>
 
-<section itemScope itemType="https://schema.org/Plumber">
-  <meta itemProp="name" content="GoFlow Plumbing" />
-  <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-    <meta itemProp="streetAddress" content="10 Pine Ave" />
-    <meta itemProp="addressLocality" content="Sonoma" />
-    <meta itemProp="addressRegion" content="CA" />
-    <meta itemProp="postalCode" content="95476" />
-    <meta itemProp="addressCountry" content="US" />
-  </div>
+<section itemScope itemType="https://schema.org/Service">
   <h2>Why Choose GoFlow Plumbing?</h2>
 
-  <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+  <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
     {frontmatter.whyChoose.map(service => (
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">{service}</span>
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">{service}</span>
         </span>
       </li>
     ))}
   </ul>
 </section>
 
-<section itemProp="areaServed" itemScope itemType="https://schema.org/Place">
+<section itemprop="areaServed" itemScope itemType="https://schema.org/Place">
   <h2>Service Areas</h2>
 
-  <p itemProp="description">
+  <p itemprop="description">
     We proudly serve both Sonoma and Marin Counties, providing prompt and reliable water heater services to residential and commercial customers.
   </p>
 </section>
@@ -152,7 +152,7 @@ schema: {
 <section itemScope itemType="https://schema.org/ContactPoint">
   <h2>Contact Us</h2>
 
-  <p itemProp="description">
+  <p itemprop="description">
     Need water heater repair or replacement? Contact us today for a free consultation and estimate.
   </p>
 </section>

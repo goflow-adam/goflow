@@ -143,10 +143,23 @@ schema: {
 }
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-<h1 itemProp="name">24/7 Emergency Plumbing Services Available Now</h1>
+<article itemScope itemType="https://schema.org/Plumber">
+<meta itemprop="name" content="GoFlow Plumbing" />
+<meta itemprop="image" content="https://goflow.plumbing/images/logo.png" />
+<meta itemprop="telephone" content="+19167191897" />
+<meta itemprop="priceRange" content="$$" />
+<div itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
+  <meta itemprop="streetAddress" content="10 Pine Ave" />
+  <meta itemprop="addressLocality" content="Sonoma" />
+  <meta itemprop="addressRegion" content="CA" />
+  <meta itemprop="postalCode" content="95476" />
+  <meta itemprop="addressCountry" content="US" />
+</div>
 
-<div itemProp="description">
+<div itemScope itemType="https://schema.org/Service">
+<h1 itemprop="name">24/7 Emergency Plumbing Services Available Now</h1>
+
+<div itemprop="description">
   <p>
     Plumbing emergencies don't wait for a convenient time, and neither do we. At GoFlow Plumbing, we're ready to respond quickly when disaster strikes—whether it's a burst pipe, an overflowing toilet, or a sudden water heater failure. Our skilled team arrives promptly, equipped to diagnose and resolve the issue with efficient, high-quality repairs that minimize damage and restore your home's plumbing as quickly as possible. When every second counts, trust GoFlow to provide fast, reliable, and professional emergency plumbing services—day or night.
   </p>
@@ -155,12 +168,12 @@ schema: {
 <section itemScope itemType="https://schema.org/OfferCatalog">
   <h2>Emergency Services We Provide</h2>
 
-  <div itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
+  <div itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
     <h3>Available Services</h3>
     <ul>
     {frontmatter.emergencyServices.map(service => (
-      <li itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">{service}</span>
+      <li itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">{service}</span>
       </li>
     ))}
     </ul>
@@ -168,28 +181,28 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemProp="name">Emergency Response Process</h2>
+  <h2 itemprop="name">Emergency Response Process</h2>
 
-  <div itemProp="step" itemScope itemType="https://schema.org/HowToStep">
-      <h3 itemProp="name">1. Initial Contact</h3>
-      <div itemProp="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
+  <div itemprop="step" itemScope itemType="https://schema.org/HowToStep">
+      <h3 itemprop="name">1. Initial Contact</h3>
+      <div itemprop="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
         <ul>
         {frontmatter.emergencyProcess1.map(service => (
-          <li itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{service}</span>
+          <li itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{service}</span>
           </li>
         ))}
         </ul>
       </div>
     </div>
 
-    <div itemProp="step" itemScope itemType="https://schema.org/HowToStep">
-      <h3 itemProp="name">2. Assessment and Diagnosis</h3>
-      <div itemProp="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
+    <div itemprop="step" itemScope itemType="https://schema.org/HowToStep">
+      <h3 itemprop="name">2. Assessment and Diagnosis</h3>
+      <div itemprop="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
         <ul>
         {frontmatter.emergencyProcess2.map(service => (
-          <li itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{service}</span>
+          <li itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{service}</span>
           </li>
         ))}
         </ul>
@@ -197,15 +210,15 @@ schema: {
     </div>
   </section>
 
-<section itemScope itemType="https://schema.org/LocalBusiness">
+<section itemScope itemType="https://schema.org/Service">
   <h2>Why Choose Our Emergency Service?</h2>
-  <div itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+  <div itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
     <h3>24/7 Availability</h3>
     <ul>
     {frontmatter.available247.map(service => (
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">{service}</span>
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">{service}</span>
         </span>
       </li>
     ))}
@@ -213,9 +226,9 @@ schema: {
     <h3>Professional Service</h3>
     <ul>
       {frontmatter.professionalService.map(service => (
-        <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{service}</span>
+        <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{service}</span>
           </span>
         </li>
       ))}
@@ -226,7 +239,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>After-Emergency Service</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <h3>Follow-up Care</h3>
     <ul>
     {frontmatter.followUpCare.map(service => (
@@ -242,12 +255,13 @@ schema: {
     </ul>
   </div>
 </section>
+</div>
 </article>
 
 <section itemScope itemType="https://schema.org/Service">
   <h2>Emergency Prevention Tips</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <p>We provide guidance on:</p>
     <ul>
     {frontmatter.emergencyPrevention.map(service => (
@@ -257,16 +271,16 @@ schema: {
   </div>
 </section>
 
-<section itemProp="areaServed" itemScope itemType="https://schema.org/Place">
+<section itemprop="areaServed" itemScope itemType="https://schema.org/Place">
   <h2>Service Area Coverage</h2>
 
   <p>We provide emergency service throughout:</p>
   <ul>
-    <li itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-      <span itemProp="addressRegion">Sonoma County</span>
+    <li itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
+      <span itemprop="addressRegion">Sonoma County</span>
     </li>
-    <li itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-      <span itemProp="addressRegion">Marin County</span>
+    <li itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
+      <span itemprop="addressRegion">Marin County</span>
     </li>
     <li>All surrounding areas</li>
   </ul>

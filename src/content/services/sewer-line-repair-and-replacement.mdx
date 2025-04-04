@@ -168,9 +168,9 @@ schema: {
 ---
 
 <article itemScope itemType="https://schema.org/Service">
-<h1 itemProp="name">Expert Sewer Line Repair & Replacement Services</h1>
+<h1 itemprop="name">Expert Sewer Line Repair & Replacement Services</h1>
 
-<div itemProp="description">
+<div itemprop="description">
   <p>
     When sewer problems strike, you need a team that combines experience with cutting-edge technology. At GoFlow Plumbing, we use advanced diagnostic tools to pinpoint sewer line issues and solve them efficiently—often without digging up your yard. From tree root intrusion to aging pipes, we handle all sewer line challenges with expertise and minimal disruption. Don't let sewer problems escalate; trust our team to restore your system's function quickly and effectively.
   </p>
@@ -179,7 +179,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Signs of Sewer Line Problems</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <ul>
       {frontmatter.sewerProblems.map(problem => (
         <li>{problem}</li>
@@ -189,16 +189,16 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemProp="name">Our Diagnostic Process</h2>
-  <div itemProp="description">Advanced diagnostic methods for accurate sewer line problem detection.</div>
+  <h2 itemprop="name">Our Diagnostic Process</h2>
+  <div itemprop="description">Advanced diagnostic methods for accurate sewer line problem detection.</div>
 
   <div>
     <h3>Advanced Methods</h3>
     <ol>
       {frontmatter.diagnosticMethods.map((method, index) => (
-        <li key={method} itemScope itemType="https://schema.org/HowToStep" itemProp="step">
-          <span itemProp="name">{method}</span>
-          <span itemProp="text">Step {index + 1}: {method} - Professional diagnostic method for sewer line inspection</span>
+        <li key={method} itemScope itemType="https://schema.org/HowToStep" itemprop="step">
+          <span itemprop="name">{method}</span>
+          <span itemprop="text">Step {index + 1}: {method} - Professional diagnostic method for sewer line inspection</span>
         </li>
       ))}
     </ol>
@@ -210,11 +210,11 @@ schema: {
 
   <div>
     <h3>Available Methods</h3>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       {frontmatter.repairMethods.map(method => (
         <li itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{method}</span>
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{method}</span>
           </span>
         </li>
       ))}
@@ -225,7 +225,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Trenchless Technology</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <h3>Benefits</h3>
     <ul>
       {frontmatter.benefits.map(benefit => (
@@ -238,35 +238,35 @@ schema: {
 <section itemScope itemType="https://schema.org/LocalBusiness">
   <h2>Why Choose GoFlow for Sewer Services?</h2>
 
-  <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Advanced diagnostic equipment</span>
+  <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Advanced diagnostic equipment</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Experienced technicians</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Experienced technicians</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Trenchless solutions</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Trenchless solutions</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Comprehensive warranties</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Comprehensive warranties</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Emergency service</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Emergency service</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Upfront pricing</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Upfront pricing</span>
       </span>
     </li>
   </ul>
@@ -275,7 +275,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Preventive Maintenance</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <p>We help prevent future problems with:</p>
     <ul>
       {frontmatter.preventiveMeasures.map(measure => (
@@ -288,7 +288,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Our Process</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <ol>
       {frontmatter.process.map(step => (
         <li>{step}</li>

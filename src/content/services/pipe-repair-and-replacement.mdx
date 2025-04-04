@@ -65,6 +65,15 @@ schema: {
       "addressCountry": "US"
     },
     "description": "Expert pipe repair and replacement services for all types of pipes including water, drain, sewer, and gas lines. We use advanced techniques like pipe relining and trenchless repairs to minimize disruption.",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    ],
+    "priceRange": "$$",
     "areaServed": {
       "@type": "State",
       "name": "California",
@@ -170,9 +179,9 @@ schema: {
 ---
 
 <article itemScope itemType="https://schema.org/Service">
-<h1 itemProp="name">Expert Pipe Repair & Replacement Services</h1>
+<h1 itemprop="name">Expert Pipe Repair & Replacement Services</h1>
 
-<div itemProp="description">
+<div itemprop="description">
   <p>
     From pinhole leaks to complete system failures, pipe problems can quickly escalate from minor inconveniences to major headaches. At GoFlow Plumbing, we specialize in efficient, long-lasting pipe repairs and replacements that get your plumbing back to peak performance. Using the latest technology and techniques, including trenchless solutions, we minimize disruption while maximizing results. Don't let pipe problems persist—trust our expert team to deliver the right fix, right away.
   </p>
@@ -182,11 +191,11 @@ schema: {
   <h2>Types of Pipes We Service</h2>
 
   <div>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       {frontmatter.pipeTypes.map(type => (
         <li itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{type}</span>
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{type}</span>
           </span>
         </li>
       ))}
@@ -197,7 +206,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Common Pipe Problems We Fix</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <ul>
       {frontmatter.commonIssues.map(issue => (
         <li>{issue}</li>
@@ -207,14 +216,14 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemProp="name">Professional Pipe Repair Process</h2>
-  <div itemProp="description">Our step-by-step process for repairing and replacing pipes efficiently and effectively.</div>
+  <h2 itemprop="name">Professional Pipe Repair Process</h2>
+  <div itemprop="description">Our step-by-step process for repairing and replacing pipes efficiently and effectively.</div>
 
   <ol>
     {frontmatter.repairProcess.map((step, index) => (
-      <li key={step} itemScope itemType="https://schema.org/HowToStep" itemProp="step">
-        <span itemProp="name">{step}</span>
-        <span itemProp="text">Step {index + 1} of our pipe repair process: {step}</span>
+      <li key={step} itemScope itemType="https://schema.org/HowToStep" itemprop="step">
+        <span itemprop="name">{step}</span>
+        <span itemprop="text">Step {index + 1} of our pipe repair process: {step}</span>
       </li>
     ))}
   </ol>
@@ -225,11 +234,11 @@ schema: {
 
   <div>
     <h3>Professional Services</h3>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       {frontmatter.repairServices.map(service => (
         <li itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{service}</span>
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{service}</span>
           </span>
         </li>
       ))}
@@ -240,7 +249,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Advanced Repair Techniques</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <h3>Trenchless Solutions</h3>
     <ul>
       {frontmatter.repairTechniques.map(technique => (
@@ -253,35 +262,35 @@ schema: {
 <section itemScope itemType="https://schema.org/LocalBusiness">
   <h2>Why Choose GoFlow for Pipe Repairs?</h2>
 
-  <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Advanced repair methods</span>
+  <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Advanced repair methods</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Experienced technicians</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Experienced technicians</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Quality materials</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Quality materials</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Minimal disruption</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Minimal disruption</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Long-term solutions</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Long-term solutions</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Warranty protection</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Warranty protection</span>
       </span>
     </li>
   </ul>
@@ -290,7 +299,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Preventive Maintenance</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <p>We help prevent future pipe problems with:</p>
     <ul>  
       {frontmatter.preventiveMeasures.map(measure => (

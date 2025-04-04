@@ -167,9 +167,9 @@ schema: {
 ---
 
 <article itemScope itemType="https://schema.org/Service">
-<h1 itemProp="name">Get Professional Dishwasher Services</h1>
+<h1 itemprop="name">Get Professional Dishwasher Services</h1>
 
-<div itemProp="description">
+<div itemprop="description">
   <p>
     A dishwasher that won't drain, leaks all over the floor, or leaves your dishes dirtier than before? That's not cleaning—it's chaos! At GoFlow Plumbing, we specialize in fast, clean, and reliable dishwasher repairs and installations. Whether your unit needs a quick fix or a full replacement, we'll get it running smoothly in no time—without the mess or hassle. So, skip the sink full of dishes and Go with the Flow for a stress-free solution to your dishwasher woes!
   </p>
@@ -180,11 +180,11 @@ schema: {
 
   <div>
     <h3>Installation Services</h3>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       {frontmatter.installationServices.map(service => (
         <li itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{service}</span>
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{service}</span>
           </span>
         </li>
       ))}
@@ -193,11 +193,11 @@ schema: {
 
   <div>
     <h3>Repair Services</h3>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       {frontmatter.repairServices.map(service => (
         <li itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{service}</span>
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{service}</span>
           </span>
         </li>
       ))}
@@ -210,7 +210,7 @@ schema: {
   {frontmatter.commonProblems.map(category => (
     <div>
       <h3>{category.name}</h3>
-      <ul itemProp="serviceOutput">
+      <ul itemprop="serviceOutput">
         {category.items.map(item => (
           <li>{item}</li>
         ))}
@@ -220,12 +220,12 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemProp="name">Professional Installation Process</h2>
+  <h2 itemprop="name">Professional Installation Process</h2>
 
   {frontmatter.installationProcess.map(step => (
-    <div itemProp="step" itemScope itemType="https://schema.org/HowToStep">
-      <h3 itemProp="name">{step.name}</h3>
-      <div itemProp="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
+    <div itemprop="step" itemScope itemType="https://schema.org/HowToStep">
+      <h3 itemprop="name">{step.name}</h3>
+      <div itemprop="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
         <ul>
           {step.items.map(item => (
             <li>{item}</li>
@@ -241,35 +241,35 @@ schema: {
 
   <div>
     <h3>Expert Service</h3>
-    <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Licensed plumbers</span>
+    <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Licensed plumbers</span>
         </span>
       </li>
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Experienced technicians</span>
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Experienced technicians</span>
         </span>
       </li>
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Professional tools</span>
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Professional tools</span>
         </span>
       </li>
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Quality parts</span>
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Quality parts</span>
         </span>
       </li>
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Warranty service</span>
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Warranty service</span>
         </span>
       </li>
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Clean installation</span>
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Clean installation</span>
         </span>
       </li>
     </ul>
@@ -277,35 +277,35 @@ schema: {
 
   <div>
     <h3>Customer Benefits</h3>
-    <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Same-day service available</span>
+    <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Same-day service available</span>
         </span>
       </li>
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Upfront pricing</span>
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Upfront pricing</span>
         </span>
       </li>
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Clean workspace</span>
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Clean workspace</span>
         </span>
       </li>
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Proper disposal of old unit</span>
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Proper disposal of old unit</span>
         </span>
       </li>
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Installation warranty</span>
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Installation warranty</span>
         </span>
       </li>
-      <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Maintenance tips</span>
+      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Maintenance tips</span>
         </span>
       </li>
     </ul>
@@ -318,7 +318,7 @@ schema: {
   {frontmatter.maintenanceServices.map(service => (
     <div>
       <h3>{service.name}</h3>
-      <ul itemProp="serviceOutput">
+      <ul itemprop="serviceOutput">
         {service.items.map(item => (
           <li>{item}</li>
         ))}
@@ -332,35 +332,35 @@ schema: {
 
   <div>
     <h3>Kitchen Plumbing</h3>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Sink installation</span>
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Sink installation</span>
         </span>
       </li>
       <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Garbage disposal</span>
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Garbage disposal</span>
         </span>
       </li>
       <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Water lines</span>
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Water lines</span>
         </span>
       </li>
       <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Drain lines</span>
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Drain lines</span>
         </span>
       </li>
       <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Fixture updates</span>
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Fixture updates</span>
         </span>
       </li>
       <li itemScope itemType="https://schema.org/Offer">
-        <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemProp="name">Full remodels</span>
+        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+          <span itemprop="name">Full remodels</span>
         </span>
       </li>
     </ul>

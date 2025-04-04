@@ -54,6 +54,15 @@ schema: {
       "postalCode": "95476",
       "addressCountry": "US"
     },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    ],
+    "priceRange": "$$",
     "areaServed": {
       "@type": "State",
       "name": "California",
@@ -152,9 +161,9 @@ schema: {
 ---
 
 <article itemScope itemType="https://schema.org/Service">
-<h1 itemProp="name">Get your Instant Hot Water Installed or Repaired</h1>
+<h1 itemprop="name">Get your Instant Hot Water Installed or Repaired</h1>
 
-<div itemProp="description">
+<div itemprop="description">
   <p>
     Tired of waiting for hot water at your sink? With an instant water heater, you get endless hot water on demand—and at GoFlow Plumbing, we make installation and repairs a breeze. Whether you're upgrading to a tankless system or need an undersink InstantHot, our expert team handles it all quickly, cleanly, and efficiently. No more waiting for hot water—just fast, reliable hot water whenever you need it. Go with the Flow, and never wait for hot water again!
   </p>
@@ -163,13 +172,13 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Our Instant Hot Water Services</h2>
 
-  <div itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+  <div itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
     <h3>Installation Services</h3>
     <ul>
       {frontmatter.installationServices.map(service => (
-        <li key={service} itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{service}</span>
+        <li key={service} itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{service}</span>
           </span>
         </li>
       ))}
@@ -178,9 +187,9 @@ schema: {
     <h3>Repair Services</h3>
     <ul>
       {frontmatter.repairServices.map(service => (
-        <li key={service} itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{service}</span>
+        <li key={service} itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{service}</span>
           </span>
         </li>
       ))}
@@ -191,7 +200,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Benefits of Instant Hot Water</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <h3>Energy Savings</h3>
     <ul>
       {frontmatter.energyBenefits.map(benefit => (
@@ -209,26 +218,26 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/Product">
-  <h2 itemProp="name">Instant Hot Water Systems</h2>
-  <div itemProp="description">Professional grade instant hot water solutions for your home, including tankless water heaters and recirculation systems.</div>
+  <h2 itemprop="name">Instant Hot Water Systems</h2>
+  <div itemprop="description">Professional grade instant hot water solutions for your home, including tankless water heaters and recirculation systems.</div>
 
-  <div itemProp="offers" itemScope itemType="https://schema.org/AggregateOffer">
-    <meta itemProp="priceCurrency" content="USD" />
-    <meta itemProp="lowPrice" content="899" />
-    <meta itemProp="highPrice" content="2999" />
-    <meta itemProp="offerCount" content="5" />
+  <div itemprop="offers" itemScope itemType="https://schema.org/AggregateOffer">
+    <meta itemprop="priceCurrency" content="USD" />
+    <meta itemprop="lowPrice" content="899" />
+    <meta itemprop="highPrice" content="2999" />
+    <meta itemprop="offerCount" content="5" />
   </div>
 
-  <div itemProp="review" itemScope itemType="https://schema.org/Review">
-    <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
-      <meta itemProp="ratingValue" content="5" />
-      <meta itemProp="bestRating" content="5" />
+  <div itemprop="review" itemScope itemType="https://schema.org/Review">
+    <div itemprop="reviewRating" itemScope itemType="https://schema.org/Rating">
+      <meta itemprop="ratingValue" content="5" />
+      <meta itemprop="bestRating" content="5" />
     </div>
-    <span itemProp="author" itemScope itemType="https://schema.org/Person">
-      <meta itemProp="name" content="Robert M." />
+    <span itemprop="author" itemScope itemType="https://schema.org/Person">
+      <meta itemprop="name" content="Robert M." />
     </span>
-    <meta itemProp="datePublished" content="2025-03-20" />
-    <div itemProp="reviewBody">The tankless water heater is amazing! Endless hot water and our utility bills have gone down.</div>
+    <meta itemprop="datePublished" content="2025-03-20" />
+    <div itemprop="reviewBody">The tankless water heater is amazing! Endless hot water and our utility bills have gone down.</div>
   </div>
 
   <div itemScope itemType="https://schema.org/ItemList">
@@ -253,14 +262,14 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemProp="name">Professional Installation Process</h2>
-  <p itemProp="description">Step-by-step guide to installing instant hot water systems</p>
+  <h2 itemprop="name">Professional Installation Process</h2>
+  <p itemprop="description">Step-by-step guide to installing instant hot water systems</p>
 
   <ol>
     {frontmatter.installationProcess?.map(([step, description]) => (
-      <li key={step} itemScope itemType="https://schema.org/HowToStep" itemProp="step">
-        <span itemProp="name">{step}</span>
-        <span itemProp="text">{description}</span>
+      <li key={step} itemScope itemType="https://schema.org/HowToStep" itemprop="step">
+        <span itemprop="name">{step}</span>
+        <span itemprop="text">{description}</span>
       </li>
     ))}
   </ol>
@@ -280,7 +289,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Maintenance Services</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <h3>Regular Service</h3>
     <ul>
       <li>Annual inspections</li>
@@ -304,7 +313,7 @@ schema: {
 <section itemScope itemType="https://schema.org/LocalBusiness">
   <h2>Why Choose GoFlow?</h2>
 
-  <div itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+  <div itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
     <ol>
       <li>Experienced technicians</li>
       <li>Quality equipment</li>

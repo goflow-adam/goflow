@@ -117,10 +117,23 @@ schema: {
   }
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-<h1 itemProp="name">Get Your Clogged Drain Draining</h1>
+<article itemScope itemType="https://schema.org/Plumber">
+<meta itemprop="name" content="GoFlow Plumbing" />
+<meta itemprop="image" content="https://goflow.plumbing/images/logo.png" />
+<meta itemprop="telephone" content="+19167191897" />
+<meta itemprop="priceRange" content="$$" />
+<div itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
+  <meta itemprop="streetAddress" content="10 Pine Ave" />
+  <meta itemprop="addressLocality" content="Sonoma" />
+  <meta itemprop="addressRegion" content="CA" />
+  <meta itemprop="postalCode" content="95476" />
+  <meta itemprop="addressCountry" content="US" />
+</div>
 
-<div itemProp="description">
+<div itemScope itemType="https://schema.org/Service">
+<h1 itemprop="name">Get Your Clogged Drain Draining</h1>
+
+<div itemprop="description">
   <p>
     Maybe a crazed squirrel crawled in or some kid shoved their favorite lego creation in your toilet or maybe that beautiful tree has taken a liking to the liquid inside your sewer line. Whatever it is, we will find your [clogged drain problem](/articles/clogged-drains-service-advice) and clear it. Our technicians are armed with night vision, cameras, and squirrel traps. Give us a call so we can get your drains cleared, unclogged, and flowing again.
   </p>
@@ -131,11 +144,11 @@ schema: {
 
   <div>
     <h3>Comprehensive Drain Solutions</h3>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       {frontmatter.drainSolutions.map(service => (
         <li itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{service}</span>
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{service}</span>
           </span>
         </li>
       ))}
@@ -145,11 +158,11 @@ schema: {
   <div>
     <h3>Advanced Technology</h3>
     <p>We use state-of-the-art equipment including:</p>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       {frontmatter.advancedTechnology.map(service => (
         <li itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{service}</span>
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{service}</span>
           </span>
         </li>
       ))}
@@ -181,7 +194,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Common Signs You Need Drain Cleaning</h2>
 
-  <ul itemProp="serviceOutput">
+  <ul itemprop="serviceOutput">
     {frontmatter.drainCleaningSigns.map(sign => (<li>{sign}</li>))}
   </ul>
 </section>
@@ -191,4 +204,5 @@ schema: {
     Contact GoFlow Plumbing today for expert drain cleaning services you can trust.
   </p>
 </section>
+</div>
 </article>

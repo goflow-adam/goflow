@@ -101,10 +101,18 @@ schema: {
 }
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-<h1 itemProp="name">Professional Whole House Repiping Services</h1>
+<article itemScope itemType="https://schema.org/Plumber">
+  <meta itemprop="name" content="GoFlow Plumbing" />
+  <div itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
+    <meta itemprop="streetAddress" content="10 Pine Ave" />
+    <meta itemprop="addressLocality" content="Sonoma" />
+    <meta itemprop="addressRegion" content="CA" />
+    <meta itemprop="postalCode" content="95476" />
+    <meta itemprop="addressCountry" content="US" />
+  </div>
+<h1 itemprop="name">Professional Whole House Repiping Services</h1>
 
-<div itemProp="description">
+<div itemprop="description">
   <p>
     Is your home's plumbing showing its age? From rusty water to constant leaks, old or failing pipes can cause endless headaches. At GoFlow Plumbing, we specialize in whole house repiping that brings your plumbing into the modern era. Using premium materials and expert installation techniques, we can replace your entire plumbing system with minimal disruption to your daily life. Get ready to enjoy clean water, strong pressure, and the peace of mind that comes with new, reliable plumbing.
   </p>
@@ -113,7 +121,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Signs You Need Repiping</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <ul>
       {frontmatter.repipingIndicators.map(indicator => (
         <li>{indicator}</li>
@@ -123,15 +131,15 @@ schema: {
 </section>
 
 <section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemProp="name">Our Repiping Process</h2>
-  <div itemProp="description">Professional whole house repiping process for modern plumbing systems.</div>
+  <h2 itemprop="name">Our Repiping Process</h2>
+  <div itemprop="description">Professional whole house repiping process for modern plumbing systems.</div>
 
   <div>
     <ol>
       {frontmatter.repipingProcess.map((step, index) => (
-        <li key={`step${index + 1}`} itemScope itemType="https://schema.org/HowToStep" itemProp="step">
-          <span itemProp="name">{step}</span>
-          <span itemProp="text">Professional {step.toLowerCase()} for your repiping project</span>
+        <li key={`step${index + 1}`} itemScope itemType="https://schema.org/HowToStep" itemprop="step">
+          <span itemprop="name">{step}</span>
+          <span itemprop="text">Professional {step.toLowerCase()} for your repiping project</span>
         </li>
       ))}
     </ol>
@@ -143,11 +151,11 @@ schema: {
 
   <div>
     <h3>Available Materials</h3>
-    <ul itemProp="itemListElement">
+    <ul itemprop="itemListElement">
       {frontmatter.pipingOptions.map(option => (
         <li itemScope itemType="https://schema.org/Offer">
-          <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemProp="name">{option}</span>
+          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+            <span itemprop="name">{option}</span>
           </span>
         </li>
       ))}
@@ -158,7 +166,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Benefits of Repiping</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <ul>
       {frontmatter.benefits.map(benefit => (
         <li>{benefit}</li>
@@ -167,46 +175,38 @@ schema: {
   </div>
 </section>
 
-<section itemScope itemType="https://schema.org/Plumber">
-  <meta itemProp="name" content="GoFlow Plumbing" />
-  <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-    <meta itemProp="streetAddress" content="10 Pine Ave" />
-    <meta itemProp="addressLocality" content="Sonoma" />
-    <meta itemProp="addressRegion" content="CA" />
-    <meta itemProp="postalCode" content="95476" />
-    <meta itemProp="addressCountry" content="US" />
-  </div>
+<section itemScope itemType="https://schema.org/Service">
   <h2>Why Choose GoFlow for Repiping?</h2>
 
-  <ul itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Experienced repiping specialists</span>
+  <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Experienced repiping specialists</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Premium materials</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Premium materials</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Minimal disruption techniques</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Minimal disruption techniques</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Comprehensive warranties</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Comprehensive warranties</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Expert project management</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Expert project management</span>
       </span>
     </li>
-    <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemProp="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemProp="name">Timely completion</span>
+    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
+      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
+        <span itemprop="name">Timely completion</span>
       </span>
     </li>
   </ul>
@@ -215,7 +215,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>Our Repiping Guarantee</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <ul>
       {frontmatter.repipingGuarantee.map(guarantee => (
         <li>{guarantee}</li>
@@ -227,7 +227,7 @@ schema: {
 <section itemScope itemType="https://schema.org/Service">
   <h2>What to Expect</h2>
 
-  <div itemProp="serviceOutput">
+  <div itemprop="serviceOutput">
     <h3>During Repiping</h3>
     <ul>
       {frontmatter.expect.map(expect => (
