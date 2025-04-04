@@ -51,53 +51,117 @@ preventiveMeasures:
   - Maintenance plans
   - Early detection
 schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Professional Pipe Repair & Replacement Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": [
+    "@context": "https://schema.org",
+    "@type": "PlumbingService",
+    "@id": "https://goflow.plumbing/services/pipe-repair-and-replacement",
+    "name": "Professional Pipe Repair & Replacement Services",
+    "description": "Expert pipe repair and replacement services for all types of pipes including water, drain, sewer, and gas lines. We use advanced techniques like pipe relining and trenchless repairs to minimize disruption.",
+    "provider": {
+      "@type": "Plumber",
+      "@id": "https://goflow.plumbing",
+      "name": "GoFlow Plumbing",
+      "telephone": "+19167191897",
+      "url": "https://goflow.plumbing"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "containsPlace": [
+        {
+          "@type": "County",
+          "name": "Sonoma County"
+        },
+        {
+          "@type": "County",
+          "name": "Marin County"
+        }
+      ]
+    },
+    "offers": [
       {
-        "@type": "County",
-        "name": "Sonoma County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Emergency Pipe Repair",
+          "description": "24/7 emergency pipe repair service for burst pipes and major leaks"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "299.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for emergency pipe repair"
+        # }
       },
       {
-        "@type": "County",
-        "name": "Marin County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Pipe Relining",
+          "description": "Trenchless pipe repair using advanced relining technology"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "1499.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for pipe relining service"
+        # }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Complete Pipe Replacement",
+          "description": "Full pipe system replacement with minimal disruption"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "3999.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for complete pipe replacement"
+        # }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Pipe Inspection Service",
+          "description": "Video camera inspection to identify pipe problems"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "199.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Comprehensive pipe inspection service"
+        # }
       }
     ]
-  },
-  "serviceType": "Plumbing",
-  "description": "Expert pipe repair and replacement services for all types of pipes including water, drain, sewer, and gas lines. We use advanced techniques like pipe relining and trenchless repairs to minimize disruption.",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Pipe Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Pipe Repair"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Pipe Replacement"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Emergency Services"
-        }
-      }
-    ]
+    # ,
+    # "aggregateRating": {
+    #   "@type": "AggregateRating",
+    #   "ratingValue": "4.8",
+    #   "ratingCount": "203",
+    #   "bestRating": "5",
+    #   "worstRating": "1"
+    # },
+    # "review": {
+    #   "@type": "Review",
+    #   "reviewRating": {
+    #     "@type": "Rating",
+    #     "ratingValue": 5,
+    #     "bestRating": 5
+    #   },
+    #   "author": {
+    #     "@type": "Person",
+    #     "name": "Michael S."
+    #   },
+    #   "datePublished": "2025-03-15",
+    #   "reviewBody": "GoFlow did an amazing job replacing our old pipes with minimal disruption. Their trenchless technology saved our landscaping and the work was completed quickly. Highly recommend!"
+    # }
   }
-}
 ---
 
 <article itemScope itemType="https://schema.org/Service">

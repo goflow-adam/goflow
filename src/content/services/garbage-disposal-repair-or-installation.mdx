@@ -55,53 +55,95 @@ replacementServices:
   - Updated connections
   - Proper disposal of old unit
 schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Professional Garbage Disposal Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": [
-      {
-        "@type": "County",
-        "name": "Sonoma County"
-      },
-      {
-        "@type": "County",
-        "name": "Marin County"
-      }
-    ]
-  },
-  "serviceType": "Plumbing",
-  "description": "Expert garbage disposal repair and installation services including jam removal, leak repairs, and new installations. Same-day service available with warranty.",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Garbage Disposal Services",
-    "itemListElement": [
+    "@context": "https://schema.org",
+    "@type": "PlumbingService",
+    "@id": "https://goflow.plumbing/services/garbage-disposal-repair-or-installation",
+    "name": "Professional Garbage Disposal Services",
+    "description": "Expert garbage disposal repair and installation services including jam removal, leak repairs, and new installations. Same-day service available with warranty.",
+    "provider": {
+      "@type": "Plumber",
+      "@id": "https://goflow.plumbing",
+      "name": "GoFlow Plumbing",
+      "telephone": "+19167191897",
+      "url": "https://goflow.plumbing"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "containsPlace": [
+        {
+          "@type": "County",
+          "name": "Sonoma County"
+        },
+        {
+          "@type": "County",
+          "name": "Marin County"
+        }
+      ]
+    },
+    "offers": [
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
-          "name": "Garbage Disposal Repair"
+          "@type": "PlumbingService",
+          "name": "Emergency Disposal Repair",
+          "description": "24/7 emergency service for jammed or malfunctioning disposals"
         }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "149.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for emergency disposal repair"
+        # }
       },
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
-          "name": "Garbage Disposal Installation"
+          "@type": "PlumbingService",
+          "name": "New Disposal Installation",
+          "description": "Professional installation of new garbage disposals"
         }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "299.00",
+        #   "priceCurrency": "USD",
+        #   "description": "New disposal installation service"
+        # }
       },
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
-          "name": "Maintenance Services"
+          "@type": "PlumbingService",
+          "name": "Disposal Maintenance",
+          "description": "Regular maintenance and tune-up for garbage disposals"
         }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "89.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Disposal maintenance service"
+        # }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Disposal Upgrade",
+          "description": "Upgrade to a more powerful or quieter disposal unit"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "349.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Disposal upgrade service"
+        # }
       }
     ]
   }
-}
 ---
 
 <article itemScope itemType="https://schema.org/Service">

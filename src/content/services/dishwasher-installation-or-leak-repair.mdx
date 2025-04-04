@@ -37,53 +37,117 @@ commonProblems:
     - Supply line kinks
     - Disposal connection problems
 schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Professional Dishwasher Installation and Repair Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": [
+    "@context": "https://schema.org",
+    "@type": "PlumbingService",
+    "@id": "https://goflow.plumbing/services/dishwasher-installation-or-leak-repair",
+    "name": "Professional Dishwasher Installation and Repair Services",
+    "description": "Expert dishwasher installation, repair, and maintenance services including leak detection, drain line cleaning, and new installations. Professional service with upfront pricing.",
+    "provider": {
+      "@type": "Plumber",
+      "@id": "https://goflow.plumbing",
+      "name": "GoFlow Plumbing",
+      "telephone": "+19167191897",
+      "url": "https://goflow.plumbing"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "containsPlace": [
+        {
+          "@type": "County",
+          "name": "Sonoma County"
+        },
+        {
+          "@type": "County",
+          "name": "Marin County"
+        }
+      ]
+    },
+    "offers": [
       {
-        "@type": "County",
-        "name": "Sonoma County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "New Dishwasher Installation",
+          "description": "Professional installation of new dishwashers with proper connections"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "299.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Standard dishwasher installation service"
+        # }
       },
       {
-        "@type": "County",
-        "name": "Marin County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Emergency Leak Repair",
+          "description": "24/7 emergency service for dishwasher leaks and flooding"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "149.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Emergency leak repair service"
+        # }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Dishwasher Maintenance",
+          "description": "Regular maintenance and inspection of dishwasher systems"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "89.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Maintenance service"
+        # }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Drain Line Service",
+          "description": "Clean and repair dishwasher drain lines"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "129.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Drain line service"
+        # }
       }
     ]
-  },
-  "serviceType": "Plumbing",
-  "description": "Expert dishwasher installation, repair, and maintenance services including leak detection, drain line cleaning, and new installations. Professional service with upfront pricing.",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Dishwasher Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "New Dishwasher Installation"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Dishwasher Leak Repair"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Maintenance Services"
-        }
-      }
-    ]
+    # # ,
+    # "aggregateRating": {
+    #   "@type": "AggregateRating",
+    #   "ratingValue": "4.9",
+    #   "ratingCount": "167",
+    #   "bestRating": "5",
+    #   "worstRating": "1"
+    # },
+    # "review": {
+    #   "@type": "Review",
+    #   "reviewRating": {
+    #     "@type": "Rating",
+    #     "ratingValue": 5,
+    #     "bestRating": 5
+    #   },
+    #   "author": {
+    #     "@type": "Person",
+    #     "name": "Jennifer R."
+    #   },
+    #   "datePublished": "2025-03-20",
+    #   "reviewBody": "Excellent service! They installed our new dishwasher quickly and professionally. No leaks and works perfectly. Highly recommend!"
+    # }
   }
-}
 ---
 
 <article itemScope itemType="https://schema.org/Service">

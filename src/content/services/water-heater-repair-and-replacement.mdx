@@ -19,34 +19,92 @@ whyChoose:
   - Guaranteed workmanship
   - Clean, professional service
 schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Water Heater Repair and Replacement Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": [
+    "@context": "https://schema.org",
+    "@type": "PlumbingService",
+    "@id": "https://goflow.plumbing/services/water-heater-repair-and-replacement",
+    "name": "Water Heater Repair and Replacement Services",
+    "description": "Expert water heater repair and replacement services for residential and commercial customers, including emergency repairs, maintenance, and new installations.",
+    "provider": {
+      "@type": "Plumber",
+      "@id": "https://goflow.plumbing",
+      "name": "GoFlow Plumbing",
+      "telephone": "+19167191897",
+      "url": "https://goflow.plumbing"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "containsPlace": [
+        {
+          "@type": "County",
+          "name": "Marin County"
+        },
+        {
+          "@type": "County",
+          "name": "Sonoma County"
+        },
+        {
+          "@type": "County",
+          "name": "Napa County"
+        }
+      ]
+    },
+    "offers": [
       {
-        "@type": "State",
-        "name": "California"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Emergency Water Heater Repair",
+          "description": "24/7 emergency repair service for all types of water heaters"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "199.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for emergency repair service"
+        # }
       },
       {
-        "@type": "County",
-        "name": "Marin County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Water Heater Replacement",
+          "description": "Complete water heater replacement with energy-efficient models"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "1299.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for standard tank water heater replacement"
+        # }
       },
       {
-        "@type": "County",
-        "name": "Sonoma County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Preventive Maintenance",
+          "description": "Annual maintenance service to extend water heater life"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "149.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Annual maintenance service fee"
+        # }
       },
       {
-        "@type": "County",
-        "name": "Napa County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Code Compliance Updates",
+          "description": "Bringing your water heater up to current building codes"
+        }
       }
     ]
-  },
-  "serviceType": "Plumbing",
-  "description": "Expert water heater repair and replacement services for residential and commercial customers, including emergency repairs, maintenance, and new installations."
-}
+  }
 ---
 
 <article itemScope itemType="https://schema.org/Service">

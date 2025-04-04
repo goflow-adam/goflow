@@ -49,53 +49,117 @@ process:
   - Final inspection
   - Maintenance advice
 schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Professional Sewer Line Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": [
+    "@context": "https://schema.org",
+    "@type": "PlumbingService",
+    "@id": "https://goflow.plumbing/services/sewer-line-repair-and-replacement",
+    "name": "Professional Sewer Line Services",
+    "description": "Expert sewer line repair and replacement services using advanced diagnostic technology and trenchless methods. We solve sewer problems efficiently with minimal disruption.",
+    "provider": {
+      "@type": "Plumber",
+      "@id": "https://goflow.plumbing",
+      "name": "GoFlow Plumbing",
+      "telephone": "+19167191897",
+      "url": "https://goflow.plumbing"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "containsPlace": [
+        {
+          "@type": "County",
+          "name": "Sonoma County"
+        },
+        {
+          "@type": "County",
+          "name": "Marin County"
+        }
+      ]
+    },
+    "offers": [
       {
-        "@type": "County",
-        "name": "Sonoma County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Sewer Line Repair",
+          "description": "Expert repair of damaged sewer lines using trenchless technology"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "399.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for sewer line repair"
+        # }
       },
       {
-        "@type": "County",
-        "name": "Marin County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Sewer Line Replacement",
+          "description": "Complete sewer line replacement with minimal disruption"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "2999.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for sewer line replacement"
+        # }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Video Camera Inspection",
+          "description": "Advanced diagnostic inspection of sewer lines"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "299.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Comprehensive video inspection service"
+        # }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Hydro-Jetting Service",
+          "description": "High-pressure cleaning of sewer lines"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "499.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Professional hydro-jetting service"
+        # }
       }
     ]
-  },
-  "serviceType": "Plumbing",
-  "description": "Expert sewer line repair and replacement services using advanced diagnostic technology and trenchless methods. We solve sewer problems efficiently with minimal disruption.",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Sewer Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Sewer Line Repair"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Sewer Line Replacement"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Diagnostic Services"
-        }
-      }
-    ]
+    # ,
+    # "aggregateRating": {
+    #   "@type": "AggregateRating",
+    #   "ratingValue": "4.9",
+    #   "ratingCount": "167",
+    #   "bestRating": "5",
+    #   "worstRating": "1"
+    # },
+    # "review": {
+    #   "@type": "Review",
+    #   "reviewRating": {
+    #     "@type": "Rating",
+    #     "ratingValue": 5,
+    #     "bestRating": 5
+    #   },
+    #   "author": {
+    #     "@type": "Person",
+    #     "name": "Robert K."
+    #   },
+    #   "datePublished": "2025-03-20",
+    #   "reviewBody": "Fantastic service! They used trenchless technology to replace our sewer line with minimal disruption to our yard. Very professional and efficient."
+    # }
   }
-}
 ---
 
 <article itemScope itemType="https://schema.org/Service">

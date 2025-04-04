@@ -6,34 +6,13 @@ draft: false
 schema: {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "name": "GoFlow Plumbing FAQs",
-  "description": "Find answers to common plumbing questions. Learn about our services, pricing, and policies at GoFlow Plumbing.",
-  "provider": {
-    "@type": ["Organization", "Plumber"],
-    "name": "GoFlow Plumbing",
-    "url": "https://goflow.plumbing",
-    "areaServed": {
-      "@type": "State",
-      "name": "California",
-      "containsPlace": [
-        {
-          "@type": "AdministrativeArea",
-          "name": "Sonoma County"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Marin County"
-        }
-      ]
-    }
-  },
   "mainEntity": [
     {
       "@type": "Question",
       "name": "Do you offer emergency plumbing services?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, we provide 24/7 emergency plumbing services throughout Sonoma and Marin Counties."
+        "text": "Yes, we provide 24/7 emergency plumbing services throughout Sonoma and Marin Counties. Our emergency response team is always ready to help with urgent plumbing issues."
       }
     },
     {
@@ -41,7 +20,7 @@ schema: {
       "name": "Are your plumbers licensed and insured?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, all our plumbers are fully licensed, bonded, and insured for your protection."
+        "text": "Yes, all our plumbers are fully licensed, bonded, and insured. We maintain comprehensive coverage for your protection and peace of mind."
       }
     },
     {
@@ -49,7 +28,103 @@ schema: {
       "name": "Do you provide free estimates?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, we provide free estimates for most plumbing services. Emergency services may have a diagnostic fee."
+        "text": "Yes, we provide free estimates for most plumbing services. Emergency services may have a diagnostic fee that can be applied to the cost of repairs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We serve all of Sonoma and Marin Counties, including major cities and surrounding communities. Check our service regions page for specific coverage areas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of plumbing services do you offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer comprehensive plumbing services including: Emergency repairs, Water heater services, Drain cleaning, Leak detection, Fixture installation, Commercial plumbing, and more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you respond to service calls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emergency calls: Usually within 1-2 hours. Same-day service available for most non-emergency calls. Scheduled appointments at your convenience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer financing options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer various financing options for larger plumbing projects. Ask our team about current financing programs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I schedule a service appointment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can schedule service by phone, online booking, email request, or through our emergency hotline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I expect during a service call?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can expect: Confirmation call/text, On-time arrival, Problem diagnosis, Upfront pricing, Professional service, Clean job site, and Follow-up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to be home for the service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, an adult (18+) needs to be present for most services. We can make special arrangements for commercial properties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I have my plumbing inspected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We recommend annual plumbing inspections to prevent issues and ensure system efficiency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are signs of a plumbing emergency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common emergency signs include: Flooding, No water, Sewage backup, Gas smell, Major leaks, and No hot water."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I prevent plumbing problems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prevention tips include: Regular maintenance, Proper disposal practices, Prompt repair of small issues, Water pressure monitoring, Pipe insulation, and Regular inspections."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods do you accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We accept credit cards, debit cards, checks, cash, and offer financing options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is payment required?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Payment is typically required upon service completion, as project milestones are met, or per financing terms."
       }
     }
   ]
@@ -236,37 +311,57 @@ schema: {
       </div>
     </div>
   </section>
+  <section>
+    <h2>Payment Questions</h2>
+
+    <div itemScope itemType="https://schema.org/Question">
+      <h3 itemProp="name">What payment methods do you accept?</h3>
+      <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+        <p itemProp="text">We accept:</p>
+        <ul>
+          <li>Credit cards</li>
+          <li>Debit cards</li>
+          <li>Checks</li>
+          <li>Cash</li>
+          <li>Financing options</li>
+        </ul>
+      </div>
+    </div>
+
+    <div itemScope itemType="https://schema.org/Question">
+      <h3 itemProp="name">When is payment required?</h3>
+      <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+        <p itemProp="text">Payment is typically required:</p>
+        <ul>
+          <li>Upon service completion</li>
+          <li>As project milestones are met</li>
+          <li>Per financing terms</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact Questions</h2>
+
+    <div itemScope itemType="https://schema.org/Question">
+      <h3 itemProp="name">How do I reach you for emergency service?</h3>
+      <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+        <p itemProp="text">Call our 24/7 emergency line at (916) 719-1897.</p>
+      </div>
+    </div>
+
+    <div itemScope itemType="https://schema.org/Question">
+      <h3 itemProp="name">Where can I leave feedback?</h3>
+      <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+        <p itemProp="text">You can provide feedback through:</p>
+        <ul>
+          <li>Online reviews</li>
+          <li>Customer surveys</li>
+          <li>Direct contact</li>
+          <li>Follow-up emails</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </div>
-- Water pressure monitoring
-- Pipe insulation
-- Regular inspections
-
-## Payment Questions
-
-### What payment methods do you accept?
-We accept:
-- Credit cards
-- Debit cards
-- Checks
-- Cash
-- Financing options
-
-### When is payment required?
-Payment is typically required:
-- Upon service completion
-- As project milestones are met
-- Per financing terms
-
-## Contact Questions
-
-### How do I reach you for emergency service?
-Call our 24/7 emergency line at [Your Emergency Number].
-
-### Where can I leave feedback?
-You can provide feedback:
-- Online reviews
-- Customer surveys
-- Direct contact
-- Follow-up emails
-
-Need more information? Contact our team for personalized assistance.

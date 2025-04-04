@@ -60,53 +60,95 @@ customerConvenience:
   - Professional appearance
   - Respect for your home
 schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Professional Faucet Repair Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": [
-      {
-        "@type": "County",
-        "name": "Sonoma County"
-      },
-      {
-        "@type": "County",
-        "name": "Marin County"
-      }
-    ]
-  },
-  "serviceType": "Plumbing",
-  "description": "Expert faucet repair and installation services for all types of faucets including kitchen, bathroom, utility, and outdoor. Same-day service available with upfront pricing.",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Faucet Services",
-    "itemListElement": [
+    "@context": "https://schema.org",
+    "@type": "PlumbingService",
+    "@id": "https://goflow.plumbing/services/faucet-leaks-repaired",
+    "name": "Professional Faucet Repair Services",
+    "description": "Expert faucet repair and installation services for all types of faucets including kitchen, bathroom, utility, and outdoor. Same-day service available with upfront pricing.",
+    "provider": {
+      "@type": "Plumber",
+      "@id": "https://goflow.plumbing",
+      "name": "GoFlow Plumbing",
+      "telephone": "+19167191897",
+      "url": "https://goflow.plumbing"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "containsPlace": [
+        {
+          "@type": "County",
+          "name": "Sonoma County"
+        },
+        {
+          "@type": "County",
+          "name": "Marin County"
+        }
+      ]
+    },
+    "offers": [
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
-          "name": "Faucet Repair"
+          "@type": "PlumbingService",
+          "name": "Emergency Faucet Repair",
+          "description": "24/7 emergency service for leaking or broken faucets"
         }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "129.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for emergency faucet repair"
+        # }
       },
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
-          "name": "Faucet Installation"
+          "@type": "PlumbingService",
+          "name": "Faucet Installation",
+          "description": "Professional installation of new water-efficient faucets"
         }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "199.00",
+        #   "priceCurrency": "USD",
+        #   "description": "New faucet installation service"
+        # }
       },
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
-          "name": "Preventive Maintenance"
+          "@type": "PlumbingService",
+          "name": "Faucet Maintenance",
+          "description": "Regular maintenance and tune-up for all types of faucets"
         }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "89.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Faucet maintenance service"
+        # }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Cartridge Replacement",
+          "description": "Replace worn cartridges in any type of faucet"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "99.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Faucet cartridge replacement service"
+        # }
       }
     ]
   }
-}
 ---
 
 <article itemScope itemType="https://schema.org/Service">

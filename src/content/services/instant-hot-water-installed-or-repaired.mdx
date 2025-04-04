@@ -39,26 +39,95 @@ installationProcess:
   - [User training, Learning operation]
   - [Ongoing support, Continued assistance]
 schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Instant Hot Water Installation & Repair Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": [
+    "@context": "https://schema.org",
+    "@type": "PlumbingService",
+    "@id": "https://goflow.plumbing/services/instant-hot-water-installed-or-repaired",
+    "name": "Instant Hot Water Installation & Repair Services",
+    "description": "Professional instant hot water system installation and repair services. We provide efficient solutions for endless hot water on demand.",
+    "provider": {
+      "@type": "Plumber",
+      "@id": "https://goflow.plumbing",
+      "name": "GoFlow Plumbing",
+      "telephone": "+19167191897",
+      "url": "https://goflow.plumbing"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "containsPlace": [
+        {
+          "@type": "County",
+          "name": "Sonoma County"
+        },
+        {
+          "@type": "County",
+          "name": "Marin County"
+        }
+      ]
+    },
+    "offers": [
       {
-        "@type": "County",
-        "name": "Sonoma County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Tankless Water Heater Installation",
+          "description": "Professional installation of energy-efficient tankless water heaters"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "1499.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for tankless water heater installation"
+        # }
       },
       {
-        "@type": "County",
-        "name": "Marin County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Hot Water Recirculation System Installation",
+          "description": "Installation of systems that provide instant hot water at every faucet"
+        }
+        # # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "899.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for recirculation system installation"
+        # }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Point-of-Use Water Heater Installation",
+          "description": "Installation of compact water heaters for specific fixtures"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "599.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for point-of-use heater installation"
+        # }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Emergency Hot Water Repair",
+          "description": "24/7 emergency repair service for all hot water systems"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "199.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for emergency repair service"
+        # }
       }
     ]
-  },
-  "serviceType": "Plumbing",
-  "description": "Professional instant hot water system installation and repair services. We provide efficient solutions for endless hot water on demand."
-}
+  }
 ---
 
 <article itemScope itemType="https://schema.org/Service">
@@ -144,10 +213,11 @@ schema: {
 
 <section itemScope itemType="https://schema.org/HowTo">
   <h2 itemProp="name">Professional Installation Process</h2>
+  <p itemProp="description">Step-by-step guide to installing instant hot water systems</p>
 
   <ol>
-    {frontmatter.installationProcess.map(([step, description]) => (
-      <li key={step} itemScope itemType="https://schema.org/HowToStep">
+    {frontmatter.installationProcess?.map(([step, description]) => (
+      <li key={step} itemScope itemType="https://schema.org/HowToStep" itemProp="step">
         <span itemProp="name">{step}</span>
         <span itemProp="text">{description}</span>
       </li>

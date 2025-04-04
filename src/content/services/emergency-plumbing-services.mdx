@@ -63,12 +63,21 @@ additionalServices:
 - Maintenance plans
 schema: {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": "PlumbingService",
+  "@id": "https://goflow.plumbing/services/emergency-plumbing-services",
   "name": "24/7 Emergency Plumbing Services",
+  "description": "24/7 emergency plumbing services for burst pipes, major leaks, flooding, sewer backups, and other urgent plumbing issues. Available nights, weekends, and holidays.",
   "provider": {
-    "@type": "LocalBusiness",
+    "@type": "Plumber",
+    "@id": "https://goflow.plumbing",
     "name": "GoFlow Plumbing",
-    "areaServed": [
+    "telephone": "+19167191897",
+    "url": "https://goflow.plumbing"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "California",
+    "containsPlace": [
       {
         "@type": "County",
         "name": "Sonoma County"
@@ -79,9 +88,50 @@ schema: {
       }
     ]
   },
-  "serviceType": "Emergency Plumbing",
-  "description": "24/7 emergency plumbing services for burst pipes, major leaks, flooding, sewer backups, and other urgent plumbing issues. Available nights, weekends, and holidays.",
-  "hoursAvailable": "24/7"
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://goflow.plumbing/services/emergency-plumbing-services",
+    "servicePhone": "+19167191897",
+    "availableLanguage": ["en-US"]
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "PlumbingService",
+        "name": "Burst Pipe Repair",
+        "description": "24/7 emergency repair for burst pipes to prevent water damage"
+      },
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "150.00",
+        "priceCurrency": "USD",
+        "description": "Starting price for emergency service call"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "PlumbingService",
+        "name": "Major Leak Repair",
+        "description": "Emergency repair for major water leaks and flooding"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "PlumbingService",
+        "name": "Sewer Backup Resolution",
+        "description": "Emergency resolution for sewer backups and blockages"
+      }
+    }
+  ],
+  "hoursAvailable": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
 }
 ---
 

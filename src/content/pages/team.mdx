@@ -84,24 +84,74 @@ microdata:
 schema: {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  "mainEntity": {
-    "@type": "Organization",
-    "name": "GoFlow Plumbing",
-    "member": [
-      {
-        "@type": "Person",
-        "name": "Adam Bragg",
-        "jobTitle": "Founder & CEO",
-        "description": "Third generation plumbing entrepreneur, his grandfather started Bragg Plumbing in San Francisco. His son later expanded their services to the north bay. And now, Adam, will continue the tradition of improving the quality of results customers can come to expect.​​"
-      },
-      {
-        "@type": "Person",
-        "name": "Jarrod Stuckenbroker",
-        "jobTitle": "Founder & COO",
-        "description": "For the last 30 years, Jarrod has seen, experienced, and been part of the ins and outs of every level of plumbing in the bay area."
-      }
-    ]
-  }
+  "mainEntity": [
+    {
+      "@type": "Organization",
+      "name": "GoFlow Plumbing",
+      "foundingDate": "2024-01-01",
+      "description": "Professional plumbing services in Sonoma and Marin Counties",
+      "member": [
+        {
+          "@type": "Person",
+          "name": "Adam Bragg",
+          "givenName": "Adam",
+          "familyName": "Bragg",
+          "jobTitle": "Founder & CEO",
+          "description": "Third generation plumbing entrepreneur, his grandfather started Bragg Plumbing in San Francisco. His son later expanded their services to the north bay. And now, Adam, will continue the tradition of improving the quality of results customers can come to expect.​​",
+          "telephone": "+19167191897",
+          "email": "adam@goflow.plumbing",
+          "url": "https://goflow.plumbing/team#adam-bragg"
+        },
+        {
+          "@type": "Person",
+          "name": "Jarrod Stuckenbroker",
+          "givenName": "Jarrod",
+          "familyName": "Stuckenbroker",
+          "jobTitle": "Founder & COO",
+          "description": "For the last 30 years, Jarrod has seen, experienced, and been part of the ins and outs of every level of plumbing in the bay area.",
+          "email": "jarrod@goflow.plumbing",
+          "url": "https://goflow.plumbing/team#jarrod-stuckenbroker"
+        }
+      ]
+    }
+    # ,
+    # {
+    #   "@type": "JobPosting",
+    #   "title": "Licensed Plumber",
+    #   "description": "Join an innovative plumbing company expanding around the bay area. Enjoy competitive benefits, enhanced training, and opportunities for professional growth.",
+    #   "datePosted": "2025-04-03",
+    #   "validThrough": "2025-12-31",
+    #   "employmentType": "FULL_TIME",
+    #   "hiringOrganization": {
+    #     "@type": "Organization",
+    #     "name": "GoFlow Plumbing",
+    #     "sameAs": "https://goflow.plumbing"
+    #   },
+    #   "jobLocation": {
+    #     "@type": "Place",
+    #     "address": {
+    #       "@type": "PostalAddress",
+    #       "addressLocality": "Santa Rosa",
+    #       "addressRegion": "CA",
+    #       "addressCountry": "US"
+    #     }
+    #   },
+    #   "baseSalary": {
+    #     "@type": "MonetaryAmount",
+    #     "currency": "USD",
+    #     "value": {
+    #       "@type": "QuantitativeValue",
+    #       "minValue": 75000,
+    #       "maxValue": 120000,
+    #       "unitText": "YEAR"
+    #     }
+    #   },
+    #   "qualifications": "Valid plumbing license, clean driving record, strong customer service skills, team player mentality",
+    #   "responsibilities": "Residential and commercial plumbing services, emergency repairs, installations, maintenance",
+    #   "skills": "Plumbing, Water Heaters, Gas Fitting, Drain Cleaning, Customer Service",
+    #   "benefits": "Health insurance, dental, vision, 401k, paid time off, ongoing training"
+    # }
+  ]
 }
 ---
 
@@ -132,13 +182,73 @@ schema: {
     </article>
 
     <article itemScope itemType="https://schema.org/JobPosting">
-      <h3>You</h3>
-      <h4 itemProp="title">Future Team Member</h4>
-      <p itemProp="description">Interested in joining an innovative plumbing company expanding around the bay area? Join the team and enjoy our many benefits and enhanced training to improve your professional worth.</p>
+      <h3>Join Our Team</h3>
+      <h4 itemProp="title">Licensed Plumber</h4>
+      <p itemProp="description">Join an innovative plumbing company expanding around the bay area. Enjoy competitive benefits, enhanced training, and opportunities for professional growth.</p>
+      
+      <div itemProp="qualifications">
+        <h5>Requirements:</h5>
+        <ul>
+          <li>Valid plumbing license</li>
+          <li>Clean driving record</li>
+          <li>Strong customer service skills</li>
+          <li>Team player mentality</li>
+        </ul>
+      </div>
+
+      <div itemProp="responsibilities">
+        <h5>Responsibilities:</h5>
+        <ul>
+          <li>Residential and commercial plumbing services</li>
+          <li>Emergency repairs</li>
+          <li>Installations</li>
+          <li>Maintenance</li>
+        </ul>
+      </div>
+
+      <div itemProp="benefits">
+        <h5>Benefits:</h5>
+        <ul>
+          <li>Health insurance</li>
+          <li>Dental and vision</li>
+          <li>401k</li>
+          <li>Paid time off</li>
+          <li>Ongoing training</li>
+        </ul>
+      </div>
+
+      <div itemProp="baseSalary" itemScope itemType="https://schema.org/MonetaryAmount">
+        <meta itemProp="currency" content="USD" />
+        <div itemScope itemType="https://schema.org/QuantitativeValue" itemProp="value">
+          <meta itemProp="minValue" content="75000" />
+          <meta itemProp="maxValue" content="120000" />
+          <meta itemProp="unitText" content="YEAR" />
+          <p>Salary Range: $75,000 - $120,000 per year</p>
+        </div>
+      </div>
+
       <div itemProp="contactPoint" itemScope itemType="https://schema.org/ContactPoint">
+        <h5>Contact Us:</h5>
         <a href="tel:+19167191897" itemProp="telephone">(916) 719-1897</a>
         <br />
         <a href="mailto:careers@goflow.plumbing" itemProp="email">careers@goflow.plumbing</a>
+      </div>
+
+      <div>
+        <meta itemProp="datePosted" content="2025-04-03" />
+        <meta itemProp="validThrough" content="2025-12-31" />
+        <meta itemProp="employmentType" content="FULL_TIME" />
+        <div itemProp="hiringOrganization" itemScope itemType="https://schema.org/Organization">
+          <meta itemProp="name" content="GoFlow Plumbing" />
+          <meta itemProp="sameAs" content="https://goflow.plumbing" />
+        </div>
+        <div itemProp="jobLocation" itemScope itemType="https://schema.org/Place">
+          <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+            <meta itemProp="addressLocality" content="Santa Rosa" />
+            <meta itemProp="addressRegion" content="CA" />
+            <meta itemProp="addressCountry" content="US" />
+          </div>
+        </div>
       </div>
     </article>
   </section>

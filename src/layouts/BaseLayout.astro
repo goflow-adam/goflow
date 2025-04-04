@@ -10,6 +10,61 @@ interface Props {
 }
 
 const { title, description, schema } = Astro.props;
+
+const baseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "name": "GoFlow Plumbing",
+  "image": "https://goflow.plumbing/og-image.jpg",
+  "@id": "https://goflow.plumbing",
+  "url": "https://goflow.plumbing",
+  "telephone": "(916) 719-1897",
+  "email": "info@goflow.plumbing",
+  "description": "Professional plumbing services in Sonoma and Marin County",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Main Street",
+    "addressLocality": "Santa Rosa",
+    "addressRegion": "CA",
+    "postalCode": "95401",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.4404,
+    "longitude": -122.7141
+  },
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "California"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.4404,
+      "longitude": -122.7141
+    },
+    "geoRadius": "50"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/goflowplumbing",
+    "https://www.instagram.com/goflowplumbing"
+  ],
+  "priceRange": "$$-$$$",
+  "paymentAccepted": ["Cash", "Credit Card", "Check"],
+  "currenciesAccepted": "USD"
+};
 ---
 
 <!DOCTYPE html>
@@ -28,12 +83,22 @@ const { title, description, schema } = Astro.props;
         }
       }}
     />
-    {schema && Array.isArray(schema) ? (
-      schema.map(item => (
-        <script type="application/ld+json" set:html={JSON.stringify(item)} />
-      ))
-    ) : schema && (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    {schema ? (
+      Array.isArray(schema) ? (
+        <>
+          <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
+          {schema.map(item => (
+            <script type="application/ld+json" set:html={JSON.stringify(item)} />
+          ))}
+        </>
+      ) : (
+        <>
+          <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
+          <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+        </>
+      )
+    ) : (
+      <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
     )}
     <link rel="icon shortcut" type="image/svg+xml" href="/favicon.ico" />
     <link rel="manifest" href="/site.webmanifest" />

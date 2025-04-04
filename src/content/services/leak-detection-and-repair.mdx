@@ -41,53 +41,65 @@ repairProcess:
   - [Final testing,Verifying repairs and system integrity]
   - [Maintenance advice,Providing recommendations for future prevention]
 schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Professional Leak Detection & Repair Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": [
-      {
-        "@type": "County",
-        "name": "Sonoma County"
-      },
-      {
-        "@type": "County",
-        "name": "Marin County"
-      }
-    ]
-  },
-  "serviceType": "Plumbing",
-  "description": "Expert leak detection and repair services using advanced technology including thermal imaging, acoustic detection, and pressure testing. We find and fix hidden leaks fast to prevent water damage.",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Leak Services",
-    "itemListElement": [
+    "@context": "https://schema.org",
+    "@type": "PlumbingService",
+    "@id": "https://goflow.plumbing/services/leak-detection-and-repair",
+    "name": "Professional Leak Detection & Repair Services",
+    "description": "Expert leak detection and repair services using advanced technology including thermal imaging, acoustic detection, and pressure testing. We find and fix hidden leaks fast to prevent water damage.",
+    "provider": {
+      "@type": "Plumber",
+      "@id": "https://goflow.plumbing",
+      "name": "GoFlow Plumbing",
+      "telephone": "+19167191897",
+      "url": "https://goflow.plumbing"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "containsPlace": [
+        {
+          "@type": "County",
+          "name": "Sonoma County"
+        },
+        {
+          "@type": "County",
+          "name": "Marin County"
+        }
+      ]
+    },
+    "offers": [
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
-          "name": "Leak Detection"
+          "@type": "PlumbingService",
+          "name": "Electronic Leak Detection",
+          "description": "Advanced electronic equipment to precisely locate hidden leaks"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "199.00",
+          "priceCurrency": "USD",
+          "description": "Starting price for electronic leak detection service"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
-          "name": "Leak Repair"
+          "@type": "PlumbingService",
+          "name": "Thermal Imaging Detection",
+          "description": "Infrared cameras to identify temperature variations indicating leaks"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
-          "name": "Preventive Services"
+          "@type": "PlumbingService",
+          "name": "Emergency Leak Repair",
+          "description": "24/7 emergency service for critical leaks"
         }
       }
     ]
   }
-}
 ---
 
 <article itemScope itemType="https://schema.org/Service">

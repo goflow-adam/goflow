@@ -19,31 +19,95 @@ whyChoose:
   - Guaranteed workmanship
   - Clean, professional service
 schema: {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Professional Toilet Repair Services",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "GoFlow Plumbing",
-    "areaServed": [
+    "@context": "https://schema.org",
+    "@type": "PlumbingService",
+    "@id": "https://goflow.plumbing/services/clogged-or-running-toilets",
+    "name": "Professional Toilet Repair Services",
+    "description": "Expert toilet repair services including clog removal, running toilet fixes, leak repairs, and installations. Available 24/7 for emergencies with upfront pricing.",
+    "provider": {
+      "@type": "Plumber",
+      "@id": "https://goflow.plumbing",
+      "name": "GoFlow Plumbing",
+      "telephone": "+19167191897",
+      "url": "https://goflow.plumbing"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "containsPlace": [
+        {
+          "@type": "County",
+          "name": "Sonoma County"
+        },
+        {
+          "@type": "County",
+          "name": "Marin County"
+        }
+      ]
+    },
+    "offers": [
       {
-        "@type": "County",
-        "name": "Sonoma County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Emergency Toilet Repair",
+          "description": "24/7 emergency service for clogged or overflowing toilets"
+        }
+        #  ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "149.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Starting price for emergency toilet repair"
+        # }
       },
       {
-        "@type": "County",
-        "name": "Marin County"
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Running Toilet Repair",
+          "description": "Fix running toilets and stop water waste"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "129.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Running toilet repair service"
+        # }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Toilet Installation",
+          "description": "Professional installation of new water-efficient toilets"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "399.00",
+        #   "priceCurrency": "USD",
+        #   "description": "New toilet installation service"
+        # }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "PlumbingService",
+          "name": "Toilet Parts Replacement",
+          "description": "Replace flappers, fill valves, and other components"
+        }
+        # ,
+        # "priceSpecification": {
+        #   "@type": "PriceSpecification",
+        #   "price": "99.00",
+        #   "priceCurrency": "USD",
+        #   "description": "Toilet parts replacement service"
+        # }
       }
     ]
-  },
-  "serviceType": "Plumbing",
-  "description": "Expert toilet repair services including clog removal, running toilet fixes, leak repairs, and installations. Available 24/7 for emergencies with upfront pricing.",
-  "availableChannel": {
-    "@type": "ServiceChannel",
-    "serviceType": "Emergency Service",
-    "availabilityTime": "24/7"
   }
-}
 ---
 
 <article itemScope itemType="https://schema.org/Service">
