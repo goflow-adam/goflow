@@ -126,14 +126,22 @@ export function createArticleSchema(article: {
       "@id": "https://goflow.plumbing/#organization",
       "name": businessInfo.name,
       "telephone": businessInfo.telephone,
-      "url": "https://goflow.plumbing"
+      "url": "https://goflow.plumbing",
+      "address": businessInfo.address,
+      "areaServed": businessInfo.areaServed,
+      "priceRange": businessInfo.priceRange,
+      "image": businessInfo.image
     },
     "publisher": {
       "@type": "Plumber",
       "@id": "https://goflow.plumbing/#organization",
       "name": businessInfo.name,
       "telephone": businessInfo.telephone,
-      "url": "https://goflow.plumbing"
+      "url": "https://goflow.plumbing",
+      "address": businessInfo.address,
+      "areaServed": businessInfo.areaServed,
+      "priceRange": businessInfo.priceRange,
+      "image": businessInfo.image
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
