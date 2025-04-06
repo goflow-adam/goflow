@@ -16,6 +16,14 @@
   @apply text-4xl md:text-6xl font-bold mb-6;
 }
 
+.hero-container h1 {
+  @apply mb-2;
+}
+
+.hero-container h2 {
+  @apply text-accent;
+}
+
 .hero p {
   @apply text-xl md:text-2xl mb-8;
 }
