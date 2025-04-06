@@ -6,6 +6,11 @@
 
 .hero {
   @apply bg-primary py-20 text-background;
+  background-image: url('images/repipes.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-blend-mode: overlay;
 }
 
 .hero-container {
