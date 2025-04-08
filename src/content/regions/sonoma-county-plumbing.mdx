@@ -1,28 +1,29 @@
 ---
 title: "Sonoma County Plumbing Services for your home"
 contentTitle: "Get your Plumbing Repaired in Sonoma County"
+includeInMenu: true
 description: "GoFlow is deeply experienced in these region-specific needs and will tailor our plumbing solutions to your home's specific needs."
 region: "Sonoma County"
 containsPlace: [
-        "Cloverdale",
-        "Cotati",
-        "Healdsburg",
-        "Petaluma",
-        "Rohnert Park",
-        "Santa Rosa",
-        "Sebastopol",
-        "Sonoma",
-        "Windsor",
-        "Bloomfield",
-        "Bodega",
-        "Forestville",
-        "Geyserville",
-        "Glen Ellen",
-        "Guerneville",
-        "Jenner",
-        "Kenwood",
-        "Larkfield-Wikiup",
-        "Occidental"
+        ["Cloverdale"],
+        ["Cotati"],
+        ["Healdsburg"],
+        ["Petaluma"],
+        ["Rohnert Park"],
+        ["Santa Rosa", true],
+        ["Sebastopol"],
+        ["Sonoma"],
+        ["Windsor"],
+        ["Bloomfield"],
+        ["Bodega"],
+        ["Forestville"],
+        ["Geyserville"],
+        ["Glen Ellen"],
+        ["Guerneville"],
+        ["Jenner"],
+        ["Kenwood"],
+        ["Larkfield-Wikiup"],
+        ["Occidental"]
       ]
 pubDate: 2025-03-24
 heroImage: "/images/sonoma-county.jpg"
@@ -38,7 +39,7 @@ Each of these geographic zones presents unique opportunities and challenges for 
 
 We have our coastal areas like Bodega Bay, Jenner, and Sea Ranch. Where the foggy, windy, and salty conditions dictate how plumbing is applied. The materials can change. The areas of the homes where appliances like water heaters can be installed is also impacted.
 
-In our valleys and lowlands like Santa Rosa, Petaluma, and Sonoma we have significantly higher high temperatures and lower low temperatures but also more flood plains. Your plumbing in these areas can be impacted by temperature, especially lower temperates. While rare, it is not unknown that pipes can burst due to freezing temperatures.
+In our valleys and lowlands like <a href="/santa-rosa-plumbing">Santa Rosa</a>, Petaluma, and Sonoma we have significantly higher high temperatures and lower low temperatures but also more flood plains. Your plumbing in these areas can be impacted by temperature, especially lower temperates. While rare, it is not unknown that pipes can burst due to freezing temperatures.
 
 Our hilly and ridgeline areas like Glen Ellen, Kenwood, Sebastopol, while similar to our valleys and lowlands offer plumbing challenges such as septic placement and limited leach line installation options.
 
@@ -58,7 +59,9 @@ Our hilly and ridgeline areas like Glen Ellen, Kenwood, Sebastopol, while simila
   <ul>
   {
     frontmatter.containsPlace.map(place => (
-      <li itemprop="addressLocality" itemscope itemtype="https://schema.org/City">{place}</li>
+      <li itemprop="addressLocality" itemscope itemtype="https://schema.org/City">
+        {place[1] ? <a href={`/${place[0].toLowerCase().replace(' ', '-')}-plumbing`}>{place[0]}</a> : place[0]}
+      </li>
     ))
   }
   </ul>

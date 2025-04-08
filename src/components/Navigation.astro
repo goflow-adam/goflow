@@ -18,8 +18,18 @@ const { isDesktop } = Astro.props;
 const services = await getCollection('services');
 const serviceMenu = services
   .map(service => ({
-    title: service.data.menuText ||service.data.linkText || service.data.title,
+    title: service.data.menuText || service.data.linkText || service.data.title,
     path: `/${service.slug}`
+  }))
+  .sort((a, b) => a.title.localeCompare(b.title));
+
+// Get all region pages that should be included in the menu
+const regions = await getCollection('regions');
+const regionMenu = regions
+  .filter(region => region.data.includeInMenu)
+  .map(region => ({
+    title: region.data.region,
+    path: `/${region.slug}`
   }))
   .sort((a, b) => a.title.localeCompare(b.title));
 
@@ -32,10 +42,7 @@ const navigation: NavItem[] = [
   {
     title: "Service Regions",
     path: "/service-regions",
-    submenu: [
-      { title: "Sonoma County", path: "/sonoma-county-plumbing" },
-      { title: "Marin County", path: "/marin-county-plumbing" }
-    ]
+    submenu: regionMenu
   },
   { title: "Contact Us", path: "/contact-us" },
   { title: "FAQs", path: "/faqs" }
