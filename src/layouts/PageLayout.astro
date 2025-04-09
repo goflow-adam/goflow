@@ -1,12 +1,17 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
+import type { Schema } from '../types/schema';
 import '../styles/markdown.css';
 import '../styles/pages.css';
 import '../styles/prose.css';
 
 interface Props {
-  page: CollectionEntry<'pages'>;
+  page: CollectionEntry<'pages'> & {
+    data: {
+      schema?: Schema;
+    };
+  };
 }
 
 const { page } = Astro.props;
@@ -138,14 +143,14 @@ const { title, description, schema, microdata, teamMembers, companyValues, certi
     <div class="service-areas">
       <div>
         <h3>Sonoma County Service</h3>
-        <p>Serving Santa Rosa, Petaluma, Rohnert Park, and surrounding areas.</p>
+        <p>Serving <a href="/santa-rosa-plumbing">Santa Rosa</a>, Petaluma, Rohnert Park, and surrounding areas.</p>
         <a href="/sonoma-county-plumbing">
           View Sonoma Services →
         </a>
       </div>
       <div>
         <h3>Marin County Service</h3>
-        <p>Serving San Rafael, Novato, Mill Valley, and surrounding areas.</p>
+        <p>Serving <a href="/san-rafael-plumbing">San Rafael</a>, Novato, Mill Valley, and surrounding areas.</p>
         <a href="/marin-county-plumbing">
           View Marin Services →
         </a>

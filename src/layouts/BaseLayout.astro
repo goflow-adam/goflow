@@ -4,11 +4,7 @@ import Navigation from '../components/Navigation.astro';
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import '../styles/navigation.css';
 import '../styles/base-layout.css';
-interface Schema {
-  '@context': string;
-  '@type': string;
-  [key: string]: any;
-}
+import type { Schema, PlumberSchema, FAQPageSchema } from '../types/schema';
 
 interface Props {
   title: string;
@@ -18,7 +14,7 @@ interface Props {
 
 const { title, description, schema } = Astro.props;
 
-const baseSchema = {
+const baseSchema: PlumberSchema = {
   "@context": "https://schema.org",
   "@type": "Plumber",
   "name": "GoFlow Plumbing",
@@ -30,10 +26,10 @@ const baseSchema = {
   "description": "Professional plumbing services in Sonoma and Marin County",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "123 Main Street",
+    "streetAddress": "10 Pine Ave",
     "addressLocality": "Sonoma",
     "addressRegion": "CA",
-    "postalCode": "95401",
+    "postalCode": "95476",
     "addressCountry": "US"
   },
   "geo": {
@@ -90,25 +86,35 @@ const baseSchema = {
         }
       }}
     />
-    {schema ? (
-      (schema as Schema)['@type'] === 'FAQPage' ? (
-        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-      ) : Array.isArray(schema) ? (
-        <>
-          <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
-          {schema.map(item => (
-            <script type="application/ld+json" set:html={JSON.stringify(item)} />
-          ))}
-        </>
-      ) : (
+    {(() => {
+      const isFAQPage = (s: Schema): s is FAQPageSchema => 'mainEntity' in s && s['@type'] === 'FAQPage';
+      
+      if (!schema) {
+        return <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />;
+      }
+      
+      if (Array.isArray(schema)) {
+        return (
+          <>
+            <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
+            {schema.map(item => (
+              <script type="application/ld+json" set:html={JSON.stringify(item)} />
+            ))}
+          </>
+        );
+      }
+      
+      if (isFAQPage(schema)) {
+        return <script type="application/ld+json" set:html={JSON.stringify(schema)} />;
+      }
+      
+      return (
         <>
           <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
           <script type="application/ld+json" set:html={JSON.stringify(schema)} />
         </>
-      )
-    ) : (
-      <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
-    )}
+      );
+    })()}
     <link rel="icon shortcut" type="image/svg+xml" href="/favicon.ico" />
     <link rel="manifest" href="/site.webmanifest" />
     <GoogleAnalytics />

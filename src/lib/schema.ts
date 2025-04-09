@@ -1,4 +1,6 @@
-export const businessInfo = {
+import type { PlumberSchema, Schema } from '../types/schema';
+
+export const businessInfo: Omit<PlumberSchema, '@context'> = {
   "@type": "Plumber",
   "@id": "https://goflow.plumbing/#business",
   "name": "GoFlow Plumbing",
@@ -12,10 +14,10 @@ export const businessInfo = {
     "postalCode": "95476",
     "addressCountry": "US"
   },
-  "location": {
+  "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "38.3147602",
-    "longitude": "-122.4849469"
+    "latitude": 38.3147602,
+    "longitude": -122.4849469
   },
   "url": "https://goflow.plumbing",
   "priceRange": "$$",
@@ -30,7 +32,7 @@ export const businessInfo = {
   ]
 };
 
-export function createServiceSchema(serviceName: string, serviceType: string, serviceUrl: string) {
+export function createServiceSchema(serviceName: string, serviceType: string, serviceUrl: string): Schema {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -42,7 +44,7 @@ export function createServiceSchema(serviceName: string, serviceType: string, se
   };
 }
 
-export function createServiceListSchema(services: { title: string; description: string; url: string }[], regions: { data: { title: string; description: string; containsPlace?: string[] } }[]) {
+export function createServiceListSchema(services: { title: string; description: string; url: string }[], regions: { data: { title: string; description: string; containsPlace?: string[] } }[]): Schema[] {
   const businessId = "https://goflow.plumbing/#business";
   const { '@type': _, '@id': __, ...businessInfoWithoutTypeAndId } = businessInfo;
   
@@ -78,7 +80,7 @@ export function createServiceListSchema(services: { title: string; description: 
   ];
 }
 
-export function createServiceRegionsSchema(regions: { data: { title: string; description: string; containsPlace?: string[] }, slug: string }[]) {
+export function createServiceRegionsSchema(regions: { data: { title: string; description: string; containsPlace?: string[] }, slug: string }[]): Schema {
   return {
     "@context": "https://schema.org",
     "@type": "SearchResultsPage",
@@ -157,7 +159,7 @@ export function createArticleSchema(article: {
   };
 }
 
-export function createOrganizationSchema() {
+export function createOrganizationSchema(): Schema {
   const { '@type': _, ...rest } = businessInfo;
   return {
     "@context": "https://schema.org",
@@ -170,7 +172,7 @@ export function createOrganizationSchema() {
   };
 }
 
-export function createWebSiteSchema() {
+export function createWebSiteSchema(): Schema {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
