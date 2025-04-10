@@ -104,6 +104,10 @@ export interface ServiceSchema extends BaseSchema {
   name: string;
   description: string;
   provider: { "@id": string };
+  telephone?: string;
+  priceRange?: string;
+  address?: PostalAddress;
+  image?: string;
   areaServed: Array<AdministrativeArea | { "@id": string } | string>;
   offers?: {
     "@type": "Offer";
@@ -116,6 +120,17 @@ export interface ServiceSchema extends BaseSchema {
     "@type": "HomeAndConstructionBusiness";
     name: string;
     description: string;
+    address: PostalAddress;
+    telephone: string;
+    url: string;
+    areaServed?: string[] | AdministrativeArea[] | {
+      "@type": "State";
+      name: string;
+      containsPlace: Array<{
+        "@type": "County";
+        name: string;
+      }>;
+    };
   };
   category?: string;
   timeRequired?: string;
@@ -250,6 +265,11 @@ export interface ContactPageSchema extends BaseSchema {
   mainEntity: {
     "@type": "Organization" | "Plumber";
     "@id": string;
+    name: string;
+    image: string;
+    telephone?: string;
+    priceRange?: string;
+    address?: PostalAddress;
     contactPoint: Array<{
       "@type": "ContactPoint";
       contactType: string;

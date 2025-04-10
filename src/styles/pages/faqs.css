@@ -1,3 +1,11 @@
+.faq-question {
+  @apply mb-8;
+}
+
+.faq-answer {
+  @apply mt-2;
+}
+
 .faqs-container h2 {
     @apply text-2xl font-bold mt-12 mb-6 text-primary border-b border-secondary pb-2;
   }

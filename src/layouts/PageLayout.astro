@@ -15,67 +15,94 @@ interface Props {
 }
 
 const { page } = Astro.props;
-const { title, description, schema, microdata, teamMembers, companyValues, certifications } = page.data;
+const { title, description, schema, teamMembers, companyValues, certifications } = page.data;
 ---
 
 <BaseLayout title={title} description={description} schema={schema}>
-  <article 
-    class="article"
-    itemscope
-    itemtype={microdata?.type ? `https://schema.org/${microdata.type}` : undefined}
-  >
-    {microdata?.properties && Object.entries(microdata.properties).map(([key, value]) => (
-      <meta itemprop={key} content={value} />
-    ))}
+  <article class="article">
 
     {teamMembers && (
-      <div class="team-section" itemscope itemtype="https://schema.org/Organization">
+      <div class="team-section">
         {teamMembers.map(member => (
-          <div class="team-member" itemscope itemtype="https://schema.org/Person" id={member.url?.split('#')[1]}>
-            <meta itemprop="name" content={member.name} />
-            {member.givenName && <meta itemprop="givenName" content={member.givenName} />}
-            {member.familyName && <meta itemprop="familyName" content={member.familyName} />}
-            <meta itemprop="jobTitle" content={member.jobTitle} />
-            <meta itemprop="description" content={member.description} />
-            {member.telephone && <meta itemprop="telephone" content={member.telephone} />}
-            {member.email && <meta itemprop="email" content={member.email} />}
-            {member.url && <meta itemprop="url" content={member.url} />}
+          <div class="team-member" id={member.url?.split('#')[1]}>
+            <h3>{member.name}</h3>
+            <p class="job-title">{member.jobTitle}</p>
+            <p class="description">{member.description}</p>
+            
+            {member.telephone && <p class="contact">Phone: <a href={`tel:${member.telephone}`}>{member.telephone}</a></p>}
+            {member.email && <p class="contact">Email: <a href={`mailto:${member.email}`}>{member.email}</a></p>}
+            {member.url && <p class="contact">Website: <a href={member.url} target="_blank" rel="noopener noreferrer">{member.url}</a></p>}
+
             
             {member.address && (
-              <div itemscope itemtype="https://schema.org/PostalAddress">
-                <meta itemprop="streetAddress" content={member.address.streetAddress} />
-                <meta itemprop="addressLocality" content={member.address.addressLocality} />
-                <meta itemprop="addressRegion" content={member.address.addressRegion} />
-                <meta itemprop="postalCode" content={member.address.postalCode} />
-                <meta itemprop="addressCountry" content={member.address.addressCountry} />
+              <div class="address">
+                <h4>Address:</h4>
+                <p>
+                  {member.address.streetAddress}<br />
+                  {member.address.addressLocality}, {member.address.addressRegion} {member.address.postalCode}<br />
+                  {member.address.addressCountry}
+                </p>
               </div>
             )}
 
-            {member.alumniOf?.map(education => (
-              <div itemscope itemtype="https://schema.org/EducationalOrganization">
-                <meta itemprop="name" content={education.name} />
-                {education.degree && <meta itemprop="degree" content={education.degree} />}
-                {education.startDate && <meta itemprop="startDate" content={education.startDate} />}
-                {education.endDate && <meta itemprop="endDate" content={education.endDate} />}
+            {member.alumniOf?.length && member.alumniOf.length > 0 && (
+              <div class="education">
+                <h4>Education:</h4>
+                {member.alumniOf.map(education => (
+                  <p>
+                    {education.name}
+                    {education.degree && ` - ${education.degree}`}
+                    {(education.startDate || education.endDate) && (
+                      <span class="dates">
+                        ({education.startDate && new Date(education.startDate).getFullYear()}
+                        {education.endDate && ` - ${new Date(education.endDate).getFullYear()}`})
+                      </span>
+                    )}
+                  </p>
+                ))}
               </div>
-            ))}
+            )}
 
-            {member.hasCredential?.map(credential => (
-              <div itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
-                <meta itemprop="name" content={credential.name} />
-                <meta itemprop="credentialCategory" content="professional" />
-                <meta itemprop="recognizedBy" content={credential.issuer} />
-                {credential.dateIssued && <meta itemprop="dateCreated" content={credential.dateIssued.toISOString()} />}
+            {member.hasCredential?.length && member.hasCredential.length > 0 && (
+              <div class="credentials">
+                <h4>Credentials:</h4>
+                {member.hasCredential.map(credential => (
+                  <p>
+                    {credential.name}
+                    {credential.issuer && <span class="issuer"> - {credential.issuer}</span>}
+                    {credential.dateIssued && (
+                      <span class="date">
+                        (Issued: {new Date(credential.dateIssued).toLocaleDateString()})
+                      </span>
+                    )}
+                  </p>
+                ))}
               </div>
-            ))}
+            )}
 
-            {member.award?.map(award => (
-              <meta itemprop="award" content={award} />
-            ))}
+            {member.award?.length && member.award.length > 0 && (
+              <div class="awards">
+                <h4>Awards:</h4>
+                <ul>
+                  {member.award.map(award => (
+                    <li>{award}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-            {member.socialProfiles?.map(profile => (
-              <link itemprop="sameAs" href={profile.url} />
-            ))}
+            {member.socialProfiles?.length && member.socialProfiles.length > 0 && (
+              <div class="social-profiles">
+                <h4>Connect:</h4>
+                <div class="social-links">
+                  {member.socialProfiles.map(profile => (
+                    <a href={profile.url} target="_blank" rel="noopener noreferrer" class="social-link">
+                      {profile.type}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -84,15 +111,15 @@ const { title, description, schema, microdata, teamMembers, companyValues, certi
     {companyValues && (
       <div class="values-section">
         {companyValues.map(value => (
-          <div itemscope itemtype="https://schema.org/Thing">
-            <meta itemprop="name" content={value.name} />
-            <meta itemprop="description" content={value.description} />
+          <div class="value-item">
+            <h3>{value.name}</h3>
+            <p>{value.description}</p>
             {value.items && (
-              <div itemscope itemtype="https://schema.org/ItemList">
+              <ul>
                 {value.items.map((item, index) => (
-                  <meta itemprop="itemListElement" content={item} />
+                  <li>{item}</li>
                 ))}
-              </div>
+              </ul>
             )}
           </div>
         ))}
@@ -102,12 +129,11 @@ const { title, description, schema, microdata, teamMembers, companyValues, certi
     {certifications && (
       <div class="certifications-section">
         {certifications.map(cert => (
-          <div itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
-            <meta itemprop="name" content={cert.name} />
-            <meta itemprop="credentialCategory" content="professional" />
-            <meta itemprop="recognizedBy" content={cert.issuer} />
-            {cert.dateIssued && <meta itemprop="dateCreated" content={cert.dateIssued.toISOString()} />}
-            {cert.validUntil && <meta itemprop="validUntil" content={cert.validUntil.toISOString()} />}
+          <div class="certification-item">
+            <h3>{cert.name}</h3>
+            <p>Issued by: {cert.issuer}</p>
+            {cert.dateIssued && <p>Issued: {cert.dateIssued.toLocaleDateString()}</p>}
+            {cert.validUntil && <p>Valid until: {cert.validUntil.toLocaleDateString()}</p>}
           </div>
         ))}
       </div>

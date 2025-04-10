@@ -2,6 +2,7 @@
 import { getEntry } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
 import '../styles/pages/faqs.css';
+import { createFAQPageSchema } from '../lib/faqPageSchemaFactory';
 
 const page = await getEntry('pages', 'faqs');
 if (!page) {
@@ -9,10 +10,11 @@ if (!page) {
 }
 
 const { Content } = await page.render();
+const schema = createFAQPageSchema();
 
 ---
 
-<PageLayout page={page}>
+<PageLayout page={{ ...page, data: { ...page.data, schema } }}>
   <div class="faqs-container">
     <Content />
   </div>

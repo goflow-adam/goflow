@@ -10,6 +10,11 @@ export function createContactPageSchema(): ContactPageSchema {
     "mainEntity": {
       "@type": "Plumber",
       "@id": "https://goflow.plumbing/#business",
+      "name": "GoFlow Plumbing",
+      "image": "https://goflow.plumbing/GoFlow2.jpg",
+      "telephone": businessInfo.telephone,
+      "priceRange": businessInfo.priceRange || "$$",
+      "address": businessInfo.address,
       "contactPoint": [
         {
           "@type": "ContactPoint",

@@ -27,13 +27,60 @@ containsPlace: [
       ]
 pubDate: 2025-03-24
 heroImage: "/images/sonoma-county.jpg"
+schema: {
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "name": "GoFlow Plumbing",
+  "url": "https://goflow.plumbing",
+  "telephone": "+19167191897",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10 Pine Ave",
+    "addressLocality": "Sonoma",
+    "addressRegion": "CA",
+    "postalCode": "95476",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.4404,
+    "longitude": -122.7141
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Sonoma County",
+    "containsPlace": [
+      {
+        "@type": "City",
+        "name": "Santa Rosa"
+      },
+      {
+        "@type": "City",
+        "name": "Petaluma"
+      },
+      {
+        "@type": "City",
+        "name": "Sonoma"
+      }
+    ]
+  },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.4404,
+      "longitude": -122.7141
+    },
+    "geoRadius": "25"
+  }
+}
 ---
 
-<h1 itemprop="name">{frontmatter.contentTitle}</h1>
+# {frontmatter.contentTitle}
 
 {frontmatter.region} offers a diverse geography that influences the types of homes built here. terrain, wind, temperatures, moisture levels, and available sunlight as well as the cloud cover or fog have driven the architecture and composition of homes in {frontmatter.region}. This, of course, impacts the heating and plumbing needs of our homes.
 
-<h2 itemprop="about">{frontmatter.region} Unique Plumbing Conditions</h2>
+## {frontmatter.region} Unique Plumbing Conditions
 
 Each of these geographic zones presents unique opportunities and challenges for residential homeowners when it comes to their plumbing. GoFlow is deeply experienced in these region-specific needs and will tailor our plumbing solutions to your home's specific needs.
 
@@ -45,54 +92,39 @@ Our hilly and ridgeline areas like Glen Ellen, Kenwood, Sebastopol, while simila
 
 {frontmatter.region}'s forested and mountainous Regions as well as our riverfront and wetland areas like Occidental, Cazadero, Healdsburg Highlands, Russian River, Valley Ford, and Gualala offer similar challenges while also requiring evermore robust supply and waste lines entering and leaving the homes due to their potential distance from local utilities. Moisture is also an issue here and this can alter plumbing options such that condensation does not further contribute to moisture accumulation in your home.
 
-<div itemScope itemType="https://schema.org/Service">
 
-  <div itemprop="areaServed" itemscope itemtype="https://schema.org/GeoCircle">
-    <h2>Areas We Serve in {frontmatter.region}</h2>
+
+## Areas We Serve in {frontmatter.region}
     
-    <div itemprop="geoMidpoint" itemscope itemtype="https://schema.org/GeoCoordinates">
-      <meta itemprop="latitude" content="38.4404674" />
-      <meta itemprop="longitude" content="-122.7144314" />
-    </div>
+
   
-  <h3 itemprop="serviceLocation">Major Cities</h3>
-  <ul>
-  {
-    frontmatter.containsPlace.map(place => (
-      <li itemprop="addressLocality" itemscope itemtype="https://schema.org/City">
-        {place[1] ? <a href={`/${place[0].toLowerCase().replace(' ', '-')}-plumbing`}>{place[0]}</a> : place[0]}
-      </li>
-    ))
-  }
-  </ul>
+### Major Cities
+
+{
+  frontmatter.containsPlace.map(place => (
+    <li>
+      {place[1] ? <a href={`/${place[0].toLowerCase().replace(' ', '-')}-plumbing`}>{place[0]}</a> : place[0]}
+    </li>
+  ))
+}
 
   <h3>Surrounding Communities</h3>
   <p>We also serve all surrounding communities and unincorporated areas within {frontmatter.region}.</p>
-  </div>
-</div>
 
-<div itemprop="openingHoursSpecification" itemscope itemtype="https://schema.org/OpeningHoursSpecification">
-  <meta itemprop="dayOfWeek" content="Monday Tuesday Wednesday Thursday Friday Saturday Sunday" />
-  <meta itemprop="opens" content="00:00" />
-  <meta itemprop="closes" content="23:59" />
-  <p><strong>Available 24/7 for Emergency Services</strong></p>
-</div>
+
+**Available 24/7 for Emergency Services**
 
 ## Our Services in {frontmatter.region}
 
-<div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-  <h3 itemprop="name">Residential Plumbing</h3>
-  <ul>
-    <li itemprop="serviceType">Water heater repair and replacement</li>
-    <li itemprop="serviceType">Drain cleaning and rooter service</li>
-    <li itemprop="serviceType">Leak detection and repair</li>
-    <li itemprop="serviceType">Fixture installation and repair</li>
-    <li itemprop="serviceType">Emergency plumbing service</li>
-    <li itemprop="serviceType">Repiping services</li>
-    <li itemprop="serviceType">Sewer line services</li>
-    <li itemprop="serviceType">Water line services</li>
-  </ul>
-</div>
+### Residential Plumbing
+- Water heater repair and replacement
+- Drain cleaning and rooter service
+- Leak detection and repair
+- Fixture installation and repair
+- Emergency plumbing service
+- Repiping services
+- Sewer line services
+- Water line services
 
 ### Commercial Plumbing
 - Restaurant plumbing

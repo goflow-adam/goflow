@@ -52,6 +52,10 @@ export function createServicePageSchema(service: CollectionEntry<'services'>): S
     "provider": {
       "@id": "https://goflow.plumbing/#business"
     },
+    "telephone": businessInfo.telephone,
+    "priceRange": businessInfo.priceRange || "$$",
+    "address": businessInfo.address,
+    "image": service.data.heroImage || "https://goflow.plumbing/GoFlow2.jpg",
     "areaServed": Array.isArray(businessInfo.areaServed) ? 
       businessInfo.areaServed.map(area => ({
         "@type": "County" as const,
@@ -77,7 +81,11 @@ export function createServicePageSchema(service: CollectionEntry<'services'>): S
     "serviceOutput": {
       "@type": "HomeAndConstructionBusiness",
       "name": service.data.title,
-      "description": serviceDetail.output
+      "description": serviceDetail.output,
+      "address": businessInfo.address,
+      "telephone": businessInfo.telephone,
+      "url": `https://goflow.plumbing/services/${service.slug}`,
+      "areaServed": businessInfo.areaServed
     },
     "category": "Plumbing",
     "timeRequired": serviceDetail.time

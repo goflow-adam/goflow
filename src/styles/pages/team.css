@@ -1,3 +1,54 @@
+.team-section {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.team-member {
+  @apply bg-white rounded-lg shadow-md p-6;
+}
+
+.team-member h3 {
+  @apply text-xl font-bold text-primary mb-2;
+}
+
+.team-member .job-title {
+  @apply text-secondary font-medium mb-4;
+}
+
+.team-member .description {
+  @apply text-gray-600 mb-6;
+}
+
+.team-member .contact {
+  @apply mb-2;
+}
+
+.team-member .contact a {
+  @apply text-primary hover:text-secondary transition-colors;
+}
+
+.team-member h4 {
+  @apply font-semibold text-lg mt-6 mb-2 text-primary;
+}
+
+.team-member .education p,
+.team-member .credentials p {
+  @apply mb-2;
+}
+
+.team-member .dates,
+.team-member .issuer,
+.team-member .date {
+  @apply text-gray-500 text-sm;
+}
+
+.team-member .social-links {
+  @apply flex gap-4;
+}
+
+.team-member .social-link {
+  @apply text-primary hover:text-secondary transition-colors;
+}
+
 .team-container h2 {
     @apply text-2xl font-bold mt-8 mb-4 text-primary;
   }

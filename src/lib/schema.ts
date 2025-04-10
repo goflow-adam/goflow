@@ -7,7 +7,7 @@ export const businessInfo: Omit<PlumberSchema, '@context'> = {
   "telephone": "(916) 719-1897",
   "email": "info@goflow.plumbing",
   "image": "https://goflow.plumbing/GoFlow2.jpg",
-  "description": "Professional plumbing services in Sonoma and Marin County",
+  "description": "Residential plumbing services in Sonoma and Marin County",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "10 Pine Ave",
@@ -41,7 +41,7 @@ export const businessInfo: Omit<PlumberSchema, '@context'> = {
     }
   ],
   "priceRange": "$$",
-  "paymentAccepted": ["Cash", "Credit Card", "Check"],
+  "paymentAccepted": ["Cash", "Credit Card", "Check", "PayPal", "Venmo", "Bitcoin"],
   "currenciesAccepted": "USD",
   "sameAs": [
     "https://www.facebook.com/profile.php?id=61574410838549",

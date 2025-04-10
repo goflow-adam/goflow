@@ -43,7 +43,8 @@ const baseSchema = z.object({
   pubDate: z.date(),
   updatedDate: z.date().optional(),
   heroImage: z.string().optional(),
-  draft: z.boolean().default(false)
+  draft: z.boolean().default(false),
+  schema: z.any().optional(),
 });
 
 const services = defineCollection({
