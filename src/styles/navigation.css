@@ -89,7 +89,7 @@
 }
 
 .mobile-submenu-content {
-  @apply max-h-0 overflow-hidden transition-all duration-200 ease-in-out;
+  @apply max-h-0 overflow-scroll transition-all duration-200 ease-in-out;
 }
 
 .mobile-nav-item.open .mobile-submenu-content {

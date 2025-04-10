@@ -44,24 +44,66 @@ schema: {
       "longitude": -122.7141
     },
     "geoRadius": "10"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Santa Rosa Plumbing Services",
+    "itemListElement": [
+      {
+        "@type": "Service",
+        "name": "Emergency Plumbing",
+        "description": "24/7 emergency plumbing repairs in Santa Rosa"
+      },
+      {
+        "@type": "Service",
+        "name": "Water Heater Services",
+        "description": "Installation and repair of water heaters"
+      },
+      {
+        "@type": "Service",
+        "name": "Drain Services",
+        "description": "Professional drain cleaning and maintenance"
+      },
+      {
+        "@type": "Service",
+        "name": "Pipe Services",
+        "description": "Repair and replacement of damaged pipes"
+      },
+      {
+        "@type": "Service",
+        "name": "Fixture Services",
+        "description": "Installation and upgrade of plumbing fixtures"
+      },
+      {
+        "@type": "Service",
+        "name": "Sewer Services",
+        "description": "Sewer line repair and maintenance"
+      },
+      {
+        "@type": "Service",
+        "name": "Water Filtration",
+        "description": "Installation of water filtration systems"
+      },
+      {
+        "@type": "Service",
+        "name": "Leak Detection",
+        "description": "Professional leak detection and repair"
+      }
+    ]
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
   }
 }
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-  <div itemScope itemType="https://schema.org/Place">
-    <meta itemprop="name" content="Santa Rosa" />
-    <meta itemprop="addressLocality" content="Santa Rosa" />
-    <meta itemprop="addressRegion" content="CA" />
-    <meta itemprop="postalCode" content="95401" />
-    <meta itemprop="addressCountry" content="US" />
-  </div>
+<article>
+  # {frontmatter.contentTitle}
 
-  <div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-    <h1 itemprop="name">{frontmatter.contentTitle}</h1>
-  </div>
-
-  <div itemprop="description">
+  <div>
     <p>
       Finding experienced, trustworthy plumbers in Santa Rosa, CA is not always easy—but your search stops here. GoFlow Plumbing has spent decades earning the trust of Santa Rosa homeowners. Give us a call and enjoy our responsive, top-rated service and dependable results.
     </p>

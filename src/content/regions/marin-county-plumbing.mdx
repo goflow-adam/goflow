@@ -61,31 +61,51 @@ schema: {
       "name": "Marin County Plumbing Services",
       "itemListElement": [
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Emergency Plumbing",
-            "description": "24/7 emergency plumbing services in Marin County"
-          }
+          "@type": "Service",
+          "name": "Residential Services",
+          "description": "Complete home plumbing services for Marin County residents",
+          "serviceType": [
+            "Water heater services",
+            "Drain cleaning",
+            "Leak detection",
+            "Pipe repair",
+            "Emergency plumbing",
+            "Fixture installation",
+            "Sewer services",
+            "Water line work"
+          ]
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Residential Plumbing",
-            "description": "Complete home plumbing services for Marin County residents"
-          }
+          "@type": "Service",
+          "name": "Commercial Services",
+          "description": "Professional plumbing solutions for Marin County businesses",
+          "serviceType": [
+            "Business plumbing",
+            "Restaurant services",
+            "Office maintenance",
+            "Retail locations",
+            "Property management",
+            "Code compliance",
+            "Emergency response",
+            "Maintenance programs"
+          ]
         }
       ]
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
     }
 }
 ---
 
-<h1 itemprop="name">{frontmatter.contentTitle}</h1>
+# {frontmatter.contentTitle}
 
 {frontmatter.region}’s diverse geography and varied home styles create unique challenges for plumbing services. From steep hillsides to coastal exposure, plumbers must navigate difficult terrain, aging infrastructure, and strict building codes.
 
-<h2 itemprop="about">{frontmatter.region} Unique Plumbing Conditions</h2>
+## {frontmatter.region} Unique Plumbing Conditions
 
 Many homes are built on steep slopes or hillsides & Elevated Homes like in Mill Valley, Sausalito, Tiburon require complex plumbing layouts with with things such as booster pumps for water pressure and specialized drainage solutions. We have found that with small shifts in foundations on wet hillsides can damage water and gas supply lines as well as sewer lines.
 
@@ -101,20 +121,14 @@ Luxury homes in areas like Belvedere, Ross, Kentfield often feature complex plum
 
 Plumbing in {frontmatter.region} requires adaptability due to its mix of aging homes, challenging terrain, and high-end properties. Whether it’s handling hillside drainage, replacing old sewer laterals, or protecting pipes from salt air, GoFlow plumbers have the deep understanding of both the geography and the county’s strict building codes to ensure your home meets the regulations and your expectations of a long term GoFlow supplied solution.
 
-<div itemScope itemType="https://schema.org/Service">
-  <div itemprop="areaServed" itemscope itemtype="https://schema.org/GeoCircle">
-    <h2>Areas We Serve in {frontmatter.region}</h2>
-    
-    <div itemprop="geoMidpoint" itemscope itemtype="https://schema.org/GeoCoordinates">
-      <meta itemprop="latitude" content="37.9735346" />
-      <meta itemprop="longitude" content="-122.5310874" />
-    </div>
+<section>
+  <h2>Areas We Serve in {frontmatter.region}</h2>
   
-  <h3 itemprop="serviceLocation">Major Cities</h3>
+  <h3>Major Cities</h3>
   <ul>
   {
     frontmatter.containsPlace.map(place => (
-      <li itemprop="addressLocality" itemscope itemtype="https://schema.org/City">
+      <li>
         {place[1] ? <a href={`/${place[0].toLowerCase().replace(' ', '-')}-plumbing`}>{place[0]}</a> : place[0]}
       </li>
     ))
@@ -123,43 +137,37 @@ Plumbing in {frontmatter.region} requires adaptability due to its mix of aging h
 
   <h3>Additional Areas</h3>
   <p>We also serve all surrounding communities and unincorporated areas within {frontmatter.region}.</p>
-  </div>
-</div>
+</section>
 
-<div itemprop="openingHoursSpecification" itemscope itemtype="https://schema.org/OpeningHoursSpecification">
-  <meta itemprop="dayOfWeek" content="Monday Tuesday Wednesday Thursday Friday Saturday Sunday" />
-  <meta itemprop="opens" content="00:00" />
-  <meta itemprop="closes" content="23:59" />
-  <p><strong>Available 24/7 for Emergency Services</strong></p>
-</div>
+<p><strong>Available 24/7 for Emergency Services</strong></p>
 
 ## Our Services in {frontmatter.region}
 
-<div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-  <h3 itemprop="name">Residential Services</h3>
+<div>
+  <h3>Residential Services</h3>
   <ul>
-    <li itemprop="serviceType">Water heater services</li>
-    <li itemprop="serviceType">Drain cleaning</li>
-    <li itemprop="serviceType">Leak detection</li>
-    <li itemprop="serviceType">Pipe repair</li>
-    <li itemprop="serviceType">Emergency plumbing</li>
-    <li itemprop="serviceType">Fixture installation</li>
-    <li itemprop="serviceType">Sewer services</li>
-    <li itemprop="serviceType">Water line work</li>
+    <li>Water heater services</li>
+    <li>Drain cleaning</li>
+    <li>Leak detection</li>
+    <li>Pipe repair</li>
+    <li>Emergency plumbing</li>
+    <li>Fixture installation</li>
+    <li>Sewer services</li>
+    <li>Water line work</li>
   </ul>
 </div>
 
-<div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-  <h3 itemprop="name">Commercial Services</h3>
+<div>
+  <h3>Commercial Services</h3>
   <ul>
-    <li itemprop="serviceType">Business plumbing</li>
-    <li itemprop="serviceType">Restaurant services</li>
-    <li itemprop="serviceType">Office maintenance</li>
-    <li itemprop="serviceType">Retail locations</li>
-    <li itemprop="serviceType">Property management</li>
-    <li itemprop="serviceType">Code compliance</li>
-    <li itemprop="serviceType">Emergency response</li>
-    <li itemprop="serviceType">Maintenance programs</li>
+    <li>Business plumbing</li>
+    <li>Restaurant services</li>
+    <li>Office maintenance</li>
+    <li>Retail locations</li>
+    <li>Property management</li>
+    <li>Code compliance</li>
+    <li>Emergency response</li>
+    <li>Maintenance programs</li>
   </ul>
 </div>
 

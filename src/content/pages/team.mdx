@@ -1,5 +1,6 @@
 ---
-title: "Our GoFlow Plumbing Team"
+title: "The GoFlow Plumbing Team"
+contentTitle: "Our GoFlow Plumbing Team"
 description: "Learn about our founders and the rest of the team here to quickly and cleanly alleviate your residential plumbing issues."
 pubDate: 2025-03-24
 teamMembers:
@@ -160,41 +161,32 @@ schema: {
 }}
 ---
 
-<div itemScope itemType="https://schema.org/Plumber">
-  <meta itemprop="name" content="GoFlow Plumbing" />
-  <div itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
-    <meta itemprop="streetAddress" content="10 Pine Ave" />
-    <meta itemprop="addressLocality" content="Sonoma" />
-    <meta itemprop="addressRegion" content="CA" />
-    <meta itemprop="postalCode" content="95476" />
-    <meta itemprop="addressCountry" content="US" />
-  </div>
-  <h1>{frontmatter.title}</h1>
+# {frontmatter.contentTitle}
 
   <section>
     <h2>Leadership</h2>
 
-    <article itemScope itemType="https://schema.org/Person">
-      <h3 itemprop="name">{frontmatter.teamMembers[0].name}</h3>
-      <h4 itemprop="jobTitle">{frontmatter.teamMembers[0].jobTitle}</h4>
-      <p itemprop="description">{frontmatter.teamMembers[0].description}</p>
-      <div itemprop="contactPoint" itemScope itemType="https://schema.org/ContactPoint">
-        <a href={`tel:${frontmatter.teamMembers[0].telephone}`} itemprop="telephone">{frontmatter.teamMembers[0].telephone}</a>
+    <article>
+      <h3>{frontmatter.teamMembers[0].name}</h3>
+      <h4>{frontmatter.teamMembers[0].jobTitle}</h4>
+      <p>{frontmatter.teamMembers[0].description}</p>
+      <div>
+        <a href={`tel:${frontmatter.teamMembers[0].telephone}`}>{frontmatter.teamMembers[0].telephone}</a>
         <br />
-        <a href={`mailto:${frontmatter.teamMembers[0].email}`} itemprop="email">{frontmatter.teamMembers[0].email}</a>
+        <a href={`mailto:${frontmatter.teamMembers[0].email}`}>{frontmatter.teamMembers[0].email}</a>
       </div>
     </article>
 
-    <article itemScope itemType="https://schema.org/Person">
-      <h3 itemprop="name">{frontmatter.teamMembers[1].name}</h3>
-      <h4 itemprop="jobTitle">{frontmatter.teamMembers[1].jobTitle}</h4>
-      <p itemprop="description">{frontmatter.teamMembers[1].description}</p>
-      <div itemprop="contactPoint" itemScope itemType="https://schema.org/ContactPoint">
-        <a href={`mailto:${frontmatter.teamMembers[1].email}`} itemprop="email">{frontmatter.teamMembers[1].email}</a>
+    <article>
+      <h3>{frontmatter.teamMembers[1].name}</h3>
+      <h4>{frontmatter.teamMembers[1].jobTitle}</h4>
+      <p>{frontmatter.teamMembers[1].description}</p>
+      <div>
+        <a href={`mailto:${frontmatter.teamMembers[1].email}`}>{frontmatter.teamMembers[1].email}</a>
       </div>
     </article>
 
-    <article itemScope itemType="https://schema.org/JobPosting">
+    <article>
       <h3>Join Our Team</h3>
       <h4 itemprop="title">Licensed Plumber</h4>
       <p itemprop="description">Join an innovative plumbing company expanding around the bay area. Enjoy competitive benefits, enhanced training, and opportunities for professional growth.</p>
@@ -219,7 +211,7 @@ schema: {
         </ul>
       </div>
 
-      <div itemprop="benefits">
+      <div>
         <h5>Benefits:</h5>
         <ul>
           <li>Health insurance</li>
@@ -230,14 +222,8 @@ schema: {
         </ul>
       </div>
 
-      <div itemprop="baseSalary" itemScope itemType="https://schema.org/MonetaryAmount">
-        <meta itemprop="currency" content="USD" />
-        <div itemScope itemType="https://schema.org/QuantitativeValue" itemprop="value">
-          <meta itemprop="minValue" content="75000" />
-          <meta itemprop="maxValue" content="120000" />
-          <meta itemprop="unitText" content="YEAR" />
-          <p>Salary Range: $75,000 - $120,000 per year</p>
-        </div>
+      <div>
+        <p>Salary Range: $75,000 - $120,000 per year</p>
       </div>
 
       <div>
@@ -245,23 +231,6 @@ schema: {
         <a href="tel:+19167191897">(916) 719-1897</a>
         <br />
         <a href="mailto:careers@goflow.plumbing">careers@goflow.plumbing</a>
-      </div>
-
-      <div>
-        <meta itemprop="datePosted" content="2025-04-03" />
-        <meta itemprop="validThrough" content="2025-12-31" />
-        <meta itemprop="employmentType" content="FULL_TIME" />
-        <div itemprop="hiringOrganization" itemScope itemType="https://schema.org/Organization">
-          <meta itemprop="name" content="GoFlow Plumbing" />
-          <meta itemprop="sameAs" content="https://goflow.plumbing" />
-        </div>
-        <div itemprop="jobLocation" itemScope itemType="https://schema.org/Place">
-          <div itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
-            <meta itemprop="addressLocality" content="Sonoma" />
-            <meta itemprop="addressRegion" content="CA" />
-            <meta itemprop="addressCountry" content="US" />
-          </div>
-        </div>
       </div>
     </article>
   </section>
@@ -271,7 +240,7 @@ schema: {
 
     <div>
       <h3>Certified Experts</h3>
-      <ul itemprop="hasCredential">
+      <ul>
         <li>Licensed and certified</li>
         <li>Regularly trained</li>
         <li>Background checked</li>
@@ -285,27 +254,26 @@ schema: {
   <section>
     <h2>Team Values</h2>
 
-    <div itemScope itemType="https://schema.org/ItemList">
-      <h3 itemprop="name">{frontmatter.companyValues[0].name}</h3>
-      <p itemprop="description">{frontmatter.companyValues[0].description}</p>
+    <div>
+      <h3>{frontmatter.companyValues[0].name}</h3>
+      <p>{frontmatter.companyValues[0].description}</p>
       <ul>
         {frontmatter.companyValues[0].items.map((item) => (
-          <li key={item} itemprop="itemListElement">{item}</li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
     </div>
 
-    <div itemScope itemType="https://schema.org/ItemList">
-      <h3 itemprop="name">{frontmatter.companyValues[1].name}</h3>
-      <p itemprop="description">{frontmatter.companyValues[1].description}</p>
+    <div>
+      <h3>{frontmatter.companyValues[1].name}</h3>
+      <p>{frontmatter.companyValues[1].description}</p>
       <ul>
         {frontmatter.companyValues[1].items.map((item) => (
-          <li key={item} itemprop="itemListElement">{item}</li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
     </div>
   </section>
-</div>
 
 ## Training & Development
 
