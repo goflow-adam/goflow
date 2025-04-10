@@ -26,11 +26,13 @@ const baseSchema = { "@context": "https://schema.org", ...businessInfo };
     <SEO
       title={title}
       description={description}
+      canonical={new URL(Astro.url.pathname, 'https://goflow.plumbing').href}
       openGraph={{
         basic: {
           title,
           type: 'website',
           image: '/og-image.jpg',
+          url: new URL(Astro.url.pathname, 'https://goflow.plumbing').href
         }
       }}
     />
