@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
+import { createAboutPageSchema } from '../lib/aboutPageSchemaFactory';
 
 const page = await getEntry('pages', 'about-us');
 
@@ -9,8 +10,9 @@ if (!page) {
 }
 
 const { Content } = await page.render();
+const schema = createAboutPageSchema();
 ---
 
-<PageLayout page={page}>
+<PageLayout page={{ ...page, data: { ...page.data, schema } }}>
   <Content />
 </PageLayout>

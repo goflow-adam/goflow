@@ -43,12 +43,7 @@ const baseSchema = z.object({
   pubDate: z.date(),
   updatedDate: z.date().optional(),
   heroImage: z.string().optional(),
-  draft: z.boolean().default(false),
-  schema: z.record(z.any()).optional(), // For JSON-LD schema
-  microdata: z.object({
-    type: z.string().optional(),
-    properties: z.record(z.any()).optional(),
-  }).optional(),
+  draft: z.boolean().default(false)
 });
 
 const services = defineCollection({

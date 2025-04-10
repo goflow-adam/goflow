@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
 import '../styles/articles.css';
 import '../styles/markdown.css';
-import { createArticleSchema } from '../lib/schema';
+import { createArticlePageSchema } from '../lib/schemaFactories';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -12,16 +12,7 @@ interface Props {
 const { article } = Astro.props;
 const { Content } = await article.render();
 
-const schema = createArticleSchema({
-  title: article.data.title,
-  description: article.data.description,
-  pubDate: new Date(article.data.pubDate),
-  url: `https://goflow.plumbing/articles/${article.slug}`,
-  heroImage: article.data.heroImage,
-  keywords: article.data.tags || [],
-  // Approximate word count from content length
-  wordCount: Math.round((article.body.length / 5))
-});
+const schema = createArticlePageSchema(article);
 ---
 
 <BaseLayout 

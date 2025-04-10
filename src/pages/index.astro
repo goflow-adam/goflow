@@ -14,12 +14,14 @@ const featuredServices = await getCollection('services', ({ data }: { data: Serv
   data.featured && !data.draft
 );
 
-import { createOrganizationSchema, createWebSiteSchema } from '../lib/schema';
+import { createWebSiteSchema } from '../lib/schemaFactories';
+import { businessInfo } from '../lib/schema';
+import type { Schema } from '../types/schema';
 
 const schema = [
-  createOrganizationSchema(),
+  { "@context": "https://schema.org", ...businessInfo },
   createWebSiteSchema()
-];
+] as Schema[];
 ---
 
 <BaseLayout
@@ -27,22 +29,7 @@ const schema = [
   description="Expert plumbing services including water heater repair, drain cleaning, and emergency plumbing in Sonoma and Marin County. Available 24/7."
   schema={schema}
 >
-  <div itemscope itemtype="https://schema.org/Plumber">
-    <meta itemprop="name" content="GoFlow Plumbing" />
-    <meta itemprop="image" content="https://goflow.plumbing/images/logo.png" />
-    <meta itemprop="description" content="Expert plumbing services including water heater repair, drain cleaning, and emergency plumbing in Sonoma and Marin County" />
-    <meta itemprop="telephone" content="916-719-1897" />
-    <link itemprop="url" href="https://goflow.plumbing" />
-    <meta itemprop="priceRange" content="$$" />
-    <meta itemprop="@type" content="Plumber" />
-    
-    <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-      <meta itemprop="streetAddress" content="10 Pine Ave" />
-      <meta itemprop="addressLocality" content="Sonoma" />
-      <meta itemprop="addressRegion" content="CA" />
-      <meta itemprop="postalCode" content="95476" />
-      <meta itemprop="addressCountry" content="US" />
-    </div>
+  <div>
 
     <!-- Hero Section -->
     <section class="hero">

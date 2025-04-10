@@ -20,8 +20,10 @@ export interface GeoCircle {
 }
 
 export interface AdministrativeArea {
-  "@type": "AdministrativeArea";
+  "@type": "AdministrativeArea" | "County" | "City";
   name: string;
+  description?: string;
+  containsPlace?: string[];
 }
 
 export interface City {
@@ -46,11 +48,19 @@ export interface PlumberSchema extends BaseSchema {
   description?: string;
   address: PostalAddress;
   geo?: GeoCoordinates;
-  areaServed?: string[] | Array<{
-    "@type": "State" | "City";
+  areaServed?: string[] | AdministrativeArea[] | {
+    "@type": "State";
     name: string;
-  }>;
-  serviceArea?: GeoCircle;
+    containsPlace: Array<{
+      "@type": "County";
+      name: string;
+    }>;
+  };
+  serviceArea?: {
+    "@type": "GeoCircle";
+    geoMidpoint: GeoCoordinates;
+    geoRadius: string;
+  };
   openingHoursSpecification?: Array<{
     "@type": "OpeningHoursSpecification";
     dayOfWeek: string[];
@@ -61,6 +71,18 @@ export interface PlumberSchema extends BaseSchema {
   sameAs?: string[];
   paymentAccepted?: string[];
   currenciesAccepted?: string;
+  hasOfferCatalog?: {
+    "@type": "OfferCatalog";
+    name: string;
+    itemListElement: Array<{
+      "@type": "Offer";
+      itemOffered: {
+        "@type": "PlumbingService";
+        name: string;
+        description: string;
+      };
+    }>;
+  };
 }
 
 export interface Question {
@@ -78,11 +100,25 @@ export interface FAQPageSchema extends BaseSchema {
 }
 
 export interface ServiceSchema extends BaseSchema {
-  "@type": "Service";
+  "@type": "Service" | "PlumbingService";
   name: string;
-  serviceProvider: Omit<PlumberSchema, '@context'>;
-  areaServed: string[];
-  serviceType: string;
+  description: string;
+  provider: { "@id": string };
+  areaServed: Array<AdministrativeArea | { "@id": string } | string>;
+  offers?: {
+    "@type": "Offer";
+    priceCurrency: string;
+    availability: string;
+    areaServed: GeoCircle;
+    priceRange?: string;
+  };
+  serviceOutput?: {
+    "@type": "HomeAndConstructionBusiness";
+    name: string;
+    description: string;
+  };
+  category?: string;
+  timeRequired?: string;
   url: string;
 }
 
@@ -105,10 +141,14 @@ export interface OrganizationSchema extends BaseSchema {
   address: PostalAddress;
   location?: GeoCoordinates;
   priceRange?: string;
-  areaServed?: string[] | Array<{
-    "@type": "State" | "City";
+  areaServed?: string[] | AdministrativeArea[] | {
+    "@type": "State";
     name: string;
-  }>;
+    containsPlace: Array<{
+      "@type": "County";
+      name: string;
+    }>;
+  };
   openingHoursSpecification?: Array<{
     "@type": "OpeningHoursSpecification";
     dayOfWeek: string[];
@@ -119,7 +159,7 @@ export interface OrganizationSchema extends BaseSchema {
 }
 
 export interface ArticleSchema extends BaseSchema {
-  "@type": "Article";
+  "@type": "TechArticle" | "Article";
   headline: string;
   description: string;
   datePublished: string;
@@ -137,6 +177,28 @@ export interface ArticleSchema extends BaseSchema {
   wordCount?: number;
   articleSection: string;
   genre: string;
+  proficiencyLevel?: "Beginner" | "Expert" | "Intermediate";
+  dependencies?: string;
+  about?: {
+    "@type": "Thing";
+    name: string;
+    description: string;
+  };
+  audience?: {
+    "@type": "Audience";
+    audienceType: string;
+  };
+  abstract?: string;
+  backstory?: string;
+}
+
+export interface AdministrativeAreaReference {
+  "@context": "https://schema.org";
+  "@type": "County" | "City";
+  "@id": string;
+  name: string;
+  description: string;
+  containsPlace?: string[];
 }
 
 export interface WebPageSchema extends BaseSchema {
@@ -147,17 +209,12 @@ export interface WebPageSchema extends BaseSchema {
   description: string;
   provider: { "@id": string };
   about: Array<{
-    "@type": "Service";
+    "@type": "PlumbingService";
     name: string;
     description: string;
     url: string;
     provider: { "@id": string };
-    areaServed: Array<{
-      "@type": "AdministrativeArea";
-      name: string;
-      description: string;
-      containsPlace?: string[];
-    }>;
+    areaServed: Array<{ "@id": string }>;
   }>;
 }
 
@@ -175,7 +232,7 @@ export interface SearchResultsPageSchema extends BaseSchema {
         description: string;
         provider: { "@id": string };
         areaServed: {
-          "@type": "County";
+          "@type": "County" | "City";
           name: string;
           description: string;
           containsPlace?: string[];
@@ -186,8 +243,126 @@ export interface SearchResultsPageSchema extends BaseSchema {
   };
 }
 
+export interface ContactPageSchema extends BaseSchema {
+  "@type": "ContactPage";
+  name: string;
+  description: string;
+  mainEntity: {
+    "@type": "Organization" | "Plumber";
+    "@id": string;
+    contactPoint: Array<{
+      "@type": "ContactPoint";
+      contactType: string;
+      telephone?: string;
+      email?: string;
+      availableLanguage?: string[];
+      areaServed?: AdministrativeArea[];
+      hoursAvailable?: Array<{
+        "@type": "OpeningHoursSpecification";
+        dayOfWeek: string[];
+        opens: string;
+        closes: string;
+      }>;
+    }>;
+    potentialAction?: Array<{
+      "@type": "CommunicateAction";
+      name: string;
+      target: {
+        "@type": "EntryPoint";
+        urlTemplate: string;
+        actionPlatform: string[];
+      };
+    }>;
+  };
+}
+
+export interface AboutPageSchema extends BaseSchema {
+  "@type": "AboutPage";
+  name: string;
+  description: string;
+  mainEntity: {
+    "@type": "Organization" | "Plumber";
+    "@id": string;
+    name: string;
+    description: string;
+    foundingDate: string;
+    areaServed?: {
+      "@type": "State";
+      name: string;
+      containsPlace: Array<{
+        "@type": "County";
+        name: string;
+      }>;
+    };
+    founder: Array<{
+      "@type": "Person";
+      name: string;
+      jobTitle: string;
+      description?: string;
+      url?: string;
+      image?: string;
+    }>;
+    numberOfEmployees?: {
+      "@type": "QuantitativeValue";
+      value: number;
+    };
+    award?: string[];
+    hasCredential?: Array<{
+      "@type": "Credential";
+      name: string;
+      credentialCategory: string;
+      validFrom?: string;
+    }>;
+    slogan?: string;
+    brand?: {
+      "@type": "Brand";
+      name: string;
+      description: string;
+      logo?: string;
+    };
+  };
+}
+
+export interface TeamPageSchema extends BaseSchema {
+  "@type": "AboutPage";
+  name: string;
+  description: string;
+  mainEntity: {
+    "@type": "Plumber";
+    "@id": string;
+    name: string;
+    description: string;
+    employee: Array<{
+      "@type": "Person";
+      name: string;
+      jobTitle: string;
+      description: string;
+      url: string;
+      image: string;
+      hasCredential?: Array<{
+        "@type": "Credential";
+        name: string;
+        credentialCategory: string;
+        validFrom?: string;
+      }>;
+    }>;
+    numberOfEmployees: {
+      "@type": "QuantitativeValue";
+      value: number;
+    };
+    areaServed?: {
+      "@type": "State";
+      name: string;
+      containsPlace: Array<{
+        "@type": "County";
+        name: string;
+      }>;
+    };
+  } & Omit<PlumberSchema, "@type">;
+}
+
 export type Schema = 
-  | PlumberSchema 
+  | (PlumberSchema & { "@context": string })
   | FAQPageSchema 
   | ServiceSchema 
   | WebSiteSchema 
@@ -195,4 +370,8 @@ export type Schema =
   | ArticleSchema 
   | WebPageSchema
   | SearchResultsPageSchema
+  | AdministrativeAreaReference
+  | ContactPageSchema
+  | AboutPageSchema
+  | TeamPageSchema
   | Schema[];

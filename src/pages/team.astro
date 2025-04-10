@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
+import { createTeamPageSchema } from '../lib/teamPageSchemaFactory';
 import '../styles/pages/team.css';
 
 const page = await getEntry('pages', 'team');
@@ -9,47 +10,11 @@ if (!page) {
 }
 
 const { Content } = await page.render();
+const schema = createTeamPageSchema();
 ---
 
-<PageLayout page={page}>
-  <div class="team-container" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="GoFlow Plumbing" />
-    <meta itemprop="description" content="Professional plumbing services in Sonoma and Marin County" />
-    <meta itemprop="@type" content="Plumber" />
-    <meta itemprop="url" content="https://goflow.plumbing" />
-    <meta itemprop="logo" content="https://goflow.plumbing/GoFlow2.jpg" />
-
-    <div itemprop="employee" itemscope itemtype="https://schema.org/Person">
-      <meta itemprop="name" content="Adam Bragg" />
-      <meta itemprop="givenName" content="Adam" />
-      <meta itemprop="familyName" content="Bragg" />
-      <meta itemprop="jobTitle" content="Founder & CEO" />
-      <meta itemprop="description" content="Third generation plumbing entrepreneur, his grandfather started Bragg Plumbing in San Francisco. His son later expanded their services to the north bay. And now, Adam, will continue the tradition of improving the quality of results customers can come to expect.​​" />
-      <meta itemprop="telephone" content="+19167191897" />
-      <meta itemprop="email" content="adam@goflow.plumbing" />
-      <link itemprop="url" href="https://goflow.plumbing/team#adam-bragg" />
-    </div>
-
-    <div itemprop="employee" itemscope itemtype="https://schema.org/Person">
-      <meta itemprop="name" content="Jarrod Stuckenbroker" />
-      <meta itemprop="givenName" content="Jarrod" />
-      <meta itemprop="familyName" content="Stuckenbroker" />
-      <meta itemprop="jobTitle" content="Founder & COO" />
-      <meta itemprop="description" content="For the last 30 years, Jarrod has seen, experienced, and been part of the ins and outs of every level of plumbing in the bay area." />
-      <meta itemprop="email" content="jarrod@goflow.plumbing" />
-      <link itemprop="url" href="https://goflow.plumbing/team#jarrod-stuckenbroker" />
-    </div>
-
-    <div itemprop="areaServed" itemscope itemtype="https://schema.org/State">
-      <meta itemprop="name" content="California" />
-      <div itemprop="containsPlace" itemscope itemtype="https://schema.org/AdministrativeArea">
-        <meta itemprop="name" content="Sonoma County" />
-      </div>
-      <div itemprop="containsPlace" itemscope itemtype="https://schema.org/AdministrativeArea">
-        <meta itemprop="name" content="Marin County" />
-      </div>
-    </div>
-
+<PageLayout page={{ ...page, data: { ...page.data, schema } }}>
+  <div class="team-container">
     <Content />
   </div>
 </PageLayout>

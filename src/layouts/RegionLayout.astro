@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
-import { createRegionSchema } from '../lib/schema';
+import { createRegionPageSchema } from '../lib/schemaFactories';
 import '../styles/markdown.css';
 import '../styles/regions.css';
 
@@ -12,13 +12,7 @@ interface Props {
 
 const { region } = Astro.props;
 
-const schema = createRegionSchema({
-  title: region.data.title,
-  description: region.data.description,
-  region: region.data.region,
-  url: new URL(Astro.url.pathname, Astro.site).toString(),
-  containsPlace: region.data.containsPlace
-});
+const schema = createRegionPageSchema(region);
 
 const { Content } = await region.render();
 
