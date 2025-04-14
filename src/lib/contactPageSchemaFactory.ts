@@ -19,7 +19,7 @@ export function createContactPageSchema(): ContactPageSchema {
         {
           "@type": "ContactPoint",
           "contactType": "customer service",
-          "telephone": "(916) 719-1897",
+          "telephone": "(707) 200-8350",
           "email": "info@goflow.plumbing",
           "availableLanguage": ["English"],
           "areaServed": [
@@ -44,7 +44,7 @@ export function createContactPageSchema(): ContactPageSchema {
         {
           "@type": "ContactPoint",
           "contactType": "emergency service",
-          "telephone": "(916) 719-1897",
+          "telephone": "(707) 200-8350",
           "availableLanguage": ["English"],
           "hoursAvailable": [
             {
@@ -62,7 +62,7 @@ export function createContactPageSchema(): ContactPageSchema {
           "name": "Call for Service",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "tel:+19167191897",
+            "urlTemplate": "tel:+17072008350",
             "actionPlatform": [
               "http://schema.org/MobileWebPlatform",
               "http://schema.org/DesktopWebPlatform"

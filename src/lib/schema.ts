@@ -4,7 +4,7 @@ export const businessInfo: Omit<PlumberSchema, '@context'> = {
   "@type": "Plumber",
   "@id": "https://goflow.plumbing/#business",
   "name": "GoFlow Plumbing",
-  "telephone": "(916) 719-1897",
+  "telephone": "(707) 200-8350",
   "email": "info@goflow.plumbing",
   "image": "https://goflow.plumbing/GoFlow2.jpg",
   "description": "Residential plumbing services in Sonoma and Marin County",
