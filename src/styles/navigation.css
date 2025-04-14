@@ -28,7 +28,7 @@
 }
 
 .submenu-wrapper {
-  @apply absolute top-full left-0 pt-2 w-64;
+  @apply absolute top-full left-0 pt-2 w-64 z-51;
 }
 
 /* Create a hover bridge between nav item and submenu */

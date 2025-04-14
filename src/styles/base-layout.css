@@ -17,15 +17,62 @@
 }
 
 .page-body header {
-  @apply bg-primary;
+  @apply bg-primary fixed top-0 left-0 right-0 w-full z-50;
 }
 
 .page-body header .header-container {
-  @apply container mx-auto px-4 py-4;
+  @apply container mx-auto px-4 py-4 relative;
 }
 
 .page-body header .logo-container {
   @apply flex justify-between items-center;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 200% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.floating-cta {
+  @apply absolute transform translate-y-5/6 lg:translate-y-5/11 bottom-0
+         text-background font-bold px-6 py-2 rounded-full
+         shadow-lg hover:shadow-xl
+         flex flex-col items-center border-2 border-background z-50
+         left-1/2 -translate-x-1/2 lg:left-[280px] lg:translate-x-0;
+  background: linear-gradient(90deg, 
+    #bd0006 0%,
+    #d85004 15%,
+    rgb(255, 158, 12) 25%,
+    #d85004 35%,
+    #bd0006 50%,
+    #d85004 65%,
+    rgb(255, 158, 12) 75%,
+    #d85004 85%,
+    #bd0006 100%
+  );
+  background-size: 200% 100%;
+  animation: gradientFlow 18s linear infinite;
+}
+
+.floating-cta .cta-icon {
+  @apply text-lg;
+}
+
+.floating-cta .cta-text {
+  @apply whitespace-nowrap text-lg mb--0.5;
+}
+
+.floating-cta .cta-phrase {
+  @apply whitespace-nowrap text-sm mt-0 font-normal;
+}
+
+.floating-cta:hover {
+  @apply scale-105;
+  filter: brightness(1.1);
 }
 
 .page-body header .logo-container .logo {
@@ -33,7 +80,7 @@
 }
 
 .page-body main {
-  @apply flex-grow container mx-auto px-4 py-8;
+  @apply flex-grow container mx-auto px-4 py-8 mt-16;
 }
 
 .page-body footer {
