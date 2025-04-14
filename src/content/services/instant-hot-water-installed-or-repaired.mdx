@@ -160,176 +160,145 @@ schema: {
   }
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-<div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-  <h1 itemprop="name">Get your Instant Hot Water Installed or Repaired</h1>
-</div>
+<article>
+  <h1>Get your Instant Hot Water Installed or Repaired</h1>
 
-<div itemprop="description">
   <p>
     Tired of waiting for hot water at your sink? With an instant water heater, you get endless hot water on demand—and at GoFlow Plumbing, we make installation and repairs a breeze. Whether you're upgrading to a tankless system or need an undersink InstantHot, our expert team handles it all quickly, cleanly, and efficiently. No more waiting for hot water—just fast, reliable hot water whenever you need it. Go with the Flow, and never wait for hot water again!
   </p>
-</div>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Our Instant Hot Water Services</h2>
+  <section>
+    <h2>Our Instant Hot Water Services</h2>
 
-  <div itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <h3>Installation Services</h3>
-    <ul>
-      {frontmatter.installationServices.map(service => (
-        <li key={service} itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{service}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <h3>Installation Services</h3>
+      <ul>
+        {frontmatter.installationServices.map(service => (
+          <li key={service}>{service}</li>
+        ))}
+      </ul>
 
-    <h3>Repair Services</h3>
-    <ul>
-      {frontmatter.repairServices.map(service => (
-        <li key={service} itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{service}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Benefits of Instant Hot Water</h2>
-
-  <div itemprop="serviceOutput">
-    <h3>Energy Savings</h3>
-    <ul>
-      {frontmatter.energyBenefits.map(benefit => (
-        <li key={benefit}>{benefit}</li>
-      ))}
-    </ul>
-
-    <h3>Convenience</h3>
-    <ul>
-      {frontmatter.convenienceFeatures.map(feature => (
-        <li key={feature}>{feature}</li>
-      ))}
-    </ul>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/Product">
-  <h2 itemprop="name">Instant Hot Water Systems</h2>
-  <div itemprop="description">Professional grade instant hot water solutions for your home, including tankless water heaters and recirculation systems.</div>
-
-  <div itemprop="offers" itemScope itemType="https://schema.org/AggregateOffer">
-    <meta itemprop="priceCurrency" content="USD" />
-    <meta itemprop="lowPrice" content="899" />
-    <meta itemprop="highPrice" content="2999" />
-    <meta itemprop="offerCount" content="5" />
-  </div>
-
-  <div itemprop="review" itemScope itemType="https://schema.org/Review">
-    <div itemprop="reviewRating" itemScope itemType="https://schema.org/Rating">
-      <meta itemprop="ratingValue" content="5" />
-      <meta itemprop="bestRating" content="5" />
+      <h3>Repair Services</h3>
+      <ul>
+        {frontmatter.repairServices.map(service => (
+          <li key={service}>{service}</li>
+        ))}
+      </ul>
     </div>
-    <span itemprop="author" itemScope itemType="https://schema.org/Person">
-      <meta itemprop="name" content="Robert M." />
-    </span>
-    <meta itemprop="datePublished" content="2025-03-20" />
-    <div itemprop="reviewBody">The tankless water heater is amazing! Endless hot water and our utility bills have gone down.</div>
-  </div>
+  </section>
 
-  <div itemScope itemType="https://schema.org/ItemList">
-    <h3>Tankless Water Heaters</h3>
-    <ul>
-      <li>Gas or electric models</li>
-      <li>Various sizes available</li>
-      <li>High-efficiency units</li>
-      <li>Smart technology options</li>
-      <li>Remote control capability</li>
-    </ul>
+  <section>
+    <h2>Benefits of Instant Hot Water</h2>
 
-    <h3>Recirculation Systems</h3>
-    <ul>
-      <li>Timer-based operation</li>
-      <li>On-demand activation</li>
-      <li>Smart controls</li>
-      <li>Retrofit solutions</li>
-      <li>New construction systems</li>
-    </ul>
-  </div>
-</section>
+    <div>
+      <h3>Energy Savings</h3>
+      <ul>
+        {frontmatter.energyBenefits.map(benefit => (
+          <li key={benefit}>{benefit}</li>
+        ))}
+      </ul>
 
-<section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemprop="name">Professional Installation Process</h2>
-  <p itemprop="description">Step-by-step guide to installing instant hot water systems</p>
+      <h3>Convenience</h3>
+      <ul>
+        {frontmatter.convenienceFeatures.map(feature => (
+          <li key={feature}>{feature}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-  <ol>
-    {frontmatter.installationProcess?.map(([step, description]) => (
-      <li key={step} itemScope itemType="https://schema.org/HowToStep" itemprop="step">
-        <span itemprop="name">{step}</span>
-        <span itemprop="text">{description}</span>
-      </li>
-    ))}
-  </ol>
+  <section>
+    <h2>Instant Hot Water Systems</h2>
+    <p>Professional grade instant hot water solutions for your home, including tankless water heaters and recirculation systems.</p>
 
-  <div itemScope itemType="https://schema.org/ItemList">
-    <h3>Quality Assurance</h3>
-    <ul>
-      <li>Licensed installers</li>
-      <li>Permit handling</li>
-      <li>Code compliance</li>
-      <li>Warranty registration</li>
-      <li>Follow-up service</li>
-    </ul>
-  </div>
-</section>
+    <div>
+      <h3>Tankless Water Heaters</h3>
+      <ul>
+        <li>Gas or electric models</li>
+        <li>Various sizes available</li>
+        <li>High-efficiency units</li>
+        <li>Smart technology options</li>
+        <li>Remote control capability</li>
+      </ul>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Maintenance Services</h2>
+      <h3>Recirculation Systems</h3>
+      <ul>
+        <li>Timer-based operation</li>
+        <li>On-demand activation</li>
+        <li>Smart controls</li>
+        <li>Retrofit solutions</li>
+        <li>New construction systems</li>
+      </ul>
+    </div>
+  </section>
 
-  <div itemprop="serviceOutput">
-    <h3>Regular Service</h3>
-    <ul>
-      <li>Annual inspections</li>
-      <li>Filter changes</li>
-      <li>System cleaning</li>
-      <li>Performance checks</li>
-      <li>Safety testing</li>
-    </ul>
+  <section>
+    <h2>Professional Installation Process</h2>
+    <p>Step-by-step guide to installing instant hot water systems</p>
 
-    <h3>Preventive Care</h3>
-    <ul>
-      <li>Early problem detection</li>
-      <li>System optimization</li>
-      <li>Efficiency maintenance</li>
-      <li>Extended life span</li>
-      <li>Reduced repairs</li>
-    </ul>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Why Choose GoFlow?</h2>
-
-  <div itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
     <ol>
-      <li>Experienced technicians</li>
-      <li>Quality equipment</li>
-      <li>Professional installation</li>
-      <li>Competitive pricing</li>
-      <li>Warranty coverage</li>
-      <li>Ongoing support</li>
+      {frontmatter.installationProcess?.map(([step, description]) => (
+        <li key={step}>
+          <strong>{step}</strong>: {description}
+        </li>
+      ))}
     </ol>
-  </div>
-</section>
 
-<section itemScope itemType="https://schema.org/ContactPoint">
-  <p>
-    Contact GoFlow Plumbing today for instant hot water solutions in Sonoma and Marin County.
-  </p>
-</section>
+    <div>
+      <h3>Quality Assurance</h3>
+      <ul>
+        <li>Licensed installers</li>
+        <li>Permit handling</li>
+        <li>Code compliance</li>
+        <li>Warranty registration</li>
+        <li>Follow-up service</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Maintenance Services</h2>
+
+    <div>
+      <h3>Regular Service</h3>
+      <ul>
+        <li>Annual inspections</li>
+        <li>Filter changes</li>
+        <li>System cleaning</li>
+        <li>Performance checks</li>
+        <li>Safety testing</li>
+      </ul>
+
+      <h3>Preventive Care</h3>
+      <ul>
+        <li>Early problem detection</li>
+        <li>System optimization</li>
+        <li>Efficiency maintenance</li>
+        <li>Extended life span</li>
+        <li>Reduced repairs</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why Choose GoFlow?</h2>
+
+    <div>
+      <ol>
+        <li>Experienced technicians</li>
+        <li>Quality equipment</li>
+        <li>Professional installation</li>
+        <li>Competitive pricing</li>
+        <li>Warranty coverage</li>
+        <li>Ongoing support</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>
+      Contact GoFlow Plumbing today for instant hot water solutions in Sonoma and Marin County.
+    </p>
+  </section>
 </article>

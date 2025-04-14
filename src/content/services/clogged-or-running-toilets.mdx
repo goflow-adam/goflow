@@ -122,67 +122,58 @@ schema: {
   }
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-<div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-  <h1 itemprop="name">Get Toilet Repair Services</h1>
-</div>
-
-<div itemprop="description">
-  <p>
-    When your toilet's acting up, it's not just an inconvenience—it's a crisis! Whether it's a stubborn clog, a phantom flush, or a leak that's turning your bathroom into a wading pool, GoFlow Plumbing has you covered. Our expert team [diagnoses and fixes toilet troubles](/articles/toilet-leak-sources) fast, using clean, efficient methods that get things back in working order without the mess or the stress. So, don't let a misbehaving toilet ruin your day—just call GoFlow, and we'll handle the dirty work for you!
-  </p>
-</div>
-
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Our Toilet Repair Services Include:</h2>
-
-  <ul itemprop="itemListElement">
-    {frontmatter.toiletServices.map(service => (
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">{service}</span>
-        </span>
-      </li>
-    ))}
-  </ul>
-</section>
-
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Common Toilet Problems We Fix</h2>
+<article>
+  <h1>Get Toilet Repair Services</h1>
 
   <div>
-    <h3>Clogged Toilets</h3>
-    <p itemprop="description">Our professional plumbers use the latest tools and techniques to clear even the most stubborn clogs quickly and effectively.</p>
+    <p>
+      When your toilet's acting up, it's not just an inconvenience—it's a crisis! Whether it's a stubborn clog, a phantom flush, or a leak that's turning your bathroom into a wading pool, GoFlow Plumbing has you covered. Our expert team [diagnoses and fixes toilet troubles](/articles/toilet-leak-sources) fast, using clean, efficient methods that get things back in working order without the mess or the stress. So, don't let a misbehaving toilet ruin your day—just call GoFlow, and we'll handle the dirty work for you!
+    </p>
   </div>
 
-  <div>
-    <h3>Running Toilets</h3>
-    <p itemprop="description">A running toilet can waste hundreds of gallons of water. We'll diagnose and fix the issue to save you money on your water bill.</p>
-  </div>
+  <section>
+    <h2>Our Toilet Repair Services Include:</h2>
 
-  <div>
-    <h3>Leaking Toilets</h3>
-    <p itemprop="description">From base leaks to tank leaks, we'll identify and repair the source of the problem.</p>
-  </div>
-</section>
+    <ul>
+      {frontmatter.toiletServices.map(service => (
+        <li>{service}</li>
+      ))}
+    </ul>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Why Choose GoFlow Plumbing?</h2>
+  <section>
+    <h2>Common Toilet Problems We Fix</h2>
 
-  <ul itemScope itemType="https://schema.org/OfferCatalog">
-  {frontmatter.whyChoose.map(service => (
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">{service}</span>
-      </span>
-    </li>
-  ))}
-  </ul>
-</section>
+    <div>
+      <h3>Clogged Toilets</h3>
+      <p>Our professional plumbers use the latest tools and techniques to clear even the most stubborn clogs quickly and effectively.</p>
+    </div>
 
-<section itemScope itemType="https://schema.org/ContactPoint">
-  <p>
-    Contact us today for fast, reliable toilet repair services in Sonoma and Marin County.
-  </p>
-</section>
+    <div>
+      <h3>Running Toilets</h3>
+      <p>A running toilet can waste hundreds of gallons of water. We'll diagnose and fix the issue to save you money on your water bill.</p>
+    </div>
+
+    <div>
+      <h3>Leaking Toilets</h3>
+      <p>From base leaks to tank leaks, we'll identify and repair the source of the problem.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why Choose GoFlow Plumbing?</h2>
+
+    <ul>
+      {frontmatter.whyChoose.map(service => (
+        <li>{service}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>
+      Contact us today for fast, reliable toilet repair services in Sonoma and Marin County.
+    </p>
+  </section>
 </article>

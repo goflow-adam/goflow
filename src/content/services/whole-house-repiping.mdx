@@ -101,147 +101,96 @@ schema: {
 }
 ---
 
-<article itemScope itemType="https://schema.org/Plumber">
-  <meta itemprop="name" content="GoFlow Plumbing" />
-  <div itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
-    <meta itemprop="streetAddress" content="10 Pine Ave" />
-    <meta itemprop="addressLocality" content="Sonoma" />
-    <meta itemprop="addressRegion" content="CA" />
-    <meta itemprop="postalCode" content="95476" />
-    <meta itemprop="addressCountry" content="US" />
-  </div>
-<div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-  <h1 itemprop="name">Professional Whole House Repiping Services</h1>
-</div>
+<article>
+  <h1>Professional Whole House Repiping Services</h1>
 
-<div itemprop="description">
   <p>
     Is your home's plumbing showing its age? From rusty water to constant leaks, old or failing pipes can cause endless headaches. At GoFlow Plumbing, we specialize in whole house repiping that brings your plumbing into the modern era. Using premium materials and expert installation techniques, we can replace your entire plumbing system with minimal disruption to your daily life. Get ready to enjoy clean water, strong pressure, and the peace of mind that comes with new, reliable plumbing.
   </p>
-</div>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Signs You Need Repiping</h2>
-
-  <div itemprop="serviceOutput">
+  <section>
+    <h2>Signs You Need Repiping</h2>
     <ul>
       {frontmatter.repipingIndicators.map(indicator => (
-        <li>{indicator}</li>
+        <li key={indicator}>{indicator}</li>
       ))}
     </ul>
-  </div>
-</section>
+  </section>
 
-<section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemprop="name">Our Repiping Process</h2>
-  <div itemprop="description">Professional whole house repiping process for modern plumbing systems.</div>
+  <section>
+    <h2>Our Repiping Process</h2>
+    <p>Professional whole house repiping process for modern plumbing systems.</p>
 
-  <div>
-    <ol>
-      {frontmatter.repipingProcess.map((step, index) => (
-        <li key={`step${index + 1}`} itemScope itemType="https://schema.org/HowToStep" itemprop="step">
-          <span itemprop="name">{step}</span>
-          <span itemprop="text">Professional {step.toLowerCase()} for your repiping project</span>
-        </li>
-      ))}
-    </ol>
-  </div>
-</section>
+    <div>
+      <ol>
+        {frontmatter.repipingProcess.map((step, index) => (
+          <li key={`step${index + 1}`}>
+            <strong>{step}</strong>
+            <p>Professional {step.toLowerCase()} for your repiping project</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Piping Options</h2>
+  <section>
+    <h2>Piping Options</h2>
 
-  <div>
-    <h3>Available Materials</h3>
-    <ul itemprop="itemListElement">
-      {frontmatter.pipingOptions.map(option => (
-        <li itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{option}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
+    <div>
+      <h3>Available Materials</h3>
+      <ul>
+        {frontmatter.pipingOptions.map(option => (
+          <li key={option}>{option}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Benefits of Repiping</h2>
-
-  <div itemprop="serviceOutput">
+  <section>
+    <h2>Benefits of Repiping</h2>
     <ul>
       {frontmatter.benefits.map(benefit => (
-        <li>{benefit}</li>
+        <li key={benefit}>{benefit}</li>
       ))}
     </ul>
-  </div>
-</section>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Why Choose GoFlow for Repiping?</h2>
+  <section>
+    <h2>Why Choose GoFlow for Repiping?</h2>
+    <ul>
+      <li>Experienced repiping specialists</li>
+      <li>Premium materials</li>
+      <li>Minimal disruption techniques</li>
+      <li>Comprehensive warranties</li>
+      <li>Expert project management</li>
+      <li>Timely completion</li>
+    </ul>
+  </section>
 
-  <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Experienced repiping specialists</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Premium materials</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Minimal disruption techniques</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Comprehensive warranties</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Expert project management</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Timely completion</span>
-      </span>
-    </li>
-  </ul>
-</section>
-
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Our Repiping Guarantee</h2>
-
-  <div itemprop="serviceOutput">
+  <section>
+    <h2>Our Repiping Guarantee</h2>
     <ul>
       {frontmatter.repipingGuarantee.map(guarantee => (
-        <li>{guarantee}</li>
+        <li key={guarantee}>{guarantee}</li>
       ))}
     </ul>
-  </div>
-</section>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>What to Expect</h2>
+  <section>
+    <h2>What to Expect</h2>
+    <div>
+      <h3>During Repiping</h3>
+      <ul>
+        {frontmatter.expect.map(expect => (
+          <li key={expect}>{expect}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-  <div itemprop="serviceOutput">
-    <h3>During Repiping</h3>
-    <ul>
-      {frontmatter.expect.map(expect => (
-        <li>{expect}</li>
-      ))}
-    </ul>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/ContactPoint">
-  <p>
-    Contact GoFlow Plumbing today for expert whole house repiping services in Sonoma and Marin County. Let us help you upgrade your home's plumbing system for better performance and reliability.
-  </p>
-</section>
+  <section>
+    <p>
+      Contact GoFlow Plumbing today for expert whole house repiping services in Sonoma and Marin County. Let us help you upgrade your home's plumbing system for better performance and reliability.
+    </p>
+  </section>
 </article>

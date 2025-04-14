@@ -166,212 +166,128 @@ schema: {
   }
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-<div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-  <h1 itemprop="name">Get Professional Dishwasher Services</h1>
-</div>
-
-<div itemprop="description">
-  <p>
-    A dishwasher that won't drain, leaks all over the floor, or leaves your dishes dirtier than before? That's not cleaning—it's chaos! At GoFlow Plumbing, we specialize in fast, clean, and reliable dishwasher repairs and installations. Whether your unit needs a quick fix or a full replacement, we'll get it running smoothly in no time—without the mess or hassle. So, skip the sink full of dishes and Go with the Flow for a stress-free solution to your dishwasher woes!
-  </p>
-</div>
-
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Our Dishwasher Services</h2>
+<article>
+  <h1>Get Professional Dishwasher Services</h1>
 
   <div>
-    <h3>Installation Services</h3>
-    <ul itemprop="itemListElement">
-      {frontmatter.installationServices.map(service => (
-        <li itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{service}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
+    <p>
+      A dishwasher that won't drain, leaks all over the floor, or leaves your dishes dirtier than before? That's not cleaning—it's chaos! At GoFlow Plumbing, we specialize in fast, clean, and reliable dishwasher repairs and installations. Whether your unit needs a quick fix or a full replacement, we'll get it running smoothly in no time—without the mess or hassle. So, skip the sink full of dishes and Go with the Flow for a stress-free solution to your dishwasher woes!
+    </p>
   </div>
 
-  <div>
-    <h3>Repair Services</h3>
-    <ul itemprop="itemListElement">
-      {frontmatter.repairServices.map(service => (
-        <li itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{service}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
+  <section>
+    <h2>Our Dishwasher Services</h2>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Common Dishwasher Problems</h2>
-  {frontmatter.commonProblems.map(category => (
     <div>
-      <h3>{category.name}</h3>
-      <ul itemprop="serviceOutput">
-        {category.items.map(item => (
-          <li>{item}</li>
+      <h3>Installation Services</h3>
+      <ul>
+        {frontmatter.installationServices.map(service => (
+          <li>{service}</li>
         ))}
       </ul>
     </div>
-  ))}
-</section>
 
-<section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemprop="name">Professional Installation Process</h2>
+    <div>
+      <h3>Repair Services</h3>
+      <ul>
+        {frontmatter.repairServices.map(service => (
+          <li>{service}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-  {frontmatter.installationProcess.map(step => (
-    <div itemprop="step" itemScope itemType="https://schema.org/HowToStep">
-      <h3 itemprop="name">{step.name}</h3>
-      <div itemprop="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
+  <section>
+    <h2>Common Dishwasher Problems</h2>
+    {frontmatter.commonProblems.map(category => (
+      <div>
+        <h3>{category.name}</h3>
+        <ul>
+          {category.items.map(item => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <section>
+    <h2>Professional Installation Process</h2>
+
+    {frontmatter.installationProcess.map(step => (
+      <div>
+        <h3>{step.name}</h3>
         <ul>
           {step.items.map(item => (
             <li>{item}</li>
           ))}
         </ul>
       </div>
-    </div>
-  ))}
-</section>
+    ))}
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Why Choose GoFlow?</h2>
+  <section>
+    <h2>Why Choose GoFlow?</h2>
 
-  <div>
-    <h3>Expert Service</h3>
-    <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Licensed plumbers</span>
-        </span>
-      </li>
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Experienced technicians</span>
-        </span>
-      </li>
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Professional tools</span>
-        </span>
-      </li>
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Quality parts</span>
-        </span>
-      </li>
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Warranty service</span>
-        </span>
-      </li>
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Clean installation</span>
-        </span>
-      </li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>Customer Benefits</h3>
-    <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Same-day service available</span>
-        </span>
-      </li>
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Upfront pricing</span>
-        </span>
-      </li>
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Clean workspace</span>
-        </span>
-      </li>
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Proper disposal of old unit</span>
-        </span>
-      </li>
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Installation warranty</span>
-        </span>
-      </li>
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Maintenance tips</span>
-        </span>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Maintenance Services</h2>
-
-  {frontmatter.maintenanceServices.map(service => (
     <div>
-      <h3>{service.name}</h3>
-      <ul itemprop="serviceOutput">
-        {service.items.map(item => (
-          <li>{item}</li>
-        ))}
+      <h3>Expert Service</h3>
+      <ul>
+        <li>Licensed plumbers</li>
+        <li>Experienced technicians</li>
+        <li>Professional tools</li>
+        <li>Quality parts</li>
+        <li>Warranty service</li>
+        <li>Clean installation</li>
       </ul>
     </div>
-  ))}
-</section>
 
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Additional Services</h2>
+    <div>
+      <h3>Customer Benefits</h3>
+      <ul>
+        <li>Same-day service available</li>
+        <li>Upfront pricing</li>
+        <li>Clean workspace</li>
+        <li>Proper disposal of old unit</li>
+        <li>Installation warranty</li>
+        <li>Maintenance tips</li>
+      </ul>
+    </div>
+  </section>
 
-  <div>
-    <h3>Kitchen Plumbing</h3>
-    <ul itemprop="itemListElement">
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Sink installation</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Garbage disposal</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Water lines</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Drain lines</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Fixture updates</span>
-        </span>
-      </li>
-      <li itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">Full remodels</span>
-        </span>
-      </li>
-    </ul>
-  </div>
-</section>
+  <section>
+    <h2>Maintenance Services</h2>
 
-<section itemScope itemType="https://schema.org/ContactPoint">
-  <p>
-    Contact GoFlow Plumbing today for professional dishwasher services in Sonoma and Marin County.
-  </p>
-</section>
+    {frontmatter.maintenanceServices.map(service => (
+      <div>
+        <h3>{service.name}</h3>
+        <ul>
+          {service.items.map(item => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <section>
+    <h2>Additional Services</h2>
+
+    <div>
+      <h3>Kitchen Plumbing</h3>
+      <ul>
+        <li>Sink installation</li>
+        <li>Garbage disposal</li>
+        <li>Water lines</li>
+        <li>Drain lines</li>
+        <li>Fixture updates</li>
+        <li>Full remodels</li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <h2>Contact Us</h2>
+    <p>
+      Contact GoFlow Plumbing today for professional dishwasher services in Sonoma and Marin County.
+    </p>
+  </section>
 </article>

@@ -128,143 +128,109 @@ schema: {
 }
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-<div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-  <h1 itemprop="name">Faucet Leak Repair Services</h1>
-</div>
+<article>
+  <h1>Faucet Leak Repair Services</h1>
 
-<div itemprop="description">
   <p>
     Drip, drip, drip… That's not just the sound of wasted water—it's your hard-earned money going down the drain! A leaky faucet might seem like a minor annoyance, but left unchecked, it can lead to skyrocketing water bills and a constant reminder that something's just… off. At GoFlow Plumbing, we make quick work of those pesky drips with fast, clean, and reliable service. No mess, no stress—just [a smoothly running faucet](/articles/choosing-the-right-faucet) and sweet, sweet silence. So, say goodbye to the drip-drip blues and hello to GoFlow!
   </p>
-</div>
 
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Our Faucet Repair Services</h2>
+  <section>
+    <h2>Our Faucet Repair Services</h2>
 
-  <div>
-    <h3>Types of Faucets We Service</h3>
-    <ul itemprop="itemListElement">
-      {frontmatter.faucetTypes.map(faucetType => (
-        <li itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{faucetType}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
+    <div>
+      <h3>Types of Faucets We Service</h3>
+      <ul>
+        {frontmatter.faucetTypes.map(faucetType => (
+          <li>{faucetType}</li>
+        ))}
+      </ul>
+    </div>
 
-  <div>
-    <h3>Common Issues We Fix</h3>
-    <ul itemprop="itemListElement">
-      {frontmatter.commonIssues.map(issue => (
-        <li itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{issue}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
+    <div>
+      <h3>Common Issues We Fix</h3>
+      <ul>
+        {frontmatter.commonIssues.map(issue => (
+          <li>{issue}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemprop="name">Professional Faucet Repair Process</h2>
+  <section>
+    <h2>Professional Faucet Repair Process</h2>
 
-  <div>
-    <h3>Comprehensive Service</h3>
-    <ol itemprop="step">
-      {frontmatter.serviceSteps.map(step => (
-        <li itemScope itemType="https://schema.org/HowToStep">
-          <span itemprop="name">{step}</span>
-        </li>
-      ))}
-    </ol>
-  </div>
+    <div>
+      <h3>Comprehensive Service</h3>
+      <ol>
+        {frontmatter.serviceSteps.map(step => (
+          <li>{step}</li>
+        ))}
+      </ol>
+    </div>
 
-  <div itemScope itemType="https://schema.org/Service">
-    <h3>Repair or Replace?</h3>
-    <p>We help you make informed decisions about:</p>
-    <ul itemprop="serviceOutput">
-      {frontmatter.serviceOutput.map(output => (
-        <li>{output}</li>
-      ))}
-    </ul>
-  </div>
-</section>
+    <div>
+      <h3>Repair or Replace?</h3>
+      <p>We help you make informed decisions about:</p>
+      <ul>
+        {frontmatter.serviceOutput.map(output => (
+          <li>{output}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Why Choose GoFlow for Faucet Repairs?</h2>
+  <section>
+    <h2>Why Choose GoFlow for Faucet Repairs?</h2>
 
-  <div>
-    <h3>Expert Service</h3>
-    <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-      {frontmatter.whyChoose.map(service => (
-        <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{service}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
+    <div>
+      <h3>Expert Service</h3>
+      <ul>
+        {frontmatter.whyChoose.map(service => (
+          <li>{service}</li>
+        ))}
+      </ul>
+    </div>
 
-  <div>
-    <h3>Customer Convenience</h3>
-    <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-      {frontmatter.customerConvenience.map(convenience => (
-        <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{convenience}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
+    <div>
+      <h3>Customer Convenience</h3>
+      <ul>
+        {frontmatter.customerConvenience.map(convenience => (
+          <li>{convenience}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-  <div>
-    <h3>Customer Convenience</h3>
-    <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-      {frontmatter.customerConvenience.map(convenience => (
-        <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{convenience}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
+  <section>
+    <h2>Preventive Maintenance</h2>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Preventive Maintenance</h2>
+    <div>
+      <p>We provide advice on:</p>
+      <ul>
+        {frontmatter.preventiveMaintenance.map(maintenance => (
+          <li>{maintenance}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-  <div itemprop="serviceOutput">
-    <p>We provide advice on:</p>
-    <ul>
-      {frontmatter.preventiveMaintenance.map(maintenance => (
-        <li>{maintenance}</li>
-      ))}
-    </ul>
-  </div>
-</section>
+  <section>
+    <h2>New Faucet Installation</h2>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>New Faucet Installation</h2>
+    <div>
+      <ul>
+        {frontmatter.newFaucetInstallation.map(installation => (
+          <li>{installation}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-  <div itemprop="serviceOutput">
-    <ul>
-      {frontmatter.newFaucetInstallation.map(installation => (
-        <li>{installation}</li>
-      ))}
-    </ul>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/ContactPoint">
-  <p>
-    Contact GoFlow Plumbing today for expert faucet repair services in Sonoma and Marin County.
-  </p>
-</section>
+  <section>
+    <h2>Contact Us</h2>
+    <p>
+      Contact GoFlow Plumbing today for expert faucet repair services in Sonoma and Marin County.
+    </p>
+  </section>
 </article>

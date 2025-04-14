@@ -179,142 +179,105 @@ schema: {
   }}
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-<div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-  <h1 itemprop="name">{frontmatter.contentTitle}</h1>
-</div>
+<article>
+  <h1>{frontmatter.contentTitle}</h1>
 
-<div itemprop="description">
   <p>
     From pinhole leaks to complete system failures, pipe problems can quickly escalate from minor inconveniences to major headaches. At GoFlow Plumbing, we specialize in efficient, long-lasting pipe repairs and replacements that get your plumbing back to peak performance. Using the latest technology and techniques, including trenchless solutions, we minimize disruption while maximizing results. Don't let pipe problems persist—trust our expert team to deliver the right fix, right away.
   </p>
-</div>
 
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Types of Pipes We Service</h2>
+  <section>
+    <h2>Types of Pipes We Service</h2>
 
-  <div>
-    <ul itemprop="itemListElement">
-      {frontmatter.pipeTypes.map(type => (
-        <li itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{type}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
+    <div>
+      <ul>
+        {frontmatter.pipeTypes.map(type => (
+          <li key={type}>{type}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Common Pipe Problems We Fix</h2>
+  <section>
+    <h2>Common Pipe Problems We Fix</h2>
 
-  <div itemprop="serviceOutput">
     <ul>
       {frontmatter.commonIssues.map(issue => (
         <li>{issue}</li>
       ))}
     </ul>
-  </div>
-</section>
+  </section>
 
-<section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemprop="name">Professional Pipe Repair Process</h2>
-  <div itemprop="description">Our step-by-step process for repairing and replacing pipes efficiently and effectively.</div>
+  <section>
+    <h2>Professional Pipe Repair Process</h2>
+    <p>Our step-by-step process for repairing and replacing pipes efficiently and effectively.</p>
 
-  <ol>
-    {frontmatter.repairProcess.map((step, index) => (
-      <li key={step} itemScope itemType="https://schema.org/HowToStep" itemprop="step">
-        <span itemprop="name">{step}</span>
-        <span itemprop="text">Step {index + 1} of our pipe repair process: {step}</span>
-      </li>
-    ))}
-  </ol>
-</section>
-
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Our Repair Solutions</h2>
-
-  <div>
-    <h3>Professional Services</h3>
-    <ul itemprop="itemListElement">
-      {frontmatter.repairServices.map(service => (
-        <li itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{service}</span>
-          </span>
+    <ol>
+      {frontmatter.repairProcess.map((step, index) => (
+        <li key={step}>
+          <strong>{step}</strong>
+          <p>Step {index + 1} of our pipe repair process: {step}</p>
         </li>
       ))}
-    </ul>
-  </div>
-</section>
+    </ol>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Advanced Repair Techniques</h2>
+  <section>
+    <h2>Our Repair Solutions</h2>
 
-  <div itemprop="serviceOutput">
-    <h3>Trenchless Solutions</h3>
+    <div>
+      <h3>Professional Services</h3>
+      <ul>
+        {frontmatter.repairServices.map(service => (
+          <li key={service}>{service}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Advanced Repair Techniques</h2>
+
+    <div>
+      <h3>Trenchless Solutions</h3>
+      <ul>
+        {frontmatter.repairTechniques.map(technique => (
+          <li>{technique}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why Choose GoFlow for Pipe Repairs?</h2>
+
     <ul>
-      {frontmatter.repairTechniques.map(technique => (
-        <li>{technique}</li>
-      ))}
+      <li>Advanced repair methods</li>
+      <li>Experienced technicians</li>
+      <li>Quality materials</li>
+      <li>Minimal disruption</li>
+      <li>Long-term solutions</li>
+      <li>Warranty protection</li>
     </ul>
-  </div>
-</section>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Why Choose GoFlow for Pipe Repairs?</h2>
+  <section>
+    <h2>Preventive Maintenance</h2>
 
-  <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Advanced repair methods</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Experienced technicians</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Quality materials</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Minimal disruption</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Long-term solutions</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Warranty protection</span>
-      </span>
-    </li>
-  </ul>
-</section>
+    <div>
+      <p>We help prevent future pipe problems with:</p>
+      <ul>  
+        {frontmatter.preventiveMeasures.map(measure => (
+          <li key={measure}>{measure}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Preventive Maintenance</h2>
-
-  <div itemprop="serviceOutput">
-    <p>We help prevent future pipe problems with:</p>
-    <ul>  
-      {frontmatter.preventiveMeasures.map(measure => (
-        <li>{measure}</li>
-      ))}
-    </ul>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/ContactPoint">
-  <p>
-    Contact GoFlow Plumbing today for expert pipe repair and replacement services in Sonoma and Marin County. From emergency repairs to complete repiping, we've got you covered.
-  </p>
-</section>
+  <section>
+    <h2>Contact Us</h2>
+    <p>
+      Contact GoFlow Plumbing today for expert pipe repair and replacement services in Sonoma and Marin County. From emergency repairs to complete repiping, we've got you covered.
+    </p>
+  </section>
 </article>

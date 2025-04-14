@@ -101,182 +101,132 @@ schema: {
   }}
 ---
 
-<article itemScope itemType="https://schema.org/Plumber">
-<meta itemprop="name" content="GoFlow Plumbing" />
-<meta itemprop="image" content="https://goflow.plumbing/images/logo.png" />
-<meta itemprop="telephone" content="+17072008350" />
-<meta itemprop="priceRange" content="$$" />
-<div itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
-  <meta itemprop="streetAddress" content="10 Pine Ave" />
-  <meta itemprop="addressLocality" content="Sonoma" />
-  <meta itemprop="addressRegion" content="CA" />
-  <meta itemprop="postalCode" content="95476" />
-  <meta itemprop="addressCountry" content="US" />
-</div>
+<article>
+  <h1>Professional Water Filtration & Treatment Services</h1>
 
-<div itemScope itemType="https://schema.org/Service">
-<div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-  <h1 itemprop="name">Professional Water Filtration & Treatment Services</h1>
-</div>
-
-<div itemprop="description">
   <p>
     Your water quality affects everything—from the taste of your morning coffee to the lifespan of your appliances. At GoFlow Plumbing, we specialize in comprehensive water filtration and treatment solutions that transform your water from questionable to exceptional. Using advanced filtration technology and professional treatment methods, we help you achieve the water quality you deserve. Say goodbye to hard water, bad tastes, and concerning contaminants, and hello to clean, fresh, healthy water throughout your home.
   </p>
-</div>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Common Water Quality Issues</h2>
+  <section>
+    <h2>Common Water Quality Issues</h2>
 
-  <div itemprop="serviceOutput">
-    <ul>
-      {frontmatter.waterProblems.map(problem => (
-        <li>{problem}</li>
-      ))}
-    </ul>
-  </div>
-</section>
+    <div>
+      <ul>
+        {frontmatter.waterProblems.map(problem => (
+          <li key={problem}>{problem}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Our Filtration Solutions</h2>
+  <section>
+    <h2>Our Filtration Solutions</h2>
 
-  <div>
-    <h3>Available Systems</h3>
-    <ul itemprop="itemListElement">
-      {frontmatter.filtrationTypes.map(type => (
-        <li itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{type}</span>
-          </span>
+    <div>
+      <h3>Available Systems</h3>
+      <ul>
+        {frontmatter.filtrationTypes.map(type => (
+          <li key={type}>{type}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our Water Treatment Process</h2>
+    <div>Professional water treatment process for optimal water quality.</div>
+
+    <div>
+      <ol>
+        <li key="step1">
+          <span>Water Testing</span>
+          <span>Comprehensive analysis of your water quality</span>
         </li>
-      ))}
-    </ul>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemprop="name">Our Water Treatment Process</h2>
-  <div itemprop="description">Professional water treatment process for optimal water quality.</div>
-
-  <div>
-    <ol>
-      <li key="step1" itemScope itemType="https://schema.org/HowToStep" itemprop="step">
-        <span itemprop="name">Water Testing</span>
-        <span itemprop="text">Comprehensive analysis of your water quality</span>
-      </li>
-      <li key="step2" itemScope itemType="https://schema.org/HowToStep" itemprop="step">
-        <span itemprop="name">Problem Identification</span>
-        <span itemprop="text">Determining specific water quality issues</span>
-      </li>
-      <li key="step3" itemScope itemType="https://schema.org/HowToStep" itemprop="step">
-        <span itemprop="name">Solution Design</span>
-        <span itemprop="text">Customizing the right treatment approach</span>
-      </li>
-      <li key="step4" itemScope itemType="https://schema.org/HowToStep" itemprop="step">
-        <span itemprop="name">System Installation</span>
-        <span itemprop="text">Professional setup of filtration equipment</span>
-      </li>
-      <li key="step5" itemScope itemType="https://schema.org/HowToStep" itemprop="step">
-        <span itemprop="name">Quality Verification</span>
-        <span itemprop="text">Testing to ensure desired results</span>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Treatment Methods</h2>
-
-  <div>
-    <ul itemprop="itemListElement">
-      {frontmatter.treatmentMethods.map(method => (
-        <li itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{method}</span>
-          </span>
+        <li key="step2">
+          <span>Problem Identification</span>
+          <span>Determining specific water quality issues</span>
         </li>
-      ))}
-    </ul>
-  </div>
-</section>
+        <li key="step3">
+          <span>Solution Design</span>
+          <span>Customizing the right treatment approach</span>
+        </li>
+        <li key="step4">
+          <span>System Installation</span>
+          <span>Professional setup of filtration equipment</span>
+        </li>
+        <li key="step5">
+          <span>Quality Verification</span>
+          <span>Testing to ensure desired results</span>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Benefits of Water Treatment</h2>
+  <section>
+    <h2>Treatment Methods</h2>
 
-  <div itemprop="serviceOutput">
+    <div>
+      <ul>
+        {frontmatter.treatmentMethods.map(method => (
+          <li key={method}>{method}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Benefits of Water Treatment</h2>
+
+    <div>
+      <ul>
+        {frontmatter.benefits.map(benefit => (
+          <li key={benefit}>{benefit}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why Choose GoFlow for Water Quality?</h2>
+
     <ul>
-      {frontmatter.benefits.map(benefit => (
-        <li>{benefit}</li>
-      ))}
+      <li>Expert water analysis</li>
+      <li>Custom solutions</li>
+      <li>Quality equipment</li>
+      <li>Professional installation</li>
+      <li>Ongoing support</li>
+      <li>System maintenance</li>
     </ul>
-  </div>
-</section>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Why Choose GoFlow for Water Quality?</h2>
+  <section>
+    <h2>Maintenance Services</h2>
 
-  <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Expert water analysis</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Custom solutions</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Quality equipment</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Professional installation</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Ongoing support</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">System maintenance</span>
-      </span>
-    </li>
-  </ul>
-</section>
+    <div>
+      <ul>
+        {frontmatter.maintenanceServices.map(service => (
+          <li key={service}>{service}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Maintenance Services</h2>
+  <section>
+    <h2>Our Guarantee</h2>
 
-  <div itemprop="serviceOutput">
-    <ul>
-      {frontmatter.maintenanceServices.map(service => (
-        <li>{service}</li>
-      ))}
-    </ul>
-  </div>
-</section>
+    <div>
+      <ul>
+        {frontmatter.guarantee.map(guarantee => (
+          <li key={guarantee}>{guarantee}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Our Guarantee</h2>
-
-  <div itemprop="serviceOutput">
-    <ul>
-      {frontmatter.guarantee.map(guarantee => (
-        <li>{guarantee}</li>
-      ))}
-    </ul>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/ContactPoint">
-  <p>
-    Contact GoFlow Plumbing today for expert water filtration and treatment services in Sonoma and Marin County. Experience the difference that truly clean, healthy water can make in your home.
-  </p>
-</section>
-</div>
+  <section>
+    <p>
+      Contact GoFlow Plumbing today for expert water filtration and treatment services in Sonoma and Marin County. Experience the difference that truly clean, healthy water can make in your home.
+    </p>
+  </section>
 </article>

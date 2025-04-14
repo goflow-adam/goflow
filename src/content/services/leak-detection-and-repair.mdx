@@ -110,173 +110,124 @@ schema: {
   }
 ---
 
-<article itemScope itemType="https://schema.org/Plumber">
-<meta itemprop="name" content="GoFlow Plumbing" />
-<meta itemprop="image" content="https://goflow.plumbing/images/logo.png" />
-<meta itemprop="telephone" content="+17072008350" />
-<meta itemprop="priceRange" content="$$" />
-<div itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
-  <meta itemprop="streetAddress" content="10 Pine Ave" />
-  <meta itemprop="addressLocality" content="Sonoma" />
-  <meta itemprop="addressRegion" content="CA" />
-  <meta itemprop="postalCode" content="95476" />
-  <meta itemprop="addressCountry" content="US" />
-</div>
+<article>
+  <h1>Expert Leak Detection & Repair Services</h1>
 
-<div itemScope itemType="https://schema.org/Service">
-<div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-  <h1 itemprop="name">Expert Leak Detection & Repair Services</h1>
-</div>
-
-<div itemprop="description">
   <p>
     Don't let hidden leaks wreak havoc on your property! At GoFlow Plumbing, we use state-of-the-art technology to locate even the most elusive leaks—whether they're behind walls, under slabs, or in your yard. Our expert team combines advanced detection methods with years of experience to find and fix leaks fast, preventing water damage and saving you money on water bills. From pinhole leaks to major pipe breaks, we've got the tools and expertise to solve your leak problems efficiently and effectively.
   </p>
-</div>
 
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Our Leak Detection Methods</h2>
+  <section>
+    <h2>Our Leak Detection Methods</h2>
 
-  <div>
-    <h3>Advanced Technology</h3>
-    <ul itemprop="itemListElement">
+    <div>
+      <h3>Advanced Technology</h3>
+      <ul>
+        {frontmatter.detectionMethods.map(method => (
+          <li key={method}>
+            <strong>{method}</strong>: Using {method} to detect hidden leaks
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Types of Leaks We Detect</h2>
+
+    <div>
+      <ul>
+        {frontmatter.leakTypes.map(type => (
+          <li key={type}>{type}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Professional Leak Detection Process</h2>
+    <p>Our step-by-step process to detect and locate hidden leaks in your plumbing system.</p>
+
+    <ol>
       {frontmatter.detectionMethods.map(method => (
-        <li itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{method}</span>
-          </span>
+        <li key={method}>
+          <strong>{method}</strong>: Using {method} to detect hidden leaks
         </li>
       ))}
-    </ul>
-  </div>
-</section>
+    </ol>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Types of Leaks We Detect</h2>
+  <section>
+    <h2>Leak Repair Process</h2>
+    <p>Our comprehensive process for repairing detected leaks efficiently and effectively.</p>
 
-  <div itemprop="serviceOutput">
-    <ul>
-      {frontmatter.leakTypes.map(type => (
-        <li>{type}</li>
-      ))}
-    </ul>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemprop="name">Professional Leak Detection Process</h2>
-  <div itemprop="description">Our step-by-step process to detect and locate hidden leaks in your plumbing system.</div>
-
-  <ol>
-    {frontmatter.detectionMethods.map(method => (
-      <li itemScope itemType="https://schema.org/HowToStep" itemprop="step">
-        <span itemprop="name">{method}</span>
-        <span itemprop="text">Using {method} to detect hidden leaks</span>
-      </li>
-    ))}
-  </ol>
-</section>
-
-<section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemprop="name">Leak Repair Process</h2>
-  <div itemprop="description">Our comprehensive process for repairing detected leaks efficiently and effectively.</div>
-
-  <ol>
-    {frontmatter.repairProcess.map(process => (
-      <li itemScope itemType="https://schema.org/HowToStep" itemprop="step">
-        <span itemprop="name">{process[0]}</span>
-        <span itemprop="text">{process[1]}</span>
-      </li>
-    ))}
-  </ol>
-</section>
-
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Repair Solutions</h2>
-
-  <div>
-    <h3>Professional Services</h3>
-    <ul itemprop="itemListElement">
-      {frontmatter.repairServices.map(service => (
-        <li itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{service}</span>
-          </span>
+    <ol>
+      {frontmatter.repairProcess.map(([step, description]) => (
+        <li key={step}>
+          <strong>{step}</strong>: {description}
         </li>
       ))}
-    </ul>
-  </div>
-</section>
+    </ol>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Why Choose GoFlow for Leak Detection?</h2>
+  <section>
+    <h2>Repair Solutions</h2>
 
-  <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Advanced detection equipment</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Experienced technicians</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Non-invasive methods</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Accurate diagnostics</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Fast response times</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Comprehensive solutions</span>
-      </span>
-    </li>
-  </ul>
-</section>
+    <div>
+      <h3>Professional Services</h3>
+      <ul>
+        {frontmatter.repairServices.map(service => (
+          <li key={service}>{service}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Preventive Measures</h2>
+  <section>
+    <h2>Why Choose GoFlow for Leak Detection?</h2>
 
-  <div itemprop="serviceOutput">
-    <p>We help prevent future leaks with:</p>
     <ul>
-      {frontmatter.preventiveMeasures.map(measure => (
-        <li>{measure}</li>
-      ))}
+      <li>Advanced detection equipment</li>
+      <li>Experienced technicians</li>
+      <li>Non-invasive methods</li>
+      <li>Accurate diagnostics</li>
+      <li>Fast response times</li>
+      <li>Comprehensive solutions</li>
     </ul>
-  </div>
-</section>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Benefits of Professional Leak Detection</h2>
+  <section>
+    <h2>Preventive Measures</h2>
 
-  <div itemprop="serviceOutput">
-    <ul>
-      <li>Early problem detection</li>
-      <li>Prevent water damage</li>
-      <li>Lower water bills</li>
-      <li>Protect property value</li>
-      <li>Avoid mold growth</li>
-      <li>Peace of mind</li>
-    </ul>
-  </div>
-</section>
+    <div>
+      <p>We help prevent future leaks with:</p>
+      <ul>
+        {frontmatter.preventiveMeasures.map(measure => (
+          <li key={measure}>{measure}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/ContactPoint">
-  <p>
-    Contact GoFlow Plumbing today for expert leak detection and repair services in Sonoma and Marin County. The sooner you address a leak, the less damage and expense you'll face.
-  </p>
-</section>
-</div>
+  <section>
+    <h2>Benefits of Professional Leak Detection</h2>
+
+    <div>
+      <ul>
+        <li>Early problem detection</li>
+        <li>Prevent water damage</li>
+        <li>Lower water bills</li>
+        <li>Protect property value</li>
+        <li>Avoid mold growth</li>
+        <li>Peace of mind</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>
+      Contact GoFlow Plumbing today for expert leak detection and repair services in Sonoma and Marin County. The sooner you address a leak, the less damage and expense you'll face.
+    </p>
+  </section>
 </article>

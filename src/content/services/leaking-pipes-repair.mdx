@@ -112,100 +112,88 @@ schema: {
 }
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-<div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-  <h1 itemprop="name">Get your Leaking Pipe Repaired</h1>
-</div>
+<article>
+  <h1>Get your Leaking Pipe Repaired</h1>
 
-<div itemprop="description">
   <p>
     Hidden leaks? Not on our watch! At GoFlow Plumbing, we use state-of-the-art camera technology to track down sneaky leaks without tearing up your walls or floors. Our non-invasive approach means no unnecessary mess—just pinpoint accuracy and fast, clean repairs that stop water damage in its tracks. Whether it's a tiny trickle or a major mystery, we'll find it, fix it, and have your pipes flowing smoothly in no time. Because at GoFlow, we don't just patch leaks—we solve them.
   </p>
-</div>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Our Pipe Repair Services</h2>
+  <section>
+    <h2>Our Pipe Repair Services</h2>
 
-  <div itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <h3>Comprehensive Leak Detection</h3>
-    <ul>
-      {frontmatter.detectionTools.map(tool => (
-        <li key={tool} itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{tool}</span>
-          </span>
+    <div>
+      <h3>Comprehensive Leak Detection</h3>
+      <ul>
+        {frontmatter.detectionTools.map(tool => (
+          <li key={tool}>{tool}</li>
+        ))}
+      </ul>
+
+      <h3>Types of Pipe Leaks We Fix</h3>
+      <ul>
+        {frontmatter.pipeLeakTypes.map(type => (
+          <li key={type}>{type}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why Choose Us for Pipe Leak Repair?</h2>
+
+    <div>
+      <h3>Fast Response</h3>
+      <p>Water leaks can cause significant damage quickly. We provide rapid response to minimize water damage and repair costs.</p>
+
+      <h3>Expert Solutions</h3>
+      <p>Our licensed plumbers are trained in the latest pipe repair techniques and use professional-grade equipment.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Complete Pipe Leak Repair Process</h2>
+    <p>Our professional step-by-step process to repair pipe leaks quickly and effectively.</p>
+
+    <ol>
+      {frontmatter.repairSteps.map(([step, description]) => (
+        <li key={step}>
+          <strong>{step}</strong>: {description}
         </li>
       ))}
-    </ul>
+    </ol>
+  </section>
 
-    <h3>Types of Pipe Leaks We Fix</h3>
-    <ul>
-      {frontmatter.pipeLeakTypes.map(type => (
-        <li key={type} itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{type}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
+  <section>
+    <h2>Preventing Future Leaks</h2>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Why Choose Us for Pipe Leak Repair?</h2>
+    <div>
+      <p>We don't just fix the current leak – we help prevent future problems by:</p>
+      <ul>
+        {frontmatter.preventiveMeasures.map(measure => (
+          <li key={measure}>{measure}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-  <div itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <h3 itemprop="name">Fast Response</h3>
-    <p itemprop="description">Water leaks can cause significant damage quickly. We provide rapid response to minimize water damage and repair costs.</p>
+  <section>
+    <h2>Emergency Services Available</h2>
 
-    <h3 itemprop="name">Expert Solutions</h3>
-    <p itemprop="description">Our licensed plumbers are trained in the latest pipe repair techniques and use professional-grade equipment.</p>
-  </div>
-</section>
+    <div>
+      <p>Pipe leaks don't wait for convenient times. We offer:</p>
+      <ul>
+        {frontmatter.emergencyServices.map(service => (
+          <li key={service}>{service}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemprop="name">Complete Pipe Leak Repair Process</h2>
-  <div itemprop="description">Our professional step-by-step process to repair pipe leaks quickly and effectively.</div>
-
-  <ol>
-    {frontmatter.repairSteps.map(([step, description]) => (
-      <li key={step} itemScope itemType="https://schema.org/HowToStep" itemprop="step">
-        <span itemprop="name">{step}</span>
-        <span itemprop="text">{description}</span>
-      </li>
-    ))}
-  </ol>
-</section>
-
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Preventing Future Leaks</h2>
-
-  <div itemprop="serviceOutput">
-    <p>We don't just fix the current leak – we help prevent future problems by:</p>
-    <ul>
-      {frontmatter.preventiveMeasures.map(measure => (
-        <li key={measure}>{measure}</li>
-      ))}
-    </ul>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Emergency Services Available</h2>
-
-  <div itemprop="serviceOutput">
-    <p>Pipe leaks don't wait for convenient times. We offer:</p>
-    <ul>
-      {frontmatter.emergencyServices.map(service => (
-        <li key={service}>{service}</li>
-      ))}
-    </ul>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/ContactPoint">
-  <p>
-    Contact GoFlow Plumbing today for fast, reliable pipe leak repair services in Sonoma and Marin County.
-  </p>
-</section>
+  <section>
+    <h2>Contact Us</h2>
+    <p>
+      Contact GoFlow Plumbing today for fast, reliable pipe leak repair services in Sonoma and Marin County.
+    </p>
+  </section>
 </article>

@@ -168,141 +168,106 @@ schema: {
   }}
 ---
 
-<article itemScope itemType="https://schema.org/Service">
-<div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-  <h1 itemprop="name">{frontmatter.contentTitle}</h1>
-</div>
+<article>
+  <h1>{frontmatter.contentTitle}</h1>
 
-<div itemprop="description">
   <p>
     When sewer problems strike, you need a team that combines experience with cutting-edge technology. At GoFlow Plumbing, we use advanced diagnostic tools to pinpoint sewer line issues and solve them efficiently—often without digging up your yard. From tree root intrusion to aging pipes, we handle all sewer line challenges with expertise and minimal disruption. Don't let sewer problems escalate; trust our team to restore your system's function quickly and effectively.
   </p>
-</div>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Signs of Sewer Line Problems</h2>
-
-  <div itemprop="serviceOutput">
+  <section>
+    <h2>Signs of Sewer Line Problems</h2>
     <ul>
       {frontmatter.sewerProblems.map(problem => (
-        <li>{problem}</li>
+        <li key={problem}>{problem}</li>
       ))}
     </ul>
-  </div>
-</section>
+  </section>
 
-<section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemprop="name">Our Diagnostic Process</h2>
-  <div itemprop="description">Advanced diagnostic methods for accurate sewer line problem detection.</div>
+  <section>
+    <h2>Our Diagnostic Process</h2>
+    <p>Advanced diagnostic methods for accurate sewer line problem detection.</p>
 
-  <div>
-    <h3>Advanced Methods</h3>
-    <ol>
-      {frontmatter.diagnosticMethods.map((method, index) => (
-        <li key={method} itemScope itemType="https://schema.org/HowToStep" itemprop="step">
-          <span itemprop="name">{method}</span>
-          <span itemprop="text">Step {index + 1}: {method} - Professional diagnostic method for sewer line inspection</span>
-        </li>
-      ))}
-    </ol>
-  </div>
-</section>
+    <div>
+      <h3>Advanced Methods</h3>
+      <ol>
+        {frontmatter.diagnosticMethods.map((method, index) => (
+          <li key={method}>
+            <strong>{method}</strong>
+            <p>Step {index + 1}: {method} - Professional diagnostic method for sewer line inspection</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Repair Solutions</h2>
+  <section>
+    <h2>Repair Solutions</h2>
 
-  <div>
-    <h3>Available Methods</h3>
-    <ul itemprop="itemListElement">
-      {frontmatter.repairMethods.map(method => (
-        <li itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{method}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
+    <div>
+      <h3>Available Methods</h3>
+      <ul>
+        {frontmatter.repairMethods.map(method => (
+          <li key={method}>{method}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Trenchless Technology</h2>
+  <section>
+    <h2>Trenchless Technology</h2>
 
-  <div itemprop="serviceOutput">
-    <h3>Benefits</h3>
+    <div>
+      <h3>Benefits</h3>
+      <ul>
+        {frontmatter.benefits.map(benefit => (
+          <li key={benefit}>{benefit}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why Choose GoFlow for Sewer Services?</h2>
+
     <ul>
-      {frontmatter.benefits.map(benefit => (
-        <li>{benefit}</li>
-      ))}
+      <li>Advanced diagnostic equipment</li>
+      <li>Experienced technicians</li>
+      <li>Trenchless solutions</li>
+      <li>Comprehensive warranties</li>
+      <li>Emergency service</li>
+      <li>Upfront pricing</li>
     </ul>
-  </div>
-</section>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Why Choose GoFlow for Sewer Services?</h2>
+  <section>
+    <h2>Preventive Maintenance</h2>
 
-  <ul itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Advanced diagnostic equipment</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Experienced technicians</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Trenchless solutions</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Comprehensive warranties</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Emergency service</span>
-      </span>
-    </li>
-    <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-      <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">Upfront pricing</span>
-      </span>
-    </li>
-  </ul>
-</section>
+    <div>
+      <p>We help prevent future problems with:</p>
+      <ul>
+        {frontmatter.preventiveMeasures.map(measure => (
+          <li key={measure}>{measure}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Preventive Maintenance</h2>
+  <section>
+    <h2>Our Process</h2>
 
-  <div itemprop="serviceOutput">
-    <p>We help prevent future problems with:</p>
-    <ul>
-      {frontmatter.preventiveMeasures.map(measure => (
-        <li>{measure}</li>
-      ))}
-    </ul>
-  </div>
-</section>
+    <div>
+      <ol>
+        {frontmatter.process.map(step => (
+          <li key={step}>{step}</li>
+        ))}
+      </ol>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Our Process</h2>
-
-  <div itemprop="serviceOutput">
-    <ol>
-      {frontmatter.process.map(step => (
-        <li>{step}</li>
-      ))}
-    </ol>
-  </div>
-</section>
-
-<section itemScope itemType="https://schema.org/ContactPoint">
-  <p>
-    Contact GoFlow Plumbing today for expert sewer line repair and replacement services in Sonoma and Marin County. Don't wait until a small sewer problem becomes a major disaster.
-  </p>
-</section>
+  <section>
+    <p>
+      Contact GoFlow Plumbing today for expert sewer line repair and replacement services in Sonoma and Marin County. Don't wait until a small sewer problem becomes a major disaster.
+    </p>
+  </section>
 </article>

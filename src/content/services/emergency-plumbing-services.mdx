@@ -143,153 +143,120 @@ schema: {
 }
 ---
 
-<article itemScope itemType="https://schema.org/Plumber">
-<meta itemprop="name" content="GoFlow Plumbing" />
-<meta itemprop="image" content="https://goflow.plumbing/images/logo.png" />
-<meta itemprop="telephone" content="+17072008350" />
-<meta itemprop="priceRange" content="$$" />
-<div itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
-  <meta itemprop="streetAddress" content="10 Pine Ave" />
-  <meta itemprop="addressLocality" content="Sonoma" />
-  <meta itemprop="addressRegion" content="CA" />
-  <meta itemprop="postalCode" content="95476" />
-  <meta itemprop="addressCountry" content="US" />
-</div>
+<article>
+  <h1>24/7 Emergency Plumbing Services Available Now</h1>
 
-<div itemScope itemType="https://schema.org/Service">
-<div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
-  <h1 itemprop="name">24/7 Emergency Plumbing Services Available Now</h1>
-</div>
-
-<div itemprop="description">
-  <p>
-    Plumbing emergencies don't wait for a convenient time, and neither do we. At GoFlow Plumbing, we're ready to respond quickly when disaster strikes—whether it's a burst pipe, an overflowing toilet, or a sudden water heater failure. Our skilled team arrives promptly, equipped to diagnose and resolve the issue with efficient, high-quality repairs that minimize damage and restore your home's plumbing as quickly as possible. When every second counts, trust GoFlow to provide fast, reliable, and professional emergency plumbing services—day or night.
-  </p>
-</div>
-
-<section itemScope itemType="https://schema.org/OfferCatalog">
-  <h2>Emergency Services We Provide</h2>
-
-  <div itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-    <h3>Available Services</h3>
-    <ul>
-    {frontmatter.emergencyServices.map(service => (
-      <li itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-        <span itemprop="name">{service}</span>
-      </li>
-    ))}
-    </ul>
+  <div>
+    <p>
+      Plumbing emergencies don't wait for a convenient time, and neither do we. At GoFlow Plumbing, we're ready to respond quickly when disaster strikes—whether it's a burst pipe, an overflowing toilet, or a sudden water heater failure. Our skilled team arrives promptly, equipped to diagnose and resolve the issue with efficient, high-quality repairs that minimize damage and restore your home's plumbing as quickly as possible. When every second counts, trust GoFlow to provide fast, reliable, and professional emergency plumbing services—day or night.
+    </p>
   </div>
-</section>
 
-<section itemScope itemType="https://schema.org/HowTo">
-  <h2 itemprop="name">Emergency Response Process</h2>
+  <section>
+    <h2>Emergency Services We Provide</h2>
 
-  <div itemprop="step" itemScope itemType="https://schema.org/HowToStep">
-      <h3 itemprop="name">1. Initial Contact</h3>
-      <div itemprop="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
+    <div>
+      <h3>Available Services</h3>
+      <ul>
+      {frontmatter.emergencyServices.map(service => (
+        <li>{service}</li>
+      ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Emergency Response Process</h2>
+
+    <div>
+      <h3>1. Initial Contact</h3>
+      <div>
         <ul>
         {frontmatter.emergencyProcess1.map(service => (
-          <li itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{service}</span>
-          </li>
+          <li>{service}</li>
         ))}
         </ul>
       </div>
     </div>
 
-    <div itemprop="step" itemScope itemType="https://schema.org/HowToStep">
-      <h3 itemprop="name">2. Assessment and Diagnosis</h3>
-      <div itemprop="itemListElement" itemScope itemType="https://schema.org/HowToDirection">
+    <div>
+      <h3>2. Assessment and Diagnosis</h3>
+      <div>
         <ul>
         {frontmatter.emergencyProcess2.map(service => (
-          <li itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{service}</span>
-          </li>
+          <li>{service}</li>
         ))}
         </ul>
       </div>
     </div>
   </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Why Choose Our Emergency Service?</h2>
-  <div itemprop="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
-    <h3>24/7 Availability</h3>
-    <ul>
-    {frontmatter.available247.map(service => (
-      <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-        <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-          <span itemprop="name">{service}</span>
-        </span>
-      </li>
-    ))}
-    </ul>
-    <h3>Professional Service</h3>
-    <ul>
-      {frontmatter.professionalService.map(service => (
-        <li itemprop="itemListElement" itemScope itemType="https://schema.org/Offer">
-          <span itemprop="itemOffered" itemScope itemType="https://schema.org/Service">
-            <span itemprop="name">{service}</span>
-          </span>
-        </li>
+  <section>
+    <h2>Why Choose Our Emergency Service?</h2>
+    <div>
+      <h3>24/7 Availability</h3>
+      <ul>
+      {frontmatter.available247.map(service => (
+        <li>{service}</li>
       ))}
-    </ul>
-  </div>
-</section>
+      </ul>
+      <h3>Professional Service</h3>
+      <ul>
+      {frontmatter.professionalService.map(service => (
+        <li>{service}</li>
+      ))}
+      </ul>
+    </div>
+  </section>
 
-<section itemScope itemType="https://schema.org/Service">
-  <h2>After-Emergency Service</h2>
+  <section>
+    <h2>After-Emergency Service</h2>
 
-  <div itemprop="serviceOutput">
-    <h3>Follow-up Care</h3>
+    <div>
+      <h3>Follow-up Care</h3>
+      <ul>
+      {frontmatter.followUpCare.map(service => (
+        <li>{service}</li>
+      ))}
+      </ul>
+
+      <h3>Additional Services</h3>
+      <ul>
+      {frontmatter.additionalServices.map(service => (
+        <li>{service}</li>
+      ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Emergency Prevention Tips</h2>
+
+    <div>
+      <p>We provide guidance on:</p>
+      <ul>
+      {frontmatter.emergencyPrevention.map(service => (
+        <li>{service}</li>
+      ))}
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Service Area Coverage</h2>
+
+    <p>We provide emergency service throughout:</p>
     <ul>
-    {frontmatter.followUpCare.map(service => (
-      <li>{service}</li>
-    ))}
+      <li>Sonoma County</li>
+      <li>Marin County</li>
+      <li>All surrounding areas</li>
     </ul>
+  </section>
 
-    <h3>Additional Services</h3>
-    <ul>
-    {frontmatter.additionalServices.map(service => (
-      <li>{service}</li>
-    ))}
-    </ul>
-  </div>
-</section>
-</div>
+  <section>
+    <h2>Contact Us</h2>
+    <p>
+      Contact GoFlow Plumbing immediately for any plumbing emergency. We're here 24/7 to help!
+    </p>
+  </section>
 </article>
-
-<section itemScope itemType="https://schema.org/Service">
-  <h2>Emergency Prevention Tips</h2>
-
-  <div itemprop="serviceOutput">
-    <p>We provide guidance on:</p>
-    <ul>
-    {frontmatter.emergencyPrevention.map(service => (
-      <li>{service}</li>
-    ))}
-    </ul>
-  </div>
-</section>
-
-<section itemprop="areaServed" itemScope itemType="https://schema.org/Place">
-  <h2>Service Area Coverage</h2>
-
-  <p>We provide emergency service throughout:</p>
-  <ul>
-    <li itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
-      <span itemprop="addressRegion">Sonoma County</span>
-    </li>
-    <li itemprop="address" itemScope itemType="https://schema.org/PostalAddress">
-      <span itemprop="addressRegion">Marin County</span>
-    </li>
-    <li>All surrounding areas</li>
-  </ul>
-</section>
-
-<section itemScope itemType="https://schema.org/ContactPoint">
-  <p>
-    Contact GoFlow Plumbing immediately for any plumbing emergency. We're here 24/7 to help!
-  </p>
-</section>
