@@ -1,0 +1,44 @@
+{
+  "redirects": [
+    {
+      "source": "/faucets",
+      "destination": "/faucet-leaks-repaired",
+      "permanent": true
+    },
+    {
+      "source": "/goflow-team",
+      "destination": "/team",
+      "permanent": true
+    },
+    {
+      "source": "/leaking-pipes",
+      "destination": "/leaking-pipes-repair",
+      "permanent": true
+    },
+    {
+      "source": "/drains",
+      "destination": "/clogged-drains-rootered",
+      "permanent": true
+    },
+    {
+      "source": "/sonoma-marin-napa-service-regions",
+      "destination": "/service-regions",
+      "permanent": true
+    },
+    {
+      "source": "/toilet-problems",
+      "destination": "/clogged-or-running-toilets",
+      "permanent": true
+    },
+    {
+      "source": "/dishwashers",
+      "destination": "/dishwasher-installation-or-leak-repair",
+      "permanent": true
+    },
+    {
+      "source": "/water-heaters",
+      "destination": "/water-heater-repair-and-replacement",
+      "permanent": true
+    }
+  ]
+}
