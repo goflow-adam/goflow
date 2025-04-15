@@ -39,6 +39,16 @@
       "source": "/water-heaters",
       "destination": "/water-heater-repair-and-replacement",
       "permanent": true
+    },
+    {
+      "source": "/services/clogged-or-running-toilets",
+      "destination": "/clogged-or-running-toilets",
+      "permanent": true
+    },
+    {
+      "source": "/~partytown",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
