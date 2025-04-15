@@ -110,7 +110,7 @@ export function createArticlePageSchema(article: CollectionEntry<'articles'>): A
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://goflow.plumbing/articles/${article.slug}`
+      "@id": `https://goflow.plumbing/${article.slug}`
     },
     "image": article.data.heroImage || "https://goflow.plumbing/GoFlow2.jpg",
     "inLanguage": "en-US",
@@ -131,7 +131,7 @@ export function createRegionPageSchema(region: CollectionEntry<'regions'>): Plum
     ...businessInfo,
     "name": businessInfo.name,
     "description": region.data.description,
-    "url": `https://goflow.plumbing/regions/${region.slug}`,
+    "url": `https://goflow.plumbing/${region.slug}`,
     "areaServed": [{
       "@type": isCounty ? "County" : "City",
       "name": name,

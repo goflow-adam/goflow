@@ -27,7 +27,7 @@ export function createArticleSchema(article: CollectionEntry<'articles'>): Artic
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://goflow.plumbing/articles/${article.slug}`
+      "@id": `https://goflow.plumbing/${article.slug}`
     },
     "image": article.data.heroImage || "https://goflow.plumbing/GoFlow2.jpg",
     "inLanguage": "en-US",
