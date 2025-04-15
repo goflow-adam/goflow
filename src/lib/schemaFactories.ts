@@ -62,7 +62,7 @@ export function createServicePageSchema(service: CollectionEntry<'services'>): S
         "name": typeof area === 'string' ? area : area.name
       })) : 
       [],
-    "url": `https://goflow.plumbing/services/${service.slug}`,
+    "url": `https://goflow.plumbing/${service.slug}`,
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
@@ -84,7 +84,7 @@ export function createServicePageSchema(service: CollectionEntry<'services'>): S
       "description": serviceDetail.output,
       "address": businessInfo.address,
       "telephone": businessInfo.telephone,
-      "url": `https://goflow.plumbing/services/${service.slug}`,
+      "url": `https://goflow.plumbing/${service.slug}`,
       "areaServed": businessInfo.areaServed
     },
     "category": "Plumbing",
