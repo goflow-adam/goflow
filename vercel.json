@@ -49,6 +49,11 @@
       "source": "/~partytown",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/emergency-services",
+      "destination": "/emergency-plumbing-services",
+      "permanent": true
     }
   ]
 }
