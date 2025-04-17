@@ -10,7 +10,7 @@ export default defineConfig({
   site: 'https://goflow.plumbing',
   integrations: [
     UnoCSS({injectReset: true}),
-    sitemap(),
+    sitemap({lastmod: new Date()}),
     mdx(),
     partytown({
       config: {
