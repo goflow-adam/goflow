@@ -50,6 +50,7 @@ const baseSchema = z.object({
 const services = defineCollection({
   schema: baseSchema.extend({
     featured: z.boolean().default(false),
+    includeInMenu: z.boolean().default(false),
   }),
 });
 

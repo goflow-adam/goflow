@@ -17,6 +17,7 @@ const { isDesktop } = Astro.props;
 // Get all service pages and sort them by title
 const services = await getCollection('services');
 const serviceMenu = services
+  .filter(service => service.data.includeInMenu)
   .map(service => ({
     title: service.data.menuText || service.data.linkText || service.data.title,
     path: `/${service.slug}`

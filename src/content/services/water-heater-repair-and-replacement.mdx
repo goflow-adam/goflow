@@ -2,11 +2,12 @@
 title: "Water Heater Repair and Replacement Services for your home"
 linkText: "Water Heater Repair and Replacement Service"
 menuText: "Water Heater Repair"
+includeInMenu: true
 description: "GoFlow Plumbing offers expert water heater repair and water heater replacement services to keep your home comfortable and safe."
 pubDate: 2025-03-24
 featured: true
 waterHeaterServices:
-  - Emergency repairs
+  - Emergency repairs, emergency-plumbing-services
   - Regular maintenance
   - New water heater installation
   - Tank and tankless options
@@ -101,7 +102,7 @@ schema: {
     </p>
 
     <p>
-      ​We service all of Marin, Sonoma, and Napa counties. Please call for up front [water heater replacement pricing](/articles/water-heater-replacement-cost-reasons) and allow us to return your home back to its dry warm self. We love turning shock into smiles.
+      ​We service all of <a href="/marin-county-plumbing">Marin</a>, <a href="/sonoma-county-plumbing">Sonoma</a>, and Napa counties. Please call for up front [water heater replacement pricing](/articles/water-heater-replacement-cost-reasons) and allow us to return your home back to its dry warm self. We love turning shock into smiles.
     </p>
   </div>
 
@@ -109,9 +110,10 @@ schema: {
     <h2>Our Water Heater Services Include:</h2>
 
     <ul>
-      {frontmatter.waterHeaterServices.map(service => (
-        <li>{service}</li>
-      ))}
+      {frontmatter.waterHeaterServices.map(service => {
+        const svc = service.split(',').map(s => s.trim());
+        return <li>{svc[1] ? <a href={`/${svc[1]}`}>{svc[0]}</a> : svc[0]}</li>
+      })}
     </ul>
   </section>
 
@@ -127,9 +129,9 @@ schema: {
 
   <section>
     <h2>Service Areas</h2>
-
     <p>
-      We proudly serve both Sonoma and Marin Counties, providing prompt and reliable water heater services to residential and commercial customers.
+      We proudly serve both <a href="/sonoma-county-plumbing">Sonoma</a> and <a href="/marin-county-plumbing">Marin</a> Counties,
+      providing prompt and reliable residential water heater services.
     </p>
   </section>
 
