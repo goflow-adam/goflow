@@ -1,0 +1,46 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: "lazy" | "eager";
+  sizes?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  class: className,
+  loading = "lazy",
+  sizes = "(max-width: 768px) 100vw, 50vw"
+} = Astro.props;
+
+// Generate srcset for responsive images
+const generateSrcSet = (src: string) => {
+  const widths = [320, 640, 768, 1024, 1280];
+  const ext = src.split('.').pop();
+  const basePath = src.slice(0, -(ext?.length ?? 0) - 1);
+  
+  return widths
+    .map(w => `${basePath}-${w}.${ext} ${w}w`)
+    .join(', ');
+};
+
+const srcset = generateSrcSet(src);
+---
+
+<img
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  class={className}
+  loading={loading}
+  decoding="async"
+  srcset={srcset}
+  sizes={sizes}
+/>

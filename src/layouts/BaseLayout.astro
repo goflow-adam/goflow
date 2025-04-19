@@ -23,6 +23,10 @@ const baseSchema = { "@context": "https://schema.org", ...businessInfo };
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="/styles/critical.css" />
+    <link rel="preload" as="script" href="/scripts/navigation.js" />
     <SEO
       title={title}
       description={description}
@@ -97,7 +101,7 @@ const baseSchema = { "@context": "https://schema.org", ...businessInfo };
       </div>
     </header>
 
-    <script src="../scripts/navigation.ts"></script>
+    <script src="/scripts/navigation.js" defer></script>
 
     <main>
       <slot />
@@ -138,13 +142,6 @@ const baseSchema = { "@context": "https://schema.org", ...businessInfo };
       </div>
     </footer>
 
-    <script>
-      const menuButton = document.getElementById('menuButton');
-      const mobileMenu = document.getElementById('mobileMenu');
 
-      menuButton?.addEventListener('click', () => {
-        mobileMenu?.classList.toggle('hidden');
-      });
-    </script>
   </body>
 </html>

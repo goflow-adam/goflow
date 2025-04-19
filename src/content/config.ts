@@ -64,6 +64,7 @@ const regions = defineCollection({
       ])
     ).optional(),
     includeInMenu: z.boolean().default(false),
+    featureTitle: z.string().optional(),
   }),
 });
 
