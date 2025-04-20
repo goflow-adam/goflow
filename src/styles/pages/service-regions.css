@@ -1,6 +1,4 @@
-.service-regions > p {
-  @apply text-lg mb-12;
-}
+
 
 .service-regions > div {
   @apply grid gap-8;

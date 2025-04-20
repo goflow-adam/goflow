@@ -2,7 +2,45 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { createServiceRegionsSchema } from '../lib/schemaFactories';
+import ServiceAreaMap from '../components/ServiceAreaMap.astro';
 import '../styles/pages/service-regions.css';
+
+const serviceAreas = [
+  {
+    name: "Sonoma County",
+    description: "Full service area coverage in Sonoma County",
+    coordinates: [[
+      [-123.0874, 38.3052],
+      [-122.9265, 38.4561],
+      [-122.7545, 38.7128],
+      [-122.9154, 38.8637],
+      [-123.0764, 38.9891],
+      [-123.2373, 38.9891],
+      [-123.3983, 38.8637],
+      [-123.5592, 38.7128],
+      [-123.5592, 38.5619],
+      [-123.3983, 38.4110],
+      [-123.2373, 38.3052],
+      [-123.0874, 38.3052]
+    ]]
+  },
+  {
+    name: "Marin County",
+    description: "Full service area coverage in Marin County",
+    coordinates: [[
+      [-122.7545, 37.9089],
+      [-122.5936, 38.0598],
+      [-122.4327, 38.2107],
+      [-122.5936, 38.3616],
+      [-122.7545, 38.4870],
+      [-122.9154, 38.4870],
+      [-123.0764, 38.3616],
+      [-123.0764, 38.2107],
+      [-122.9154, 38.0598],
+      [-122.7545, 37.9089]
+    ]]
+  }
+];
 
 interface RegionFrontmatter {
   title: string;
@@ -11,6 +49,7 @@ interface RegionFrontmatter {
 
 const regions = await getCollection('regions', ({ data }) => !data.draft);
 const schema = createServiceRegionsSchema(regions);
+const mapCenter: [number, number] = [38.463848, -123];
 ---
 
 <BaseLayout
@@ -19,12 +58,24 @@ const schema = createServiceRegionsSchema(regions);
   schema={schema}
 >
   <article class="service-regions article">
+    <h1>Three Generations Plumbing Sonoma &amp; Marin Counties</h1>
 
-    <h1>Servicing Sonoma, Marin, and Napa Counties</h1>
-    
-    <p class="text-lg mb-12">
-      If you are in Sonoma County, Marin County, or Napa county give us a call for upfront pricing on the remedy for your leak, tepid water heater, toilet clogs, or any other plumbing issue your home can throw at you.
-    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <div class="md:col-span-1">
+        <p class="text-lg">
+          If you are in Sonoma County or Marin County give us a call for upfront pricing on the remedy for your leak,
+          tepid water heater, toilet clogs, or any other plumbing issue your home can throw at you. We bring with us three generations of experience plumbing in Sonoma and Marin counties.
+        </p>
+      </div>
+      
+      <div class="h-[300px] md:h-auto md:col-span-2">
+        <ServiceAreaMap 
+          style="height: 100%" 
+          center={mapCenter}
+          areas={serviceAreas}
+        />
+      </div>
+    </div>
 
     <div class="regions-container">
       {regions.map((region) => (
