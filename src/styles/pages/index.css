@@ -6,23 +6,43 @@
 
 .hero {
   @apply bg-primary py-20 text-background;
-  background-image: url('images/celtic.jpg');
+  background-image: url('/images/generated/celtic-320.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-blend-mode: multiply;
 }
 
+@media (min-width: 640px) {
+  .hero {
+    background-image: url('/images/generated/celtic-640.jpg');
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-image: url('/images/generated/celtic-768.jpg');
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    background-image: url('/images/generated/celtic-1024.jpg');
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero {
+    background-image: url('/images/generated/celtic-1280.jpg');
+  }
+}
+
 .hero-container {
   @apply container mx-auto px-4 text-center;
 }
 
-.hero h1 {
-  @apply text-4xl md:text-6xl font-bold mb-6;
-}
-
-.hero-container h1 {
-  @apply mb-2;
+.hero .hero-container h1 {
+  @apply text-4xl lg:text-5xl font-bold mb-6 text-background;
 }
 
 .hero-container h2 {

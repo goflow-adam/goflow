@@ -1,8 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
-import '../styles/articles.css';
-import '../styles/markdown.css';
 import { createArticlePageSchema } from '../lib/schemaFactories';
 
 interface Props {
@@ -20,40 +18,17 @@ const schema = createArticlePageSchema(article);
   description={article.data.description}
   schema={schema}
 >
-  <article class="article max-w-4xl" itemscope itemtype="https://schema.org/Article">
-    <meta itemprop="headline" content={article.data.title} />
-    <meta itemprop="description" content={article.data.description} />
-    <meta itemprop="datePublished" content={new Date(article.data.pubDate).toISOString()} />
-    <meta itemprop="dateModified" content={new Date(article.data.pubDate).toISOString()} />
-    <meta itemprop="inLanguage" content="en-US" />
-    <meta itemprop="articleSection" content="Plumbing" />
-    {article.data.tags?.map(tag => (
-      <meta itemprop="keywords" content={tag} />
-    ))}
-    <link itemprop="mainEntityOfPage" href={`https://goflow.plumbing/articles/${article.slug}`} />
-    <div itemprop="author publisher" itemscope itemtype="https://schema.org/Organization">
-      <meta itemprop="name" content="GoFlow Plumbing" />
-      <meta itemprop="telephone" content="707-200-8350" />
-      <link itemprop="url" href="https://goflow.plumbing" />
-      <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-        <meta itemprop="streetAddress" content="10 Pine Ave" />
-        <meta itemprop="addressLocality" content="Sonoma" />
-        <meta itemprop="addressRegion" content="CA" />
-        <meta itemprop="postalCode" content="95476" />
-        <meta itemprop="addressCountry" content="US" />
-      </div>
-    </div>
+  <article class="article max-w-4xl">
     {article.data.heroImage && (
-      <div class="mb-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <div class="mb-8">
         <img
           src={article.data.heroImage}
           alt={article.data.title}
-          itemprop="url contentUrl"
         />
       </div>
     )}
     
-    <div class="prose-container markdown-content" itemprop="articleBody">
+    <div class="prose-container markdown-content">
       <Content />
     </div>
 

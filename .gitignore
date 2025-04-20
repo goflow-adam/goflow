@@ -27,4 +27,4 @@ pnpm-debug.log*
 scratch/
 
 /prompt.txt
-/windsurf_deployment.yaml
+/windsurf_deployment.yamlpublic/images/generated

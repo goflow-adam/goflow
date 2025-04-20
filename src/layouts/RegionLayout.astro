@@ -2,8 +2,6 @@
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
 import { createRegionPageSchema } from '../lib/schemaFactories';
-import '../styles/markdown.css';
-import '../styles/regions.css';
 
 
 interface Props {
@@ -23,40 +21,15 @@ const { Content } = await region.render();
   description={region.data.description}
   schema={schema}
 >
-  <article itemscope itemtype="https://schema.org/Plumber" class="article max-w-4xl">
-    <meta itemprop="name" content="GoFlow Plumbing" />
-    <link itemprop="image" href="/GoFlow2.jpg" />
-    <meta itemprop="priceRange" content="$$" />
-    <meta itemprop="telephone" content="+17072008350" />
-    
-    <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-      <meta itemprop="streetAddress" content="10 Pine Ave" />
-      <meta itemprop="addressLocality" content="Sonoma" />
-      <meta itemprop="addressRegion" content="CA" />
-      <meta itemprop="postalCode" content="95476" />
-      <meta itemprop="addressCountry" content="US" />
-    </div>
-<!--     
-    {region.data.heroImage && (
-      <div class="mb-8">
-        <img
-          itemprop="image"
-          src={region.data.heroImage}
-          alt={region.data.title}
-        />
-      </div>
-    )}
-     -->
-    <div class="markdown-content" itemprop="description">
-      <div itemscope itemtype="https://schema.org/Place">
-        <Content />
-      </div>
+  <article class="article">
+    <div class="markdown-content">
+      <Content />
     </div>
 
-    <div class="call-to-action" itemscope itemtype="https://schema.org/Action">
+    <div class="call-to-action">
       <h2>Need Plumbing Service in {region.data.region}?</h2>
       <p>Our local experts are ready to help with all your plumbing needs.</p>
-      <a href="/contact-us" itemprop="target">
+      <a href="/contact-us">
         Schedule Service
       </a>
     </div>

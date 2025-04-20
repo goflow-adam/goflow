@@ -1,11 +1,3 @@
-.service-regions {
-  @apply max-w-4xl mx-auto;
-}
-
-.service-regions h1 {
-  @apply text-4xl font-bold mb-8;
-}
-
 .service-regions > p {
   @apply text-lg mb-12;
 }

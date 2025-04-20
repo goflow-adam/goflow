@@ -34,31 +34,26 @@ const schema = [
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-container">
-        <h1 itemprop="slogan">Third Generation Plumbing Services</h1>
+        <h1>Third Generation Plumbing Services</h1>
         <h2>Since 1959</h2>
         <p>Available 24/7 in <a href="/sonoma-county-plumbing">Sonoma</a> and <a href="/marin-county-plumbing">Marin Counties</a></p>
-        <div class="space-x-4" itemscope itemtype="https://schema.org/Action">
-          <a href="/contact-us" class="btn btn-primary" itemprop="target" itemscope itemtype="https://schema.org/EntryPoint">
-            <meta itemprop="urlTemplate" content="https://goflow.plumbing/contact-us" />
-            Contact Us Now
-          </a>
+        <div class="space-x-4">
+          <a href="/contact-us" class="btn btn-primary">Contact Us Now</a>
           <a href="/plumbing-services" class="btn btn-secondary">Our Services</a>
         </div>
       </div>
     </section>
 
     <!-- Featured Services -->
-    <section class="services" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+    <section class="services">
       <div class="services-container">
         <h2>Our Services</h2>
         <div>
           {featuredServices.map((service: any) => (
-            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
-              <meta itemprop="serviceType" content="Plumbing" />
-              <meta itemprop="provider" content="GoFlow Plumbing" />
-              <h3 itemprop="name">{service.data.title}</h3>
-              <p class="mb-4" itemprop="description">{service.data.description}</p>
-              <a href={`/${service.slug}`} itemprop="url">{`Get ${service.data.linkText}`||'Learn More'}</a>
+            <div>
+              <h3>{service.data.title}</h3>
+              <p class="mb-4">{service.data.description}</p>
+              <a href={`/${service.slug}`}>{`Get ${service.data.linkText}`||'Learn More'}</a>
             </div>
           ))}
         </div>
@@ -66,21 +61,21 @@ const schema = [
     </section>
 
     <!-- Why Choose Us -->
-    <section class="choose-us" itemprop="additionalProperty" itemscope itemtype="https://schema.org/PropertyValue">
+    <section class="choose-us">
       <div>
         <h2>Why Choose GoFlow Plumbing?</h2>
         <div>
-          <div itemprop="value" itemscope itemtype="https://schema.org/Thing">
-            <h3 itemprop="name">24/7 Emergency Service</h3>
-            <p itemprop="description">Available around the clock for all your plumbing emergencies</p>
+          <div>
+            <h3>24/7 Emergency Service</h3>
+            <p>Available around the clock for all your plumbing emergencies</p>
           </div>
-          <div itemprop="value" itemscope itemtype="https://schema.org/Thing">
-            <h3 itemprop="name">Licensed & Insured</h3>
-            <p itemprop="description">Professional, experienced, and fully certified plumbers</p>
+          <div>
+            <h3>Licensed & Insured</h3>
+            <p>Professional, experienced, and fully certified plumbers</p>
           </div>
-          <div itemprop="value" itemscope itemtype="https://schema.org/Thing">
-            <h3 itemprop="name">Fair & Honest Pricing</h3>
-            <p itemprop="description">Transparent pricing with no hidden fees or surprises</p>
+          <div>
+            <h3>Fair & Honest Pricing</h3>
+            <p>Transparent pricing with no hidden fees or surprises</p>
           </div>
         </div>
       </div>
@@ -88,22 +83,19 @@ const schema = [
 
     <!-- Service Areas -->
     <section class="service-areas">
-      <div itemprop="areaServed" itemscope itemtype="https://schema.org/State">
-        <meta itemprop="name" content="California" />
+      <div>
         <h2>Service Areas</h2>
         <div>
-          <div itemprop="containsPlace" itemscope itemtype="https://schema.org/AdministrativeArea">
-            <meta itemprop="@type" content="County" />
-            <a href="/sonoma-county-plumbing" itemprop="url">
-              <h3 itemprop="name">Sonoma County</h3>
-              <p itemprop="description">Serving all of Sonoma County with expert plumbing services</p>
+          <div>
+            <a href="/sonoma-county-plumbing">
+              <h3>Sonoma County</h3>
+              <p>Serving all of Sonoma County with expert plumbing services</p>
             </a>
           </div>
-          <div itemprop="containsPlace" itemscope itemtype="https://schema.org/AdministrativeArea">
-            <meta itemprop="@type" content="County" />
-            <a href="/marin-county-plumbing" itemprop="url">
-              <h3 itemprop="name">Marin County</h3>
-              <p itemprop="description">Professional plumbing services throughout Marin County</p>
+          <div>
+            <a href="/marin-county-plumbing">
+              <h3>Marin County</h3>
+              <p>Professional plumbing services throughout Marin County</p>
             </a>
           </div>
         </div>
@@ -111,12 +103,11 @@ const schema = [
     </section>
 
     <!-- CTA Section -->
-    <section class="cta" itemscope itemtype="https://schema.org/Action">
+    <section class="cta">
       <div>
-        <h2 itemprop="name">Need a Plumber?</h2>
-        <p itemprop="description">Contact us now for fast, reliable service</p>
-        <a href="/contact-us" itemprop="target" itemscope itemtype="https://schema.org/EntryPoint">
-          <meta itemprop="urlTemplate" content="https://goflow.plumbing/contact-us" />
+        <h2>Need a Plumber?</h2>
+        <p>Contact us now for fast, reliable service</p>
+        <a href="/contact-us">
           Get in Touch
         </a>
     </div>
