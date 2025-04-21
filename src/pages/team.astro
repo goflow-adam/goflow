@@ -10,7 +10,7 @@ if (!page) {
 }
 
 const { Content } = await page.render();
-const schema = createTeamPageSchema();
+const schema = createTeamPageSchema(Astro.url.pathname);
 ---
 
 <PageLayout page={{ ...page, data: { ...page.data, schema } }}>

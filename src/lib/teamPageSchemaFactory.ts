@@ -1,16 +1,43 @@
 import type { TeamPageSchema } from '../types/schema';
 import { businessInfo } from './schema';
 
-export function createTeamPageSchema(): TeamPageSchema {
+export function createTeamPageSchema(url: string): TeamPageSchema {
+  const canonicalUrl = new URL(url, 'https://goflow.plumbing').toString();
   return {
     "@context": "https://schema.org",
     "@type": "AboutPage",
+    "@id": `${canonicalUrl}#webpage`,
+    "url": canonicalUrl,
     "name": "GoFlow Plumbing Team",
     "description": "Meet the skilled and experienced plumbing professionals at GoFlow Plumbing serving Sonoma and Marin County.",
     "mainEntity": {
-      ...businessInfo,
+      "@context": "https://schema.org",
       "@type": "Plumber",
+      "@id": "https://goflow.plumbing/#business",
+      "name": businessInfo.name,
       "description": "Professional plumbing services in Sonoma and Marin County",
+      "url": "https://goflow.plumbing",
+      "telephone": "(707) 200-8350",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10 Pine Ave",
+        "addressLocality": "Sonoma",
+        "addressRegion": "CA",
+        "postalCode": "95476",
+        "addressCountry": "US"
+      },
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "(707) 200-8350",
+        "contactType": "customer service",
+        "areaServed": [{
+          "@type": "AdministrativeArea",
+          "name": "Sonoma County"
+        }, {
+          "@type": "AdministrativeArea",
+          "name": "Marin County"
+        }]
+      }],
       "employee": [
         {
           "@type": "Person",
@@ -21,13 +48,13 @@ export function createTeamPageSchema(): TeamPageSchema {
           "image": "https://goflow.plumbing/team/adam-bragg.jpg",
           "hasCredential": [
             {
-              "@type": "Credential",
+              "@type": "EducationalOccupationalCredential",
               "name": "California State Contractors License",
               "credentialCategory": "Professional License",
               "validFrom": "2025-03-24"
             },
             {
-              "@type": "Credential",
+              "@type": "EducationalOccupationalCredential",
               "name": "Master Plumber Certification",
               "credentialCategory": "Professional Certification"
             }
@@ -42,7 +69,7 @@ export function createTeamPageSchema(): TeamPageSchema {
           "image": "https://goflow.plumbing/team/sarah-chen.jpg",
           "hasCredential": [
             {
-              "@type": "Credential",
+              "@type": "EducationalOccupationalCredential",
               "name": "Journeyman Plumber License",
               "credentialCategory": "Professional License"
             }
@@ -58,11 +85,11 @@ export function createTeamPageSchema(): TeamPageSchema {
         "name": "California",
         "containsPlace": [
           {
-            "@type": "County",
+            "@type": "AdministrativeArea",
             "name": "Sonoma County"
           },
           {
-            "@type": "County",
+            "@type": "AdministrativeArea",
             "name": "Marin County"
           }
         ]

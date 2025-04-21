@@ -12,9 +12,16 @@ export function createContactPageSchema(): ContactPageSchema {
       "@id": "https://goflow.plumbing/#business",
       "name": "GoFlow Plumbing",
       "image": "https://goflow.plumbing/GoFlow2.jpg",
-      "telephone": businessInfo.telephone,
-      "priceRange": businessInfo.priceRange || "$$",
-      "address": businessInfo.address,
+      "telephone": "(707) 200-8350",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10 Pine Ave",
+        "addressLocality": "Sonoma",
+        "addressRegion": "CA",
+        "postalCode": "95476",
+        "addressCountry": "US"
+      },
       "contactPoint": [
         {
           "@type": "ContactPoint",
@@ -24,11 +31,11 @@ export function createContactPageSchema(): ContactPageSchema {
           "availableLanguage": ["English"],
           "areaServed": [
             {
-              "@type": "County",
+              "@type": "AdministrativeArea",
               "name": "Sonoma County"
             },
             {
-              "@type": "County",
+              "@type": "AdministrativeArea",
               "name": "Marin County"
             }
           ],

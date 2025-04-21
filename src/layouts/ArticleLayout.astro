@@ -10,7 +10,8 @@ interface Props {
 const { article } = Astro.props;
 const { Content } = await article.render();
 
-const schema = createArticlePageSchema(article);
+// Use frontmatter schema if present, otherwise generate one
+const schema = article.data.schema || createArticlePageSchema(article);
 ---
 
 <BaseLayout 

@@ -19,8 +19,8 @@ import { businessInfo } from '../lib/schema';
 import type { Schema } from '../types/schema';
 
 const schema = [
-  { "@context": "https://schema.org", ...businessInfo }/*,
-  createWebSiteSchema()*/
+  businessInfo,
+  createWebSiteSchema()
 ] as Schema[];
 ---
 

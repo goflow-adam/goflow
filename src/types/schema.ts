@@ -1,3 +1,11 @@
+import type { WithContext, Thing, FAQPage, Question, WebPage, Service } from 'schema-dts';
+
+export interface BaseSchema {
+  "@context": "https://schema.org";
+  "@type": string;
+  "@id"?: string;
+}
+
 export interface PostalAddress {
   "@type": "PostalAddress";
   streetAddress: string;
@@ -26,16 +34,56 @@ export interface AdministrativeArea {
   containsPlace?: string[];
 }
 
-export interface City {
-  "@type": "City";
-  name: string;
-  containedInPlace?: AdministrativeArea;
+export interface OpeningHoursSpecification {
+  "@type": "OpeningHoursSpecification";
+  dayOfWeek: string[];
+  opens: string;
+  closes: string;
 }
 
-export interface BaseSchema {
-  "@context": "https://schema.org";
-  "@type": string;
-  "@id"?: string;
+export interface Offer {
+  "@type": "Offer";
+  priceCurrency?: string;
+  availability?: string;
+  areaServed?: GeoCircle;
+  priceRange?: string;
+}
+
+export interface OfferCatalog {
+  "@type": "OfferCatalog";
+  name: string;
+  itemListElement: Array<{
+    "@type": "Offer";
+    itemOffered: {
+      "@type": "Service";
+      name: string;
+      description: string;
+    };
+  }>;
+}
+
+export interface HomeAndConstructionBusiness {
+  "@type": "HomeAndConstructionBusiness";
+  name: string;
+  description: string;
+  address: PostalAddress;
+  telephone: string;
+  url: string;
+  areaServed?: string[] | AdministrativeArea[];
+}
+
+export interface SearchAction {
+  "@type": "SearchAction";
+  target: string;
+  "query-input": string;
+}
+
+export interface ContactPoint {
+  "@type": "ContactPoint";
+  telephone: string;
+  contactType: string;
+  areaServed?: AdministrativeArea[];
+  availableLanguage?: string[];
 }
 
 export interface PlumberSchema extends BaseSchema {
@@ -47,12 +95,13 @@ export interface PlumberSchema extends BaseSchema {
   image?: string;
   description?: string;
   address: PostalAddress;
+  contactPoint: ContactPoint[];
   geo?: GeoCoordinates;
   areaServed?: string[] | AdministrativeArea[] | {
     "@type": "State";
     name: string;
     containsPlace: Array<{
-      "@type": "County";
+      "@type": "AdministrativeArea";
       name: string;
     }>;
   };
@@ -61,37 +110,12 @@ export interface PlumberSchema extends BaseSchema {
     geoMidpoint: GeoCoordinates;
     geoRadius: string;
   };
-  openingHoursSpecification?: Array<{
-    "@type": "OpeningHoursSpecification";
-    dayOfWeek: string[];
-    opens: string;
-    closes: string;
-  }>;
+  openingHoursSpecification?: Array<OpeningHoursSpecification>;
   priceRange?: string;
   sameAs?: string[];
   paymentAccepted?: string[];
   currenciesAccepted?: string;
-  hasOfferCatalog?: {
-    "@type": "OfferCatalog";
-    name: string;
-    itemListElement: Array<{
-      "@type": "Offer";
-      itemOffered: {
-        "@type": "PlumbingService";
-        name: string;
-        description: string;
-      };
-    }>;
-  };
-}
-
-export interface Question {
-  "@type": "Question";
-  name: string;
-  acceptedAnswer: {
-    "@type": "Answer";
-    text: string;
-  };
+  hasOfferCatalog?: OfferCatalog;
 }
 
 export interface FAQPageSchema extends BaseSchema {
@@ -99,8 +123,33 @@ export interface FAQPageSchema extends BaseSchema {
   mainEntity: Question[];
 }
 
+export interface SearchResultsPageSchema extends BaseSchema {
+  "@type": "SearchResultsPage";
+  mainEntity: {
+    "@type": "Plumber";
+    name: string;
+    areaServed: Array<{
+      "@type": "ListItem";
+      position: number;
+      item: {
+        "@type": "Service";
+        name: string;
+        description: string;
+        provider: { "@id": string };
+        areaServed: {
+          "@type": "AdministrativeArea";
+          name: string;
+          description: string;
+          containsPlace?: string[];
+        };
+        url: string;
+      };
+    }>;
+  };
+}
+
 export interface ServiceSchema extends BaseSchema {
-  "@type": "Service" | "PlumbingService";
+  "@type": "Service";
   name: string;
   description: string;
   provider: { "@id": string };
@@ -127,7 +176,7 @@ export interface ServiceSchema extends BaseSchema {
       "@type": "State";
       name: string;
       containsPlace: Array<{
-        "@type": "County";
+        "@type": "AdministrativeArea";
         name: string;
       }>;
     };
@@ -160,7 +209,7 @@ export interface OrganizationSchema extends BaseSchema {
     "@type": "State";
     name: string;
     containsPlace: Array<{
-      "@type": "County";
+      "@type": "AdministrativeArea";
       name: string;
     }>;
   };
@@ -173,14 +222,38 @@ export interface OrganizationSchema extends BaseSchema {
   sameAs?: string[];
 }
 
+export interface Person {
+  "@type": "Person";
+  name: string;
+  url?: string;
+  image?: string;
+  jobTitle?: string;
+  description?: string;
+}
+
+export interface ArticleAuthor extends Person {
+  "@context": "https://schema.org";
+}
+
+export interface ArticlePublisher {
+  "@type": "Organization";
+  "@id": string;
+  name: string;
+  url: string;
+  logo: {
+    "@type": "ImageObject";
+    url: string;
+  };
+}
+
 export interface ArticleSchema extends BaseSchema {
   "@type": "TechArticle" | "Article";
   headline: string;
   description: string;
   datePublished: string;
   dateModified: string;
-  author: Omit<PlumberSchema, '@context'>;
-  publisher: Omit<PlumberSchema, '@context'>;
+  author: Omit<ArticleAuthor, '@context'>;
+  publisher: ArticlePublisher;
   mainEntityOfPage: {
     "@type": "WebPage";
     "@id": string;
@@ -209,7 +282,7 @@ export interface ArticleSchema extends BaseSchema {
 
 export interface AdministrativeAreaReference {
   "@context": "https://schema.org";
-  "@type": "County" | "City";
+  "@type": "AdministrativeArea";
   "@id": string;
   name: string;
   description: string;
@@ -222,15 +295,26 @@ export interface WebPageSchema extends BaseSchema {
   url: string;
   name: string;
   description: string;
-  provider: { "@id": string };
-  about: Array<{
-    "@type": "PlumbingService";
-    name: string;
-    description: string;
-    url: string;
-    provider: { "@id": string };
-    areaServed: Array<{ "@id": string }>;
-  }>;
+  provider: PlumberSchema;
+  mainEntity?: {
+    "@type": "ItemList";
+    itemListElement: Array<{
+      "@type": "ListItem";
+      position: number;
+      item: {
+        "@type": "Service";
+        name: string;
+        description: string;
+        url: string;
+        provider: { "@id": string };
+        areaServed: Array<{
+          "@type": string;
+          name: string;
+          description: string;
+        }>;
+      };
+    }>;
+  };
 }
 
 export interface SearchResultsPageSchema extends BaseSchema {
@@ -247,7 +331,7 @@ export interface SearchResultsPageSchema extends BaseSchema {
         description: string;
         provider: { "@id": string };
         areaServed: {
-          "@type": "County" | "City";
+          "@type": "AdministrativeArea";
           name: string;
           description: string;
           containsPlace?: string[];
@@ -310,7 +394,7 @@ export interface AboutPageSchema extends BaseSchema {
       "@type": "State";
       name: string;
       containsPlace: Array<{
-        "@type": "County";
+        "@type": "AdministrativeArea";
         name: string;
       }>;
     };
@@ -328,7 +412,7 @@ export interface AboutPageSchema extends BaseSchema {
     };
     award?: string[];
     hasCredential?: Array<{
-      "@type": "Credential";
+      "@type": "EducationalOccupationalCredential";
       name: string;
       credentialCategory: string;
       validFrom?: string;
@@ -347,6 +431,7 @@ export interface TeamPageSchema extends BaseSchema {
   "@type": "AboutPage";
   name: string;
   description: string;
+  url: string;
   mainEntity: {
     "@type": "Plumber";
     "@id": string;
@@ -360,7 +445,7 @@ export interface TeamPageSchema extends BaseSchema {
       url: string;
       image: string;
       hasCredential?: Array<{
-        "@type": "Credential";
+        "@type": "EducationalOccupationalCredential";
         name: string;
         credentialCategory: string;
         validFrom?: string;
@@ -374,7 +459,7 @@ export interface TeamPageSchema extends BaseSchema {
       "@type": "State";
       name: string;
       containsPlace: Array<{
-        "@type": "County";
+        "@type": "AdministrativeArea";
         name: string;
       }>;
     };
@@ -394,4 +479,6 @@ export type Schema =
   | ContactPageSchema
   | AboutPageSchema
   | TeamPageSchema
+  | WithContext<WebPage>
+  | WithContext<Service>
   | Schema[];

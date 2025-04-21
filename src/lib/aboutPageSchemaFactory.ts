@@ -29,13 +29,13 @@ export function createAboutPageSchema(): AboutPageSchema {
       },
       "hasCredential": [
         {
-          "@type": "Credential",
+          "@type": "EducationalOccupationalCredential",
           "name": "California State Contractors License",
           "credentialCategory": "Professional License",
           "validFrom": "2025-03-24"
         },
         {
-          "@type": "Credential",
+          "@type": "EducationalOccupationalCredential",
           "name": "Master Plumber Certification",
           "credentialCategory": "Professional Certification"
         }
@@ -52,11 +52,11 @@ export function createAboutPageSchema(): AboutPageSchema {
         "name": "California",
         "containsPlace": [
           {
-            "@type": "County",
+            "@type": "AdministrativeArea",
             "name": "Sonoma County"
           },
           {
-            "@type": "County",
+            "@type": "AdministrativeArea",
             "name": "Marin County"
           }
         ]

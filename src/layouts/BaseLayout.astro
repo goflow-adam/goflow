@@ -15,7 +15,7 @@ interface Props {
 
 const { title, description, schema } = Astro.props;
 
-const baseSchema = { "@context": "https://schema.org", ...businessInfo };
+const baseSchema = businessInfo;
 ---
 
 <!DOCTYPE html>

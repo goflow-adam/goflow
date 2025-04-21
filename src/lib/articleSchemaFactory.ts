@@ -18,12 +18,21 @@ export function createArticleSchema(article: CollectionEntry<'articles'>): Artic
       new Date(article.data.updatedDate).toISOString() : 
       new Date(article.data.pubDate).toISOString(),
     "author": {
-      "@id": "https://goflow.plumbing/#business",
-      ...businessInfo
+      "@type": "Person",
+      "name": "John Smith",
+      "jobTitle": "Master Plumber",
+      "url": "https://goflow.plumbing/about",
+      "image": "https://goflow.plumbing/team/john-smith.jpg"
     },
     "publisher": {
+      "@type": "Organization",
       "@id": "https://goflow.plumbing/#business",
-      ...businessInfo
+      "name": businessInfo.name,
+      "url": "https://goflow.plumbing",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://goflow.plumbing/GoFlow2.jpg"
+      }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
