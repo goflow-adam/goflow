@@ -8,6 +8,10 @@ import partytown from '@astrojs/partytown';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://goflow.plumbing',
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover'
+  },
   integrations: [
     UnoCSS({
       injectReset: true
@@ -65,10 +69,31 @@ export default defineConfig({
   vite: {
     build: {
       cssCodeSplit: true,
-      chunkSizeWarningLimit: 1000
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        output: {
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              if (id.includes('leaflet')) return 'leaflet';
+              if (id.includes('astro-seo')) return 'seo';
+              return 'vendor';
+            }
+          }
+        },
+        plugins: process.env.ANALYZE ? [
+          (await import('rollup-plugin-visualizer')).visualizer({
+            open: true,
+            gzipSize: true,
+            brotliSize: true
+          })
+        ] : []
+      }
     },
     ssr: {
       noExternal: ['@astrojs/prism']
+    },
+    optimizeDeps: {
+      include: ['leaflet', 'astro-seo']
     }
   },
   image: {

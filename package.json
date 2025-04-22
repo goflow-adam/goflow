@@ -6,11 +6,14 @@
     "dev": "astro dev",
     "build": "node scripts/optimize-images.mjs && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "analyze": "ANALYZE=true astro build"
   },
   "dependencies": {
+    "@astrojs/image": "^0.18.0",
     "@astrojs/mdx": "^4.2.3",
     "@astrojs/partytown": "^2.1.4",
+    "@astrojs/prefetch": "^0.4.1",
     "@astrojs/sitemap": "^3.3.0",
     "astro": "^5.5.4",
     "astro-seo": "^0.8.4",
@@ -26,6 +29,7 @@
     "@unocss/reset": "^66.1.0-beta.6",
     "@unocss/transformer-directives": "^66.1.0-beta.7",
     "astro-compress": "2.3.8",
+    "rollup-plugin-visualizer": "^5.14.0",
     "schema-dts": "^1.1.5",
     "unocss": "^66.1.0-beta.6"
   }
