@@ -19,7 +19,40 @@ export default defineConfig({
         forward: ['dataLayer.push']
       }
     }),
-    (await import("astro-compress")).default()
+    (await import("astro-compress")).default({
+      CSS: true,
+      HTML: {
+        'html-minifier-terser': {
+          removeAttributeQuotes: false,
+          collapseWhitespace: true,
+          removeComments: true
+        }
+      },
+      Image: {
+        sharp: {
+          jpeg: {
+            quality: 80,
+            mozjpeg: true
+          },
+          png: {
+            quality: 80,
+            compressionLevel: 9
+          },
+          webp: {
+            quality: 80
+          }
+        }
+      },
+      JavaScript: {
+        terser: {
+          compress: {
+            drop_console: true,
+            drop_debugger: true
+          },
+          mangle: true
+        }
+      }
+    })
   ],
   markdown: {
     shikiConfig: {
@@ -28,5 +61,23 @@ export default defineConfig({
   },
   build: {
     inlineStylesheets: 'never'
+  },
+  vite: {
+    build: {
+      cssCodeSplit: true,
+      chunkSizeWarningLimit: 1000
+    },
+    ssr: {
+      noExternal: ['@astrojs/prism']
+    }
+  },
+  image: {
+    service: {
+      entrypoint: 'sharp'
+    },
+    domains: ['goflow.plumbing'],
+    remotePatterns: [{
+      protocol: 'https'
+    }]
   }
 });
