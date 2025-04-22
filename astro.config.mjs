@@ -9,14 +9,17 @@ import partytown from '@astrojs/partytown';
 export default defineConfig({
   site: 'https://goflow.plumbing',
   integrations: [
-    UnoCSS({injectReset: true}),
+    UnoCSS({
+      injectReset: true
+    }),
     sitemap({lastmod: new Date()}),
     mdx(),
     partytown({
       config: {
         forward: ['dataLayer.push']
       }
-    })
+    }),
+    (await import("astro-compress")).default()
   ],
   markdown: {
     shikiConfig: {
