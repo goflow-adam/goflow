@@ -10,7 +10,6 @@
     "analyze": "ANALYZE=true astro build"
   },
   "dependencies": {
-    "@astrojs/image": "^0.18.0",
     "@astrojs/mdx": "^4.2.3",
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/prefetch": "^0.4.1",
