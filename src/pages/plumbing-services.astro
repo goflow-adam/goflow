@@ -41,12 +41,12 @@ const schema = createServiceListSchema(serviceList, regions);
       {services.map((service, index) => (
         <div>
           <h2>
-            <a href={`/${service.slug}`}>
+            <a href={`/${service.slug}/`}>
               {service.data.title}
             </a>
           </h2>
           <p>{service.data.description}</p>
-          <a href={`/${service.slug}`}>
+          <a href={`/${service.slug}/`}>
             {`Get ${service.data.linkText}`||'Learn More'}
           </a>
         </div>
@@ -59,8 +59,8 @@ const schema = createServiceListSchema(serviceList, regions);
         We're available 24/7 for all your emergency plumbing needs in Sonoma and Marin County.
       </p>
       <div>
-        <a href="/contact-us">Contact Us Now</a>
-        <a href="/emergency-plumbing-services">Emergency Services</a>
+        <a href="/contact-us/">Contact Us Now</a>
+        <a href="/emergency-plumbing-services/">Emergency Services</a>
       </div>
     </div>
 

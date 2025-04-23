@@ -20,7 +20,7 @@ const serviceMenu = services
   .filter(service => service.data.includeInMenu)
   .map(service => ({
     title: service.data.menuText || service.data.linkText || service.data.title,
-    path: `/${service.slug}`
+    path: `/${service.slug}/`
   }))
   .sort((a, b) => a.title.localeCompare(b.title));
 
@@ -30,23 +30,23 @@ const regionMenu = regions
   .filter(region => region.data.includeInMenu)
   .map(region => ({
     title: region.data.region,
-    path: `/${region.slug}`
+    path: `/${region.slug}/`
   }))
   .sort((a, b) => a.title.localeCompare(b.title));
 
 const navigation: NavItem[] = [
   {
     title: "Services",
-    path: "/plumbing-services",
+    path: "/plumbing-services/",
     submenu: serviceMenu
   },
   {
     title: "Service Regions",
-    path: "/service-regions",
+    path: "/service-regions/",
     submenu: regionMenu
   },
-  { title: "Contact Us", path: "/contact-us" },
-  { title: "FAQs", path: "/faqs" }
+  { title: "Contact Us", path: "/contact-us/" },
+  { title: "FAQs", path: "/faqs/" }
 ];
 
 const currentPath = Astro.url.pathname;

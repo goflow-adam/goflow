@@ -36,10 +36,10 @@ const schema = [
       <div class="hero-container">
         <h1>Third Generation Plumbing Services</h1>
         <h2>Since 1959</h2>
-        <p>Available 24/7 in <a href="/sonoma-county-plumbing">Sonoma</a> and <a href="/marin-county-plumbing">Marin Counties</a></p>
+        <p>Available 24/7 in <a href="/sonoma-county-plumbing/">Sonoma</a> and <a href="/marin-county-plumbing/">Marin Counties</a></p>
         <div class="space-x-4">
-          <a href="/contact-us" class="btn btn-primary">Contact Us Now</a>
-          <a href="/plumbing-services" class="btn btn-secondary">Our Services</a>
+          <a href="/contact-us/" class="btn btn-primary">Contact Us Now</a>
+          <a href="/plumbing-services/" class="btn btn-secondary">Our Services</a>
         </div>
       </div>
     </section>
@@ -53,7 +53,7 @@ const schema = [
             <div>
               <h3>{service.data.title}</h3>
               <p class="mb-4">{service.data.description}</p>
-              <a href={`/${service.slug}`}>{`Get ${service.data.linkText}`||'Learn More'}</a>
+              <a href={`/${service.slug}/`}>{`Get ${service.data.linkText}`||'Learn More'}</a>
             </div>
           ))}
         </div>
@@ -87,13 +87,13 @@ const schema = [
         <h2>Service Areas</h2>
         <div>
           <div>
-            <a href="/sonoma-county-plumbing">
+            <a href="/sonoma-county-plumbing/">
               <h3>Sonoma County</h3>
               <p>Serving all of Sonoma County with expert plumbing services</p>
             </a>
           </div>
           <div>
-            <a href="/marin-county-plumbing">
+            <a href="/marin-county-plumbing/">
               <h3>Marin County</h3>
               <p>Professional plumbing services throughout Marin County</p>
             </a>
@@ -107,7 +107,7 @@ const schema = [
       <div>
         <h2>Need a Plumber?</h2>
         <p>Contact us now for fast, reliable service</p>
-        <a href="/contact-us">
+        <a href="/contact-us/">
           Get in Touch
         </a>
     </div>

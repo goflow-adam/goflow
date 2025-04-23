@@ -21,7 +21,7 @@ export function createArticleSchema(article: CollectionEntry<'articles'>): Artic
       "@type": "Person",
       "name": "John Smith",
       "jobTitle": "Master Plumber",
-      "url": "https://goflow.plumbing/about",
+      "url": "https://goflow.plumbing/about/",
       "image": "https://goflow.plumbing/team/john-smith.jpg"
     },
     "publisher": {

@@ -31,13 +31,13 @@ const baseSchema = businessInfo;
     <SEO
       title={title}
       description={description}
-      canonical={new URL(Astro.url.pathname, 'https://goflow.plumbing').href}
+      canonical={new URL(Astro.url.pathname.replace(/\/?$/, '/'), 'https://goflow.plumbing').href}
       openGraph={{
         basic: {
           title,
           type: 'website',
           image: '/og-image.jpg',
-          url: new URL(Astro.url.pathname, 'https://goflow.plumbing').href
+          url: new URL(Astro.url.pathname.replace(/\/?$/, '/'), 'https://goflow.plumbing').href
         }
       }}
     />
@@ -115,7 +115,7 @@ const baseSchema = businessInfo;
             <h3>Contact Us</h3>
             <!-- Add phone and email -->
             <ul class="space-y-2">
-              <li><a href="/emergency-plumbing-services" class="nav-link">24/7 Emergency Service</a></li>
+              <li><a href="/emergency-plumbing-services/" class="nav-link">24/7 Emergency Service</a></li>
               <li><a href="mailto:info@goflow.plumbing" class="nav-link">info@goflow.plumbing</a></li>
               <li><a href="tel:7072008350" class="nav-link">(707) 200-8350</a></li>
             </ul>
@@ -123,17 +123,17 @@ const baseSchema = businessInfo;
           <div>
             <h3>Service Areas</h3>
             <ul class="space-y-2">
-              <li><a href="/sonoma-county-plumbing" class="nav-link">Sonoma County</a></li>
-              <li><a href="/marin-county-plumbing" class="nav-link">Marin County</a></li>
+              <li><a href="/sonoma-county-plumbing/" class="nav-link">Sonoma County</a></li>
+              <li><a href="/marin-county-plumbing/" class="nav-link">Marin County</a></li>
             </ul>
           </div>
           <div>
             <h3>Quick Links</h3>
             <ul class="space-y-2">
-              <li><a href="/privacy-policy" class="nav-link">Privacy Policy</a></li>
-              <li><a href="/team" class="nav-link">Our Team</a></li>
-              <li><a href="/about-us" class="nav-link">About Us</a></li>
-              <li><a href="/faqs" class="nav-link">FAQs</a></li>
+              <li><a href="/privacy-policy/" class="nav-link">Privacy Policy</a></li>
+              <li><a href="/team/" class="nav-link">Our Team</a></li>
+              <li><a href="/about-us/" class="nav-link">About Us</a></li>
+              <li><a href="/faqs/" class="nav-link">FAQs</a></li>
             </ul>
           </div>
         </div>

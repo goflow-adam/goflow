@@ -113,7 +113,7 @@ export function createServicePageSchema(service: CollectionEntry<'services'>): W
         'name': typeof area === 'string' ? area : area.name
       } as AdministrativeArea)) : 
       [],
-    'url': `https://goflow.plumbing/${service.slug}`,
+    'url': `https://goflow.plumbing/${service.slug}/`,
     'offers': {
       '@type': 'Offer',
       'priceCurrency': 'USD',
@@ -135,7 +135,7 @@ export function createServicePageSchema(service: CollectionEntry<'services'>): W
       'description': serviceDetail.output,
       'address': businessInfo.address as PostalAddress,
       'contactPoint': (businessInfo as Thing & { contactPoint: ContactPoint[] }).contactPoint,
-      'url': `https://goflow.plumbing/${service.slug}`,
+      'url': `https://goflow.plumbing/${service.slug}/`,
       'areaServed': businessInfo.areaServed
     } as HomeAndConstructionBusiness,
     'category': 'Plumbing',
@@ -176,7 +176,7 @@ export function createRegionPageSchema(region: CollectionEntry<'regions'>): Plum
     "@type": "Plumber",
     "name": businessInfo.name,
     "description": region.data.description,
-    "url": `https://goflow.plumbing/${region.slug}`,
+    "url": `https://goflow.plumbing/${region.slug}/`,
     "telephone": "(707) 200-8350",
     "address": {
       "@type": "PostalAddress",
@@ -288,7 +288,7 @@ export function createServiceListSchema(services: { title: string; description: 
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     '@id': 'https://goflow.plumbing/plumbing-services',
-    'url': 'https://goflow.plumbing/plumbing-services',
+    'url': 'https://goflow.plumbing/plumbing-services/',
     'name': 'Professional Plumbing Services in Sonoma & Marin County',
     'description': 'Comprehensive plumbing services including water heater repair, drain cleaning, emergency services, and more.',
     'provider': {
@@ -323,7 +323,7 @@ export function createServiceRegionsSchema(regions: CollectionEntry<'regions'>[]
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     '@id': 'https://goflow.plumbing/service-regions#webpage',
-    'url': 'https://goflow.plumbing/service-regions',
+    'url': 'https://goflow.plumbing/service-regions/',
     'name': 'Service Areas - GoFlow Plumbing',
     'description': 'Professional plumbing services throughout Sonoma and Marin Counties',
     'mainEntity': {
@@ -344,7 +344,7 @@ export function createServiceRegionsSchema(regions: CollectionEntry<'regions'>[]
               region.data.containsPlace.map(place => Array.isArray(place) ? place[0] : place) :
               []
           },
-          'url': `https://goflow.plumbing/${region.slug}`
+          'url': `https://goflow.plumbing/${region.slug}/`
         }
       }))
     }

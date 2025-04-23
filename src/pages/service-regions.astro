@@ -76,10 +76,10 @@ const mapCenter: [number, number] = [38.463848, -123];
         />
       </div>
     </div>
-
+    
     <div class="regions-container">
       {regions.map((region) => (
-        <a href={`/${region.slug}`} class="region-card">
+        <a href={`/${region.slug}/`} class="region-card">
           <h2>{region.data.region}</h2>
           <p>{region.data.description}</p>
           <span class="view-area">View {region.data.region} Service Area</span>
@@ -94,8 +94,8 @@ const mapCenter: [number, number] = [38.463848, -123];
         Contact us today for expert plumbing solutions.
       </p>
       <div>
-        <a href="/contact-us" class="primary-cta">Contact Us Now</a>
-        <a href="/emergency-plumbing-services" class="secondary-cta">Emergency Service</a>
+        <a href="/contact-us/" class="primary-cta">Contact Us Now</a>
+        <a href="/emergency-plumbing-services/" class="secondary-cta">Emergency Service</a>
       </div>
     </div>
 
