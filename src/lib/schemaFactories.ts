@@ -318,6 +318,36 @@ export function createServiceListSchema(services: { title: string; description: 
   } as WithContext<WebPage>;
 }
 
+export function createArticleListSchema(articles: CollectionEntry<'articles'>[]): WithContext<WebPage> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': 'https://goflow.plumbing/articles#webpage',
+    'url': 'https://goflow.plumbing/articles/',
+    'name': 'Plumbing Articles & Resources | GoFlow Plumbing',
+    'description': 'Expert plumbing tips, maintenance guides, and industry insights from GoFlow Plumbing\'s experienced professionals.',
+    'mainEntity': {
+      '@type': 'ItemList',
+      'itemListElement': articles.map((article, index) => ({
+        '@type': 'ListItem',
+        'position': index + 1,
+        'item': {
+          '@type': 'Article',
+          'headline': article.data.title,
+          'description': article.data.description,
+          'image': article.data.heroImage,
+          'datePublished': article.data.pubDate,
+          'mainEntityOfPage': {
+            '@type': 'WebPage',
+            '@id': `https://goflow.plumbing/articles/${article.slug}/`
+          },
+          'url': `https://goflow.plumbing/articles/${article.slug}/`
+        }
+      }))
+    }
+  };
+}
+
 export function createServiceRegionsSchema(regions: CollectionEntry<'regions'>[]): WithContext<WebPage> {
   return {
     '@context': 'https://schema.org',

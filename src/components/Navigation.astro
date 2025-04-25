@@ -34,6 +34,16 @@ const regionMenu = regions
   }))
   .sort((a, b) => a.title.localeCompare(b.title));
 
+// Get all articles and sort them by date
+const articles = await getCollection('articles');
+const articleMenu = articles
+  .filter(article => !article.data.draft) // Only show published articles
+  .map(article => ({
+    title: article.data.title,
+    path: `/articles/${article.slug}/`
+  }))
+  .sort((a, b) => a.title.localeCompare(b.title));
+
 const navigation: NavItem[] = [
   {
     title: "Services",
@@ -41,9 +51,14 @@ const navigation: NavItem[] = [
     submenu: serviceMenu
   },
   {
-    title: "Service Regions",
+    title: "Regions",
     path: "/service-regions/",
     submenu: regionMenu
+  },
+  {
+    title: "Articles",
+    path: "/articles/",
+    submenu: articleMenu
   },
   { title: "Contact Us", path: "/contact-us/" },
   { title: "FAQs", path: "/faqs/" }
@@ -57,7 +72,7 @@ function isActive(path: string): boolean {
 ---
 
 {isDesktop ? (
-  <ul class="flex space-x-6">
+  <ul class="flex space-x-4">
     {navigation.map(item => (
       <li class="relative group">
         <a

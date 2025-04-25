@@ -1,0 +1,48 @@
+.articles-header {
+  @apply mb-8;
+}
+
+.article-grid {
+  @apply grid gap-8;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.article-card {
+  @apply bg-white rounded-lg overflow-hidden shadow-sm transition duration-200;
+}
+
+.article-card:hover {
+  @apply -translate-y-1;
+}
+
+.article-image-container {
+  @apply w-full h-[200px] overflow-hidden;
+}
+
+.article-image {
+  @apply w-full h-full object-cover;
+}
+
+.article-content {
+  @apply p-6;
+}
+
+.article-title {
+  @apply text-xl text-primary mb-2 group-hover:text-primary-dark transition;
+}
+
+.article-date {
+  @apply text-sm text-gray-600 mb-4;
+}
+
+.article-description {
+  @apply text-gray-700 mb-6 line-clamp-3;
+}
+
+.article-link {
+  @apply group block;
+}
+
+.read-more {
+  @apply inline-flex items-center text-primary font-semibold group-hover:text-primary-dark transition;
+}

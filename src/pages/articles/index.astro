@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import '../../styles/articles.css';
+import { createArticleListSchema } from '../../lib/schemaFactories';
+
+const articles = await getCollection('articles');
+const sortedArticles = articles.sort((a, b) => {
+  return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
+});
+
+const title = "Plumbing Articles & Resources | GoFlow Plumbing";
+const description = "Expert plumbing tips, maintenance guides, and industry insights from GoFlow Plumbing's experienced professionals. Stay informed about your plumbing system.";
+
+// Create JSON-LD schema
+const schema = createArticleListSchema(sortedArticles);
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <article class="article">
+    <div class="articles-header">
+      <h1>Plumbing Articles & Resources</h1>
+      <h3>Expert tips, maintenance guides, and industry insights from our experienced professionals.</h3>
+    </div>
+
+    <div class="article-grid">
+      {sortedArticles.map(article => (
+        <a href={`/articles/${article.slug}/`} class="article-link">
+          <article class="article-card">
+            {article.data.heroImage && (
+              <div class="article-image-container">
+                <img src={article.data.heroImage} alt={article.data.title} class="article-image" />
+              </div>
+            )}
+            <div class="article-content">
+              <h2 class="article-title">{article.data.title}</h2>
+              <p class="article-date">
+                {new Date(article.data.pubDate).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </p>
+              <p class="article-description">{article.data.description}</p>
+              <span class="read-more">
+                Read More
+                <span class="sr-only">about {article.data.title}</span>
+              </span>
+            </div>
+          </article>
+        </a>
+      ))}
+    </div>
+  </article>
+</BaseLayout>

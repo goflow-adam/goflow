@@ -69,6 +69,7 @@ export default defineConfig({
   vite: {
     build: {
       cssCodeSplit: true,
+      sourcemap: true,
       chunkSizeWarningLimit: 1000,
       rollupOptions: {
         output: {
