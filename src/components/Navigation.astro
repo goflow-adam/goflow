@@ -39,7 +39,7 @@ const articles = await getCollection('articles');
 const articleMenu = articles
   .filter(article => !article.data.draft) // Only show published articles
   .map(article => ({
-    title: article.data.title,
+    title: article.data.linkText || article.data.title,
     path: `/articles/${article.slug}/`
   }))
   .sort((a, b) => a.title.localeCompare(b.title));

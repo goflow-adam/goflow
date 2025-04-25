@@ -16,8 +16,7 @@ const description = "Expert plumbing tips, maintenance guides, and industry insi
 const schema = createArticleListSchema(sortedArticles);
 ---
 
-<BaseLayout title={title} description={description}>
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<BaseLayout title={title} description={description} schema={schema}>
   <article class="article">
     <div class="articles-header">
       <h1>Plumbing Articles & Resources</h1>

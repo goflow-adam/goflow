@@ -10,8 +10,8 @@ interface Props {
 const { article } = Astro.props;
 const { Content } = await article.render();
 
-// Use frontmatter schema if present, otherwise generate one
-const schema = article.data.schema || createArticlePageSchema(article);
+// Always use the schema factory to ensure consistent formatting
+const schema = createArticlePageSchema(article);
 ---
 
 <BaseLayout 
@@ -19,7 +19,7 @@ const schema = article.data.schema || createArticlePageSchema(article);
   description={article.data.description}
   schema={schema}
 >
-  <article class="article max-w-4xl">
+<article class="article markdown-content article-content">
     {article.data.heroImage && (
       <div class="mb-8">
         <img
@@ -29,9 +29,7 @@ const schema = article.data.schema || createArticlePageSchema(article);
       </div>
     )}
     
-    <div class="prose-container markdown-content">
-      <Content />
-    </div>
+    <Content />
 
     <div class="pitch">
       <h2>Need Professional Plumbing Help?</h2>

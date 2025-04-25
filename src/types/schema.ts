@@ -1,4 +1,4 @@
-import type { WithContext, Thing, FAQPage, Question, WebPage, Service } from 'schema-dts';
+import type { WithContext, Thing, FAQPage, Question, WebPage, Service, Article } from 'schema-dts';
 
 export interface BaseSchema {
   "@context": "https://schema.org";
@@ -481,4 +481,6 @@ export type Schema =
   | TeamPageSchema
   | WithContext<WebPage>
   | WithContext<Service>
+  | WithContext<Article>
+  | WithContext<FAQPage>
   | Schema[];

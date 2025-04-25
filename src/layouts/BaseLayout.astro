@@ -4,7 +4,8 @@ import Navigation from '../components/Navigation.astro';
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import '../styles/navigation.css';
 import '../styles/base-layout.css';
-import type { Schema, FAQPageSchema } from '../types/schema';
+import type { Schema } from '../types/schema';
+import type { WithContext, Article, FAQPage } from 'schema-dts';
 import { businessInfo } from '../lib/schema';
 
 interface Props {
@@ -42,8 +43,6 @@ const baseSchema = businessInfo;
       }}
     />
     {(() => {
-      const isFAQPage = (s: Schema): s is FAQPageSchema => 'mainEntity' in s && s['@type'] === 'FAQPage';
-      
       if (!schema) {
         return <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />;
       }

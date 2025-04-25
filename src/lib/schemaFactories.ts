@@ -1,26 +1,26 @@
 import type { CollectionEntry } from 'astro:content';
-import type { PlumberSchema, SearchResultsPageSchema } from '../types/schema';
+import type { PlumberSchema } from '../types/schema';
 import type { 
-  WithContext,
+  Article,
+  ItemList,
+  ListItem,
+  PostalAddress,
+  Service,
+  Thing,
   WebPage,
   WebSite,
   Plumber,
-  Service,
-  ItemList,
-  ListItem,
+  WithContext,
   AdministrativeArea,
   HomeAndConstructionBusiness,
   GeoCircle,
   GeoCoordinates,
   Offer,
-  PostalAddress,
-  SearchAction,
-  Organization,
-  Article,
-  SearchResultsPage,
-  ContactPoint,
-  Thing
+  SearchAction, 
+  ContactPoint
 } from 'schema-dts';
+import { businessInfo } from './schema';
+import { createOrganizationSchema } from './organizationSchemaFactory';
 
 // Define types for our specific administrative areas
 type County = AdministrativeArea & {
@@ -50,8 +50,6 @@ type PlumbingService = Service & {
     '@id': string
   };
 };
-
-import { businessInfo } from './schema';
 
 export function createServicePageSchema(service: CollectionEntry<'services'>): WithContext<Service> {
   // Define service-specific details
@@ -144,25 +142,77 @@ export function createServicePageSchema(service: CollectionEntry<'services'>): W
 }
 
 export function createArticlePageSchema(article: CollectionEntry<'articles'>): WithContext<Article> {
+  // Destructure and omit schema-specific properties and duplicates from businessInfo
+  const { 
+    address, 
+    image, 
+    '@type': _, 
+    '@context': __, 
+    '@id': ___, 
+    name: orgName,
+    url: orgUrl,
+    telephone: orgPhone,
+    ...orgInfo 
+  } = businessInfo;
+
+  const organization = {
+    '@type': 'Organization',
+    '@id': 'https://goflow.plumbing/#organization',
+    'name': businessInfo.name,
+    'url': businessInfo.url
+  };
+  const articleUrl = `https://goflow.plumbing/articles/${article.slug}/`;
+  
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     'headline': article.data.title,
     'description': article.data.description,
-    'datePublished': article.data.pubDate.toISOString(),
-    'dateModified': article.data.updatedDate?.toISOString() || article.data.pubDate.toISOString(),
-    'author': businessInfo,
-    'publisher': businessInfo,
+    'datePublished': `${article.data.pubDate}T00:00:00-07:00`,
+    'dateModified': article.data.updatedDate ? `${article.data.updatedDate}T00:00:00-07:00` : `${article.data.pubDate}T00:00:00-07:00`,
+    'author': organization,
+    'publisher': organization,
+    'isAccessibleForFree': true,
+    'hasPart': {
+      '@type': 'WebPageElement',
+      'isAccessibleForFree': true,
+      'cssSelector': '.article-content'
+    },
     'mainEntityOfPage': {
       '@type': 'WebPage',
-      '@id': `https://goflow.plumbing/${article.slug}`
+      '@id': articleUrl,
+      'url': articleUrl,
+      'name': article.data.title,
+      'description': article.data.description,
+      'breadcrumb': {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Home',
+            'item': 'https://goflow.plumbing/'
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': 'Articles',
+            'item': 'https://goflow.plumbing/articles/'
+          },
+          {
+            '@type': 'ListItem',
+            'position': 3,
+            'name': article.data.title,
+            'item': articleUrl
+          }
+        ]
+      }
     } as WebPage,
     'image': article.data.heroImage || 'https://goflow.plumbing/GoFlow2.jpg',
     'inLanguage': 'en-US',
-    'isAccessibleForFree': true,
-    "keywords": article.data.tags || [],
-    "articleSection": article.data.category,
-    "genre": "Professional Services"
+    'keywords': article.data.tags || [],
+    'articleSection': article.data.category,
+    'genre': 'Professional Services'
   };
 }
 
@@ -231,21 +281,6 @@ export function createRegionPageSchema(region: CollectionEntry<'regions'>): Plum
       ]
     }
   };
-}
-
-export function createOrganizationSchema(): WithContext<Organization> {
-  // Filter out schema-specific properties from businessInfo
-  const { '@type': _, '@context': __, '@id': ___, ...businessData } = businessInfo;
-  
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    ...businessData,
-    'sameAs': [
-      'https://www.facebook.com/profile.php?id=61574410838549',
-      'https://www.yelp.com/biz/goflow-plumbing-sonoma'
-    ]
-  } as WithContext<Organization>;
 }
 
 export function createWebSiteSchema(): WithContext<WebSite> {
@@ -319,6 +354,8 @@ export function createServiceListSchema(services: { title: string; description: 
 }
 
 export function createArticleListSchema(articles: CollectionEntry<'articles'>[]): WithContext<WebPage> {
+  const organization = createOrganizationSchema();
+
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -335,17 +372,19 @@ export function createArticleListSchema(articles: CollectionEntry<'articles'>[])
           '@type': 'Article',
           'headline': article.data.title,
           'description': article.data.description,
-          'image': article.data.heroImage,
-          'datePublished': article.data.pubDate,
+          'image': article.data.heroImage || 'https://goflow.plumbing/GoFlow2.jpg',
+          'datePublished': new Date(article.data.pubDate).toISOString(),
+          'author': organization,
+          'publisher': organization,
           'mainEntityOfPage': {
             '@type': 'WebPage',
             '@id': `https://goflow.plumbing/articles/${article.slug}/`
           },
           'url': `https://goflow.plumbing/articles/${article.slug}/`
-        }
-      }))
-    }
-  };
+        } as Article
+      })) as ListItem[]
+    } as ItemList
+  } as WithContext<WebPage>;
 }
 
 export function createServiceRegionsSchema(regions: CollectionEntry<'regions'>[]): WithContext<WebPage> {
