@@ -51,6 +51,10 @@ const services = defineCollection({
   schema: baseSchema.extend({
     featured: z.boolean().default(false),
     includeInMenu: z.boolean().default(false),
+    offers: z.array(z.object({
+      name: z.string(),
+      description: z.string(),
+    })).optional(),
   }),
 });
 

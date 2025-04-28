@@ -1,23 +1,38 @@
 import type { CollectionEntry } from 'astro:content';
+
+interface ServiceData extends CollectionEntry<'services'> {
+  data: {
+    title: string;
+    description: string;
+    pubDate: Date;
+    draft: boolean;
+    featured: boolean;
+    includeInMenu: boolean;
+    linkText?: string;
+    menuText?: string;
+    updatedDate?: Date;
+    heroImage?: string;
+    schema?: any;
+    offers?: Array<{
+      name: string;
+      description: string;
+    }>;
+  };
+}
 import type { PlumberSchema } from '../types/schema';
 import type { 
   Article,
   ItemList,
   ListItem,
-  PostalAddress,
   Service,
-  Thing,
   WebPage,
   WebSite,
   Plumber,
   WithContext,
   AdministrativeArea,
-  HomeAndConstructionBusiness,
-  GeoCircle,
-  GeoCoordinates,
-  Offer,
   SearchAction, 
-  ContactPoint
+  ContactPoint,
+  LocalBusiness
 } from 'schema-dts';
 import { businessInfo } from './schema';
 import { createOrganizationSchema } from './organizationSchemaFactory';
@@ -51,7 +66,7 @@ type PlumbingService = Service & {
   };
 };
 
-export function createServicePageSchema(service: CollectionEntry<'services'>): WithContext<Service> {
+export function createServicePageSchema(service: ServiceData): WithContext<LocalBusiness> {
   // Define service-specific details
   const serviceDetails: Record<string, { output: string, time: string }> = {
     'clogged-drains-rootered': {
@@ -93,52 +108,61 @@ export function createServicePageSchema(service: CollectionEntry<'services'>): W
     time: 'PT3H'
   };
 
-  return {
+  const organization = createOrganizationSchema();
+
+  interface ServiceOffer {
+    name: string;
+    description: string;
+  }
+
+  const serviceSchema: WithContext<LocalBusiness> = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
-    'name': service.data.title,
-    'description': service.data.description,
-    'provider': {
-      '@id': 'https://goflow.plumbing/#business'
+    '@type': 'Plumber',
+    '@id': organization['@id'],
+    'name': organization.name,
+    'url': organization.url,
+    'telephone': organization.telephone,
+    'priceRange': organization.priceRange,
+    'image': organization.image,
+    'address': organization.address,
+    'areaServed': {
+      '@type': 'GeoCircle',
+      'geoMidpoint': {
+        '@type': 'GeoCoordinates',
+        'latitude': 38.3147602,
+        'longitude': -122.4849469
+      },
+      'geoRadius': '50'
     },
-    'contactPoint': (businessInfo as Thing & { contactPoint: ContactPoint[] }).contactPoint,
-    'priceRange': businessInfo.priceRange || '$$',
-    'address': businessInfo.address as PostalAddress,
-    'image': service.data.heroImage || 'https://goflow.plumbing/GoFlow2.jpg',
-    'areaServed': Array.isArray(businessInfo.areaServed) ? 
-      businessInfo.areaServed.map(area => ({
-        '@type': 'AdministrativeArea',
-        'name': typeof area === 'string' ? area : area.name
-      } as AdministrativeArea)) : 
-      [],
-    'url': `https://goflow.plumbing/${service.slug}/`,
-    'offers': {
-      '@type': 'Offer',
-      'priceCurrency': 'USD',
-      'availability': 'https://schema.org/InStock',
-      'priceRange': '$$',
-      'areaServed': {
-        '@type': 'GeoCircle',
-        'geoMidpoint': {
-          '@type': 'GeoCoordinates',
-          'latitude': 38.3147602,
-          'longitude': -122.4849469
-        } as GeoCoordinates,
-        'geoRadius': '50'
-      } as GeoCircle
-    } as Offer,
-    'serviceOutput': {
-      '@type': 'HomeAndConstructionBusiness',
-      'name': service.data.title,
-      'description': serviceDetail.output,
-      'address': businessInfo.address as PostalAddress,
-      'contactPoint': (businessInfo as Thing & { contactPoint: ContactPoint[] }).contactPoint,
-      'url': `https://goflow.plumbing/${service.slug}/`,
-      'areaServed': businessInfo.areaServed
-    } as HomeAndConstructionBusiness,
-    'category': 'Plumbing',
-    'timeRequired': serviceDetail.time
-  } as WithContext<Service>;
+    'openingHoursSpecification': {
+      '@type': 'OpeningHoursSpecification',
+      'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      'opens': '00:00',
+      'closes': '23:59'
+    },
+    'description': `${service.data.description}. ${serviceDetail.output}`,
+    'hasOfferCatalog': {
+      '@type': 'OfferCatalog',
+      'name': `${service.data.title} Services`,
+      'itemListElement': (service.data.offers as ServiceOffer[] | undefined)?.map(offer => ({
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': offer.name,
+          'description': offer.description
+        }
+      })) || [{
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': service.data.title,
+          'description': service.data.description
+        }
+      }]
+    }
+  };
+
+  return serviceSchema;
 }
 
 export function createArticlePageSchema(article: CollectionEntry<'articles'>): WithContext<Article> {
@@ -155,14 +179,20 @@ export function createArticlePageSchema(article: CollectionEntry<'articles'>): W
     ...orgInfo 
   } = businessInfo;
 
-  const organization = {
-    '@type': 'Organization',
-    '@id': 'https://goflow.plumbing/#organization',
-    'name': businessInfo.name,
-    'url': businessInfo.url
-  };
+  const organization = createOrganizationSchema();
   const articleUrl = `https://goflow.plumbing/articles/${article.slug}/`;
   
+  // Create properly typed organization for author/publisher
+  const typedOrganization = {
+    '@type': 'Organization' as const,
+    '@id': organization['@id'],
+    'name': organization.name,
+    'url': organization.url,
+    'logo': organization.image,
+    'address': organization.address,
+    'telephone': organization.telephone
+  };
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -170,13 +200,20 @@ export function createArticlePageSchema(article: CollectionEntry<'articles'>): W
     'description': article.data.description,
     'datePublished': `${article.data.pubDate}T00:00:00-07:00`,
     'dateModified': article.data.updatedDate ? `${article.data.updatedDate}T00:00:00-07:00` : `${article.data.pubDate}T00:00:00-07:00`,
-    'author': organization,
-    'publisher': organization,
+    'author': typedOrganization,
+    'publisher': typedOrganization,
     'isAccessibleForFree': true,
     'hasPart': {
       '@type': 'WebPageElement',
       'isAccessibleForFree': true,
       'cssSelector': '.article-content'
+    },
+    'isPartOf': {
+      '@type': 'WebSite',
+      'isAccessibleForFree': true,
+      '@id': 'https://goflow.plumbing/#website',
+      'name': 'GoFlow Plumbing',
+      'url': 'https://goflow.plumbing'
     },
     'mainEntityOfPage': {
       '@type': 'WebPage',
@@ -186,6 +223,7 @@ export function createArticlePageSchema(article: CollectionEntry<'articles'>): W
       'description': article.data.description,
       'breadcrumb': {
         '@type': 'BreadcrumbList',
+        'name': article.data.title,
         'itemListElement': [
           {
             '@type': 'ListItem',
@@ -388,6 +426,8 @@ export function createArticleListSchema(articles: CollectionEntry<'articles'>[])
 }
 
 export function createServiceRegionsSchema(regions: CollectionEntry<'regions'>[]): WithContext<WebPage> {
+  const organization = createOrganizationSchema();
+  
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -395,6 +435,18 @@ export function createServiceRegionsSchema(regions: CollectionEntry<'regions'>[]
     'url': 'https://goflow.plumbing/service-regions/',
     'name': 'Service Areas - GoFlow Plumbing',
     'description': 'Professional plumbing services throughout Sonoma and Marin Counties',
+    'about': {
+      '@type': 'Plumber',
+      '@id': 'https://goflow.plumbing/#business',
+      'name': organization.name,
+      'url': organization.url,
+      'telephone': organization.telephone,
+      'image': organization.image,
+      'address': organization.address,
+      'priceRange': organization.priceRange,
+      'areaServed': organization.areaServed,
+      'openingHoursSpecification': organization.openingHoursSpecification
+    },
     'mainEntity': {
       '@type': 'ItemList',
       'itemListElement': regions.map((region, index) => ({
@@ -403,6 +455,7 @@ export function createServiceRegionsSchema(regions: CollectionEntry<'regions'>[]
         'item': {
           '@type': 'Service',
           'name': region.data.title,
+          'url': `https://goflow.plumbing/${region.slug}/`,
           'description': region.data.description,
           'provider': { '@id': 'https://goflow.plumbing/#business' },
           'areaServed': {
@@ -412,8 +465,7 @@ export function createServiceRegionsSchema(regions: CollectionEntry<'regions'>[]
             'containsPlace': region.data.containsPlace && Array.isArray(region.data.containsPlace) ?
               region.data.containsPlace.map(place => Array.isArray(place) ? place[0] : place) :
               []
-          },
-          'url': `https://goflow.plumbing/${region.slug}/`
+          }
         }
       }))
     }

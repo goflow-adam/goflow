@@ -3,44 +3,11 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { createServiceRegionsSchema } from '../lib/schemaFactories';
 import ServiceAreaMap from '../components/ServiceAreaMap.astro';
+import SonomaCountyGeo from '../constants/SonomaCountyGeo.js';
+import MarinCountyGeo from '../constants/MarinCountyGeo.js';
 import '../styles/pages/service-regions.css';
 
-const serviceAreas = [
-  {
-    name: "Sonoma County",
-    description: "Full service area coverage in Sonoma County",
-    coordinates: [[
-      [-123.0874, 38.3052],
-      [-122.9265, 38.4561],
-      [-122.7545, 38.7128],
-      [-122.9154, 38.8637],
-      [-123.0764, 38.9891],
-      [-123.2373, 38.9891],
-      [-123.3983, 38.8637],
-      [-123.5592, 38.7128],
-      [-123.5592, 38.5619],
-      [-123.3983, 38.4110],
-      [-123.2373, 38.3052],
-      [-123.0874, 38.3052]
-    ]]
-  },
-  {
-    name: "Marin County",
-    description: "Full service area coverage in Marin County",
-    coordinates: [[
-      [-122.7545, 37.9089],
-      [-122.5936, 38.0598],
-      [-122.4327, 38.2107],
-      [-122.5936, 38.3616],
-      [-122.7545, 38.4870],
-      [-122.9154, 38.4870],
-      [-123.0764, 38.3616],
-      [-123.0764, 38.2107],
-      [-122.9154, 38.0598],
-      [-122.7545, 37.9089]
-    ]]
-  }
-];
+const serviceAreas = [SonomaCountyGeo, MarinCountyGeo];
 
 interface RegionFrontmatter {
   title: string;

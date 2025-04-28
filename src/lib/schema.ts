@@ -15,15 +15,12 @@ type PlumberOrganization = BaseSchema & {
   contactPoint: ContactPoint[];
   address: PostalAddress;
   geo?: GeoCoordinates;
-  areaServed?: string[] | Array<{
+  areaServed?: Array<{
     '@type': 'AdministrativeArea';
     name: string;
+    description: string;
   }>;
-  serviceArea?: {
-    '@type': 'GeoCircle';
-    geoMidpoint: GeoCoordinates;
-    geoRadius: string;
-  };
+
   openingHoursSpecification?: OpeningHoursSpecification[];
   priceRange?: string;
   paymentAccepted?: string[];
@@ -41,7 +38,7 @@ export const businessInfo: PlumberOrganization = {
   }],
   "@id": "https://goflow.plumbing/#business",
   "name": "GoFlow Plumbing",
-
+  "telephone": "(707) 200-8350",
   "email": "info@goflow.plumbing",
   "image": "https://goflow.plumbing/GoFlow2.jpg",
   "description": "Residential plumbing services in Sonoma and Marin County",
@@ -59,16 +56,18 @@ export const businessInfo: PlumberOrganization = {
     "longitude": -122.4849469
   },
   "url": "https://goflow.plumbing",
-  "areaServed": ["Sonoma County", "Marin County"],
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.3147602,
-      "longitude": -122.4849469
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Sonoma County",
+      "description": "Full service plumbing throughout Sonoma County"
     },
-    "geoRadius": "50"
-  },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Marin County",
+      "description": "Full service plumbing throughout Marin County"
+    }
+  ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
