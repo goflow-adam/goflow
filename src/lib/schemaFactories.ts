@@ -321,6 +321,25 @@ export function createRegionPageSchema(region: CollectionEntry<'regions'>): Plum
   };
 }
 
+export function createSiteNavigationSchema(): WithContext<any> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SiteNavigationElement',
+    'name': [
+      'Contact GoFlow',
+      'Our Services',
+      'Regions Served',
+      'Our Team'
+    ],
+    'url': [
+      'https://goflow.plumbing/contact-us',
+      'https://goflow.plumbing/plumbing-services',
+      'https://goflow.plumbing/regions-served',
+      'https://goflow.plumbing/team'
+    ]
+  };
+}
+
 export function createWebSiteSchema(): WithContext<WebSite> {
   return {
     '@context': 'https://schema.org',
@@ -331,7 +350,8 @@ export function createWebSiteSchema(): WithContext<WebSite> {
       '@type': 'SearchAction',
       'target': 'https://goflow.plumbing/search?q={search_term_string}',
       'query-input': 'required name=search_term_string'
-    } as SearchAction
+    } as SearchAction,
+    'hasPart': createSiteNavigationSchema()
   } as WithContext<WebSite>;
 }
 

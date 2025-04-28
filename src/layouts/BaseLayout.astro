@@ -7,6 +7,7 @@ import '../styles/base-layout.css';
 import type { Schema } from '../types/schema';
 import type { WithContext, Article, FAQPage } from 'schema-dts';
 import { businessInfo } from '../lib/schema';
+import { createWebSiteSchema } from '../lib/schemaFactories';
 
 interface Props {
   title: string;
@@ -16,7 +17,8 @@ interface Props {
 
 const { title, description, schema } = Astro.props;
 
-const baseSchema = businessInfo;
+// Always include website and business schemas
+const baseSchemas = [createWebSiteSchema(), businessInfo];
 ---
 
 <!DOCTYPE html>
@@ -43,21 +45,19 @@ const baseSchema = businessInfo;
       }}
     />
     {(() => {
-      if (!schema) {
-        return <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />;
-      }
-      
-      if (Array.isArray(schema)) {
-        return (
-          <>
-            {schema.map(item => (
-              <script type="application/ld+json" set:html={JSON.stringify(item)} />
-            ))}
-          </>
-        );
-      }
-      
-      return <script type="application/ld+json" set:html={JSON.stringify(schema)} />;
+      const allSchemas = Array.isArray(schema)
+        ? [...baseSchemas, ...schema]
+        : schema
+        ? [...baseSchemas, schema]
+        : baseSchemas;
+
+      return (
+        <>
+          {allSchemas.map(item => (
+            <script type="application/ld+json" set:html={JSON.stringify(item)} />
+          ))}
+        </>
+      );
     })()}
     <link rel="icon shortcut" type="image/svg+xml" href="/favicon.ico" />
     <link rel="manifest" href="/site.webmanifest" />
