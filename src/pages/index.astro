@@ -17,10 +17,12 @@ const featuredServices = await getCollection('services', ({ data }: { data: Serv
 import { createWebSiteSchema, createOrganizationSchema } from '../lib/schema/factories';
 import type { Schema } from '../types/schema';
 
-const schema = [
+const [orgSchema, webSiteSchema] = await Promise.all([
   createOrganizationSchema(),
   createWebSiteSchema()
-] as Schema[];
+]);
+
+const schema = [orgSchema, webSiteSchema];
 ---
 
 <BaseLayout
