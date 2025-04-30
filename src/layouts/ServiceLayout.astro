@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
-import { createServicePageSchema } from '../lib/schemaFactories';
+import { createServicePageSchema } from '../lib/schema/factories';
 
 interface Props {
   service: CollectionEntry<'services'>;
@@ -10,7 +10,17 @@ interface Props {
 const { service } = Astro.props;
 const { Content } = await service.render();
 
-const schema = createServicePageSchema(service);
+const serviceDetails = {
+  slug: service.slug,
+  title: service.data.title,
+  description: service.data.description,
+  offers: service.data.offers?.map(offer => ({
+    name: offer.name,
+    description: offer.description
+  }))
+};
+
+const schema = await createServicePageSchema(serviceDetails);
 ---
 
 <BaseLayout 

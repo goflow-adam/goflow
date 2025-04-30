@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
-import { createRegionPageSchema } from '../lib/schemaFactories';
+import { createRegionPageSchema } from '../lib/schema/factories';
 
 
 interface Props {
@@ -10,7 +10,13 @@ interface Props {
 
 const { region } = Astro.props;
 
-const schema = createRegionPageSchema(region);
+const regionDetails = {
+  name: region.data.title,
+  url: `https://goflow.plumbing/service-regions/${region.slug}/`,
+  description: region.data.description
+};
+
+const schema = createRegionPageSchema(regionDetails);
 
 const { Content } = await region.render();
 

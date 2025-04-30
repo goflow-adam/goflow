@@ -1,0 +1,37 @@
+---
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQ[];
+  title?: string;
+}
+
+const { faqs, title = "Frequently Asked Questions" } = Astro.props;
+---
+
+<section class="faq-section">
+  <h2>{title}</h2>
+  {faqs.map((faq) => (
+    <details>
+      <summary>{faq.question}</summary>
+      <div set:html={faq.answer} />
+    </details>
+  ))}
+</section>
+
+<style>
+  .faq-section details {
+    margin-bottom: 1rem;
+  }
+  .faq-section summary {
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .faq-section details > div {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+  }
+</style>

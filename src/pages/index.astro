@@ -14,12 +14,11 @@ const featuredServices = await getCollection('services', ({ data }: { data: Serv
   data.featured && !data.draft
 );
 
-import { createWebSiteSchema } from '../lib/schemaFactories';
-import { businessInfo } from '../lib/schema';
+import { createWebSiteSchema, createOrganizationSchema } from '../lib/schema/factories';
 import type { Schema } from '../types/schema';
 
 const schema = [
-  businessInfo,
+  createOrganizationSchema(),
   createWebSiteSchema()
 ] as Schema[];
 ---

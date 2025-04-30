@@ -6,8 +6,7 @@ import '../styles/navigation.css';
 import '../styles/base-layout.css';
 import type { Schema } from '../types/schema';
 import type { WithContext, Article, FAQPage } from 'schema-dts';
-import { businessInfo } from '../lib/schema';
-import { createWebSiteSchema } from '../lib/schemaFactories';
+import { createOrganizationSchema, createWebSiteSchema } from '../lib/schema/factories';
 
 interface Props {
   title: string;
@@ -18,7 +17,11 @@ interface Props {
 const { title, description, schema } = Astro.props;
 
 // Always include website and business schemas
-const baseSchemas = [createWebSiteSchema(), businessInfo];
+const [websiteSchema, organizationSchema] = await Promise.all([
+  createWebSiteSchema(),
+  createOrganizationSchema()
+]);
+const baseSchemas = [websiteSchema, organizationSchema];
 ---
 
 <!DOCTYPE html>
@@ -51,9 +54,12 @@ const baseSchemas = [createWebSiteSchema(), businessInfo];
         ? [...baseSchemas, schema]
         : baseSchemas;
 
+      // Ensure no undefined/null schemas
+      const validSchemas = allSchemas.filter(s => s !== undefined && s !== null);
+
       return (
         <>
-          {allSchemas.map(item => (
+          {validSchemas.map(item => (
             <script type="application/ld+json" set:html={JSON.stringify(item)} />
           ))}
         </>

@@ -1,0 +1,57 @@
+.pricing-container {
+  @apply container mx-auto px-4 py-8;
+}
+
+.pricing-container h1 {
+  @apply text-4xl font-bold text-gray-900 mb-8;
+}
+
+.pricing-container h2 {
+  @apply text-2xl font-semibold text-gray-800 mt-12 mb-6;
+}
+
+.pricing-container p {
+  @apply text-lg text-gray-700 mb-6;
+}
+
+.pricing-container ul {
+  @apply list-disc list-inside mb-8 text-gray-700;
+}
+
+.pricing-container li {
+  @apply mb-2;
+}
+
+.pricing-container table {
+  @apply w-full mb-8 border-collapse;
+}
+
+.pricing-container th {
+  @apply bg-gray-100 text-left py-3 px-4 font-semibold text-gray-700 border border-gray-200;
+}
+
+.pricing-container td {
+  @apply py-3 px-4 border border-gray-200 text-gray-700;
+}
+
+/* Price ranges */
+.pricing-container td:nth-child(2) {
+  @apply font-medium text-gray-900;
+}
+
+/* Details column */
+.pricing-container td:nth-child(3) {
+  @apply text-gray-600 italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pricing-container table {
+    @apply block overflow-x-auto;
+  }
+  
+  .pricing-container th,
+  .pricing-container td {
+    @apply min-w-[200px];
+  }
+}

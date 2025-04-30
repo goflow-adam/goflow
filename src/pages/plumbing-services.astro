@@ -1,25 +1,22 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { createServiceListSchema } from '../lib/schemaFactories';
+import { createServiceListSchema } from '../lib/schema/factories';
 import '../styles/pages/plumbing-services.css';
 
-interface ServiceFrontmatter {
-  title: string;
-  description: string;
-  featured?: boolean;
-}
-
 const services = await getCollection('services', ({ data }) => !data.draft);
-const regions = await getCollection('regions', ({ data }) => !data.draft);
 
-const serviceList = services.map(service => ({
+const serviceDetails = services.map(service => ({
+  slug: service.slug,
   title: service.data.title,
   description: service.data.description,
-  url: new URL(service.slug, Astro.site).toString()
+  offers: service.data.offers?.map(offer => ({
+    name: offer.name,
+    description: offer.description
+  }))
 }));
 
-const schema = createServiceListSchema(serviceList, regions);
+const schema = await createServiceListSchema(serviceDetails);
 ---
 
 <BaseLayout
@@ -38,7 +35,7 @@ const schema = createServiceListSchema(serviceList, regions);
     </p>
 
     <div class="services-list">
-      {services.map((service, index) => (
+      {services.map((service) => (
         <div>
           <h2>
             <a href={`/${service.slug}/`}>

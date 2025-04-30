@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { createServiceRegionsSchema } from '../lib/schemaFactories';
+import { createServiceRegionsSchema } from '../lib/schema/factories';
 import ServiceAreaMap from '../components/ServiceAreaMap.astro';
 import SonomaCountyGeo from '../constants/SonomaCountyGeo.js';
 import MarinCountyGeo from '../constants/MarinCountyGeo.js';
@@ -15,7 +15,12 @@ interface RegionFrontmatter {
 }
 
 const regions = await getCollection('regions', ({ data }) => !data.draft);
-const schema = createServiceRegionsSchema(regions);
+const regionDetails = regions.map(region => ({
+  name: region.data.title,
+  url: `https://goflow.plumbing/service-regions/${region.slug}`
+}));
+
+const schema = createServiceRegionsSchema(regionDetails);
 const mapCenter: [number, number] = [38.463848, -123];
 ---
 

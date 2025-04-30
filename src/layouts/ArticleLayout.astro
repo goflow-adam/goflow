@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
-import { createArticlePageSchema } from '../lib/schemaFactories';
+import { createArticlePageSchema } from '../lib/schema/factories';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -11,7 +11,16 @@ const { article } = Astro.props;
 const { Content } = await article.render();
 
 // Always use the schema factory to ensure consistent formatting
-const schema = createArticlePageSchema(article);
+const articleDetails = {
+  title: article.data.title,
+  description: article.data.description,
+  url: `https://goflow.plumbing/articles/${article.slug}/`,
+  imageUrl: article.data.heroImage,
+  publishDate: article.data.pubDate,
+  modifyDate: article.data.updatedDate
+};
+
+const schema = await createArticlePageSchema(articleDetails);
 ---
 
 <BaseLayout 

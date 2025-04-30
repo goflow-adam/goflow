@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import '../../styles/articles.css';
-import { createArticleListSchema } from '../../lib/schemaFactories';
+import { createArticleListSchema } from '../../lib/schema/factories';
 
 const articles = await getCollection('articles');
 const sortedArticles = articles.sort((a, b) => {
@@ -12,8 +12,18 @@ const sortedArticles = articles.sort((a, b) => {
 const title = "Plumbing Articles & Resources | GoFlow Plumbing";
 const description = "Expert plumbing tips, maintenance guides, and industry insights from GoFlow Plumbing's experienced professionals. Stay informed about your plumbing system.";
 
+// Transform collection entries to ArticleDetails format
+const articleDetails = sortedArticles.map(article => ({
+  title: article.data.title,
+  description: article.data.description,
+  url: `https://goflow.plumbing/articles/${article.slug}`,
+  imageUrl: article.data.heroImage,
+  publishDate: article.data.pubDate,
+  modifyDate: article.data.updatedDate
+}));
+
 // Create JSON-LD schema
-const schema = createArticleListSchema(sortedArticles);
+const schema = await createArticleListSchema(articleDetails);
 ---
 
 <BaseLayout title={title} description={description} schema={schema}>

@@ -463,7 +463,18 @@ export interface TeamPageSchema extends BaseSchema {
         name: string;
       }>;
     };
-  } & Omit<PlumberSchema, "@type">;
+    address?: PostalAddress;
+    telephone?: string;
+    email?: string;
+    priceRange?: string;
+    image?: string;
+    url?: string;
+    contactPoint?: ContactPoint[];
+    geo?: GeoCoordinates;
+    openingHoursSpecification?: OpeningHoursSpecification[];
+    paymentAccepted?: string[];
+    currenciesAccepted?: string;
+  };
 }
 
 export type Schema = 

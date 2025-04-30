@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/pages/contact-us.css';
-import { createContactPageSchema } from '../lib/contactPageSchemaFactory';
+import { createContactPageSchema } from '../lib/schema/factories';
 
-const schema = createContactPageSchema();
+const schema = await createContactPageSchema();
 ---
 
 <BaseLayout

@@ -1,7 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
-import { createTeamPageSchema } from '../lib/teamPageSchemaFactory';
+import { createTeamPageSchema } from '../lib/schema/factories';
 import '../styles/pages/team.css';
 
 const page = await getEntry('pages', 'team');
@@ -10,7 +10,7 @@ if (!page) {
 }
 
 const { Content } = await page.render();
-const schema = createTeamPageSchema(Astro.url.pathname);
+const schema = await createTeamPageSchema();
 ---
 
 <PageLayout page={{ ...page, data: { ...page.data, schema } }}>

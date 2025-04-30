@@ -2,7 +2,7 @@
 import { getEntry } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
 import '../styles/pages/faqs.css';
-import { createFAQPageSchema } from '../lib/faqPageSchemaFactory';
+import { createFAQPageSchema } from '../lib/schema/factories';
 
 const page = await getEntry('pages', 'faqs');
 if (!page) {
@@ -10,7 +10,7 @@ if (!page) {
 }
 
 const { Content } = await page.render();
-const schema = createFAQPageSchema();
+const schema = await createFAQPageSchema();
 
 ---
 
