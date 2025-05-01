@@ -106,7 +106,13 @@ async function getModifiedFiles(lastHash) {
         const { stdout } = await execAsync(`git log --name-only --pretty=format:"%H" ${lastHash}..HEAD`);
         return stdout
             .split('\n')
-            .filter(file => file.startsWith('src/content/') && file.endsWith('.mdx'));
+            .filter(file => {
+                // Include both content files and page files
+                return (
+                    (file.startsWith('src/content/') && file.endsWith('.mdx')) ||
+                    (file.startsWith('src/pages/') && file.endsWith('.astro'))
+                );
+            });
     } catch (error) {
         logger.error(`Failed to get modified files: ${error.message}`);
         return [];
@@ -238,7 +244,7 @@ async function main() {
 
         // Get modified files since last run
         const modifiedFiles = await getModifiedFiles(history.lastGitHash);
-        logger.info(`Found ${modifiedFiles.length} modified content files since last run`);
+        logger.info(`Found ${modifiedFiles.length} modified files (content + pages) since last run`);
 
         // Get current sitemap URLs
         const urls = await getUrlsFromSitemap();
@@ -252,9 +258,16 @@ async function main() {
             // If no history, submit all
             if (!history.lastGitHash) return true;
 
-            // Check if corresponding content file was modified
-            const contentFile = `src/content${url.url.replace(/\/$/, '')}.mdx`;
-            return modifiedFiles.includes(contentFile);
+            // Map URL back to potential source files
+            const possibleFiles = [
+                // Content file (e.g. /blog/post/ -> src/content/blog/post.mdx)
+                `src/content${url.url.replace(/\/$/, '')}.mdx`,
+                // Page file (e.g. /about-us/ -> src/pages/about-us.astro)
+                `src/pages${url.url.replace(/\/$/, '')}.astro`,
+                // Index page file (e.g. /blog/ -> src/pages/blog/index.astro)
+                `src/pages${url.url.replace(/\/$/, '')}/index.astro`
+            ];
+            return possibleFiles.some(file => modifiedFiles.includes(file));
         });
 
         if (urlsToSubmit.length === 0) {

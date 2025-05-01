@@ -16,7 +16,7 @@ const regionDetails = {
   description: region.data.description
 };
 
-const schema = createRegionPageSchema(regionDetails);
+const schema = await createRegionPageSchema(regionDetails);
 
 const { Content } = await region.render();
 
