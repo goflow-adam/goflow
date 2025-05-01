@@ -41,7 +41,7 @@ const { values: args } = parseArgs({
 
 // Configuration
 const BASE_URL = 'https://goflow.plumbing';
-const API_KEY = 'aedd26da9a3b4362b09f7ffcd6e1ada2';
+const API_KEY = 'b4b09ded6168458eb56fbd9ec687fc62';
 const DAYS_THRESHOLD = parseInt(args.days, 10); // Only submit URLs modified within last N days
 const HISTORY_FILE = path.join(__dirname, '..', 'data', 'indexnow-history.json');
 const DRY_RUN = args['dry-run'];
@@ -168,7 +168,7 @@ async function getUrlsFromSitemap() {
 async function submitToIndexNow(urls) {
     // Prepare the request data
     const data = JSON.stringify({
-        'host': BASE_URL.replace('https://', ''),
+        'host': BASE_URL.replace(/^https?:\/\/|\/+$/g, ''),
         'key': API_KEY,
         'keyLocation': `${BASE_URL}/${API_KEY}.txt`,
         'urlList': urls.map(u => BASE_URL + u.url)
