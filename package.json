@@ -17,6 +17,7 @@
     "@types/jsonld": "^1.5.15",
     "astro": "^5.5.4",
     "astro-seo": "^0.8.4",
+    "fast-xml-parser": "^5.2.1",
     "jsdom": "^26.1.0",
     "jsonld": "^8.3.3",
     "leaflet": "^1.9.4",
