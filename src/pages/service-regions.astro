@@ -20,7 +20,7 @@ const regionDetails = regions.map(region => ({
   url: `https://goflow.plumbing/service-regions/${region.slug}`
 }));
 
-const schema = createServiceRegionsSchema(regionDetails);
+const schema = await createServiceRegionsSchema(regionDetails);
 const mapCenter: [number, number] = [38.463848, -123];
 ---
 

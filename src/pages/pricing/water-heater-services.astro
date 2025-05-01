@@ -11,7 +11,7 @@ if (!page) {
 }
 
 const { Content } = await page.render();
-const schema = createPricingPageSchema();
+const schema = await createPricingPageSchema();
 ---
 
 <PageLayout page={{ ...page, data: { ...page.data, schema } }}>
