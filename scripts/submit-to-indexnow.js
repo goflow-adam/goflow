@@ -191,6 +191,15 @@ async function submitToIndexNow(urls) {
         }
     };
 
+    const statusCodes = {
+        200: 'The URL was successfully submitted to the IndexNow API.',
+        202: 'The IndexNow API received your URL. However, it still needs to validate the API key to confirm the URL belongs to your site.',
+        400: 'The URL was not properly formatted.',
+        403: 'The IndexNow API did not find your API key and cannot confirm the URL belongs to your site.',
+        422: 'The URL belongs to another site and cannot be processed.',
+        429: 'The IndexNow API received too many requests beyond the permitted quota of 10,000 requests per HTTP POST. You can refer to this article on how to fix the 429 response error.',
+    }
+
     return new Promise((resolve, reject) => {
         const req = https.request(options, (res) => {
             let responseData = '';
@@ -200,12 +209,14 @@ async function submitToIndexNow(urls) {
             });
             
             res.on('end', () => {
-                if (res.statusCode === 202) {
+                if (res.statusCode === 202 || res.statusCode === 200) {
                     logger.success(`Successfully submitted ${urls.length} URLs`);
+                    logger.info(`Status code: ${res.statusCode}: ${statusCodes[res.statusCode]}`);
                     logger.info(`Response: ${responseData}`);
                     resolve({ statusCode: res.statusCode, data: responseData });
                 } else {
-                    logger.error(`Failed with status ${res.statusCode}: ${responseData}`);
+                    logger.error(`Failed with status ${res.statusCode}: ${statusCodes[res.statusCode]}`);
+                    logger.info(`Response: ${responseData}`);
                     reject(new Error(`HTTP ${res.statusCode}: ${responseData}`));
                 }
             });
