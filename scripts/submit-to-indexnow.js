@@ -35,9 +35,11 @@ const __dirname = path.dirname(__filename);
 const { values: args } = parseArgs({
     options: {
         'dry-run': { type: 'boolean', default: false },
-        'days': { type: 'string', default: '7' }
+        'days': { type: 'string', default: '7' },
+        'force': { type: 'boolean', default: false }
     }
 });
+
 
 // Configuration
 const BASE_URL = 'https://goflow.plumbing';
@@ -45,6 +47,7 @@ const API_KEY = 'b4b09ded6168458eb56fbd9ec687fc62';
 const DAYS_THRESHOLD = parseInt(args.days, 10); // Only submit URLs modified within last N days
 const HISTORY_FILE = path.join(__dirname, '..', 'data', 'indexnow-history.json');
 const DRY_RUN = args['dry-run'];
+const FORCE_ALL = args['force'];
 
 // Logger utility
 const logger = {
@@ -126,15 +129,9 @@ function validateSitemapPath(sitemapPath) {
     }
 }
 
-// Check if URL was modified recently
+// Check if URL was modified recently - always return true since we're using git history
 function isRecentlyModified(lastmod) {
-    if (!lastmod) return true; // Include if no lastmod date
-    
-    const modDate = new Date(lastmod);
-    const threshold = new Date();
-    threshold.setDate(threshold.getDate() - DAYS_THRESHOLD);
-    
-    return modDate >= threshold;
+    return true;
 }
 
 // Read and parse the sitemap
@@ -264,8 +261,8 @@ async function main() {
             return;
         }
 
-        // Filter URLs that need submission based on Git history
-        const urlsToSubmit = urls.filter(url => {
+        // Filter URLs that need submission based on Git history (unless force flag is used)
+        const urlsToSubmit = FORCE_ALL ? urls : urls.filter(url => {
             // If no history, submit all
             if (!history.lastGitHash) return true;
 
@@ -273,13 +270,30 @@ async function main() {
             const possibleFiles = [
                 // Content file (e.g. /blog/post/ -> src/content/blog/post.mdx)
                 `src/content${url.url.replace(/\/$/, '')}.mdx`,
+                // Content file with region prefix
+                `src/content/regions${url.url.replace(/\/$/, '')}.mdx`,
+                // Content file with services prefix
+                `src/content/services${url.url.replace(/\/$/, '')}.mdx`,
                 // Page file (e.g. /about-us/ -> src/pages/about-us.astro)
                 `src/pages${url.url.replace(/\/$/, '')}.astro`,
                 // Index page file (e.g. /blog/ -> src/pages/blog/index.astro)
                 `src/pages${url.url.replace(/\/$/, '')}/index.astro`
             ];
-            return possibleFiles.some(file => modifiedFiles.includes(file));
+            
+            // Check if any of the possible file paths match our modified files
+            const isModified = possibleFiles.some(file => modifiedFiles.includes(file));
+            if (isModified) {
+                logger.info(`Found modified file for URL: ${url.url}`);
+                logger.info(`Possible files checked: ${possibleFiles.join(', ')}`);
+            }
+            return isModified;
         });
+
+        if (FORCE_ALL) {
+            logger.info('Force flag enabled - submitting all URLs regardless of modification status');
+        }
+        
+        logger.info(`Found ${urlsToSubmit.length} URLs that need submission based on Git history`);
 
         if (urlsToSubmit.length === 0) {
             logger.info('No URLs need submission');
