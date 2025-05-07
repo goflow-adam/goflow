@@ -99,7 +99,7 @@ export async function createServiceListSchema(services: ServiceDetails[]) {
       '@type': 'Offer' as const,
       'itemOffered': {
         '@type': 'Service' as const,
-        'name': service.title,
+        'name': service.name,
         'description': service.description
       }
     }))

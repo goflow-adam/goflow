@@ -11,6 +11,9 @@ type FAQQuestion = Question & {
 };
 
 export class FAQSchema extends GoFlowSchema<FAQPage> {
+  public static async create(questions: FAQItem[]): Promise<FAQSchema> {
+    return new FAQSchema(questions);
+  }
   constructor(questions: FAQItem[]) {
     super();
     this.setType('FAQPage')

@@ -37,6 +37,7 @@ const personSchema = z.object({
 
 const baseSchema = z.object({
   title: z.string(),
+  name: z.string(),
   description: z.string(),
   linkText: z.string().optional(),
   menuText: z.string().optional(),
@@ -51,6 +52,7 @@ const services = defineCollection({
   schema: baseSchema.extend({
     featured: z.boolean().default(false),
     includeInMenu: z.boolean().default(false),
+    timeRequired: z.string().default('PT3H'),  // Default to 3 hours if not specified
     offers: z.array(z.object({
       name: z.string(),
       description: z.string(),

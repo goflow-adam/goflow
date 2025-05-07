@@ -15,8 +15,9 @@ const organizationSchema = await OrganizationSchema.create();
 // Export schema interfaces
 export interface ServiceDetails {
   slug: string;
-  title: string;
+  name: string;
   description: string;
+  timeRequired?: string;
   offers?: Array<{ name: string; description: string; }>;
 }
 

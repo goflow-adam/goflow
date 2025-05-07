@@ -8,7 +8,7 @@ const services = await getCollection('services', ({ data }) => !data.draft);
 
 const serviceDetails = services.map(service => ({
   slug: service.slug,
-  title: service.data.title,
+  name: service.data.name,
   description: service.data.description,
   offers: service.data.offers?.map(offer => ({
     name: offer.name,
@@ -39,7 +39,7 @@ const schema = await createServiceListSchema(serviceDetails);
         <div>
           <h2>
             <a href={`/${service.slug}/`}>
-              {service.data.title}
+              {service.data.name}
             </a>
           </h2>
           <p>{service.data.description}</p>

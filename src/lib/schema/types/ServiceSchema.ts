@@ -3,35 +3,16 @@ import { GoFlowSchema } from '../base/GoFlowSchema';
 
 interface ServiceDetails {
   slug: string;
-  title: string;
+  name: string;
   description: string;
+  timeRequired?: string;
   offers?: Array<{
     name: string;
     description: string;
   }>;
 }
 
-interface ServiceTimeDetails {
-  output: string;
-  time: string;
-}
-
 export class ServiceSchema extends GoFlowSchema<Service> {
-  private static readonly serviceDetails: Record<string, ServiceTimeDetails> = {
-    'clogged-drains-rootered': {
-      output: 'Clear, properly flowing drains with no clogs or backups',
-      time: 'PT2H'
-    },
-    'water-heater-repair-and-replacement': {
-      output: 'Fully functional water heater providing consistent hot water',
-      time: 'PT4H'
-    },
-    'emergency-plumbing-services': {
-      output: 'Resolved plumbing emergency with minimal disruption',
-      time: 'PT1H'
-    },
-    // Add other service details as needed
-  } as const;
 
   private constructor(details: ServiceDetails) {
     super();
@@ -43,10 +24,7 @@ export class ServiceSchema extends GoFlowSchema<Service> {
   }
 
   private initialize(details: ServiceDetails): void {
-    const timeDetails = ServiceSchema.serviceDetails[details.slug] || {
-      output: 'Professional plumbing solution with guaranteed satisfaction',
-      time: 'PT3H'
-    } as const;
+    const timeRequired = details.timeRequired || 'PT3H';
 
     const provider: Organization = {
       '@type': 'Plumber',
@@ -67,12 +45,12 @@ export class ServiceSchema extends GoFlowSchema<Service> {
 
     this.setType({ '@type': 'Service' })
         .setId(`https://goflow.plumbing/${details.slug}#service`)
-        .addProperty('name', details.title)
+        .addProperty('name', details.name)
         .addProperty('description', details.description)
         .addProperty('provider', provider)
         .addProperty('serviceType', ['Plumbing'])
         .addProperty('areaServed', this.getAreaServed())
-        .addProperty('timeRequired', timeDetails.time)
+        .addProperty('timeRequired', timeRequired)
         .addProperty('image', provider.image)
         .addProperty('telephone', provider.telephone)
         .addProperty('priceRange', provider.priceRange)

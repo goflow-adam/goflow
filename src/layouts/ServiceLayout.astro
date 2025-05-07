@@ -12,7 +12,7 @@ const { Content } = await service.render();
 
 const serviceDetails = {
   slug: service.slug,
-  title: service.data.title,
+  name: service.data.name,
   description: service.data.description,
   offers: service.data.offers?.map(offer => ({
     name: offer.name,
