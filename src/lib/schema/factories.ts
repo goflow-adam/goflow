@@ -1,6 +1,7 @@
 import type { ItemList } from 'schema-dts';
 import { OrganizationSchema } from './types/OrganizationSchema';
 import { WebPageSchema } from './types/WebPageSchema';
+import { WebSiteSchema } from './types/WebSiteSchema';
 import { ArticleListSchema } from './types/ArticleListSchema';
 import { ServiceSchema } from './types/ServiceSchema';
 import { ArticleSchema } from './types/ArticleSchema';
@@ -27,14 +28,25 @@ export async function createOrganizationSchema() {
 }
 
 export async function createWebSiteSchema() {
-  const details: WebPageDetails = {
-    url: 'https://goflow.plumbing/',
-    name: 'GoFlow Plumbing',
-    description: 'Professional plumbing services in Sonoma and Marin County',
-    type: 'WebPage'
-  };
-  const schema = await WebPageSchema.create(details);
+  const schema = await WebSiteSchema.create();
   return schema.build();
+}
+
+export async function createHomePageSchemas() {
+  const [website, webpage] = await Promise.all([
+    WebSiteSchema.create(),
+    WebPageSchema.create({
+      url: 'https://goflow.plumbing/',
+      name: 'GoFlow Plumbing | Professional Plumbing Services in Sonoma & Marin',
+      description: 'Professional plumbing services in Sonoma and Marin County',
+      type: 'WebPage'
+    })
+  ]);
+
+  return [
+    await website.build(),
+    await webpage.build()
+  ];
 }
 
 export async function createServicePageSchema(details: ServiceDetails) {

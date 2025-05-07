@@ -1,4 +1,5 @@
-import type { WithContext, Plumber, PostalAddress, OpeningHoursSpecification, GeoCoordinates, ContactPoint } from 'schema-dts';
+import type { WithContext, Plumber, OpeningHoursSpecification, GeoCoordinates, ContactPoint } from 'schema-dts';
+import { createMinimalOrganizationInfo } from './MinimalOrganizationInfo';
 import { AreaService } from '../base/AreaService';
 import { GoFlowSchema } from '../base/GoFlowSchema';
 
@@ -13,19 +14,23 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
   }
 
   private initialize(): void {
-    // Initialize synchronous properties
-    this.setType('Plumber')
-        .setId(this.organizationId)
-        .addProperty('name', 'GoFlow Plumbing')
+    const minimalInfo = createMinimalOrganizationInfo();
+
+    // Start with minimal info
+    this.setType(minimalInfo['@type'])
+        .setId(minimalInfo['@id'])
+        .addProperty('name', minimalInfo.name)
+        .addProperty('image', minimalInfo.image)
+        .addProperty('telephone', minimalInfo.telephone)
+        .addProperty('priceRange', minimalInfo.priceRange)
+        .addProperty('address', minimalInfo.address)
+
+    // Add additional organization properties
         .addProperty('url', 'https://goflow.plumbing/')
-        .addProperty('telephone', '(707) 200-8350')
         .addProperty('email', 'info@goflow.plumbing')
-        .addProperty('image', ['https://goflow.plumbing/GoFlow2.jpg/'] as string[])
         .addProperty('description', 'Residential plumbing services in Sonoma and Marin County')
-        .addProperty('address', this.getAddress())
         .addProperty('geo', this.getGeoCoordinates())
         .addProperty('openingHoursSpecification', this.getOpeningHours())
-        .addProperty('priceRange', '$$')
         .addProperty('paymentAccepted', ['Cash', 'Credit Card', 'Check', 'PayPal', 'Venmo', 'Bitcoin'] as string[])
         .addProperty('currenciesAccepted', 'USD')
         .addProperty('sameAs', [
@@ -34,17 +39,6 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
         ] as string[])
         .addProperty('contactPoint', this.getContactPoint())
         .addProperty('areaServed', AreaService.getInstance().getServiceAreas());
-  }
-
-  private getAddress(): PostalAddress {
-    return {
-      '@type': 'PostalAddress',
-      'streetAddress': '10 Pine Ave',
-      'addressLocality': 'Sonoma',
-      'addressRegion': 'CA',
-      'postalCode': '95476',
-      'addressCountry': 'US'
-    } as PostalAddress;
   }
 
   private getGeoCoordinates(): GeoCoordinates {
