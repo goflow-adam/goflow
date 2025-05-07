@@ -17,7 +17,7 @@ export class AreaService {
     return {
       '@type': 'AdministrativeArea',
       name: region,
-      description: `Complete plumbing services throughout ${region}, including emergency repairs, water heater installation, and leak detection`,
+      description: `Plumbing services throughout ${region}: water heaters, drain clogs, emergency repairs, and plumbing installations.`,
       containsPlace: getCitiesForRegion(region).map(cityName => ({
         '@type': 'City',
         name: cityName
