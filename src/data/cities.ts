@@ -1,4 +1,4 @@
-export const SONOMA_CITIES = [
+export const SONOMA_COUNTY_CITIES = [
   'Cloverdale',
   'Cotati',
   'Healdsburg',
@@ -20,7 +20,7 @@ export const SONOMA_CITIES = [
   'Occidental'
 ];
 
-export const MARIN_CITIES = [
+export const MARIN_COUNTY_CITIES = [
   'San Rafael',
   'Novato',
   'Mill Valley',
@@ -49,5 +49,5 @@ export const MARIN_CITIES = [
 export type Region = 'Sonoma County' | 'Marin County';
 
 export function getCitiesForRegion(region: Region): string[] {
-  return region === 'Sonoma County' ? SONOMA_CITIES : MARIN_CITIES;
+  return region === 'Sonoma County' ? SONOMA_COUNTY_CITIES : MARIN_COUNTY_CITIES;
 }

@@ -1,4 +1,5 @@
 import type { WithContext, Plumber, PostalAddress, OpeningHoursSpecification, GeoCoordinates, ContactPoint } from 'schema-dts';
+import { AreaService } from '../base/AreaService';
 import { GoFlowSchema } from '../base/GoFlowSchema';
 
 export class OrganizationSchema extends GoFlowSchema<Plumber> {
@@ -31,7 +32,8 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
           'https://www.facebook.com/profile.php?id=61574410838549/',
           'https://www.yelp.com/biz/goflow-plumbing-sonoma/'
         ] as string[])
-        .addProperty('contactPoint', this.getContactPoint());
+        .addProperty('contactPoint', this.getContactPoint())
+        .addProperty('areaServed', AreaService.getInstance().getServiceAreas());
   }
 
   private getAddress(): PostalAddress {
