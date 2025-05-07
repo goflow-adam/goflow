@@ -14,21 +14,11 @@ const featuredServices = await getCollection('services', ({ data }: { data: Serv
   data.featured && !data.draft
 );
 
-import { createWebSiteSchema, createOrganizationSchema } from '../lib/schema/factories';
-import type { Schema } from '../types/schema';
-
-const [orgSchema, webSiteSchema] = await Promise.all([
-  createOrganizationSchema(),
-  createWebSiteSchema()
-]);
-
-const schema = [orgSchema, webSiteSchema];
 ---
 
 <BaseLayout
   title="3rd Generation Plumbing Experts in Sonoma & Marin 24/7 | GoFlow Plumbing"
   description="Plumbing issue now? GoFlow Plumbing is ready with your water heater repair, drain clearing, and urgent services across Sonoma and Marin. Call today!"
-  schema={schema}
 >
   <div>
 
