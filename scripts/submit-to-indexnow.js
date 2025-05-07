@@ -304,7 +304,8 @@ async function main() {
         if (DRY_RUN) {
             logger.info('DRY RUN MODE - Would submit the following URLs:');
             urlsToSubmit.forEach(url => {
-                logger.info(`  - ${url.url} (last modified: ${url.lastmod || 'unknown'})`);
+                const fullUrl = `${BASE_URL}${url.url}`;
+                logger.info(`  - ${fullUrl}`);
             });
             logger.info(`Total URLs that would be submitted: ${urlsToSubmit.length}`);
         } else {
