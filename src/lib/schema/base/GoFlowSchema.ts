@@ -1,4 +1,5 @@
 import type { WithContext, Thing, AdministrativeArea, Place, City } from 'schema-dts';
+import { SONOMA_COUNTY_CITIES, MARIN_COUNTY_CITIES } from '../../../data/cities';
 
 type SchemaType = string | { '@type': string };
 
@@ -22,13 +23,13 @@ export abstract class GoFlowSchema<T extends Thing> {
   private readonly serviceAreas: AreaConfig[] = [
     {
       name: 'Sonoma County',
-      description: 'Professional plumbing services throughout Sonoma County',
-      cities: ['Santa Rosa', 'Sonoma', 'Petaluma', 'Rohnert Park', 'Windsor']
+      description: 'Plumbing services throughout Sonoma County: water heaters, drain clogs, emergency repairs, and plumbing installations.',
+      cities: SONOMA_COUNTY_CITIES
     },
     {
       name: 'Marin County',
-      description: 'Professional plumbing services throughout Marin County',
-      cities: ['San Rafael', 'Novato', 'Mill Valley', 'San Anselmo', 'Larkspur']
+      description: 'Plumbing services throughout Marin County: water heaters, drain clogs, emergency repairs, and plumbing installations.',
+      cities: MARIN_COUNTY_CITIES
     }
   ];
 
