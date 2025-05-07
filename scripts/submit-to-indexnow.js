@@ -311,6 +311,10 @@ async function main() {
         } else {
             // Actually submit URLs
             logger.info('Submitting URLs to IndexNow...');
+            urlsToSubmit.forEach(url => {
+                const fullUrl = `${BASE_URL}${url.url}`;
+                logger.info(`  - ${fullUrl}`);
+            });
             await submitToIndexNow(urlsToSubmit);
 
             // Update submission history
