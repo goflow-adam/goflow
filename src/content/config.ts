@@ -46,12 +46,12 @@ const baseSchema = z.object({
   heroImage: z.string().optional(),
   draft: z.boolean().default(false),
   schema: z.any().optional(),
+  includeInMenu: z.boolean().default(false),
 });
 
 const services = defineCollection({
   schema: baseSchema.extend({
     featured: z.boolean().default(false),
-    includeInMenu: z.boolean().default(false),
     timeRequired: z.string().default('PT3H'),  // Default to 3 hours if not specified
     offers: z.array(z.object({
       name: z.string(),
@@ -69,7 +69,6 @@ const regions = defineCollection({
         z.tuple([z.string(), z.boolean()])
       ])
     ).optional(),
-    includeInMenu: z.boolean().default(false),
     featureTitle: z.string().optional(),
   }),
 });

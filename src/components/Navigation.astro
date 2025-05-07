@@ -13,7 +13,6 @@ interface NavItem {
 }
 
 const { isDesktop } = Astro.props;
-
 // Get all service pages and sort them by title
 const services = await getCollection('services');
 const serviceMenu = services
@@ -27,9 +26,12 @@ const serviceMenu = services
 // Get all region pages that should be included in the menu
 const regions = await getCollection('regions');
 const regionMenu = regions
-  .filter(region => region.data.includeInMenu)
+  .filter(region => {
+    const shouldInclude = region.data.includeInMenu === true;
+    return shouldInclude;
+  })
   .map(region => ({
-    title: region.data.region,
+    title: region.data.featureTitle || region.data.region,
     path: `/${region.slug}/`
   }))
   .sort((a, b) => a.title.localeCompare(b.title));
