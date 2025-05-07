@@ -37,7 +37,7 @@ const personSchema = z.object({
 
 const baseSchema = z.object({
   title: z.string(),
-  name: z.string(),
+  name: z.string().optional(),
   description: z.string(),
   linkText: z.string().optional(),
   menuText: z.string().optional(),
