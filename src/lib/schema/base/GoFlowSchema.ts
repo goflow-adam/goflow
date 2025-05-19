@@ -1,4 +1,4 @@
-import type { WithContext, Thing, AdministrativeArea, Place, City } from 'schema-dts';
+import type { WithContext, Thing, AdministrativeArea, Place, City, ImageObject } from 'schema-dts';
 import { SONOMA_COUNTY_CITIES, MARIN_COUNTY_CITIES } from '../../../data/cities';
 
 type SchemaType = string | { '@type': string };
@@ -7,6 +7,7 @@ type SchemaData = Partial<Thing> & {
   '@type'?: string;
   '@id'?: string;
   '@context'?: 'https://schema.org';
+  'primaryImageOfPage'?: ImageObject;
 };
 
 type AreaConfig = {
@@ -18,7 +19,8 @@ type AreaConfig = {
 export abstract class GoFlowSchema<T extends Thing> {
   protected readonly context = 'https://schema.org' as const;
   protected readonly organizationId = 'https://goflow.plumbing/#organization' as const;
-  protected data: SchemaData = {};
+  protected readonly primaryImage = '/public/GoFlow2.jpg';
+  protected data: SchemaData & { primaryImageOfPage?: WithContext<ImageObject> } = {};
 
   private readonly serviceAreas: AreaConfig[] = [
     {
@@ -34,7 +36,15 @@ export abstract class GoFlowSchema<T extends Thing> {
   ];
 
   constructor() {
-    this.data['@context'] = this.context;
+    this.data = {
+      '@context': this.context,
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        '@context': this.context,
+        url: this.primaryImage,
+        contentUrl: this.primaryImage
+      }
+    };
   }
 
   protected setType(type: SchemaType): this {
