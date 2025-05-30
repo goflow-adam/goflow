@@ -270,6 +270,8 @@ async function main() {
             const possibleFiles = [
                 // Content file (e.g. /blog/post/ -> src/content/blog/post.mdx)
                 `src/content${url.url.replace(/\/$/, '')}.mdx`,
+                // Content file with pages prefix
+                `src/content/pages${url.url.replace(/\/$/, '')}.mdx`,
                 // Content file with region prefix
                 `src/content/regions${url.url.replace(/\/$/, '')}.mdx`,
                 // Content file with services prefix
