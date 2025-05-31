@@ -654,7 +654,17 @@
       "url": "/sonoma-county-plumbing/",
       "lastSubmitted": "2025-05-29T23:59:05.998Z",
       "fileHash": "40b83eb60ad0519d4943384a50ed763a4371ee24"
+    },
+    {
+      "url": "/faqs/",
+      "lastSubmitted": "2025-05-30T18:46:56.544Z",
+      "fileHash": "86a4874ea065f31fc42b88ed54e306f4de468654"
+    },
+    {
+      "url": "/water-heater-repair-and-replacement/",
+      "lastSubmitted": "2025-05-30T18:46:56.545Z",
+      "fileHash": "86a4874ea065f31fc42b88ed54e306f4de468654"
     }
   ],
-  "lastGitHash": "40b83eb60ad0519d4943384a50ed763a4371ee24"
+  "lastGitHash": "86a4874ea065f31fc42b88ed54e306f4de468654"
 }
