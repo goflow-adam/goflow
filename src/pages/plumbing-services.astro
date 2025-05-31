@@ -8,8 +8,8 @@ const services = await getCollection('services', ({ data }) => !data.draft);
 
 const serviceDetails = services.map(service => ({
   slug: service.slug,
-  name: service.data.name,
-  description: service.data.description,
+  name: service.data.name || service.data.title,
+  description: service.data.description || '',
   offers: service.data.offers?.map(offer => ({
     name: offer.name,
     description: offer.description
@@ -27,11 +27,11 @@ const schema = await createServiceListSchema(serviceDetails);
   <article class="article">
 
     <h1>Our Plumbing Services</h1>
-    
+    <h2>We're not the Mario Brothers—But we’ll fight the boss to rescue you from your plumbing problem.</h2>
     <p>
-      At GoFlow Plumbing, we offer a comprehensive range of professional plumbing services
-      for both residential and commercial properties in Sonoma and Marin County. Our team
-      of licensed plumbers is available 24/7 for all your plumbing needs.
+      At GoFlow Plumbing, we don’t wear overalls or jump down green pipes, but we will if that's what it takes.
+      Whether it’s a leaky faucet, a backed-up drain, or a full-blown emergency, our licensed team is ready to help 24/7
+      across Sonoma and Marin Counties with our full suite of plumbing services.
     </p>
 
     <div class="services-list">
