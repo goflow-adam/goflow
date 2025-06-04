@@ -15,7 +15,7 @@ export function createMinimalOrganizationInfo(): MinimalOrganizationInfo {
     '@type': 'Plumber',
     '@id': 'https://goflow.plumbing/#organization',
     'name': 'GoFlow Plumbing',
-    'image': ['https://goflow.plumbing/GoFlow2.jpg/'],
+    'image': [/*'https://goflow.plumbing/GoFlow2.jpg/'*/],
     'telephone': '(707) 200-8350',
     'priceRange': '$$',
     'address': {

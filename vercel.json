@@ -76,6 +76,21 @@
       "permanent": true
     },
     {
+      "source": "/regions/sonoma-county-plumbing",
+      "destination": "/sonoma-county-plumbing/",
+      "permanent": true
+    },
+    {
+      "source": "/sonoma-county-plumbing-services",
+      "destination": "/sonoma-county-plumbing/",
+      "permanent": true
+    },
+    {
+      "source": "/marin-county-plumbing-services",
+      "destination": "/marin-county-plumbing/",
+      "permanent": true
+    },
+    {
       "source": "/services/leak-detection-and-repair",
       "destination": "/leak-detection-and-repair/",
       "permanent": true
@@ -83,6 +98,21 @@
     {
       "source": "/services/leak-detection-and-repair",
       "destination": "/leak-detection-and-repair/",
+      "permanent": true
+    },
+    {
+      "source": "/sonoma-county-plumbing-services",
+      "destination": "/sonoma-county-plumbing/",
+      "permanent": true
+    },
+    {
+      "source": "/marin-county-plumbing-services",
+      "destination": "/marin-county-plumbing/",
+      "permanent": true
+    },
+    {
+      "source": "/water-heater-replacement-cost-reasons",
+      "destination": "/articles/water-heater-replacement-cost-reasons/",
       "permanent": true
     }
   ]

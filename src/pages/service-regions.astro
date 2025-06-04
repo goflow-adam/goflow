@@ -17,7 +17,7 @@ interface RegionFrontmatter {
 const regions = await getCollection('regions', ({ data }) => !data.draft);
 const regionDetails = regions.map(region => ({
   name: region.data.title,
-  url: `https://goflow.plumbing/service-regions/${region.slug}`
+  url: `https://goflow.plumbing/${region.slug}`
 }));
 
 const schema = await createServiceRegionsSchema(regionDetails);

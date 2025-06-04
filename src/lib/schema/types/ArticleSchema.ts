@@ -20,7 +20,7 @@ export class ArticleSchema extends GoFlowSchema<Article> {
         .addProperty('name', details.title)
         .addProperty('headline', details.title)
         .addProperty('description', details.description)
-        .addProperty('image', details.imageUrl || 'https://goflow.plumbing/GoFlow2.jpg')
+        //.addProperty('image', details.imageUrl || 'https://goflow.plumbing/GoFlow2.jpg')
         .addProperty('datePublished', details.publishDate.toISOString())
         .addProperty('mainEntityOfPage', {
           '@type': 'WebPage',

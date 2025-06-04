@@ -30,7 +30,7 @@ export class ServiceSchema extends GoFlowSchema<Service> {
       '@type': 'Plumber',
       '@id': this.organizationId,
       'name': 'GoFlow Plumbing',
-      'image': ['https://goflow.plumbing/GoFlow2.jpg/'],
+      'image': [/*'https://goflow.plumbing/GoFlow2.jpg/'*/],
       'telephone': '(707) 200-8350',
       'priceRange': '$$',
       'address': {
