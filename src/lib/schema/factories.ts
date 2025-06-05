@@ -180,7 +180,7 @@ export async function createServiceRegionsSchema(regions: Array<{ name: string; 
         'item': {
           '@type': 'WebPage',
           'name': region.name,
-          'url': region.url
+          'url': `${region.url}/`
         }
       }))
     } as ItemList

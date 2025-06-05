@@ -874,7 +874,22 @@
       "url": "/water-heater-services/",
       "lastSubmitted": "2025-06-03T03:25:02.640Z",
       "fileHash": "68fcaeda75359ebe97c35a9aea21b200548e83c0"
+    },
+    {
+      "url": "/articles/water-heater-replacement-cost-reasons/",
+      "lastSubmitted": "2025-06-04T20:57:55.518Z",
+      "fileHash": "42fd780635ae35d5f450f60a0bba9aeeef7790c4"
+    },
+    {
+      "url": "/garbage-disposal-repair-or-installation/",
+      "lastSubmitted": "2025-06-04T20:57:55.519Z",
+      "fileHash": "42fd780635ae35d5f450f60a0bba9aeeef7790c4"
+    },
+    {
+      "url": "/service-regions/",
+      "lastSubmitted": "2025-06-04T20:57:55.519Z",
+      "fileHash": "42fd780635ae35d5f450f60a0bba9aeeef7790c4"
     }
   ],
-  "lastGitHash": "68fcaeda75359ebe97c35a9aea21b200548e83c0"
+  "lastGitHash": "42fd780635ae35d5f450f60a0bba9aeeef7790c4"
 }
