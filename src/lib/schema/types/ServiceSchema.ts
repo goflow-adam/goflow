@@ -10,6 +10,53 @@ interface ServiceDetails {
     name: string;
     description: string;
   }>;
+  schema?: {
+    '@type'?: 'PlumbingService';
+    '@id'?: string;
+    provider?: {
+      '@type': 'Plumber';
+      '@id': string;
+    };
+    areaServed?: {
+      '@type': 'AdministrativeArea';
+      name: string;
+      containedIn?: {
+        '@type': 'AdministrativeArea';
+        name: string;
+        containedInPlace?: {
+          '@type': 'State';
+          name: string;
+        };
+      };
+    };
+    serviceType?: string[];
+    availableChannel?: {
+      '@type': 'ServiceChannel';
+      serviceUrl: string;
+      servicePhone: string;
+      availableLanguage: string;
+    };
+    hasOfferCatalog?: {
+      '@type': 'OfferCatalog';
+      name: string;
+      itemListElement: Array<{
+        '@type': 'Offer';
+        itemOffered: {
+          '@type': 'Service';
+          name: string;
+        };
+        availability: string;
+        areaServed: string;
+      }>;
+    };
+    priceRange?: string;
+    openingHoursSpecification?: Array<{
+      '@type': 'OpeningHoursSpecification';
+      dayOfWeek: string[];
+      opens: string;
+      closes: string;
+    }>;
+  };
 }
 
 export class ServiceSchema extends GoFlowSchema<Service> {
@@ -24,7 +71,9 @@ export class ServiceSchema extends GoFlowSchema<Service> {
   }
 
   private initialize(details: ServiceDetails): void {
+    // Use schema from frontmatter if available, otherwise use defaults
     const timeRequired = details.timeRequired || 'PT3H';
+    const schema = details.schema || {};
 
     const provider: Organization = {
       '@type': 'Plumber',
@@ -43,21 +92,31 @@ export class ServiceSchema extends GoFlowSchema<Service> {
       }
     };
 
-    this.setType({ '@type': 'Service' })
-        .setId(`https://goflow.plumbing/${details.slug}#service`)
+    this.setType({ '@type': schema['@type'] || 'Service' })
+        .setId(schema['@id'] || `https://goflow.plumbing/${details.slug}#service`)
         .addProperty('name', details.name)
         .addProperty('description', details.description)
-        .addProperty('provider', provider)
-        .addProperty('serviceType', ['Plumbing'])
-        .addProperty('areaServed', this.getAreaServed())
+        .addProperty('provider', schema.provider || provider)
+        .addProperty('serviceType', schema.serviceType || ['Plumbing'])
+        .addProperty('areaServed', schema.areaServed || this.getAreaServed())
         .addProperty('timeRequired', timeRequired)
         .addProperty('image', provider.image)
-        .addProperty('telephone', provider.telephone)
-        .addProperty('priceRange', provider.priceRange)
+        .addProperty('telephone', schema.availableChannel?.servicePhone || provider.telephone)
+        .addProperty('priceRange', schema.priceRange || provider.priceRange)
         .addProperty('address', provider.address);
 
-    if (details.offers && details.offers.length > 0) {
+    if (schema.hasOfferCatalog) {
+      this.addProperty('hasOfferCatalog', schema.hasOfferCatalog);
+    } else if (details.offers && details.offers.length > 0) {
       this.addProperty('hasOfferCatalog', this.createOfferCatalog(details.offers));
+    }
+
+    if (schema.availableChannel) {
+      this.addProperty('availableChannel', schema.availableChannel);
+    }
+
+    if (schema.openingHoursSpecification) {
+      this.addProperty('openingHoursSpecification', schema.openingHoursSpecification);
     }
   }
 
