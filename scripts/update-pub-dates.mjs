@@ -1,4 +1,4 @@
-import { readFile } from 'fs/promises';
+import { readFile, writeFile } from 'fs/promises';
 import { glob } from 'glob';
 import { exec } from 'child_process';
 import { promisify } from 'util';
@@ -6,17 +6,17 @@ import { promisify } from 'util';
 const execAsync = promisify(exec);
 
 /**
- * Get the date of the first commit that added this file
+ * Get the date of the latest commit that modified this file
  */
-async function getFirstCommitDate(filePath) {
+async function getLatestCommitDate(filePath) {
   try {
-    // Get the first commit that added this file
+    // Get the most recent commit that modified this file
     const { stdout } = await execAsync(
-      `git log --follow --format="%ad" --date=short --reverse -- "${filePath}" | head -n 1`
+      `git log -1 --format="%ad" --date=short -- "${filePath}"`
     );
     return stdout.trim() || null;
   } catch (error) {
-    console.error(`Error getting first commit date for ${filePath}:`, error);
+    console.error(`Error getting latest commit date for ${filePath}:`, error);
     return null;
   }
 }
@@ -37,38 +37,34 @@ function getCurrentPubDate(content) {
 /**
  * Check if a file needs its pubDate initialized
  */
+async function updateFileContent(filePath, oldDate, newDate) {
+  const content = await readFile(filePath, 'utf-8');
+  const updatedContent = content.replace(
+    /^(pubDate:\s*).*$/m,
+    `$1${newDate}`
+  );
+  await writeFile(filePath, updatedContent);
+  console.log(`  ✓ Updated pubDate from ${oldDate} to ${newDate}`);
+}
+
 async function checkPubDate(filePath) {
   try {
-    // Check if file was modified in current branch
-    const wasModified = await isFileModifiedInBranch(filePath, branchCreationCommit);
-    if (!wasModified) {
-      console.log(`Skipping ${filePath} - not modified in current branch`);
-      return;
-    }
-
     const content = await readFile(filePath, 'utf-8');
     const currentPubDate = getCurrentPubDate(content);
+    const latestCommitDate = await getLatestCommitDate(filePath);
     
     // Always log the current state
-    if (!currentPubDate) {
-      console.log(`\n${filePath}:\n  - No pubDate found in frontmatter`);
-    } else {
-      console.log(`\n${filePath}:\n  - Current pubDate: ${currentPubDate}`);
-    }
+    console.log(`\n${filePath}:`);
+    console.log(`  - Current pubDate: ${currentPubDate || 'Not set'}`);
+    console.log(`  - Latest commit: ${latestCommitDate || 'No git history'}`);
 
-    // Get the first commit date for reference
-    const firstCommitDate = await getFirstCommitDate(filePath);
-    if (firstCommitDate) {
-      console.log(`  - First commit date: ${firstCommitDate}`);
-    } else {
-      console.log(`  - No git history found`);
-    }
-
-    // Analyze if any action is needed
-    if (!currentPubDate) {
-      console.log(`  - ATTENTION: Missing pubDate`);
-    } else if (currentPubDate === 'draft') {
-      console.log(`  - ATTENTION: Marked as draft`);
+    // Update pubDate if needed
+    if (!currentPubDate && latestCommitDate) {
+      await updateFileContent(filePath, 'Not set', latestCommitDate);
+    } else if (currentPubDate === 'draft' && latestCommitDate) {
+      await updateFileContent(filePath, 'draft', latestCommitDate);
+    } else if (latestCommitDate && currentPubDate < latestCommitDate) {
+      await updateFileContent(filePath, currentPubDate, latestCommitDate);
     }
   } catch (error) {
     console.error(`Error processing ${filePath}:`, error);
