@@ -38,13 +38,17 @@ function getCurrentPubDate(content) {
  * Check if a file needs its pubDate initialized
  */
 async function updateFileContent(filePath, oldDate, newDate) {
-  const content = await readFile(filePath, 'utf-8');
-  const updatedContent = content.replace(
-    /^(pubDate:\s*).*$/m,
-    `$1${newDate}`
-  );
-  await writeFile(filePath, updatedContent);
-  console.log(`  ✓ Updated pubDate from ${oldDate} to ${newDate}`);
+  try {
+    const content = await readFile(filePath, 'utf-8');
+    const updatedContent = content.replace(
+      /^(pubDate:\s*).*$/m,
+      `$1${newDate}`
+    );
+    await writeFile(filePath, updatedContent);
+    console.log(`  ✓ Updated pubDate from ${oldDate} to ${newDate}`);
+  } catch (error) {
+    console.error(`  ✗ Failed to update pubDate: ${error.message}`);
+  }
 }
 
 async function checkPubDate(filePath) {
@@ -60,11 +64,19 @@ async function checkPubDate(filePath) {
 
     // Update pubDate if needed
     if (!currentPubDate && latestCommitDate) {
+      console.log(`  - Missing pubDate, setting to ${latestCommitDate}`);
       await updateFileContent(filePath, 'Not set', latestCommitDate);
     } else if (currentPubDate === 'draft' && latestCommitDate) {
+      console.log(`  - Draft status, setting to ${latestCommitDate}`);
       await updateFileContent(filePath, 'draft', latestCommitDate);
     } else if (latestCommitDate && currentPubDate < latestCommitDate) {
+      // Only update if pubDate is strictly older than the commit date
+      console.log(`  - Content updated on ${latestCommitDate}, current pubDate is ${currentPubDate}`);
       await updateFileContent(filePath, currentPubDate, latestCommitDate);
+    } else if (latestCommitDate && currentPubDate === latestCommitDate) {
+      console.log(`  - Already up to date`);
+    } else if (latestCommitDate && currentPubDate > latestCommitDate) {
+      console.log(`  - pubDate (${currentPubDate}) is newer than last commit (${latestCommitDate}), keeping current date`);
     }
   } catch (error) {
     console.error(`Error processing ${filePath}:`, error);
