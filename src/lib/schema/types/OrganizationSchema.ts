@@ -20,6 +20,7 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
     this.setType(minimalInfo['@type'])
         .setId(minimalInfo['@id'])
         .addProperty('name', minimalInfo.name)
+        .addProperty('alternateName', 'GoFlow Plumbing | 3rd Generation Plumbing')
         .addProperty('image', minimalInfo.image)
         .addProperty('telephone', minimalInfo.telephone)
         .addProperty('priceRange', minimalInfo.priceRange)

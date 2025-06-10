@@ -16,6 +16,7 @@ export class WebSiteSchema extends GoFlowSchema<WebSite> {
     this.setType('WebSite')
         .setId('https://goflow.plumbing/#website')
         .addProperty('name', 'GoFlow Plumbing')
+        .addProperty('alternateName', 'GoFlow Plumbing | 3rd Generation Plumbing')
         .addProperty('url', 'https://goflow.plumbing/')
         .addProperty('description', 'Professional plumbing services in Sonoma and Marin County')
         .addProperty('potentialAction', this.getSearchAction())
