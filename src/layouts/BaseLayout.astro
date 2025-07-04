@@ -44,6 +44,9 @@ const baseSchemas = [websiteSchema, organizationSchema];
           type: 'website',
           image: '/og-image.jpg',
           url: new URL(Astro.url.pathname.replace(/\/?$/, '/'), 'https://goflow.plumbing').href
+        },
+        optional: {
+          siteName: 'GoFlow Plumbing'
         }
       }}
     />
