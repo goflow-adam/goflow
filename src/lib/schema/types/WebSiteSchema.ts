@@ -22,7 +22,12 @@ export class WebSiteSchema extends GoFlowSchema<WebSite> {
         .addProperty('url', 'https://goflow.plumbing/')
         .addProperty('description', 'Professional plumbing services in Sonoma and Marin County')
         .addProperty('potentialAction', this.getSearchAction())
-        .addProperty('publisher', { '@id': orgInfo['@id'] });
+        .addProperty('publisher', { '@id': orgInfo['@id'] })
+        .addProperty('image', [
+          'https://goflow.plumbing/favicon-32x32.png',
+          'https://goflow.plumbing/favicon-16x16.png',
+          'https://goflow.plumbing/apple-touch-icon.png'
+        ]);
   }
 
   private getSearchAction(): SearchAction {
