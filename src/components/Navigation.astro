@@ -50,17 +50,26 @@ const navigation: NavItem[] = [
   {
     title: "Services",
     path: "/plumbing-services/",
-    submenu: serviceMenu
+    submenu: [
+      { title: "Services Home", path: "/plumbing-services/" },
+      ...serviceMenu
+    ]
   },
   {
     title: "Regions",
     path: "/service-regions/",
-    submenu: regionMenu
+    submenu: [
+      { title: "Regions Home", path: "/service-regions/" },
+      ...regionMenu
+    ]
   },
   {
     title: "Articles",
     path: "/articles/",
-    submenu: articleMenu
+    submenu: [
+      { title: "Articles Home", path: "/articles/" },
+      ...articleMenu
+    ]
   },
   { title: "Contact Us", path: "/contact-us/" },
   { title: "FAQs", path: "/faqs/" }
