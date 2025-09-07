@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "analyze": "ANALYZE=true astro build",
-    "update-pub-dates": "node scripts/update-pub-dates.mjs"
+    "update-pub-dates": "node scripts/update-pub-dates.mjs",
+    "extract-keywords": "node scripts/extract-keywords.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.3",
@@ -19,6 +20,7 @@
     "astro": "^5.5.4",
     "astro-seo": "^0.8.4",
     "fast-xml-parser": "^5.2.1",
+    "gray-matter": "^4.0.3",
     "jsdom": "^26.1.0",
     "jsonld": "^8.3.3",
     "leaflet": "^1.9.4",
