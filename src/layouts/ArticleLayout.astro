@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
 import { createArticlePageSchema } from '../lib/schema/factories';
+import '../styles/articles.css';
 
 interface Props {
   article: CollectionEntry<'articles'>;

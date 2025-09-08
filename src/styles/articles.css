@@ -46,3 +46,68 @@
 .read-more {
   @apply inline-flex items-center text-primary font-semibold group-hover:text-primary-dark transition;
 }
+
+/* Table Styles */
+.article-content table {
+  @apply w-full border-collapse mb-8 bg-white shadow-sm rounded-lg overflow-hidden;
+  border-spacing: 0;
+}
+
+.article-content table th {
+  @apply bg-primary/5 text-primary font-semibold p-4 text-left border-b border-gray-100 transition-colors duration-200;
+  font-size: 0.95rem;
+}
+
+.article-content table td {
+  @apply p-4 border-b border-gray-100 text-gray-700 transition-colors duration-200;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.article-content table tr:last-child td {
+  @apply border-b-0;
+}
+
+.article-content table tr {
+  @apply transition-colors duration-200;
+}
+
+.article-content table tr:hover {
+  @apply bg-primary/5;
+}
+
+/* Feature comparison highlights */
+.article-content table td:not(:first-child) strong,
+.article-content table td:not(:first-child) .highlight {
+  @apply text-primary font-medium;
+}
+
+/* First column styling */
+.article-content table td:first-child,
+.article-content table th:first-child {
+  @apply font-medium bg-gray-50/30;
+}
+
+/* Zebra striping for better readability */
+.article-content table tr:nth-child(even) {
+  @apply bg-gray-50/30;
+}
+
+/* Table container for better mobile experience */
+.table-container {
+  @apply max-w-full overflow-x-auto rounded-lg mb-8 -mx-4 px-4 md:mx-0 md:px-0;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive table */
+@media (max-width: 640px) {
+  .article-content table {
+    @apply min-w-[600px];
+  }
+  
+  .article-content table th,
+  .article-content table td {
+    @apply p-3;
+    font-size: 0.9rem;
+  }
+}
