@@ -1204,7 +1204,42 @@
       "url": "/water-heater-repair-santa-rosa/",
       "lastSubmitted": "2025-09-05T22:38:42.492Z",
       "fileHash": "a835054e06fe20dd7afe1f23782a5761fc5238a4"
+    },
+    {
+      "url": "/articles/plumber-red-flags/",
+      "lastSubmitted": "2025-09-08T20:23:10.749Z",
+      "fileHash": "5e214b03cb1157eb0225f741a5362060c41adda6"
+    },
+    {
+      "url": "/articles/toilet-leak-sources/",
+      "lastSubmitted": "2025-09-08T20:23:10.750Z",
+      "fileHash": "5e214b03cb1157eb0225f741a5362060c41adda6"
+    },
+    {
+      "url": "/articles/water-heater-comparisons/",
+      "lastSubmitted": "2025-09-08T20:23:10.750Z",
+      "fileHash": "5e214b03cb1157eb0225f741a5362060c41adda6"
+    },
+    {
+      "url": "/water-heater-install/",
+      "lastSubmitted": "2025-09-08T20:23:10.750Z",
+      "fileHash": "5e214b03cb1157eb0225f741a5362060c41adda6"
+    },
+    {
+      "url": "/water-heater-repair-and-replacement/",
+      "lastSubmitted": "2025-09-08T20:23:10.750Z",
+      "fileHash": "5e214b03cb1157eb0225f741a5362060c41adda6"
+    },
+    {
+      "url": "/water-heater-repair-novato/",
+      "lastSubmitted": "2025-09-08T20:23:10.750Z",
+      "fileHash": "5e214b03cb1157eb0225f741a5362060c41adda6"
+    },
+    {
+      "url": "/water-heater-repair-san-rafael/",
+      "lastSubmitted": "2025-09-08T20:23:10.750Z",
+      "fileHash": "5e214b03cb1157eb0225f741a5362060c41adda6"
     }
   ],
-  "lastGitHash": "a835054e06fe20dd7afe1f23782a5761fc5238a4"
+  "lastGitHash": "5e214b03cb1157eb0225f741a5362060c41adda6"
 }
