@@ -92,7 +92,26 @@ const featuredServices = await getCollection('services', ({ data }: { data: Serv
         </div>
       </div>
     </section>
-    
+
+    <!-- Top Services In Your Area -->
+    <section class="top-services">
+      <div>
+        <h2>Top Services in Your Area</h2>
+        <ul class="space-y-2">
+          <li><a href="/water-heater-repair-san-rafael/">Water heater repair San Rafael</a></li>
+          <li><a href="/water-heater-repair-santa-rosa/">Water heater repair Santa Rosa</a></li>
+          <li><a href="/water-heater-repair-novato/">Water heater repair Novato</a></li>
+          <li><a href="/water-heater-installation-petaluma/">Water heater installation Petaluma</a></li>
+          <li><a href="/water-heater-install/">Water heater install</a></li>
+          <li><a href="/water-heater-repair-and-replacement/">Water heater repair and replacement</a></li>
+          <li><a href="/drain-cleaning-san-rafael/">Drain cleaning San Rafael</a></li>
+          <li><a href="/drain-cleaning-santa-rosa/">Drain cleaning Santa Rosa</a></li>
+          <li><a href="/drain-cleaning-novato/">Drain cleaning Novato</a></li>
+          <li><a href="/drain-cleaning-petaluma/">Drain cleaning Petaluma</a></li>
+        </ul>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta">
       <div>
@@ -103,26 +122,4 @@ const featuredServices = await getCollection('services', ({ data }: { data: Serv
         </a>
     </div>
   </section>
-
-    <!-- Reciprocal Links Section -->
-    <section class="reciprocal-links">
-      <div class="container mx-auto px-4 py-12">
-        <h2 class="text-center mb-8"><!--Featured On--></h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Add reciprocal links here as they come in */}
-          {/* Example structure for both image and text links:
-          <a href="https://example.com" class="block text-center hover:opacity-80 transition-opacity">
-            <img src="/path/to/image.jpg" alt="Partner Name" class="mx-auto mb-2" />
-          </a>
-          <a href="https://example.com" class="block text-center hover:underline">
-            Partner Name
-          </a>
-          */}
-          <a id="href2" target="_blank" href="http://www.2findlocal.com/b/15279017"><img class="anchorImage" alt="goflow plumbing" src="http://www.2findlocal.com/Set/Icons/2.png"></a>
-          <a target="_blank" href="http://taxihowmuch.com"><img alt="taxi fare calculator" src="http://www.2findlocal.com/Set/Icons/u.png"></a>
-          <a id="href3" target="_blank" href="https://pikadil.com"><img alt="pikadil" src="http://www.2findlocal.com/Set/Icons/f.png"></a>
-          <a href="https://www.plumbingsupply.com">PlumbingSupply.com</a>
-        </div>
-      </div>
-    </section>
 </BaseLayout>

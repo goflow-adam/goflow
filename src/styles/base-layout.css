@@ -161,8 +161,20 @@
   @apply grid grid-cols-1 md:grid-cols-3 gap-8;
 }
 
+.navigation-container.popular-services {
+  @apply mt-8 md:mt-0;
+}
+
 .footer-container h3 {
   @apply text-xl font-bold mb-4;
+}
+
+.footer-container .popular-services {
+  row-gap: 0.5rem; /* same as space-y-2 */
+  column-gap: 2rem; /* same as gap-8 horizontally */
+  @apply list-none;
+  @apply w-full;
+  @apply pl-0;
 }
 
 .copyright {
