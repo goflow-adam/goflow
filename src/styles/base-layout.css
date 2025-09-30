@@ -123,6 +123,17 @@
   @apply border-l-4 border-[#1f4a6f] pl-4 my-6 italic;
 }
 
+.markdown-content .table-container {
+  @apply overflow-x-auto;
+  @apply -webkit-overflow-scrolling touch;
+  @apply w-full;
+  @apply max-w-[100vw]; /* ensure the container never widens the viewport */
+}
+
+.markdown-content .table-container table {
+  @apply min-w-[640px]; /* allow horizontal scroll when columns get tight */
+}
+
 .article {
   @apply max-w-4xl mx-auto px-4;
 }

@@ -4,6 +4,7 @@ import UnoCSS from 'unocss/astro'
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
+import rehypeWrapTables from './src/lib/rehype/rehypeWrapTables.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,7 +18,9 @@ export default defineConfig({
       injectReset: true
     }),
     sitemap({lastmod: new Date()}),
-    mdx(),
+    mdx({
+      rehypePlugins: [rehypeWrapTables]
+    }),
     partytown({
       config: {
         forward: ['dataLayer.push']
@@ -59,9 +62,8 @@ export default defineConfig({
     })
   ],
   markdown: {
-    shikiConfig: {
-      theme: 'github-light'
-    }
+    shikiConfig: { theme: 'github-light' },
+    rehypePlugins: [rehypeWrapTables]
   },
   build: {
     inlineStylesheets: 'never'
