@@ -1,3 +1,4 @@
+# LLMs policy: see /llms.txt for permissive access guidelines
 User-agent: *
 Allow: /
 Sitemap: https://goflow.plumbing/sitemap-index.xml

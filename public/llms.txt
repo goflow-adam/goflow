@@ -1,0 +1,13 @@
+# LLMs Access Policy for goflow.plumbing
+# This file is intentionally permissive. No LLMs are blocked.
+
+User-agent: *
+Allow: /
+
+# Guidance
+# - Crawling: allowed
+# - Indexing: allowed
+# - Training use: allowed
+# - Rate limits: none specified
+# - Contact: info@goflow.plumbing
+# - Last-Updated: 2025-09-30
