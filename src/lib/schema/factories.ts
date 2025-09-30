@@ -203,17 +203,17 @@ export async function createRegionPageSchema(region: { name: string; url: string
 }
 
 export async function createBreadcrumbSchema(items: Array<{ name: string; url: string }>): Promise<WithContext<BreadcrumbList>> {
+  // Google Rich Results prefers ListItem with top-level name and item as URL/@id
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, idx) => ({
+    itemListElement: items.map((crumb, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
-      item: {
-        '@type': 'WebPage',
-        name: item.name,
-        url: item.url
-      }
+      name: crumb.name,
+      item: crumb.url
+      // Alternatively, object form is also accepted:
+      // item: { '@id': crumb.url }
     }))
   } as WithContext<BreadcrumbList>;
 }
