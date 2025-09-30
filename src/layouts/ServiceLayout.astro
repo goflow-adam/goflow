@@ -1,7 +1,8 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
-import { createServicePageSchema } from '../lib/schema/factories';
+import { createServicePageSchema, createBreadcrumbSchema } from '../lib/schema/factories';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 
 interface Props {
   service: CollectionEntry<'services'>;
@@ -12,7 +13,7 @@ const { Content } = await service.render();
 
 const serviceDetails = {
   slug: service.slug,
-  name: service.data.name,
+  name: service.data.name ?? service.data.title,
   description: service.data.description,
   offers: service.data.offers?.map(offer => ({
     name: offer.name,
@@ -21,14 +22,23 @@ const serviceDetails = {
 };
 
 const schema = await createServicePageSchema(serviceDetails);
+const currentCrumbName = service.data.breadcrumbDisplayText ?? service.data.linkText ?? service.data.menuText ?? service.data.title;
+const breadcrumbItems = [
+  { name: 'Home', url: 'https://goflow.plumbing/' },
+  { name: 'Services', url: 'https://goflow.plumbing/plumbing-services/' },
+  { name: currentCrumbName, url: `https://goflow.plumbing/${service.slug}/` }
+];
+const breadcrumbSchema = await createBreadcrumbSchema(breadcrumbItems);
+const combinedSchema: any = [schema, breadcrumbSchema];
 ---
 
 <BaseLayout 
   title={service.data.title}
   description={service.data.description}
-  schema={schema}
+  schema={combinedSchema}
 >
   <article class="article">
+    <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Services', path: '/plumbing-services/' }, { name: currentCrumbName }]} />
     {service.data.heroImage && (
       <div class="mb-8">
         <img

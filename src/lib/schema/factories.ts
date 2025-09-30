@@ -1,4 +1,4 @@
-import type { ItemList } from 'schema-dts';
+import type { ItemList, WithContext, BreadcrumbList } from 'schema-dts';
 import { OrganizationSchema } from './types/OrganizationSchema';
 import { WebPageSchema } from './types/WebPageSchema';
 import { WebSiteSchema } from './types/WebSiteSchema';
@@ -200,4 +200,20 @@ export async function createRegionPageSchema(region: { name: string; url: string
     }
   });
   return schema.build();
+}
+
+export async function createBreadcrumbSchema(items: Array<{ name: string; url: string }>): Promise<WithContext<BreadcrumbList>> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      item: {
+        '@type': 'WebPage',
+        name: item.name,
+        url: item.url
+      }
+    }))
+  } as WithContext<BreadcrumbList>;
 }

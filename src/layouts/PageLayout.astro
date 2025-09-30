@@ -4,6 +4,8 @@ import type { CollectionEntry } from 'astro:content';
 import type { Schema } from '../types/schema';
 import '../styles/pages.css';
 import '../styles/prose.css';
+import { createBreadcrumbSchema } from '../lib/schema/factories';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 
 interface Props {
   page: CollectionEntry<'pages'> & {
@@ -15,10 +17,21 @@ interface Props {
 
 const { page } = Astro.props;
 const { title, description, schema, teamMembers, companyValues, certifications } = page.data;
+
+// Breadcrumbs: Home > Current page (using breadcrumbDisplayText priority)
+const currentCrumbName = page.data.breadcrumbDisplayText ?? page.data.linkText ?? page.data.menuText ?? page.data.title;
+const pageUrl = `https://goflow.plumbing/${page.slug}/`;
+const breadcrumbSchema = await createBreadcrumbSchema([
+  { name: 'Home', url: 'https://goflow.plumbing/' },
+  { name: currentCrumbName, url: pageUrl }
+]);
+
+const mergedSchema: Schema = schema ? [schema, breadcrumbSchema] as unknown as Schema : breadcrumbSchema as unknown as Schema;
 ---
 
-<BaseLayout title={title} description={description} schema={schema}>
+<BaseLayout title={title} description={description} schema={mergedSchema}>
   <article class="article">
+    <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: currentCrumbName }]} />
 
     {teamMembers && (
       <div class="team-section">

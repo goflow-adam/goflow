@@ -1,7 +1,8 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
-import { createRegionPageSchema } from '../lib/schema/factories';
+import { createRegionPageSchema, createBreadcrumbSchema } from '../lib/schema/factories';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 
 
 interface Props {
@@ -17,6 +18,13 @@ const regionDetails = {
 };
 
 const schema = await createRegionPageSchema(regionDetails);
+const currentCrumbName = region.data.breadcrumbDisplayText ?? region.data.linkText ?? region.data.menuText ?? region.data.title;
+const breadcrumbItems = [
+  { name: 'Home', url: 'https://goflow.plumbing/' },
+  { name: 'Service Regions', url: 'https://goflow.plumbing/service-regions/' },
+  { name: currentCrumbName, url: `https://goflow.plumbing/${region.slug}/` }
+];
+const breadcrumbSchema = await createBreadcrumbSchema(breadcrumbItems);
 
 const { Content } = await region.render();
 
@@ -25,9 +33,10 @@ const { Content } = await region.render();
 <BaseLayout 
   title={region.data.title}
   description={region.data.description}
-  schema={schema}
+  schema={[schema, breadcrumbSchema]}
 >
   <article class="article">
+    <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Service Regions', path: '/service-regions/' }, { name: currentCrumbName }]} />
     <div class="markdown-content">
       <Content />
     </div>

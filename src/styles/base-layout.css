@@ -1,5 +1,12 @@
 /** Menu styles */
 
+.breadcrumbs { @apply text-sm text-[#4a4a4a] mb-4; }
+.breadcrumbs-list { @apply flex flex-wrap items-center; }
+.breadcrumb-item { @apply flex items-center; }
+.breadcrumb-item + .breadcrumb-item::before { content: "/"; @apply mx-1 text-[#8a8a8a]; }
+.breadcrumb-link { @apply text-[#509cba] hover:text-[#1f4a6f] underline; }
+.breadcrumb-current { @apply text-[#1f4a6f]; }
+
 .mobile-menu-button {
   @apply text-background p-2;
 }

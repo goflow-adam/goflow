@@ -1,7 +1,8 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
-import { createArticlePageSchema } from '../lib/schema/factories';
+import { createArticlePageSchema, createBreadcrumbSchema } from '../lib/schema/factories';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import '../styles/articles.css';
 
 interface Props {
@@ -22,14 +23,25 @@ const articleDetails = {
 };
 
 const schema = await createArticlePageSchema(articleDetails);
+
+// Breadcrumbs: Home > Articles > Current article (prefers breadcrumbDisplayText if provided)
+const currentCrumbName = article.data.breadcrumbDisplayText ?? article.data.linkText ?? article.data.menuText ?? article.data.title;
+const pageUrl = `https://goflow.plumbing/articles/${article.slug}/`;
+const breadcrumbSchema = await createBreadcrumbSchema([
+  { name: 'Home', url: 'https://goflow.plumbing/' },
+  { name: 'Articles', url: 'https://goflow.plumbing/articles/' },
+  { name: currentCrumbName, url: pageUrl }
+]);
+const combinedSchema = [schema, breadcrumbSchema];
 ---
 
 <BaseLayout 
   title={article.data.title}
   description={article.data.description}
-  schema={schema}
+  schema={combinedSchema}
 >
 <article class="article markdown-content article-content">
+    <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Articles', path: '/articles/' }, { name: currentCrumbName }]} />
     {article.data.heroImage && (
       <div class="mb-8">
         <img

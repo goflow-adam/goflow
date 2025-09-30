@@ -1309,7 +1309,92 @@
       "url": "/water-heater-services/",
       "lastSubmitted": "2025-09-10T22:22:38.126Z",
       "fileHash": "59efd9e9ee7e2eb63c68036fa9840c764f5dd4da"
+    },
+    {
+      "url": "/",
+      "lastSubmitted": "2025-09-30T06:35:19.862Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/articles/water-heater-replacement-cost-reasons/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/drain-cleaning-novato/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/drain-cleaning-petaluma/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/drain-cleaning-san-rafael/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/drain-cleaning-santa-rosa/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/marin-county-plumbing/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/novato-plumbing/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/petaluma-plumbing/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/san-rafael-plumbing/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/santa-rosa-plumbing/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/sonoma-county-plumbing/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/water-heater-install/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/water-heater-repair-and-replacement/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/water-heater-repair-novato/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/water-heater-repair-san-rafael/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
+    },
+    {
+      "url": "/water-heater-repair-santa-rosa/",
+      "lastSubmitted": "2025-09-30T06:35:19.863Z",
+      "fileHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
     }
   ],
-  "lastGitHash": "59efd9e9ee7e2eb63c68036fa9840c764f5dd4da"
+  "lastGitHash": "183dcb1490245548a89a2024ca9aa7f769577f76"
 }
