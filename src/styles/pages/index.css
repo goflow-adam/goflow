@@ -144,3 +144,24 @@
 .cta > div > a {
   @apply btn btn-secondary inline-block;
 }
+
+/* Top Services In Your Area */
+.top-services {
+  @apply py-16;
+}
+
+.top-services > div {
+  @apply container mx-auto px-4;
+}
+
+.top-services h2 {
+  @apply text-3xl font-bold text-center mb-12;
+}
+
+.top-services > div ul {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.top-services > div li a {
+  @apply block bg-background rounded-lg shadow p-4 hover:shadow-lg transition-shadow;
+}
