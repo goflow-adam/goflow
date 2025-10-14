@@ -52,6 +52,7 @@ const baseSchema = z.object({
 
 const services = defineCollection({
   schema: baseSchema.extend({
+    location: z.string().optional(),
     featured: z.boolean().default(false),
     timeRequired: z.string().default('PT3H'),  // Default to 3 hours if not specified
     offers: z.array(z.object({
@@ -64,12 +65,7 @@ const services = defineCollection({
 const regions = defineCollection({
   schema: baseSchema.extend({
     region: z.string(),
-    containsPlace: z.array(
-      z.union([
-        z.tuple([z.string()]),
-        z.tuple([z.string(), z.boolean()])
-      ])
-    ).optional(),
+    location: z.string().optional(),
     featureTitle: z.string().optional(),
   }),
 });

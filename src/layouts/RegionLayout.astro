@@ -17,7 +17,10 @@ const regionDetails = {
   description: region.data.description
 };
 
-const schema = await createRegionPageSchema(regionDetails);
+const schema = await createRegionPageSchema({
+  ...regionDetails,
+  cityName: region.data.location || region.data.region || region.data.title
+});
 const currentCrumbName = region.data.breadcrumbDisplayText ?? region.data.linkText ?? region.data.menuText ?? region.data.title;
 const breadcrumbItems = [
   { name: 'Home', url: 'https://goflow.plumbing/' },

@@ -11,10 +11,7 @@ export class TeamPageSchema extends GoFlowSchema<WebPage> {
     return new TeamPageSchema();
   }
 
-  async build(): Promise<WithContext<WebPage>> {
-    const organization = await OrganizationSchema.create();
-    const orgSchema = await organization.build();
-
+  build(): WithContext<WebPage> {
     return {
       '@context': 'https://schema.org',
       '@type': 'AboutPage',
@@ -22,8 +19,9 @@ export class TeamPageSchema extends GoFlowSchema<WebPage> {
       'url': 'https://goflow.plumbing/team/',
       'name': 'Our Team | GoFlow Plumbing',
       'description': 'Meet the skilled and experienced team at GoFlow Plumbing, serving Sonoma and Marin County with professional plumbing services.',
-      'provider': orgSchema,
-      'mainEntity': orgSchema
+      // Reference Organization by @id to avoid duplication
+      'provider': { '@id': this.organizationId },
+      'mainEntity': { '@id': this.organizationId }
     };
   }
 }

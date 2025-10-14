@@ -15,6 +15,17 @@ export class WebPageSchema extends GoFlowSchema<WebPage> {
     this.initialize(details);
   }
 
+  public addGeoFocus(city: { name: string; id?: string; description?: string }): this {
+    const areaNode = city.id
+      ? { '@type': 'AdministrativeArea', '@id': city.id, name: city.name, description: city.description }
+      : { '@type': 'AdministrativeArea', name: city.name, description: city.description };
+
+    this.addProperty('about', areaNode)
+        .addProperty('contentLocation', { '@type': 'Place', name: `${city.name}, CA` })
+        .addProperty('spatialCoverage', { '@type': 'AdministrativeArea', name: city.name });
+    return this;
+  }
+
   public static async create(details: WebPageDetails): Promise<WebPageSchema> {
     return new WebPageSchema(details);
   }

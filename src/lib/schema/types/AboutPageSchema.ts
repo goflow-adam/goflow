@@ -35,12 +35,24 @@ export class AboutPageSchema extends GoFlowSchema<WebPage> {
         .addProperty('url', this.details.url)
         .addProperty('name', this.details.name)
         .addProperty('description', this.details.description)
-        .addProperty('provider', this.orgSchema);
+        // Reference organization by @id to avoid duplicating org details on every page
+        .addProperty('provider', { '@id': this.organizationId });
 
     if (this.details.mainEntity) {
       this.addProperty('mainEntity', this.details.mainEntity);
     }
 
     return super.build();
+  }
+
+  public addGeoFocus(city: { name: string; id?: string; description?: string }): this {
+    const areaNode = city.id
+      ? { '@type': 'AdministrativeArea', '@id': city.id, name: city.name, description: city.description }
+      : { '@type': 'AdministrativeArea', name: city.name, description: city.description };
+
+    this.addProperty('about', areaNode)
+        .addProperty('contentLocation', { '@type': 'Place', name: `${city.name}, CA` })
+        .addProperty('spatialCoverage', { '@type': 'AdministrativeArea', name: city.name });
+    return this;
   }
 }

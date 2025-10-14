@@ -75,22 +75,11 @@ export class ServiceSchema extends GoFlowSchema<Service> {
     const timeRequired = details.timeRequired || 'PT3H';
     const schema = details.schema || {};
 
+    // Reference the Organization by @id to avoid duplicating org details in each Service
     const provider: Organization = {
       '@type': 'Plumber',
       '@id': this.organizationId,
-      'name': 'GoFlow Plumbing',
-      'image': [/*'https://goflow.plumbing/GoFlow2.jpg/'*/],
-      'telephone': '(707) 200-8350',
-      'priceRange': '$$',
-      'address': {
-        '@type': 'PostalAddress' as const,
-        'streetAddress': '10 Pine Ave',
-        'addressLocality': 'Sonoma',
-        'addressRegion': 'CA',
-        'postalCode': '95476',
-        'addressCountry': 'US'
-      }
-    };
+    } as Organization;
 
     this.setType({ '@type': schema['@type'] || 'Service' })
         .setId(schema['@id'] || `https://goflow.plumbing/${details.slug}#service`)
@@ -99,11 +88,15 @@ export class ServiceSchema extends GoFlowSchema<Service> {
         .addProperty('provider', schema.provider || provider)
         .addProperty('serviceType', schema.serviceType || ['Plumbing'])
         .addProperty('areaServed', schema.areaServed || this.getAreaServed())
-        .addProperty('timeRequired', timeRequired)
-        .addProperty('image', provider.image)
-        .addProperty('telephone', schema.availableChannel?.servicePhone || provider.telephone)
-        .addProperty('priceRange', schema.priceRange || provider.priceRange)
-        .addProperty('address', provider.address);
+        .addProperty('timeRequired', timeRequired);
+
+    // Only add optional fields when explicitly provided by frontmatter schema overrides
+    if (schema.priceRange) {
+      this.addProperty('priceRange', schema.priceRange);
+    }
+    if (schema.availableChannel?.servicePhone) {
+      this.addProperty('telephone', schema.availableChannel.servicePhone);
+    }
 
     if (schema.hasOfferCatalog) {
       this.addProperty('hasOfferCatalog', schema.hasOfferCatalog);

@@ -54,6 +54,44 @@ export async function createServicePageSchema(details: ServiceDetails) {
   return schema.build();
 }
 
+/**
+ * Create a geo-focused WebPage schema for service pages.
+ * If a location/city is provided, use it; otherwise, best-effort infer from the slug tail.
+ */
+export async function createServiceGeoSchema(service: { slug: string; name: string; description: string; locationName?: string; cityName?: string }) {
+  // Try to infer city from slug if not provided explicitly
+  const inferCityFromSlug = (slug: string): string | undefined => {
+    const seg = slug.split('/').filter(Boolean).pop();
+    if (!seg) return undefined;
+    const parts = seg.split('-');
+    const city = parts[parts.length - 1];
+    if (!city) return undefined;
+    return city.replace(/\b\w/g, c => c.toUpperCase());
+  };
+
+  const cityName = service.locationName || service.cityName || inferCityFromSlug(service.slug);
+  if (!cityName) {
+    // Fallback: build a plain webpage without geo focus
+    const webpage = await WebPageSchema.create({
+      url: `https://goflow.plumbing/${service.slug}/`,
+      name: service.name,
+      description: service.description,
+      type: 'WebPage'
+    });
+    return webpage.build();
+  }
+
+  const cityId = `https://goflow.plumbing/#city-${cityName.toLowerCase().replace(/\s+/g, '-')}`;
+  const webpage = await WebPageSchema.create({
+    url: `https://goflow.plumbing/${service.slug}/`,
+    name: service.name,
+    description: service.description,
+    type: 'WebPage'
+  });
+  webpage.addGeoFocus({ name: cityName, id: cityId, description: `City in California` });
+  return webpage.build();
+}
+
 export async function createArticlePageSchema(details: ArticleDetails) {
   const schema = await ArticleSchema.create(details);
   return schema.build();
@@ -110,25 +148,11 @@ export async function createServiceListSchema(services: ServiceDetails[]) {
     name: 'GoFlow Plumbing Services',
     description: 'Professional plumbing services in Sonoma and Marin County',
     type: 'CollectionPage',
+    // Use an OfferCatalog as the mainEntity to avoid embedding the Organization here
     mainEntity: {
-      '@type': 'Plumber' as const,
-      'name': 'GoFlow Plumbing',
-      //'image': ['https://goflow.plumbing/GoFlow2.jpg/'],
-      'telephone': '(707) 200-8350',
-      'priceRange': '$$',
-      'address': {
-        '@type': 'PostalAddress' as const,
-        'streetAddress': '10 Pine Ave',
-        'addressLocality': 'Sonoma',
-        'addressRegion': 'CA',
-        'postalCode': '95476',
-        'addressCountry': 'US'
-      },
-      'hasOfferCatalog': {
-        '@type': 'OfferCatalog' as const,
-        'name': 'Plumbing Services',
-        'itemListElement': serviceSchemas
-      }
+      '@type': 'OfferCatalog' as const,
+      'name': 'Plumbing Services',
+      'itemListElement': serviceSchemas
     }
   };
   const schema = await WebPageSchema.create(details);
@@ -189,7 +213,7 @@ export async function createServiceRegionsSchema(regions: Array<{ name: string; 
   return schema.build();
 }
 
-export async function createRegionPageSchema(region: { name: string; url: string; description: string }) {
+export async function createRegionPageSchema(region: { name: string; url: string; description: string; cityName?: string }) {
   const schema = await AboutPageSchema.create({
     url: region.url,
     name: region.name,
@@ -199,7 +223,26 @@ export async function createRegionPageSchema(region: { name: string; url: string
       '@id': 'https://goflow.plumbing/#organization'
     }
   });
+  if (region.cityName) {
+    const cityId = `https://goflow.plumbing/#city-${region.cityName.toLowerCase().replace(/\s+/g, '-')}`;
+    schema.addGeoFocus({ name: region.cityName, id: cityId, description: 'City in California' });
+  }
   return schema.build();
+}
+
+/**
+ * Create a WebPage schema that explicitly focuses on a single city for geo relevance.
+ */
+export async function createWebPageGeoSchema(details: { url: string; name: string; description: string; city: { name: string; id?: string; description?: string } }) {
+  // Deprecated for region pages; retained for any other use-cases if needed.
+  const webpage = await WebPageSchema.create({
+    url: details.url,
+    name: details.name,
+    description: details.description,
+    type: 'WebPage'
+  });
+  webpage.addGeoFocus(details.city);
+  return webpage.build();
 }
 
 export async function createBreadcrumbSchema(items: Array<{ name: string; url: string }>): Promise<WithContext<BreadcrumbList>> {

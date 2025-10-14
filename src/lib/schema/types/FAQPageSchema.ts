@@ -11,9 +11,7 @@ export class FAQPageSchema extends GoFlowSchema<FAQPage> {
     return new FAQPageSchema();
   }
 
-  async build(): Promise<WithContext<FAQPage>> {
-    const organization = await OrganizationSchema.create();
-    const orgSchema = await organization.build();
+  build(): WithContext<FAQPage> {
 
     return {
       '@context': 'https://schema.org',
@@ -22,7 +20,8 @@ export class FAQPageSchema extends GoFlowSchema<FAQPage> {
       'url': 'https://goflow.plumbing/faqs/',
       'name': 'Frequently Asked Questions | GoFlow Plumbing',
       'description': 'Find answers to common plumbing questions from GoFlow Plumbing, serving Sonoma and Marin County.',
-      'provider': orgSchema,
+      // Reference Organization by @id to avoid duplication
+      'provider': { '@id': this.organizationId },
       'mainEntity': [
         {
           '@type': 'Question',

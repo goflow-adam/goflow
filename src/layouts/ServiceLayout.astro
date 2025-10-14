@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
-import { createServicePageSchema, createBreadcrumbSchema } from '../lib/schema/factories';
+import { createServicePageSchema, createBreadcrumbSchema, createServiceGeoSchema } from '../lib/schema/factories';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 
 interface Props {
@@ -11,6 +11,9 @@ interface Props {
 const { service } = Astro.props;
 const { Content } = await service.render();
 
+// Use explicit location from frontmatter when provided for localized geo signals
+const locationName = service.data.location as string | undefined;
+
 const serviceDetails = {
   slug: service.slug,
   name: service.data.name ?? service.data.title,
@@ -18,10 +21,25 @@ const serviceDetails = {
   offers: service.data.offers?.map(offer => ({
     name: offer.name,
     description: offer.description
-  }))
+  })),
+  schema: locationName ? {
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: locationName
+    }
+  } : undefined
 };
 
 const schema = await createServicePageSchema(serviceDetails);
+// Add a geo-focused WebPage schema only when location is specified in frontmatter
+const geoSchema = locationName
+  ? await createServiceGeoSchema({
+      slug: service.slug,
+      name: service.data.title,
+      description: service.data.description,
+      locationName
+    })
+  : undefined;
 const currentCrumbName = service.data.breadcrumbDisplayText ?? service.data.linkText ?? service.data.menuText ?? service.data.title;
 const breadcrumbItems = [
   { name: 'Home', url: 'https://goflow.plumbing/' },
@@ -29,7 +47,7 @@ const breadcrumbItems = [
   { name: currentCrumbName, url: `https://goflow.plumbing/${service.slug}/` }
 ];
 const breadcrumbSchema = await createBreadcrumbSchema(breadcrumbItems);
-const combinedSchema: any = [schema, breadcrumbSchema];
+const combinedSchema = geoSchema ? [schema, geoSchema, breadcrumbSchema] : [schema, breadcrumbSchema];
 ---
 
 <BaseLayout 

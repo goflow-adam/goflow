@@ -17,27 +17,7 @@ keywords:
   - local plumber sonoma county
   - 24 hour plumber sonoma county
 region: "Sonoma County"
-containsPlace: [
-        ["Cloverdale"],
-        ["Cotati"],
-        ["Healdsburg"],
-        ["Petaluma", true],
-        ["Rohnert Park"],
-        ["Santa Rosa", true],
-        ["Sebastopol"],
-        ["Sonoma"],
-        ["Windsor"],
-        ["Bloomfield"],
-        ["Bodega"],
-        ["Forestville"],
-        ["Geyserville"],
-        ["Glen Ellen"],
-        ["Guerneville"],
-        ["Jenner"],
-        ["Kenwood"],
-        ["Larkfield-Wikiup"],
-        ["Occidental"]
-      ]
+location: "Sonoma County"
 pubDate: 2025-09-30
 heroImage: "/images/sonoma-county.jpg"
 schema: {
@@ -88,6 +68,8 @@ schema: {
   "description": "Local 3rd Generation Sonoma County plumbers providing 24/7 service. Please call us, your long-time trusted Sonoma County plumbing company for your water heater repairs, drain clearing, faucet leaks, and more. We have deep local knowledge of Sonoma County codes & terrain challenges."
 }
 ---
+
+import { getCitiesForRegion } from '../../data/cities';
 
 # {frontmatter.contentTitle}
 
@@ -140,14 +122,18 @@ With GoFlow Plumbing, you're not just getting a service provider—you're gettin
 ## Areas We Serve in {frontmatter.region}
   
 ### Major Cities
-
-{
-  frontmatter.containsPlace.map(place => (
-    <li>
-      {place[1] ? <a href={`/${place[0].toLowerCase().replace(' ', '-')}-plumbing/`}>{place[0]}</a> : place[0]}
-    </li>
-  ))
-}
+<ul>
+  {getCitiesForRegion(frontmatter.region).map((city) => {
+    const slug = city.toLowerCase().replace(/\s+/g, '-');
+    const linkable = ['santa-rosa', 'petaluma'];
+    const shouldLink = linkable.includes(slug);
+    return (
+      <li>
+        {shouldLink ? <a href={`/${slug}-plumbing/`}>{city}</a> : city}
+      </li>
+    );
+  })}
+</ul>
 
   <h3>Surrounding Communities</h3>
   <p>We also serve all surrounding communities and unincorporated areas within {frontmatter.region}.</p>

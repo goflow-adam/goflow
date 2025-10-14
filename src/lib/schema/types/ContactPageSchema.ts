@@ -1,6 +1,6 @@
 import type { WithContext, WebPage } from 'schema-dts';
 import { GoFlowSchema } from '../base/GoFlowSchema';
-import { OrganizationSchema } from './OrganizationSchema';
+// Organization referenced by @id via base class organizationId
 
 export class ContactPageSchema extends GoFlowSchema<WebPage> {
   private constructor() {
@@ -11,10 +11,7 @@ export class ContactPageSchema extends GoFlowSchema<WebPage> {
     return new ContactPageSchema();
   }
 
-  async build(): Promise<WithContext<WebPage>> {
-    const organization = await OrganizationSchema.create();
-    const orgSchema = await organization.build();
-
+  build(): WithContext<WebPage> {
     return {
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
@@ -22,8 +19,9 @@ export class ContactPageSchema extends GoFlowSchema<WebPage> {
       'url': 'https://goflow.plumbing/contact-us/',
       'name': 'Contact GoFlow Plumbing | Professional Plumbers in Sonoma & Marin',
       'description': 'Contact GoFlow Plumbing for professional plumbing services in Sonoma and Marin County. Available 24/7 for emergencies.',
-      'provider': orgSchema,
-      'mainEntity': orgSchema
+      // Reference Organization by @id to avoid duplication
+      'provider': { '@id': this.organizationId },
+      'mainEntity': { '@id': this.organizationId }
     };
   }
 }

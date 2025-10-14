@@ -17,31 +17,7 @@ keywords:
   - local plumber marin county
   - 24 hour plumber marin county
 region: "Marin County"
-containsPlace: [
-        ["San Rafael", true],
-        ["Novato", true],
-        ["Mill Valley"],
-        ["Larkspur"],
-        ["San Anselmo"],
-        ["Tamalpais-Homestead Valley"],
-        ["Corte Madera"],
-        ["Tiburon"],
-        ["Fairfax"],
-        ["Sausalito"],
-        ["Kentfield"],
-        ["Lucas Valley-Marinwood"],
-        ["Strawberry"],
-        ["Santa Venetia"],
-        ["Marin City"],
-        ["Sleepy Hollow"],
-        ["Ross"],
-        ["Belvedere"],
-        ["Lagunitas-Forest Knolls"],
-        ["Bolinas"],
-        ["Black Point-Green Point"],
-        ["Woodacre"],
-        ["Inverness"]
-      ]
+location: "Marin County"
 pubDate: 2025-09-30
 heroImage: "/images/marin-county.jpg"
 schema: {
@@ -113,6 +89,8 @@ schema: {
 }
 ---
 
+import { getCitiesForRegion } from '../../data/cities';
+
 # {frontmatter.contentTitle}
 
 ## A Legacy of Excellence Since the 1950s
@@ -146,13 +124,16 @@ Plumbing in {frontmatter.region} requires adaptability due to its mix of aging h
   
   <h3>Major Cities</h3>
   <ul>
-  {
-    frontmatter.containsPlace.map(place => (
-      <li>
-        {place[1] ? <a href={`/${place[0].toLowerCase().replace(' ', '-')}-plumbing/`}>{place[0]}</a> : place[0]}
-      </li>
-    ))
-  }
+    {getCitiesForRegion(frontmatter.region).map((city) => {
+      const slug = city.toLowerCase().replace(/\s+/g, '-');
+      const linkable = ['san-rafael', 'novato'];
+      const shouldLink = linkable.includes(slug);
+      return (
+        <li>
+          {shouldLink ? <a href={`/${slug}-plumbing/`}>{city}</a> : city}
+        </li>
+      );
+    })}
   </ul>
 
   <h3>Additional Areas</h3>
