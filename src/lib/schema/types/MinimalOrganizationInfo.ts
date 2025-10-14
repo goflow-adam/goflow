@@ -14,10 +14,14 @@ export interface MinimalOrganizationInfo {
 export function createMinimalOrganizationInfo(): MinimalOrganizationInfo {
   return {
     '@type': 'Plumber',
-    '@id': 'https://goflow.plumbing/#GoFlowPlumbing',
+    // Use a single canonical @id for the organization everywhere
+    '@id': 'https://goflow.plumbing/#organization',
     'name': 'GoFlow Plumbing',
     'legalName': 'GoFlow Plumbing',
-    'image': [/*'https://goflow.plumbing/GoFlow2.jpg/'*/],
+    // Provide at least one valid absolute image URL for Rich Results
+    'image': [
+      'https://goflow.plumbing/android-chrome-512x512.png'
+    ],
     'telephone': '(707) 200-8350',
     'priceRange': '$$',
     'address': {
