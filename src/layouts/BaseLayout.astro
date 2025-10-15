@@ -49,6 +49,17 @@ const baseSchemas = [websiteSchema, organizationSchema];
         }
       }}
     />
+    {Astro.url.pathname === '/' && (
+      <link
+        rel="preload"
+        as="image"
+        href="/images/generated/celtic-768.jpg"
+        imagesrcset="/images/generated/celtic-1280.jpg 1280w, /images/generated/celtic-1024.jpg 1024w, /images/generated/celtic-768.jpg 768w, /images/generated/celtic-640.jpg 640w, /images/generated/celtic-320.jpg 320w"
+        imagesizes="100vw"
+        fetchpriority="high"
+        type="image/jpeg"
+      />
+    )}
     {(() => {
       const allSchemas = Array.isArray(schema)
         ? [...baseSchemas, ...schema]

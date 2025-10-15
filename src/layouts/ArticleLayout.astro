@@ -47,6 +47,9 @@ const combinedSchema = [schema, breadcrumbSchema];
         <img
           src={article.data.heroImage}
           alt={article.data.title}
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
         />
       </div>
     )}
