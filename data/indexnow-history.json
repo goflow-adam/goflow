@@ -1679,7 +1679,22 @@
       "url": "/water-heater-repair-santa-rosa/",
       "lastSubmitted": "2025-10-14T02:02:33.880Z",
       "fileHash": "83081174674f89f52581ad06337a9d51e6bdf82a"
+    },
+    {
+      "url": "/",
+      "lastSubmitted": "2025-11-09T17:02:33.662Z",
+      "fileHash": "1844ea08250970b7daa5c3c5663bac424ff3b262"
+    },
+    {
+      "url": "/drain-cleaning-petaluma/",
+      "lastSubmitted": "2025-11-09T17:02:33.663Z",
+      "fileHash": "1844ea08250970b7daa5c3c5663bac424ff3b262"
+    },
+    {
+      "url": "/santa-rosa-plumbing/",
+      "lastSubmitted": "2025-11-09T17:02:33.663Z",
+      "fileHash": "1844ea08250970b7daa5c3c5663bac424ff3b262"
     }
   ],
-  "lastGitHash": "83081174674f89f52581ad06337a9d51e6bdf82a"
+  "lastGitHash": "1844ea08250970b7daa5c3c5663bac424ff3b262"
 }
