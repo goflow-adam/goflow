@@ -1699,7 +1699,17 @@
       "url": "/drain-cleaning-petaluma/",
       "lastSubmitted": "2025-11-11T02:19:39.569Z",
       "fileHash": "9da6507c4e20e428141a64ee018a635cce50c8fc"
+    },
+    {
+      "url": "/articles/plumber-red-flags/",
+      "lastSubmitted": "2025-11-27T03:01:21.046Z",
+      "fileHash": "51dccb280986967c79458bc3b3a9c3c9c5c5c8ec"
+    },
+    {
+      "url": "/drain-cleaning-petaluma/",
+      "lastSubmitted": "2025-11-27T03:01:21.047Z",
+      "fileHash": "51dccb280986967c79458bc3b3a9c3c9c5c5c8ec"
     }
   ],
-  "lastGitHash": "9da6507c4e20e428141a64ee018a635cce50c8fc"
+  "lastGitHash": "51dccb280986967c79458bc3b3a9c3c9c5c5c8ec"
 }
