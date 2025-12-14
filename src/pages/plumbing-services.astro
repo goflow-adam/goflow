@@ -2,14 +2,22 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { createServiceListSchema } from '../lib/schema/factories';
+import { sortByPositionThenTitle } from '../lib/sortByPositionThenTitle';
 import '../styles/pages/plumbing-services.css';
 
 const services = await getCollection('services', ({ data }) => !data.draft);
 
-const serviceDetails = services.map(service => ({
+const sortedServices = sortByPositionThenTitle(
+  services,
+  service => service.data.position,
+  service => service.data.menuText || service.data.linkText || service.data.title
+);
+
+const serviceDetails = sortedServices.map(service => ({
   slug: service.slug,
   name: service.data.name || service.data.title,
   description: service.data.description || '',
+  position: service.data.position,
   offers: service.data.offers?.map(offer => ({
     name: offer.name,
     description: offer.description
@@ -35,7 +43,7 @@ const schema = await createServiceListSchema(serviceDetails);
     </p>
 
     <div class="services-list">
-      {services.map((service) => (
+      {sortedServices.map((service) => (
         <div>
           <h2>
             <a href={`/${service.slug}/`}>

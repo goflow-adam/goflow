@@ -17,6 +17,7 @@ export interface ServiceDetails {
   slug: string;
   name: string;
   description: string;
+  position?: number;
   timeRequired?: string;
   offers?: Array<{ name: string; description: string; }>;
 }

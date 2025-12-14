@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { sortByPositionThenTitle } from '../lib/sortByPositionThenTitle';
 import '../styles/navigation.css';
 
 interface Props {
@@ -9,19 +10,26 @@ interface Props {
 interface NavItem {
   title: string;
   path: string;
+  position?: number;
   submenu?: NavItem[];
 }
 
 const { isDesktop } = Astro.props;
 // Get all service pages and sort them by title
 const services = await getCollection('services');
-const serviceMenu = services
+const serviceMenuUnsorted = services
   .filter(service => service.data.includeInMenu)
   .map(service => ({
     title: service.data.menuText || service.data.linkText || service.data.title,
-    path: `/${service.slug}/`
-  }))
-  .sort((a, b) => a.title.localeCompare(b.title));
+    path: `/${service.slug}/`,
+    position: service.data.position
+  }));
+
+const serviceMenu = sortByPositionThenTitle(
+  serviceMenuUnsorted,
+  item => item.position,
+  item => item.title
+);
 
 // Get all region pages that should be included in the menu
 const regions = await getCollection('regions');

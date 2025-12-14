@@ -132,8 +132,16 @@ export async function createPricingPageSchema() {
 }
 
 export async function createServiceListSchema(services: ServiceDetails[]) {
+  const sortedServices = [...services].sort((a, b) => {
+    const aPos = a.position ?? Number.POSITIVE_INFINITY;
+    const bPos = b.position ?? Number.POSITIVE_INFINITY;
+
+    if (aPos !== bPos) return aPos - bPos;
+    return a.name.localeCompare(b.name);
+  });
+
   const serviceSchemas = await Promise.all(
-    services.map(async service => ({
+    sortedServices.map(async service => ({
       '@type': 'Offer' as const,
       'itemOffered': {
         '@type': 'Service' as const,

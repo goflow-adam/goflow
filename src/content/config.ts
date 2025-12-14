@@ -42,6 +42,7 @@ const baseSchema = z.object({
   linkText: z.string().optional(),
   menuText: z.string().optional(),
   breadcrumbDisplayText: z.string().optional(),
+  position: z.number().int().optional(),
   pubDate: z.date(),
   updatedDate: z.date().optional(),
   heroImage: z.string().optional(),
