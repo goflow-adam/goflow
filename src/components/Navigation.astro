@@ -58,26 +58,17 @@ const navigation: NavItem[] = [
   {
     title: "Services",
     path: "/plumbing-services/",
-    submenu: [
-      { title: "Services Home", path: "/plumbing-services/" },
-      ...serviceMenu
-    ]
+    submenu: serviceMenu
   },
   {
     title: "Regions",
     path: "/service-regions/",
-    submenu: [
-      { title: "Regions Home", path: "/service-regions/" },
-      ...regionMenu
-    ]
+    submenu: regionMenu
   },
   {
     title: "Articles",
     path: "/articles/",
-    submenu: [
-      { title: "Articles Home", path: "/articles/" },
-      ...articleMenu
-    ]
+    submenu: articleMenu
   },
   { title: "Contact Us", path: "/contact-us/" },
   { title: "FAQs", path: "/faqs/" }
@@ -142,6 +133,36 @@ function isActive(path: string): boolean {
             </button>
             <div class="mobile-submenu-content">
               <ul class="mobile-submenu-list">
+                {item.path === '/plumbing-services/' && (
+                  <li>
+                    <a
+                      href="/plumbing-services/"
+                      class={`mobile-nav-link ${isActive('/plumbing-services/') ? 'active' : ''}`}
+                    >
+                      Services Home
+                    </a>
+                  </li>
+                )}
+                {item.path === '/service-regions/' && (
+                  <li>
+                    <a
+                      href="/service-regions/"
+                      class={`mobile-nav-link ${isActive('/service-regions/') ? 'active' : ''}`}
+                    >
+                      Regions Home
+                    </a>
+                  </li>
+                )}
+                {item.path === '/articles/' && (
+                  <li>
+                    <a
+                      href="/articles/"
+                      class={`mobile-nav-link ${isActive('/articles/') ? 'active' : ''}`}
+                    >
+                      Articles Home
+                    </a>
+                  </li>
+                )}
                 {item.submenu.map(subItem => (
                   <li>
                     <a

@@ -10,7 +10,7 @@ const services = await getCollection('services', ({ data }) => !data.draft);
 const sortedServices = sortByPositionThenTitle(
   services,
   service => service.data.position,
-  service => service.data.menuText || service.data.linkText || service.data.title
+  service => service.data.name || service.data.menuText || service.data.linkText || service.data.title
 );
 
 const serviceDetails = sortedServices.map(service => ({
@@ -47,12 +47,12 @@ const schema = await createServiceListSchema(serviceDetails);
         <div>
           <h2>
             <a href={`/${service.slug}/`}>
-              {service.data.name}
+              {service.data.name || service.data.title}
             </a>
           </h2>
           <p>{service.data.description}</p>
           <a href={`/${service.slug}/`}>
-            {`Get ${service.data.linkText}`||'Learn More'}
+            {service.data.linkText ? `Get ${service.data.linkText}` : 'Learn More'}
           </a>
         </div>
       ))}
