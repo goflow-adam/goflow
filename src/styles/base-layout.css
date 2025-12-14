@@ -83,7 +83,11 @@
 }
 
 .page-body header .logo-container .logo {
-  @apply text-2xl font-bold text-background;
+  @apply flex items-center;
+}
+
+.page-body header .logo-container .logo-image {
+  @apply block h-8 w-auto;
 }
 
 .page-body main {
