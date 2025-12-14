@@ -28,11 +28,11 @@
 }
 
 .page-body header .header-container {
-  @apply container mx-auto px-4 py-4 relative;
+  @apply container mx-auto px-4 relative;
 }
 
 .page-body header .logo-container {
-  @apply flex justify-between items-center;
+  @apply flex justify-between items-center h-16;
 }
 
 @keyframes gradientFlow {
