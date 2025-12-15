@@ -10,7 +10,8 @@ export default defineConfig({
       background: '#f4f7f5',
       accent: '#ffc60c',
       error: '#bd0006',
-      text: '#000000'
+      text: '#000000',
+      test: '#15fb1dff'
     }
   },
   shortcuts: {

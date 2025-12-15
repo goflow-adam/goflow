@@ -91,7 +91,16 @@
 }
 
 .page-body main {
-  @apply flex-grow container mx-auto px-4 py-20 lg:py-16 mt-16;
+  @apply flex-grow w-full py-20 lg:py-16;
+  background-image:
+    url('/images/SanRafael-Cropped.jpg');
+  background-repeat: no-repeat;
+  background-position: top 4rem center;
+  background-size: contain;
+}
+
+.page-body main .main-container {
+  @apply container mx-auto px-4;
 }
 
 .markdown-content h1, .page-body h1 {
@@ -146,7 +155,7 @@
 }
 
 .article {
-  @apply max-w-4xl mx-auto px-4;
+  @apply max-w-4xl mx-auto px-4 pt-16 bg-background bg-opacity-75;
 }
 
 .article h2 {

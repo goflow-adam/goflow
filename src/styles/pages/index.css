@@ -5,25 +5,12 @@
 }
 
 .hero {
-  @apply bg-primary py-20 text-background;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Hero background image (discoverable) */
-.hero picture,
-.hero .hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hero .hero-bg {
-  object-fit: cover;
-  object-position: center;
-  mix-blend-mode: multiply;
-  z-index: 0;
+  /* padding top */
+  @apply pt-60 sm:pt-12 md:pt-18 lg:pt-16 xl:pt-24;
+  /* padding bottom */
+  @apply pb-10 sm:pb-52 md:pb-52 lg:pb-74 xl:pb-108;
+  /* text colors */
+  @apply text-primary;
 }
 
 .hero-container {
@@ -33,11 +20,11 @@
 }
 
 .hero .hero-container h1 {
-  @apply text-4xl lg:text-5xl font-bold mb-6 text-background;
+  @apply text-4xl lg:text-5xl font-bold mb-6 text-primary;
 }
 
 .hero-container h2 {
-  @apply text-accent;
+  @apply text-primary;
 }
 
 .hero p {
@@ -53,7 +40,7 @@
 }
 
 .services h2 {
-  @apply text-3xl font-bold text-center mb-12;
+  @apply text-3xl font-bold text-center;
 }
 
 .services-container > div {
