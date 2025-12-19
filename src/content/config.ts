@@ -48,6 +48,10 @@ const baseSchema = z.object({
   heroImage: z.string().optional(),
   draft: z.boolean().default(false),
   schema: z.any().optional(),
+  faqs: z.array(z.object({
+    question: z.string(),
+    answer: z.string(),
+  })).optional(),
   includeInMenu: z.boolean().default(false),
 });
 
