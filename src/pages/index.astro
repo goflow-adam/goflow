@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { sortByPositionThenTitle } from '../lib/sortByPositionThenTitle';
 import '../styles/pages/index.css';
 
 interface ServiceFrontmatter {
@@ -8,10 +9,20 @@ interface ServiceFrontmatter {
   draft: boolean;
   title: string;
   description: string;
+  linkText?: string;
+  menuText?: string;
+  name?: string;
+  position?: number;
 }
 
 const featuredServices = await getCollection('services', ({ data }: { data: ServiceFrontmatter }) => 
   data.featured && !data.draft
+);
+
+const sortedFeaturedServices = sortByPositionThenTitle(
+  featuredServices,
+  service => service.data.position,
+  service => service.data.name || service.data.menuText || service.data.linkText || service.data.title
 );
 
 ---
@@ -51,11 +62,13 @@ const featuredServices = await getCollection('services', ({ data }: { data: Serv
       <div class="services-container">
         <!-- <h2>Our Services</h2> -->
         <div>
-          {featuredServices.map((service: any) => (
+          {sortedFeaturedServices.map((service: any) => (
             <div>
               <h3>{service.data.title}</h3>
               <p class="mb-4">{service.data.description}</p>
-              <a href={`/${service.slug}/`}>{`Get ${service.data.linkText}`||'Learn More'}</a>
+              <a href={`/${service.slug}/`}>
+                {service.data.linkText ? `Get ${service.data.linkText}` : 'Learn More'}
+              </a>
             </div>
           ))}
         </div>
