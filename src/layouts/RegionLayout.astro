@@ -36,7 +36,7 @@ const { Content } = await region.render();
 <BaseLayout 
   title={region.data.title}
   description={region.data.description}
-  schema={[schema, breadcrumbSchema]}
+  schema={[...schema, breadcrumbSchema]}
 >
   <article class="article">
     <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Service Regions', path: '/service-regions/' }, { name: currentCrumbName }]} />

@@ -21,6 +21,20 @@ const [websiteSchema, organizationSchema] = await Promise.all([
   createOrganizationSchema()
 ]);
 const baseSchemas = [websiteSchema, organizationSchema];
+
+const normalizeSchemas = (value: unknown): any[] => {
+  if (!value) return [];
+  if (Array.isArray(value)) return value.flatMap(normalizeSchemas);
+  return [value];
+};
+
+const stripContext = (item: any): any => {
+  if (!item || typeof item !== 'object') return item;
+  // Remove @context from nodes that will be inside @graph
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { ['@context']: _context, ...rest } = item;
+  return rest;
+};
 ---
 
 <!DOCTYPE html>
@@ -71,14 +85,18 @@ const baseSchemas = [websiteSchema, organizationSchema];
         ? [...baseSchemas, schema]
         : baseSchemas;
 
-      // Ensure no undefined/null schemas
-      const validSchemas = allSchemas.filter(s => s !== undefined && s !== null);
+      const validSchemas = normalizeSchemas(allSchemas)
+        .filter(s => s !== undefined && s !== null)
+        .map(stripContext);
+
+      const graphSchema = {
+        '@context': 'https://schema.org',
+        '@graph': validSchemas
+      };
 
       return (
         <>
-          {validSchemas.map(item => (
-            <script type="application/ld+json" set:html={JSON.stringify(item)} />
-          ))}
+          <script type="application/ld+json" set:html={JSON.stringify(graphSchema)} />
         </>
       );
     })()}

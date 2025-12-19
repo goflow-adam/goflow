@@ -222,20 +222,44 @@ export async function createServiceRegionsSchema(regions: Array<{ name: string; 
 }
 
 export async function createRegionPageSchema(region: { name: string; url: string; description: string; cityName?: string }) {
-  const schema = await AboutPageSchema.create({
+  const slug = region.url
+    .replace('https://goflow.plumbing/', '')
+    .replace(/\/$/, '');
+
+  const serviceId = `https://goflow.plumbing/${slug}#service`;
+
+  const webpage = await WebPageSchema.create({
     url: region.url,
     name: region.name,
     description: region.description,
+    type: 'WebPage',
     mainEntity: {
-      '@type': 'Organization',
-      '@id': 'https://goflow.plumbing/#organization'
+      '@type': 'Service',
+      '@id': serviceId
     }
   });
+
+  const areaName = region.cityName || region.name;
+  const service = await ServiceSchema.create({
+    slug,
+    name: region.name,
+    description: region.description,
+    schema: {
+      '@id': serviceId,
+      areaServed: {
+        '@type': 'AdministrativeArea',
+        name: areaName
+      },
+      serviceType: ['Plumbing']
+    }
+  });
+
   if (region.cityName) {
     const cityId = `https://goflow.plumbing/#city-${region.cityName.toLowerCase().replace(/\s+/g, '-')}`;
-    schema.addGeoFocus({ name: region.cityName, id: cityId, description: 'City in California' });
+    webpage.addGeoFocus({ name: region.cityName, id: cityId, description: 'City in California' });
   }
-  return schema.build();
+
+  return [await webpage.build(), await service.build()];
 }
 
 /**
@@ -255,9 +279,12 @@ export async function createWebPageGeoSchema(details: { url: string; name: strin
 
 export async function createBreadcrumbSchema(items: Array<{ name: string; url: string }>): Promise<WithContext<BreadcrumbList>> {
   // Google Rich Results prefers ListItem with top-level name and item as URL/@id
+  const pageUrl = items.length > 0 ? items[items.length - 1].url : 'https://goflow.plumbing/';
+  const breadcrumbId = `${pageUrl.replace(/\/$/, '')}#breadcrumb`;
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    '@id': breadcrumbId,
     itemListElement: items.map((crumb, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
