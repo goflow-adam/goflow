@@ -101,217 +101,238 @@ faqs:
 import { getCitiesForRegion } from '../../data/cities';
 import FAQSection from '@/components/FAQSection.astro';
 
-# {frontmatter.contentTitle}
+<div class="content-grid">
+  <div class="one-column">
+    # {frontmatter.contentTitle}
+  </div>
+  <div class="two-column">
+    ### Plumbing problems don’t wait—so we don’t either.
 
-### Plumbing problems don’t wait—so we don’t either.
+    You have a home in Marin County with a leak that’s getting worse, a drain that won’t drain,
+    or a failing hot water heater, or some other plumbing nuisance.
+    We want to take that nuisance on as our own, 
+    because you deserve a plumber who will treat your home like their own.
 
-You have a home in Marin County with a leak that’s getting worse, a drain that won’t drain,
-or a failing hot water heater, or some other plumbing nuisance.
-We want to take that nuisance on as our own, 
-because you deserve a plumber who will treat your home like their own.
+    [Call GoFlow Plumbing](tel:7072008350) and we’ll make your plumbing problem ours.
+  </div>
+  <div class="two-column">
+    ![GoFlow Marin County Plumber](/images/SanRafael-Cropped1.jpg "GoFlow Marin County Plumber")
+  </div>
+  <section class="two-column">
+    <h2>Our plumbing services available in all areas of {frontmatter.region}</h2>
+    
+    <h3>Major Cities</h3>
+    <ul>
+      {getCitiesForRegion(frontmatter.region).map((city) => {
+        const slug = city.toLowerCase().replace(/\s+/g, '-');
+        const linkable = ['san-rafael', 'novato'];
+        const shouldLink = linkable.includes(slug);
+        return (
+          <li>
+            {shouldLink ? <a href={`/${slug}-plumbing/`}>{city}</a> : city}
+          </li>
+        );
+      })}
+    </ul>
 
-[Call GoFlow Plumbing](tel:7072008350) and we’ll make your plumbing problem ours.
+    <h3>Additional Areas</h3>
+    <p>We also serve all surrounding communities and unincorporated areas within {frontmatter.region}.</p>
+  </section>
+  <div class="two-column">
+    ## Our Services in {frontmatter.region}
 
-<section>
-  <h2>Our plumbing services available in all areas of {frontmatter.region}</h2>
-  
-  <h3>Major Cities</h3>
-  <ul>
-    {getCitiesForRegion(frontmatter.region).map((city) => {
-      const slug = city.toLowerCase().replace(/\s+/g, '-');
-      const linkable = ['san-rafael', 'novato'];
-      const shouldLink = linkable.includes(slug);
-      return (
-        <li>
-          {shouldLink ? <a href={`/${slug}-plumbing/`}>{city}</a> : city}
-        </li>
-      );
-    })}
-  </ul>
+    If you’re dealing with a leak, a drain issue, no hot water, or something that just
+    doesn’t feel right in your home, you don’t need a lecture—you need a plan.
+    Here’s the work we most commonly do for Marin County homeowners and businesses.
 
-  <h3>Additional Areas</h3>
-  <p>We also serve all surrounding communities and unincorporated areas within {frontmatter.region}.</p>
-</section>
+    <div>
+      <h3>Residential Services</h3>
+      <ul>
+        <li>Water heater services</li>
+        <li>Drain cleaning</li>
+        <li>Leak detection</li>
+        <li>Pipe repair</li>
+        <li>Emergency plumbing</li>
+        <li>Fixture installation</li>
+        <li>Sewer services</li>
+        <li>Water line work</li>
+      </ul>
+    </div>
 
-## {frontmatter.region} Unique Plumbing Conditions
+    <div>
+      <h3>Commercial Services</h3>
+      <ul>
+        <li>Business plumbing</li>
+        <li>Restaurant services</li>
+        <li>Office maintenance</li>
+        <li>Retail locations</li>
+        <li>Property management</li>
+        <li>Code compliance</li>
+        <li>Emergency response</li>
+        <li>Maintenance programs</li>
+      </ul>
+    </div>
+  </div>
+  <div class="two-column">
+    ## Frequently Asked Questions About Plumbing in Marin County
 
-In {frontmatter.region}, the “same plumbing problem” can have a very different cause depending on where you live.
-When you call us, we’re thinking about your home’s terrain, age, and exposure—because that’s what tells us what tools to bring and what to look for first.
+    <FAQSection faqs={frontmatter.faqs} />
+  </div>
+  <div class="two-column">
+    ## Popular Plumbing Services in Marin County
 
-In hillside homes—Mill Valley, Sausalito, Tiburon—your plumbing layout often has more elevation changes.
-That can mean things like booster pumps for pressure, longer drain runs, and drainage solutions that have to work with gravity.
-Even small foundation movement on wet hillsides can stress water, gas, and sewer lines.
+    - [Water heater repair San Rafael](/water-heater-repair-san-rafael/)
+    - [Drain cleaning San Rafael](/drain-cleaning-san-rafael/)
+    - [Water heater repair Novato](/water-heater-repair-novato/)
+    - [Drain cleaning Novato](/drain-cleaning-novato/)
+  </div>
+  <div class="one-column">
+    ## {frontmatter.region} Unique Plumbing Conditions
 
-In older Marin homes—places like San Anselmo, Larkspur, Fairfax—you might be living with galvanized steel, clay lines, or older drain configurations.
-Those materials can be more sensitive, more restricted, and sometimes they simply don’t meet today’s expectations.
-When replacement is the right move, we’ll explain why and what it takes to do it correctly and code-compliant.
+    In {frontmatter.region}, the “same plumbing problem” can have a very different cause depending on where you live.
+    When you call us, we’re thinking about your home’s terrain, age, and exposure—because that’s what tells us what tools to bring and what to look for first.
 
-If you live near the coast—Stinson Beach, Bolinas, Point Reyes—salt air and high humidity can accelerate corrosion.
-In some areas you may also be on a well or septic system, which changes how we think about water quality, filtration, and waste management.
+    In hillside homes—Mill Valley, Sausalito, Tiburon—your plumbing layout often has more elevation changes.
+    That can mean things like booster pumps for pressure, longer drain runs, and drainage solutions that have to work with gravity.
+    Even small foundation movement on wet hillsides can stress water, gas, and sewer lines.
 
-In areas where soils shift and seismic activity matters—like [Novato](/novato-plumbing/), [San Rafael](/san-rafael-plumbing/), or Corte Madera—we pay close attention to movement risk.
-That often means prioritizing proper supports, earthquake-conscious bracing, and leak detection that looks beyond the obvious.
+    In older Marin homes—places like San Anselmo, Larkspur, Fairfax—you might be living with galvanized steel, clay lines, or older drain configurations.
+    Those materials can be more sensitive, more restricted, and sometimes they simply don’t meet today’s expectations.
+    When replacement is the right move, we’ll explain why and what it takes to do it correctly and code-compliant.
 
-And in higher-end or custom homes—Belvedere, Ross, Kentfield—you may have advanced systems (radiant heat, smart water controls, high-end fixtures, guest houses, pools, extensive landscaping).
-Those setups need a plumber who’s comfortable diagnosing complexity, sourcing the right parts, and protecting the finish work while we’re there.
+    If you live near the coast—Stinson Beach, Bolinas, Point Reyes—salt air and high humidity can accelerate corrosion.
+    In some areas you may also be on a well or septic system, which changes how we think about water quality, filtration, and waste management.
 
-Finally, Marin’s water conservation expectations can influence what gets installed and what passes inspection.
-If efficiency upgrades make sense (low-flow fixtures, leak detection, tankless, etc.), we’ll walk you through them without pushing what you don’t need.
+    In areas where soils shift and seismic activity matters—like [Novato](/novato-plumbing/), [San Rafael](/san-rafael-plumbing/), or Corte Madera—we pay close attention to movement risk.
+    That often means prioritizing proper supports, earthquake-conscious bracing, and leak detection that looks beyond the obvious.
 
-Bottom line: we tailor the fix to your home’s realities—so it’s done right, it’s clean, and it lasts.
+    And in higher-end or custom homes—Belvedere, Ross, Kentfield—you may have advanced systems (radiant heat, smart water controls, high-end fixtures, guest houses, pools, extensive landscaping).
+    Those setups need a plumber who’s comfortable diagnosing complexity, sourcing the right parts, and protecting the finish work while we’re there.
 
+    Finally, Marin’s water conservation expectations can influence what gets installed and what passes inspection.
+    If efficiency upgrades make sense (low-flow fixtures, leak detection, tankless, etc.), we’ll walk you through them without pushing what you don’t need.
 
-<p><strong>Available 24/7 for Emergency Services</strong></p>
+    Bottom line: we tailor the fix to your home’s realities—so it’s done right, it’s clean, and it lasts.
 
-## Frequently Asked Questions About Plumbing in Marin County
+    <p><strong>Available 24/7 for Emergency Services</strong></p>
 
-<FAQSection faqs={frontmatter.faqs} />
+    ## Why Choose GoFlow in {frontmatter.region}?
 
-## Our Services in {frontmatter.region}
+    You’re inviting a plumber into your home.
+    So you deserve someone who shows up on time, works clean, explains what’s going on, and doesn’t push solutions you don’t need.
+    Here’s what you can expect when you call us.
+  </div>
+  <div class="two-column">
+    ### Three Generations of Local Excellence
+    <ul>
+      <li>Over 60 years of experience with Marin County building codes</li>
+      <li>Multi-generational understanding of Marin's unique plumbing challenges</li>
+      <li>Deep knowledge of local water systems developed since the 1950s</li>
+      <li>Long-standing relationships with suppliers and building officials</li>
+      <li>Rapid response times from our family-owned business</li>
+      <li>Strong community connections built over three generations</li>
+    </ul>
+  </div>
+  <div class="two-column">
+    ### Professional Excellence Through the Generations
+    <ul>
+      <li>Fully licensed and insured with three generations of expertise</li>
+      <li>Team trained in both time-tested and modern techniques</li>
+      <li>State-of-the-art equipment backed by decades of experience</li>
+      <li>Premium materials from trusted suppliers since the 1950s</li>
+      <li>Comprehensive service warranty</li>
+      <li>Fair pricing—a family tradition for over 60 years</li>
+    </ul>
+  </div>
+  <div class="two-column">
+    ## Emergency Response
 
-If you’re dealing with a leak, a drain issue, no hot water, or something that just
-doesn’t feel right in your home, you don’t need a lecture—you need a plan.
-Here’s the work we most commonly do for Marin County homeowners and businesses.
+    If your issue can cause damage or get worse fast, don’t wait.
+    24/7 emergency plumbing throughout {frontmatter.region}:
+    - Rapid response
+    - Always available
+    - Quick arrival times
+    - Expert solutions
+    - Fair pricing
+    - Complete service
+  </div>
+  <div class="one-column">
+    ## Local Focus
+  </div>
+  <div class="two-column">
+    ### Community Commitment
+    If you live here, you want a plumber who understands the county and plans to be here long-term.
+    That matters when you need follow-up, warranties, or a second opinion later.
 
-<div>
-  <h3>Residential Services</h3>
-  <ul>
-    <li>Water heater services</li>
-    <li>Drain cleaning</li>
-    <li>Leak detection</li>
-    <li>Pipe repair</li>
-    <li>Emergency plumbing</li>
-    <li>Fixture installation</li>
-    <li>Sewer services</li>
-    <li>Water line work</li>
-  </ul>
+    - Local business understanding
+    - Active in community
+    - Regional knowledge
+    - Personalized attention
+    - Established relationships
+    - Local references
+  </div>
+  <div class="two-column">
+    ### Service Convenience
+    We make it easier to get help without turning it into a project.
+
+    - Same-day service available
+    - Flexible appointments
+    - Mobile service fleet
+    - Well-equipped trucks
+    - Digital communications
+    - Easy scheduling
+  </div>
+  <div class="one-column">
+    ## Special Considerations for Marin
+  </div>
+  <div class="two-column">
+    ### Local Expertise
+    - Hill and slope considerations
+    - Coastal area experience
+    - Historic home knowledge
+    - Modern home systems
+    - Environmental awareness
+    - Water conservation focus
+  </div>
+  <div class="two-column">
+    ### Regional Understanding
+    - Microclimates impact
+    - Soil conditions
+    - Building regulations
+    - Water districts
+    - Local materials
+    - Regional codes
+  </div>
+  <div class="two-column">
+    ## Contact Us
+
+    If you want help now, call us.
+    If you’re planning a project and want a second opinion, call us.
+    Either way, we’ll give you a clear plan and straightforward communication.
+
+    Need plumbing service in {frontmatter.region}? Contact GoFlow Plumbing for:
+    - Free estimates
+    - Emergency service
+    - Maintenance plans
+    - Project planning
+    - Code compliance
+    - General inquiries
+  </div>
+  <div class="one-column">
+    ## A Legacy of Excellence Since the 1950s
+
+    When you call GoFlow, you’re not getting a brand-new company learning Marin County for the first time.
+    You’re getting a family that has spent decades working in Marin homes—hillsides, coast, older neighborhoods, and new builds.
+
+    Our family's plumbing journey in the Bay Area began in the late 1950s, when our grandfather recognized the unique challenges that Marin County's diverse landscape presented.
+    He built his reputation on understanding not just plumbing, but how the geography and home styles change what “doing it right” looks like.
+
+    As Marin County grew and evolved through the decades, our second generation expanded this expertise in the 1980s.
+    They adapted to the changing needs of the community—from retrofits in older homes to modern installations—while keeping the same commitment to clean work and personal service.
+
+    Today, as third-generation plumbers, we combine that accumulated knowledge with modern tools and sustainable solutions.
+    It’s why we take careful diagnostics seriously and why we’d rather solve the root cause than sell you something you don’t need.
+
+    Trust your local {frontmatter.region} plumbing experts at GoFlow Plumbing for all your plumbing needs.
+  </div>
 </div>
-
-<div>
-  <h3>Commercial Services</h3>
-  <ul>
-    <li>Business plumbing</li>
-    <li>Restaurant services</li>
-    <li>Office maintenance</li>
-    <li>Retail locations</li>
-    <li>Property management</li>
-    <li>Code compliance</li>
-    <li>Emergency response</li>
-    <li>Maintenance programs</li>
-  </ul>
-</div>
-
-## Popular Plumbing Services in Marin County
-
-- [Water heater repair San Rafael](/water-heater-repair-san-rafael/)
-- [Drain cleaning San Rafael](/drain-cleaning-san-rafael/)
-- [Water heater repair Novato](/water-heater-repair-novato/)
-- [Drain cleaning Novato](/drain-cleaning-novato/)
-
-## Why Choose GoFlow in {frontmatter.region}?
-
-You’re inviting a plumber into your home.
-So you deserve someone who shows up on time, works clean, explains what’s going on, and doesn’t push solutions you don’t need.
-Here’s what you can expect when you call us.
-
-### Three Generations of Local Excellence
-<ul>
-  <li>Over 60 years of experience with Marin County building codes</li>
-  <li>Multi-generational understanding of Marin's unique plumbing challenges</li>
-  <li>Deep knowledge of local water systems developed since the 1950s</li>
-  <li>Long-standing relationships with suppliers and building officials</li>
-  <li>Rapid response times from our family-owned business</li>
-  <li>Strong community connections built over three generations</li>
-</ul>
-
-### Professional Excellence Through the Generations
-<ul>
-  <li>Fully licensed and insured with three generations of expertise</li>
-  <li>Team trained in both time-tested and modern techniques</li>
-  <li>State-of-the-art equipment backed by decades of experience</li>
-  <li>Premium materials from trusted suppliers since the 1950s</li>
-  <li>Comprehensive service warranty</li>
-  <li>Fair pricing—a family tradition for over 60 years</li>
-</ul>
-
-## Emergency Response
-
-If your issue can cause damage or get worse fast, don’t wait.
-24/7 emergency plumbing throughout {frontmatter.region}:
-- Rapid response
-- Always available
-- Quick arrival times
-- Expert solutions
-- Fair pricing
-- Complete service
-
-## Local Focus
-
-### Community Commitment
-If you live here, you want a plumber who understands the county and plans to be here long-term.
-That matters when you need follow-up, warranties, or a second opinion later.
-
-- Local business understanding
-- Active in community
-- Regional knowledge
-- Personalized attention
-- Established relationships
-- Local references
-
-### Service Convenience
-We make it easier to get help without turning it into a project.
-
-- Same-day service available
-- Flexible appointments
-- Mobile service fleet
-- Well-equipped trucks
-- Digital communications
-- Easy scheduling
-
-## Special Considerations for Marin
-
-### Local Expertise
-- Hill and slope considerations
-- Coastal area experience
-- Historic home knowledge
-- Modern home systems
-- Environmental awareness
-- Water conservation focus
-
-### Regional Understanding
-- Microclimates impact
-- Soil conditions
-- Building regulations
-- Water districts
-- Local materials
-- Regional codes
-
-## Contact Us
-
-If you want help now, call us.
-If you’re planning a project and want a second opinion, call us.
-Either way, we’ll give you a clear plan and straightforward communication.
-
-Need plumbing service in {frontmatter.region}? Contact GoFlow Plumbing for:
-- Free estimates
-- Emergency service
-- Maintenance plans
-- Project planning
-- Code compliance
-- General inquiries
-
-## A Legacy of Excellence Since the 1950s
-
-When you call GoFlow, you’re not getting a brand-new company learning Marin County for the first time.
-You’re getting a family that has spent decades working in Marin homes—hillsides, coast, older neighborhoods, and new builds.
-
-Our family's plumbing journey in the Bay Area began in the late 1950s, when our grandfather recognized the unique challenges that Marin County's diverse landscape presented.
-He built his reputation on understanding not just plumbing, but how the geography and home styles change what “doing it right” looks like.
-
-As Marin County grew and evolved through the decades, our second generation expanded this expertise in the 1980s.
-They adapted to the changing needs of the community—from retrofits in older homes to modern installations—while keeping the same commitment to clean work and personal service.
-
-Today, as third-generation plumbers, we combine that accumulated knowledge with modern tools and sustainable solutions.
-It’s why we take careful diagnostics seriously and why we’d rather solve the root cause than sell you something you don’t need.
-
-Trust your local {frontmatter.region} plumbing experts at GoFlow Plumbing for all your plumbing needs.

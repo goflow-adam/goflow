@@ -119,41 +119,54 @@ faqs:
 
 import FAQSection from '@/components/FAQSection.astro';
 
-<article>
-  # {frontmatter.contentTitle}
+<div class="content-grid">
+  <div class="one-column">
+    # {frontmatter.contentTitle}
+  </div>
 
-  <div>
-    <p>
-      You’ve got a plumbing problem in your San Rafael home, and it’s exhausting.
-      Even when it’s “small,” it steals your time, your attention, and your peace of mind.
-    </p>
-
-    <p>
-      We’re plumbers who genuinely want to fix it for you.
-      Call us, tell us what’s happening, and let us make your plumbing problem ours.
-      We’ll show up when we say we will, protect your space, communicate clearly, and leave you with a fix you feel confident about.
-    </p>
-
-    <p>
-      If you need help today, start with what’s closest to your problem:
-      [water heater service in San Rafael](/water-heater-repair-san-rafael/),
-      [drain cleaning](/drain-cleaning-san-rafael/),
-      or <a href="tel:+17072008350">call us</a> and we’ll help you sort it out.
-      We’ll give you clear, upfront pricing, a real arrival window, and clean work.
-    </p>
-
-    <h2>Same-day Appointments with Your San Rafael Plumber</h2>
-    <p>
-      If it’s urgent, we’ll help you stabilize the situation and get service scheduled as quickly as possible.
-      If it’s not urgent, we’ll still treat it as if it was in our own home—because small plumbing problems love to become expensive ones.
-    </p>
-
-    <h2>Comprehensive San Rafael Plumbing Services</h2>
-    <p>
-      Our plumbing services in San Rafael are straightforward: we understand the problem, explain the options, and do the work cleanly.
-      Here’s a sampling of what we can do for you:
-    </p>
-
+  <div class="two-column">
+    You’ve got a plumbing problem in your San Rafael home, and it’s exhausting.
+    Even when it’s “small,” it steals your time, your attention, and your peace of mind.
+  
+    We’re plumbers who genuinely want to fix it for you.
+    Call us, tell us what’s happening, and let us make your plumbing problem ours.
+    We’ll show up when we say we will, protect your space, communicate clearly,
+    and leave you with a fix you feel confident about.
+  
+    Start with what’s closest to your problem:
+    [water heater service in San Rafael](/water-heater-repair-san-rafael/),
+    [drain cleaning](/drain-cleaning-san-rafael/),
+    or <a href="tel:+17072008350">call us</a> and we’ll help you sort it out.
+    We’ll give you clear, upfront pricing, a real arrival window, and clean work.
+  </div>
+  <div class="two-column">
+    ![GoFlow San Rafael Plumber](/images/SanRafael-Cropped1.jpg "GoFlow San Rafael Plumber")
+  </div>
+  <div class="two-column">
+    ### What to do while you wait (a quick homeowner checklist)
+    If there’s active leaking, shut off the nearest valve (or the home’s main),
+    move anything valuable away from the area,
+    and avoid using fixtures that might worsen the problem.
+    If there’s a sewer backup, stop running water and call right away.
+  </div>
+  <div class="two-column">
+    ### Areas We Serve in San Rafael
+    We serve homeowners throughout San Rafael, including:
+    - Terra Linda
+    - Dominican
+    - Gerstle Park
+    - Sun Valley
+    - Downtown
+    - Peacock Gap
+    - The Canal District
+    - And all surrounding neighborhoods.
+  </div>
+  <div class="one-column">
+    ## Comprehensive San Rafael Plumbing Services
+  </div>
+  <div class="two-column">
+    Our plumbing services in San Rafael are straightforward: we understand the problem, explain the options, and do the work cleanly.
+    Here’s a sampling of what we can do for you:
     <ul>
       <li><a href="/emergency-plumbing-services/">Emergency plumbing</a> for leaks, backups, and urgent failures</li>
       <li><a href="/drain-cleaning-san-rafael/">Drain cleaning</a> (kitchen, bath, shower/tub, and main line)</li>
@@ -164,56 +177,31 @@ import FAQSection from '@/components/FAQSection.astro';
       <li>Leak detection when the source isn’t obvious</li>
       <li>Sewer services</li>
     </ul>
+  </div>
+  <div class="two-column">
+    ## Frequently Asked Questions About Plumbing in San Rafael
 
-    <h2>San Rafael’s Unique Plumbing Challenges</h2>
-    <p>
-      San Rafael’s mix of older neighborhoods, hillside terrain, and coastal influence means the same symptom can have different causes.
-      When you call, we’re already thinking about what’s common in your area and what we’ll likely find behind the walls.
-    </p>
-    <p>
-      Homes in areas like Gerstle Park, Sun Valley, and Dominican can have aging copper, galvanized, cast iron, or older drain configurations.
-      Those materials are more prone to corrosion, leaks, and restrictions.
-      Clay drain lines are also common in San Rafael, and they should be cleared carefully.
-    </p>
-    <p>
-      San Rafael’s microclimates also matter.
-      Coastal exposure (and fog) can accelerate corrosion in some areas.
-      Hillsides can create pressure irregularities and movement stress that show up as leaks, drainage issues, or recurring repairs.
-    </p>
-
-    <h2>Our San Rafael Plumbers</h2>
-    <p>
-      The person you let into your home matters.
-      We send only properly experienced plumbers who communicate clearly, work cleanly, and treat your home with respect.
-      You’ll get a plan, not pressure.
-    </p>
-
-    <h2>Water quality, pressure, and efficiency upgrades</h2>
-    <p>
-      In San Rafael, water quality and pressure can vary by neighborhood.
-      If you’re seeing mineral buildup, premature fixture failures, inconsistent pressure, or you want to reduce water waste,
-      we’ll walk you through options like filtration, pressure regulation, and efficient fixture upgrades.
-    </p>
-
-    <h2>What to do while you wait (a quick homeowner checklist)</h2>
-    <p>
-      If there’s active leaking, shut off the nearest valve (or the home’s main), move anything valuable away from the area,
-      and avoid using fixtures that might worsen the problem.
-      If there’s a sewer backup, stop running water and call right away.
-    </p>
-
-    <h2>Other San Rafael Plumbing Companies</h2>
-    <p>
-      When you’re stressed and water is going somewhere it shouldn’t, it’s easy for <a href="/articles/plumber-red-flags/">the wrong plumber</a>
-      to take advantage of the moment.
-      We’ve seen homeowners pushed into repairs they didn’t need, quoted one thing and billed another, or left with a “fix” that fails a few weeks later.
-    </p>
-
-    <p>
-      Because we take pride in being great plumbers, we also see it as our responsibility to help you avoid predatory work.
-      That means we’d rather earn your trust with clarity than win a job with pressure.
-    </p>
-
+    <FAQSection faqs={frontmatter.faqs} />
+  </div>
+  <div class="two-column">
+    ### Same-day Appointments with Your San Rafael Plumber
+    If it’s urgent, we’ll help you stabilize the situation and get service scheduled as quickly as possible.
+    If it’s not urgent, we’ll still treat it as if it was in our own home—because small plumbing problems love to become expensive ones.
+  </div>
+  <div class="two-column">
+    ### Our San Rafael Plumbers
+    The person you let into your home matters.
+    We send only properly experienced plumbers who communicate clearly, work cleanly, and treat your home with respect.
+    You’ll get a plan, not pressure.
+  </div>
+  <div class="two-column">
+    ### Other San Rafael Plumbing Companies
+    When you’re stressed and water is going somewhere it shouldn’t, it’s easy for <a href="/articles/plumber-red-flags/">the wrong plumber</a>
+    to take advantage of the moment.
+    We’ve seen homeowners pushed into repairs they didn’t need, quoted one thing and billed another, or left with a “fix” that fails a few weeks later.
+  
+    Because we take pride in being great plumbers, we also see it as our responsibility to help you avoid predatory work.
+    That means we’d rather earn your trust with clarity than win a job with pressure.
     <ul>
       <li><strong>Ask for a clear scope</strong>: What exactly is being repaired or replaced, and why?</li>
       <li><strong>Beware of urgency pressure</strong>: “Sign right now or it gets worse” is a common tactic.</li>
@@ -221,34 +209,41 @@ import FAQSection from '@/components/FAQSection.astro';
       <li><strong>Expect clean work and protection</strong>: Your floors, cabinets, and walls should be treated like they matter—because they do.</li>
       <li><strong>Code-aware decisions</strong>: Work done wrong can become a costly problem during a home inspection later.</li>
     </ul>
-
-    <h2>Expert Plumbing San Rafael Homes Can Count On</h2>
-    <p>
-      Need urgent plumbing repair in San Rafael?
-      Do you have an <a href="/drain-cleaning-san-rafael/">overflowing toilet or clogged main drain</a>?
-      Or are you planning ahead for an upgrade?
-      Give us a call and we’ll get your service scheduled right away.
-    </p>
-    <p>
-      For clean drains to steady pressure and hot water that never quits, call GoFlow.
-      We want your plumbing problem to be our problem.
-    </p>
-
-    <h2>Areas We Serve in San Rafael</h2>
-    <p>
-      We serve homeowners throughout San Rafael, including Terra Linda, Dominican, Gerstle Park, Sun Valley, Downtown, Peacock Gap,
-      the Canal District, and the surrounding neighborhoods.
-    </p>
-
-    <h2>Most Popular Plumbing Services in San Rafael</h2>
-    <p>
-      - <a href="/water-heater-repair-san-rafael/">Water heater repair San Rafael</a>
-      - <a href="/drain-cleaning-san-rafael/">Drain cleaning San Rafael</a>
-      - <a href="/emergency-plumbing-services/">Emergency plumbing San Rafael</a>
-    </p>
-
-    <h2>Frequently Asked Questions About Plumbing in San Rafael</h2>
-
-    <FAQSection faqs={frontmatter.faqs} />
   </div>
-</article>
+  <div class="two-column">
+    ## San Rafael’s Unique Plumbing Challenges
+    San Rafael’s mix of older neighborhoods, hillside terrain, and coastal influence means the same symptom can have different causes.
+    When you call, we’re already thinking about what’s common in your area and what we’ll likely find behind the walls.
+  
+    Homes in areas like Gerstle Park, Sun Valley, and Dominican can have aging copper, galvanized, cast iron, or older drain configurations.
+    Those materials are more prone to corrosion, leaks, and restrictions.
+    Clay drain lines are also common in San Rafael, and they should be cleared carefully.
+    
+    San Rafael’s microclimates also matter.
+    Coastal exposure (and fog) can accelerate corrosion in some areas.
+    Hillsides can create pressure irregularities and movement stress that show up as leaks, drainage issues, or recurring repairs.
+
+    ### Water quality, pressure, and efficiency upgrades
+    In San Rafael, water quality and pressure can vary by neighborhood.
+    If you’re seeing mineral buildup, premature fixture failures, inconsistent pressure, or you want to reduce water waste,
+    we’ll walk you through options like filtration, pressure regulation, and efficient fixture upgrades.
+  </div>
+  <div class="one-column">
+  ## Expert Plumbing San Rafael Homes Can Count On
+  </div>
+  <div class="one-column">
+    Need urgent plumbing repair in San Rafael?
+    Do you have an <a href="/drain-cleaning-san-rafael/">overflowing toilet or clogged main drain</a>?
+    Or are you planning ahead for an upgrade?
+    Give us a call and we’ll get your service scheduled right away.
+    
+    For clean drains to steady pressure and hot water that never quits, call GoFlow.
+    We want your plumbing problem to be our problem.
+  </div>
+  <div class="one-column">
+    ### Our Most Popular Plumbing Services in San Rafael
+    - <a href="/water-heater-repair-san-rafael/">Water heater repair San Rafael</a>
+    - <a href="/drain-cleaning-san-rafael/">Drain cleaning San Rafael</a>
+    - <a href="/emergency-plumbing-services/">Emergency plumbing San Rafael</a>
+  </div>
+</div>

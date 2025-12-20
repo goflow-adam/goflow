@@ -120,95 +120,83 @@ faqs:
 
 import FAQSection from '@/components/FAQSection.astro';
 
-<article>
-  # {frontmatter.contentTitle}
+<div class="content-grid">
+  <div class="one-column">
+    # {frontmatter.contentTitle}
+  </div>
 
-  <div>
-    <p>
-      Petaluma homeowners call a plumber for one reason: you want your home back.
-      You want the water where it belongs, the drains moving like they should, and the hot water to be reliable again.
-    </p>
-    <p>
-      We’re plumbers who genuinely want to fix the problem for you.
-      <a href="tel:+17072008350">Call us</a>, tell us what’s happening, and let us make your plumbing problem ours.
-      You’ll get clear communication, clean work, and a plan you can understand.
-    </p>
+  <div class="two-column">
+    Petaluma homeowners call a plumber for one reason: you want your home back.
+    You want the water where it belongs, the drains moving like they should, and the hot water to be reliable again.
+  
+    We’re plumbers who genuinely want to fix the problem for you.
+    <a href="tel:+17072008350">Call us</a>, tell us what’s happening, and let us make your plumbing problem ours.
+    You’ll get clear communication, clean work, and a plan you can understand.
+  </div>
+  <div class="two-column">
+    ![GoFlow Novato Plumber](/images/NovatoGoFlow.jpg "GoFlow Novato Plumber")
+  </div>
+  <ul class="two-column">
+    ## Petaluma Plumbing Services
+    <li><a href="/emergency-plumbing-services/">Emergency plumbing</a> for leaks, backups, and urgent failures</li>
+    <li><a href="/drain-cleaning-petaluma/">Drain cleaning</a> (kitchen, bath, shower/tub, and main line)</li>
+    <li><a href="/water-heater-installation-petaluma/">Water heater service</a> (repair and replacement)</li>
+    <li>Pipe repair and replacement when corrosion, age, or pressure issues stack up</li>
+    <li>Fixture installation and upgrades</li>
+    <li>Water filtration and water quality support</li>
+    <li>Leak detection when the source isn’t obvious</li>
+    <li>Sewer line services</li>
+  </ul>
+  <div class="two-column">
+    ## What to do while you wait (a quick homeowner checklist)
+    If there’s active leaking, shut off the nearest valve (or the home’s main),
+    move anything valuable away from the area,
+    and avoid using fixtures that might worsen the problem.
+    If there’s a sewer backup, stop running water and call right away.
 
-    <p>
-      If you need help today, start with what’s closest to your issue:
-      <a href="/water-heater-installation-petaluma/">water heater service in Petaluma</a>,
-      <a href="/drain-cleaning-petaluma/">drain cleaning</a>,
-      or <a href="tel:+17072008350">call us</a> and we’ll help you sort it out.
-    </p>
+    ## Most Popular Plumbing Services in Petaluma
+    - <a href="/water-heater-installation-petaluma/">Water heater installation Petaluma</a>
+    - <a href="/drain-cleaning-petaluma/">Drain cleaning Petaluma</a>
+    - <a href="/emergency-plumbing-services/">Emergency plumber Petaluma</a>
+  </div>
+  <div class="two-column">
+    ## Same-day Appointments with Your Petaluma Plumber
+    If it’s urgent, we’ll help you stabilize the situation and get service scheduled as quickly as possible.
+    If it’s not urgent, we’ll still treat it as if it was in our own home—because small plumbing problems love to become expensive ones.
+  </div>
+  <div class="two-column">
+    ## Areas We Serve in Petaluma
+    We serve homeowners throughout Petaluma, including Downtown Petaluma, West Petaluma, East Petaluma, Oakhill-Brewster,
+    D Street, Midtown, and the surrounding neighborhoods.
+  </div>
+  <div class="two-column">
+    ## Our Petaluma Plumbers
+    The person you let into your home matters.
+    We send only properly experienced plumbers who communicate clearly, work cleanly, and treat your home with respect.
+    You’ll get a plan, not pressure.
 
-    <h2>Same-day Appointments with Your Petaluma Plumber</h2>
-    <p>
-      If it’s urgent, we’ll help you stabilize the situation and get service scheduled as quickly as possible.
-      If it’s not urgent, we’ll still treat it as if it was in our own home—because small plumbing problems love to become expensive ones.
-    </p>
+    Because we take pride in being great plumbers, we also see it as our responsibility
+    to help you avoid predatory work.
+    That means we’d rather earn your trust with clarity than win a job with pressure.
+  </div>
+  <div class="two-column">
+    ## Your Choice Petaluma Plumbing Company
+    If your system is acting up, don’t wait.
+    Give us a call and we’ll provide a clear estimate, schedule your service promptly,
+    and show up on time.
+    When you choose us as your Petaluma plumber, you get more than a quick fix—you get
+    long-term peace of mind.
 
-    <h2>Comprehensive Petaluma Plumbing Services</h2>
-    <p>
-      Our plumbing services in Petaluma are straightforward: we understand the problem, explain the options, and do the work cleanly.
-      Here’s a sampling of what we can do for you:
-    </p>
-
-    <ul>
-      <li><a href="/emergency-plumbing-services/">Emergency plumbing</a> for leaks, backups, and urgent failures</li>
-      <li><a href="/drain-cleaning-petaluma/">Drain cleaning</a> (kitchen, bath, shower/tub, and main line)</li>
-      <li><a href="/water-heater-installation-petaluma/">Water heater service</a> (repair and replacement)</li>
-      <li>Pipe repair and replacement when corrosion, age, or pressure issues stack up</li>
-      <li>Fixture installation and upgrades</li>
-      <li>Water filtration and water quality support</li>
-      <li>Leak detection when the source isn’t obvious</li>
-      <li>Sewer line services</li>
-    </ul>
-
-    <h2>Our Petaluma Plumbers</h2>
-    <p>
-      The person you let into your home matters.
-      We send only properly experienced plumbers who communicate clearly, work cleanly, and treat your home with respect.
-      You’ll get a plan, not pressure.
-    </p>
-
-    <h2>Petaluma’s Unique Plumbing Challenges</h2>
-    <p>
-      Petaluma’s older neighborhoods—like Oakhill-Brewster, West Petaluma, and the historic downtown—often come with older plumbing materials and older drain configurations.
-      That can show up as slow drains, corrosion leaks, or pressure issues.
-    </p>
-    <p>
-      Petaluma’s winter rains and changing soil conditions can also stress older underground lines over time—especially in low-lying or clay-heavy areas.
-    </p>
-    <p>
-      That’s why the goal isn’t just a quick fix—it’s a fix that lasts.
-      We want you to feel confident calling the problem “done.”
-    </p>
-
-    <h2>Water quality, pressure, and efficiency upgrades</h2>
-    <p>
-      In Petaluma, water quality and pressure can vary by neighborhood.
-      If you’re seeing mineral buildup, premature fixture failures, inconsistent pressure, or you want to reduce water waste,
-      we’ll walk you through options like filtration, pressure regulation, and efficient fixture upgrades.
-    </p>
-
-    <h2>What to do while you wait (a quick homeowner checklist)</h2>
-    <p>
-      If there’s active leaking, shut off the nearest valve (or the home’s main), move anything valuable away from the area,
-      and avoid using fixtures that might worsen the problem.
-      If there’s a sewer backup, stop running water and call right away.
-    </p>
-
-    <h2>Other Petaluma Plumbing Companies</h2>
-    <p>
-      When you’re stressed and water is going somewhere it shouldn’t, it’s easy for <a href="/articles/plumber-red-flags/">the wrong plumber</a>
-      to take advantage of the moment.
-      We’ve seen homeowners pushed into repairs they didn’t need, quoted one thing and billed another, or left with a “fix” that fails a few weeks later.
-    </p>
-    <p>
-      Because we take pride in being great plumbers, we also see it as our responsibility to help you avoid predatory work.
-      That means we’d rather earn your trust with clarity than win a job with pressure.
-    </p>
-
+    From hot water that runs strong to <a href="/drain-cleaning-petaluma/">pipes that drain cleanly</a>,
+    we want to be your trusted plumbing choice in Petaluma.
+  </div>
+  <div class="two-column">
+    ## Other Petaluma Plumbing Companies
+    When you’re stressed and water is going somewhere it shouldn’t,
+    it’s easy for <a href="/articles/plumber-red-flags/">the wrong plumber</a>
+    to take advantage of the moment.
+    We’ve seen homeowners pushed into repairs they didn’t need, quoted one thing and billed another,
+    or left with a “fix” that fails a few weeks later.
     <ul>
       <li><strong>Ask for a clear scope</strong>: What exactly is being repaired or replaced, and why?</li>
       <li><strong>Beware of urgency pressure</strong>: “Sign right now or it gets worse” is a common tactic.</li>
@@ -216,32 +204,29 @@ import FAQSection from '@/components/FAQSection.astro';
       <li><strong>Expect clean work and protection</strong>: Your floors, cabinets, and walls should be treated like they matter—because they do.</li>
       <li><strong>Code-aware decisions</strong>: Work done wrong can become a costly problem during a home inspection later.</li>
     </ul>
-
-    <h2>Your Choice Petaluma Plumbing Company</h2>
-    <p>
-      If your system is acting up, don’t wait.
-      Give us a call and we’ll provide a clear estimate, schedule your service promptly, and show up on time.
-      When you choose us as your Petaluma plumber, you get more than a quick fix—you get long-term peace of mind.
-    </p>
-    <p>
-      From hot water that runs strong to <a href="/drain-cleaning-petaluma/">pipes that drain cleanly</a>, we want to be your trusted plumbing choice in Petaluma.
-    </p>
-
-    <h2>Areas We Serve in Petaluma</h2>
-    <p>
-      We serve homeowners throughout Petaluma, including Downtown Petaluma, West Petaluma, East Petaluma, Oakhill-Brewster,
-      D Street, Midtown, and the surrounding neighborhoods.
-    </p>
-
-    <h2>Most Popular Plumbing Services in Petaluma</h2>
-    <p>
-      - <a href="/water-heater-installation-petaluma/">Water heater installation Petaluma</a>
-      - <a href="/drain-cleaning-petaluma/">Drain cleaning Petaluma</a>
-      - <a href="/emergency-plumbing-services/">Emergency plumber Petaluma</a>
-    </p>
-
-    <h2>Frequently Asked Questions About Plumbing in Petaluma</h2>
+  </div>
+  <div class="two-column">
+    ## Petaluma’s Unique Plumbing Challenges
+    Petaluma’s older neighborhoods—like Oakhill-Brewster, West Petaluma,
+    and the historic downtown—often come with older plumbing materials and older drain configurations.
+    That can show up as slow drains, corrosion leaks, or pressure issues.
+    
+    Petaluma’s winter rains and changing soil conditions can also stress older
+    underground lines over time—especially in low-lying or clay-heavy areas.
+    
+    That’s why the goal isn’t just a quick fix—it’s a fix that lasts.
+    We want you to feel confident calling the problem “done.”
+  </div>
+  <div class="two-column">
+    ## Water quality, pressure, and efficiency upgrades
+    In Petaluma, water quality and pressure can vary by neighborhood.
+    If you’re seeing mineral buildup, premature fixture failures, inconsistent pressure,
+    or you want to reduce water waste,
+    we’ll walk you through options like filtration, pressure regulation, and efficient fixture upgrades.
+  </div>
+  <div class="two-column">
+    ## Frequently Asked Questions About Plumbing in Petaluma
 
     <FAQSection faqs={frontmatter.faqs} />
   </div>
-</article>
+</div>

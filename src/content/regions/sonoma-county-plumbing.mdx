@@ -81,209 +81,218 @@ faqs:
 import { getCitiesForRegion } from '../../data/cities';
 import FAQSection from '@/components/FAQSection.astro';
 
-# {frontmatter.contentTitle}
+<div class="content-grid">
+  <div class="one-column">
+    # {frontmatter.contentTitle}
+  </div>
+  <div class="two-column">
+    ### Plumbing problems can take over your whole day.
+    Your plumbing problem, whether a pipe leak, a clogged drain, broken toilet, or failing water heater, 
+    or some other issue no matter how small or large is what we want to fix for you. 
+    Your home needs help and we know you deserve a local plumber who treats your home like their
+    own&mdash;or even better, treats your home like our own mother's.
 
-### Plumbing problems can take over your whole day.
+    [Call GoFlow Plumbing](tel:7072008350) and we’ll happily make your plumbing problem ours.
+  </div>
+  <div class="two-column">
+    ![GoFlow Sonoma County Plumber](/images/Healdsburg.jpg "GoFlow Sonoma County Plumber")
+  </div>
+  <div class="two-column">
+    ## Our Services in {frontmatter.region}
+    If you’re calling because something is leaking, backing up, not heating,
+    or just not working the way it should, we can help.
+    Here are the most common ways we support homeowners
+    and businesses across {frontmatter.region}.
+    
+    - Water heater repair and replacement
+    - Drain cleaning and rooter service
+    - Leak detection and repair
+    - Fixture installation and repair
+    - Emergency plumbing service
+    - Repiping services
+    - Sewer line services
+    - Water line services
 
-Your plumbing problem, whether a pipe leak, a clogged drain, broken toilet, or failing water heater, 
-or some other issue no matter how small or large is what we want to fix for you. 
-Your home needs help and we know you deserve a local plumber who treats your home like their own&mdash;or
-even better, treats your home like our own mother's.
+    ### Popular Plumbing Services in Sonoma County
+    - [Water heater repair Santa Rosa](/water-heater-repair-santa-rosa/)
+    - [Drain cleaning Santa Rosa](/drain-cleaning-santa-rosa/)
+    - [Water heater installation Petaluma](/water-heater-installation-petaluma/)
+    - [Drain cleaning Petaluma](/drain-cleaning-petaluma/)
+  </div>
+  <div class="two-column">
+    ## Cities and Areas We Serve in {frontmatter.region}
+    <ul>
+      {getCitiesForRegion(frontmatter.region).map((city) => {
+        const slug = city.toLowerCase().replace(/\s+/g, '-');
+        const linkable = ['santa-rosa', 'petaluma'];
+        const shouldLink = linkable.includes(slug);
+        return (
+          <li>
+            {shouldLink ? <a href={`/${slug}-plumbing/`}>{city}</a> : city}
+          </li>
+        );
+      })}
+    </ul>
+    ### Surrounding Communities
+    We also serve all surrounding communities and unincorporated areas within {frontmatter.region}.
+  </div>
+  <div class="two-column">
+    ## Emergency Services
 
-[Call GoFlow Plumbing](tel:7072008350) and we’ll happily make your plumbing problem ours.
+    If your issue can cause damage or get worse fast, don’t wait.
+    We provide 24/7 emergency plumbing services throughout {frontmatter.region}:
+    - Immediate response
+    - Any time, any day
+    - Fast arrival
+    - Professional solutions
+    - Fair emergency rates
+    - Complete repairs
+  </div>
+  <div class="two-column">
+    ## Frequently Asked Questions About Plumbing in Sonoma County
 
-## {frontmatter.region} Unique Plumbing Conditions
+    <FAQSection faqs={frontmatter.faqs} />
+  </div>
+  <div class="one-column">
+    ## Why Choose GoFlow in {frontmatter.region}?
 
-What your home needs from a plumber depends a lot on where you live in {frontmatter.region}.
-The same “leak under the sink” can be simple in one neighborhood and a symptom of a bigger issue in another.
-When you call us, we’re thinking about your home’s location, age, and water conditions before we even arrive.
+    If you’re inviting a plumber into your home, you’re not just buying a repair.
+    You’re trusting someone with your floors, your walls, your time, and your peace of mind.
+    Here’s what you can expect when you call us.
+  </div>
+  <div class="two-column">
+    ### Local Expertise Built Over Generations
+    <ul>
+      <li>Six decades of experience with Sonoma County building codes</li>
+      <li>Deep familiarity with regional plumbing challenges across different terrains</li>
+      <li>Comprehensive understanding of local water systems and their evolution</li>
+      <li>Strong relationships with local suppliers built since the 1950s</li>
+      <li>Quick response times throughout the county</li>
+      <li>Community-focused service passed down through three generations</li>
+    </ul>
 
-If you live closer to the coast—places like Bodega Bay, Jenner, or Sea Ranch—your plumbing may be dealing with fog, wind, and salt.
-That can speed up corrosion and affect which materials are the best long-term choice.
-It can also influence where appliances like water heaters can safely live and vent.
+  </div>
+  <div class="two-column">
+    ### Professional Service Excellence
+    <ul>
+      <li>Licensed and insured with three generations of expertise</li>
+      <li>Experienced technicians trained in both traditional and modern techniques</li>
+      <li>State-of-the-art equipment combined with time-tested methods</li>
+      <li>Premium quality materials from trusted suppliers</li>
+      <li>Comprehensive warranty coverage</li>
+      <li>Fair, transparent pricing—a family tradition since the 1950s</li>
+    </ul>
 
-If you live in the valleys and lowlands—like <a href="/santa-rosa-plumbing/">Santa Rosa</a>, <a href="/petaluma-plumbing/">Petaluma</a>,
-or Sonoma—you may see bigger temperature swings and more flood-plain concerns.
-In colder snaps, exposed piping and hose bibs can be at higher risk.
-If you’ve ever had a “mystery leak” after a cold night, that’s exactly the kind of pattern we look for.
+  </div>
+  <div class="one-column">
+    ## Local Benefits
 
-If you live in hilly or ridgeline areas—Glen Ellen, Kenwood, Sebastopol—your plumbing layout may be shaped by slope, access, and (in some areas) septic systems.
-That changes how drains run, where cleanouts are, and what it takes to service or replace a line.
+  </div>
+  <div class="two-column">
+    ### Community Focus
+    If you live here, you want a plumber who knows the area and will still be here next year.
+    That’s why we focus on long-term relationships—not one-off transactions.
 
-And if you live in forested, mountainous, riverfront, or wetland areas—Occidental, Cazadero, the Russian River, Valley Ford, Gualala—distance from utilities and moisture become bigger factors.
-Supply and waste lines may run farther, access may be harder, and moisture management matters so you don’t trade a plumbing fix for a mold problem.
+    - Local business understanding
+    - Community involvement
+    - Regional expertise
+    - Personalized service
+    - Long-term relationships
+    - Local references
 
-Bottom line: we don’t bring a one-size-fits-all fix.
-We tailor the solution to your home so the repair lasts—and so you’re not calling again for the same issue.
+  </div>
+  <div class="two-column">
+    ### Convenient Service
+    We make it easy to get help without turning it into a project.
 
-## Popular Plumbing Services in Sonoma County
+    - Same-day appointments
+    - Flexible scheduling
+    - Mobile service units
+    - Fully stocked trucks
+    - Digital communication
+    - Online scheduling
+  </div>
 
-- [Water heater repair Santa Rosa](/water-heater-repair-santa-rosa/)
-- [Drain cleaning Santa Rosa](/drain-cleaning-santa-rosa/)
-- [Water heater installation Petaluma](/water-heater-installation-petaluma/)
-- [Drain cleaning Petaluma](/drain-cleaning-petaluma/)
+  <div class="one-column">
+    ## {frontmatter.region} Unique Plumbing Conditions
 
-## Areas We Serve in {frontmatter.region}
-  
-### Major Cities
-<ul>
-  {getCitiesForRegion(frontmatter.region).map((city) => {
-    const slug = city.toLowerCase().replace(/\s+/g, '-');
-    const linkable = ['santa-rosa', 'petaluma'];
-    const shouldLink = linkable.includes(slug);
-    return (
-      <li>
-        {shouldLink ? <a href={`/${slug}-plumbing/`}>{city}</a> : city}
-      </li>
-    );
-  })}
-</ul>
+    What your home needs from a plumber depends a lot on where you live in {frontmatter.region}.
+    The same “leak under the sink” can be simple in one neighborhood and a symptom of a bigger issue in another.
+    When you call us, we’re thinking about your home’s location, age, and water conditions before we even arrive.
 
-  <h3>Surrounding Communities</h3>
-  <p>We also serve all surrounding communities and unincorporated areas within {frontmatter.region}.</p>
+    If you live closer to the coast—places like Bodega Bay, Jenner, or Sea Ranch—your plumbing may be dealing with fog, wind, and salt.
+    That can speed up corrosion and affect which materials are the best long-term choice.
+    It can also influence where appliances like water heaters can safely live and vent.
 
+    If you live in the valleys and lowlands—like <a href="/santa-rosa-plumbing/">Santa Rosa</a>, <a href="/petaluma-plumbing/">Petaluma</a>,
+    or Sonoma—you may see bigger temperature swings and more flood-plain concerns.
+    In colder snaps, exposed piping and hose bibs can be at higher risk.
+    If you’ve ever had a “mystery leak” after a cold night, that’s exactly the kind of pattern we look for.
 
-**Available 24/7 for Emergency Services**
+    If you live in hilly or ridgeline areas—Glen Ellen, Kenwood, Sebastopol—your plumbing layout may be shaped by slope, access, and (in some areas) septic systems.
+    That changes how drains run, where cleanouts are, and what it takes to service or replace a line.
 
-## Frequently Asked Questions About Plumbing in Sonoma County
+    And if you live in forested, mountainous, riverfront, or wetland areas—Occidental, Cazadero, the Russian River, Valley Ford, Gualala—distance from utilities and moisture become bigger factors.
+    Supply and waste lines may run farther, access may be harder, and moisture management matters so you don’t trade a plumbing fix for a mold problem.
 
-<FAQSection faqs={frontmatter.faqs} />
+    Bottom line: we don’t bring a one-size-fits-all fix.
+    We tailor the solution to your home so the repair lasts—and so you’re not calling again for the same issue.
+  </div>
+  <div class="two-column">
+    ## Three Generations of Sonoma County Plumbing Excellence
 
-## Our Services in {frontmatter.region}
+    When you call GoFlow, you’re not getting a brand-new company learning your area.
+    You’re getting a family that’s been working in Sonoma County homes for decades.
 
-If you’re calling because something is leaking, backing up, not heating,
-or just not working the way it should, we can help.
-Here are the most common ways we support homeowners
-and businesses across {frontmatter.region}.
+    Our story begins in the late 1950s, when our grandfather started serving the plumbing needs of Sonoma County's growing communities.
+    In those post-war years—historic farmhouses, early suburban developments—he built a reputation on honest work and deep local knowledge.
 
-### Residential Plumbing
-- Water heater repair and replacement
-- Drain cleaning and rooter service
-- Leak detection and repair
-- Fixture installation and repair
-- Emergency plumbing service
-- Repiping services
-- Sewer line services
-- Water line services
+    In the 1980s, the second generation expanded throughout Sonoma County while holding the same standard.
+    Building codes changed, plumbing technology changed, and the county grew—but the expectation stayed the same: do it right.
 
-### Commercial Plumbing
-- Restaurant plumbing
-- Office building maintenance
-- Retail location services
-- Industrial plumbing
-- Property management support
-- Code compliance work
-- Emergency services
-- Preventive maintenance
+    Today, the third generation carries that legacy forward with modern tools and the same values.
+    It’s why we take clean work seriously and why we care as much about what happens after the repair as we do about the repair itself.
+  </div>
+  <div class="two-column">
+    ## More Reasons Why To Choose GoFlow Plumbing in Sonoma County
 
-## Why Choose GoFlow in {frontmatter.region}?
+    If you’ve dealt with “quick fixes” that don’t last, you already know the difference between a temporary patch and a real solution.
+    Our three generations of experience mean we’ve worked on virtually every type of plumbing system in the region.
+    So when we recommend a repair or replacement, it’s based on what works long-term in Sonoma County homes.
 
-If you’re inviting a plumber into your home, you’re not just buying a repair.
-You’re trusting someone with your floors, your walls, your time, and your peace of mind.
-Here’s what you can expect when you call us.
+    As a family business with deep roots in Sonoma County, we bring:
+    <ul>
+      <li>Decades of experience with local building codes and regulations</li>
+      <li>Deep understanding of the region's unique soil conditions and their impact on plumbing</li>
+      <li>Knowledge passed down through three generations of master plumbers</li>
+      <li>Long-standing relationships with local suppliers and building officials</li>
+      <li>A proven track record spanning over 60 years in the community</li>
+    </ul>
 
-### Local Expertise Built Over Generations
-<ul>
-  <li>Six decades of experience with Sonoma County building codes</li>
-  <li>Deep familiarity with regional plumbing challenges across different terrains</li>
-  <li>Comprehensive understanding of local water systems and their evolution</li>
-  <li>Strong relationships with local suppliers built since the 1950s</li>
-  <li>Quick response times throughout the county</li>
-  <li>Community-focused service passed down through three generations</li>
-</ul>
+    Hiring the wrong plumber can lead to code violations, poorly done work,
+    or costly surprises that show up during inspections.
+    We want you to feel confident that what we do in your home is safe,
+    code-compliant, and built to last.
 
-### Professional Service Excellence
-<ul>
-  <li>Licensed and insured with three generations of expertise</li>
-  <li>Experienced technicians trained in both traditional and modern techniques</li>
-  <li>State-of-the-art equipment combined with time-tested methods</li>
-  <li>Premium quality materials from trusted suppliers</li>
-  <li>Comprehensive warranty coverage</li>
-  <li>Fair, transparent pricing—a family tradition since the 1950s</li>
-</ul>
+    With GoFlow Plumbing, you're not just getting a service provider—you're getting a partner who has been part of Sonoma County's growth and development for over six decades. Our work is always code-compliant, backed by generations of expertise, and done by professionals who take pride in serving their community.
+  </div>
+  <div class="one-column">
+    ## Contact Us for Your Sonoma County Plumbing Needs
+  </div>
+  <div class="two-column">
+    If you want help now, call us.
+    If you’re planning a project and want a second opinion, call us.
+    Either way, we’ll give you a clear plan and straightforward communication.
 
-## Emergency Services
-
-If your issue can cause damage or get worse fast, don’t wait.
-We provide 24/7 emergency plumbing services throughout {frontmatter.region}:
-- Immediate response
-- Any time, any day
-- Fast arrival
-- Professional solutions
-- Fair emergency rates
-- Complete repairs
-
-## Local Benefits
-
-### Community Focus
-If you live here, you want a plumber who knows the area and will still be here next year.
-That’s why we focus on long-term relationships—not one-off transactions.
-
-- Local business understanding
-- Community involvement
-- Regional expertise
-- Personalized service
-- Long-term relationships
-- Local references
-
-### Convenient Service
-We make it easy to get help without turning it into a project.
-
-- Same-day appointments
-- Flexible scheduling
-- Mobile service units
-- Fully stocked trucks
-- Digital communication
-- Online scheduling
-
-## Three Generations of Sonoma County Plumbing Excellence
-
-When you call GoFlow, you’re not getting a brand-new company learning your area.
-You’re getting a family that’s been working in Sonoma County homes for decades.
-
-Our story begins in the late 1950s, when our grandfather started serving the plumbing needs of Sonoma County's growing communities.
-In those post-war years—historic farmhouses, early suburban developments—he built a reputation on honest work and deep local knowledge.
-
-In the 1980s, the second generation expanded throughout Sonoma County while holding the same standard.
-Building codes changed, plumbing technology changed, and the county grew—but the expectation stayed the same: do it right.
-
-Today, the third generation carries that legacy forward with modern tools and the same values.
-It’s why we take clean work seriously and why we care as much about what happens after the repair as we do about the repair itself.
-
-## More Reasons Why To Choose GoFlow Plumbing in Sonoma County
-
-If you’ve dealt with “quick fixes” that don’t last, you already know the difference between a temporary patch and a real solution.
-Our three generations of experience mean we’ve worked on virtually every type of plumbing system in the region.
-So when we recommend a repair or replacement, it’s based on what works long-term in Sonoma County homes.
-
-As a family business with deep roots in Sonoma County, we bring:
-<ul>
-  <li>Decades of experience with local building codes and regulations</li>
-  <li>Deep understanding of the region's unique soil conditions and their impact on plumbing</li>
-  <li>Knowledge passed down through three generations of master plumbers</li>
-  <li>Long-standing relationships with local suppliers and building officials</li>
-  <li>A proven track record spanning over 60 years in the community</li>
-</ul>
-
-Hiring the wrong plumber can lead to code violations, poorly done work,
-or costly surprises that show up during inspections.
-We want you to feel confident that what we do in your home is safe,
-code-compliant, and built to last.
-
-With GoFlow Plumbing, you're not just getting a service provider—you're getting a partner who has been part of Sonoma County's growth and development for over six decades. Our work is always code-compliant, backed by generations of expertise, and done by professionals who take pride in serving their community.
-
-## Contact Us for Your Sonoma County Plumbing Needs
-
-If you want help now, call us.
-If you’re planning a project and want a second opinion, call us.
-Either way, we’ll give you a clear plan and straightforward communication.
-
-Need plumbing service in {frontmatter.region}? Contact GoFlow Plumbing for:
-- Free estimates
-- Emergency service
-- Maintenance plans
-- Project consultations
-- Code compliance checks
-- General questions
-
-Trust your local Sonoma County plumbing experts at GoFlow Plumbing for all your plumbing needs.
+    Trust your local Sonoma County plumbing experts at GoFlow Plumbing for all your plumbing needs.
+  </div>
+  <div class="two-column">
+    Need plumbing service in {frontmatter.region}? Contact GoFlow Plumbing for:
+    - Free estimates
+    - Emergency service
+    - Maintenance plans
+    - Project consultations
+    - Code compliance checks
+    - General questions
+  </div>
+</div>
