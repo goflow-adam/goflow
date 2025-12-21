@@ -6,8 +6,7 @@ linkText: Pipe Repair & Replacement Service
 menuText: Pipe Repair
 name: Pipe Repair & Replacement
 includeInMenu: true
-description: Professional pipe repair and replacement services in Sonoma and
-  Marin County. We fix and replace all types of pipes with minimal disruption.
+description: Professional pipe repair and replacement services in Sonoma and Marin County. We fix and replace all types of pipes with minimal disruption.
 pubDate: 2025-09-30
 featured: true
 pipeTypes:
@@ -57,110 +56,96 @@ preventiveMeasures:
   - Early detection
 ---
 
-<article>
-  <h1>{frontmatter.contentTitle}</h1>
+<div class="content-grid">
+  <div class="one-column">
+    # {frontmatter.contentTitle}
+  </div>
 
-  <p>
-    From pinhole leaks to complete system failures, pipe problems can quickly escalate from minor inconveniences to major headaches.
-    At GoFlow Plumbing, we specialize in efficient, long-lasting pipe repairs and replacements that get your plumbing back to peak performance.
-    Using the latest technology and techniques, including trenchless solutions, we minimize disruption while maximizing results.
-    Don't let pipe problems persist—trust our expert team to deliver the right fix, right away.
-  </p>
+  <div class="two-column">
+    ### Pipe problems don’t stay small.
 
-  <section>
-    <h2>Types of Pipes We Service</h2>
+    Leaks, corrosion, low pressure, and recurring backups are all signs that a pipe is failing—or that the system needs a smarter fix than another quick patch.
+    We’ll diagnose what’s going on, explain your options in plain English, and repair or replace what’s needed with minimal disruption.
+  </div>
 
-    <div>
-      <ul>
-        {frontmatter.pipeTypes.map(type => (
-          <li key={type}>{type}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
+  <div class="two-column">
+    ## What to Do Right Now
+    - If a pipe is actively leaking, shut off the nearest valve (or the home main) and start drying the area.
+    - If there’s any chance the leak is near electrical, keep the area dry and avoid using those circuits.
+    - If you suspect a gas leak, leave the area and contact the gas utility.
 
-  <section>
-    <h2>Common Pipe Problems We Fix</h2>
-
+    Need help today? Call: [707-200-8350](tel:7072008350)
+  </div>
+  <div class="two-column">
+    ## Types of Pipes We Service
     <ul>
-      {frontmatter.commonIssues.map(issue => (
-        <li>{issue}</li>
+      {frontmatter.pipeTypes.map((type) => (
+        <li key={type}>{type}</li>
       ))}
     </ul>
-  </section>
-
-  <section>
-    <h2>Professional Pipe Repair Process</h2>
-    <p>Our step-by-step process for repairing and replacing pipes efficiently and effectively.</p>
-
+  </div>
+  <div class="two-column">
+    ## Common Pipe Problems We Fix
+    <ul>
+      {frontmatter.commonIssues.map((issue) => (
+        <li key={issue}>{issue}</li>
+      ))}
+    </ul>
+  </div>
+  <div class="two-column">
+    ## Our Repair + Replacement Process
     <ol>
-      {frontmatter.repairProcess.map((step, index) => (
+      {frontmatter.repairProcess.map((step) => (
         <li key={step}>
           <strong>{step}</strong>
-          <p>Step {index + 1} of our pipe repair process: {step}</p>
         </li>
       ))}
     </ol>
-  </section>
-
-  <section>
-    <h2>Our Repair Solutions</h2>
-
-    <div>
-      <h3>Professional Services</h3>
-      <ul>
-        {frontmatter.repairServices.map(service => (
-          <li key={service}>{service}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Advanced Repair Techniques</h2>
-
-    <div>
-      <h3>Trenchless Solutions</h3>
-      <ul>
-        {frontmatter.repairTechniques.map(technique => (
-          <li>{technique}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Why Choose GoFlow for Pipe Repairs?</h2>
-
+  </div>
+  <div class="two-column">
+    ## Repair Solutions
     <ul>
-      <li>Advanced repair methods</li>
-      <li>Experienced technicians</li>
-      <li>Quality materials</li>
-      <li>Minimal disruption</li>
-      <li>Long-term solutions</li>
-      <li>Warranty protection</li>
+      {frontmatter.repairServices.map((service) => (
+        <li key={service}>{service}</li>
+      ))}
     </ul>
-  </section>
+  </div>
+  <div class="two-column">
+    ## Advanced Repair Techniques
+    <ul>
+      {frontmatter.repairTechniques.map((technique) => (
+        <li key={technique}>{technique}</li>
+      ))}
+    </ul>
+  </div>
 
-  <section>
-    <h2>Preventive Maintenance</h2>
+  <div class="two-column">
+    ## Why Choose GoFlow for Pipe Repairs
 
-    <div>
-      <p>We help prevent future pipe problems with:</p>
-      <ul>  
-        {frontmatter.preventiveMeasures.map(measure => (
-          <li key={measure}>{measure}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
+    - Advanced repair methods
+    - Experienced technicians
+    - Quality materials
+    - Minimal disruption
+    - Long-term solutions
+    - Warranty protection
+  </div>
 
-  <section>
-    <h2>Contact Us</h2>
-    <p>
-      Contact GoFlow Plumbing today for expert pipe repair and replacement services in
-      <a href="/sonoma-county-plumbing/">Sonoma County</a> and <a href="/marin-county-plumbing/">Marin County</a>.
-      From emergency repairs to complete repiping, we've got you covered.
-    </p>
-  </section>
-</article>
+  <div class="two-column">
+    ## Preventive Maintenance
+    <ul>
+      {frontmatter.preventiveMeasures.map((measure) => (
+        <li key={measure}>{measure}</li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="two-column">
+    ## Contact Us
+
+    Contact GoFlow Plumbing for pipe repair and replacement in
+    [Sonoma County](/sonoma-county-plumbing/)
+    and [Marin County](/marin-county-plumbing/).
+
+    [Call now: (707) 200-8350](tel:7072008350)
+  </div>
+</div>

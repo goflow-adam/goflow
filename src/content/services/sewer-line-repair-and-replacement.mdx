@@ -1,6 +1,6 @@
 ---
 title: GoFlow Sewer Line Repair & Replacement Services
-contentTitle: Expert Sewer Line Repair & Replacement Services
+contentTitle: Expert Sewer Line Repair & Replacement
 breadcrumbDisplayText: Sewer Line Repair
 linkText: Sewer Line Repair & Replacement Service
 menuText: Sewer Line Repair
@@ -57,10 +57,14 @@ process:
   - Maintenance advice
 ---
 
-<article>
-  <h1>{frontmatter.contentTitle}</h1>
+<div class="content-grid">
+  <div class="one-column">
+    # {frontmatter.contentTitle}
+  </div>
 
-  <p>
+  <div class="two-column">
+    ### Sewer problems can get ugly fast. Our job is to stop the damage and keep it clean.
+
     Let me tell you a little clogged sewer line story.
     I was 11 and standing in a San Francisco garage underneath a sewer line running across the garage ceiling.
     The plumber I was riding along with, Norm, was standing at the other end of the garage.
@@ -68,109 +72,97 @@ process:
     I was drenched in sewage and shards of cast iron.
     He laughed thinking he was teaching me a lesson of sorts, but it was morning and he had to ride around the city all day with me like that.
     That was my only consolation.
-  </p>
-  <p>
-    When sewer problems strike, you need a team that combines experience with cutting-edge technology.
-    At GoFlow Plumbing, we use advanced diagnostic tools to pinpoint sewer line issues and solve them efficiently—often without digging up your yard.
-    From tree root intrusion to aging pipes, we handle all sewer line challenges with expertise and minimal disruption. Don't let sewer problems escalate;
-    trust our team to restore your system's function quickly and effectively.
-  </p>
 
-  <section>
-    <h2>Signs of Sewer Line Problems</h2>
+    Today, we rely on real diagnostics and proven methods, so we can fix the problem with as little disruption as possible.
+  </div>
+
+  <div class="two-column">
+    ## What to Do Right Now
+
+    - If sewage is backing up, stop using water in the home (showers, laundry, toilets).
+    - If you have only one bathroom and it’s backing up, call before it overflows.
+    - Keep kids and pets away from any contaminated area.
+
+    If it’s urgent, call: [707-200-8350](tel:7072008350)
+  </div>
+
+  <div class="two-column">
+    ## Signs of Sewer Line Problems
     <ul>
-      {frontmatter.sewerProblems.map(problem => (
+      {frontmatter.sewerProblems.map((problem) => (
         <li key={problem}>{problem}</li>
       ))}
     </ul>
-  </section>
+  </div>
 
-  <section>
-    <h2>Our Diagnostic Process</h2>
-    <p>Advanced diagnostic methods for accurate sewer line problem detection.</p>
+  <div class="two-column">
+    ## Our Diagnostic Process
 
-    <div>
-      <h3>Advanced Methods</h3>
-      <ol>
-        {frontmatter.diagnosticMethods.map((method, index) => (
-          <li key={method}>
-            <strong>{method}</strong>
-            <p>Step {index + 1}: {method} - Professional diagnostic method for sewer line inspection</p>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
+    We use the right diagnostic tool for the situation so we’re not guessing (or digging) unnecessarily.
 
-  <section>
-    <h2>Repair Solutions</h2>
+    <ol>
+      {frontmatter.diagnosticMethods.map((method) => (
+        <li key={method}>
+          <strong>{method}</strong>
+        </li>
+      ))}
+    </ol>
+  </div>
 
-    <div>
-      <h3>Available Methods</h3>
-      <ul>
-        {frontmatter.repairMethods.map(method => (
-          <li key={method}>{method}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Trenchless Technology</h2>
-
-    <div>
-      <h3>Benefits</h3>
-      <ul>
-        {frontmatter.benefits.map(benefit => (
-          <li key={benefit}>{benefit}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Why Choose GoFlow for Sewer Services?</h2>
-
+  <div class="two-column">
+    ## Repair Solutions
     <ul>
-      <li>Advanced diagnostic equipment</li>
-      <li>Experienced technicians</li>
-      <li>Trenchless solutions</li>
-      <li>Comprehensive warranties</li>
-      <li>Emergency service</li>
-      <li>Upfront pricing</li>
+      {frontmatter.repairMethods.map((method) => (
+        <li key={method}>{method}</li>
+      ))}
     </ul>
-  </section>
+  </div>
 
-  <section>
-    <h2>Preventive Maintenance</h2>
+  <div class="two-column">
+    ## Trenchless Technology Benefits
+    <ul>
+      {frontmatter.benefits.map((benefit) => (
+        <li key={benefit}>{benefit}</li>
+      ))}
+    </ul>
+  </div>
 
-    <div>
-      <p>We help prevent future problems with:</p>
-      <ul>
-        {frontmatter.preventiveMeasures.map(measure => (
-          <li key={measure}>{measure}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
+  <div class="two-column">
+    ## Why Choose GoFlow for Sewer Services
 
-  <section>
-    <h2>Our Process</h2>
+    - Advanced diagnostic equipment
+    - Experienced technicians
+    - Trenchless solutions (when appropriate)
+    - Comprehensive warranties
+    - Emergency service
+    - Upfront pricing
+  </div>
 
-    <div>
-      <ol>
-        {frontmatter.process.map(step => (
-          <li key={step}>{step}</li>
-        ))}
-      </ol>
-    </div>
-  </section>
+  <div class="two-column">
+    ## Preventive Maintenance
+    <ul>
+      {frontmatter.preventiveMeasures.map((measure) => (
+        <li key={measure}>{measure}</li>
+      ))}
+    </ul>
+  </div>
 
-  <section>
-    <p>
-      Contact GoFlow Plumbing today for expert sewer line repair and replacement services in
-      <a href="/sonoma-county-plumbing/">Sonoma County</a> and <a href="/marin-county-plumbing/">Marin County</a>.
-      Don't wait until a small sewer problem becomes a major disaster.
-    </p>
-  </section>
-</article>
+  <div class="two-column">
+    ## Our Process
+    <ol>
+      {frontmatter.process.map((step) => (
+        <li key={step}>{step}</li>
+      ))}
+    </ol>
+  </div>
+
+  <div class="two-column">
+    ## Contact Us
+
+    Contact GoFlow Plumbing for sewer line repair and replacement in
+    [Sonoma County](/sonoma-county-plumbing/)
+    and [Marin County](/marin-county-plumbing/).
+
+    [Call now: (707) 200-8350](tel:7072008350)
+  </div>
+</div>

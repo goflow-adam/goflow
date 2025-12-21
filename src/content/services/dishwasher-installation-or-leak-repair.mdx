@@ -82,128 +82,152 @@ maintenanceServices:
       - Efficiency tips
 ---
 
-<article>
-  <h1>{frontmatter.contentTitle}</h1>
+<div class="content-grid">
+<div class="one-column">
+# {frontmatter.contentTitle}
+</div>
 
+<div class="two-column">
+### A dishwasher leak can ruin cabinets and flooring. Let’s stop it fast.
+
+When a dishwasher leaks, won’t drain, or isn’t cleaning, the problem usually isn’t the machine—it’s the connections, drain path, or a failed seal.
+We’ll diagnose what’s actually happening, protect your kitchen, and give you a clear path forward.
+
+If you’re ready, call us and we’ll make your problem ours.
+</div>
+
+<div class="two-column">
+## What to Do Right Now (Before the Damage Spreads)
+
+- If there’s active leaking, stop the cycle and shut off the dishwasher water supply (usually under the sink).
+- If water is pooling, dry it up and don’t keep running the unit “to test it.”
+- If you smell burning or see tripped breakers, stop and get the electrical checked.
+
+If it’s urgent, call: [707-200-8350](tel:7072008350)
+</div>
+
+<div class="one-column">
+## Our Dishwasher Services
+</div>
+
+<div class="two-column">
+### Installation Services
+
+<ul>
+  {frontmatter.installationServices.map((service) => (
+    <li>{service}</li>
+  ))}
+</ul>
+</div>
+
+<div class="two-column">
+### Repair Services
+
+<ul>
+  {frontmatter.repairServices.map((service) => (
+    <li>{service}</li>
+  ))}
+</ul>
+</div>
+
+<div class="one-column">
+## Common Dishwasher Problems (And What They Usually Point To)
+</div>
+
+<div class="two-column">
+{frontmatter.commonProblems.map((category) => (
   <div>
-    <p>
-      A dishwasher that won't drain, leaks all over the floor, or leaves your dishes dirtier than before? That's not cleaning—it's chaos! At GoFlow Plumbing, we specialize in fast, clean, and reliable dishwasher repairs and installations. Whether your unit needs a quick fix or a full replacement, we'll get it running smoothly in no time—without the mess or hassle. So, skip the sink full of dishes and Go with the Flow for a stress-free solution to your dishwasher woes!
-    </p>
+    <h3>{category.name}</h3>
+    <ul>
+      {category.items.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
   </div>
+))}
+</div>
 
-  <section>
-    <h2>Our Dishwasher Services</h2>
+<div class="two-column">
+## How We Install a Dishwasher (So It Doesn’t Leak Later)
 
-    <div>
-      <h3>Installation Services</h3>
-      <ul>
-        {frontmatter.installationServices.map(service => (
-          <li>{service}</li>
-        ))}
-      </ul>
-    </div>
+{frontmatter.installationProcess.map((step) => (
+  <div>
+    <h3>{step.name}</h3>
+    <ul>
+      {step.items.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+))}
+</div>
 
-    <div>
-      <h3>Repair Services</h3>
-      <ul>
-        {frontmatter.repairServices.map(service => (
-          <li>{service}</li>
-        ))}
-      </ul>
-    </div>
-  </section>
+<div class="two-column">
+## Why Choose GoFlow
 
-  <section>
-    <h2>Common Dishwasher Problems</h2>
-    {frontmatter.commonProblems.map(category => (
-      <div>
-        <h3>{category.name}</h3>
-        <ul>
-          {category.items.map(item => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </section>
+We treat your kitchen like it’s our own:
 
-  <section>
-    <h2>Professional Installation Process</h2>
+<div>
+  <h3>Expert Service</h3>
+  <ul>
+    <li>Licensed plumbers</li>
+    <li>Experienced technicians</li>
+    <li>Professional tools</li>
+    <li>Quality parts</li>
+    <li>Warranty service</li>
+    <li>Clean installation</li>
+  </ul>
+</div>
 
-    {frontmatter.installationProcess.map(step => (
-      <div>
-        <h3>{step.name}</h3>
-        <ul>
-          {step.items.map(item => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </section>
+<div>
+  <h3>Customer Benefits</h3>
+  <ul>
+    <li>Same-day service available</li>
+    <li>Upfront pricing</li>
+    <li>Clean workspace</li>
+    <li>Proper disposal of old unit</li>
+    <li>Installation warranty</li>
+    <li>Maintenance tips</li>
+  </ul>
+</div>
+</div>
 
-  <section>
-    <h2>Why Choose GoFlow?</h2>
+<div class="two-column">
+## Maintenance Services
 
-    <div>
-      <h3>Expert Service</h3>
-      <ul>
-        <li>Licensed plumbers</li>
-        <li>Experienced technicians</li>
-        <li>Professional tools</li>
-        <li>Quality parts</li>
-        <li>Warranty service</li>
-        <li>Clean installation</li>
-      </ul>
-    </div>
+{frontmatter.maintenanceServices.map((service) => (
+  <div>
+    <h3>{service.name}</h3>
+    <ul>
+      {service.items.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+))}
+</div>
 
-    <div>
-      <h3>Customer Benefits</h3>
-      <ul>
-        <li>Same-day service available</li>
-        <li>Upfront pricing</li>
-        <li>Clean workspace</li>
-        <li>Proper disposal of old unit</li>
-        <li>Installation warranty</li>
-        <li>Maintenance tips</li>
-      </ul>
-    </div>
-  </section>
+<div class="two-column">
+## Additional Services
 
-  <section>
-    <h2>Maintenance Services</h2>
+<div>
+  <h3>Kitchen Plumbing</h3>
+  <ul>
+    <li>Sink installation</li>
+    <li>Garbage disposal</li>
+    <li>Water lines</li>
+    <li>Drain lines</li>
+    <li>Fixture updates</li>
+    <li>Full remodels</li>
+  </ul>
+</div>
+</div>
 
-    {frontmatter.maintenanceServices.map(service => (
-      <div>
-        <h3>{service.name}</h3>
-        <ul>
-          {service.items.map(item => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </section>
+<div class="two-column">
+## Contact Us
 
-  <section>
-    <h2>Additional Services</h2>
+Contact GoFlow Plumbing for professional dishwasher installation and leak repair in Sonoma and Marin County.
 
-    <div>
-      <h3>Kitchen Plumbing</h3>
-      <ul>
-        <li>Sink installation</li>
-        <li>Garbage disposal</li>
-        <li>Water lines</li>
-        <li>Drain lines</li>
-        <li>Fixture updates</li>
-        <li>Full remodels</li>
-      </ul>
-    </div>
-  </section>
-  <section>
-    <h2>Contact Us</h2>
-    <p>
-      Contact GoFlow Plumbing today for professional dishwasher services in Sonoma and Marin County.
-    </p>
-  </section>
-</article>
+[Call now: (707) 200-8350](tel:7072008350)
+</div>
+</div>

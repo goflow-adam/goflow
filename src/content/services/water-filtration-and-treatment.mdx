@@ -54,137 +54,160 @@ guarantee:
   - Expert support
 ---
 
-<article>
-  <h1>{frontmatter.contentTitle}</h1>
+<div class="content-grid">
+  <div class="one-column">
+    <h1>{frontmatter.contentTitle}</h1>
+    <p>
+      If your water smells like a pool, tastes “off,” leaves chalky rings, or stains fixtures, you’re not being picky—your home is
+      telling you something.
+      You deserve water you trust, and you shouldn’t have to guess what’s in it.
+    </p>
+    <p>
+      We install and service water filtration and treatment systems that protect your family, your plumbing, and the things you
+      already paid a lot for (water heater, dishwasher, faucets, coffee maker—everything).
+      Make your water problem ours.
+    </p>
+  </div>
 
-  <p>
-    Your water quality affects everything—from the taste of your morning coffee to the lifespan of your appliances.
-    At GoFlow Plumbing, we specialize in comprehensive water filtration and treatment solutions that transform your water from questionable to exceptional.
-    Using advanced filtration technology and professional treatment methods, we help you achieve the water quality you deserve.
-    Say goodbye to hard water, bad tastes, and concerning contaminants, and hello to clean, fresh, healthy water throughout your home.
-  </p>
-
-  <section>
-    <h2>Common Water Quality Issues</h2>
-
+  <div class="two-column">
     <div>
+      <h2>What you’re noticing (and what it usually means)</h2>
+      <p>
+        Water issues tend to show up in small, annoying ways first—then they get expensive.
+        Here are the most common symptoms we see in Sonoma and Marin County homes.
+      </p>
       <ul>
         {frontmatter.waterProblems.map(problem => (
           <li key={problem}>{problem}</li>
         ))}
       </ul>
     </div>
-  </section>
-
-  <section>
-    <h2>Our Filtration Solutions</h2>
 
     <div>
-      <h3>Available Systems</h3>
+      <h2>Filtration solutions we install and repair</h2>
+      <p>
+        The right system depends on your goals.
+        Sometimes you need whole-home protection.
+        Sometimes you just want the drinking water to be perfect.
+      </p>
       <ul>
         {frontmatter.filtrationTypes.map(type => (
           <li key={type}>{type}</li>
         ))}
       </ul>
     </div>
-  </section>
+  </div>
 
-  <section>
-    <h2>Our Water Treatment Process</h2>
-    <div>Professional water treatment process for optimal water quality.</div>
+  <div class="one-column">
+    <h2>How we fix the problem (without over-selling you)</h2>
+    <p>
+      We start with clarity.
+      You’ll know what’s going on, what matters, and what doesn’t.
+      Then we size a solution that fits your home and your budget.
+    </p>
+  </div>
 
+  <div class="two-column">
     <div>
+      <h2>Our water treatment process</h2>
       <ol>
         <li key="step1">
           <span>Water Testing</span>
-          <span>Comprehensive analysis of your water quality</span>
+          <span>We learn what your water is doing at your fixtures, not just what a label says.</span>
         </li>
         <li key="step2">
           <span>Problem Identification</span>
-          <span>Determining specific water quality issues</span>
+          <span>We connect the symptoms you feel with the cause we can actually treat.</span>
         </li>
         <li key="step3">
           <span>Solution Design</span>
-          <span>Customizing the right treatment approach</span>
+          <span>We recommend a system that matches your goals (taste, hardness, appliance protection, peace of mind).</span>
         </li>
         <li key="step4">
           <span>System Installation</span>
-          <span>Professional setup of filtration equipment</span>
+          <span>Clean, professional install with proper placement and serviceability.</span>
         </li>
         <li key="step5">
           <span>Quality Verification</span>
-          <span>Testing to ensure desired results</span>
+          <span>We verify performance so you’re not hoping—it’s working.</span>
         </li>
       </ol>
     </div>
-  </section>
-
-  <section>
-    <h2>Treatment Methods</h2>
 
     <div>
+      <h2>Treatment methods we use</h2>
+      <p>
+        Different problems call for different tools.
+        We use proven treatment methods that target the issue at the source.
+      </p>
       <ul>
         {frontmatter.treatmentMethods.map(method => (
           <li key={method}>{method}</li>
         ))}
       </ul>
     </div>
-  </section>
+  </div>
 
-  <section>
-    <h2>Benefits of Water Treatment</h2>
-
+  <div class="two-column">
     <div>
+      <h2>What you get after treatment</h2>
+      <p>
+        Better water is a daily upgrade.
+        You notice it in the shower, in the kitchen, and in what stops breaking.
+      </p>
       <ul>
         {frontmatter.benefits.map(benefit => (
           <li key={benefit}>{benefit}</li>
         ))}
       </ul>
     </div>
-  </section>
-
-  <section>
-    <h2>Why Choose GoFlow for Water Quality?</h2>
-
-    <ul>
-      <li>Expert water analysis</li>
-      <li>Custom solutions</li>
-      <li>Quality equipment</li>
-      <li>Professional installation</li>
-      <li>Ongoing support</li>
-      <li>System maintenance</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Maintenance Services</h2>
 
     <div>
+      <h2>Why GoFlow for water quality work?</h2>
+      <ul>
+        <li>Clear, homeowner-friendly explanations (no scare tactics)</li>
+        <li>Systems sized to your house and your goals</li>
+        <li>Quality equipment and clean installation</li>
+        <li>Upfront expectations on cost, maintenance, and results</li>
+        <li>Long-term support when filters need replacing or performance changes</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two-column">
+    <div>
+      <h2>Maintenance services (so the system keeps doing its job)</h2>
+      <p>
+        Filtration works best when it’s maintained.
+        If a system is neglected, it can lose performance—quietly.
+        We keep yours on track.
+      </p>
       <ul>
         {frontmatter.maintenanceServices.map(service => (
           <li key={service}>{service}</li>
         ))}
       </ul>
     </div>
-  </section>
-
-  <section>
-    <h2>Our Guarantee</h2>
 
     <div>
+      <h2>Our guarantee</h2>
+      <p>
+        You shouldn’t have to wonder if the work was done right.
+        We take responsibility for the result.
+      </p>
       <ul>
         {frontmatter.guarantee.map(guarantee => (
           <li key={guarantee}>{guarantee}</li>
         ))}
       </ul>
     </div>
-  </section>
+  </div>
 
-  <section>
+  <div class="one-column">
     <p>
-      Contact GoFlow Plumbing today for expert water filtration and treatment services in
+      Contact GoFlow Plumbing for water filtration and treatment in
       <a href="/sonoma-county-plumbing/">Sonoma County</a> and <a href="/marin-county-plumbing/">Marin County</a>.
-      Experience the difference that truly clean, healthy water can make in your home.
+      Tell us what you’re noticing—we’ll help you get to the bottom of it.
     </p>
-  </section>
-</article>
+  </div>
+</div>
