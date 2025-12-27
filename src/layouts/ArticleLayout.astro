@@ -40,7 +40,7 @@ const combinedSchema = [schema, breadcrumbSchema];
   description={article.data.description}
   schema={combinedSchema}
 >
-<article class="article markdown-content article-content">
+<article class="article">
     <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Articles', path: '/articles/' }, { name: currentCrumbName }]} />
     {article.data.heroImage && (
       <div class="mb-8">
@@ -53,10 +53,10 @@ const combinedSchema = [schema, breadcrumbSchema];
         />
       </div>
     )}
-    
-    <Content />
-
-    <div class="pitch">
+    <div class="markdown-content">
+      <Content />
+    </div>
+    <div class="call-to-action">
       <h2>Need Professional Plumbing Help?</h2>
       <p>Our expert plumbers are ready to assist with any plumbing issue.</p>
       <a href="/contact-us/">Schedule Service</a>
