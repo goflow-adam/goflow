@@ -48,6 +48,7 @@ const regionMenu = regions
 const articles = await getCollection('articles');
 const articleMenu = articles
   .filter(article => !article.data.draft) // Only show published articles
+  .filter(service => service.data.includeInMenu)
   .map(article => ({
     title: article.data.linkText || article.data.title,
     path: `/articles/${article.slug}/`
