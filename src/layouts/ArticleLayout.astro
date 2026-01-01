@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
 import { createArticlePageSchema, createBreadcrumbSchema } from '../lib/schema/factories';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import AnatomyNav from '@/components/AnatomyNav.astro';
 import '../styles/articles.css';
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const { article } = Astro.props;
+const isAnatomyArticle = article.slug.startsWith('anatomy-of-a-water-heater');
 const { Content } = await article.render();
 
 // Always use the schema factory to ensure consistent formatting
@@ -53,6 +55,7 @@ const combinedSchema = [schema, breadcrumbSchema];
         />
       </div>
     )}
+    {isAnatomyArticle && <AnatomyNav currentSlug={article.slug} />}
     <div class="markdown-content">
       <Content />
     </div>

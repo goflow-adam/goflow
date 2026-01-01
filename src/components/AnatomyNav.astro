@@ -1,0 +1,128 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  currentSlug?: string;
+}
+
+const { currentSlug } = Astro.props;
+
+// Get all anatomy articles (published only)
+const allArticles = await getCollection('articles');
+const anatomyArticles = allArticles
+  .filter(article => article.slug.startsWith('anatomy-of-a-water-heater'))
+  .filter(article => !article.data.draft)
+  .map(article => ({
+    slug: article.slug,
+    title: article.data.linkText || article.data.title,
+    path: `/articles/${article.slug}/`,
+    isMain: article.slug === 'anatomy-of-a-water-heater'
+  }))
+  .sort((a, b) => {
+    // Main article first, then alphabetically
+    if (a.isMain) return -1;
+    if (b.isMain) return 1;
+    return a.title.localeCompare(b.title);
+  });
+---
+
+<nav class="anatomy-nav" aria-label="Water Heater Anatomy Series">
+  <div class="anatomy-nav-header">
+    <span class="anatomy-nav-label">In This Series</span>
+  </div>
+  <ul class="anatomy-nav-list">
+    {anatomyArticles.map(article => (
+      <li class="anatomy-nav-item">
+        {article.slug === currentSlug ? (
+          <span class="anatomy-nav-link current" aria-current="page">
+            {article.isMain && <span class="anatomy-nav-icon">📖</span>}
+            {article.title}
+          </span>
+        ) : (
+          <a href={article.path} class="anatomy-nav-link">
+            {article.isMain && <span class="anatomy-nav-icon">📖</span>}
+            {article.title}
+          </a>
+        )}
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .anatomy-nav {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .anatomy-nav-header {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .anatomy-nav-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+  }
+
+  .anatomy-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .anatomy-nav-item {
+    margin: 0;
+  }
+
+  .anatomy-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    color: #334155;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .anatomy-nav-link:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+
+  .anatomy-nav-link.current {
+    background: #1e40af;
+    color: white;
+    font-weight: 500;
+  }
+
+  .anatomy-nav-icon {
+    flex-shrink: 0;
+  }
+
+  /* Responsive: horizontal on larger screens if desired */
+  @media (min-width: 768px) {
+    .anatomy-nav-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.25rem 1rem;
+    }
+    
+    /* Keep main article full width */
+    .anatomy-nav-item:first-child {
+      grid-column: 1 / -1;
+    }
+  }
+</style>
