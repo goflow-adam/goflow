@@ -1,17 +1,20 @@
 ---
-import BaseLayout from './BaseLayout.astro';
-import type { CollectionEntry } from 'astro:content';
-import { createArticlePageSchema, createBreadcrumbSchema } from '../lib/schema/factories';
-import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import AnatomyNav from '@/components/AnatomyNav.astro';
-import '../styles/articles.css';
+import BaseLayout from "./BaseLayout.astro";
+import type { CollectionEntry } from "astro:content";
+import {
+  createArticlePageSchema,
+  createBreadcrumbSchema,
+} from "../lib/schema/factories";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import AnatomyNav from "@/components/AnatomyNav.astro";
+import "../styles/articles.css";
 
 interface Props {
-  article: CollectionEntry<'articles'>;
+  article: CollectionEntry<"articles">;
 }
 
 const { article } = Astro.props;
-const isAnatomyArticle = article.slug.startsWith('anatomy-of-a-water-heater');
+const isAnatomyArticle = article.slug.startsWith("anatomy-of-a-water-heater");
 const { Content } = await article.render();
 
 // Always use the schema factory to ensure consistent formatting
@@ -21,42 +24,54 @@ const articleDetails = {
   url: `https://goflow.plumbing/articles/${article.slug}/`,
   imageUrl: article.data.heroImage,
   publishDate: article.data.pubDate,
-  modifyDate: article.data.updatedDate
+  modifyDate: article.data.updatedDate,
 };
 
 const schema = await createArticlePageSchema(articleDetails);
 
 // Breadcrumbs: Home > Articles > Current article (prefers breadcrumbDisplayText if provided)
-const currentCrumbName = article.data.breadcrumbDisplayText ?? article.data.linkText ?? article.data.menuText ?? article.data.title;
+const currentCrumbName =
+  article.data.breadcrumbDisplayText ??
+  article.data.linkText ??
+  article.data.menuText ??
+  article.data.title;
 const pageUrl = `https://goflow.plumbing/articles/${article.slug}/`;
 const breadcrumbSchema = await createBreadcrumbSchema([
-  { name: 'Home', url: 'https://goflow.plumbing/' },
-  { name: 'Articles', url: 'https://goflow.plumbing/articles/' },
-  { name: currentCrumbName, url: pageUrl }
+  { name: "Home", url: "https://goflow.plumbing/" },
+  { name: "Articles", url: "https://goflow.plumbing/articles/" },
+  { name: currentCrumbName, url: pageUrl },
 ]);
 const combinedSchema = [schema, breadcrumbSchema];
 ---
 
-<BaseLayout 
+<BaseLayout
   title={article.data.title}
   description={article.data.description}
   schema={combinedSchema}
 >
-<article class="article">
-    <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Articles', path: '/articles/' }, { name: currentCrumbName }]} />
-    {article.data.heroImage && (
-      <div class="mb-8">
-        <img
-          src={article.data.heroImage}
-          alt={article.data.title}
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-        />
-      </div>
-    )}
-    {isAnatomyArticle && <AnatomyNav currentSlug={article.slug} />}
+  <article class="article">
+    <Breadcrumbs
+      items={[
+        { name: "Home", path: "/" },
+        { name: "Articles", path: "/articles/" },
+        { name: currentCrumbName },
+      ]}
+    />
+    {
+      article.data.heroImage && (
+        <div class="mb-8">
+          <img
+            src={article.data.heroImage}
+            alt={article.data.title}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </div>
+      )
+    }
     <div class="markdown-content">
+    {isAnatomyArticle && <AnatomyNav currentSlug={article.slug} />}
       <Content />
     </div>
     <div class="call-to-action">

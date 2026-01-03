@@ -1,0 +1,63 @@
+/* Anatomy Navigation - Collapsible drawer for water heater anatomy series */
+
+.anatomy-nav-container {
+  @apply relative z-48 -mr-4;
+}
+
+/* Collapsed tab - positioned at right edge, text reads bottom-to-top */
+.anatomy-nav-tab {
+  @apply absolute right-0 top-0 py-2 px-3 cursor-pointer text-sm font-medium text-slate-700 whitespace-nowrap;
+  @apply bg-gradient-to-br from-slate-50 to-slate-100;
+  @apply border border-slate-200 border-r-0 rounded-l-lg;
+}
+
+.anatomy-nav-tab .tab-text {
+  @apply block;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+.anatomy-nav-tab:hover {
+  @apply bg-slate-200 text-slate-900;
+}
+
+/* Drawer - positioned at right edge */
+.anatomy-nav-drawer {
+  @apply absolute right-0 top-0 p-0 z-49;
+  @apply bg-gradient-to-br from-slate-50 to-slate-100;
+  @apply border border-slate-200 rounded-l-xl;
+  @apply shadow-[-4px_0_12px_rgba(0,0,0,0.1)];
+}
+
+.anatomy-nav-close {
+  @apply block w-full bg-transparent border-none border-b border-slate-200 py-3 px-4;
+  @apply cursor-pointer text-sm font-medium text-slate-700 text-left;
+}
+
+.anatomy-nav-close:hover {
+  @apply bg-slate-200 text-slate-900;
+}
+
+ul.anatomy-nav-list {
+  @apply list-none m-0 p-2 flex flex-col gap-0.5;
+}
+
+.anatomy-nav-item {
+  @apply m-0 list-none;
+}
+
+.anatomy-nav-link {
+  @apply flex items-center gap-2 py-2 px-3 rounded-md text-sm text-secondary no-underline whitespace-nowrap;
+}
+
+.anatomy-nav-link:hover {
+  @apply bg-slate-200 text-slate-900;
+}
+
+.anatomy-nav-link.current {
+  @apply bg-primary text-white font-medium;
+}
+
+.anatomy-nav-icon {
+  @apply shrink-0;
+}

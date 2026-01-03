@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import '../styles/components/anatomy-nav.css';
 
 interface Props {
   currentSlug?: string;
@@ -26,103 +27,65 @@ const anatomyArticles = allArticles
   });
 ---
 
-<nav class="anatomy-nav" aria-label="Water Heater Anatomy Series">
-  <div class="anatomy-nav-header">
-    <span class="anatomy-nav-label">In This Series</span>
-  </div>
-  <ul class="anatomy-nav-list">
-    {anatomyArticles.map(article => (
-      <li class="anatomy-nav-item">
-        {article.slug === currentSlug ? (
-          <span class="anatomy-nav-link current" aria-current="page">
-            {article.isMain && <span class="anatomy-nav-icon">📖</span>}
-            {article.title}
-          </span>
-        ) : (
-          <a href={article.path} class="anatomy-nav-link">
-            {article.isMain && <span class="anatomy-nav-icon">📖</span>}
-            {article.title}
-          </a>
-        )}
-      </li>
-    ))}
-  </ul>
-</nav>
+<div class="anatomy-nav-container">
+  <!-- Collapsed tab (visible when closed) -->
+  <button class="anatomy-nav-tab" aria-expanded="false" aria-controls="anatomy-nav-drawer">
+    <span class="tab-text">Anatomy Parts ▶︎</span>
+  </button>
 
-<style>
-  .anatomy-nav {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-    border: 1px solid #e2e8f0;
-    border-radius: 0.75rem;
-    padding: 1.25rem;
-    margin-bottom: 2rem;
-  }
+  <!-- Drawer (hidden by default) -->
+  <nav id="anatomy-nav-drawer" class="anatomy-nav-drawer" aria-label="Water Heater Anatomy Series" hidden>
+    <button class="anatomy-nav-close" aria-label="Close menu">
+      <span>Anatomy Parts ▶︎</span>
+    </button>
+    <ul class="anatomy-nav-list">
+      {anatomyArticles.map(article => (
+        <li class="anatomy-nav-item">
+          {article.slug === currentSlug ? (
+            <span class="anatomy-nav-link current" aria-current="page">
+              {article.isMain && <span class="anatomy-nav-icon">📖</span>}
+              {article.title}
+            </span>
+          ) : (
+            <a href={article.path} class="anatomy-nav-link">
+              {article.isMain && <span class="anatomy-nav-icon">📖</span>}
+              {article.title}
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+</div>
 
-  .anatomy-nav-header {
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid #e2e8f0;
-  }
+<script>
+  function initAnatomyNav() {
+    const container = document.querySelector('.anatomy-nav-container');
+    const tab = container?.querySelector('.anatomy-nav-tab') as HTMLButtonElement;
+    const drawer = container?.querySelector('.anatomy-nav-drawer') as HTMLElement;
+    const closeBtn = container?.querySelector('.anatomy-nav-close') as HTMLButtonElement;
 
-  .anatomy-nav-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #64748b;
-  }
+    if (!tab || !drawer || !closeBtn) return;
 
-  .anatomy-nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .anatomy-nav-item {
-    margin: 0;
-  }
-
-  .anatomy-nav-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.5rem;
-    font-size: 0.9rem;
-    color: #334155;
-    text-decoration: none;
-    transition: all 0.15s ease;
-  }
-
-  .anatomy-nav-link:hover {
-    background: #e2e8f0;
-    color: #0f172a;
-  }
-
-  .anatomy-nav-link.current {
-    background: #1e40af;
-    color: white;
-    font-weight: 500;
-  }
-
-  .anatomy-nav-icon {
-    flex-shrink: 0;
-  }
-
-  /* Responsive: horizontal on larger screens if desired */
-  @media (min-width: 768px) {
-    .anatomy-nav-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.25rem 1rem;
+    function openDrawer() {
+      drawer.hidden = false;
+      tab.hidden = true;
+      tab.setAttribute('aria-expanded', 'true');
     }
-    
-    /* Keep main article full width */
-    .anatomy-nav-item:first-child {
-      grid-column: 1 / -1;
+
+    function closeDrawer() {
+      drawer.hidden = true;
+      tab.hidden = false;
+      tab.setAttribute('aria-expanded', 'false');
     }
+
+    tab.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
   }
-</style>
+
+  // Run on initial load
+  initAnatomyNav();
+
+  // Re-run after Astro page transitions
+  document.addEventListener('astro:after-swap', initAnatomyNav);
+</script>
