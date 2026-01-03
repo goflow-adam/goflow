@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import rehypeWrapTables from './src/lib/rehype/rehypeWrapTables.mjs';
+import rehypeExternalLinks from './src/lib/rehype/rehypeExternalLinks.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,7 +20,7 @@ export default defineConfig({
     }),
     sitemap({lastmod: new Date()}),
     mdx({
-      rehypePlugins: [rehypeWrapTables]
+      rehypePlugins: [rehypeWrapTables, rehypeExternalLinks]
     }),
     partytown({
       config: {
@@ -63,7 +64,7 @@ export default defineConfig({
   ],
   markdown: {
     shikiConfig: { theme: 'github-light' },
-    rehypePlugins: [rehypeWrapTables]
+    rehypePlugins: [rehypeWrapTables, rehypeExternalLinks]
   },
   build: {
     inlineStylesheets: 'never'

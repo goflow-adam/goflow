@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+import '../styles/components/anatomy-nav.css';
+
+interface Props {
+  currentSlug?: string;
+}
+
+const { currentSlug } = Astro.props;
+
+// Get all anatomy articles (published only)
+const allArticles = await getCollection('articles');
+const anatomyArticles = allArticles
+  .filter(article => article.slug.startsWith('anatomy-of-a-water-heater'))
+  .filter(article => !article.data.draft)
+  .map(article => ({
+    slug: article.slug,
+    title: article.data.linkText || article.data.title,
+    path: `/articles/${article.slug}/`,
+    isMain: article.slug === 'anatomy-of-a-water-heater'
+  }))
+  .sort((a, b) => {
+    // Main article first, then alphabetically
+    if (a.isMain) return -1;
+    if (b.isMain) return 1;
+    return a.title.localeCompare(b.title);
+  });
+---
+
+<div class="anatomy-nav-container">
+  <!-- Collapsed tab (visible when closed) -->
+  <button class="anatomy-nav-tab" aria-expanded="false" aria-controls="anatomy-nav-drawer">
+    <span class="tab-text">Anatomy Parts ▶︎</span>
+  </button>
+
+  <!-- Drawer (hidden by default) -->
+  <nav id="anatomy-nav-drawer" class="anatomy-nav-drawer" aria-label="Water Heater Anatomy Series" hidden>
+    <button class="anatomy-nav-close" aria-label="Close menu">
+      <span>Anatomy Parts ▶︎</span>
+    </button>
+    <ul class="anatomy-nav-list">
+      {anatomyArticles.map(article => (
+        <li class="anatomy-nav-item">
+          {article.slug === currentSlug ? (
+            <span class="anatomy-nav-link current" aria-current="page">
+              {article.isMain && <span class="anatomy-nav-icon">📖</span>}
+              {article.title}
+            </span>
+          ) : (
+            <a href={article.path} class="anatomy-nav-link">
+              {article.isMain && <span class="anatomy-nav-icon">📖</span>}
+              {article.title}
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+</div>
+
+<script>
+  function initAnatomyNav() {
+    const container = document.querySelector('.anatomy-nav-container');
+    const tab = container?.querySelector('.anatomy-nav-tab') as HTMLButtonElement;
+    const drawer = container?.querySelector('.anatomy-nav-drawer') as HTMLElement;
+    const closeBtn = container?.querySelector('.anatomy-nav-close') as HTMLButtonElement;
+
+    if (!tab || !drawer || !closeBtn) return;
+
+    function openDrawer() {
+      drawer.hidden = false;
+      tab.hidden = true;
+      tab.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeDrawer() {
+      drawer.hidden = true;
+      tab.hidden = false;
+      tab.setAttribute('aria-expanded', 'false');
+    }
+
+    tab.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
+  // Run on initial load
+  initAnatomyNav();
+
+  // Re-run after Astro page transitions
+  document.addEventListener('astro:after-swap', initAnatomyNav);
+</script>
