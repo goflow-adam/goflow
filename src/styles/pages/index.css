@@ -27,6 +27,10 @@
   @apply text-primary;
 }
 
+.hero-text {
+  @apply max-w-2xl mx-auto;
+}
+
 .hero p {
   @apply text-xl md:text-2xl mb-8;
 }
