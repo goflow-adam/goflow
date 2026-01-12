@@ -17,7 +17,7 @@ export function createMinimalOrganizationInfo(): MinimalOrganizationInfo {
     // Use a single canonical @id for the organization everywhere
     '@id': 'https://goflow.plumbing/#organization',
     'name': 'GoFlow Plumbing',
-    'legalName': 'GoFlow Plumbing',
+    'legalName': 'GoFlow Plumbing Inc.',
     // Provide at least one valid absolute image URL for Rich Results
     'image': [
       'https://goflow.plumbing/android-chrome-512x512.png'

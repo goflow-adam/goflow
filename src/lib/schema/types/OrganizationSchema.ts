@@ -20,10 +20,11 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
     this.setType(minimalInfo['@type'])
         .setId(minimalInfo['@id'])
         .addProperty('name', minimalInfo.name)
+        .addProperty('legalName', minimalInfo.legalName)
         .addProperty('alternateName', 'GoFlow')
         .addProperty('logo', {
           '@type': 'ImageObject',
-          'url': 'https://goflow.plumbing/apple-touch-icon.png'
+          'url': 'https://goflow.plumbing/images/logo.svg'
         })
         .addProperty('image', minimalInfo.image)
         .addProperty('telephone', minimalInfo.telephone)
@@ -43,7 +44,17 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
           'https://www.yelp.com/biz/goflow-plumbing-sonoma/'
         ] as string[])
         .addProperty('contactPoint', this.getContactPoint())
-        .addProperty('areaServed', AreaService.getInstance().getServiceAreas());
+        .addProperty('areaServed', AreaService.getInstance().getServiceAreas())
+        // Additional properties for richer structured data
+        .addProperty('mainEntityOfPage', 'https://goflow.plumbing/')
+        .addProperty('knowsAbout', [
+          'Residential plumbing repair and installation',
+          'Water heater repair and replacement',
+          'Drain cleaning and sewer services',
+          'Emergency plumbing services',
+          'Tankless water heater installation',
+          'Leak detection and repair'
+        ] as string[]);
   }
 
   private getGeoCoordinates(): GeoCoordinates {
