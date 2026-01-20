@@ -4,11 +4,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/optimize-images.mjs && node scripts/update-pub-dates.mjs && astro build",
+    "build": "node scripts/optimize-images.mjs && node scripts/set-updated-dates.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "analyze": "ANALYZE=true astro build",
-    "update-pub-dates": "node scripts/update-pub-dates.mjs",
+    "set-updated-dates": "node scripts/set-updated-dates.mjs",
     "extract-keywords": "node scripts/extract-keywords.mjs"
   },
   "dependencies": {
