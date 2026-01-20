@@ -1,4 +1,4 @@
-import type { WithContext, Plumber, OpeningHoursSpecification, GeoCoordinates, ContactPoint } from 'schema-dts';
+import type { WithContext, Plumber, OpeningHoursSpecification, GeoCoordinates, ContactPoint, Review, AggregateRating } from 'schema-dts';
 import { createMinimalOrganizationInfo } from './MinimalOrganizationInfo';
 import { AreaService } from '../base/AreaService';
 import { GoFlowSchema } from '../base/GoFlowSchema';
@@ -54,7 +54,9 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
           'Emergency plumbing services',
           'Tankless water heater installation',
           'Leak detection and repair'
-        ] as string[]);
+        ] as string[])
+        .addProperty('aggregateRating', this.getAggregateRating())
+        .addProperty('review', this.getReviews());
   }
 
   private getGeoCoordinates(): GeoCoordinates {
@@ -80,6 +82,51 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
       'telephone': '(707) 200-8350',
       'contactType': 'customer service'
     } as ContactPoint];
+  }
+
+  private getAggregateRating(): AggregateRating {
+    return {
+      '@type': 'AggregateRating',
+      'ratingValue': '5.0',
+      'reviewCount': '2',
+      'bestRating': '5',
+      'worstRating': '1'
+    } as AggregateRating;
+  }
+
+  private getReviews(): Review[] {
+    return [
+      {
+        '@type': 'Review',
+        'author': {
+          '@type': 'Person',
+          'name': 'Kip B.'
+        },
+        'datePublished': '2024-10',
+        'reviewRating': {
+          '@type': 'Rating',
+          'ratingValue': '5',
+          'bestRating': '5',
+          'worstRating': '1'
+        },
+        'reviewBody': 'Chris knows what he\'s doing, is very conscientious and takes all the time necessary to get the job done right. His prices are the most reasonable I\'ve found. He\'s my new plumber, highly recommended.'
+      } as Review,
+      {
+        '@type': 'Review',
+        'author': {
+          '@type': 'Person',
+          'name': 'Bert P.'
+        },
+        'datePublished': '2024-09',
+        'reviewRating': {
+          '@type': 'Rating',
+          'ratingValue': '5',
+          'bestRating': '5',
+          'worstRating': '1'
+        },
+        'reviewBody': 'Chris was prompt to reply to your texts. Chris was conscientious about letting you know he was going to be a little late and why. He was very polite, clean and organized. The job was completed faster than I expected. I am extremely pleased with his work and will highly recommend him. Would not hesitate to used him again. He also had a very competitive price.'
+      } as Review
+    ];
   }
 
   public build(): WithContext<Plumber> {

@@ -147,3 +147,48 @@
 .top-services > div li a {
   @apply block bg-background rounded-lg shadow p-4 hover:shadow-lg transition-shadow;
 }
+
+/* Customer Reviews */
+.reviews {
+  @apply py-16 bg-gray-50;
+}
+
+.reviews > div {
+  @apply container mx-auto px-4;
+}
+
+.reviews h2 {
+  @apply text-3xl font-bold text-center mb-12;
+}
+
+.reviews-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto;
+}
+
+.review-card {
+  @apply bg-background rounded-lg shadow-lg p-6;
+}
+
+.review-header {
+  @apply flex justify-between items-center mb-2;
+}
+
+.reviewer-name {
+  @apply font-bold text-lg;
+}
+
+.review-date {
+  @apply text-gray-500 text-sm;
+}
+
+.review-rating {
+  @apply text-yellow-500 text-xl mb-2;
+}
+
+.review-service {
+  @apply text-sm text-gray-600 mb-4;
+}
+
+.review-text {
+  @apply text-gray-700 leading-relaxed;
+}
