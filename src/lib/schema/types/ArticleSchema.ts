@@ -1,6 +1,5 @@
 import type { WithContext, Article, WebPage } from 'schema-dts';
 import { GoFlowSchema } from '../base/GoFlowSchema';
-import { OrganizationSchema } from './OrganizationSchema';
 
 interface ArticleDetails {
   title: string;
@@ -34,11 +33,11 @@ export class ArticleSchema extends GoFlowSchema<Article> {
 
   public static async create(details: ArticleDetails): Promise<ArticleSchema> {
     const schema = new ArticleSchema(details);
-    const organization = await OrganizationSchema.create();
-    const orgSchema = await organization.build();
-    
-    schema.addProperty('author', orgSchema);
-    schema.addProperty('publisher', orgSchema);
+    // Avoid embedding the full Organization schema here.
+    // BaseLayout already injects the Organization node into the @graph, including aggregateRating and review.
+    // Embedding it again inside Article.author/publisher can lead validators to interpret duplicated/merged rating data.
+    schema.addProperty('author', { '@id': schema.organizationId });
+    schema.addProperty('publisher', { '@id': schema.organizationId });
     
     return schema;
   }
