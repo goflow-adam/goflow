@@ -15,12 +15,9 @@ interface Props {
 
 const { title, description, schema } = Astro.props;
 
-// Always include website and business schemas
-const [websiteSchema, organizationSchema] = await Promise.all([
-  createWebSiteSchema(),
-  createOrganizationSchema()
-]);
-const baseSchemas = [websiteSchema, organizationSchema];
+const organizationSchema = await createOrganizationSchema();
+const websiteSchema = Astro.url.pathname === '/' ? await createWebSiteSchema() : null;
+const baseSchemas = websiteSchema ? [websiteSchema, organizationSchema] : [organizationSchema];
 
 const normalizeSchemas = (value: unknown): any[] => {
   if (!value) return [];
