@@ -1,4 +1,4 @@
-import type { WithContext, FAQPage, Question, WebPage, Service, Article, Plumber, BreadcrumbList } from 'schema-dts';
+import type { WithContext, FAQPage, Question, WebPage, Service, Article, Plumber, BreadcrumbList, WebSite } from 'schema-dts';
 
 export interface BaseSchema {
   "@context": "https://schema.org";
@@ -496,4 +496,5 @@ export type Schema =
   | WithContext<FAQPage>
   | WithContext<Plumber>
   | WithContext<BreadcrumbList>
+  | WithContext<WebSite>
   | Schema[];

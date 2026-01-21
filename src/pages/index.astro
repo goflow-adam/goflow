@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { sortByPositionThenTitle } from '../lib/sortByPositionThenTitle';
+import { createHomePageSchemas } from '../lib/schema/factories';
 import '../styles/pages/index.css';
 
 interface ServiceFrontmatter {
@@ -25,11 +26,15 @@ const sortedFeaturedServices = sortByPositionThenTitle(
   service => service.data.name || service.data.menuText || service.data.linkText || service.data.title
 );
 
+// Homepage gets WebSite + WebPage schemas
+const homePageSchemas = await createHomePageSchemas();
+
 ---
 
 <BaseLayout
   title="GoFlow Plumbing: 3rd Generation Plumbing Experts in Sonoma & Marin 24/7"
   description="Plumbing issue now? GoFlow Plumbing is ready with your water heater repair, drain clearing, and urgent services across Sonoma and Marin. Call today!"
+  schema={homePageSchemas}
 >
   <div>
 

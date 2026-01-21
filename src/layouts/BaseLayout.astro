@@ -5,7 +5,7 @@ import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import '../styles/navigation.css';
 import '../styles/base-layout.css';
 import type { Schema } from '../types/schema';
-import { createOrganizationSchema, createWebSiteSchema } from '../lib/schema/factories';
+import { createOrganizationSchema } from '../lib/schema/factories';
 
 interface Props {
   title: string;
@@ -15,9 +15,9 @@ interface Props {
 
 const { title, description, schema } = Astro.props;
 
+// Organization schema is always included; WebSite schema is passed explicitly by homepage only
 const organizationSchema = await createOrganizationSchema();
-const websiteSchema = Astro.url.pathname === '/' ? await createWebSiteSchema() : null;
-const baseSchemas = websiteSchema ? [websiteSchema, organizationSchema] : [organizationSchema];
+const baseSchemas = [organizationSchema];
 
 const normalizeSchemas = (value: unknown): any[] => {
   if (!value) return [];

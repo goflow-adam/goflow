@@ -226,32 +226,31 @@ export async function createRegionPageSchema(region: { name: string; url: string
     .replace('https://goflow.plumbing/', '')
     .replace(/\/$/, '');
 
-  const serviceId = `https://goflow.plumbing/${slug}#service`;
+  const areaName = region.cityName || region.name;
+
+  // Embed Service directly within WebPage's mainEntity instead of as a sibling object
+  const embeddedService = {
+    '@type': 'Service' as const,
+    '@id': `https://goflow.plumbing/${slug}#service`,
+    'name': region.name,
+    'description': region.description,
+    'provider': {
+      '@type': 'Plumber' as const,
+      '@id': 'https://goflow.plumbing/#organization'
+    },
+    'serviceType': ['Plumbing'],
+    'areaServed': {
+      '@type': 'AdministrativeArea' as const,
+      'name': areaName
+    }
+  };
 
   const webpage = await WebPageSchema.create({
     url: region.url,
     name: region.name,
     description: region.description,
     type: 'WebPage',
-    mainEntity: {
-      '@type': 'Service',
-      '@id': serviceId
-    }
-  });
-
-  const areaName = region.cityName || region.name;
-  const service = await ServiceSchema.create({
-    slug,
-    name: region.name,
-    description: region.description,
-    schema: {
-      '@id': serviceId,
-      areaServed: {
-        '@type': 'AdministrativeArea',
-        name: areaName
-      },
-      serviceType: ['Plumbing']
-    }
+    mainEntity: embeddedService
   });
 
   if (region.cityName) {
@@ -259,7 +258,8 @@ export async function createRegionPageSchema(region: { name: string; url: string
     webpage.addGeoFocus({ name: region.cityName, id: cityId, description: 'City in California' });
   }
 
-  return [await webpage.build(), await service.build()];
+  // Return single WebPage with embedded Service (not an array of siblings)
+  return await webpage.build();
 }
 
 /**
