@@ -2,45 +2,71 @@
 interface Props {
   src: string;
   alt: string;
+  title?: string;
   width?: number;
   height?: number;
   class?: string;
   loading?: "lazy" | "eager";
   sizes?: string;
+  variant?: "hero" | "column";
 }
 
 const {
   src,
   alt,
+  title,
   width,
   height,
   class: className,
   loading = "lazy",
-  sizes = "(max-width: 768px) 100vw, 50vw"
+  sizes,
+  variant = "column"
 } = Astro.props;
 
+// Size configurations matching optimize-images.mjs
+const WIDTHS = {
+  hero: [320, 640, 768, 1024, 1280],
+  column: [300, 450, 600]
+};
+
+// Default sizes attribute based on variant
+const defaultSizes = variant === "hero" 
+  ? "100vw" 
+  : "(max-width: 600px) 100vw, 600px";
+
 // Generate srcset for responsive images
-const generateSrcSet = (src: string) => {
-  const widths = [320, 640, 768, 1024, 1280];
+const generateSrcSet = (src: string, widths: number[]) => {
   const ext = src.split('.').pop();
-  const basePath = src.slice(0, -(ext?.length ?? 0) - 1);
+  const filename = src.split('/').pop() || '';
+  const baseName = filename.slice(0, -(ext?.length ?? 0) - 1);
+  const dir = src.slice(0, src.lastIndexOf('/'));
   
   return widths
-    .map(w => `${basePath}-${w}.${ext} ${w}w`)
+    .map(w => `${dir}/generated/${baseName}-${w}.${ext} ${w}w`)
     .join(', ');
 };
 
-const srcset = generateSrcSet(src);
+const srcset = generateSrcSet(src, WIDTHS[variant]);
+const finalSizes = sizes || defaultSizes;
+
+// Fallback src uses the middle size for column, largest for hero
+const fallbackWidth = variant === "hero" ? 768 : 450;
+const ext = src.split('.').pop();
+const filename = src.split('/').pop() || '';
+const baseName = filename.slice(0, -(ext?.length ?? 0) - 1);
+const dir = src.slice(0, src.lastIndexOf('/'));
+const fallbackSrc = `${dir}/generated/${baseName}-${fallbackWidth}.${ext}`;
 ---
 
 <img
-  src={src}
+  src={fallbackSrc}
   alt={alt}
+  title={title}
   width={width}
   height={height}
   class={className}
   loading={loading}
   decoding="async"
   srcset={srcset}
-  sizes={sizes}
+  sizes={finalSizes}
 />

@@ -93,7 +93,7 @@
 .page-body main {
   @apply flex-grow w-full py-20 lg:py-16;
   background-image:
-    url('/images/SanRafael-Cropped.jpg');
+    url('/images/SanRafael-Cropped.webp');
   background-repeat: no-repeat;
   background-position: top 4rem center;
   background-size: contain;

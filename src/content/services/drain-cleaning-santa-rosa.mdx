@@ -37,6 +37,7 @@ faqs:
 ---
 
 import FAQSection from '@/components/FAQSection.astro';
+import OptimizedImage from '@/components/OptimizedImage.astro';
 
 <div class="content-grid">
   <div class="one-column">
@@ -55,7 +56,7 @@ import FAQSection from '@/components/FAQSection.astro';
     1900s Victorians on McDonald Avenue to brand-new rebuilds in Fountaingrove.
   </div>
   <div class="two-column">
-    ![GoFlow Santa Rosa Plumber](/images/SantaRosaTruck.jpg "GoFlow Santa Rosa Plumber")
+    <OptimizedImage src="/images/SantaRosaTruck.webp" alt="GoFlow Santa Rosa Plumber" title="GoFlow Santa Rosa Plumber" />
   </div>
   <div class="one-column">
     ## Take These Steps Right Now
