@@ -131,6 +131,39 @@ Keywords are strategically chosen to:
 
 **Why overlap is bad:** If the same core phrase appears in multiple keywords, it looks like keyword stuffing to Google. Keywords should have minimal overlap—each targeting a different search pattern.
 
+#### Related Words (Lower Priority)
+
+In addition to `keywords`, frontmatter may include a `relatedWords` array. These are semantically related terms that support the primary keywords but are **lower priority** for inclusion.
+
+**How relatedWords differ from keywords:**
+
+| Keywords | Related Words |
+|----------|---------------|
+| Must be included in content | Include only when natural |
+| Target exact match or close variations | Support semantic relevance |
+| High priority for headings, first 100 words | No placement requirements |
+| Strategically chosen for search volume | Chosen for topical depth |
+
+**Example:**
+```yaml
+keywords:
+  - Novato plumber
+  - plumbing services Novato
+  - Novato plumbing company
+relatedWords:
+  - Hamilton Field
+  - Ignacio
+  - Indian Valley
+  - licensed plumber
+  - family owned
+```
+
+**Usage guidance:**
+- Include related words when they fit naturally into the content
+- Don't force them—if there's no good place, skip them
+- They help establish topical authority without keyword stuffing
+- Useful for neighborhood mentions, FAQ answers, and local context
+
 #### Using Keywords in Content
 
 Each region page has target keywords in its frontmatter. Use them strategically, not mechanically.

@@ -645,6 +645,39 @@ Keywords are strategically chosen to:
 
 **Why overlap is bad:** If "water heater repair" appears in 4 of 7 keywords, it looks like keyword stuffing to Google. The original keywords like "hot water tank repair," "tankless hot water repair," "water heaters repair" have minimal overlap—each targets a different search pattern.
 
+### Related Words (Lower Priority)
+
+In addition to `keywords`, frontmatter may include a `relatedWords` array. These are semantically related terms that support the primary keywords but are **lower priority** for inclusion.
+
+**How relatedWords differ from keywords:**
+
+| Keywords | Related Words |
+|----------|---------------|
+| Must be included in content | Include only when natural |
+| Target exact match or close variations | Support semantic relevance |
+| High priority for headings, first 100 words | No placement requirements |
+| Strategically chosen for search volume | Chosen for topical depth |
+
+**Example:**
+```yaml
+keywords:
+  - emergency plumbing services
+  - plumbing emergency
+  - local emergency plumber
+relatedWords:
+  - burst pipe
+  - flooding
+  - water damage
+  - after hours
+  - weekend plumber
+```
+
+**Usage guidance:**
+- Include related words when they fit naturally into the content
+- Don't force them—if there's no good place, skip them
+- They help establish topical authority without keyword stuffing
+- Useful for FAQ answers, problem descriptions, and process explanations
+
 ### Natural Integration
 
 Each service+city page has target keywords in frontmatter. Use them strategically:

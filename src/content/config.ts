@@ -53,6 +53,8 @@ const baseSchema = z.object({
     answer: z.string(),
   })).optional(),
   includeInMenu: z.boolean().default(false),
+  keywords: z.array(z.string()).optional(),
+  relatedWords: z.array(z.string()).optional(),
 });
 
 const services = defineCollection({
