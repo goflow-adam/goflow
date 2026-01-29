@@ -31,18 +31,37 @@ const serviceMenu = sortByPositionThenTitle(
   item => item.title
 );
 
-// Get all region pages that should be included in the menu
+// Get all region pages and build hierarchical menu
 const regions = await getCollection('regions');
-const regionMenu = regions
-  .filter(region => {
-    const shouldInclude = region.data.includeInMenu === true;
-    return shouldInclude;
-  })
-  .map(region => ({
-    title: region.data.featureTitle || region.data.region,
-    path: `/${region.slug}/`
-  }))
-  .sort((a, b) => a.title.localeCompare(b.title));
+
+// Separate parent regions (no regionParent) from child regions (have regionParent)
+const parentRegions = regions.filter(r => !r.data.regionParent && r.data.includeInMenu);
+const childRegions = regions.filter(r => r.data.regionParent);
+
+// Build hierarchical region menu
+const regionMenu: NavItem[] = [];
+
+parentRegions
+  .sort((a, b) => (a.data.featureTitle || a.data.region).localeCompare(b.data.featureTitle || b.data.region))
+  .forEach(parent => {
+    // Add parent with "All " prefix
+    regionMenu.push({
+      title: `All ${parent.data.featureTitle || parent.data.region}`,
+      path: `/${parent.slug}/`
+    });
+    
+    // Add children that belong to this parent
+    const children = childRegions
+      .filter(child => child.data.regionParent === parent.data.region)
+      .sort((a, b) => (a.data.featureTitle || a.data.region).localeCompare(b.data.featureTitle || b.data.region));
+    
+    children.forEach(child => {
+      regionMenu.push({
+        title: child.data.featureTitle || child.data.region,
+        path: `/${child.slug}/`
+      });
+    });
+  });
 
 // Get all articles and sort them by date
 const articles = await getCollection('articles');

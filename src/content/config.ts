@@ -72,6 +72,7 @@ const services = defineCollection({
 const regions = defineCollection({
   schema: baseSchema.extend({
     region: z.string(),
+    regionParent: z.string().optional(),
     location: z.string().optional(),
     featureTitle: z.string().optional(),
   }),
