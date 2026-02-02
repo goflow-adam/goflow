@@ -34,11 +34,13 @@ faqs:
 ---
 
 import FAQSection from '@/components/FAQSection.astro';
+import YouTubeEmbed from '@/components/YouTubeEmbed.astro';
 
 <div class="content-grid">
   <div class="one-column">
     # {frontmatter.contentTitle}
-
+  </div>
+  <div class="two-column">
     Mold doesn't start as a mold problem.
     It starts as a **moisture problem**—and more often than not, that moisture comes from plumbing.
 
@@ -47,6 +49,10 @@ import FAQSection from '@/components/FAQSection.astro';
     When moisture lingers in these hidden spaces, mold can take hold long before you see it or smell it.
 
     Understanding where that moisture comes from—and what to watch for—is one of the best ways to protect your home.
+  </div>
+  <div class="two-column">
+    <YouTubeEmbed videoId="fAuicxx8x2Y" title="Holmes on Homes - Plumbing Inspection Episode" />
+    Episode of Holmes on Homes showcasing what happens when proactive plumbing inspections are skipped and the importance of choosing the right home inspector.
   </div>
 
   <div class="one-column">
