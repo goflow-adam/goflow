@@ -33,6 +33,7 @@ const IMAGE_CONFIGS = {
   'tnp-side.webp': COLUMN_SIZES,
   'tnp-test.webp': COLUMN_SIZES,
   'water-heater.webp': COLUMN_SIZES,
+  'moen-flow-install-bel-marin-keys-1.webp': COLUMN_SIZES,
 };
 const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp'];
 
