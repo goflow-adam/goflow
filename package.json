@@ -9,7 +9,8 @@
     "astro": "astro",
     "analyze": "ANALYZE=true astro build",
     "set-updated-dates": "node scripts/set-updated-dates.mjs",
-    "extract-keywords": "node scripts/extract-keywords.mjs"
+    "extract-keywords": "node scripts/extract-keywords.mjs",
+    "compare-search": "node scripts/compare-search-result.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.3",
