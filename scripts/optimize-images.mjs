@@ -33,6 +33,7 @@ const IMAGE_CONFIGS = {
   'tnp-side.webp': COLUMN_SIZES,
   'tnp-test.webp': COLUMN_SIZES,
   'water-heater.webp': COLUMN_SIZES,
+  'water-heater-expansion-tank.webp': COLUMN_SIZES,
   'moen-flow-install-bel-marin-keys-1.webp': COLUMN_SIZES,
 };
 const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp'];
@@ -73,13 +74,21 @@ async function optimizeImage(imagePath, outputDir) {
   await mkdir(outputDir, { recursive: true });
 
   for (const width of requiredSizes) {
-    // Skip sizes larger than original
+    const resizedPath = join(outputDir, filename.replace(ext, `-${width}${ext}`));
+    
+    // If requested size is larger than original, copy the original with the larger size name
     if (width > metadata.width) {
-      console.log(`Skipping ${width}px for ${filename} - larger than original ${metadata.width}px`);
+      console.log(`Copying original for ${width}px version of ${filename} - source only ${metadata.width}px`);
+      if (ext === '.webp') {
+        await image.webp({ quality: 80 }).toFile(resizedPath);
+      } else if (ext === '.png') {
+        await image.png({ quality: 80, compressionLevel: 9 }).toFile(resizedPath);
+      } else {
+        await image.jpeg({ quality: 80, progressive: true }).toFile(resizedPath);
+      }
       continue;
     }
 
-    const resizedPath = join(outputDir, filename.replace(ext, `-${width}${ext}`));
     console.log(`Generating ${width}px version of ${filename}`);
     
     const resized = image.resize(width);
@@ -97,12 +106,16 @@ async function optimizeImage(imagePath, outputDir) {
 
 async function main() {
   const publicDir = new URL('../public/images', import.meta.url).pathname;
-  const generatedDir = new URL('../public/images/generated', import.meta.url).pathname;
   
   for await (const file of walk(publicDir)) {
     // Skip files that are already in the generated directory
     if (file.includes('/generated/')) continue;
-    await optimizeImage(file, generatedDir).catch(console.error);
+    
+    // Output to a 'generated' subdirectory relative to the source image's directory
+    const imageDir = file.slice(0, file.lastIndexOf('/'));
+    const outputDir = join(imageDir, 'generated');
+    
+    await optimizeImage(file, outputDir).catch(console.error);
   }
 }
 
