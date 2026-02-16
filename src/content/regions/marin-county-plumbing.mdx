@@ -75,7 +75,7 @@ import OptimizedImage from '@/components/OptimizedImage.astro';
     <ul>
       {getCitiesForRegion(frontmatter.region).map((city) => {
         const slug = city.toLowerCase().replace(/\s+/g, '-');
-        const linkable = ['san-rafael', 'novato'];
+        const linkable = ['san-rafael', 'novato', 'mill-valley'];
         const shouldLink = linkable.includes(slug);
         return (
           <li>
@@ -133,6 +133,8 @@ import OptimizedImage from '@/components/OptimizedImage.astro';
     - [Drain cleaning San Rafael](/drain-cleaning-san-rafael/)
     - [Water heater repair Novato](/water-heater-repair-novato/)
     - [Drain cleaning Novato](/drain-cleaning-novato/)
+    - [Water heater repair Mill Valley](/water-heater-repair-mill-valley/)
+    - [Drain cleaning Mill Valley](/drain-cleaning-mill-valley/)
   </div>
   <div class="one-column">
     ## {frontmatter.region} Unique Plumbing Conditions

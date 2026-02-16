@@ -87,13 +87,17 @@ import OptimizedImage from '@/components/OptimizedImage.astro';
     - [Drain cleaning Santa Rosa](/drain-cleaning-santa-rosa/)
     - [Water heater installation Petaluma](/water-heater-installation-petaluma/)
     - [Drain cleaning Petaluma](/drain-cleaning-petaluma/)
+    - [Water heater installation Healdsburg](/water-heater-installation-and-repair-healdsburg/)
+    - [Drain cleaning Healdsburg](/drain-cleaning-healdsburg/)
+    - [Water heater installation Sonoma](/water-heater-installation-and-repair-sonoma/)
+    - [Drain cleaning Sonoma](/drain-cleaning-sonoma/)
   </div>
   <div class="two-column">
     ## Cities and Areas We Serve in {frontmatter.region}
     <ul>
       {getCitiesForRegion(frontmatter.region).map((city) => {
         const slug = city.toLowerCase().replace(/\s+/g, '-');
-        const linkable = ['santa-rosa', 'petaluma'];
+        const linkable = ['santa-rosa', 'petaluma','healdsburg','sonoma'];
         const shouldLink = linkable.includes(slug);
         return (
           <li>

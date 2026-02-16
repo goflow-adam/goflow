@@ -251,6 +251,177 @@ Each page should have at least one detail that *only* applies to that city:
 
 ---
 
+## Content Techniques from Competitor Analysis
+
+These techniques were identified from analyzing well-differentiated competitor pages. Integrate them where they enhance our existing approach.
+
+### Practical Tips After Each Section
+
+Add a "**Tip:**" callout after major content sections. These provide immediate value and demonstrate expertise.
+
+**Format:**
+> **Tip:** If your water bills suddenly spike without obvious use, schedule an inspection. Catching leaks early reduces repair costs dramatically.
+
+**Guidelines:**
+- One tip per major section (not every section)
+- Make tips actionable and specific
+- Tie tips to the section content
+- Avoid generic advice—be specific to the service and situation
+
+**Examples by service:**
+
+| Service | Section | Tip |
+|---------|---------|-----|
+| Water heater | Maintenance | "Flush tank heaters once a year to reduce sediment buildup. That single step extends system life and improves efficiency." |
+| Water heater | Installation | "If your current heater is over 12 years old, start planning ahead. Scheduling service before failure is always cheaper than emergency replacement." |
+| Drain cleaning | Prevention | "Even if drains seem clear, schedule a sewer line inspection every few years. Preventative checks cost far less than full-scale line replacements." |
+| Drain cleaning | Signs of trouble | "Discolored water or low pressure across multiple taps are strong indicators that repiping should be discussed sooner rather than later." |
+
+### Problem-Scenario Openings
+
+Start sections with relatable problem scenarios that lead to your service. This creates narrative flow and helps visitors see themselves in the content.
+
+**Instead of:**
+> "We provide professional water heater installation services."
+
+**Write:**
+> "A small leak under the kitchen sink may hint at larger corrosion inside the walls. Toilets that clog too often aren't just inconvenient; they're signs that deeper line repairs may be due."
+
+**Technique:**
+1. Describe a symptom the homeowner might notice
+2. Explain what it could indicate
+3. Lead to your service as the solution
+
+**Examples:**
+- "Life downtown has its perks—walkable blocks, charming older homes. But many houses here carry plumbing that hasn't aged as gracefully."
+- "That recurring clog, the gurgling sounds, the backup threatening your floors—these aren't random. They're your drain asking for help."
+- "Few things disrupt a household like losing hot water. That's why our water heater services cover every stage—repair, installation, and maintenance."
+
+### Cost Factor Breakdowns
+
+Add a section explaining what affects pricing. This builds trust through transparency and helps set expectations.
+
+**Section title options:**
+- "What Affects [Service] Costs in [City]?"
+- "Understanding [Service] Pricing"
+- "Cost Factors for [City] Homeowners"
+
+**Water heater cost factors:**
+| Factor | How It Affects Cost |
+|--------|---------------------|
+| Type of system | Tank vs. tankless vs. heat pump |
+| Capacity/size | Larger units cost more |
+| Fuel type changes | Gas to electric requires more work |
+| Location changes | Moving the unit adds complexity |
+| Code upgrades needed | Bringing old installation up to current code |
+| Access difficulty | Tight spaces, stairs, attic installations |
+
+**Drain cleaning cost factors:**
+| Factor | How It Affects Cost |
+|--------|---------------------|
+| Location of clog | Fixture drain vs. main line |
+| Clearing method | Cable vs. hydro-jet vs. excavation |
+| Access availability | Cleanouts present or need to be added |
+| Root involvement | Simple clearing vs. ongoing maintenance |
+| Pipe condition | May reveal need for repair/replacement |
+
+**How to present:**
+- Give ranges, not false precision
+- Explain what pushes toward the higher end
+- "We'll give you an exact quote before we start"
+- Emphasize no-surprise pricing
+
+### Step-by-Step Service Process
+
+Add a numbered process showing how you handle the service. This reduces uncertainty and demonstrates professionalism.
+
+**Format:**
+1. **Step name** — Brief description
+2. **Step name** — Brief description
+3. etc.
+
+**Water heater example:**
+1. **Call and describe the issue** — Tell us what you're experiencing
+2. **Same-day scheduling** — We schedule service as soon as possible
+3. **Thorough inspection** — We identify the exact cause
+4. **Options and pricing** — We explain your choices and costs
+5. **Work begins** — Only after your approval
+6. **Final testing** — We confirm consistent temperature and safe operation
+
+**Drain cleaning example:**
+1. **Describe the symptoms** — Which drains, how severe, any patterns
+2. **Initial assessment** — We diagnose before we clear
+3. **Clearing the line** — Using the right method for the situation
+4. **Camera verification** — Confirming the line is clear and undamaged
+5. **Prevention guidance** — What caused this and how to avoid it
+
+### Question-Based Headers
+
+Convert some H2 headers to questions. This improves SEO (featured snippets) and matches how people search.
+
+**Instead of:**
+> ## Water Heater Maintenance
+
+**Write:**
+> ## Why Is Regular Water Heater Maintenance Important?
+
+**Good question formats:**
+- "Why Does [X] Matter?"
+- "How Does [X] Prevent [Problem]?"
+- "When Should You [Action]?"
+- "What Affects [X] Costs?"
+- "How Do We Handle [Service]?"
+
+**Use sparingly:** 2-3 question headers per page maximum. Mix with statement headers for variety.
+
+### Bundled Service Mentions
+
+Naturally reference related services within content. This creates internal linking opportunities and shows breadth of expertise.
+
+**Example from water heater content:**
+> "For properties without natural gas access, we work as a trusted propane water heater installation company, ensuring safe installs with tested connections."
+
+**Example from drain content:**
+> "The mature tree roots and shifting soils of this region are notorious for damaging underground lines. Our work with water and sewer lines addresses both emergencies and long-term care."
+
+**Guidelines:**
+- Mention related services where naturally relevant
+- Link to those service pages
+- Don't force it—only when it adds value to the reader
+
+### Local Infrastructure Context
+
+Reference local infrastructure challenges specific to the area. This demonstrates deep local knowledge.
+
+**Examples:**
+- "The mature tree roots and shifting soils of this region are notorious for damaging underground lines."
+- "Many houses here carry plumbing that hasn't aged as gracefully."
+- "Older Santa Rosa homes still carry galvanized or aging copper lines that reduce flow and affect water quality."
+
+**What to reference:**
+- Soil conditions (clay, shifting, high water table)
+- Tree species with aggressive roots
+- Pipe materials common in the area's housing stock
+- Infrastructure age by neighborhood
+- Water quality characteristics
+
+### Cross-Neighborhood References
+
+Mention nearby neighborhoods or areas within the same page. This strengthens local relevance and captures more search variations.
+
+**Example:**
+> "Catching leaks early reduces the repipe specialists' cost in Downtown Santa Rosa and Southwest Santa Rosa dramatically."
+
+**Example:**
+> "This service is available for homes in Petaluma, CA, and surrounding areas like San Rafael, CA."
+
+**Guidelines:**
+- Reference 2-3 nearby neighborhoods or cities naturally
+- Don't stuff—only where it makes sense
+- Use in cost discussions, service area mentions, or problem descriptions
+
+---
+
 ## Service-Specific Content Categories
 
 ### For Drain Cleaning Pages
