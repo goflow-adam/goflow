@@ -20,7 +20,7 @@ export class WebSiteSchema extends GoFlowSchema<WebSite> {
         .addProperty('alternateName', 'GoFlow')
         .addProperty('inLanguage', 'en-US')
         .addProperty('url', 'https://goflow.plumbing/')
-        .addProperty('description', 'Professional plumbing services in Sonoma and Marin County')
+        .addProperty('description', 'Professional plumbing services in Sonoma County and Marin County')
         .addProperty('potentialAction', this.getSearchAction())
         .addProperty('publisher', { '@id': orgInfo['@id'] })
         .addProperty('image', [

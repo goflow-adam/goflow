@@ -38,7 +38,7 @@ export async function createHomePageSchemas() {
     WebPageSchema.create({
       url: 'https://goflow.plumbing/',
       name: 'GoFlow Plumbing | Professional Plumbing Services in Sonoma & Marin',
-      description: 'Professional plumbing services in Sonoma and Marin County',
+      description: 'Professional plumbing services in Sonoma County and Marin County',
       type: 'WebPage'
     })
   ]);
@@ -113,7 +113,7 @@ export async function createAboutPageSchema() {
   const schema = await AboutPageSchema.create({
     url: 'https://goflow.plumbing/about-us/',
     name: 'About GoFlow Plumbing | Professional Plumbers in Sonoma & Marin',
-    description: 'Learn about GoFlow Plumbing\'s history, mission, and commitment to providing exceptional plumbing services in Sonoma and Marin County.'
+    description: 'Learn about GoFlow Plumbing\'s history, mission, and commitment to providing exceptional plumbing services in Sonoma County and Marin County.'
   });
   return schema.build();
 }
@@ -161,7 +161,7 @@ export async function createServiceListSchema(services: ServiceDetails[]) {
   const details: WebPageDetails = {
     url: 'https://goflow.plumbing/plumbing-services/',
     name: 'GoFlow Plumbing Services',
-    description: 'Professional plumbing services in Sonoma and Marin County',
+    description: 'Professional plumbing services in Sonoma County and Marin County',
     type: 'CollectionPage',
     // Use an OfferCatalog as the mainEntity to avoid embedding the Organization here
     mainEntity: {
@@ -209,7 +209,7 @@ export async function createServiceRegionsSchema(regions: Array<{ name: string; 
   const details: WebPageDetails = {
     url: 'https://goflow.plumbing/service-regions/',
     name: 'Service Regions',
-    description: 'Areas served by GoFlow Plumbing in Sonoma and Marin County',
+    description: 'Areas served by GoFlow Plumbing in Sonoma County and Marin County',
     type: 'CollectionPage',
     mainEntity: {
       '@type': 'ItemList',

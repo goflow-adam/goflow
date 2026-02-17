@@ -92,7 +92,7 @@ export class PricingPageSchema extends GoFlowSchema<WebPage> {
         .setId('https://goflow.plumbing/pricing/water-heater-services/#webpage')
         .addProperty('url', 'https://goflow.plumbing/pricing/water-heater-services/')
         .addProperty('name', 'Water Heater Services & Pricing | GoFlow Plumbing')
-        .addProperty('description', 'View our competitive pricing for water heater installation, repair, and maintenance services in Sonoma and Marin County.')
+        .addProperty('description', 'View our competitive pricing for water heater installation, repair, and maintenance services in Sonoma County and Marin County.')
         .addProperty('mainEntity', waterHeaterService);
 
     return super.build();

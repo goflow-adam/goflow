@@ -34,7 +34,7 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
     // Add additional organization properties
         .addProperty('url', 'https://goflow.plumbing/')
         .addProperty('email', 'info@goflow.plumbing')
-        .addProperty('description', 'Residential plumbing services in Sonoma and Marin County')
+        .addProperty('description', 'Residential plumbing services in Sonoma County and Marin County')
         .addProperty('geo', this.getGeoCoordinates())
         .addProperty('openingHoursSpecification', this.getOpeningHours())
         .addProperty('paymentAccepted', ['Cash', 'Credit Card', 'Check', 'PayPal', 'Venmo', 'Bitcoin'] as string[])

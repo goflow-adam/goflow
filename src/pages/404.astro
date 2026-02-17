@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/pages/plumbing-services.css';
 
 const title = "404 - Page Not Found | GoFlow Plumbing";
-const description = "Sorry, we couldn't find the page you were looking for. GoFlow Plumbing serves Sonoma and Marin County with expert plumbing services.";
+const description = "Sorry, we couldn't find the page you were looking for. GoFlow Plumbing serves Sonoma County and Marin County with expert plumbing services.";
 
 const featuredServices = await getCollection('services', ({ data }) => data.featured === true);
 ---
@@ -36,7 +36,7 @@ const featuredServices = await getCollection('services', ({ data }) => data.feat
     <div class="emergency-services">
       <h2>Need Emergency Plumbing Service?</h2>
       <p>
-        We're available 24/7 for all your emergency plumbing needs in Sonoma and Marin County.
+        We're available 24/7 for all your emergency plumbing needs in Sonoma County and Marin County.
       </p>
       <div>
         <a href="/contact-us/">Contact Us Now</a>

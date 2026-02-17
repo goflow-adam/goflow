@@ -19,7 +19,7 @@ export class FAQPageSchema extends GoFlowSchema<FAQPage> {
       '@id': 'https://goflow.plumbing/faqs/#webpage',
       'url': 'https://goflow.plumbing/faqs/',
       'name': 'Frequently Asked Questions | GoFlow Plumbing',
-      'description': 'Find answers to common plumbing questions from GoFlow Plumbing, serving Sonoma and Marin County.',
+      'description': 'Find answers to common plumbing questions from GoFlow Plumbing, serving Sonoma County and Marin County.',
       // Reference Organization by @id to avoid duplication
       'provider': { '@id': this.organizationId },
       'mainEntity': [
@@ -28,7 +28,7 @@ export class FAQPageSchema extends GoFlowSchema<FAQPage> {
           'name': 'What areas do you serve?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'We serve all of Sonoma and Marin County, including Santa Rosa, Petaluma, Rohnert Park, Windsor, and surrounding areas.'
+            'text': 'We serve all of Sonoma County and Marin County, including Santa Rosa, Petaluma, Rohnert Park, Windsor, and surrounding areas.'
           }
         },
         {
