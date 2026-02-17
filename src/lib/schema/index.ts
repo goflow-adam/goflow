@@ -42,6 +42,7 @@ export interface WebPageDetails {
   description: string;
   type?: 'WebPage' | 'CollectionPage' | 'FAQPage';
   mainEntity?: Thing;
+  image?: string | string[];
 }
 
 // Export schema classes

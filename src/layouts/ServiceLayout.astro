@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
-import { createServicePageSchema, createBreadcrumbSchema, createServiceGeoSchema } from '../lib/schema/factories';
+import { createServicePageSchema, createBreadcrumbSchema, createServiceGeoSchema, createWebPageSchema } from '../lib/schema/factories';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 
 interface Props {
@@ -31,15 +31,29 @@ const serviceDetails = {
 };
 
 const schema = await createServicePageSchema(serviceDetails);
-// Add a geo-focused WebPage schema only when location is specified in frontmatter
-const geoSchema = locationName
+
+// Convert heroImage to absolute URL for schema
+const imageUrl = service.data.heroImage
+  ? (service.data.heroImage.startsWith('http') ? service.data.heroImage : `https://goflow.plumbing${service.data.heroImage}`)
+  : undefined;
+
+// Create WebPage schema - use geo-focused version for location pages, standard for others
+const webPageSchema = locationName
   ? await createServiceGeoSchema({
       slug: service.slug,
       name: service.data.title,
       description: service.data.description,
-      locationName
+      locationName,
+      image: service.data.heroImage
     })
-  : undefined;
+  : await createWebPageSchema({
+      url: `https://goflow.plumbing/${service.slug}/`,
+      name: service.data.title,
+      description: service.data.description,
+      type: 'WebPage',
+      image: imageUrl
+    });
+
 const currentCrumbName = service.data.breadcrumbDisplayText ?? service.data.linkText ?? service.data.menuText ?? service.data.title;
 const breadcrumbItems = [
   { name: 'Home', url: 'https://goflow.plumbing/' },
@@ -47,7 +61,7 @@ const breadcrumbItems = [
   { name: currentCrumbName, url: `https://goflow.plumbing/${service.slug}/` }
 ];
 const breadcrumbSchema = await createBreadcrumbSchema(breadcrumbItems);
-const combinedSchema = geoSchema ? [schema, geoSchema, breadcrumbSchema] : [schema, breadcrumbSchema];
+const combinedSchema = [schema, webPageSchema, breadcrumbSchema];
 ---
 
 <BaseLayout 

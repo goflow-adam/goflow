@@ -58,7 +58,7 @@ export async function createServicePageSchema(details: ServiceDetails) {
  * Create a geo-focused WebPage schema for service pages.
  * If a location/city is provided, use it; otherwise, best-effort infer from the slug tail.
  */
-export async function createServiceGeoSchema(service: { slug: string; name: string; description: string; locationName?: string; cityName?: string }) {
+export async function createServiceGeoSchema(service: { slug: string; name: string; description: string; locationName?: string; cityName?: string; image?: string }) {
   // Try to infer city from slug if not provided explicitly
   const inferCityFromSlug = (slug: string): string | undefined => {
     const seg = slug.split('/').filter(Boolean).pop();
@@ -70,13 +70,19 @@ export async function createServiceGeoSchema(service: { slug: string; name: stri
   };
 
   const cityName = service.locationName || service.cityName || inferCityFromSlug(service.slug);
+  // Convert relative image path to absolute URL for schema.org
+  const imageUrl = service.image 
+    ? (service.image.startsWith('http') ? service.image : `https://goflow.plumbing${service.image}`)
+    : undefined;
+
   if (!cityName) {
     // Fallback: build a plain webpage without geo focus
     const webpage = await WebPageSchema.create({
       url: `https://goflow.plumbing/${service.slug}/`,
       name: service.name,
       description: service.description,
-      type: 'WebPage'
+      type: 'WebPage',
+      image: imageUrl
     });
     return webpage.build();
   }
@@ -86,7 +92,8 @@ export async function createServiceGeoSchema(service: { slug: string; name: stri
     url: `https://goflow.plumbing/${service.slug}/`,
     name: service.name,
     description: service.description,
-    type: 'WebPage'
+    type: 'WebPage',
+    image: imageUrl
   });
   webpage.addGeoFocus({ name: cityName, id: cityId, description: `City in California` });
   return webpage.build();
@@ -221,7 +228,7 @@ export async function createServiceRegionsSchema(regions: Array<{ name: string; 
   return schema.build();
 }
 
-export async function createRegionPageSchema(region: { name: string; url: string; description: string; cityName?: string }) {
+export async function createRegionPageSchema(region: { name: string; url: string; description: string; cityName?: string; image?: string }) {
   const slug = region.url
     .replace('https://goflow.plumbing/', '')
     .replace(/\/$/, '');
@@ -245,12 +252,18 @@ export async function createRegionPageSchema(region: { name: string; url: string
     }
   };
 
+  // Convert relative image path to absolute URL for schema.org
+  const imageUrl = region.image 
+    ? (region.image.startsWith('http') ? region.image : `https://goflow.plumbing${region.image}`)
+    : undefined;
+
   const webpage = await WebPageSchema.create({
     url: region.url,
     name: region.name,
     description: region.description,
     type: 'WebPage',
-    mainEntity: embeddedService
+    mainEntity: embeddedService,
+    image: imageUrl
   });
 
   if (region.cityName) {

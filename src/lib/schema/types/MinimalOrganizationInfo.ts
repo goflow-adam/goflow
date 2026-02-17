@@ -20,7 +20,7 @@ export function createMinimalOrganizationInfo(): MinimalOrganizationInfo {
     'legalName': 'GoFlow Plumbing Inc.',
     // Provide at least one valid absolute image URL for Rich Results
     'image': [
-      'https://goflow.plumbing/android-chrome-512x512.png'
+      'https://goflow.plumbing/images/SanRafael-Cropped.webp'
     ],
     'telephone': '(707) 200-8350',
     'priceRange': '$$',

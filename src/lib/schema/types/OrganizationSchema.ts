@@ -24,7 +24,7 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
         .addProperty('alternateName', 'GoFlow')
         .addProperty('logo', {
           '@type': 'ImageObject',
-          'url': 'https://goflow.plumbing/images/logo.svg'
+          'url': 'https://goflow.plumbing/images/LogoForGoogle.webp'
         })
         .addProperty('image', minimalInfo.image)
         .addProperty('telephone', minimalInfo.telephone)

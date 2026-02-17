@@ -7,6 +7,7 @@ interface WebPageDetails {
   description: string;
   type?: 'WebPage' | 'CollectionPage' | 'FAQPage';
   mainEntity?: Thing;
+  image?: string | string[];
 }
 
 export class WebPageSchema extends GoFlowSchema<WebPage> {
@@ -39,6 +40,13 @@ export class WebPageSchema extends GoFlowSchema<WebPage> {
 
     if (details.mainEntity) {
       this.addProperty('mainEntity', details.mainEntity);
+    }
+
+    if (details.image) {
+      // Google recommends providing multiple image aspect ratios
+      // If a single image is provided, wrap it in an array
+      const imageValue = Array.isArray(details.image) ? details.image : [details.image];
+      this.addProperty('image', imageValue);
     }
   }
 
