@@ -144,10 +144,20 @@ if (sonomaParent) {
 const usMenu: NavItem[] = [
   { title: "About GoFlow", path: "/about-us/" },
   { title: "Our Team", path: "/team/" },
-  { title: "Articles & Tips", path: "/articles/" },
   { title: "FAQs", path: "/faqs/" },
   { title: "Contact Us", path: "/contact-us/" },
 ];
+
+// Articles menu - dynamically built from articles collection
+const articles = await getCollection('articles');
+const articleMenu = articles
+  .filter(article => !article.data.draft)
+  .filter(article => article.data.includeInMenu)
+  .map(article => ({
+    title: article.data.linkText || article.data.title,
+    path: `/articles/${article.slug}/`
+  }))
+  .sort((a, b) => a.title.localeCompare(b.title));
 
 const navigation: NavItem[] = [
   {
@@ -159,6 +169,11 @@ const navigation: NavItem[] = [
     title: "I Am Near...",
     path: "/service-regions/",
     submenu: nearMeMenu
+  },
+  {
+    title: "Articles",
+    path: "/articles/",
+    submenu: articleMenu
   },
   {
     title: "Us",

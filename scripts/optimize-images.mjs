@@ -7,8 +7,6 @@ import sharp from 'sharp';
 const COLUMN_SIZES = [300, 450, 600];
 
 const IMAGE_CONFIGS = {
-  // 'celtic.jpg': [320, 640, 768, 1024, 1280], // Hero background image
-  
   // Column images (max 600px)
   'Healdsburg.webp': COLUMN_SIZES,
   'main-line-leak-1.webp': COLUMN_SIZES,

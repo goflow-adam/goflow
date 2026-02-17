@@ -64,17 +64,6 @@ const stripContext = (item: any): any => {
         }
       }}
     />
-    {Astro.url.pathname === '/' && (
-      <link
-        rel="preload"
-        as="image"
-        href="/images/generated/celtic-768.jpg"
-        imagesrcset="/images/generated/celtic-1280.jpg 1280w, /images/generated/celtic-1024.jpg 1024w, /images/generated/celtic-768.jpg 768w, /images/generated/celtic-640.jpg 640w, /images/generated/celtic-320.jpg 320w"
-        imagesizes="100vw"
-        fetchpriority="high"
-        type="image/jpeg"
-      />
-    )}
     {(() => {
       const allSchemas = Array.isArray(schema)
         ? [...baseSchemas, ...schema]
@@ -177,30 +166,32 @@ const stripContext = (item: any): any => {
           <div>
             <h3>Marin County</h3>
             <ul class="space-y-2">
-              <li><a href="/marin-county-plumbing/" class="nav-link">Marin County Plumbing</a></li>
               <li><a href="/san-rafael-plumbing/" class="nav-link">San Rafael Plumbing</a></li>
+              <li><a href="/water-heater-repair-san-rafael/" class="nav-link">San Rafael Water Heaters</a></li>
+              <li><a href="/drain-cleaning-san-rafael/" class="nav-link">San Rafael Drain Cleaning</a></li>
               <li><a href="/novato-plumbing/" class="nav-link">Novato Plumbing</a></li>
+              <li><a href="/water-heater-repair-novato/" class="nav-link">Novato Water Heaters</a></li>
+              <li><a href="/drain-cleaning-novato/" class="nav-link">Novato Drain Cleaning</a></li>
               <li><a href="/mill-valley-plumbing/" class="nav-link">Mill Valley Plumbing</a></li>
-              <li><a href="/water-heater-repair-san-rafael/" class="nav-link">Water Heater San Rafael</a></li>
-              <li><a href="/water-heater-repair-novato/" class="nav-link">Water Heater Novato</a></li>
-              <li><a href="/drain-cleaning-san-rafael/" class="nav-link">Drain Cleaning San Rafael</a></li>
-              <li><a href="/drain-cleaning-novato/" class="nav-link">Drain Cleaning Novato</a></li>
-              <li><a href="/drain-cleaning-mill-valley/" class="nav-link">Drain Cleaning Mill Valley</a></li>
+              <li><a href="/drain-cleaning-mill-valley/" class="nav-link">Mill Valley Water Heaters</a></li>
+              <li><a href="/drain-cleaning-mill-valley/" class="nav-link">Mill Valley Drain Cleaning</a></li>
             </ul>
           </div>
           <div>
             <h3>Sonoma County</h3>
             <ul class="space-y-2">
-              <li><a href="/sonoma-county-plumbing/" class="nav-link">Sonoma County Plumbing</a></li>
               <li><a href="/santa-rosa-plumbing/" class="nav-link">Santa Rosa Plumbing</a></li>
+              <li><a href="/water-heater-repair-santa-rosa/" class="nav-link">Santa Rosa Water Heaters</a></li>
+              <li><a href="/drain-cleaning-santa-rosa/" class="nav-link">Santa Rosa Drain Cleaning</a></li>
               <li><a href="/petaluma-plumbing/" class="nav-link">Petaluma Plumbing</a></li>
+              <li><a href="/water-heater-installation-petaluma/" class="nav-link">Petaluma Water Heaters</a></li>
+              <li><a href="/drain-cleaning-petaluma/" class="nav-link">Petaluma Drain Cleaning</a></li>
               <li><a href="/healdsburg-plumbing/" class="nav-link">Healdsburg Plumbing</a></li>
+              <li><a href="/drain-cleaning-healdsburg/" class="nav-link">Healdsburg Water Heaters</a></li>
+              <li><a href="/drain-cleaning-healdsburg/" class="nav-link">Healdsburg Drain Cleaning</a></li>
               <li><a href="/sonoma-plumbing/" class="nav-link">Sonoma Plumbing</a></li>
-              <li><a href="/water-heater-repair-santa-rosa/" class="nav-link">Water Heater Santa Rosa</a></li>
-              <li><a href="/water-heater-installation-petaluma/" class="nav-link">Water Heater Petaluma</a></li>
-              <li><a href="/drain-cleaning-santa-rosa/" class="nav-link">Drain Cleaning Santa Rosa</a></li>
-              <li><a href="/drain-cleaning-petaluma/" class="nav-link">Drain Cleaning Petaluma</a></li>
-              <li><a href="/drain-cleaning-healdsburg/" class="nav-link">Drain Cleaning Healdsburg</a></li>
+              <li><a href="/sonoma-water-heaters/" class="nav-link">Sonoma Water Heaters</a></li>
+              <li><a href="/sonoma-drain-cleaning/" class="nav-link">Sonoma Drain Cleaning</a></li>
             </ul>
           </div>
           <div>
