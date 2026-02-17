@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import { sortByPositionThenTitle } from '../lib/sortByPositionThenTitle';
 import '../styles/navigation.css';
 
 interface Props {
@@ -10,88 +9,162 @@ interface Props {
 interface NavItem {
   title: string;
   path: string;
-  position?: number;
+  isHeader?: boolean;
+  isCity?: boolean;
+  cityServices?: NavItem[];
   submenu?: NavItem[];
 }
 
+// Map city names to their service page slugs
+const cityServiceMap: Record<string, { waterHeater?: string; drainCleaning?: string; plumbing: string }> = {
+  'Mill Valley': {
+    waterHeater: '/water-heater-installation-and-repair-mill-valley/',
+    drainCleaning: '/drain-cleaning-mill-valley/',
+    plumbing: '/mill-valley-plumbing/'
+  },
+  'Novato': {
+    waterHeater: '/water-heater-repair-novato/',
+    drainCleaning: '/drain-cleaning-novato/',
+    plumbing: '/novato-plumbing/'
+  },
+  'San Rafael': {
+    waterHeater: '/water-heater-repair-san-rafael/',
+    drainCleaning: '/drain-cleaning-san-rafael/',
+    plumbing: '/san-rafael-plumbing/'
+  },
+  'Healdsburg': {
+    waterHeater: '/water-heater-installation-and-repair-healdsburg/',
+    drainCleaning: '/drain-cleaning-healdsburg/',
+    plumbing: '/healdsburg-plumbing/'
+  },
+  'Petaluma': {
+    waterHeater: '/water-heater-installation-petaluma/',
+    drainCleaning: '/drain-cleaning-petaluma/',
+    plumbing: '/petaluma-plumbing/'
+  },
+  'Sonoma': {
+    waterHeater: '/water-heater-installation-and-repair-sonoma/',
+    drainCleaning: '/drain-cleaning-sonoma/',
+    plumbing: '/sonoma-plumbing/'
+  },
+  'Santa Rosa': {
+    waterHeater: '/water-heater-repair-santa-rosa/',
+    drainCleaning: '/drain-cleaning-santa-rosa/',
+    plumbing: '/santa-rosa-plumbing/'
+  }
+};
+
 const { isDesktop } = Astro.props;
-// Get all service pages and sort them by title
-const services = await getCollection('services');
-const serviceMenuUnsorted = services
-  .filter(service => service.data.includeInMenu)
-  .map(service => ({
-    title: service.data.menuText || service.data.linkText || service.data.title,
-    path: `/${service.slug}/`,
-    position: service.data.position
-  }));
 
-const serviceMenu = sortByPositionThenTitle(
-  serviceMenuUnsorted,
-  item => item.position,
-  item => item.title
-);
+// "Your Problem?" menu - organized by symptom/situation
+const problemMenu: NavItem[] = [
+  { title: "I have an EMERGENCY", path: "/emergency-plumbing-services/" },
+  { title: "WATER HEATER ISSUES", path: "#", isHeader: true },
+  { title: "My Hot Water is Gone", path: "/water-heater-repair-and-replacement/" },
+  { title: "Water heater leaking", path: "/water-heater-repair-and-replacement/" },
+  { title: "I need a Water Heater", path: "/water-heater-install/" },
+  
+  { title: "DRAIN PROBLEMS", path: "#", isHeader: true },
+  { title: "My Drain is Clogged", path: "/clogged-drains-rootered/" },
+  { title: "Toilet backed up", path: "/clogged-or-running-toilets/" },
+  { title: "My Drain Stinks", path: "/clogged-drains-rootered/" },
+  { title: "Garbage Disposal Stopped", path: "/garbage-disposal-repair-or-installation/" },
+  
+  { title: "LEAKS & PIPES", path: "#", isHeader: true },
+  { title: "Leaking Water Heater", path: "/water-heater-repair-and-replacement/" },
+  { title: "Wetness or water stains", path: "/leak-detection-and-repair/" },
+  { title: "Faucet dripping or leaking", path: "/faucet-leaks-repaired/" },
+  { title: "Water bill suddenly high", path: "/leaking-pipes-repair/" },
+  
+  { title: "OTHER", path: "#", isHeader: true },
+  { title: "All Problems & Needs", path: "/all-plumbing-problems/" },
+  { title: "View all services", path: "/plumbing-services/" },
+];
 
-// Get all region pages and build hierarchical menu
+// "Near Me" menu - simplified location selector with city service submenus
 const regions = await getCollection('regions');
-
-// Separate parent regions (no regionParent) from child regions (have regionParent)
 const parentRegions = regions.filter(r => !r.data.regionParent && r.data.includeInMenu);
 const childRegions = regions.filter(r => r.data.regionParent);
 
-// Build hierarchical region menu
-const regionMenu: NavItem[] = [];
+// Helper to build city services submenu
+function buildCityServices(cityName: string): NavItem[] {
+  const services = cityServiceMap[cityName];
+  if (!services) return [];
+  
+  const cityServices: NavItem[] = [];
+  if (services.waterHeater) {
+    cityServices.push({ title: "Water Heaters", path: services.waterHeater });
+  }
+  if (services.drainCleaning) {
+    cityServices.push({ title: "Drain Cleaning", path: services.drainCleaning });
+  }
+  cityServices.push({ title: "Plumbing", path: services.plumbing });
+  return cityServices;
+}
 
-parentRegions
-  .sort((a, b) => (a.data.featureTitle || a.data.region).localeCompare(b.data.featureTitle || b.data.region))
-  .forEach(parent => {
-    // Add parent with "All " prefix
-    regionMenu.push({
-      title: `All ${parent.data.featureTitle || parent.data.region}`,
-      path: `/${parent.slug}/`
-    });
-    
-    // Add children that belong to this parent
-    const children = childRegions
-      .filter(child => child.data.regionParent === parent.data.region)
-      .sort((a, b) => (a.data.featureTitle || a.data.region).localeCompare(b.data.featureTitle || b.data.region));
-    
-    children.forEach(child => {
-      regionMenu.push({
-        title: child.data.featureTitle || child.data.region,
-        path: `/${child.slug}/`
-      });
+const nearMeMenu: NavItem[] = [];
+
+// Add Marin County section
+const marinParent = parentRegions.find(r => r.data.region === 'Marin County');
+if (marinParent) {
+  nearMeMenu.push({ title: "All Marin County →", path: `/${marinParent.slug}/`, isHeader: true });
+  const marinChildren = childRegions
+    .filter(child => child.data.regionParent === 'Marin County')
+    .sort((a, b) => (a.data.featureTitle || a.data.region).localeCompare(b.data.featureTitle || b.data.region));
+  marinChildren.forEach(child => {
+    const cityName = child.data.featureTitle || child.data.region;
+    nearMeMenu.push({
+      title: cityName,
+      path: `/${child.slug}/`,
+      isCity: true,
+      cityServices: buildCityServices(cityName)
     });
   });
+}
 
-// Get all articles and sort them by date
-const articles = await getCollection('articles');
-const articleMenu = articles
-  .filter(article => !article.data.draft) // Only show published articles
-  .filter(service => service.data.includeInMenu)
-  .map(article => ({
-    title: article.data.linkText || article.data.title,
-    path: `/articles/${article.slug}/`
-  }))
-  .sort((a, b) => a.title.localeCompare(b.title));
+// Add Sonoma County section
+const sonomaParent = parentRegions.find(r => r.data.region === 'Sonoma County');
+if (sonomaParent) {
+  nearMeMenu.push({ title: "All Sonoma County →", path: `/${sonomaParent.slug}/`, isHeader: true });
+  const sonomaChildren = childRegions
+    .filter(child => child.data.regionParent === 'Sonoma County')
+    .sort((a, b) => (a.data.featureTitle || a.data.region).localeCompare(b.data.featureTitle || b.data.region));
+  sonomaChildren.forEach(child => {
+    const cityName = child.data.featureTitle || child.data.region;
+    nearMeMenu.push({
+      title: cityName,
+      path: `/${child.slug}/`,
+      isCity: true,
+      cityServices: buildCityServices(cityName)
+    });
+  });
+}
+
+// "Us" menu - company information
+const usMenu: NavItem[] = [
+  { title: "About GoFlow", path: "/about-us/" },
+  { title: "Our Team", path: "/team/" },
+  { title: "Articles & Tips", path: "/articles/" },
+  { title: "FAQs", path: "/faqs/" },
+  { title: "Contact Us", path: "/contact-us/" },
+];
 
 const navigation: NavItem[] = [
   {
-    title: "Services",
+    title: "My Plumbing Problem is...",
     path: "/plumbing-services/",
-    submenu: serviceMenu
+    submenu: problemMenu
   },
   {
-    title: "Regions",
+    title: "I Am Near...",
     path: "/service-regions/",
-    submenu: regionMenu
+    submenu: nearMeMenu
   },
   {
-    title: "Articles",
-    path: "/articles/",
-    submenu: articleMenu
-  },
-  { title: "Contact Us", path: "/contact-us/" },
-  { title: "FAQs", path: "/faqs/" }
+    title: "Us",
+    path: "/about-us/",
+    submenu: usMenu
+  }
 ];
 
 const currentPath = Astro.url.pathname;
@@ -115,14 +188,44 @@ function isActive(path: string): boolean {
           <div class="submenu-wrapper">
             <ul class="submenu-list">
               {item.submenu.map(subItem => (
-                <li>
-                  <a
-                    href={subItem.path}
-                    class={`submenu-item ${isActive(subItem.path) ? 'active' : ''}`}
-                  >
-                    {subItem.title}
-                  </a>
-                </li>
+                subItem.isHeader ? (
+                  <li class="submenu-header">
+                    <a href={subItem.path} class="submenu-header-link">{subItem.title}</a>
+                  </li>
+                ) : subItem.isCity && subItem.cityServices && subItem.cityServices.length > 0 ? (
+                  <li class="submenu-city">
+                    <button 
+                      class={`submenu-city-button ${isActive(subItem.path) ? 'active' : ''}`}
+                      onclick="this.closest('.submenu-city').classList.toggle('open')"
+                    >
+                      <a href={subItem.path} class="submenu-city-link" onclick="event.stopPropagation()">
+                        {subItem.title}
+                      </a>
+                      <span class="submenu-city-icon">▼</span>
+                    </button>
+                    <ul class="submenu-city-services">
+                      {subItem.cityServices.map(service => (
+                        <li>
+                          <a
+                            href={service.path}
+                            class={`submenu-service-item ${isActive(service.path) ? 'active' : ''}`}
+                          >
+                            {service.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
+                  <li>
+                    <a
+                      href={subItem.path}
+                      class={`submenu-item ${isActive(subItem.path) ? 'active' : ''}`}
+                    >
+                      {subItem.title}
+                    </a>
+                  </li>
+                )
               ))}
             </ul>
           </div>
@@ -153,45 +256,45 @@ function isActive(path: string): boolean {
             </button>
             <div class="mobile-submenu-content">
               <ul class="mobile-submenu-list">
-                {item.path === '/plumbing-services/' && (
-                  <li>
-                    <a
-                      href="/plumbing-services/"
-                      class={`mobile-nav-link ${isActive('/plumbing-services/') ? 'active' : ''}`}
-                    >
-                      Services Home
-                    </a>
-                  </li>
-                )}
-                {item.path === '/service-regions/' && (
-                  <li>
-                    <a
-                      href="/service-regions/"
-                      class={`mobile-nav-link ${isActive('/service-regions/') ? 'active' : ''}`}
-                    >
-                      Regions Home
-                    </a>
-                  </li>
-                )}
-                {item.path === '/articles/' && (
-                  <li>
-                    <a
-                      href="/articles/"
-                      class={`mobile-nav-link ${isActive('/articles/') ? 'active' : ''}`}
-                    >
-                      Articles Home
-                    </a>
-                  </li>
-                )}
                 {item.submenu.map(subItem => (
-                  <li>
-                    <a
-                      href={subItem.path}
-                      class={`mobile-nav-link ${isActive(subItem.path) ? 'active' : ''}`}
-                    >
-                      {subItem.title}
-                    </a>
-                  </li>
+                  subItem.isHeader ? (
+                    <li class="mobile-submenu-header">
+                      <a href={subItem.path} class="mobile-submenu-header-link">{subItem.title}</a>
+                    </li>
+                  ) : subItem.isCity && subItem.cityServices && subItem.cityServices.length > 0 ? (
+                    <li class="mobile-city-item">
+                      <button 
+                        class={`mobile-city-button ${isActive(subItem.path) ? 'active' : ''}`}
+                        onclick="this.closest('.mobile-city-item').classList.toggle('open')"
+                      >
+                        <a href={subItem.path} class="mobile-city-link" onclick="event.stopPropagation()">
+                          {subItem.title}
+                        </a>
+                        <span class="mobile-city-icon">▼</span>
+                      </button>
+                      <ul class="mobile-city-services">
+                        {subItem.cityServices.map(service => (
+                          <li>
+                            <a
+                              href={service.path}
+                              class={`mobile-service-link ${isActive(service.path) ? 'active' : ''}`}
+                            >
+                              {service.title}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ) : (
+                    <li>
+                      <a
+                        href={subItem.path}
+                        class={`mobile-nav-link ${isActive(subItem.path) ? 'active' : ''}`}
+                      >
+                        {subItem.title}
+                      </a>
+                    </li>
+                  )
                 ))}
               </ul>
             </div>

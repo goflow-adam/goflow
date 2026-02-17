@@ -27,6 +27,55 @@
   @apply bg-primary;
 }
 
+.submenu-header {
+  @apply px-4 py-2 text-xs font-bold uppercase tracking-wider text-background/60 border-t border-background/10 mt-2 pt-3;
+}
+
+.submenu-header:first-child {
+  @apply border-t-0 mt-0 pt-2;
+}
+
+.submenu-header-link {
+  @apply text-background/60 hover:text-background transition-colors duration-200;
+}
+
+/* City submenu with collapsible services */
+.submenu-city {
+  @apply relative;
+}
+
+.submenu-city-button {
+  @apply w-full flex items-center justify-between px-4 py-2 rounded-lg hover:bg-primary/10 transition-colors duration-200 cursor-pointer;
+}
+
+.submenu-city-link {
+  @apply text-background hover:text-background;
+}
+
+.submenu-city-icon {
+  @apply text-xs text-background/50 transform transition-transform duration-200;
+}
+
+.submenu-city.open .submenu-city-icon {
+  @apply rotate-180;
+}
+
+.submenu-city-services {
+  @apply max-h-0 overflow-hidden transition-all duration-200 ease-in-out pl-4;
+}
+
+.submenu-city.open .submenu-city-services {
+  @apply max-h-40;
+}
+
+.submenu-service-item {
+  @apply block px-4 py-1.5 text-sm rounded-lg hover:bg-primary/10 transition-colors duration-200 text-background/80 hover:text-background;
+}
+
+.submenu-service-item.active {
+  @apply bg-primary text-background;
+}
+
 .submenu-wrapper {
   @apply absolute top-full left-0 pt-2 w-64 z-51;
 }
@@ -102,4 +151,53 @@
 
 .mobile-submenu-list .mobile-nav-link {
   @apply bg-secondary/50;
+}
+
+.mobile-submenu-header {
+  @apply px-4 py-2 text-xs font-bold uppercase tracking-wider text-background/60 border-t border-background/10 mt-2 pt-3;
+}
+
+.mobile-submenu-header:first-child {
+  @apply border-t-0 mt-0 pt-2;
+}
+
+.mobile-submenu-header-link {
+  @apply text-background/60 hover:text-background transition-colors duration-200;
+}
+
+/* Mobile city submenu with collapsible services */
+.mobile-city-item {
+  @apply relative;
+}
+
+.mobile-city-button {
+  @apply w-full flex items-center justify-between px-4 py-2 rounded-lg hover:bg-primary/10 transition-colors duration-200 cursor-pointer;
+}
+
+.mobile-city-link {
+  @apply text-background hover:text-background;
+}
+
+.mobile-city-icon {
+  @apply text-xs text-background/50 transform transition-transform duration-200;
+}
+
+.mobile-city-item.open .mobile-city-icon {
+  @apply rotate-180;
+}
+
+.mobile-city-services {
+  @apply max-h-0 overflow-hidden transition-all duration-200 ease-in-out pl-4;
+}
+
+.mobile-city-item.open .mobile-city-services {
+  @apply max-h-40;
+}
+
+.mobile-service-link {
+  @apply block px-4 py-1.5 text-sm rounded-lg hover:bg-primary/10 transition-colors duration-200 text-background/80 hover:text-background;
+}
+
+.mobile-service-link.active {
+  @apply bg-primary text-background;
 }
