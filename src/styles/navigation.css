@@ -48,8 +48,8 @@
   @apply w-full flex items-center justify-between px-4 py-2 rounded-lg hover:bg-primary/10 transition-colors duration-200 cursor-pointer;
 }
 
-.submenu-city-link {
-  @apply text-background hover:text-background;
+.submenu-city-label {
+  @apply text-background;
 }
 
 .submenu-city-icon {
@@ -174,8 +174,8 @@
   @apply w-full flex items-center justify-between px-4 py-2 rounded-lg hover:bg-primary/10 transition-colors duration-200 cursor-pointer;
 }
 
-.mobile-city-link {
-  @apply text-background hover:text-background;
+.mobile-city-label {
+  @apply text-background;
 }
 
 .mobile-city-icon {

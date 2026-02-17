@@ -71,7 +71,7 @@ const combinedSchema = [schema, webPageSchema, breadcrumbSchema];
 >
   <article class="article">
     <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Services', path: '/plumbing-services/' }, { name: currentCrumbName }]} />
-    {service.data.heroImage && (
+    <!-- {service.data.heroImage && (
       <div class="mb-8">
         <img
           src={service.data.heroImage}
@@ -81,7 +81,7 @@ const combinedSchema = [schema, webPageSchema, breadcrumbSchema];
           fetchpriority="high"
         />
       </div>
-    )}
+    )} -->
     
     <div class="markdown-content">
       <Content />

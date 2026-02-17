@@ -65,9 +65,9 @@ const problemMenu: NavItem[] = [
   { title: "I need a Water Heater", path: "/water-heater-install/" },
   
   { title: "DRAIN PROBLEMS", path: "#", isHeader: true },
-  { title: "My Drain is Clogged", path: "/clogged-drains-rootered/" },
+  { title: "I need Drain Cleaning", path: "/clogged-drains-rootered/" },
   { title: "Toilet backed up", path: "/clogged-or-running-toilets/" },
-  { title: "My Drain Stinks", path: "/clogged-drains-rootered/" },
+  { title: "Multiple Drains Clogged", path: "/sewer-line-repair-and-replacement/" },
   { title: "Garbage Disposal Stopped", path: "/garbage-disposal-repair-or-installation/" },
   
   { title: "LEAKS & PIPES", path: "#", isHeader: true },
@@ -198,9 +198,7 @@ function isActive(path: string): boolean {
                       class={`submenu-city-button ${isActive(subItem.path) ? 'active' : ''}`}
                       onclick="this.closest('.submenu-city').classList.toggle('open')"
                     >
-                      <a href={subItem.path} class="submenu-city-link" onclick="event.stopPropagation()">
-                        {subItem.title}
-                      </a>
+                      <span class="submenu-city-label">{subItem.title}</span>
                       <span class="submenu-city-icon">▼</span>
                     </button>
                     <ul class="submenu-city-services">
@@ -210,7 +208,7 @@ function isActive(path: string): boolean {
                             href={service.path}
                             class={`submenu-service-item ${isActive(service.path) ? 'active' : ''}`}
                           >
-                            {service.title}
+                            {subItem.title}&nbsp;<strong>{service.title}</strong>
                           </a>
                         </li>
                       ))}
@@ -267,9 +265,7 @@ function isActive(path: string): boolean {
                         class={`mobile-city-button ${isActive(subItem.path) ? 'active' : ''}`}
                         onclick="this.closest('.mobile-city-item').classList.toggle('open')"
                       >
-                        <a href={subItem.path} class="mobile-city-link" onclick="event.stopPropagation()">
-                          {subItem.title}
-                        </a>
+                        <span class="mobile-city-label">{subItem.title}</span>
                         <span class="mobile-city-icon">▼</span>
                       </button>
                       <ul class="mobile-city-services">
