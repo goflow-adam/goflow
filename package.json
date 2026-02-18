@@ -12,6 +12,9 @@
     "extract-keywords": "node scripts/extract-keywords.mjs",
     "compare-search": "node scripts/compare-search-result.mjs"
   },
+  "overrides": {
+    "esbuild": "0.18.20"
+  },
   "dependencies": {
     "@astrojs/mdx": "^4.2.3",
     "@astrojs/partytown": "^2.1.4",

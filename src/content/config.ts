@@ -35,6 +35,11 @@ const personSchema = z.object({
   })).optional(),
 });
 
+const keywordSchema = z.object({
+  term: z.string(),
+  priority: z.number().int().min(1).max(10).default(5),
+});
+
 const baseSchema = z.object({
   title: z.string(),
   name: z.string().optional(),
@@ -53,7 +58,7 @@ const baseSchema = z.object({
     answer: z.string(),
   })).optional(),
   includeInMenu: z.boolean().default(false),
-  keywords: z.array(z.string()).optional(),
+  keywords: z.array(z.union([z.string(), keywordSchema])).optional(),
   relatedWords: z.array(z.string()).optional(),
 });
 
