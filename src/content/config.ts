@@ -37,7 +37,7 @@ const personSchema = z.object({
 
 const keywordSchema = z.object({
   term: z.string(),
-  priority: z.number().int().min(1).max(10).default(5),
+  priority: z.number().min(0).max(100).default(5),
 });
 
 const baseSchema = z.object({
