@@ -16,40 +16,47 @@ interface NavItem {
 }
 
 // Map city names to their service page slugs
-const cityServiceMap: Record<string, { waterHeater?: string; drainCleaning?: string; plumbing: string }> = {
+const cityServiceMap: Record<string, { waterHeater?: string; drainCleaning?: string; emergency?: string; plumbing: string }> = {
   'Mill Valley': {
     waterHeater: '/water-heater-installation-and-repair-mill-valley/',
     drainCleaning: '/drain-cleaning-mill-valley/',
+    emergency: '/emergency-plumbing-mill-valley/',
     plumbing: '/mill-valley-plumbing/'
   },
   'Novato': {
     waterHeater: '/water-heater-repair-novato/',
     drainCleaning: '/drain-cleaning-novato/',
+    emergency: '/emergency-plumbing-novato/',
     plumbing: '/novato-plumbing/'
   },
   'San Rafael': {
     waterHeater: '/water-heater-repair-san-rafael/',
     drainCleaning: '/drain-cleaning-san-rafael/',
+    emergency: '/emergency-plumbing-san-rafael/',
     plumbing: '/san-rafael-plumbing/'
   },
   'Healdsburg': {
     waterHeater: '/water-heater-installation-and-repair-healdsburg/',
     drainCleaning: '/drain-cleaning-healdsburg/',
+    emergency: '/emergency-plumbing-healdsburg/',
     plumbing: '/healdsburg-plumbing/'
   },
   'Petaluma': {
     waterHeater: '/water-heater-installation-petaluma/',
     drainCleaning: '/drain-cleaning-petaluma/',
+    emergency: '/emergency-plumbing-petaluma/',
     plumbing: '/petaluma-plumbing/'
   },
   'Sonoma': {
     waterHeater: '/water-heater-installation-and-repair-sonoma/',
     drainCleaning: '/drain-cleaning-sonoma/',
+    emergency: '/emergency-plumbing-sonoma/',
     plumbing: '/sonoma-plumbing/'
   },
   'Santa Rosa': {
     waterHeater: '/water-heater-repair-santa-rosa/',
     drainCleaning: '/drain-cleaning-santa-rosa/',
+    emergency: '/emergency-plumbing-santa-rosa/',
     plumbing: '/santa-rosa-plumbing/'
   }
 };
@@ -92,6 +99,9 @@ function buildCityServices(cityName: string): NavItem[] {
   if (!services) return [];
   
   const cityServices: NavItem[] = [];
+  if (services.emergency) {
+    cityServices.push({ title: "Emergency", path: services.emergency });
+  }
   if (services.waterHeater) {
     cityServices.push({ title: "Water Heaters", path: services.waterHeater });
   }
