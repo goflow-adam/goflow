@@ -5,6 +5,7 @@ import sharp from 'sharp';
 // Define which images need what sizes
 // Column images max at 600px width
 const COLUMN_SIZES = [300, 450, 600];
+const BADGE_SIZES = [150, 225, 300];
 
 const IMAGE_CONFIGS = {
   // Column images (max 600px)
@@ -33,6 +34,7 @@ const IMAGE_CONFIGS = {
   'water-heater.webp': COLUMN_SIZES,
   'water-heater-expansion-tank.webp': COLUMN_SIZES,
   'moen-flow-install-bel-marin-keys-1.webp': COLUMN_SIZES,
+  'delta-pro-certified.webp': COLUMN_SIZES,
 };
 const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp'];
 

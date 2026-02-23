@@ -8,7 +8,7 @@ interface Props {
   class?: string;
   loading?: "lazy" | "eager";
   sizes?: string;
-  variant?: "hero" | "column";
+  variant?: "hero" | "column" | "badge";
 }
 
 const {
@@ -26,12 +26,15 @@ const {
 // Size configurations matching optimize-images.mjs
 const WIDTHS = {
   hero: [320, 640, 768, 1024, 1280],
-  column: [300, 450, 600]
+  column: [300, 450, 600],
+  badge: [150, 225, 300]
 };
 
 // Default sizes attribute based on variant
 const defaultSizes = variant === "hero" 
   ? "100vw" 
+  : variant === "badge"
+  ? "(max-width: 300px) 100vw, 300px"
   : "(max-width: 600px) 100vw, 600px";
 
 // Generate srcset for responsive images
@@ -49,8 +52,8 @@ const generateSrcSet = (src: string, widths: number[]) => {
 const srcset = generateSrcSet(src, WIDTHS[variant]);
 const finalSizes = sizes || defaultSizes;
 
-// Fallback src uses the middle size for column, largest for hero
-const fallbackWidth = variant === "hero" ? 768 : 450;
+// Fallback src uses the middle size for column/badge, largest for hero
+const fallbackWidth = variant === "hero" ? 768 : variant === "badge" ? 225 : 450;
 const ext = src.split('.').pop();
 const filename = src.split('/').pop() || '';
 const baseName = filename.slice(0, -(ext?.length ?? 0) - 1);
