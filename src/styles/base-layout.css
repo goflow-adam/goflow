@@ -263,4 +263,12 @@
 .copyright {
   @apply mt-8 text-center;
 }
+
+.copyright .license-info {
+  @apply mt-2 text-sm opacity-80;
+}
+
+.copyright .license-info a {
+  @apply text-background hover:text-background/80 underline;
+}
   
