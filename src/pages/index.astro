@@ -1,30 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { sortByPositionThenTitle } from '../lib/sortByPositionThenTitle';
+import ProcessStepper from '../components/ProcessStepper.astro';
 import { createHomePageSchemas } from '../lib/schema/factories';
+import { Flame, ShowerHead, Droplets, Bath, Siren, ArrowRight } from '@lucide/astro';
 import '../styles/pages/index.css';
-
-interface ServiceFrontmatter {
-  featured: boolean;
-  draft: boolean;
-  title: string;
-  description: string;
-  linkText?: string;
-  menuText?: string;
-  name?: string;
-  position?: number;
-}
-
-const featuredServices = await getCollection('services', ({ data }: { data: ServiceFrontmatter }) => 
-  data.featured && !data.draft
-);
-
-const sortedFeaturedServices = sortByPositionThenTitle(
-  featuredServices,
-  service => service.data.position,
-  service => service.data.name || service.data.menuText || service.data.linkText || service.data.title
-);
 
 // Homepage gets WebSite + WebPage schemas
 const homePageSchemas = await createHomePageSchemas();
@@ -41,12 +20,11 @@ const homePageSchemas = await createHomePageSchemas();
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-container">
-        <h1>3rd Generation Plumbing Experts</h1>
+        <h1>GoFlow Plumbing — 3rd Generation Experts</h1>
         <div class="hero-text">
           <p>
-            Make your plumbing problem ours.
-            Put our courteous experts to work for you.
-            Your home will be treated better than if it was our own mom's.
+            GoFlow Plumbing are your Sonoma County and Marin County third generation plumbers.
+            Make your plumbing problem ours — we'll treat your home better than our own mom's.<br />
             Sorry, mom.
           </p>
         </div>
@@ -56,24 +34,42 @@ const homePageSchemas = await createHomePageSchemas();
         </div>
       </div>
     </section>
-
-    <!-- Featured Services -->
-    <section class="services">
-      <div class="services-container">
-        <!-- <h2>Our Services</h2> -->
-        <div>
-          {sortedFeaturedServices.map((service: any) => (
-            <div>
-              <h3>{service.data.title}</h3>
-              <p class="mb-4">{service.data.description}</p>
-              <a href={`/${service.slug}/`}>
-                {service.data.linkText ? `Get ${service.data.linkText}` : 'Learn More'}
-              </a>
-            </div>
-          ))}
+    
+    <!-- Problem Selector -->
+    <section class="problems">
+      <div class="problems-container">
+        <h2>Which Plumbing Problem of Yours Do We Get to Fix?</h2>
+        <div class="problems-grid">
+          <a href="/water-heater-repair-and-replacement/" class="problem-tile">
+            <Flame class="problem-icon" />
+            <span class="problem-text">No hot water</span>
+          </a>
+          <a href="/clogged-drains-rootered/" class="problem-tile">
+            <ShowerHead class="problem-icon" />
+            <span class="problem-text">Drain clogged</span>
+          </a>
+          <a href="/leak-detection-and-repair/" class="problem-tile">
+            <Droplets class="problem-icon" />
+            <span class="problem-text">Leak</span>
+          </a>
+          <a href="/clogged-or-running-toilets/" class="problem-tile">
+            <Bath class="problem-icon" />
+            <span class="problem-text">Toilet issue</span>
+          </a>
+          <a href="/emergency-plumbing-services/" class="problem-tile problem-tile-emergency">
+            <Siren class="problem-icon" />
+            <span class="problem-text">Emergency</span>
+          </a>
+          <a href="/plumbing-services/" class="problem-tile problem-tile-all">
+            <ArrowRight class="problem-icon" />
+            <span class="problem-text">All services</span>
+          </a>
         </div>
       </div>
     </section>
+
+    <!-- Process Stepper - Extreme Communication -->
+    <ProcessStepper />
 
     <!-- Customer Reviews -->
     <section class="reviews">
@@ -105,7 +101,7 @@ const homePageSchemas = await createHomePageSchemas();
     <!-- Why Choose Us -->
     <section class="choose-us">
       <div>
-        <h2>Why Choose GoFlow Plumbing?</h2>
+        <h2>Why Homeowners Choose GoFlow Plumbing</h2>
         <div>
           <div>
             <h3>24/7 Emergency Service</h3>
@@ -126,48 +122,31 @@ const homePageSchemas = await createHomePageSchemas();
     <!-- Service Areas -->
     <section class="service-areas">
       <div>
-        <h2>Service Areas</h2>
+        <h2>GoFlow Plumbing Service Areas</h2>
+        <p class="section-intro">GoFlow Plumbing proudly serves homeowners throughout the North Bay. Whether you're in wine country or near the coast, we're your local plumbing experts.</p>
         <div>
           <div>
             <a href="/sonoma-county-plumbing/">
-              <h3>Sonoma County</h3>
-              <p>Serving all of Sonoma County with expert plumbing services</p>
+              <h3>Sonoma County Plumbing</h3>
+              <p>Santa Rosa, Petaluma, Healdsburg, Sonoma, and surrounding communities. GoFlow Plumbing knows Sonoma County plumbing.</p>
             </a>
           </div>
           <div>
             <a href="/marin-county-plumbing/">
-              <h3>Marin County</h3>
-              <p>Professional plumbing services throughout Marin County</p>
+              <h3>Marin County Plumbing</h3>
+              <p>San Rafael, Novato, Mill Valley, and throughout Marin. GoFlow Plumbing understands the unique plumbing needs of Marin homes.</p>
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Top Services In Your Area -->
-    <section class="top-services">
-      <div>
-        <h2>Top Services in Your Area</h2>
-        <ul>
-          <li><a href="/water-heater-repair-san-rafael/">San Rafael Water heater repair</a></li>
-          <li><a href="/water-heater-repair-santa-rosa/">Santa Rosa Water heater repair</a></li>
-          <li><a href="/water-heater-repair-novato/">Novato Water heater repair</a></li>
-          <li><a href="/water-heater-installation-petaluma/">Petaluma Water heater installation</a></li>
-          <li><a href="/water-heater-install/">Water heater install</a></li>
-          <li><a href="/water-heater-repair-and-replacement/">Water heater repair and replacement</a></li>
-          <li><a href="/drain-cleaning-san-rafael/">San Rafael Drain cleaning</a></li>
-          <li><a href="/drain-cleaning-santa-rosa/">Santa Rosa Drain cleaning</a></li>
-          <li><a href="/drain-cleaning-novato/">Novato Drain cleaning</a></li>
-          <li><a href="/drain-cleaning-petaluma/">Petaluma Drain cleaning</a></li>
-        </ul>
-      </div>
-    </section>
 
     <!-- CTA Section -->
     <section class="cta">
       <div>
-        <h2>Need a Plumber?</h2>
-        <p>Contact us now for fast, reliable service</p>
+        <h2>You Need a Plumber Call GoFlow Plumbing</h2>
+        <p>Contact GoFlow Plumbing now for fast, reliable service in Sonoma County and Marin County</p>
         <a href="/contact-us/">
           Get in Touch
         </a>

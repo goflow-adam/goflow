@@ -35,32 +35,49 @@
   @apply text-xl md:text-2xl mb-8;
 }
 
-.services {
-  @apply py-16;
+/* Problem Selector */
+.problems {
+  @apply py-12;
 }
 
-.services-container {
-  @apply container mx-auto px-4;
+.problems-container {
+  @apply container mx-auto px-4 text-center;
 }
 
-.services h2 {
-  @apply text-3xl font-bold text-center;
+.problems h2 {
+  @apply text-2xl font-bold mb-8;
 }
 
-.services-container > div {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+.problems-grid {
+  @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 max-w-4xl mx-auto;
 }
 
-.services-container > div > div {
-  @apply bg-background rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow;
+.problem-tile {
+  @apply flex flex-col items-center justify-center p-4 bg-background rounded-lg shadow hover:shadow-lg transition-all hover:-translate-y-1 text-center no-underline;
 }
 
-.services-container > div > div h3 {
-  @apply text-xl font-bold mb-4;
+.problem-icon {
+  @apply w-8 h-8 mb-2 stroke-current;
 }
 
-.services-container a {
-  @apply btn btn-primary inline-block;
+.problem-text {
+  @apply text-sm font-medium text-primary;
+}
+
+.problem-tile-emergency {
+  @apply bg-error text-background;
+}
+
+.problem-tile-emergency .problem-text {
+  @apply text-background;
+}
+
+.problem-tile-all {
+  @apply bg-secondary text-background;
+}
+
+.problem-tile-all .problem-text {
+  @apply text-background;
 }
   
 .choose-us {

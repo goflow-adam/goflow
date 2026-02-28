@@ -1,0 +1,144 @@
+---
+interface Step {
+  number: number;
+  title: string;
+  subtitle: string;
+  touchpoints: string[];
+}
+
+const steps: Step[] = [
+  {
+    number: 1,
+    title: "You Call",
+    subtitle: "From the moment you reach out, you're in the loop.",
+    touchpoints: [
+      "Confirmation with expected arrival window",
+      "Updates if anything changes",
+      "\"On my way\" notification when we're minutes out"
+    ]
+  },
+  {
+    number: 2,
+    title: "We Diagnose",
+    subtitle: "No surprises — you understand the problem before we start.",
+    touchpoints: [
+      "Clear explanation of what we found",
+      "Upfront pricing before any work begins",
+      "Your approval before we proceed"
+    ]
+  },
+  {
+    number: 3,
+    title: "We Fix It",
+    subtitle: "You always know where things stand.",
+    touchpoints: [
+      "Expected completion time",
+      "Updates if scope or timing changes",
+      "Heads up when we're wrapping up"
+    ]
+  },
+  {
+    number: 4,
+    title: "We Follow Up",
+    subtitle: "The job's done, but we're still here for you.",
+    touchpoints: [
+      "Walkthrough of completed work",
+      "Documentation and warranty info",
+      "Follow-up to ensure everything's working"
+    ]
+  }
+];
+---
+
+<section class="process-stepper">
+  <div class="process-container">
+    <h2>The GoFlow Experience: Extreme Communication</h2>
+    <p class="process-intro">You'll never wonder what's happening with your plumbing job. We update you at every step — the communication burden is never on you.</p>
+    
+    <div class="steps-wrapper">
+      {steps.map((step, index) => (
+        <div class="step-tile">
+          <div class="step-header">
+            <span class="step-number">{step.number}</span>
+            <h3>{step.title}</h3>
+          </div>
+          <p class="step-subtitle">{step.subtitle}</p>
+          <ul class="touchpoints">
+            {step.touchpoints.map((tp) => (
+              <li>{tp}</li>
+            ))}
+          </ul>
+          {index < steps.length - 1 && (
+            <div class="step-connector" aria-hidden="true"></div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-stepper {
+    @apply py-16 bg-gray-50;
+  }
+
+  .process-container {
+    @apply container mx-auto px-4;
+  }
+
+  .process-stepper h2 {
+    @apply text-3xl font-bold text-center mb-4;
+  }
+
+  .process-intro {
+    @apply text-center text-lg text-gray-600 max-w-2xl mx-auto mb-12;
+  }
+
+  .steps-wrapper {
+    @apply flex flex-col md:flex-row gap-6 md:gap-4 justify-center items-stretch;
+  }
+
+  .step-tile {
+    @apply relative bg-background rounded-lg shadow-lg p-6 flex-1 max-w-sm;
+  }
+
+  .step-header {
+    @apply flex items-center gap-3 mb-3;
+  }
+
+  .step-number {
+    @apply w-10 h-10 rounded-full bg-primary text-background flex items-center justify-center font-bold text-lg flex-shrink-0;
+  }
+
+  .step-tile h3 {
+    @apply text-xl font-bold text-primary;
+  }
+
+  .step-subtitle {
+    @apply text-gray-600 text-sm mb-4 italic;
+  }
+
+  .touchpoints {
+    @apply space-y-2 text-sm;
+  }
+
+  .touchpoints li {
+    @apply flex items-start gap-2;
+  }
+
+  .touchpoints li::before {
+    content: "✓";
+    @apply text-success font-bold flex-shrink-0;
+  }
+
+  /* Connector arrows - only show on desktop */
+  .step-connector {
+    @apply hidden md:block absolute top-1/2 -right-5 w-6 h-6;
+    transform: translateY(-50%);
+  }
+
+  .step-connector::after {
+    content: "→";
+    @apply text-2xl text-primary font-bold;
+  }
+</style>
