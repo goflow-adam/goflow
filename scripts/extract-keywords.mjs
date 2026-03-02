@@ -40,10 +40,25 @@ async function extractKeywordsFromMdx(filePath) {
   const content = await fs.readFile(filePath, 'utf-8');
   const { data } = matter(content);
   
+  // Handle both old format (string array) and new format (array of {term, priority} objects)
+  let keywords = '';
+  if (Array.isArray(data.keywords)) {
+    keywords = data.keywords
+      .map(kw => {
+        // New format: { term: "keyword", priority: 100 }
+        if (typeof kw === 'object' && kw.term) {
+          return kw.term;
+        }
+        // Old format: plain string
+        return kw;
+      })
+      .join(', ');
+  }
+  
   return {
     file: path.relative(projectRoot, filePath),
     type: 'mdx',
-    keywords: (data.keywords || []).join(', '),
+    keywords,
     title: data.title || ''
   };
 }
@@ -112,7 +127,7 @@ async function writeConsolidatedKeywords(results) {
 
 async function main() {
   try {
-    await ensureDataDirExists();
+    const writeToFile = process.argv.includes('--file');
     
     // Find all content files
     const mdxFiles = await findFiles(contentDir, ['.mdx']);
@@ -124,19 +139,24 @@ async function main() {
     const results = [...mdxResults, ...astroResults];
     
     // Create detailed CSV content
-    const csvContent = ['File,Type,Title,Keywords\n'];
+    const csvContent = ['File,Type,Title,Keywords'];
     results.forEach(({ file, type, title, keywords }) => {
-      csvContent.push(`"${file}","${type}","${title}","${keywords}"\n`);
+      csvContent.push(`"${file}","${type}","${title}","${keywords}"`);
     });
     
-    // Write detailed CSV
-    await fs.writeFile(outputFile, csvContent.join(''));
-    console.log(`Detailed keywords extracted to ${outputFile}`);
-    
-    // Write consolidated keywords
-    await writeConsolidatedKeywords(results);
-    
-    console.log(`Processed ${mdxFiles.length} MDX files and ${astroFiles.length} Astro files`);
+    if (writeToFile) {
+      await ensureDataDirExists();
+      await fs.writeFile(outputFile, csvContent.join('\n'));
+      console.error(`Detailed keywords extracted to ${outputFile}`);
+      
+      // Write consolidated keywords
+      await writeConsolidatedKeywords(results);
+      
+      console.error(`Processed ${mdxFiles.length} MDX files and ${astroFiles.length} Astro files`);
+    } else {
+      // Output to stdout
+      console.log(csvContent.join('\n'));
+    }
     
   } catch (error) {
     console.error('Error:', error);

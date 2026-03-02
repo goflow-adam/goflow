@@ -3,8 +3,99 @@
 /**
  * Categorize Keywords by Page
  * 
- * Takes a CSV of search queries and groups them by the most relevant page
- * (existing or proposed) based on the site's architecture.
+ * Takes a CSV of search queries from Google Search Console and groups them 
+ * by the most relevant page (existing or proposed) based on the site's architecture.
+ * 
+ * KEYWORD TYPES:
+ *   This script helps identify four types of keywords for SEO analysis:
+ * 
+ *   Type 1: TARGETED & RANKING
+ *     - Keywords we intentionally target in our content AND rank for in search
+ *     - Identified by: Targeted=YES, Impressions>0, Position>0
+ *     - Action: Monitor and optimize to improve position
+ * 
+ *   Type 2: NOT TARGETED & RANKING  
+ *     - Keywords we rank for but don't explicitly target in our content
+ *     - Identified by: Targeted=empty, Impressions>0, Position>0
+ *     - Action: Consider adding to targeted keywords if relevant, or create content
+ * 
+ *   Type 3: TARGETED & NOT RANKING
+ *     - Keywords we target in our content but don't rank for at all
+ *     - Identified by: Targeted=YES, Impressions=0, Position=0
+ *     - Action: Investigate why we're not ranking - content gaps, competition, etc.
+ * 
+ *   Type 4: NOT TARGETED & NOT RANKING (not in output)
+ *     - Keywords users search for that we neither target nor rank for
+ *     - These are NOT included in this script's output
+ *     - To find these: Use keyword research tools, competitor analysis, or 
+ *       review GSC queries that categorize to pages we don't have yet
+ *     - Action: Evaluate for new content opportunities
+ * 
+ * RECOMMENDATIONS:
+ *   The "Recommendation" column provides actionable guidance based on SERP page position
+ *   and relative impressions (compared to your dataset's actual ranges).
+ * 
+ *   SERP Page Boundaries:
+ *     - Page 1: Positions 1-10 (visible without scrolling past ads)
+ *     - Page 2: Positions 11-20 (one click away from visibility)
+ *     - Page 3+: Positions 21+ (rarely seen by searchers)
+ * 
+ *   Recommendation Values:
+ *   MAINTAIN - Page 1, top 3 positions. Protect this position.
+ *   OPTIMIZE - Page 1, positions 4-10. Push to top 3 for more clicks.
+ *   QUICK WIN - Page 2 (positions 11-20). Close to page 1, worth the push.
+ *   IMPROVE - Page 3 with above-median impressions. People are searching, worth effort.
+ *   INVESTIGATE - Targeted but not ranking at all. Why? Competition? Content gaps?
+ *   CONSIDER TARGETING - Ranking but not targeted. Add to keywords if relevant.
+ *   LOW PRIORITY - Page 3+ with below-median impressions. Minimal opportunity.
+ * 
+ *   Note: Impression thresholds are calculated relative to YOUR dataset:
+ *     - High impressions = top 25% of your keywords
+ *     - Medium impressions = median (50th percentile)
+ *     - Low impressions = bottom 25% of your keywords
+ * 
+ * PRIORITIZATION FRAMEWORK:
+ *   High Priority (focus effort here):
+ *     1. QUICK WIN - These are closest to driving traffic with minimal effort
+ *     2. OPTIMIZE - Small improvements could move you to #1
+ *     3. CONSIDER TARGETING - You're already ranking, capitalize on it
+ * 
+ *   Medium Priority (evaluate case by case):
+ *     4. MAINTAIN - Monitor but don't over-invest
+ *     5. IMPROVE - Only if keyword is strategically important
+ * 
+ *   Low Priority (reduce or eliminate effort):
+ *     6. INVESTIGATE - Either fix the root cause or stop targeting
+ *     7. LOW PRIORITY - Minimal opportunity, focus elsewhere
+ * 
+ *   New Page Indicators:
+ *     - Multiple CONSIDER TARGETING keywords clustering around a topic you don't have a page for
+ *     - High-impression keywords categorizing to "proposed" pages (Exists=NO)
+ * 
+ * USAGE:
+ *   node scripts/categorize-keywords.mjs <queries.csv> [keywords.csv]
+ * 
+ * ARGUMENTS:
+ *   queries.csv   - Google Search Console queries export (required)
+ *                   Expected format: Top queries,Clicks,Impressions,CTR,Position
+ *   keywords.csv  - Extracted keywords from extract-keywords.mjs (optional)
+ *                   Used to mark which ranking queries match targeted keywords
+ * 
+ * OUTPUT:
+ *   CSV to stdout with columns: Target Page,Exists,Query,Impressions,Position,Targeted,Overlaps,Recommendation
+ *   - Grouped by geographic silos (city pages together) then general services
+ *   - Within each page: ranked keywords sorted by position, then unranked targeted keywords
+ * 
+ * EXAMPLES:
+ *   # Basic usage - categorize queries without targeted keyword matching
+ *   node scripts/categorize-keywords.mjs ~/Downloads/Queries.csv > categorized.csv
+ * 
+ *   # With targeted keyword matching from a file
+ *   node scripts/categorize-keywords.mjs ~/Downloads/Queries.csv data/keywords.csv > categorized.csv
+ * 
+ *   # With targeted keyword matching piped from extract-keywords
+ *   node scripts/extract-keywords.mjs | \
+ *     node scripts/categorize-keywords.mjs ~/Downloads/Queries.csv /dev/stdin > categorized.csv
  */
 
 import fs from 'fs/promises';
@@ -135,6 +226,8 @@ function categorizeKeyword(query) {
       targetPage = `clogged-toilet-${location}.mdx`;
     } else if (service === 'heat-pump') {
       targetPage = `heat-pump-${location}.mdx`;
+    } else if (service === 'emergency-plumbing') {
+      targetPage = `emergency-plumbing-${location}.mdx`;
     } else if (service === 'plumbing-general') {
       targetPage = `${location}-plumbing.mdx`;
     } else {
@@ -181,8 +274,200 @@ function categorizeKeyword(query) {
   return { targetPage, exists };
 }
 
+// Load targeted keywords from extract-keywords.mjs output
+async function loadTargetedKeywords(targetedKeywordsFile) {
+  const pageKeywords = new Map(); // Map<filename, Set<keyword>>
+  
+  if (!targetedKeywordsFile) {
+    return pageKeywords; // Return empty map if no file provided
+  }
+  
+  try {
+    const content = await fs.readFile(targetedKeywordsFile, 'utf-8');
+    const lines = content.trim().split('\n');
+    
+    // Skip header: File,Type,Title,Keywords
+    for (let i = 1; i < lines.length; i++) {
+      const line = lines[i];
+      // Parse CSV with quoted fields
+      const matches = line.match(/"([^"]*)","([^"]*)","([^"]*)","([^"]*)"/)
+      if (!matches) continue;
+      
+      const [, filePath, type, title, keywordsStr] = matches;
+      
+      // Extract filename from path (e.g., "src/content/services/water-heater-repair.mdx" -> "water-heater-repair.mdx")
+      const filename = path.basename(filePath);
+      
+      // Parse keywords
+      const keywords = keywordsStr
+        .split(',')
+        .map(k => k.trim().toLowerCase())
+        .filter(k => k.length > 0);
+      
+      if (keywords.length > 0) {
+        pageKeywords.set(filename, new Set(keywords));
+      }
+    }
+  } catch (error) {
+    console.error(`Warning: Could not load targeted keywords from ${targetedKeywordsFile}`);
+    console.error('Run extract-keywords.mjs first to enable targeted keyword matching.');
+  }
+  
+  return pageKeywords;
+}
+
+// Check if a query exactly matches any targeted keyword for a page
+function isTargetedKeyword(query, targetPage, pageKeywords) {
+  const keywords = pageKeywords.get(targetPage);
+  if (!keywords) return false;
+  
+  const q = query.toLowerCase().trim();
+  
+  // Exact match only
+  return keywords.has(q);
+}
+
+// Find overlapping keywords (query contains keyword - i.e., query is a longer phrase containing the targeted keyword)
+function findOverlappingKeywords(query, targetPage, pageKeywords) {
+  const keywords = pageKeywords.get(targetPage);
+  if (!keywords) return [];
+  
+  const q = query.toLowerCase().trim();
+  const overlaps = [];
+  
+  for (const keyword of keywords) {
+    // Skip exact matches (those go in Targeted column)
+    if (q === keyword) continue;
+    
+    // Check if query contains keyword (query is longer phrase containing the targeted keyword)
+    if (q.includes(keyword)) {
+      overlaps.push(keyword);
+    }
+  }
+  
+  return overlaps;
+}
+
+// Determine recommendation based on position, impressions, and targeting status
+// Uses relative thresholds calculated from the dataset
+function getRecommendation(position, impressions, targeted, unranked, stats) {
+  const pos = parseFloat(position);
+  const imp = parseInt(impressions);
+  
+  // Type 3: Targeted but not ranking
+  if (unranked || (pos === 0 && imp === 0)) {
+    return 'INVESTIGATE';
+  }
+  
+  // Calculate which SERP page this keyword is on (1-10 = page 1, 11-20 = page 2, etc.)
+  const serpPage = Math.ceil(pos / 10);
+  
+  // Relative impression thresholds based on dataset
+  const highImpressions = stats.impressionP75;  // Top 25% of impressions
+  const medImpressions = stats.impressionP50;   // Median impressions
+  const lowImpressions = stats.impressionP25;   // Bottom 25% of impressions
+  
+  // Type 2: Ranking but not targeted
+  if (!targeted) {
+    // High impressions = definitely consider targeting
+    if (imp >= medImpressions) {
+      return 'CONSIDER TARGETING';
+    }
+    // Low impressions and beyond page 2 = low priority
+    if (imp < lowImpressions && serpPage > 2) {
+      return 'LOW PRIORITY';
+    }
+    return 'CONSIDER TARGETING';
+  }
+  
+  // Type 1: Targeted and ranking - prioritize by SERP page and relative impressions
+  
+  // Page 1 (positions 1-10)
+  if (serpPage === 1) {
+    if (pos <= 3) {
+      return 'MAINTAIN';  // Top 3 - protect this position
+    }
+    return 'OPTIMIZE';  // Positions 4-10 - push to top 3
+  }
+  
+  // Page 2 (positions 11-20) - these are quick wins, close to page 1
+  if (serpPage === 2) {
+    if (imp >= medImpressions) {
+      return 'QUICK WIN';  // Good impressions, worth the push
+    }
+    return 'QUICK WIN';  // Still worth pushing to page 1
+  }
+  
+  // Page 3+ (positions 21+)
+  if (serpPage === 3) {
+    if (imp >= highImpressions) {
+      return 'IMPROVE';  // High impressions despite poor position - opportunity
+    }
+    if (imp >= medImpressions) {
+      return 'IMPROVE';  // Decent impressions, may be worth effort
+    }
+    return 'LOW PRIORITY';  // Low impressions, far from page 1
+  }
+  
+  // Page 4+ (positions 31+)
+  if (imp >= highImpressions) {
+    return 'IMPROVE';  // High impressions = people are searching, worth effort
+  }
+  return 'LOW PRIORITY';  // Far from page 1 with low impressions
+}
+
+// Calculate statistics for relative scoring
+function calculateStats(keywords) {
+  const impressions = keywords
+    .filter(k => !k.unranked && parseInt(k.impressions) > 0)
+    .map(k => parseInt(k.impressions))
+    .sort((a, b) => a - b);
+  
+  const positions = keywords
+    .filter(k => !k.unranked && parseFloat(k.position) > 0)
+    .map(k => parseFloat(k.position))
+    .sort((a, b) => a - b);
+  
+  if (impressions.length === 0) {
+    return { impressionP25: 10, impressionP50: 50, impressionP75: 100, minPos: 1, maxPos: 100 };
+  }
+  
+  const p25Idx = Math.floor(impressions.length * 0.25);
+  const p50Idx = Math.floor(impressions.length * 0.50);
+  const p75Idx = Math.floor(impressions.length * 0.75);
+  
+  return {
+    impressionP25: impressions[p25Idx] || 1,
+    impressionP50: impressions[p50Idx] || 10,
+    impressionP75: impressions[p75Idx] || 50,
+    minPos: positions[0] || 1,
+    maxPos: positions[positions.length - 1] || 100
+  };
+}
+
+function printUsage() {
+  console.error('Usage: node categorize-keywords.mjs <queries.csv> [keywords.csv]');
+  console.error('');
+  console.error('Arguments:');
+  console.error('  queries.csv   - Google Search Console queries export (required)');
+  console.error('  keywords.csv  - Extracted keywords from extract-keywords.mjs (optional)');
+  console.error('');
+  console.error('Example:');
+  console.error('  node scripts/categorize-keywords.mjs ~/Downloads/Queries.csv');
+  console.error('  node scripts/extract-keywords.mjs | node scripts/categorize-keywords.mjs ~/Downloads/Queries.csv /dev/stdin');
+}
+
 async function main() {
-  const inputFile = process.argv[2] || '/Users/doubletap/Documents/GoFlow/SEO/AllKeywordsForWhichWeRank/Queries.csv';
+  const inputFile = process.argv[2];
+  const targetedKeywordsFile = process.argv[3] || null;
+  
+  if (!inputFile) {
+    printUsage();
+    process.exit(1);
+  }
+  
+  // Load targeted keywords
+  const pageKeywords = await loadTargetedKeywords(targetedKeywordsFile);
   
   // Read CSV
   const content = await fs.readFile(inputFile, 'utf-8');
@@ -194,13 +479,15 @@ async function main() {
   const grouped = {};
   
   for (const row of rows) {
-    // Parse CSV - split by comma, handle the query which may contain special chars
+    // Parse CSV - format: Top queries,Clicks,Impressions,CTR,Position
     const parts = row.split(',');
-    if (parts.length < 3) continue;
+    if (parts.length < 5) continue;
     
-    // Query is everything except last two fields (impressions, position)
-    const position = parts.pop();
-    const impressions = parts.pop();
+    // Extract fields by position
+    const position = parts.pop();           // Position (last)
+    const ctr = parts.pop();                // CTR (skip)
+    const impressions = parts.pop();        // Impressions
+    const clicks = parts.pop();             // Clicks (skip)
     const query = parts.join(',').replace(/^"|"$/g, '').trim();
     
     // Skip excluded keywords
@@ -215,34 +502,194 @@ async function main() {
       };
     }
     
-    grouped[targetPage].keywords.push({ query, impressions, position });
+    // Check if this is a targeted keyword (exact match)
+    const targeted = isTargetedKeyword(query, targetPage, pageKeywords);
+    
+    // Find overlapping keywords from the same page
+    const overlaps = findOverlappingKeywords(query, targetPage, pageKeywords);
+    
+    grouped[targetPage].keywords.push({ query, impressions, position, targeted, overlaps });
   }
   
-  // Sort pages: existing first, then by total impressions
-  const sortedPages = Object.entries(grouped).sort((a, b) => {
-    // Existing pages first
-    if (a[1].exists !== b[1].exists) {
-      return a[1].exists ? -1 : 1;
+  // Add unranked targeted keywords (type 3: targeted but not ranking)
+  // For each page with targeted keywords, check if any are missing from the ranked queries
+  for (const [filename, keywords] of pageKeywords) {
+    // Get all ranked queries for this page (normalized to lowercase)
+    const rankedQueries = new Set();
+    if (grouped[filename]) {
+      for (const kw of grouped[filename].keywords) {
+        rankedQueries.add(kw.query.toLowerCase().trim());
+      }
     }
-    // Then by total impressions
-    const aImpressions = a[1].keywords.reduce((sum, k) => sum + parseInt(k.impressions), 0);
-    const bImpressions = b[1].keywords.reduce((sum, k) => sum + parseInt(k.impressions), 0);
-    return bImpressions - aImpressions;
-  });
+    
+    // Find targeted keywords that aren't in the ranked queries
+    for (const keyword of keywords) {
+      if (!rankedQueries.has(keyword)) {
+        // This is a targeted keyword we're not ranking for
+        if (!grouped[filename]) {
+          grouped[filename] = {
+            exists: pageExists(filename),
+            keywords: []
+          };
+        }
+        grouped[filename].keywords.push({
+          query: keyword,
+          impressions: 0,
+          position: 0,
+          targeted: true,
+          overlaps: [],
+          unranked: true  // Flag to identify these in output
+        });
+      }
+    }
+  }
   
-  // Output grouped CSV
-  console.log('Target Page,Exists,Query,Impressions,Position');
+  // Calculate statistics for relative scoring from all keywords
+  const allKeywords = Object.values(grouped).flatMap(g => g.keywords);
+  const stats = calculateStats(allKeywords);
   
-  for (const [page, data] of sortedPages) {
-    // Sort keywords by position descending (higher position = lower in results, so we want those first to see improvement opportunities)
-    data.keywords.sort((a, b) => parseFloat(b.position) - parseFloat(a.position));
+  // City silo definitions - order matters for output
+  const citySilos = [
+    'santa-rosa',
+    'petaluma', 
+    'novato',
+    'san-rafael',
+    'healdsburg',
+    'sonoma',
+    'mill-valley',
+  ];
+  
+  // County silos
+  const countySilos = [
+    'sonoma-county',
+    'marin-county',
+  ];
+  
+  // Service page patterns within a city silo
+  const siloServicePatterns = [
+    '-plumbing.mdx',           // e.g., santa-rosa-plumbing.mdx
+    'drain-cleaning-',         // e.g., drain-cleaning-santa-rosa.mdx
+    'emergency-plumbing-',     // e.g., emergency-plumbing-santa-rosa.mdx
+    'water-heater-',           // e.g., water-heater-repair-santa-rosa.mdx
+  ];
+  
+  // Helper to extract city from page name
+  function getCityFromPage(page) {
+    for (const city of citySilos) {
+      if (page.includes(city)) {
+        return city;
+      }
+    }
+    return null;
+  }
+  
+  // Helper to extract county from page name
+  function getCountyFromPage(page) {
+    for (const county of countySilos) {
+      if (page.includes(county)) {
+        return county;
+      }
+    }
+    return null;
+  }
+  
+  // Group pages into silos
+  const siloGroups = {};
+  const generalServices = {};
+  
+  for (const [page, data] of Object.entries(grouped)) {
+    const city = getCityFromPage(page);
+    const county = getCountyFromPage(page);
+    
+    if (city) {
+      if (!siloGroups[city]) {
+        siloGroups[city] = {};
+      }
+      siloGroups[city][page] = data;
+    } else if (county) {
+      if (!siloGroups[county]) {
+        siloGroups[county] = {};
+      }
+      siloGroups[county][page] = data;
+    } else {
+      generalServices[page] = data;
+    }
+  }
+  
+  // Helper to output a page group
+  function outputPageGroup(page, data) {
+    // Sort keywords: ranked keywords by position ascending, then unranked at the end
+    data.keywords.sort((a, b) => {
+      // Unranked keywords (position 0) go to the end
+      if (a.unranked && !b.unranked) return 1;
+      if (!a.unranked && b.unranked) return -1;
+      // Both unranked: sort alphabetically
+      if (a.unranked && b.unranked) return a.query.localeCompare(b.query);
+      // Both ranked: sort by position ascending (lower = better)
+      return parseFloat(a.position) - parseFloat(b.position);
+    });
     
     // Output group header row
-    console.log(`${page},${data.exists ? 'YES' : 'NO'},,,`);
+    console.log(`${page},${data.exists ? 'YES' : 'NO'},,,,,,`);
     
     // Output keywords under this group
     for (const kw of data.keywords) {
-      console.log(`,,"${kw.query}",${kw.impressions},${kw.position}`);
+      const overlapsStr = kw.overlaps.length > 0 ? kw.overlaps.join('; ') : '';
+      const recommendation = getRecommendation(kw.position, kw.impressions, kw.targeted, kw.unranked, stats);
+      console.log(`,,"${kw.query}",${kw.impressions},${kw.position},${kw.targeted ? 'YES' : ''},"${overlapsStr}",${recommendation}`);
+    }
+  }
+  
+  // Helper to sort pages within a silo by total impressions
+  function sortByImpressions(pages) {
+    return Object.entries(pages).sort((a, b) => {
+      // Existing pages first
+      if (a[1].exists !== b[1].exists) {
+        return a[1].exists ? -1 : 1;
+      }
+      // Then by total impressions
+      const aImpressions = a[1].keywords.reduce((sum, k) => sum + parseInt(k.impressions), 0);
+      const bImpressions = b[1].keywords.reduce((sum, k) => sum + parseInt(k.impressions), 0);
+      return bImpressions - aImpressions;
+    });
+  }
+  
+  // Output grouped CSV
+  console.log('Target Page,Exists,Query,Impressions,Position,Targeted,Overlaps,Recommendation');
+  
+  // Output city silos first (in defined order)
+  for (const city of citySilos) {
+    if (siloGroups[city]) {
+      // Add silo header
+      console.log(`--- ${city.toUpperCase().replace(/-/g, ' ')} SILO ---,,,,,,,`);
+      
+      const sortedPages = sortByImpressions(siloGroups[city]);
+      for (const [page, data] of sortedPages) {
+        outputPageGroup(page, data);
+      }
+    }
+  }
+  
+  // Output county silos
+  for (const county of countySilos) {
+    if (siloGroups[county]) {
+      // Add silo header
+      console.log(`--- ${county.toUpperCase().replace(/-/g, ' ')} SILO ---,,,,,,,`);
+      
+      const sortedPages = sortByImpressions(siloGroups[county]);
+      for (const [page, data] of sortedPages) {
+        outputPageGroup(page, data);
+      }
+    }
+  }
+  
+  // Output general services last
+  if (Object.keys(generalServices).length > 0) {
+    console.log(`--- GENERAL SERVICES ---,,,,,,,`);
+    
+    const sortedPages = sortByImpressions(generalServices);
+    for (const [page, data] of sortedPages) {
+      outputPageGroup(page, data);
     }
   }
 }
