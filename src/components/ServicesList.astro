@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import { sortByPositionThenTitle } from '../lib/sortByPositionThenTitle';
+
+// City names to exclude from general services list
+const cityNames = ['santa-rosa', 'petaluma', 'novato', 'san-rafael', 'healdsburg', 'sonoma', 'mill-valley'];
+
+// Filter to only general services (exclude city-specific pages)
+const services = await getCollection('services', ({ slug, data }) => {
+  if (data.draft) return false;
+  // Exclude if slug contains any city name
+  return !cityNames.some(city => slug.includes(city));
+});
+
+const sortedServices = sortByPositionThenTitle(
+  services,
+  service => service.data.position,
+  service => service.data.name || service.data.menuText || service.data.linkText || service.data.title
+);
+---
+
+<div class="services-grid">
+  {sortedServices.map((service) => (
+    <a href={`/${service.slug}/`} class="service-tile">
+      <h3>{service.data.name || service.data.title}</h3>
+      <p>{service.data.description}</p>
+      <span class="service-link">
+        {service.data.linkText ? `Get ${service.data.linkText}` : 'Learn More'} →
+      </span>
+    </a>
+  ))}
+</div>
+
+<style>
+  .services-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+  }
+
+  .service-tile {
+    @apply flex flex-col p-6 bg-gray-50 border border-gray-200 rounded-lg no-underline transition-all duration-200;
+  }
+
+  .service-tile:hover {
+    @apply -translate-y-0.5 shadow-lg;
+  }
+
+  .service-tile h3 {
+    @apply m-0 mb-3 text-xl text-primary;
+  }
+
+  .service-tile p {
+    @apply m-0 mb-4 text-sm text-gray-600 flex-grow;
+  }
+
+  .service-link {
+    @apply font-semibold text-primary text-sm;
+  }
+</style>

@@ -114,6 +114,16 @@
       "source": "/water-heater-replacement-cost-reasons",
       "destination": "/articles/water-heater-replacement-cost-reasons/",
       "permanent": true
+    },
+    {
+      "source": "/water-heater-install",
+      "destination": "/water-heater-repair-and-replacement/",
+      "permanent": true
+    },
+    {
+      "source": "/water-heater-install/",
+      "destination": "/water-heater-repair-and-replacement/",
+      "permanent": true
     }
   ]
 }

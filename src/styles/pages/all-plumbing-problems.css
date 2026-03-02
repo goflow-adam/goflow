@@ -1,0 +1,36 @@
+/* Problem card tile styling for all-plumbing-problems page */
+
+/* Add gap between tile columns and rows */
+.all-plumbing-problems {
+  @apply gap-4;
+}
+
+/* Section titles (hr + h2 in one-column divs) - add spacing above sections */
+.all-plumbing-problems .one-column hr {
+  @apply mt-10 mb-2;
+}
+
+/* Section title spacing below */
+.all-plumbing-problems .one-column h2 {
+  @apply mb-4;
+}
+
+.all-plumbing-problems .two-column {
+  @apply p-6 bg-gray-50 border border-gray-200 rounded-lg transition-all duration-200;
+}
+
+.all-plumbing-problems .two-column:hover {
+  @apply -translate-y-0.5 shadow-lg;
+}
+
+.all-plumbing-problems .two-column h3 {
+  @apply text-xl text-primary mt-0;
+}
+
+.all-plumbing-problems .two-column p {
+  @apply text-gray-600;
+}
+
+.all-plumbing-problems .two-column a {
+  @apply font-semibold text-primary;
+}

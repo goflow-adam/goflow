@@ -1,11 +1,24 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import PageLayout from '../layouts/PageLayout.astro';
 import { createServiceListSchema } from '../lib/schema/factories';
+import { getCollection } from 'astro:content';
 import { sortByPositionThenTitle } from '../lib/sortByPositionThenTitle';
-import '../styles/pages/plumbing-services.css';
 
-const services = await getCollection('services', ({ data }) => !data.draft);
+const page = await getEntry('pages', 'plumbing-services');
+
+if (!page) {
+  throw new Error('Plumbing Services page content not found');
+}
+
+// City names to exclude from general services list
+const cityNames = ['santa-rosa', 'petaluma', 'novato', 'san-rafael', 'healdsburg', 'sonoma', 'mill-valley'];
+
+// Filter to only general services (exclude city-specific pages)
+const services = await getCollection('services', ({ slug, data }) => {
+  if (data.draft) return false;
+  return !cityNames.some(city => slug.includes(city));
+});
 
 const sortedServices = sortByPositionThenTitle(
   services,
@@ -24,71 +37,11 @@ const serviceDetails = sortedServices.map(service => ({
   }))
 }));
 
+const { Content } = await page.render();
 const schema = await createServiceListSchema(serviceDetails);
+
 ---
 
-<BaseLayout
-  title="Residential Plumbing Services in Sonoma & Marin County"
-  description="Comprehensive plumbing services including water heater repair, drain cleaning, emergency services, and more. Serving Sonoma County and Marin County."
-  schema={schema}
->
-  <article class="article">
-
-    <h1>Our Plumbing Services</h1>
-    <h2>We're not the Mario Brothers—But we’ll fight the boss to rescue you from your plumbing problem.</h2>
-    <p>
-      At GoFlow Plumbing, we don’t wear overalls or jump down green pipes, but we will if that's what it takes.
-      Whether it’s a leaky faucet, a backed-up drain, or a full-blown emergency, our licensed team is ready to help 24/7
-      across Sonoma and Marin Counties with our full suite of plumbing services.
-    </p>
-
-    <div class="services-list">
-      {sortedServices.map((service) => (
-        <div>
-          <h2>
-            <a href={`/${service.slug}/`}>
-              {service.data.name || service.data.title}
-            </a>
-          </h2>
-          <p>{service.data.description}</p>
-          <a href={`/${service.slug}/`}>
-            {service.data.linkText ? `Get ${service.data.linkText}` : 'Learn More'}
-          </a>
-        </div>
-      ))}
-    </div>
-
-    <div class="emergency-services">
-      <h2>Need Emergency Plumbing Service?</h2>
-      <p>
-        We're available 24/7 for all your emergency plumbing needs in Sonoma County and Marin County.
-      </p>
-      <div>
-        <a href="/contact-us/">Contact Us Now</a>
-        <a href="/emergency-plumbing-services/">Emergency Services</a>
-      </div>
-    </div>
-
-    <div class="why-choose-us">
-      <h2>Why Choose GoFlow Plumbing?</h2>
-      <div>
-        <div>
-          <h3>Licensed & Insured</h3>
-          <p>All our plumbers are fully licensed, insured, and undergo regular training.</p>
-        </div>
-        <div>
-          <h3>24/7 Emergency Service</h3>
-          <p>Available around the clock for all your plumbing emergencies.</p>
-        </div>
-        <div>
-          <h3>Fair & Transparent Pricing</h3>
-          <p>No hidden fees or surprises. We provide upfront pricing for all services.</p>
-        </div>
-        <div>
-          <h3>Satisfaction Guaranteed</h3>
-          <p>We stand behind our work with a 100% satisfaction guarantee.</p>
-        </div>
-      </div>
-    </div>
-  </article>
-</BaseLayout>
+<PageLayout page={{ ...page, data: { ...page.data, schema } }}>
+  <Content />
+</PageLayout>
