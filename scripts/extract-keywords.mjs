@@ -40,18 +40,12 @@ async function extractKeywordsFromMdx(filePath) {
   const content = await fs.readFile(filePath, 'utf-8');
   const { data } = matter(content);
   
-  // Handle both old format (string array) and new format (array of {term, priority} objects)
+  // Extract keywords from new format: array of {term, priority} objects
   let keywords = '';
   if (Array.isArray(data.keywords)) {
     keywords = data.keywords
-      .map(kw => {
-        // New format: { term: "keyword", priority: 100 }
-        if (typeof kw === 'object' && kw.term) {
-          return kw.term;
-        }
-        // Old format: plain string
-        return kw;
-      })
+      .filter(kw => typeof kw === 'object' && kw.term)
+      .map(kw => kw.term)
       .join(', ');
   }
   
