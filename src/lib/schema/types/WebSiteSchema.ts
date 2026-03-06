@@ -24,8 +24,8 @@ export class WebSiteSchema extends GoFlowSchema<WebSite> {
         .addProperty('potentialAction', this.getSearchAction())
         .addProperty('publisher', { '@id': orgInfo['@id'] })
         .addProperty('image', [
-          'https://goflow.plumbing/favicon-32x32.png',
-          'https://goflow.plumbing/favicon-16x16.png',
+          'https://goflow.plumbing/favicon.svg',
+          'https://goflow.plumbing/favicon-96x96.png',
           'https://goflow.plumbing/apple-touch-icon.png'
         ]);
   }
