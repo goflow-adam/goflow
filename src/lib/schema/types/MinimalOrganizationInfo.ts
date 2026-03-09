@@ -1,7 +1,7 @@
 import type { PostalAddress } from 'schema-dts';
 
 export interface MinimalOrganizationInfo {
-  '@type': 'Plumber';
+  '@type': ['Organization', 'Plumber'];
   '@id': string;
   name: string;
   legalName: string;
@@ -13,7 +13,7 @@ export interface MinimalOrganizationInfo {
 
 export function createMinimalOrganizationInfo(): MinimalOrganizationInfo {
   return {
-    '@type': 'Plumber',
+    '@type': ['Organization', 'Plumber'],
     // Use a single canonical @id for the organization everywhere
     '@id': 'https://goflow.plumbing/#organization',
     'name': 'GoFlow Plumbing',

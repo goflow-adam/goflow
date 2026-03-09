@@ -1,10 +1,10 @@
 import type { WithContext, Thing, AdministrativeArea, Place, City } from 'schema-dts';
 import { SONOMA_COUNTY_CITIES, MARIN_COUNTY_CITIES } from '../../../data/cities';
 
-type SchemaType = string | { '@type': string };
+type SchemaType = string | string[] | { '@type': string | string[] };
 
 type SchemaData = Partial<Thing> & {
-  '@type'?: string;
+  '@type'?: string | string[];
   '@id'?: string;
   '@context'?: 'https://schema.org';
 };
@@ -38,7 +38,11 @@ export abstract class GoFlowSchema<T extends Thing> {
   }
 
   protected setType(type: SchemaType): this {
-    this.data['@type'] = typeof type === 'string' ? type : type['@type'];
+    if (typeof type === 'string' || Array.isArray(type)) {
+      this.data['@type'] = type;
+    } else {
+      this.data['@type'] = type['@type'];
+    }
     return this;
   }
 
