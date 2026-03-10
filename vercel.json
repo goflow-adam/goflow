@@ -124,6 +124,11 @@
       "source": "/water-heater-install/",
       "destination": "/water-heater-repair-and-replacement/",
       "permanent": true
+    },
+    {
+      "source": "/review/",
+      "destination": "https://g.page/r/CUDozDQ8W2S8EBM/review",
+      "permanent": true
     }
   ]
 }
