@@ -167,6 +167,7 @@ const articleMenu = articles
     path: `/articles/${article.slug}/`
   }))
   .sort((a, b) => a.title.localeCompare(b.title));
+articleMenu.push({ title: "More Articles →", path: "/articles/" });
 
 const navigation: NavItem[] = [
   {
