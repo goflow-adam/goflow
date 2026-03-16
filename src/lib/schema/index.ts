@@ -71,8 +71,8 @@ export async function createArticleSchema(details: ArticleDetails) {
   return await schema.build();
 }
 
-export async function createFAQSchema(questions: FAQItem[]) {
-  const schema = await FAQSchema.create(questions);
+export async function createFAQSchema(questions: FAQItem[], pageUrl?: string) {
+  const schema = await FAQSchema.create(questions, pageUrl);
   return await schema.build();
 }
 

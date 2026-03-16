@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import {
   createArticlePageSchema,
   createBreadcrumbSchema,
+  createFAQSchema,
 } from "../lib/schema/factories";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import AnatomyNav from "@/components/AnatomyNav.astro";
@@ -29,6 +30,12 @@ const articleDetails = {
 
 const schema = await createArticlePageSchema(articleDetails);
 
+// Generate FAQ schema if FAQs are present in frontmatter
+const articleUrl = `https://goflow.plumbing/articles/${article.slug}/`;
+const faqSchema = article.data.faqs?.length 
+  ? await createFAQSchema(article.data.faqs, articleUrl)
+  : null;
+
 // Breadcrumbs: Home > Articles > Current article (prefers breadcrumbDisplayText if provided)
 const currentCrumbName =
   article.data.breadcrumbDisplayText ??
@@ -41,7 +48,9 @@ const breadcrumbSchema = await createBreadcrumbSchema([
   { name: "Articles", url: "https://goflow.plumbing/articles/" },
   { name: currentCrumbName, url: pageUrl },
 ]);
-const combinedSchema = [schema, breadcrumbSchema];
+const combinedSchema = faqSchema 
+  ? [schema, breadcrumbSchema, faqSchema]
+  : [schema, breadcrumbSchema];
 ---
 
 <BaseLayout

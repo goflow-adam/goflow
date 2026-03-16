@@ -7,6 +7,7 @@ import { ServiceSchema } from './types/ServiceSchema';
 import { ArticleSchema } from './types/ArticleSchema';
 import { AboutPageSchema } from './types/AboutPageSchema';
 import { FAQPageSchema } from './types/FAQPageSchema';
+import { FAQSchema } from './types/FAQSchema';
 import { ContactPageSchema } from './types/ContactPageSchema';
 import { TeamPageSchema } from './types/TeamPageSchema';
 import { PricingPageSchema } from './types/PricingPageSchema';
@@ -120,6 +121,11 @@ export async function createAboutPageSchema() {
 
 export async function createFAQPageSchema() {
   const schema = await FAQPageSchema.create();
+  return schema.build();
+}
+
+export async function createFAQSchema(questions: FAQItem[], pageUrl?: string) {
+  const schema = await FAQSchema.create(questions, pageUrl);
   return schema.build();
 }
 

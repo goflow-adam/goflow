@@ -85,7 +85,7 @@ const regions = defineCollection({
 
 const articles = defineCollection({
   schema: baseSchema.extend({
-    category: z.enum(['maintenance', 'repair', 'installation', 'emergency', 'general', 'pricing']),
+    category: z.enum(['maintenance', 'repair', 'installation', 'emergency', 'general', 'pricing', 'regulations']),
     tags: z.array(z.string()).default([]),
     readingTime: z.number().optional(),
   }),

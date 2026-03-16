@@ -11,13 +11,14 @@ type FAQQuestion = Question & {
 };
 
 export class FAQSchema extends GoFlowSchema<FAQPage> {
-  public static async create(questions: FAQItem[]): Promise<FAQSchema> {
-    return new FAQSchema(questions);
+  public static async create(questions: FAQItem[], pageUrl?: string): Promise<FAQSchema> {
+    return new FAQSchema(questions, pageUrl);
   }
-  constructor(questions: FAQItem[]) {
+  constructor(questions: FAQItem[], pageUrl?: string) {
     super();
+    const schemaId = pageUrl ? `${pageUrl}#faq` : 'https://goflow.plumbing/faqs#webpage';
     this.setType('FAQPage')
-        .setId('https://goflow.plumbing/faqs#webpage')
+        .setId(schemaId)
         .addProperty('mainEntity', questions.map(q => ({
           '@type': 'Question',
           'name': q.question,
