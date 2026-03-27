@@ -88,7 +88,7 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
     return {
       '@type': 'AggregateRating',
       'ratingValue': '5.0',
-      'reviewCount': '2',
+      'reviewCount': '5',
       'bestRating': '5',
       'worstRating': '1'
     } as AggregateRating;
@@ -125,6 +125,51 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
           'worstRating': '1'
         },
         'reviewBody': 'Chris was prompt to reply to your texts. Chris was conscientious about letting you know he was going to be a little late and why. He was very polite, clean and organized. The job was completed faster than I expected. I am extremely pleased with his work and will highly recommend him. Would not hesitate to used him again. He also had a very competitive price.'
+      } as Review,
+      {
+        '@type': 'Review',
+        'author': {
+          '@type': 'Person',
+          'name': 'Mark K.'
+        },
+        'datePublished': '2026-03',
+        'reviewRating': {
+          '@type': 'Rating',
+          'ratingValue': '5',
+          'bestRating': '5',
+          'worstRating': '1'
+        },
+        'reviewBody': 'I thought I had a crimped water line requiring trenching. Chris came out and determined the pressure valve needed cleaning. He didn\'t even push a replacement. Water flow in the house is now fantastic.'
+      } as Review,
+      {
+        '@type': 'Review',
+        'author': {
+          '@type': 'Person',
+          'name': 'Jason B.'
+        },
+        'datePublished': '2026-03',
+        'reviewRating': {
+          '@type': 'Rating',
+          'ratingValue': '5',
+          'bestRating': '5',
+          'worstRating': '1'
+        },
+        'reviewBody': 'Great experience with GoFlow Plumbing. They do high-quality work and stand behind everything they do. Chris was super easy to work with and made the whole job stress-free. I\'ll be using them again for sure.'
+      } as Review,
+      {
+        '@type': 'Review',
+        'author': {
+          '@type': 'Person',
+          'name': 'Karen T.'
+        },
+        'datePublished': '2026-03',
+        'reviewRating': {
+          '@type': 'Rating',
+          'ratingValue': '5',
+          'bestRating': '5',
+          'worstRating': '1'
+        },
+        'reviewBody': 'I am really happy with the service I received from GoFlow Plumbing. Chris was great to work with and everything turned out perfectly.'
       } as Review
     ];
   }
