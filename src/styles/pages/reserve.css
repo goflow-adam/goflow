@@ -1,0 +1,346 @@
+/* Reserve Landing Page Styles */
+
+.reserve-page {
+  @apply max-w-none mx-auto bg-background;
+}
+
+/* Hero Section */
+.reserve-hero {
+  @apply bg-primary text-background py-16 md:py-24 text-center;
+}
+
+.reserve-hero .hero-content {
+  @apply container mx-auto px-4 max-w-4xl;
+}
+
+.reserve-hero .hero-eyebrow {
+  @apply text-sm uppercase tracking-wider mb-4 opacity-90;
+}
+
+.reserve-hero h1 {
+  @apply text-3xl md:text-5xl font-bold mb-6 text-background;
+}
+
+.reserve-hero .hero-subtitle {
+  @apply text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto;
+}
+
+.reserve-hero .hero-cta {
+  @apply flex flex-col sm:flex-row gap-4 justify-center;
+}
+
+.reserve-hero .btn {
+  @apply px-8 py-3 rounded-lg font-semibold transition-all duration-200;
+}
+
+.reserve-hero .btn-primary {
+  @apply bg-error text-background hover:bg-error/90 shadow-lg hover:shadow-xl;
+}
+
+.reserve-hero .btn-secondary {
+  @apply bg-transparent border-2 border-background text-background hover:bg-background hover:text-primary;
+}
+
+/* Section Base Styles */
+.reserve-page section {
+  @apply py-12 md:py-16;
+}
+
+.reserve-page .section-content {
+  @apply container mx-auto px-4 max-w-5xl;
+}
+
+.reserve-page .section-content h2 {
+  @apply text-2xl md:text-3xl font-bold text-primary mb-6 text-center;
+}
+
+.reserve-page .section-intro {
+  @apply text-lg text-center max-w-3xl mx-auto mb-10;
+}
+
+/* Problem Section */
+.problem-section {
+  @apply bg-gray-50;
+}
+
+.comparison-grid {
+  @apply grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8;
+}
+
+.comparison-card {
+  @apply bg-background rounded-xl p-6 shadow-lg;
+}
+
+.comparison-card h3 {
+  @apply text-xl font-bold mb-4 text-center;
+}
+
+.comparison-card .price {
+  @apply text-3xl font-bold text-center mb-6 text-primary;
+}
+
+.comparison-card .price.warning {
+  @apply text-error;
+}
+
+.comparison-card .price-note {
+  @apply text-sm text-center mb-4 -mt-4 text-gray-600;
+}
+
+.comparison-card .price-note.warning {
+  @apply text-error/80;
+}
+
+.comparison-card ul {
+  @apply space-y-3;
+}
+
+.comparison-card li {
+  @apply flex items-start gap-3;
+}
+
+.comparison-card .icon {
+  @apply w-5 h-5 flex-shrink-0 mt-0.5;
+}
+
+.comparison-card .icon.check {
+  @apply text-green-600;
+}
+
+.comparison-card .icon.warning {
+  @apply text-error;
+}
+
+.comparison-card.today {
+  @apply border-2 border-green-500;
+}
+
+.comparison-card.future {
+  @apply border-2 border-error;
+}
+
+.learn-more {
+  @apply text-center;
+}
+
+.learn-more a {
+  @apply text-primary font-semibold hover:text-secondary inline-flex items-center gap-2;
+}
+
+.inline-icon {
+  @apply w-4 h-4;
+}
+
+/* Solution / Benefits Section */
+.solution-section {
+  @apply bg-background;
+}
+
+.benefits-grid {
+  @apply grid md:grid-cols-2 gap-6;
+}
+
+.benefit-card {
+  @apply bg-gray-50 rounded-xl p-6 text-center;
+}
+
+.benefit-icon {
+  @apply w-12 h-12 mx-auto mb-4 text-primary;
+}
+
+.benefit-card h3 {
+  @apply text-lg font-bold mb-3 text-primary;
+}
+
+.benefit-card p {
+  @apply text-gray-700;
+}
+
+/* Process Section */
+.process-section {
+  @apply bg-primary text-background;
+}
+
+.process-section h2 {
+  @apply text-background;
+}
+
+.process-steps {
+  @apply max-w-3xl mx-auto space-y-6;
+}
+
+.process-step {
+  @apply flex gap-6 items-start;
+}
+
+.step-number {
+  @apply w-12 h-12 rounded-full bg-background text-primary font-bold text-xl 
+         flex items-center justify-center flex-shrink-0;
+}
+
+.step-content h3 {
+  @apply text-lg font-bold mb-2;
+}
+
+.step-content p {
+  @apply opacity-90;
+}
+
+/* Audience Section */
+.audience-section {
+  @apply bg-background;
+}
+
+.audience-list {
+  @apply max-w-2xl mx-auto space-y-4;
+}
+
+.audience-list li {
+  @apply flex items-start gap-4 bg-gray-50 p-4 rounded-lg;
+}
+
+.audience-list .icon {
+  @apply w-6 h-6 text-green-600 flex-shrink-0 mt-0.5;
+}
+
+/* FAQ Section */
+.faq-section {
+  @apply bg-gray-50;
+}
+
+.faq-grid {
+  @apply grid md:grid-cols-2 gap-6;
+}
+
+.faq-item {
+  @apply bg-background p-6 rounded-xl shadow;
+}
+
+.faq-item h3 {
+  @apply text-lg font-bold mb-3 text-primary;
+}
+
+.faq-item p {
+  @apply text-gray-700;
+}
+
+/* CTA / Form Section */
+.cta-section {
+  @apply bg-secondary text-background py-16;
+}
+
+.cta-section h2 {
+  @apply text-background text-left;
+}
+
+.cta-grid {
+  @apply grid lg:grid-cols-2 gap-12 items-start;
+}
+
+.cta-info p {
+  @apply text-lg mb-6 opacity-90;
+}
+
+.cta-benefits {
+  @apply space-y-3 mb-8;
+}
+
+.cta-benefit {
+  @apply flex items-center gap-3;
+}
+
+.cta-benefit .icon {
+  @apply w-5 h-5 text-green-400;
+}
+
+.cta-phone {
+  @apply mt-8;
+}
+
+.cta-phone p {
+  @apply text-sm opacity-80 mb-2;
+}
+
+.phone-number {
+  @apply text-2xl font-bold text-background hover:text-background/80;
+}
+
+/* Form Styles */
+.cta-form-container {
+  @apply bg-background text-text rounded-xl p-6 md:p-8 shadow-xl;
+}
+
+.cta-form-container h3 {
+  @apply text-xl font-bold mb-6 text-primary text-center;
+}
+
+.reserve-form .form-group {
+  @apply mb-4;
+}
+
+.reserve-form label {
+  @apply block text-sm font-medium mb-1 text-gray-700;
+}
+
+.reserve-form input,
+.reserve-form select,
+.reserve-form textarea {
+  @apply w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary;
+}
+
+.reserve-form .submit-btn {
+  @apply w-full bg-error text-background py-4 px-6 rounded-lg font-bold text-lg
+         hover:bg-error/90 transition-colors duration-200 shadow-lg hover:shadow-xl mt-4;
+}
+
+/* Trust Section */
+.trust-section {
+  @apply bg-background;
+}
+
+.trust-grid {
+  @apply grid md:grid-cols-3 gap-6 mb-8;
+}
+
+.trust-item {
+  @apply text-center p-6;
+}
+
+.trust-item h3 {
+  @apply text-lg font-bold mb-2 text-primary;
+}
+
+.trust-item p {
+  @apply text-gray-700;
+}
+
+.service-areas {
+  @apply text-center text-gray-600 text-sm max-w-2xl mx-auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .reserve-hero h1 {
+    @apply text-2xl;
+  }
+  
+  .process-step {
+    @apply flex-col text-center;
+  }
+  
+  .step-number {
+    @apply mx-auto;
+  }
+  
+  .cta-section h2 {
+    @apply text-center;
+  }
+  
+  .cta-info {
+    @apply text-center;
+  }
+  
+  .cta-benefits {
+    @apply flex flex-col items-center;
+  }
+}
