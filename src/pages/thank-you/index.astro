@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { CheckCircle, Phone, ArrowLeft } from '@lucide/astro';
+import '../../styles/pages/reserve.css';
+---
+
+<BaseLayout
+  title="Thank You | GoFlow Plumbing"
+  description="Thank you for contacting GoFlow Plumbing. We'll be in touch shortly."
+>
+  <article class="thank-you-page">
+    <section class="thank-you-hero">
+      <div class="hero-content">
+        <CheckCircle class="success-icon" />
+        <h1>Thank You!</h1>
+        <p class="hero-subtitle">
+          Your request has been received. We'll be getting right back to you.
+        </p>
+      </div>
+    </section>
+
+    <section class="thank-you-content">
+      <div class="section-content">
+        <div class="info-card">
+          <h2>What Happens Next?</h2>
+          <p>
+            One of our team members will review your request and reach out to you shortly 
+            to schedule your free assessment or answer any questions you may have.
+          </p>
+          
+          <div class="call-option">
+            <h3>Want to Talk Now?</h3>
+            <p>
+              If you'd like more information before we get back to you, feel free to give us a call. 
+              We're happy to answer any questions.
+            </p>
+            <a href="tel:707-200-8350" class="phone-link">
+              <Phone class="icon" />
+              <span>(707) 200-8350</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="back-link">
+          <a href="/">
+            <ArrowLeft class="icon" />
+            <span>Return to Homepage</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .thank-you-page {
+    @apply max-w-none mx-auto bg-background;
+  }
+
+  .thank-you-hero {
+    @apply bg-primary text-background py-16 md:py-24 text-center;
+  }
+
+  .thank-you-hero .hero-content {
+    @apply container mx-auto px-4 max-w-2xl;
+  }
+
+  .success-icon {
+    @apply w-16 h-16 mx-auto mb-6 text-accent;
+  }
+
+  .thank-you-hero h1 {
+    @apply text-3xl md:text-5xl font-bold mb-4;
+    color: var(--color-background);
+  }
+
+  .thank-you-hero .hero-subtitle {
+    @apply text-lg md:text-xl opacity-90;
+  }
+
+  .thank-you-content {
+    @apply py-12 md:py-16;
+  }
+
+  .thank-you-content .section-content {
+    @apply container mx-auto px-4 max-w-2xl;
+  }
+
+  .info-card {
+    @apply bg-white rounded-xl shadow-lg p-8 md:p-10;
+  }
+
+  .info-card h2 {
+    @apply text-2xl font-bold text-primary mb-4;
+  }
+
+  .info-card > p {
+    @apply text-gray-700 text-lg mb-8;
+  }
+
+  .call-option {
+    @apply bg-primary/5 rounded-lg p-6 border-l-4 border-primary;
+  }
+
+  .call-option h3 {
+    @apply text-xl font-bold text-primary mb-2;
+  }
+
+  .call-option p {
+    @apply text-gray-700 mb-4;
+  }
+
+  .phone-link {
+    @apply inline-flex items-center gap-2 bg-primary text-background px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity;
+  }
+
+  .phone-link .icon {
+    @apply w-5 h-5;
+  }
+
+  .back-link {
+    @apply mt-8 text-center;
+  }
+
+  .back-link a {
+    @apply inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors;
+  }
+
+  .back-link .icon {
+    @apply w-4 h-4;
+  }
+</style>

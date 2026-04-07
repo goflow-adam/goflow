@@ -31,19 +31,33 @@ Final equipment selection is subject to:
 5. Installation Terms
 5.1 Standard Installation Price
 Customer is entitled to a base installation price of $3,999, subject to the conditions below.
-5.2 Pre-Installation Inspection
+5.2 Price Adjustment for Inflation
+
+The base installation price of $3,999 is established as of [AGREEMENT DATE] (“Base Date”). If installation occurs at a later date, the base price shall be adjusted for inflation.
+
+The adjustment shall be calculated using the Consumer Price Index for All Urban Consumers (CPI-U), U.S. City Average, All Items (1982–84 = 100), as published by the U.S. Bureau of Labor Statistics.
+
+The adjusted price shall be determined as follows:
+
+Adjusted Price = $3,999 × (CPI at Time of Installation ÷ CPI at Base Date)
+
+“CPI at Base Date” means the most recently published CPI-U index as of the Agreement Date
+“CPI at Time of Installation” means the most recently published CPI-U index prior to the installation date
+
+In no event shall the adjusted price be less than the base price of $3,999.
+5.3 Pre-Installation Inspection
 Prior to installation, Contractor will perform a site inspection.
 If Contractor determines that conditions deviate from a standard replacement, Contractor may:
 	•	Provide a revised estimate based on site-specific conditions
 	•	Require Customer approval before proceeding
-5.3 Standard Installation Assumptions
+5.4 Standard Installation Assumptions
 The base installation price assumes:
 	•	Same installation location
 	•	Adequate access
 	•	Existing code compliance
 	•	No required venting modifications
 	•	No structural or repair work
-5.4 Additional Costs
+5.5 Additional Costs
 Customer is responsible for additional costs arising from:
 	•	Code upgrades
 	•	Access limitations or changes (minimum $200 access fee may apply)

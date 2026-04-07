@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: 'What brands of water heaters do you offer?',
-    answer: 'We work with trusted manufacturers including Bradford White and Rheem. During your assessment, we\'ll recommend the best fit for your home.'
+    answer: 'We work with trusted manufacturers including Bradford White and Rheem, but for this program we will be offering American Standard due to certain qualities.'
   },
   {
     question: 'Can I cancel my water heater reservation?',
@@ -32,11 +32,11 @@ const faqs = [
   {
     question: 'What if regulations change and gas water heaters become illegal to install?',
     answer: 'If installation becomes infeasible due to regulatory changes, your $999 program fee converts to a credit toward a code-compliant installation.'
-  },
+  }/*,
   {
     question: "What if GoFlow can't procure a water heater for me?",
     answer: 'If we\'re unable to procure a compliant unit despite reasonable efforts, you receive a full refund of your $999 program fee.'
-  }
+  }*/
 ];
 
 const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/');
@@ -44,21 +44,21 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
 
 <BaseLayout
   title="Reserve Your Gas Water Heater Before the 2027 Ban | GoFlow Plumbing"
-  description="Lock in today's prices and secure a compliant gas water heater before the Bay Area ban takes effect. GoFlow's Replacement Reservation Plan helps you avoid $5,000-$10,000+ in future costs."
+  description="Lock in today's prices and secure a compliant gas water heater before the Bay Area ban takes effect. GOFLOW RESERVE helps you avoid $5,000-$10,000+ in future costs."
   schema={faqSchema}
 >
   <article class="reserve-page">
     <!-- Hero Section -->
     <section class="reserve-hero">
       <div class="hero-content">
-        <p class="hero-eyebrow">GoFlow Replacement Reservation Plan</p>
+        <p class="hero-eyebrow"><span class="brand-name glow">GOFLOW RESERVE</span></p>
         <h1>Secure Your Gas Water Heater<br />Before the 2027 Ban</h1>
         <p class="hero-subtitle">
           Starting January 1, 2027, new gas water heaters will be banned in the Bay Area. 
           Reserve yours now for <strong>$999</strong>—install it when you need it.
         </p>
         <div class="hero-cta">
-          <a href="#reserve-form" class="btn btn-primary">Reserve Now</a>
+          <a href="#reserve-form" class="btn btn-primary">Reserve My Water Heater Now</a>
           <a href="#how-it-works" class="btn btn-secondary">Learn How It Works</a>
         </div>
       </div>
@@ -76,8 +76,8 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
         
         <div class="comparison-grid">
           <div class="comparison-card today">
-            <h3>With Reservation Plan</h3>
-            <div class="price">$999 + $3,999</div>
+            <h3>With <span class="brand-name dark-glow">GOFLOW RESERVE</span></h3>
+            <div class="price">$999 + $3,999<a href="#price-note" class="price-asterisk">*</a></div>
             <div class="price-note">reservation + installation</div>
             <ul>
               <li><CheckCircle class="icon check" /> Simple gas-to-gas swap</li>
@@ -87,7 +87,7 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
             </ul>
           </div>
           <div class="comparison-card future">
-            <h3>Without Reservation (After 2027)</h3>
+            <h3>Without <span class="brand-name dark-glow">GOFLOW RESERVE</span> (After 2027)</h3>
             <div class="price warning">$8,000–$15,000+</div>
             <div class="price-note warning">heat pump conversion required</div>
             <ul>
@@ -104,6 +104,9 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
             Read our complete guide to the Bay Area Gas Water Heater Ban <ArrowRight class="inline-icon" />
           </a>
         </p>
+        <div class="section-cta">
+          <a href="#reserve-form" class="btn btn-cta">Reserve My Water Heater Now</a>
+        </div>
       </div>
     </section>
 
@@ -112,8 +115,8 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
       <div class="section-content">
         <h2>The Solution: Reserve Now, Install Later</h2>
         <p class="section-intro">
-          For a <strong>$999 program fee</strong>, the GoFlow Replacement Reservation Plan secures a compliant, 
-          pre-2027 gas water heater in your name—with a guaranteed <strong>$3,999 base installation price</strong> 
+          For a <strong>$999 program fee</strong>, <span class="brand-name dark-glow">GOFLOW RESERVE</span> secures a compliant, 
+          pre-2027 gas water heater in your name—with a guaranteed <strong>$3,999 base installation price</strong><a href="#price-note" class="price-asterisk">*</a> 
           when you're ready.
         </p>
 
@@ -122,7 +125,7 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
             <DollarSign class="benefit-icon" />
             <h3>Lock In Today's Prices</h3>
             <p>
-              Your $999 reservation secures a $3,999 base installation price—a total under $5,000 
+              Your $999 reservation secures a $3,999<a href="#price-note" class="price-asterisk">*</a> base installation price—a total under $5,000 
               compared to $8,000–$15,000+ for a post-2027 heat pump conversion.
             </p>
           </div>
@@ -151,13 +154,16 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
             </p>
           </div>
         </div>
+        <div class="section-cta">
+          <a href="#reserve-form" class="btn btn-cta">Reserve My Water Heater Now</a>
+        </div>
       </div>
     </section>
 
     <!-- How It Works Section -->
     <section class="process-section">
       <div class="section-content">
-        <h2>How the Reservation Plan Works</h2>
+        <h2>How <span class="brand-name glow">GOFLOW RESERVE</span> Works</h2>
         
         <div class="process-steps">
           <div class="process-step">
@@ -166,7 +172,7 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
               <h3>Schedule Your Assessment</h3>
               <p>
                 We visit your home to evaluate your current water heater setup, verify installation 
-                requirements, and confirm program eligibility.
+                requirements, and confirm program eligibility. <a href="#reserve-form">Click here to schedule.</a>
               </p>
             </div>
           </div>
@@ -193,13 +199,16 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
           <div class="process-step">
             <div class="step-number">4</div>
             <div class="step-content">
-              <h3>Install at $3,999 When Ready</h3>
+              <h3>Install at $3,999<a href="#price-note" class="price-asterisk">*</a> When Ready</h3>
               <p>
                 When your current water heater fails—or whenever you're ready—we install your 
-                reserved unit at the guaranteed base price of $3,999.
+                reserved unit at the guaranteed base price of $3,999.<a href="#price-note" class="price-asterisk">*</a>
               </p>
             </div>
           </div>
+        </div>
+        <div class="section-cta">
+          <a href="#reserve-form" class="btn btn-cta">Reserve My Water Heater Now</a>
         </div>
       </div>
     </section>
@@ -209,13 +218,13 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
       <div class="section-content">
         <h2>Is This Right for You?</h2>
         <p class="section-intro">
-          The Replacement Reservation Plan is ideal for homeowners who:
+          <span class="brand-name dark-glow">GOFLOW RESERVE</span> is ideal for homeowners who:
         </p>
         
         <ul class="audience-list">
           <li>
             <CheckCircle class="icon" />
-            <span>Have a water heater that's <strong>5+ years old</strong> and may need replacement in the next decade</span>
+            <span>Have a water heater that may need replacement in the next decade</span>
           </li>
           <li>
             <CheckCircle class="icon" />
@@ -234,6 +243,9 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
             <span>Want <strong>predictable costs</strong> and a clear plan for the future</span>
           </li>
         </ul>
+        <div class="section-cta">
+          <a href="#reserve-form" class="btn btn-cta">Reserve My Water Heater Now</a>
+        </div>
       </div>
     </section>
 
@@ -261,7 +273,7 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
             <h3>What's included in the $999 reservation?</h3>
             <p>
               Your $999 covers the water heater unit, storage at our facility, and a guaranteed 
-              $3,999 base installation price. The initial assessment identifies if any additional 
+              $3,999<a href="#price-note" class="price-asterisk">*</a> base installation price. The initial assessment identifies if any additional 
               work (code upgrades, venting, etc.) would be needed.
             </p>
           </div>
@@ -275,8 +287,8 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
           <div class="faq-item">
             <h3>What brands do you offer?</h3>
             <p>
-              We work with trusted manufacturers including Bradford White and Rheem. During your 
-              assessment, we'll recommend the best fit for your home.
+              We work with trusted manufacturers including Bradford White and Rheem,
+              but for this program we will be offering American Standard due to certain qualities.
             </p>
           </div>
           <div class="faq-item">
@@ -293,13 +305,16 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
               converts to a credit toward a code-compliant installation.
             </p>
           </div>
-          <div class="faq-item">
+          <!-- <div class="faq-item">
             <h3>What if you can't get me a water heater?</h3>
             <p>
               If we're unable to procure a compliant unit despite reasonable efforts, you receive 
               a full refund of your $999 program fee.
             </p>
-          </div>
+          </div> -->
+        </div>
+        <div class="section-cta">
+          <a href="#reserve-form" class="btn btn-cta">Reserve My Water Heater Now</a>
         </div>
       </div>
     </section>
@@ -335,7 +350,18 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
           </div>
           
           <div class="cta-form-container">
-            <h3>Schedule Your Free Assessment</h3>
+            <h3>Get Your Free Assessment</h3>
+            <!-- Workiz Embedded Form -->
+            <iframe
+              src="https://st.sendajob.com/MY/servicerequest/0cac9e4a842e7676c13435938613c7a33be44d43_f.html"
+              width="100%"
+              height="407"
+              scrolling="no"
+              style="border:none;"
+              title="Schedule Assessment Form"
+            ></iframe>
+            
+            <!-- Custom form (commented out - kept for reference)
             <form class="reserve-form" id="reserve-form">
               <div class="form-group">
                 <label for="name">Name</label>
@@ -373,6 +399,7 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
                 Schedule My Free Assessment
               </button>
             </form>
+            -->
           </div>
         </div>
       </div>
@@ -402,5 +429,10 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
         </p>
       </div>
     </section>
+
+    <!-- Price Note -->
+    <p class="price-note-footnote" id="price-note">
+      *Base installation price subject to adjustment for inflation using the Consumer Price Index (CPI-U).
+    </p>
   </article>
 </BaseLayout>

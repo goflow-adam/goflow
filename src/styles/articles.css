@@ -111,3 +111,32 @@
     font-size: 0.9rem;
   }
 }
+
+/* GOFLOW RESERVE Brand Name Styling */
+.brand-name {
+  @apply text-accent;
+  font-weight: normal !important;
+}
+
+/* Black glow/shadow for light backgrounds */
+.brand-name.dark-glow {
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* CTA Callout Box */
+.cta-callout .cta-box {
+  @apply bg-primary/10 border-2 border-primary rounded-xl p-6 md:p-8 my-8;
+}
+
+.cta-callout .cta-box h3 {
+  @apply text-xl md:text-2xl font-bold text-primary mb-4;
+}
+
+.cta-callout .cta-box p {
+  @apply text-gray-700 mb-6 text-base md:text-lg;
+}
+
+.cta-callout .cta-button {
+  @apply inline-block bg-primary text-background px-6 py-3 rounded-lg font-semibold 
+         hover:bg-secondary transition-colors duration-200;
+}

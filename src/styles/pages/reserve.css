@@ -4,6 +4,22 @@
   @apply max-w-none mx-auto bg-background;
 }
 
+/* GOFLOW RESERVE Brand Name Styling */
+.brand-name {
+  @apply text-accent;
+  font-weight: normal !important;
+}
+
+/* White glow for dark backgrounds */
+.brand-name.glow {
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+/* Black glow/shadow for light backgrounds */
+.brand-name.dark-glow {
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
 /* Hero Section */
 .reserve-hero {
   @apply bg-primary text-background py-16 md:py-24 text-center;
@@ -57,6 +73,25 @@
 
 .reserve-page .section-intro {
   @apply text-lg text-center max-w-3xl mx-auto mb-10;
+}
+
+/* Section CTA Button */
+.section-cta {
+  @apply text-center mt-10;
+}
+
+.btn-cta {
+  @apply inline-block bg-error text-background px-8 py-3 rounded-lg font-semibold 
+         hover:brightness-110 transition-all shadow-md hover:shadow-lg;
+}
+
+/* Price asterisk and footnote */
+.price-asterisk {
+  @apply text-xs align-super no-underline text-inherit;
+}
+
+.price-note-footnote {
+  @apply text-center text-sm text-gray-500 py-4 px-4;
 }
 
 /* Problem Section */
@@ -166,7 +201,7 @@
   @apply bg-primary text-background;
 }
 
-.process-section h2 {
+.reserve-page .process-section h2 {
   @apply text-background;
 }
 
@@ -189,6 +224,10 @@
 
 .step-content p {
   @apply opacity-90;
+}
+
+.step-content a {
+  @apply underline text-accent hover:text-background active:text-background/80 transition-colors;
 }
 
 /* Audience Section */
