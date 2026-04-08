@@ -219,6 +219,10 @@
   @apply text-gray-700 leading-relaxed;
 }
 
+.review-source {
+  @apply inline-block mt-3 text-sm text-primary hover:text-secondary transition-colors;
+}
+
 /* GOFLOW RESERVE Promo Section */
 .reserve-promo {
   @apply bg-primary py-12 md:py-16 text-background;
