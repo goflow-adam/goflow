@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Star, ExternalLink } from '@lucide/astro';
+import '../../styles/pages/review.css';
+---
+
+<BaseLayout
+  title="Leave Us a Review | GoFlow Plumbing"
+  description="Share your experience with GoFlow Plumbing. Leave a review on Google, Yelp, Facebook, or other platforms."
+>
+  <div class="article review-page">
+    <h1>Please, Share Your Experience and help our burgeoning endeavor</h1>
+
+    <section class="review-guidelines">
+      <div class="review-container">
+        <h2>And, Give Your Review More Power with These Tips</h2>
+        <div class="guidelines-list">
+          <p><strong>3 sentences</strong> — adds weight and detail</p>
+          <p><strong>Name the service</strong> — what problem did we solve?</p>
+          <p><strong>Add photos</strong> — pictures of our work help others</p>
+          <p><strong>Include your city</strong> — so readers know we work there</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="review-platforms">
+      <div class="review-container">
+        <h2>Choose a Platform</h2>
+        <div class="platforms-grid">
+          <a href="https://g.page/r/CUDozDQ8W2S8EBM/review" target="_blank" rel="noopener noreferrer" class="platform-card">
+            <img src="/images/platform-logos/google.webp=n-w200-h64-fcrop64=1,00000000ffffffff-rw" alt="Google" class="platform-logo" />
+            <ExternalLink class="external-icon" />
+          </a>
+          <a href="https://www.yelp.com/biz/goflow-plumbing-sonoma" target="_blank" rel="noopener noreferrer" class="platform-card">
+            <img src="/images/platform-logos/yelp.svg" alt="Yelp" class="platform-logo" />
+            <ExternalLink class="external-icon" />
+          </a>
+          <a href="https://www.trustpilot.com/evaluate/goflow.plumbing" target="_blank" rel="noopener noreferrer" class="platform-card">
+            <img src="/images/platform-logos/trust-pilot.svg" alt="Trustpilot" class="platform-logo" />
+            <ExternalLink class="external-icon" />
+          </a>
+          <a href="https://www.facebook.com/goflow.plumbing.usa/reviews" target="_blank" rel="noopener noreferrer" class="platform-card">
+            <img src="/images/platform-logos/facebook.png" alt="Facebook" class="platform-logo" />
+            <ExternalLink class="external-icon" />
+          </a>
+          <a href="https://www.buildzoom.com/contractor/goflow-plumbing-inc" target="_blank" rel="noopener noreferrer" class="platform-card">
+            <img src="/images/platform-logos/build-zoom-logo.png" alt="BuildZoom" class="platform-logo" />
+            <ExternalLink class="external-icon" />
+          </a>
+          <a href="https://www.bbb.org/us/ca/sonoma/profile/plumber/goflow-plumbing-1116-972687/customer-reviews" target="_blank" rel="noopener noreferrer" class="platform-card">
+            <img src="/images/platform-logos/Better-Business-Bureau-Logo.png" alt="Better Business Bureau" class="platform-logo" />
+            <ExternalLink class="external-icon" />
+          </a>
+          <a href="https://patch.com/california/sonomavalley/business/listing/569808/goflow-plumbing" target="_blank" rel="noopener noreferrer" class="platform-card">
+            <img src="/images/platform-logos/patch.png" alt="Patch" class="platform-logo" />
+            <ExternalLink class="external-icon" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="review-thanks">
+      <div class="review-container">
+        <p>Thank you for taking the time. We are grateful.</p>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

@@ -66,7 +66,7 @@ Customer is responsible for additional costs arising from:
 	•	Any non-standard conditions identified during inspection
 6. Installation Trigger & Timing
 6.1 Installation may be requested by Customer at any time while:
-	•	The existing water heater remains in service, and
+	•	The original water heater in service at the time of agreement remains installed, and
 	•	This Agreement has not expired
 6.2 Customer must notify Contractor when replacement is desired.
 6.3 Contractor will schedule installation based on availability and urgency.
@@ -102,11 +102,11 @@ Upon exercising this option:
 11.2 If installation of the reserved unit becomes illegal or infeasible due to regulatory changes:
 	•	The Program Fee will convert to a $999 credit toward a code-compliant installation
 12. Inventory Availability
-If Contractor is unable to procure a compliant “like-for-like” unit despite reasonable efforts:
+If Contractor is unable to procure a compliant “like-for-like” unit after contacting three suppliers:
 	•	This Agreement will be canceled
 	•	Customer will receive a full refund
 13. Warranty
-13.1 Contractor will provide a workmanship and material warranty equivalent to the manufacturer’s standard warranty, beginning at time of installation.
+13.1 Contractor will provide a workmanship and material warranty equivalent to the terms of the manufacturer’s original standard warranty, beginning at time of installation.
 13.2 Contractor’s total liability under this warranty is limited to:
 	•	The cost of replacement equipment and
 	•	Standard installation labor

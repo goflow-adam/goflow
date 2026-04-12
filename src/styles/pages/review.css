@@ -1,0 +1,95 @@
+.review-page {
+  @apply relative overflow-hidden;
+  background-image: url('/images/star.svg');
+  background-repeat: no-repeat;
+  /* sm (default) */
+  background-position-x: 160%;
+  background-size: 200px 200px;
+  background-position-y: 0px;
+}
+
+/* md */
+@media (min-width: 768px) {
+  .review-page {
+    background-position-x: 130%;
+    background-size: 300px 300px;
+    background-position-y: 30px;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .review-page {
+    background-position-x: 128%;
+    background-size: 350px 350px;
+    background-position-y: 75px;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  .review-page {
+    background-position-x: 137%;
+    background-size: 400px 400px;
+    background-position-y: 50px;
+  }
+}
+
+.review-container {
+  @apply max-w-4xl;
+}
+
+/* Platforms Section */
+.review-platforms {
+  @apply py-4;
+}
+
+.review-platforms h2 {
+  @apply text-2xl font-bold text-center;
+}
+
+.platforms-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.platform-card {
+  @apply flex items-center gap-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100;
+}
+
+.platform-logo {
+  @apply h-12 object-contain flex-shrink-0;
+}
+
+.platform-name {
+  @apply font-medium text-primary flex-grow;
+}
+
+.external-icon {
+  @apply w-4 h-4 text-gray-400;
+}
+
+/* Guidelines Section */
+.review-guidelines {
+  
+}
+
+.review-guidelines h2 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.guidelines-intro {
+  @apply text-gray-600 mb-2;
+}
+
+.guidelines-list {
+  @apply space-y-3 max-w-md;
+}
+
+/* Thanks Section */
+.review-thanks {
+  @apply py-12 text-center;
+}
+
+.review-thanks p {
+  @apply text-lg text-gray-600;
+}

@@ -126,8 +126,8 @@
       "permanent": true
     },
     {
-      "source": "/review/",
-      "destination": "https://g.page/r/CUDozDQ8W2S8EBM/review",
+      "source": "/review",
+      "destination": "/review/",
       "permanent": true
     }
   ]
