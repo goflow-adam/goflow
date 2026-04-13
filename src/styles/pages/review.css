@@ -5,7 +5,7 @@
   /* sm (default) */
   background-position-x: 160%;
   background-size: 200px 200px;
-  background-position-y: 0px;
+  background-position-y: 50px;
 }
 
 /* md */
@@ -41,12 +41,12 @@
 
 /* Platforms Section */
 .review-platforms {
-  @apply py-4;
+  @apply py-4 mt-6;
 }
 
-.review-platforms h2 {
+/* .review-platforms h2 {
   @apply text-2xl font-bold text-center;
-}
+} */
 
 .platforms-grid {
   @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
@@ -73,9 +73,9 @@
   
 }
 
-.review-guidelines h2 {
+/* .review-guidelines h2 {
   @apply text-2xl font-bold mb-4;
-}
+} */
 
 .guidelines-intro {
   @apply text-gray-600 mb-2;
