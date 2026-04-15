@@ -1,0 +1,284 @@
+/* Farmers Insurance Agent Landing Page Styles */
+
+/* Hero Section */
+.farmers-hero {
+  @apply text-center mb-8;
+}
+
+.farmers-hero .hero-eyebrow {
+  @apply text-sm uppercase tracking-wider mb-4 text-accent;
+}
+
+.farmers-hero h1 {
+  @apply text-3xl md:text-4xl font-bold mb-6 text-primary;
+}
+
+.farmers-hero .hero-subtitle {
+  @apply text-lg mb-8 text-gray-700;
+}
+
+.farmers-hero .hero-cta {
+  @apply flex flex-col sm:flex-row gap-4 justify-center;
+}
+
+.farmers-hero .btn {
+  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+}
+
+.farmers-hero .btn-primary {
+  @apply bg-error text-background hover:bg-error/90 shadow-lg hover:shadow-xl;
+}
+
+.farmers-hero .btn-secondary {
+  @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-background;
+}
+
+/* Section Base Styles */
+.farmers-page section {
+  @apply py-8 md:py-12;
+}
+
+.farmers-page h2 {
+  @apply text-2xl font-bold text-primary mb-6;
+}
+
+.farmers-page .section-intro {
+  @apply text-lg text-center mb-8;
+}
+
+/* Problem Section */
+.problem-section {
+  @apply bg-gray-50 rounded-lg p-6 md:p-8;
+}
+
+.comparison-grid {
+  @apply grid md:grid-cols-2 gap-4;
+}
+
+.comparison-card {
+  @apply bg-white rounded-lg p-4 md:p-5 shadow-sm;
+}
+
+.comparison-card h3 {
+  @apply text-lg font-bold mb-3 text-center;
+}
+
+.comparison-card .price {
+  @apply text-2xl font-bold text-center mb-1;
+}
+
+.comparison-card .price.warning {
+  @apply text-error;
+}
+
+.comparison-card .price-note {
+  @apply text-sm text-center text-gray-600 mb-4;
+}
+
+.comparison-card .price-note.warning {
+  @apply text-error/80;
+}
+
+.comparison-card ul {
+  @apply space-y-3;
+}
+
+.comparison-card li {
+  @apply flex items-start gap-3;
+}
+
+.comparison-card .icon {
+  @apply w-5 h-5 flex-shrink-0 mt-0.5;
+}
+
+.comparison-card .icon.check {
+  @apply text-accent;
+}
+
+.comparison-card .icon.warning {
+  @apply text-error;
+}
+
+.comparison-card.problem {
+  @apply border-2 border-error/20;
+}
+
+.comparison-card.solution {
+  @apply border-2 border-accent/30 bg-accent/5;
+}
+
+/* Benefits Section */
+.benefits-section {
+  @apply py-8;
+}
+
+.benefits-grid {
+  @apply grid md:grid-cols-2 gap-4;
+}
+
+.benefit-card {
+  @apply bg-gray-50 rounded-lg p-4 md:p-5;
+}
+
+.benefit-card .benefit-icon {
+  @apply w-8 h-8 text-accent mb-3;
+}
+
+.benefit-card h3 {
+  @apply text-base font-bold text-primary mb-2;
+}
+
+.benefit-card p {
+  @apply text-gray-700;
+}
+
+/* Process Section */
+.process-section {
+  @apply bg-gray-50 rounded-lg p-6 md:p-8;
+}
+
+.process-steps {
+  @apply space-y-4;
+}
+
+.process-step {
+  @apply flex gap-3 items-start;
+}
+
+.step-number {
+  @apply w-8 h-8 rounded-full bg-accent text-background font-bold 
+         flex items-center justify-center flex-shrink-0 text-sm;
+}
+
+.step-content h3 {
+  @apply text-base font-bold text-primary mb-1;
+}
+
+.step-content p {
+  @apply text-gray-700;
+}
+
+/* Promise Section */
+.promise-section {
+  @apply py-8;
+}
+
+.promise-grid {
+  @apply grid sm:grid-cols-2 gap-3;
+}
+
+.promise-item {
+  @apply flex items-start gap-2 bg-gray-50 rounded-lg p-3;
+}
+
+.promise-icon {
+  @apply w-5 h-5 text-accent flex-shrink-0 mt-0.5;
+}
+
+.promise-item p {
+  @apply text-gray-700;
+}
+
+/* Contact Section */
+.contact-section {
+  @apply bg-primary text-background rounded-lg p-6 md:p-8;
+}
+
+.contact-grid {
+  @apply grid lg:grid-cols-2 gap-6 items-start;
+}
+
+.contact-info h2 {
+  @apply text-xl md:text-2xl font-bold mb-3 text-left;
+  color: var(--color-background) !important;
+}
+
+.contact-info > p {
+  @apply text-base opacity-90 mb-6;
+}
+
+.contact-methods {
+  @apply space-y-3 mb-6;
+}
+
+.contact-method {
+  @apply flex items-center gap-3 text-background hover:opacity-80 transition-opacity;
+}
+
+.contact-icon {
+  @apply w-6 h-6;
+}
+
+.contact-method span {
+  @apply text-lg font-medium;
+}
+
+.contact-note {
+  @apply bg-background/10 rounded-lg p-4;
+}
+
+.contact-note p {
+  @apply text-sm opacity-90;
+}
+
+/* Contact Form */
+.contact-form-container {
+  @apply bg-background rounded-lg p-4 md:p-6;
+}
+
+.contact-form-container h3 {
+  @apply text-lg font-bold text-primary mb-4;
+}
+
+.contact-form .form-group {
+  @apply mb-3;
+}
+
+.contact-form label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+.contact-form input,
+.contact-form textarea {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-lg 
+         focus:ring-2 focus:ring-accent focus:border-accent transition-colors;
+}
+
+.contact-form textarea {
+  @apply resize-none;
+}
+
+.submit-btn {
+  @apply w-full bg-error text-background px-6 py-3 rounded-lg font-semibold 
+         hover:brightness-110 transition-all shadow-md hover:shadow-lg
+         flex items-center justify-center gap-2;
+}
+
+.submit-btn .btn-icon {
+  @apply w-5 h-5;
+}
+
+/* Trust Section */
+.trust-section {
+  @apply bg-gray-50 rounded-lg p-6 md:p-8;
+}
+
+.trust-grid {
+  @apply grid md:grid-cols-3 gap-4 mb-6;
+}
+
+.trust-item {
+  @apply text-center;
+}
+
+.trust-item h3 {
+  @apply text-lg font-bold text-primary mb-2;
+}
+
+.trust-item p {
+  @apply text-gray-700;
+}
+
+.service-areas {
+  @apply text-center text-sm text-gray-600;
+}

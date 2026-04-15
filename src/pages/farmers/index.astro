@@ -1,0 +1,262 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/pages/farmers.css';
+import { CheckCircle, AlertTriangle, Phone, Mail, Shield, Clock, Users, FileCheck, ArrowRight } from '@lucide/astro';
+---
+
+<BaseLayout
+  title="Moen Flo Installs for Farmers Agents | GoFlow Plumbing"
+  description="We make Moen Flo installs predictable for Farmers Insurance agents and their clients. Upfront pricing, no surprises, done right the first time."
+>
+  <article class="article farmers-page">
+    <!-- Hero Section -->
+    <section class="farmers-hero">
+      <p class="hero-eyebrow">For Farmers Insurance Agents</p>
+      <h1>We Make Flo Installs Predictable—For You and Your Clients</h1>
+      <p class="hero-subtitle">
+        Clear pricing. No surprises. Done right the first time.
+        Your clients get a smooth experience. You stay out of the middle.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact-form" class="btn btn-primary">Partner With Us</a>
+        <a href="#the-problem" class="btn btn-secondary">See the Difference</a>
+      </div>
+    </section>
+
+    <!-- The Problem Section -->
+    <section class="problem-section" id="the-problem">
+      <h2>You've Probably Seen This Happen</h2>
+      <p class="section-intro">
+          A lot of Moen Flo installs aren't as straightforward as they're initially presented. 
+          On most homes, adjustments are needed—and when that isn't clear upfront, homeowners 
+          feel caught off guard by the final cost.
+        </p>
+        
+        <div class="comparison-grid">
+          <div class="comparison-card problem">
+            <h3>The Typical Experience</h3>
+            <div class="price warning">$745 "starting at"</div>
+            <div class="price-note warning">...that rarely stays $745</div>
+            <ul>
+              <li><AlertTriangle class="icon warning" /> Base price assumes ideal conditions</li>
+              <li><AlertTriangle class="icon warning" /> Add-ons for PRV repositioning</li>
+              <li><AlertTriangle class="icon warning" /> Extra charges for loops and fittings</li>
+              <li><AlertTriangle class="icon warning" /> Homeowner feels blindsided</li>
+              <li><AlertTriangle class="icon warning" /> You get pulled into the frustration</li>
+            </ul>
+          </div>
+          <div class="comparison-card solution">
+            <h3>The GoFlow Experience</h3>
+            <div class="price">$1,499 Flat Rate</div>
+            <div class="price-note">All-in pricing, no surprises</div>
+            <ul>
+              <li><CheckCircle class="icon check" /> Real-world scoping before we quote</li>
+              <li><CheckCircle class="icon check" /> No surprise change orders</li>
+              <li><CheckCircle class="icon check" /> Homeowner knows the real cost upfront</li>
+              <li><CheckCircle class="icon check" /> Done correctly the first time</li>
+              <li><CheckCircle class="icon check" /> You never manage complaints</li>
+            </ul>
+          </div>
+      </div>
+    </section>
+
+    <!-- What Agents Care About Section -->
+    <section class="benefits-section">
+      <h2>We Understand What's at Stake</h2>
+        <p class="section-intro">
+          When you refer a client to us, your reputation is on the line. 
+          We treat that responsibility seriously.
+        </p>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <Shield class="benefit-icon" />
+            <h3>Protect Your Reputation</h3>
+            <p>
+              We treat your clients like they're our only customer—and your reputation like it's ours. 
+              A smooth install reflects well on your judgment.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <Clock class="benefit-icon" />
+            <h3>Zero Headaches for You</h3>
+            <p>
+              We contact the homeowner directly, handle scheduling, perform the install, 
+              and provide education. You don't get pulled into the process.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <Users class="benefit-icon" />
+            <h3>Help Retain Clients</h3>
+            <p>
+              Fast-track installs for at-risk policies. We help your clients stay insured 
+              and avoid non-renewals—making you look proactive.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <FileCheck class="benefit-icon" />
+            <h3>Close the Loop</h3>
+            <p>
+              After every job, you get confirmation: install complete, photos if appropriate, 
+              any issues discovered. No anxiety, no follow-up needed.
+            </p>
+          </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="process-section">
+      <h2>How It Works</h2>
+        
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>You Send Us the Referral</h3>
+              <p>
+                Use our simple referral form or email. Include the homeowner's contact info 
+                and any policy deadlines we should know about.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>We Contact the Homeowner</h3>
+              <p>
+                We reach out directly, schedule the assessment, and scope the job properly—
+                so the homeowner knows the real cost before we start.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Professional Installation</h3>
+              <p>
+                Clean, uniformed techs. Clear arrival windows. We install the Moen Flo correctly 
+                and educate the homeowner on how to use it.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>You Get Confirmation</h3>
+              <p>
+                We send you proof of install immediately—so you can update the policy 
+                and close the loop with confidence.
+              </p>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Our Promise Section -->
+    <section class="promise-section">
+      <h2>Our Promise to You</h2>
+        <div class="promise-grid">
+          <div class="promise-item">
+            <CheckCircle class="promise-icon" />
+            <p><strong>Priority scheduling</strong> for your referrals</p>
+          </div>
+          <div class="promise-item">
+            <CheckCircle class="promise-icon" />
+            <p><strong>Clear arrival windows</strong>—not vague "sometime today"</p>
+          </div>
+          <div class="promise-item">
+            <CheckCircle class="promise-icon" />
+            <p><strong>Transparent pricing</strong> based on the actual home</p>
+          </div>
+          <div class="promise-item">
+            <CheckCircle class="promise-icon" />
+            <p><strong>Immediate proof-of-install</strong> after completion</p>
+          </div>
+          <div class="promise-item">
+            <CheckCircle class="promise-icon" />
+            <p><strong>Direct issue resolution</strong>—no escalation through you</p>
+          </div>
+          <div class="promise-item">
+            <CheckCircle class="promise-icon" />
+            <p><strong>Professional communication</strong> at every step</p>
+          </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact-form">
+      <div class="contact-grid">
+          <div class="contact-info">
+            <h2>Let's Work Together</h2>
+            <p>
+              If you want a smoother option for your clients—one that protects your reputation 
+              and keeps you out of the middle—we'd be happy to help.
+            </p>
+            
+            <div class="contact-methods">
+              <a href="tel:707-200-8350" class="contact-method">
+                <Phone class="contact-icon" />
+                <span>(707) 200-8350</span>
+              </a>
+              <a href="mailto:adam@goflow.plumbing?subject=Farmers Agent Partnership" class="contact-method">
+                <Mail class="contact-icon" />
+                <span>adam@goflow.plumbing</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="contact-form-container">
+            <h3>Send a Referral or Get in Touch</h3>
+            <form class="contact-form" id="farmers-contact-form">
+              <div class="form-group">
+                <label for="agent-name">Your Name</label>
+                <input type="text" id="agent-name" name="agent-name" required />
+              </div>
+              <div class="form-group">
+                <label for="agency">Agency / Office</label>
+                <input type="text" id="agency" name="agency" />
+              </div>
+              <div class="form-group">
+                <label for="agent-email">Your Email</label>
+                <input type="email" id="agent-email" name="agent-email" required />
+              </div>
+              <div class="form-group">
+                <label for="agent-phone">Your Phone</label>
+                <input type="tel" id="agent-phone" name="agent-phone" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message or Referral Details</label>
+                <textarea id="message" name="message" rows="4" placeholder="Include homeowner contact info, policy deadlines, or any questions you have."></textarea>
+              </div>
+              <button type="submit" class="submit-btn">
+                Send Message <ArrowRight class="btn-icon" />
+              </button>
+            </form>
+          </div>
+      </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+      <h2>Why GoFlow?</h2>
+        <div class="trust-grid">
+          <div class="trust-item">
+            <h3>3rd Generation Plumbers</h3>
+            <p>Family expertise passed down through generations. We know plumbing.</p>
+          </div>
+          <div class="trust-item">
+            <h3>Local to Sonoma & Marin</h3>
+            <p>We live and work in your community. Your neighbors are our neighbors.</p>
+          </div>
+          <div class="trust-item">
+            <h3>Licensed & Insured</h3>
+            <p>California Contractors License #1150830 (C-36 Plumbing)</p>
+          </div>
+        </div>
+      <p class="service-areas">
+        Serving Santa Rosa, Petaluma, Novato, San Rafael, Healdsburg, Sonoma, Mill Valley, 
+        and surrounding communities throughout Sonoma County and Marin County.
+      </p>
+    </section>
+  </article>
+</BaseLayout>
