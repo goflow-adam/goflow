@@ -225,7 +225,7 @@
 
 /* GOFLOW RESERVE Promo Section */
 .reserve-promo {
-  @apply bg-primary py-12 md:py-16 text-background;
+  @apply bg-primary py-8 md:py-10 text-background;
 }
 
 .reserve-promo-container {
@@ -258,6 +258,10 @@
 
 .reserve-promo .btn-accent .brand-name {
   @apply text-primary;
+}
+
+.reserve-promo .countdown {
+  @apply mt-4 text-sm uppercase tracking-wider opacity-80;
 }
 
 /* GOFLOW RESERVE Brand Name Styling for homepage */

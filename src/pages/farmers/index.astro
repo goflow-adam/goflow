@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import '../../styles/pages/farmers.css';
-import { CheckCircle, AlertTriangle, Phone, Mail, Shield, Clock, Users, FileCheck, ArrowRight } from '@lucide/astro';
+import { CheckCircle, AlertTriangle, Phone, Mail, Shield, Clock, Users, FileCheck } from '@lucide/astro';
 ---
 
 <BaseLayout
@@ -27,19 +27,20 @@ import { CheckCircle, AlertTriangle, Phone, Mail, Shield, Clock, Users, FileChec
     <section class="problem-section" id="the-problem">
       <h2>You've Probably Seen This Happen</h2>
       <p class="section-intro">
-          A lot of Moen Flo installs aren't as straightforward as they're initially presented. 
-          On most homes, adjustments are needed—and when that isn't clear upfront, homeowners 
-          feel caught off guard by the final cost.
+          Your client gets a quote for $745. Sounds reasonable. But once the plumber arrives, 
+          it turns out the valve needs repositioning, the fittings don't line up, and suddenly 
+          the bill is far greater than what your client expected. Your client calls you,
+          frustrated—and now you're in the middle of it. Or they don't call you and you lose potential referrals.
         </p>
         
         <div class="comparison-grid">
           <div class="comparison-card problem">
             <h3>The Typical Experience</h3>
             <div class="price warning">$745 "starting at"</div>
-            <div class="price-note warning">...that rarely stays $745</div>
+            <div class="price-note warning">...that never stays $745</div>
             <ul>
               <li><AlertTriangle class="icon warning" /> Base price assumes ideal conditions</li>
-              <li><AlertTriangle class="icon warning" /> Add-ons for PRV repositioning</li>
+              <li><AlertTriangle class="icon warning" /> Add-ons for valve repositionings</li>
               <li><AlertTriangle class="icon warning" /> Extra charges for loops and fittings</li>
               <li><AlertTriangle class="icon warning" /> Homeowner feels blindsided</li>
               <li><AlertTriangle class="icon warning" /> You get pulled into the frustration</li>
@@ -207,31 +208,13 @@ import { CheckCircle, AlertTriangle, Phone, Mail, Shield, Clock, Users, FileChec
           
           <div class="contact-form-container">
             <h3>Send a Referral or Get in Touch</h3>
-            <form class="contact-form" id="farmers-contact-form">
-              <div class="form-group">
-                <label for="agent-name">Your Name</label>
-                <input type="text" id="agent-name" name="agent-name" required />
-              </div>
-              <div class="form-group">
-                <label for="agency">Agency / Office</label>
-                <input type="text" id="agency" name="agency" />
-              </div>
-              <div class="form-group">
-                <label for="agent-email">Your Email</label>
-                <input type="email" id="agent-email" name="agent-email" required />
-              </div>
-              <div class="form-group">
-                <label for="agent-phone">Your Phone</label>
-                <input type="tel" id="agent-phone" name="agent-phone" />
-              </div>
-              <div class="form-group">
-                <label for="message">Message or Referral Details</label>
-                <textarea id="message" name="message" rows="4" placeholder="Include homeowner contact info, policy deadlines, or any questions you have."></textarea>
-              </div>
-              <button type="submit" class="submit-btn">
-                Send Message <ArrowRight class="btn-icon" />
-              </button>
-            </form>
+            <iframe
+              src="https://st.sendajob.com/MY/servicerequest/af1b9991270ef5e7fd02fd9c1814f7ca73724b9e_f.html"
+              width="100%"
+              height="407"
+              scrolling="no"
+              style="border:none;"
+            ></iframe>
           </div>
       </div>
     </section>

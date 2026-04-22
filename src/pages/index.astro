@@ -38,7 +38,6 @@ const homePageSchemas = await createHomePageSchemas();
     <!-- GOFLOW RESERVE Promo -->
     <section class="reserve-promo">
       <div class="reserve-promo-container">
-        <p class="promo-eyebrow">New Program</p>
         <h2>Gas Water Heaters Are Being Banned in 2027</h2>
         <p class="promo-text">
           Don't get stuck paying $10,000+ for a heat pump conversion. 
@@ -51,8 +50,14 @@ const homePageSchemas = await createHomePageSchemas();
           <span>10-year flexibility</span>
         </div>
         <a href="/reserve/" class="btn btn-accent">Reserve My Water Heater Now</a>
+        <p class="countdown"></p>
       </div>
     </section>
+
+<script>
+  import { initCountdown } from '../scripts/countdown';
+  initCountdown();
+</script>
     
     <!-- Problem Selector -->
     <section class="problems">

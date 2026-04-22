@@ -13,15 +13,19 @@ import '../../styles/pages/reserve.css';
       <div class="hero-content">
         <CheckCircle class="success-icon" />
         <h1>Thank You!</h1>
-        <p class="hero-subtitle">
+        <p class="hero-subtitle default-content">
           Your request has been received. We'll be getting right back to you.
+        </p>
+        <p class="hero-subtitle farmers-content" style="display: none;">
+          Your referral has been received. We'll reach out to your client directly.
         </p>
       </div>
     </section>
 
     <section class="thank-you-content">
       <div class="section-content">
-        <div class="info-card">
+        <!-- Default Content -->
+        <div class="info-card default-content">
           <h2>What Happens Next?</h2>
           <p>
             One of our team members will review your request and reach out to you shortly 
@@ -41,16 +45,58 @@ import '../../styles/pages/reserve.css';
           </div>
         </div>
 
-        <div class="back-link">
+        <!-- Farmers Agent Content -->
+        <div class="info-card farmers-content" style="display: none;">
+          <h2>What Happens Next?</h2>
+          <p>
+            We'll contact your client directly to schedule their Moen Flo installation. 
+            You'll receive confirmation once the install is complete—no follow-up needed on your end.
+          </p>
+          
+          <div class="call-option">
+            <h3>Questions?</h3>
+            <p>
+              If you need to reach us about this referral or have additional clients to refer, 
+              we're happy to help.
+            </p>
+            <a href="tel:707-200-8350" class="phone-link">
+              <Phone class="icon" />
+              <span>(707) 200-8350</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="back-link default-content">
           <a href="/">
             <ArrowLeft class="icon" />
             <span>Return to Homepage</span>
+          </a>
+        </div>
+
+        <div class="back-link farmers-content" style="display: none;">
+          <a href="/farmers/">
+            <ArrowLeft class="icon" />
+            <span>Return to Farmers Program</span>
           </a>
         </div>
       </div>
     </section>
   </article>
 </BaseLayout>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const source = params.get('source');
+  
+  if (source === 'farmers') {
+    document.querySelectorAll('.default-content').forEach(el => {
+      (el as HTMLElement).style.display = 'none';
+    });
+    document.querySelectorAll('.farmers-content').forEach(el => {
+      (el as HTMLElement).style.display = '';
+    });
+  }
+</script>
 
 <style>
   .thank-you-page {

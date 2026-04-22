@@ -61,8 +61,14 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
           <a href="#reserve-form" class="btn btn-primary">Reserve My Water Heater Now</a>
           <a href="#how-it-works" class="btn btn-secondary">Learn How It Works</a>
         </div>
+        <p class="countdown" id="countdown"></p>
       </div>
     </section>
+
+<script>
+  import { initCountdown } from '../../scripts/countdown';
+  initCountdown();
+</script>
 
     <!-- The Problem Section -->
     <section class="problem-section">

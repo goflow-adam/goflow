@@ -22,7 +22,7 @@
 
 /* Hero Section */
 .reserve-hero {
-  @apply bg-primary text-background py-16 md:py-24 text-center;
+  @apply bg-primary text-background pt-16 pb-2 md:py-24 text-center;
 }
 
 .reserve-hero .hero-content {
@@ -58,9 +58,13 @@
   @apply bg-transparent border-2 border-background text-background hover:bg-background hover:text-primary;
 }
 
+.reserve-hero .countdown {
+  @apply mt-6 text-md uppercase tracking-wider opacity-80;
+}
+
 /* Section Base Styles */
 .reserve-page section {
-  @apply py-12 md:py-16;
+  @apply pt-12 pb-6 md:pt-16 md:pb-8;
 }
 
 .reserve-page .section-content {
