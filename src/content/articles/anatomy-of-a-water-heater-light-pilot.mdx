@@ -19,6 +19,10 @@ tags:
 readingTime: 5
 ---
 
+import AnatomySeriesNav from '@/components/AnatomySeriesNav.astro';
+
+<AnatomySeriesNav currentSlug="anatomy-of-a-water-heater-light-pilot" />
+
 <div class="content-grid">
   <div class="one-column">
     # {frontmatter.contentTitle}
@@ -158,11 +162,6 @@ readingTime: 5
     * [The Burner & Flue](/articles/anatomy-of-a-water-heater-burner-flue/)
     * [Water Heater Anatomy Overview](/articles/anatomy-of-a-water-heater/)
   </div>
-  <div class="one-column">
-    ## Water Heater Services in Your Area
-
-    - [Water Heater Repair & Replacement](/water-heater-repair-and-replacement/)
-    - [Sonoma County plumbing](/sonoma-county-plumbing/)
-    - [Marin County plumbing](/marin-county-plumbing/)
-  </div>
 </div>
+
+<AnatomySeriesNav currentSlug="anatomy-of-a-water-heater-light-pilot" position="bottom" />

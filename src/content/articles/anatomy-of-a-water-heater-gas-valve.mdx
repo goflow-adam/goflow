@@ -13,6 +13,10 @@ tags: [water heater, maintenance, home care, gas]
 readingTime: 5
 ---
 
+import AnatomySeriesNav from '@/components/AnatomySeriesNav.astro';
+
+<AnatomySeriesNav currentSlug="anatomy-of-a-water-heater-gas-valve" />
+
 <div class="content-grid">
   <div class="one-column">
     # {frontmatter.contentTitle}
@@ -113,11 +117,6 @@ readingTime: 5
     * [The Gas Supply Line](/articles/anatomy-of-a-water-heater-gas-line/)
     * [The T&P Valve](/articles/anatomy-of-a-water-heater-tnp/)
   </div>
-  <div class="one-column">
-    ## Water Heater Services in Your Area
-
-    - [Water Heater Repair & Replacement](/water-heater-repair-and-replacement/)
-    - [Sonoma County plumbing](/sonoma-county-plumbing/)
-    - [Marin County plumbing](/marin-county-plumbing/)
-  </div>
 </div>
+
+<AnatomySeriesNav currentSlug="anatomy-of-a-water-heater-gas-valve" position="bottom" />

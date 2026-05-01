@@ -1,0 +1,80 @@
+---
+import '../styles/components/anatomy-series-nav.css';
+
+interface Props {
+  currentSlug: string;
+  position?: 'top' | 'bottom';
+}
+
+const { currentSlug, position = 'top' } = Astro.props;
+
+// Define the series in order (matching the main page's structure)
+const anatomySeries = [
+  { slug: 'anatomy-of-a-water-heater', title: 'Overview', shortTitle: 'Overview' },
+  { slug: 'anatomy-of-a-water-heater-tank-tap', title: 'Tank & Drain Valve', shortTitle: 'Tank' },
+  { slug: 'anatomy-of-a-water-heater-hot-cold', title: 'Cold In/Hot Out', shortTitle: 'Pipes' },
+  { slug: 'anatomy-of-a-water-heater-burner-flue', title: 'Burner & Flue', shortTitle: 'Burner' },
+  { slug: 'anatomy-of-a-water-heater-gas-valve', title: 'Gas Control Valve', shortTitle: 'Gas Valve' },
+  { slug: 'anatomy-of-a-water-heater-light-pilot', title: 'Pilot Light', shortTitle: 'Pilot' },
+  { slug: 'anatomy-of-a-water-heater-tnp', title: 'T&P Valve', shortTitle: 'T&P' },
+  { slug: 'anatomy-of-a-water-heater-extra-bits', title: 'Straps, Stands & Pans', shortTitle: 'Safety' },
+  { slug: 'anatomy-of-a-water-heater-expansion-tank', title: 'Expansion Tank', shortTitle: 'Expansion' },
+  { slug: 'anatomy-of-a-water-heater-gas-line', title: 'Gas Line', shortTitle: 'Gas Line' },
+];
+
+// Find current index
+const currentIndex = anatomySeries.findIndex(item => item.slug === currentSlug);
+const prevItem = currentIndex > 0 ? anatomySeries[currentIndex - 1] : null;
+const nextItem = currentIndex < anatomySeries.length - 1 ? anatomySeries[currentIndex + 1] : null;
+
+// Build paths
+const getPath = (slug: string) => `/articles/${slug}/`;
+---
+
+{position === 'top' ? (
+  <!-- Top Navigation Bar -->
+  <nav class="anatomy-series-nav" aria-label="Water Heater Anatomy Series">
+    <div class="anatomy-series-header">
+      <span class="anatomy-series-label">Water Heater Anatomy Series</span>
+    </div>
+    <ul class="anatomy-series-list">
+      {anatomySeries.map((item, index) => (
+        <li class="anatomy-series-item">
+          {item.slug === currentSlug ? (
+            <span class="anatomy-series-link current" aria-current="page">
+              <span class="anatomy-series-number">{index + 1}</span>
+              <span class="anatomy-series-title">{item.shortTitle}</span>
+            </span>
+          ) : (
+            <a href={getPath(item.slug)} class="anatomy-series-link">
+              <span class="anatomy-series-number">{index + 1}</span>
+              <span class="anatomy-series-title">{item.shortTitle}</span>
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+) : (
+  <!-- Bottom Previous/Next Navigation -->
+  <nav class="anatomy-prevnext" aria-label="Previous and next articles">
+    <div class="anatomy-prevnext-inner">
+      {prevItem ? (
+        <a href={getPath(prevItem.slug)} class="anatomy-prevnext-link prev">
+          <span class="anatomy-prevnext-direction">← Previous</span>
+          <span class="anatomy-prevnext-title">{prevItem.title}</span>
+        </a>
+      ) : (
+        <span class="anatomy-prevnext-spacer"></span>
+      )}
+      {nextItem ? (
+        <a href={getPath(nextItem.slug)} class="anatomy-prevnext-link next">
+          <span class="anatomy-prevnext-direction">Next →</span>
+          <span class="anatomy-prevnext-title">{nextItem.title}</span>
+        </a>
+      ) : (
+        <span class="anatomy-prevnext-spacer"></span>
+      )}
+    </div>
+  </nav>
+)}

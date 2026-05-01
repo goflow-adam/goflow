@@ -7,7 +7,6 @@ import {
   createFAQSchema,
 } from "../lib/schema/factories";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
-import AnatomyNav from "@/components/AnatomyNav.astro";
 import "../styles/articles.css";
 
 interface Props {
@@ -15,7 +14,6 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const isAnatomyArticle = article.slug.startsWith("anatomy-of-a-water-heater");
 const { Content } = await article.render();
 
 // Always use the schema factory to ensure consistent formatting
@@ -80,7 +78,6 @@ const combinedSchema = faqSchema
       )
     }
     <div class="markdown-content">
-    {isAnatomyArticle && <AnatomyNav currentSlug={article.slug} />}
       <Content />
     </div>
     <div class="call-to-action">

@@ -1,0 +1,113 @@
+/* Anatomy Series Navigation - Static navigation for water heater anatomy series */
+
+/* Top Navigation Bar */
+.anatomy-series-nav {
+  @apply mb-8 rounded-lg border border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden;
+}
+
+.anatomy-series-header {
+  @apply px-4 py-2 border-b border-slate-200 bg-slate-100;
+}
+
+.anatomy-series-label {
+  @apply text-sm font-semibold text-slate-700;
+}
+
+ul.anatomy-series-list {
+  @apply list-none m-0 p-2 flex flex-wrap gap-1;
+}
+
+.anatomy-series-item {
+  @apply m-0 list-none;
+}
+
+.anatomy-series-link {
+  @apply flex items-center gap-1.5 py-1.5 px-2.5 rounded-md text-sm text-slate-600 no-underline transition-colors;
+}
+
+.anatomy-series-link:hover {
+  @apply bg-slate-200 text-slate-900;
+}
+
+.anatomy-series-link.current {
+  @apply bg-primary text-white font-medium;
+}
+
+.anatomy-series-link.current:hover {
+  @apply bg-primary text-white;
+}
+
+.anatomy-series-number {
+  @apply inline-flex items-center justify-center w-5 h-5 rounded-full bg-slate-200 text-xs font-medium text-slate-600;
+}
+
+.anatomy-series-link.current .anatomy-series-number {
+  @apply bg-white/20 text-white;
+}
+
+.anatomy-series-title {
+  @apply inline;
+}
+
+/* Bottom Previous/Next Navigation */
+.anatomy-prevnext {
+  @apply mt-12 pt-8 border-t border-slate-200;
+}
+
+.anatomy-prevnext-inner {
+  @apply flex justify-between gap-4;
+}
+
+.anatomy-prevnext-link {
+  @apply flex flex-col gap-1 p-4 rounded-lg border border-slate-200 no-underline transition-all;
+  @apply hover:border-primary hover:bg-slate-50;
+  max-width: 45%;
+}
+
+.anatomy-prevnext-link.prev {
+  @apply text-left;
+}
+
+.anatomy-prevnext-link.next {
+  @apply text-right ml-auto;
+}
+
+.anatomy-prevnext-direction {
+  @apply text-sm text-slate-500;
+}
+
+.anatomy-prevnext-title {
+  @apply text-base font-medium text-primary;
+}
+
+.anatomy-prevnext-link:hover .anatomy-prevnext-title {
+  @apply text-primary-dark;
+}
+
+.anatomy-prevnext-spacer {
+  @apply flex-1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .anatomy-series-list {
+    @apply gap-0.5;
+  }
+  
+  .anatomy-series-link {
+    @apply py-1 px-1.5;
+  }
+  
+  .anatomy-series-number {
+    @apply w-6 h-6;
+  }
+  
+  .anatomy-prevnext-link {
+    @apply p-3;
+    max-width: 48%;
+  }
+  
+  .anatomy-prevnext-title {
+    @apply text-sm;
+  }
+}
