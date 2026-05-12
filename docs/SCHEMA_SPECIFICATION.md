@@ -22,6 +22,12 @@ This document defines the expected schema objects for each page type on goflow.p
 - `WebSite.alternateName` = "GoFlow"
 - `SearchAction` for sitelinks search box
 
+**Brand Hierarchy in Titles:**
+Homepage title follows the pattern: `Brand Name – Service Location`
+Example: `GoFlow Plumbing – Plumbing Services in Sonoma & Marin County`
+
+This creates clear separation between the brand name and service/location keywords, helping Google identify the site name correctly rather than falling back to the domain name.
+
 ---
 
 ### Service Pages (`/water-heater-repair-santa-rosa/`, etc.)
