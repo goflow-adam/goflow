@@ -2434,7 +2434,432 @@
       "url": "/whole-house-repiping/",
       "lastSubmitted": "2026-01-27T07:32:11.672Z",
       "fileHash": "5ec0aca6e5c205d3ef399873caf9fab9af9e3981"
+    },
+    {
+      "url": "/",
+      "lastSubmitted": "2026-05-12T16:27:25.609Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/about-us/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/all-plumbing-problems/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/anatomy-of-a-water-heater-burner-flue/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/anatomy-of-a-water-heater-expansion-tank/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/anatomy-of-a-water-heater-extra-bits/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/anatomy-of-a-water-heater-gas-line/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/anatomy-of-a-water-heater-gas-valve/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/anatomy-of-a-water-heater-hot-cold/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/anatomy-of-a-water-heater-light-pilot/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/anatomy-of-a-water-heater-tank-tap/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/anatomy-of-a-water-heater-tnp/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/anatomy-of-a-water-heater/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/bay-area-gas-water-heater-ban/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/choosing-the-right-faucet/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/clogged-drains-service-advice/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/garbage-disposal-choices/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/hard-water-hard-on-plumbing/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/home-buyer-plumbing-checklist/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/insurance-gas-safety/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/insurance-sewer-backup/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/insurance-water-damage/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/novato-water-heater/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/plumber-red-flags/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/plumbing-issues-and-mold/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/smart-shutoff-valves/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/toilet-leak-sources/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/water-efficient-bath/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/water-heater-comparisons/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/water-heater-replacement-cost-reasons/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/articles/water-heater-replacement-signs/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/automatic-water-shutoff-installation/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/clogged-drains-rootered/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/clogged-or-running-toilets/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/contact-us/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/dishwasher-installation-or-leak-repair/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/drain-cleaning-healdsburg/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/drain-cleaning-mill-valley/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/drain-cleaning-novato/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/drain-cleaning-petaluma/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/drain-cleaning-san-rafael/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/drain-cleaning-santa-rosa/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/drain-cleaning-sonoma/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/emergency-plumbing-healdsburg/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/emergency-plumbing-mill-valley/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/emergency-plumbing-novato/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/emergency-plumbing-petaluma/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/emergency-plumbing-san-rafael/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/emergency-plumbing-santa-rosa/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/emergency-plumbing-services/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/emergency-plumbing-sonoma/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/faqs/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/farmers/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/faucet-leaks-repaired/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/garbage-disposal-repair-or-installation/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/healdsburg-plumbing/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/instant-hot-water-installed-or-repaired/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/leak-detection-and-repair/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/leaking-pipes-repair/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/marin-county-plumbing/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/mill-valley-plumbing/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/novato-plumbing/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/petaluma-plumbing/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/pipe-repair-and-replacement/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/plumbing-services/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/reserve/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/review/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/san-rafael-plumbing/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/santa-rosa-plumbing/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/service-regions/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/sewer-line-repair-and-replacement/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/sonoma-county-plumbing/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/sonoma-plumbing/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/team/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/thank-you/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/water-filtration-and-treatment/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/water-heater-installation-and-repair-healdsburg/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/water-heater-installation-and-repair-mill-valley/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/water-heater-installation-and-repair-sonoma/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/water-heater-installation-petaluma/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/water-heater-repair-and-replacement/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/water-heater-repair-novato/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/water-heater-repair-san-rafael/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/water-heater-repair-santa-rosa/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
+    },
+    {
+      "url": "/whole-house-repiping/",
+      "lastSubmitted": "2026-05-12T16:27:25.620Z",
+      "fileHash": "c73da4425282fe8dad3297591b18475771574ba9"
     }
   ],
-  "lastGitHash": "5ec0aca6e5c205d3ef399873caf9fab9af9e3981"
+  "lastGitHash": "c73da4425282fe8dad3297591b18475771574ba9"
 }
