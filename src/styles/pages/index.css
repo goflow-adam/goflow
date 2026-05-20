@@ -4,11 +4,33 @@
   @apply text-xl font-bold mb-6;
 }
 
+
+/* padding top landscape */
+@media (orientation: landscape) {
+  .hero {
+    @apply pt-55 sm:pt-14 md:pt-18 lg:pt-16 xl:pt-18;
+  }
+}
+/* padding top portrait */
+@media (orientation: portrait) {
+  .hero {
+    @apply pt-58 sm:pt-14 md:pt-18 lg:pt-16 xl:pt-18;
+  }
+}
+/* padding bottom landscape */
+@media (orientation: landscape) {
+  .hero {
+    @apply pb-10 sm:pb-20 md:pb-52 lg:pb-74 xl:pb-108;
+  }
+}
+/* padding bottom portrait */
+@media (orientation: portrait) {
+  .hero {
+    @apply pb-10 sm:pb-20 md:pb-26 lg:pb-74 xl:pb-108;
+  }
+}
+
 .hero {
-  /* padding top */
-  @apply pt-60 sm:pt-12 md:pt-18 lg:pt-16 xl:pt-24;
-  /* padding bottom */
-  @apply pb-10 sm:pb-52 md:pb-52 lg:pb-74 xl:pb-108;
   /* text colors */
   @apply text-primary;
 }
@@ -20,11 +42,11 @@
 }
 
 .hero .hero-container h1 {
-  @apply text-4xl lg:text-5xl font-bold mb-6 text-primary;
+  @apply text-4xl lg:text-5xl font-bold text-primary mb-0;
 }
 
 .hero-container h2 {
-  @apply text-primary;
+  @apply text-2xl lg:text-3xl font-bold text-primary;
 }
 
 .hero-text {
@@ -37,7 +59,7 @@
 
 /* Problem Selector */
 .problems {
-  @apply py-12;
+  @apply py-10;
 }
 
 .problems-container {
@@ -45,7 +67,7 @@
 }
 
 .problems h2 {
-  @apply text-2xl font-bold mb-8;
+  @apply text-2xl font-bold mb-4;
 }
 
 #problems-headline {

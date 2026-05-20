@@ -20,13 +20,39 @@ const homePageSchemas = await createHomePageSchemas();
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-container">
-        <h1>GoFlow Plumbing — 3rd Generation Experts</h1>
-        <div class="hero-text">
-          <p>
-            GoFlow Plumbing are your Sonoma County and Marin County third generation plumbers.
-            Make your plumbing problem ours — we'll treat your home better than our own mom's.<br />
-            Sorry, mom.
-          </p>
+        <h1>GoFlow Plumbing</h1>
+        <h2>3rd Generation Experts</h2>
+        <!-- Problem Selector -->
+        <div class="problems">
+          <div class="problems-container">
+            <h2 id="problems-headline">Which Plumbing Problem of Yours Do We Get to Fix?</h2>
+            <div class="problems-grid">
+              <a href="/water-heater-repair-and-replacement/" class="problem-tile">
+                <Flame class="problem-icon" />
+                <span class="problem-text">No hot water</span>
+              </a>
+              <a href="/clogged-drains-rootered/" class="problem-tile">
+                <ShowerHead class="problem-icon" />
+                <span class="problem-text">Drain clogged</span>
+              </a>
+              <a href="/leak-detection-and-repair/" class="problem-tile">
+                <Droplets class="problem-icon" />
+                <span class="problem-text">Leak</span>
+              </a>
+              <a href="/clogged-or-running-toilets/" class="problem-tile">
+                <Bath class="problem-icon" />
+                <span class="problem-text">Toilet issue</span>
+              </a>
+              <a href="/emergency-plumbing-services/" class="problem-tile problem-tile-emergency">
+                <Siren class="problem-icon" />
+                <span class="problem-text">Emergency</span>
+              </a>
+              <a href="/plumbing-services/" class="problem-tile problem-tile-all">
+                <ArrowRight class="problem-icon" />
+                <span class="problem-text">All services</span>
+              </a>
+            </div>
+          </div>
         </div>
         <div class="space-x-4">
           <a href="/contact-us/" class="btn btn-primary">Contact Us Now</a>
@@ -35,6 +61,13 @@ const homePageSchemas = await createHomePageSchemas();
       </div>
     </section>
 
+    <!-- <div class="hero-text">
+      <p>
+        GoFlow Plumbing are your Sonoma County and Marin County third generation plumbers.
+        Make your plumbing problem ours — we'll treat your home better than our own mom's.<br />
+        Sorry, mom.
+      </p>
+    </div> -->
     <!-- GOFLOW RESERVE Promo -->
     <section class="reserve-promo">
       <div class="reserve-promo-container">
@@ -54,43 +87,10 @@ const homePageSchemas = await createHomePageSchemas();
       </div>
     </section>
 
-<script>
-  import { initCountdown } from '../scripts/countdown';
-  initCountdown();
-</script>
-    
-    <!-- Problem Selector -->
-    <section class="problems">
-      <div class="problems-container">
-        <h2 id="problems-headline">Which Plumbing Problem of Yours Do We Get to Fix?</h2>
-        <div class="problems-grid">
-          <a href="/water-heater-repair-and-replacement/" class="problem-tile">
-            <Flame class="problem-icon" />
-            <span class="problem-text">No hot water</span>
-          </a>
-          <a href="/clogged-drains-rootered/" class="problem-tile">
-            <ShowerHead class="problem-icon" />
-            <span class="problem-text">Drain clogged</span>
-          </a>
-          <a href="/leak-detection-and-repair/" class="problem-tile">
-            <Droplets class="problem-icon" />
-            <span class="problem-text">Leak</span>
-          </a>
-          <a href="/clogged-or-running-toilets/" class="problem-tile">
-            <Bath class="problem-icon" />
-            <span class="problem-text">Toilet issue</span>
-          </a>
-          <a href="/emergency-plumbing-services/" class="problem-tile problem-tile-emergency">
-            <Siren class="problem-icon" />
-            <span class="problem-text">Emergency</span>
-          </a>
-          <a href="/plumbing-services/" class="problem-tile problem-tile-all">
-            <ArrowRight class="problem-icon" />
-            <span class="problem-text">All services</span>
-          </a>
-        </div>
-      </div>
-    </section>
+    <script>
+      import { initCountdown } from '../scripts/countdown';
+      initCountdown();
+    </script>
 
     <!-- Process Stepper - Extreme Communication -->
     <ProcessStepper />
