@@ -13,6 +13,7 @@ interface NavItem {
   isCity?: boolean;
   cityServices?: NavItem[];
   submenu?: NavItem[];
+  submenuRight?: boolean;
 }
 
 // Map city names to their service page slugs
@@ -184,12 +185,14 @@ const navigation: NavItem[] = [
   {
     title: "Articles",
     path: "/articles/",
-    submenu: articleMenu
+    submenu: articleMenu,
+    submenuRight: true
   },
   {
     title: "Us",
     path: "/about-us/",
-    submenu: usMenu
+    submenu: usMenu,
+    submenuRight: true
   }
 ];
 
@@ -211,7 +214,7 @@ function isActive(path: string): boolean {
           {item.title}
         </a>
         {item.submenu && (
-          <div class="submenu-wrapper">
+          <div class={`submenu-wrapper ${item.submenuRight ? 'submenu-right' : ''}`}>
             <ul class="submenu-list">
               {item.submenu.map(subItem => (
                 subItem.isHeader ? (
