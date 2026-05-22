@@ -38,7 +38,7 @@ export async function createHomePageSchemas() {
     WebSiteSchema.create(),
     WebPageSchema.create({
       url: 'https://goflow.plumbing/',
-      name: 'GoFlow Plumbing – Plumbing Services in Sonoma County & Marin County',
+      name: 'GoFlow Plumbing | Plumbing Services in Sonoma County & Marin County',
       description: 'Professional plumbing services in Sonoma County & Marin County',
       type: 'WebPage'
     })
