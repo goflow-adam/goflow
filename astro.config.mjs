@@ -10,6 +10,7 @@ import rehypeExternalLinks from './src/lib/rehype/rehypeExternalLinks.mjs';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://goflow.plumbing',
+  trailingSlash: 'always',
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'hover'
