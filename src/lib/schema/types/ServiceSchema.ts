@@ -81,7 +81,7 @@ export class ServiceSchema extends GoFlowSchema<Service> {
       '@id': this.organizationId,
     } as Organization;
 
-    this.setType({ '@type': schema['@type'] || 'Service' })
+    this.setType({ '@type': schema['@type'] || 'PlumbingService' })
         .setId(schema['@id'] || `https://goflow.plumbing/${details.slug}#service`)
         .addProperty('name', details.name)
         .addProperty('description', details.description)

@@ -39,7 +39,7 @@ export async function createHomePageSchemas() {
     WebPageSchema.create({
       url: 'https://goflow.plumbing/',
       name: 'GoFlow Plumbing | Plumbing Services in Sonoma County & Marin County',
-      description: 'Professional plumbing services in Sonoma County & Marin County',
+      description: '3rd generation plumbers serving Sonoma County & Marin County. Water heater repair, drain cleaning, leak detection & 24/7 emergency service.',
       type: 'WebPage'
     })
   ]);
