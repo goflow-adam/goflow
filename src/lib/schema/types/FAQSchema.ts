@@ -1,5 +1,5 @@
 import type { WithContext, FAQPage, Question, Answer } from 'schema-dts';
-import { GoFlowSchema } from '../base/GoFlowSchema';
+import { GOFLOWSchema } from '../base/GOFLOWSchema';
 
 interface FAQItem {
   question: string;
@@ -10,7 +10,7 @@ type FAQQuestion = Question & {
   acceptedAnswer: Answer;
 };
 
-export class FAQSchema extends GoFlowSchema<FAQPage> {
+export class FAQSchema extends GOFLOWSchema<FAQPage> {
   public static async create(questions: FAQItem[], pageUrl?: string): Promise<FAQSchema> {
     return new FAQSchema(questions, pageUrl);
   }

@@ -3,8 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/pages/plumbing-services.css';
 
-const title = "404 - Page Not Found | GoFlow Plumbing";
-const description = "Sorry, we couldn't find the page you were looking for. GoFlow Plumbing serves Sonoma County and Marin County with expert plumbing services.";
+const title = "404 - Page Not Found | GOFLOW Plumbing";
+const description = "Sorry, we couldn't find the page you were looking for. GOFLOW Plumbing serves Sonoma County and Marin County with expert plumbing services.";
 
 const featuredServices = await getCollection('services', ({ data }) => data.featured === true);
 ---

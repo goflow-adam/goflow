@@ -1,5 +1,5 @@
 import type { WithContext, Article, WebPage } from 'schema-dts';
-import { GoFlowSchema } from '../base/GoFlowSchema';
+import { GOFLOWSchema } from '../base/GOFLOWSchema';
 
 interface ArticleDetails {
   title: string;
@@ -11,7 +11,7 @@ interface ArticleDetails {
   author?: string;
 }
 
-export class ArticleSchema extends GoFlowSchema<Article> {
+export class ArticleSchema extends GOFLOWSchema<Article> {
   private constructor(details: ArticleDetails) {
     super();
     this.setType('Article')
@@ -19,7 +19,7 @@ export class ArticleSchema extends GoFlowSchema<Article> {
         .addProperty('name', details.title)
         .addProperty('headline', details.title)
         .addProperty('description', details.description)
-        //.addProperty('image', details.imageUrl || 'https://goflow.plumbing/GoFlow2.jpg')
+        //.addProperty('image', details.imageUrl || 'https://goflow.plumbing/GOFLOW2.jpg')
         .addProperty('datePublished', details.publishDate.toISOString())
         .addProperty('mainEntityOfPage', {
           '@type': 'WebPage',

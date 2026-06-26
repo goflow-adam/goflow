@@ -13,18 +13,18 @@ This document defines the expected schema objects for each page type on goflow.p
 **Top-level objects in `@graph`:**
 | Object | Purpose |
 |--------|---------|
-| `WebSite` | Site identity, name ("GoFlow Plumbing"), alternate name, SearchAction for sitelinks |
+| `WebSite` | Site identity, name ("GOFLOW Plumbing"), alternate name, SearchAction for sitelinks |
 | `Plumber` (Organization) | Business identity, contact info, reviews, service areas |
 | `WebPage` | Page metadata |
 
 **Key signals:**
-- `WebSite.name` = "GoFlow Plumbing" (primary brand signal)
-- `WebSite.alternateName` = "GoFlow"
+- `WebSite.name` = "GOFLOW Plumbing" (primary brand signal)
+- `WebSite.alternateName` = "GOFLOW"
 - `SearchAction` for sitelinks search box
 
 **Brand Hierarchy in Titles:**
 Homepage title follows the pattern: `Brand Name – Service Location`
-Example: `GoFlow Plumbing – Plumbing Services in Sonoma & Marin County`
+Example: `GOFLOW Plumbing – Plumbing Services in Sonoma & Marin County`
 
 This creates clear separation between the brand name and service/location keywords, helping Google identify the site name correctly rather than falling back to the domain name.
 

@@ -1,6 +1,6 @@
 # Core Program Summary (Internal / Master Version)
 
-**GoFlow Flo Install Program**
+**GOFLOW Flo Install Program**
 
 We provide homeowners with a **clear, professional, and fully managed installation** of the Moen Flo Smart Water Monitor and Shutoff—without the surprise costs and confusion that often come with “standard” install offers.
 
@@ -45,7 +45,7 @@ This leads to:
 
 # The Outcome
 
-With GoFlow:
+With GOFLOW:
 
 * The homeowner knows the **real cost upfront**
 * The install is done **correctly the first time**
@@ -197,7 +197,7 @@ If you ever want a smoother option for your clients, I’d be happy to help.
 
 Best,
 [Your Name]
-GoFlow Plumbing
+GOFLOW Plumbing
 
 Why this works better (for your situation)
 It says what they’re already thinking

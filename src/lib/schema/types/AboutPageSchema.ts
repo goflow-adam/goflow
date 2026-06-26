@@ -1,5 +1,5 @@
 import type { WithContext, WebPage, Plumber } from 'schema-dts';
-import { GoFlowSchema } from '../base/GoFlowSchema';
+import { GOFLOWSchema } from '../base/GOFLOWSchema';
 import { OrganizationSchema } from './OrganizationSchema';
 
 interface AboutPageDetails {
@@ -12,7 +12,7 @@ interface AboutPageDetails {
   };
 }
 
-export class AboutPageSchema extends GoFlowSchema<WebPage> {
+export class AboutPageSchema extends GOFLOWSchema<WebPage> {
   private details: AboutPageDetails;
 
   private orgSchema: WithContext<Plumber>;

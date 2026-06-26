@@ -1,7 +1,7 @@
 Pre-2027 Water Heater Reservation & Installation Agreement
 
 This Agreement is entered into between:
-GoFlow Plumbing ("Contractor")andCustomer ("Customer")
+GOFLOW Plumbing ("Contractor")andCustomer ("Customer")
 1. Program Overview
 This Agreement secures Customer’s participation in Contractor’s Pre-2027 Water Heater Reservation & Installation Program ("Program"). The Program is designed to provide Customer with access to a compliant gas water heater and future installation services in light of anticipated regulatory restrictions.
 2. Program Fee
@@ -136,4 +136,4 @@ Customer Signature: __________________________________________ Date: __________
 
 Contractor Representative: _____________________________________Date: __________
 
-Thank you for choosing GoFlow Plumbing.
+Thank you for choosing GOFLOW Plumbing.

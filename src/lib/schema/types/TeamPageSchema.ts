@@ -1,8 +1,8 @@
 import type { WithContext, WebPage, Plumber, AdministrativeArea, PostalAddress } from 'schema-dts';
-import { GoFlowSchema } from '../base/GoFlowSchema';
+import { GOFLOWSchema } from '../base/GOFLOWSchema';
 import { OrganizationSchema } from './OrganizationSchema';
 
-export class TeamPageSchema extends GoFlowSchema<WebPage> {
+export class TeamPageSchema extends GOFLOWSchema<WebPage> {
   private constructor() {
     super();
   }
@@ -17,8 +17,8 @@ export class TeamPageSchema extends GoFlowSchema<WebPage> {
       '@type': 'AboutPage',
       '@id': 'https://goflow.plumbing/team/#webpage',
       'url': 'https://goflow.plumbing/team/',
-      'name': 'Our Team | GoFlow Plumbing',
-      'description': 'Meet the skilled and experienced team at GoFlow Plumbing, serving Sonoma County and Marin County with professional plumbing services.',
+      'name': 'Our Team | GOFLOW Plumbing',
+      'description': 'Meet the skilled and experienced team at GOFLOW Plumbing, serving Sonoma County and Marin County with professional plumbing services.',
       // Reference Organization by @id to avoid duplication
       'provider': { '@id': this.organizationId },
       'mainEntity': { '@id': this.organizationId }

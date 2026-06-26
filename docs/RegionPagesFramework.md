@@ -208,7 +208,7 @@ Talk directly to the homeowner about *their* home and *their* city. This is not 
 
 **The customer is probably stressed.** Something's broken, leaking, or making weird noises. Your job is to be helpful AND to lighten their mood. Be the plumber who makes them feel better just by reading the page.
 
-### The GoFlow Personality
+### The GOFLOW Personality
 
 **We're conversational, not corporate.** Write like you're talking to a neighbor, not drafting a legal document.
 
@@ -225,7 +225,7 @@ No corporate speak. No mission statements. Just: we want to fix this for you.
 **Invite action with partnership language:**
 > "Call us, tell us what's happening, and let us make your plumbing problem ours."
 
-**"Make your problem ours"** is the core GoFlow promise. Use it.
+**"Make your problem ours"** is the core GOFLOW promise. Use it.
 
 ### Use Humor to Lighten the Mood
 
@@ -261,7 +261,7 @@ Write like you talk. Use contractions. Use sentence fragments when they work.
 - **Confident but not arrogant** — we're good at this, but we're not bragging
 - **Self-deprecating when appropriate** — we're plumbers, not brain surgeons
 
-### What GoFlow Voice is NOT
+### What GOFLOW Voice is NOT
 
 - **Corporate** — no "we strive to exceed expectations"
 - **Stiff** — no "please do not hesitate"
@@ -526,7 +526,7 @@ Without stereotyping, acknowledge the community character.
 
 ---
 
-### 10. Why GoFlow Fits This City
+### 10. Why GOFLOW Fits This City
 *This is where your brand message lives*
 
 Tie everything together with a city-specific brand statement.

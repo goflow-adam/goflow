@@ -1,6 +1,6 @@
 # Emergency Plumbing Page Competitor Analysis
 
-> Analysis of 6 competitor emergency plumbing pages to inform GoFlow's emergency service page strategy.
+> Analysis of 6 competitor emergency plumbing pages to inform GOFLOW's emergency service page strategy.
 > 
 > **San Francisco Market:** Ace Plumbing, Atlas Plumbing, Magic Plumbing
 > **Santa Rosa Market:** All Star Plumbing, KC Home Services, Mike's Plumbing
@@ -17,7 +17,7 @@ Emergency plumbing pages follow a consistent pattern across competitors:
 5. **FAQs** — Address common concerns about emergency service
 6. **Service area** — Geographic coverage
 
-**Key differentiator opportunity:** Most competitors use generic, corporate language. GoFlow's conversational, empathetic voice can stand out.
+**Key differentiator opportunity:** Most competitors use generic, corporate language. GOFLOW's conversational, empathetic voice can stand out.
 
 ---
 
@@ -40,7 +40,7 @@ Emergency plumbing pages follow a consistent pattern across competitors:
 - 24/7 or 24-hour mentioned in some titles
 - Brand name typically at end
 
-**GoFlow approach:** `Emergency Plumber Santa Rosa | 24/7 Plumbing | GoFlow`
+**GOFLOW approach:** `Emergency Plumber Santa Rosa | 24/7 Plumbing | GOFLOW`
 
 ### Meta Description Patterns
 
@@ -173,7 +173,7 @@ Atlas Plumbing does this best, referencing:
 - Dense urban layout
 - Local building codes and materials
 
-**Best practice:** Connect emergency service to local conditions (GoFlow strength).
+**Best practice:** Connect emergency service to local conditions (GOFLOW strength).
 
 ### 7. FAQs (4/6 competitors)
 
@@ -281,19 +281,19 @@ Cross-linking to related services:
 
 ---
 
-## GoFlow Differentiation Opportunities
+## GOFLOW Differentiation Opportunities
 
 ### 1. Voice & Tone
-Most competitors use corporate, generic language. GoFlow's conversational, empathetic voice is a significant differentiator.
+Most competitors use corporate, generic language. GOFLOW's conversational, empathetic voice is a significant differentiator.
 
 **Competitor example (generic):**
 > "We understand that emergencies can happen at the worst times."
 
-**GoFlow approach:**
+**GOFLOW approach:**
 > "It's 2 AM. Something's leaking. You're standing in water wondering who to call. We're that call."
 
 ### 2. Local Expertise
-Only Atlas does this well. GoFlow can leverage:
+Only Atlas does this well. GOFLOW can leverage:
 - Fire rebuild areas (Coffey Park, Fountaingrove)
 - Older Santa Rosa neighborhoods with aging infrastructure
 - Hillside homes in Marin with access challenges
@@ -301,7 +301,7 @@ Only Atlas does this well. GoFlow can leverage:
 - Wine country estates with complex systems
 
 ### 3. Honest Guidance
-Most competitors push urgency. GoFlow can differentiate by:
+Most competitors push urgency. GOFLOW can differentiate by:
 - Helping homeowners determine if it's truly an emergency
 - Providing real guidance on what to do while waiting
 - Being honest about when something can wait vs. when it can't
@@ -322,7 +322,7 @@ Instead of generic "we fix emergencies," describe specific scenarios:
 
 ---
 
-## Recommended Page Structure for GoFlow
+## Recommended Page Structure for GOFLOW
 
 Based on analysis, recommended section order:
 
@@ -333,7 +333,7 @@ Based on analysis, recommended section order:
 5. **Our emergency process** — Step-by-step what to expect
 6. **Why fast response matters** — Consequences of delay (without fear-mongering)
 7. **Local emergency challenges** — City-specific issues
-8. **Why trust GoFlow** — 3rd generation, honest pricing, local knowledge
+8. **Why trust GOFLOW** — 3rd generation, honest pricing, local knowledge
 9. **FAQs** — Emergency-specific questions
 10. **Service area** — Cities/neighborhoods served
 11. **Final CTA** — Clear next step
@@ -377,7 +377,7 @@ Based on competitor analysis:
 - **Target:** 1,800-2,200 words (Magic Plumbing level)
 - **Maximum:** 2,500+ words (Atlas Plumbing level — may be too long)
 
-GoFlow target: **1,500-2,000 words** of unique, useful content.
+GOFLOW target: **1,500-2,000 words** of unique, useful content.
 
 ---
 

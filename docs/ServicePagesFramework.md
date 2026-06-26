@@ -95,7 +95,7 @@ A water heater page should talk about water heaters—not "plumbing problems." A
 
 ---
 
-## The GoFlow Personality on Service Pages
+## The GOFLOW Personality on Service Pages
 
 **The customer is having a bad day.** Their drain is backing up, their water heater just died, or something is making a noise that sounds like a dying whale. They're stressed. They're annoyed. They might be standing in water.
 
@@ -155,7 +155,7 @@ No corporate speak. No mission statements. Just: we want to fix this for you.
 
 > "Call us, tell us what's happening, and let us make your plumbing problem ours."
 
-**"Make your problem ours"** is the core GoFlow promise. Use it.
+**"Make your problem ours"** is the core GOFLOW promise. Use it.
 
 ### Voice Characteristics
 
@@ -168,7 +168,7 @@ No corporate speak. No mission statements. Just: we want to fix this for you.
 - **Confident but not arrogant** — we're good at this, but we're not bragging
 - **Self-deprecating when appropriate** — we're plumbers, not brain surgeons
 
-### What GoFlow Voice is NOT
+### What GOFLOW Voice is NOT
 
 - **Corporate** — no "we strive to exceed expectations"
 - **Stiff** — no "please do not hesitate"

@@ -1,5 +1,5 @@
 import type { WithContext, Service, Offer, Organization, OfferCatalog } from 'schema-dts';
-import { GoFlowSchema } from '../base/GoFlowSchema';
+import { GOFLOWSchema } from '../base/GOFLOWSchema';
 
 interface ServiceDetails {
   slug: string;
@@ -59,7 +59,7 @@ interface ServiceDetails {
   };
 }
 
-export class ServiceSchema extends GoFlowSchema<Service> {
+export class ServiceSchema extends GOFLOWSchema<Service> {
 
   private constructor(details: ServiceDetails) {
     super();

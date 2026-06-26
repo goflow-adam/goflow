@@ -2,7 +2,7 @@
 import type { Thing } from 'schema-dts';
 
 // Import schema classes
-import { GoFlowSchema } from './base/GoFlowSchema';
+import { GOFLOWSchema } from './base/GOFLOWSchema';
 import { OrganizationSchema } from './types/OrganizationSchema';
 import { ServiceSchema } from './types/ServiceSchema';
 import { ArticleSchema } from './types/ArticleSchema';
@@ -46,7 +46,7 @@ export interface WebPageDetails {
 }
 
 // Export schema classes
-export { GoFlowSchema };
+export { GOFLOWSchema };
 export { OrganizationSchema };
 export { ServiceSchema };
 export { ArticleSchema };

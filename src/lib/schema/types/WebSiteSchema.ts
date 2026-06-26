@@ -1,8 +1,8 @@
 import type { WithContext, WebSite, SearchAction, EntryPoint } from 'schema-dts';
 import { createMinimalOrganizationInfo } from './MinimalOrganizationInfo';
-import { GoFlowSchema } from '../base/GoFlowSchema';
+import { GOFLOWSchema } from '../base/GOFLOWSchema';
 
-export class WebSiteSchema extends GoFlowSchema<WebSite> {
+export class WebSiteSchema extends GOFLOWSchema<WebSite> {
   private constructor() {
     super();
     this.initialize();
@@ -16,8 +16,8 @@ export class WebSiteSchema extends GoFlowSchema<WebSite> {
     const orgInfo = createMinimalOrganizationInfo();
     this.setType('WebSite')
         .setId('https://goflow.plumbing/#website')
-        .addProperty('name', 'GoFlow Plumbing')
-        .addProperty('alternateName', 'GoFlow')
+        .addProperty('name', 'GOFLOW Plumbing')
+        .addProperty('alternateName', 'GOFLOW')
         .addProperty('inLanguage', 'en-US')
         .addProperty('url', 'https://goflow.plumbing/')
         .addProperty('description', 'Professional plumbing services in Sonoma County and Marin County')

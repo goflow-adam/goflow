@@ -106,7 +106,7 @@ All company/brand information in one place:
 
 ```
 Us
-├── About GoFlow
+├── About GOFLOW
 ├── Our Team
 ├── Articles & Tips
 ├── FAQs
@@ -114,7 +114,7 @@ Us
 ```
 
 **Mapping**:
-- About GoFlow → `/about-us/`
+- About GOFLOW → `/about-us/`
 - Our Team → `/team/`
 - Articles & Tips → `/articles/`
 - FAQs → `/faqs/`
@@ -139,7 +139,7 @@ Footer Nav:
 │   └── (full region list for SEO)
 │
 ├── Company
-│   ├── About GoFlow
+│   ├── About GOFLOW
 │   ├── Our Team
 │   ├── Articles & Tips
 │   ├── FAQs
@@ -262,7 +262,7 @@ Mobile Nav (hamburger expands to):
 
 2. **"Us" label** — alternatives:
    - "About"
-   - "GoFlow"
+   - "GOFLOW"
    - "Company"
    - Keep it as "Us"
 

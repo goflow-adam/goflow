@@ -1,4 +1,4 @@
-GoFlow Replacement Reservation Plan
+GOFLOW Replacement Reservation Plan
 Overview
 This proactive customer program is designed to address upcoming regulatory changes affecting our customers’ and potential customers’ residential gas water heater replacements within the jurisdiction of the BAAQMD.
 	Beginning January 1st, 2027, residents will no longer be allowed to have gas water heaters manufactured after that date installed in their homes. While existing systems can continue operating, homeowners will face significantly different—and often more expensive—replacement requirements when their current units fail.
@@ -11,8 +11,8 @@ As a result of these new regulations, homeowners will encounter:
 	•	Physical relocation of the water heater
 	•	Longer project timelines and added complexity
 These changes introduce uncertainty and financial risk at the time of system failure—when homeowners are least prepared to evaluate complex options.
-The GoFlow Solution
-The GoFlow Replacement Reservation Plan enables homeowners to reserve a compliant, pre-2027 manufactured gas water heater deferring installation until their existing system fails.
+The GOFLOW Solution
+The GOFLOW Replacement Reservation Plan enables homeowners to reserve a compliant, pre-2027 manufactured gas water heater deferring installation until their existing system fails.
 Key components of the program include:
 	•	Equipment Reservation: A specific, compliant gas water heater is purchased and allocated to the customer
 	•	Deferred Installation: Installation occurs at a future date when replacement is required
@@ -25,7 +25,7 @@ The program delivers three primary benefits:
 	2.	SimplicityEnables a straightforward replacement rather than a system conversion.
 	3.	Peace of MindEliminates uncertainty by securing both equipment availability and a defined path forward.
 Business Objectives
-The program supports GoFlow’s strategic goals by:
+The program supports GOFLOW’s strategic goals by:
 	•	Positioning the company as a trusted, forward-thinking advisor
 	•	Creating a new revenue stream through program participation
 	•	Increasing customer lifetime value and retention
@@ -48,7 +48,7 @@ The program incorporates safeguards to address key risks, including:
 	•	Contingency plans for regulatory changes affecting installation feasibility
 Conclusion
 This is a proactive solution to a known market shift allowing homeowners to make a small, informed decision today that can prevent significantly larger costs and complications in the future.
-For GoFlow, the program reinforces its brand promise:anticipating problems early and delivering simple, practical solutions that put the customer first.
+For GOFLOW, the program reinforces its brand promise:anticipating problems early and delivering simple, practical solutions that put the customer first.
 
 Our Direct Mail Copy:
 New Bay Area Air Quality Management District regulations 

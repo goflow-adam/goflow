@@ -15,7 +15,7 @@ type AreaConfig = {
   cities: string[];
 };
 
-export abstract class GoFlowSchema<T extends Thing> {
+export abstract class GOFLOWSchema<T extends Thing> {
   protected readonly context = 'https://schema.org' as const;
   protected readonly organizationId = 'https://goflow.plumbing/#organization' as const;
   protected data: SchemaData = {};

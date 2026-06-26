@@ -1,8 +1,8 @@
 import type { WithContext, FAQPage } from 'schema-dts';
-import { GoFlowSchema } from '../base/GoFlowSchema';
+import { GOFLOWSchema } from '../base/GOFLOWSchema';
 import { OrganizationSchema } from './OrganizationSchema';
 
-export class FAQPageSchema extends GoFlowSchema<FAQPage> {
+export class FAQPageSchema extends GOFLOWSchema<FAQPage> {
   private constructor() {
     super();
   }
@@ -18,8 +18,8 @@ export class FAQPageSchema extends GoFlowSchema<FAQPage> {
       '@type': 'FAQPage',
       '@id': 'https://goflow.plumbing/faqs/#webpage',
       'url': 'https://goflow.plumbing/faqs/',
-      'name': 'Frequently Asked Questions | GoFlow Plumbing',
-      'description': 'Find answers to common plumbing questions from GoFlow Plumbing, serving Sonoma County and Marin County.',
+      'name': 'Frequently Asked Questions | GOFLOW Plumbing',
+      'description': 'Find answers to common plumbing questions from GOFLOW Plumbing, serving Sonoma County and Marin County.',
       // Reference Organization by @id to avoid duplication
       'provider': { '@id': this.organizationId },
       'mainEntity': [

@@ -1,5 +1,5 @@
 import type { WithContext, WebPage, ListItem, BreadcrumbList, Thing } from 'schema-dts';
-import { GoFlowSchema } from '../base/GoFlowSchema';
+import { GOFLOWSchema } from '../base/GOFLOWSchema';
 
 interface WebPageDetails {
   url: string;
@@ -10,7 +10,7 @@ interface WebPageDetails {
   image?: string | string[];
 }
 
-export class WebPageSchema extends GoFlowSchema<WebPage> {
+export class WebPageSchema extends GOFLOWSchema<WebPage> {
   private constructor(details: WebPageDetails) {
     super();
     this.initialize(details);

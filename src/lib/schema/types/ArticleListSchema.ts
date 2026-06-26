@@ -1,5 +1,5 @@
 import type { WithContext, CollectionPage, Thing } from 'schema-dts';
-import { GoFlowSchema } from '../base/GoFlowSchema';
+import { GOFLOWSchema } from '../base/GOFLOWSchema';
 
 interface ArticleListDetails {
   url: string;
@@ -8,7 +8,7 @@ interface ArticleListDetails {
   mainEntity: Thing;
 }
 
-export class ArticleListSchema extends GoFlowSchema<CollectionPage> {
+export class ArticleListSchema extends GOFLOWSchema<CollectionPage> {
   private constructor(details: ArticleListDetails) {
     super();
     this.initialize(details);

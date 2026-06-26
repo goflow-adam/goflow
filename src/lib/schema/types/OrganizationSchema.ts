@@ -1,9 +1,9 @@
-import type { WithContext, Plumber, OpeningHoursSpecification, GeoCoordinates, ContactPoint, Review, AggregateRating } from 'schema-dts';
+import type { WithContext, Plumber, OpeningHoursSpecification, GeoCoordinates, ContactPoint, Review, AggregateRating, OfferCatalog } from 'schema-dts';
 import { createMinimalOrganizationInfo } from './MinimalOrganizationInfo';
 import { AreaService } from '../base/AreaService';
-import { GoFlowSchema } from '../base/GoFlowSchema';
+import { GOFLOWSchema } from '../base/GOFLOWSchema';
 
-export class OrganizationSchema extends GoFlowSchema<Plumber> {
+export class OrganizationSchema extends GOFLOWSchema<Plumber> {
   private constructor() {
     super();
     this.initialize();
@@ -21,7 +21,7 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
         .setId(minimalInfo['@id'])
         .addProperty('name', minimalInfo.name)
         .addProperty('legalName', minimalInfo.legalName)
-        .addProperty('alternateName', 'GoFlow')
+        .addProperty('alternateName', 'GOFLOW')
         .addProperty('logo', {
           '@type': 'ImageObject',
           'url': 'https://goflow.plumbing/images/LogoForGoogle.webp'
@@ -56,7 +56,8 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
           'Leak detection and repair'
         ] as string[])
         .addProperty('aggregateRating', this.getAggregateRating())
-        .addProperty('review', this.getReviews());
+        .addProperty('review', this.getReviews())
+        .addProperty('hasOfferCatalog', this.getOfferCatalog());
   }
 
   private getGeoCoordinates(): GeoCoordinates {
@@ -88,10 +89,110 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
     return {
       '@type': 'AggregateRating',
       'ratingValue': '5.0',
-      'reviewCount': '8',
+      'reviewCount': '9',
       'bestRating': '5',
       'worstRating': '1'
     } as AggregateRating;
+  }
+
+  private getOfferCatalog(): OfferCatalog {
+    const baseUrl = 'https://goflow.plumbing';
+    return {
+      '@type': 'OfferCatalog',
+      'name': 'Plumbing Services',
+      'itemListElement': [
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            '@id': `${baseUrl}/water-heater-repair-and-replacement/`,
+            'name': 'Water Heater Services',
+            'url': `${baseUrl}/water-heater-repair-and-replacement/`
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            '@id': `${baseUrl}/clogged-drains-rootered/`,
+            'name': 'Drain Cleaning',
+            'url': `${baseUrl}/clogged-drains-rootered/`
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            '@id': `${baseUrl}/emergency-plumbing-services/`,
+            'name': 'Emergency Plumbing',
+            'url': `${baseUrl}/emergency-plumbing-services/`
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            '@id': `${baseUrl}/leak-detection-and-repair/`,
+            'name': 'Leak Detection & Repair',
+            'url': `${baseUrl}/leak-detection-and-repair/`
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            '@id': `${baseUrl}/sewer-line-repair-and-replacement/`,
+            'name': 'Sewer Line Services',
+            'url': `${baseUrl}/sewer-line-repair-and-replacement/`
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            '@id': `${baseUrl}/clogged-or-running-toilets/`,
+            'name': 'Toilet Repair',
+            'url': `${baseUrl}/clogged-or-running-toilets/`
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            '@id': `${baseUrl}/faucet-leaks-repaired/`,
+            'name': 'Faucet Repair',
+            'url': `${baseUrl}/faucet-leaks-repaired/`
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            '@id': `${baseUrl}/garbage-disposal-repair-or-installation/`,
+            'name': 'Garbage Disposal Services',
+            'url': `${baseUrl}/garbage-disposal-repair-or-installation/`
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            '@id': `${baseUrl}/automatic-water-shutoff-installation/`,
+            'name': 'Automatic Water Shutoff Installation',
+            'url': `${baseUrl}/automatic-water-shutoff-installation/`
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            '@id': `${baseUrl}/instant-hot-water-installed-or-repaired/`,
+            'name': 'Instant Hot Water Installation',
+            'url': `${baseUrl}/instant-hot-water-installed-or-repaired/`
+          }
+        }
+      ]
+    } as OfferCatalog;
   }
 
   private getReviews(): Review[] {
@@ -206,7 +307,7 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
           'bestRating': '5',
           'worstRating': '1'
         },
-        'reviewBody': 'Great experience with GoFlow Plumbing. They do high-quality work and stand behind everything they do. Chris was super easy to work with and made the whole job stress-free. I\'ll be using them again for sure.',
+        'reviewBody': 'Great experience with GOFLOW Plumbing. They do high-quality work and stand behind everything they do. Chris was super easy to work with and made the whole job stress-free. I\'ll be using them again for sure.',
         'url': googleReviewUrl
       } as Review,
       {
@@ -222,7 +323,23 @@ export class OrganizationSchema extends GoFlowSchema<Plumber> {
           'bestRating': '5',
           'worstRating': '1'
         },
-        'reviewBody': 'I am really happy with the service I received from GoFlow Plumbing. Chris was great to work with and everything turned out perfectly.',
+        'reviewBody': 'I am really happy with the service I received from GOFLOW Plumbing. Chris was great to work with and everything turned out perfectly.',
+        'url': googleReviewUrl
+      } as Review,
+      {
+        '@type': 'Review',
+        'author': {
+          '@type': 'Person',
+          'name': 'Joseph Denning'
+        },
+        'datePublished': '2026-06',
+        'reviewRating': {
+          '@type': 'Rating',
+          'ratingValue': '5',
+          'bestRating': '5',
+          'worstRating': '1'
+        },
+        'reviewBody': 'Adam and his crew took care of a stubborn leak that multiple other companies could not handle. Shout out to him and his crew for their expertise in assessing the problem and quickly resolving it. Couldn\'t recommend these guys enough!!!',
         'url': googleReviewUrl
       } as Review
     ];

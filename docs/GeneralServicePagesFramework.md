@@ -101,7 +101,7 @@ This principle applies even more strongly to general service pages because they 
 
 ---
 
-## The GoFlow Personality on General Service Pages
+## The GOFLOW Personality on General Service Pages
 
 The same voice principles apply as all other pages. **No extra educational tone.** Every page—general service, city-specific, region—should blend education with conversion. The goal is always to help the visitor and convert them to a caller.
 
@@ -128,7 +128,7 @@ Stories humanize the company and make technical content memorable.
 
 ### Voice Characteristics
 
-Same as all GoFlow pages:
+Same as all GOFLOW pages:
 - **Conversational** — write like you're talking to a neighbor
 - **Playful** — humor is welcome
 - **Honest** — willing to say "repair makes more sense than replacement here"

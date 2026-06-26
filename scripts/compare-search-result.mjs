@@ -213,7 +213,7 @@ async function callClaudeAPI(frontmatter, googleData, url) {
     process.exit(1);
   }
   
-  const prompt = `You are an SEO expert helping optimize title and meta description tags for a plumbing company website (GoFlow Plumbing in Sonoma/Marin County, California).
+  const prompt = `You are an SEO expert helping optimize title and meta description tags for a plumbing company website (GOFLOW Plumbing in Sonoma/Marin County, California).
 
 ## Current Situation
 
