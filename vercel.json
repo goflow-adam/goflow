@@ -132,7 +132,7 @@
       "permanent": true
     },
     {
-      "source": "/maintenance",
+      "source": "/maintenance/",
       "destination": "/water-heater-maintenance-plans/",
       "permanent": true
     }
