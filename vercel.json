@@ -130,6 +130,11 @@
       "source": "/review",
       "destination": "/review/",
       "permanent": true
+    },
+    {
+      "source": "/maintenance",
+      "destination": "/water-heater-maintenance-plans/",
+      "permanent": true
     }
   ]
 }
