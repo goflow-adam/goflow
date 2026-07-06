@@ -11,7 +11,7 @@
 }
 
 .services-list > div > h2 {
-  @apply text-2xl font-bold mb-4;
+  @apply text-2xl mb-4;
 }
 
 .services-list h2 a {
@@ -31,7 +31,7 @@
 }
 
 .emergency-services h2 {
-  @apply text-2xl font-bold mb-4;
+  @apply text-2xl mb-4;
 }
 
 .emergency-services p {
@@ -55,7 +55,7 @@
 }
 
 .why-choose-us h2 {
-  @apply text-2xl font-bold mb-6;
+  @apply text-2xl mb-6;
 }
 
 .why-choose-us > div {
@@ -67,5 +67,5 @@
 }
 
 .why-choose-us > div > div > h3 {
-  @apply text-xl font-bold mb-3;
+  @apply text-xl mb-3;
 }

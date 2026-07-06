@@ -10,7 +10,7 @@
 }
 
 .anatomy-series-label {
-  @apply text-sm font-semibold text-slate-700;
+  @apply text-sm text-slate-700;
 }
 
 ul.anatomy-series-list {
@@ -30,7 +30,7 @@ ul.anatomy-series-list {
 }
 
 .anatomy-series-link.current {
-  @apply bg-primary text-white font-medium;
+  @apply bg-primary text-white;
 }
 
 .anatomy-series-link.current:hover {
@@ -38,7 +38,7 @@ ul.anatomy-series-list {
 }
 
 .anatomy-series-number {
-  @apply inline-flex items-center justify-center w-5 h-5 rounded-full bg-slate-200 text-xs font-medium text-slate-600;
+  @apply inline-flex items-center justify-center w-5 h-5 rounded-full bg-slate-200 text-xs text-slate-600;
 }
 
 .anatomy-series-link.current .anatomy-series-number {
@@ -77,7 +77,7 @@ ul.anatomy-series-list {
 }
 
 .anatomy-prevnext-title {
-  @apply text-base font-medium text-primary;
+  @apply text-base text-primary;
 }
 
 .anatomy-prevnext-link:hover .anatomy-prevnext-title {

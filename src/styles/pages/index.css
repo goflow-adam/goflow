@@ -1,7 +1,7 @@
 
 
 .homepage .h3 {
-  @apply text-xl font-bold mb-6;
+  @apply text-xl mb-6;
 }
 
 
@@ -42,11 +42,11 @@
 }
 
 .hero .hero-container h1 {
-  @apply text-4xl lg:text-5xl font-bold text-primary mb-0;
+  @apply text-4xl lg:text-5xl text-primary mb-0;
 }
 
 .hero-container h2 {
-  @apply text-2xl lg:text-3xl font-bold text-primary;
+  @apply text-2xl lg:text-3xl text-primary;
 }
 
 .hero-text {
@@ -67,7 +67,7 @@
 }
 
 .problems h2 {
-  @apply text-2xl font-bold mb-4;
+  @apply text-2xl mb-4;
 }
 
 #problems-headline {
@@ -92,7 +92,7 @@
 }
 
 .problem-text {
-  @apply text-sm font-medium text-primary;
+  @apply text-sm text-primary;
 }
 
 .problem-tile-emergency {
@@ -120,7 +120,7 @@
 }
 
 .choose-us h2 {
-  @apply text-3xl font-bold text-center mb-12;
+  @apply text-3xl text-center mb-12;
 }
 
 .choose-us > div > div {
@@ -128,7 +128,7 @@
 }
 
 .choose-us h3 {
-  @apply text-xl font-bold mb-4;
+  @apply text-xl mb-4;
 }
 
 .service-areas {
@@ -140,7 +140,7 @@
 }
 
 .service-areas h2 {
-  @apply text-3xl font-bold mb-12;
+  @apply text-3xl mb-12;
 }
 
 .service-areas > div > div {
@@ -152,7 +152,7 @@
 }
 
 .service-areas h3 {
-  @apply text-2xl font-bold mb-4;
+  @apply text-2xl mb-4;
 }
 
 .cta {
@@ -164,7 +164,7 @@
 }
 
 .cta h2 {
-  @apply text-3xl font-bold mb-6;
+  @apply text-3xl mb-6;
 }
 
 .cta p {
@@ -185,7 +185,7 @@
 }
 
 .top-services h2 {
-  @apply text-3xl font-bold text-center mb-12;
+  @apply text-3xl text-center mb-12;
 }
 
 .top-services > div ul {
@@ -206,7 +206,7 @@
 }
 
 .reviews h2 {
-  @apply text-3xl font-bold text-center mb-12;
+  @apply text-3xl text-center mb-12;
 }
 
 .reviews-grid {
@@ -222,7 +222,7 @@
 }
 
 .reviewer-name {
-  @apply font-bold text-lg;
+  @apply text-lg;
 }
 
 .review-date {
@@ -259,7 +259,7 @@
 }
 
 .reserve-promo h2 {
-  @apply text-2xl md:text-3xl font-bold mb-4;
+  @apply text-2xl md:text-3xl mb-4;
 }
 
 .reserve-promo .promo-text {
@@ -271,11 +271,11 @@
 }
 
 .reserve-promo .promo-highlights span {
-  @apply bg-background/20 px-4 py-2 rounded-full text-sm font-medium;
+  @apply bg-background/20 px-4 py-2 rounded-full text-sm;
 }
 
 .reserve-promo .btn-accent {
-  @apply bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:brightness-110 transition-all inline-block;
+  @apply bg-accent text-primary px-6 py-3 rounded-lg hover:brightness-110 transition-all inline-block;
 }
 
 .reserve-promo .btn-accent .brand-name {

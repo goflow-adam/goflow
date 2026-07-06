@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProcessStepper from '../components/ProcessStepper.astro';
+import CompanyName from '../components/CompanyName.astro';
 import { createHomePageSchemas } from '../lib/schema/factories';
 import { Flame, ShowerHead, Droplets, Bath, Siren, ArrowRight } from '@lucide/astro';
 import '../styles/pages/index.css';
@@ -20,7 +21,7 @@ const homePageSchemas = await createHomePageSchemas();
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-container">
-        <h1>GOFLOW Plumbing</h1>
+        <h1><CompanyName full /></h1>
         <h2>3rd Generation Experts</h2>
         <!-- Problem Selector -->
         <div class="problems">
@@ -289,7 +290,7 @@ const homePageSchemas = await createHomePageSchemas();
     <!-- Why Choose Us -->
     <section class="choose-us">
       <div>
-        <h2>Why Homeowners Choose GOFLOW Plumbing</h2>
+        <h2>Why Homeowners Choose <CompanyName full /></h2>
         <div>
           <div>
             <h3>24/7 Emergency Service</h3>
@@ -310,19 +311,19 @@ const homePageSchemas = await createHomePageSchemas();
     <!-- Service Areas -->
     <section class="service-areas">
       <div>
-        <h2>GOFLOW Plumbing Service Areas</h2>
-        <p class="section-intro">GOFLOW Plumbing proudly serves homeowners throughout the North Bay. Whether you're in wine country or near the coast, we're your local plumbing experts.</p>
+        <h2><CompanyName full /> Service Areas</h2>
+        <p class="section-intro"><CompanyName full /> proudly serves homeowners throughout the North Bay. Whether you're in wine country or near the coast, we're your local plumbing experts.</p>
         <div>
           <div>
             <a href="/sonoma-county-plumbing/">
               <h3>Sonoma County Plumbing</h3>
-              <p>Santa Rosa, Petaluma, Healdsburg, Sonoma, and surrounding communities. GOFLOW Plumbing knows Sonoma County plumbing.</p>
+              <p>Santa Rosa, Petaluma, Healdsburg, Sonoma, and surrounding communities. <CompanyName full /> knows Sonoma County plumbing.</p>
             </a>
           </div>
           <div>
             <a href="/marin-county-plumbing/">
               <h3>Marin County Plumbing</h3>
-              <p>San Rafael, Novato, Mill Valley, and throughout Marin. GOFLOW Plumbing understands the unique plumbing needs of Marin homes.</p>
+              <p>San Rafael, Novato, Mill Valley, and throughout Marin. <CompanyName full /> understands the unique plumbing needs of Marin homes.</p>
             </a>
           </div>
         </div>
@@ -333,8 +334,8 @@ const homePageSchemas = await createHomePageSchemas();
     <!-- CTA Section -->
     <section class="cta">
       <div>
-        <h2>You Need a Plumber Call GOFLOW Plumbing</h2>
-        <p>Contact GOFLOW Plumbing now for fast, reliable service in Sonoma County and Marin County</p>
+        <h2>You Need a Plumber Call <CompanyName full /></h2>
+        <p>Contact <CompanyName full /> now for fast, reliable service in Sonoma County and Marin County</p>
         <a href="/contact-us/">
           Get in Touch
         </a>

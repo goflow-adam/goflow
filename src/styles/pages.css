@@ -3,7 +3,7 @@
 }
 
 .call-to-action h2 {
-  @apply text-2xl font-bold mb-4;
+  @apply text-2xl mb-4;
 }
 
 .call-to-action p {
@@ -23,7 +23,7 @@
 }
 
 .service-areas h3 {
-  @apply text-xl font-bold mb-3;
+  @apply text-xl mb-3;
 }
 
 .service-areas p {

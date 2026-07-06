@@ -1,0 +1,10 @@
+---
+interface Props {
+  full?: boolean;
+}
+
+const { full = false } = Astro.props;
+const text = full ? 'GOFLOW Plumbing' : 'GOFLOW';
+---
+
+<span class="company-name">{text}</span>

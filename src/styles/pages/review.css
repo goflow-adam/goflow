@@ -61,7 +61,7 @@
 }
 
 .platform-name {
-  @apply font-medium text-primary flex-grow;
+  @apply text-primary flex-grow;
 }
 
 .external-icon {

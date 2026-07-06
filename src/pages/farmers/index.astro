@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CompanyName from '../../components/CompanyName.astro';
 import '../../styles/pages/farmers.css';
 import { CheckCircle, AlertTriangle, Phone, Mail, Shield, Clock, Users, FileCheck } from '@lucide/astro';
 ---
@@ -47,7 +48,7 @@ import { CheckCircle, AlertTriangle, Phone, Mail, Shield, Clock, Users, FileChec
             </ul>
           </div>
           <div class="comparison-card solution">
-            <h3>The GOFLOW Plumbing Experience</h3>
+            <h3>The <CompanyName full /> Experience</h3>
             <div class="price">$1,499 Flat Rate</div>
             <div class="price-note">All-in pricing, no surprises</div>
             <ul>
@@ -221,7 +222,7 @@ import { CheckCircle, AlertTriangle, Phone, Mail, Shield, Clock, Users, FileChec
 
     <!-- Trust Section -->
     <section class="trust-section">
-      <h2>Why GOFLOW Plumbing?</h2>
+      <h2>Why <CompanyName full />?</h2>
         <div class="trust-grid">
           <div class="trust-item">
             <h3>3rd Generation Plumbers</h3>

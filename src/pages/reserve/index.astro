@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CompanyName from '../../components/CompanyName.astro';
 import '../../styles/pages/reserve.css';
 import { Clock, ShieldCheck, DollarSign, Wrench, AlertTriangle, CheckCircle, ArrowRight } from '@lucide/astro';
 import { createFAQSchema } from '../../lib/schema/factories';
@@ -414,7 +415,7 @@ const faqSchema = await createFAQSchema(faqs, 'https://goflow.plumbing/reserve/'
     <!-- Trust Section -->
     <section class="trust-section">
       <div class="section-content">
-        <h2>Why GOFLOW Plumbing?</h2>
+        <h2>Why <CompanyName full />?</h2>
         <div class="trust-grid">
           <div class="trust-item">
             <h3>3rd Generation Plumbers</h3>

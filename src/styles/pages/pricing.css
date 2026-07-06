@@ -3,11 +3,11 @@
 }
 
 .pricing-container h1 {
-  @apply text-4xl font-bold text-gray-900 mb-8;
+  @apply text-4xl text-gray-900 mb-8;
 }
 
 .pricing-container h2 {
-  @apply text-2xl font-semibold text-gray-800 mt-12 mb-6;
+  @apply text-2xl text-gray-800 mt-12 mb-6;
 }
 
 .pricing-container p {
@@ -27,7 +27,7 @@
 }
 
 .pricing-container th {
-  @apply bg-gray-100 text-left py-3 px-4 font-semibold text-gray-700 border border-gray-200;
+  @apply bg-gray-100 text-left py-3 px-4 text-gray-700 border border-gray-200;
 }
 
 .pricing-container td {
@@ -36,7 +36,7 @@
 
 /* Price ranges */
 .pricing-container td:nth-child(2) {
-  @apply font-medium text-gray-900;
+  @apply text-gray-900;
 }
 
 /* Details column */

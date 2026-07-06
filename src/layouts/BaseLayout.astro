@@ -2,6 +2,7 @@
 import { SEO } from 'astro-seo';
 import Navigation from '../components/Navigation.astro';
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+import '../styles/typography.css';
 import '../styles/navigation.css';
 import '../styles/base-layout.css';
 import '../styles/pages/all-plumbing-problems.css';
@@ -46,6 +47,7 @@ const stripContext = (item: any): any => {
     <meta name="theme-color" content="#1F4A6F" media="(prefers-color-scheme: dark)">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="preload" as="style" href="/styles/critical.css" />
     <link rel="stylesheet" href="/styles/critical.css" />
     <link rel="preload" as="script" href="/scripts/navigation.js" />

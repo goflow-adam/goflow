@@ -7,11 +7,11 @@
 }
 
 .team-member h3 {
-  @apply text-xl font-bold text-primary mb-2;
+  @apply text-xl text-primary mb-2;
 }
 
 .team-member .job-title {
-  @apply text-secondary font-medium mb-4;
+  @apply text-secondary mb-4;
 }
 
 .team-member .description {
@@ -27,7 +27,7 @@
 }
 
 .team-member h4 {
-  @apply font-semibold text-lg mt-6 mb-2 text-primary;
+  @apply text-lg mt-6 mb-2 text-primary;
 }
 
 .team-member .education p,
@@ -50,11 +50,11 @@
 }
 
 .team-container h2 {
-    @apply text-2xl font-bold mt-8 mb-4 text-primary;
+    @apply text-2xl mt-8 mb-4 text-primary;
   }
 
   .team-container h3 {
-    @apply text-xl font-bold mt-6 mb-3 text-primary;
+    @apply text-xl mt-6 mb-3 text-primary;
   }
 
   .team-container p {

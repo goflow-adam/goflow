@@ -4,6 +4,9 @@ export default defineConfig({
   presets: [presetUno()],
   transformers: [transformerDirectives()],
   theme: {
+    fontFamily: {
+      sans: 'Montserrat, system-ui, -apple-system, sans-serif',
+    },
     colors: {
       primary: '#1f4a6f',
       secondary: '#509cba',

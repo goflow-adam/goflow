@@ -11,7 +11,7 @@
 }
 
 .contact-us .row h2 {
-  @apply text-2xl font-bold mb-4;
+  @apply text-2xl mb-4;
 }
 
 .contact-us .contact-methods {
@@ -19,7 +19,6 @@
 }
 
 .contact-methods h3 {
-  @apply font-bold;
 }
 
 .contact-methods p {
@@ -31,7 +30,7 @@
 }
 
 .emergency-service h2 {
-  @apply text-2xl font-bold mb-4;
+  @apply text-2xl mb-4;
 }
 
 .emergency-service p {
@@ -43,11 +42,11 @@
 }
 
 .contact-us .service-areas h2 {
-  @apply text-2xl font-bold mb-6;
+  @apply text-2xl mb-6;
 }
 
 .contact-us .service-areas h3 {
-  @apply text-xl font-bold mb-3;
+  @apply text-xl mb-3;
 }
 
 .contact-us a {
@@ -59,7 +58,7 @@
 }
 
 .contact-us .phone {
-  @apply text-2xl font-bold hover:text-primary text-background;
+  @apply text-2xl hover:text-primary text-background;
 }
 
 .contact-us input, select, textarea {

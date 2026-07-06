@@ -44,7 +44,7 @@
 }
 
 .read-more {
-  @apply inline-flex items-center text-primary font-semibold group-hover:text-primary-dark transition;
+  @apply inline-flex items-center text-primary group-hover:text-primary-dark transition;
 }
 
 /* Table Styles */
@@ -54,7 +54,7 @@
 }
 
 .content-grid table th {
-  @apply bg-primary/5 text-primary font-semibold p-4 text-left border-b border-gray-100 transition-colors duration-200;
+  @apply bg-primary/5 text-primary p-4 text-left border-b border-gray-100 transition-colors duration-200;
   font-size: 0.95rem;
 }
 
@@ -79,13 +79,13 @@
 /* Feature comparison highlights */
 .content-grid table td:not(:first-child) strong,
 .content-grid table td:not(:first-child) .highlight {
-  @apply text-primary font-medium;
+  @apply text-primary;
 }
 
 /* First column styling */
 .content-grid table td:first-child,
 .content-grid table th:first-child {
-  @apply font-medium bg-gray-50/30;
+  @apply bg-gray-50/30;
 }
 
 /* Zebra striping for better readability */
@@ -129,7 +129,7 @@
 }
 
 .cta-callout .cta-box h3 {
-  @apply text-xl md:text-2xl font-bold text-primary mb-4;
+  @apply text-xl md:text-2xl text-primary mb-4;
 }
 
 .cta-callout .cta-box p {
@@ -137,6 +137,6 @@
 }
 
 .cta-callout .cta-button {
-  @apply inline-block bg-primary text-background px-6 py-3 rounded-lg font-semibold 
+  @apply inline-block bg-primary text-background px-6 py-3 rounded-lg
          hover:bg-secondary transition-colors duration-200;
 }

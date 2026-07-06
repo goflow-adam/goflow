@@ -34,7 +34,7 @@
 }
 
 .reserve-hero h1 {
-  @apply text-3xl md:text-5xl font-bold mb-6;
+  @apply text-3xl md:text-5xl mb-6;
   color: var(--color-background) !important;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .reserve-hero .btn {
-  @apply px-8 py-3 rounded-lg font-semibold transition-all duration-200;
+  @apply px-8 py-3 rounded-lg transition-all duration-200;
 }
 
 .reserve-hero .btn-primary {
@@ -72,7 +72,7 @@
 }
 
 .reserve-page .section-content h2 {
-  @apply text-2xl md:text-3xl font-bold text-primary mb-6 text-center;
+  @apply text-2xl md:text-3xl text-primary mb-6 text-center;
 }
 
 .reserve-page .section-intro {
@@ -85,7 +85,7 @@
 }
 
 .btn-cta {
-  @apply inline-block bg-error text-background px-8 py-3 rounded-lg font-semibold 
+  @apply inline-block bg-error text-background px-8 py-3 rounded-lg
          hover:brightness-110 transition-all shadow-md hover:shadow-lg;
 }
 
@@ -116,11 +116,11 @@
 }
 
 .comparison-card h3 {
-  @apply text-xl font-bold mb-4 text-center;
+  @apply text-xl mb-4 text-center;
 }
 
 .comparison-card .price {
-  @apply text-3xl font-bold text-center mb-6 text-primary;
+  @apply text-3xl text-center mb-6 text-primary;
 }
 
 .comparison-card .price.warning {
@@ -168,7 +168,7 @@
 }
 
 .learn-more a {
-  @apply text-primary font-semibold hover:text-secondary inline-flex items-center gap-2;
+  @apply text-primary hover:text-secondary inline-flex items-center gap-2;
 }
 
 .inline-icon {
@@ -193,7 +193,7 @@
 }
 
 .benefit-card h3 {
-  @apply text-lg font-bold mb-3 text-primary;
+  @apply text-lg mb-3 text-primary;
 }
 
 .benefit-card p {
@@ -218,12 +218,12 @@
 }
 
 .step-number {
-  @apply w-12 h-12 rounded-full bg-background text-primary font-bold text-xl 
+  @apply w-12 h-12 rounded-full bg-background text-primary text-xl 
          flex items-center justify-center flex-shrink-0;
 }
 
 .step-content h3 {
-  @apply text-lg font-bold mb-2;
+  @apply text-lg mb-2;
 }
 
 .step-content p {
@@ -265,7 +265,7 @@
 }
 
 .faq-item h3 {
-  @apply text-lg font-bold mb-3 text-primary;
+  @apply text-lg mb-3 text-primary;
 }
 
 .faq-item p {
@@ -310,7 +310,7 @@
 }
 
 .phone-number {
-  @apply text-2xl font-bold text-background hover:text-background/80;
+  @apply text-2xl text-background hover:text-background/80;
 }
 
 /* Form Styles */
@@ -319,7 +319,7 @@
 }
 
 .cta-form-container h3 {
-  @apply text-xl font-bold mb-6 text-primary text-center;
+  @apply text-xl mb-6 text-primary text-center;
 }
 
 .reserve-form .form-group {
@@ -327,7 +327,7 @@
 }
 
 .reserve-form label {
-  @apply block text-sm font-medium mb-1 text-gray-700;
+  @apply block text-sm mb-1 text-gray-700;
 }
 
 .reserve-form input,
@@ -337,7 +337,7 @@
 }
 
 .reserve-form .submit-btn {
-  @apply w-full bg-error text-background py-4 px-6 rounded-lg font-bold text-lg
+  @apply w-full bg-error text-background py-4 px-6 rounded-lg text-lg
          hover:bg-error/90 transition-colors duration-200 shadow-lg hover:shadow-xl mt-4;
 }
 
@@ -355,7 +355,7 @@
 }
 
 .trust-item h3 {
-  @apply text-lg font-bold mb-2 text-primary;
+  @apply text-lg mb-2 text-primary;
 }
 
 .trust-item p {

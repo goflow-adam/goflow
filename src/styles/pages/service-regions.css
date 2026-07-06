@@ -21,7 +21,7 @@
 }
 
 .service-regions .regions-container .region-card h2 {
-  @apply text-2xl font-bold mb-4 text-primary;
+  @apply text-2xl mb-4 text-primary;
 }
 
 .service-regions .regions-container .region-card:hover h2 {
@@ -33,7 +33,7 @@
 }
 
 .service-regions .regions-container .region-card .view-area {
-  @apply inline-block bg-error hover:bg-error/90 text-background text-center font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl;
+  @apply inline-block bg-error hover:bg-error/90 text-background text-center px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl;
 }
 
 .service-regions .regions-container .region-card:hover .view-area {
@@ -45,7 +45,7 @@
 }
 
 .need-container h2 {
-  @apply text-2xl font-bold mb-4;
+  @apply text-2xl mb-4;
 }
 
 .need-container p {
@@ -69,7 +69,7 @@
 }
 
 .choose-us-container h2 {
-  @apply text-2xl font-bold mb-6;
+  @apply text-2xl mb-6;
 }
 
 .choose-us-container > div {
@@ -81,5 +81,5 @@
 }
 
 .choose-us-container > div > div > h3 {
-  @apply text-xl font-bold mb-3;
+  @apply text-xl mb-3;
 }

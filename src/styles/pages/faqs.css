@@ -26,5 +26,5 @@
 
   .faqs-container li::before {
     content: "•";
-    @apply text-secondary mr-2 font-bold;
+    @apply text-secondary mr-2;
   }
