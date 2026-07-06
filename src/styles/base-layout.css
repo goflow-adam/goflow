@@ -1,3 +1,39 @@
+/** Screen reader only utility class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/** Skip link for keyboard accessibility */
+.skip-link {
+  @apply absolute left-1/2 -translate-x-1/2 -translate-y-full
+         bg-primary text-background px-4 py-2 rounded-b-lg
+         z-[100] transition-transform duration-200;
+}
+
+.skip-link:focus {
+  @apply translate-y-0;
+}
+
+/** Global focus styles for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+  outline-style: solid;
+}
+
+a:focus-visible,
+button:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+  outline-style: solid;
+}
+
 /** Menu styles */
 
 .breadcrumbs { @apply text-sm text-[#4a4a4a] mb-4; }
@@ -270,5 +306,21 @@
 
 .copyright .license-info a {
   @apply text-background hover:text-background/80 underline;
+}
+
+/** Reduced motion preference - disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .floating-cta {
+    animation: none;
+  }
 }
   

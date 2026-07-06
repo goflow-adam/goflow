@@ -4,32 +4,6 @@
   @apply text-xl mb-6;
 }
 
-
-/* padding top landscape */
-@media (orientation: landscape) {
-  .hero {
-    @apply pt-55 sm:pt-14 md:pt-18 lg:pt-16 xl:pt-18;
-  }
-}
-/* padding top portrait */
-@media (orientation: portrait) {
-  .hero {
-    @apply pt-58 sm:pt-14 md:pt-18 lg:pt-16 xl:pt-18;
-  }
-}
-/* padding bottom landscape */
-@media (orientation: landscape) {
-  .hero {
-    @apply pb-10 sm:pb-20 md:pb-52 lg:pb-74 xl:pb-108;
-  }
-}
-/* padding bottom portrait */
-@media (orientation: portrait) {
-  .hero {
-    @apply pb-10 sm:pb-20 md:pb-26 lg:pb-74 xl:pb-108;
-  }
-}
-
 .hero {
   /* text colors */
   @apply text-primary;
@@ -55,6 +29,37 @@
 
 .hero p {
   @apply text-xl md:text-2xl mb-8;
+}
+
+/* padding top landscape */
+@media (orientation: landscape) {
+  .hero {
+    @apply pt-55 sm:pt-14 md:pt-18 lg:pt-16 xl:pt-18;
+  }
+}
+/* padding top portrait */
+@media (orientation: portrait) {
+  .hero {
+    @apply pt-58 sm:pt-14 md:pt-18 lg:pt-16 xl:pt-18;
+  }
+}
+/* padding bottom landscape */
+@media (orientation: landscape) {
+  .hero {
+    @apply pb-10 sm:pb-20 md:pb-52 lg:pb-74 xl:pb-108;
+  }
+}
+/* padding bottom portrait */
+@media (orientation: portrait) {
+  .hero {
+    @apply pb-10 sm:pb-20 md:pb-26 lg:pb-74 xl:pb-108;
+  }
+}
+/* company name bottom portrait */
+@media (orientation: portrait) {
+  .hero .hero-container h1 {
+    @apply xs:text-3xl;
+  }
 }
 
 /* Problem Selector */

@@ -101,6 +101,7 @@ const stripContext = (item: any): any => {
     <GoogleAnalytics />
   </head>
   <body class="page-body">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
       <div class="header-container">
         <div class="logo-container">
@@ -141,17 +142,18 @@ const stripContext = (item: any): any => {
 
     <script src="/scripts/navigation.js" defer></script>
 
-    <main>
+    <main id="main-content">
       <div class="main-container">
         <slot />
       </div>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
       <div class="footer-container">
+        <h2 class="sr-only">Footer Navigation</h2>
         <div class="navigation-container footer-nav-grid">
           <div>
-            <h3>Plumbing Services</h3>
+            <h3 class="footer-heading">Plumbing Services</h3>
             <ul class="space-y-2">
               <li><a href="/emergency-plumbing-services/" class="nav-link">Emergency Plumbing</a></li>
               <li><a href="/water-heater-repair-and-replacement/" class="nav-link">Water Heater Repair</a></li>
@@ -167,7 +169,7 @@ const stripContext = (item: any): any => {
             </ul>
           </div>
           <div>
-            <h3>Marin County</h3>
+            <h3 class="footer-heading">Marin County</h3>
             <ul class="space-y-2">
               <li><a href="/san-rafael-plumbing/" class="nav-link">San Rafael Plumbing</a></li>
               <li><a href="/water-heater-repair-san-rafael/" class="nav-link">San Rafael Water Heaters</a></li>
@@ -181,7 +183,7 @@ const stripContext = (item: any): any => {
             </ul>
           </div>
           <div>
-            <h3>Sonoma County</h3>
+            <h3 class="footer-heading">Sonoma County</h3>
             <ul class="space-y-2">
               <li><a href="/santa-rosa-plumbing/" class="nav-link">Santa Rosa Plumbing</a></li>
               <li><a href="/water-heater-repair-santa-rosa/" class="nav-link">Santa Rosa Water Heaters</a></li>
@@ -198,7 +200,7 @@ const stripContext = (item: any): any => {
             </ul>
           </div>
           <div>
-            <h3>Company</h3>
+            <h3 class="footer-heading">Company</h3>
             <ul class="space-y-2">
               <li><a href="/about-us/" class="nav-link">About GOFLOW</a></li>
               <li><a href="/team/" class="nav-link">Our Team</a></li>
@@ -207,7 +209,7 @@ const stripContext = (item: any): any => {
               <li><a href="/contact-us/" class="nav-link">Contact Us</a></li>
               <li><a href="/privacy-policy/" class="nav-link">Privacy Policy</a></li>
             </ul>
-            <h3 class="mt-6">Contact</h3>
+            <h3 class="footer-heading mt-6">Contact</h3>
             <ul class="space-y-2">
               <li><a href="tel:7072008350" class="nav-link">(707) 200-8350</a></li>
               <li><a href="mailto:info@goflow.plumbing" class="nav-link">info@goflow.plumbing</a></li>

@@ -105,8 +105,14 @@
   @apply whitespace-nowrap;
 }
 
-.group:hover .submenu-wrapper ul {
+.group:hover .submenu-wrapper ul,
+.submenu-wrapper.open ul {
   @apply opacity-100 translate-y-0;
+}
+
+.group:hover .submenu-list,
+.submenu-wrapper.open .submenu-list {
+  @apply block;
 }
 
 /* Mobile Navigation */

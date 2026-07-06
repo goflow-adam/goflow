@@ -204,38 +204,57 @@ function isActive(path: string): boolean {
 ---
 
 {isDesktop ? (
-  <ul class="flex space-x-4">
-    {navigation.map(item => (
-      <li class="relative group">
-        <a
-          href={item.path}
-          class={`nav-link ${isActive(item.path) ? 'nav-active' : ''} ${item.submenu ? 'has-submenu' : ''}`}
-        >
-          {item.title}
-        </a>
+  <nav aria-label="Main navigation">
+  <ul class="flex space-x-4" role="menubar">
+    {navigation.map((item, navIndex) => (
+      <li class="relative group" role="none">
+        {item.submenu ? (
+          <button
+            type="button"
+            class={`nav-link ${isActive(item.path) ? 'nav-active' : ''} has-submenu`}
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls={`desktop-submenu-${navIndex}`}
+            data-nav-trigger
+          >
+            {item.title}
+          </button>
+        ) : (
+          <a
+            href={item.path}
+            class={`nav-link ${isActive(item.path) ? 'nav-active' : ''}`}
+            role="menuitem"
+          >
+            {item.title}
+          </a>
+        )}
         {item.submenu && (
-          <div class={`submenu-wrapper ${item.submenuRight ? 'submenu-right' : ''}`}>
-            <ul class="submenu-list">
-              {item.submenu.map(subItem => (
+          <div class={`submenu-wrapper ${item.submenuRight ? 'submenu-right' : ''}`} id={`desktop-submenu-${navIndex}`}>
+            <ul class="submenu-list" role="menu" aria-label={item.title}>
+              {item.submenu.map((subItem, subIndex) => (
                 subItem.isHeader ? (
-                  <li class="submenu-header">
-                    <a href={subItem.path} class="submenu-header-link">{subItem.title}</a>
+                  <li class="submenu-header" role="none">
+                    <a href={subItem.path} class="submenu-header-link" role="menuitem">{subItem.title}</a>
                   </li>
                 ) : subItem.isCity && subItem.cityServices && subItem.cityServices.length > 0 ? (
-                  <li class="submenu-city">
+                  <li class="submenu-city" role="none">
                     <button 
+                      type="button"
                       class={`submenu-city-button ${isActive(subItem.path) ? 'active' : ''}`}
-                      onclick="this.closest('.submenu-city').classList.toggle('open')"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      data-city-trigger
                     >
                       <span class="submenu-city-label">{subItem.title}</span>
-                      <span class="submenu-city-icon">▼</span>
+                      <span class="submenu-city-icon" aria-hidden="true">▼</span>
                     </button>
-                    <ul class="submenu-city-services">
+                    <ul class="submenu-city-services" role="menu" aria-label={`${subItem.title} services`}>
                       {subItem.cityServices.map(service => (
-                        <li>
+                        <li role="none">
                           <a
                             href={service.path}
                             class={`submenu-service-item ${isActive(service.path) ? 'active' : ''}`}
+                            role="menuitem"
                           >
                             {subItem.title}&nbsp;<strong>{service.title}</strong>
                           </a>
@@ -244,10 +263,11 @@ function isActive(path: string): boolean {
                     </ul>
                   </li>
                 ) : (
-                  <li>
+                  <li role="none">
                     <a
                       href={subItem.path}
                       class={`submenu-item ${isActive(subItem.path) ? 'active' : ''}`}
+                      role="menuitem"
                     >
                       {subItem.title}
                     </a>
@@ -260,49 +280,58 @@ function isActive(path: string): boolean {
       </li>
     ))}
   </ul>
+  </nav>
 ) : (
-  <div class="mobile-nav">
-    <ul class="mobile-nav-list">
-    {navigation.map(item => (
-      <li class="mobile-nav-item" data-has-submenu={!!item.submenu}>
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav-list" role="menu">
+    {navigation.map((item, mobileNavIndex) => (
+      <li class="mobile-nav-item" data-has-submenu={!!item.submenu} role="none">
         {!item.submenu ? (
           <a
             href={item.path}
             class={`mobile-nav-link ${isActive(item.path) ? 'active' : ''}`}
+            role="menuitem"
           >
             {item.title}
           </a>
         ) : (
           <div class="mobile-submenu">
             <button
+              type="button"
               class={`mobile-submenu-button ${isActive(item.path) ? 'active' : ''}`}
-              onclick="this.closest('.mobile-nav-item').classList.toggle('open')"
+              aria-expanded="false"
+              aria-haspopup="true"
+              data-mobile-nav-trigger
             >
               <span>{item.title}</span>
-              <span class="mobile-submenu-icon">▼</span>
+              <span class="mobile-submenu-icon" aria-hidden="true">▼</span>
             </button>
             <div class="mobile-submenu-content">
-              <ul class="mobile-submenu-list">
+              <ul class="mobile-submenu-list" role="menu" aria-label={item.title}>
                 {item.submenu.map(subItem => (
                   subItem.isHeader ? (
-                    <li class="mobile-submenu-header">
-                      <a href={subItem.path} class="mobile-submenu-header-link">{subItem.title}</a>
+                    <li class="mobile-submenu-header" role="none">
+                      <a href={subItem.path} class="mobile-submenu-header-link" role="menuitem">{subItem.title}</a>
                     </li>
                   ) : subItem.isCity && subItem.cityServices && subItem.cityServices.length > 0 ? (
-                    <li class="mobile-city-item">
+                    <li class="mobile-city-item" role="none">
                       <button 
+                        type="button"
                         class={`mobile-city-button ${isActive(subItem.path) ? 'active' : ''}`}
-                        onclick="this.closest('.mobile-city-item').classList.toggle('open')"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        data-mobile-city-trigger
                       >
                         <span class="mobile-city-label">{subItem.title}</span>
-                        <span class="mobile-city-icon">▼</span>
+                        <span class="mobile-city-icon" aria-hidden="true">▼</span>
                       </button>
-                      <ul class="mobile-city-services">
+                      <ul class="mobile-city-services" role="menu" aria-label={`${subItem.title} services`}>
                         {subItem.cityServices.map(service => (
-                          <li>
+                          <li role="none">
                             <a
                               href={service.path}
                               class={`mobile-service-link ${isActive(service.path) ? 'active' : ''}`}
+                              role="menuitem"
                             >
                               {service.title}
                             </a>
@@ -311,10 +340,11 @@ function isActive(path: string): boolean {
                       </ul>
                     </li>
                   ) : (
-                    <li>
+                    <li role="none">
                       <a
                         href={subItem.path}
                         class={`mobile-nav-link ${isActive(subItem.path) ? 'active' : ''}`}
+                        role="menuitem"
                       >
                         {subItem.title}
                       </a>
@@ -328,7 +358,7 @@ function isActive(path: string): boolean {
       </li>
     ))}
   </ul>
-  </div>
+  </nav>
 )}
 
 
