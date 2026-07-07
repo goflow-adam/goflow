@@ -1,11 +1,32 @@
-import { readdir, stat } from 'fs/promises';
+import { readdir, stat, readFile, writeFile } from 'fs/promises';
 import { join, extname } from 'path';
 import sharp from 'sharp';
+import * as piexif from 'piexif-ts';
+
+// Load job pins data for GPS coordinates
+const jobPinsPath = new URL('../src/data/jobPins.json', import.meta.url).pathname;
+let jobPinsData = [];
+try {
+  jobPinsData = JSON.parse(await readFile(jobPinsPath, 'utf-8'));
+} catch (e) {
+  console.log('No jobPins.json found, skipping GPS embedding');
+}
+
+// Build a map of jobId -> coordinates
+const jobCoordinates = new Map();
+for (const job of jobPinsData) {
+  if (job.coordinates && job.images) {
+    for (const img of job.images) {
+      jobCoordinates.set(img, job.coordinates);
+    }
+  }
+}
 
 // Define which images need what sizes
 // Column images max at 600px width
 const COLUMN_SIZES = [300, 450, 600];
 const BADGE_SIZES = [150, 225, 300];
+const JOB_SIZES = [320, 480, 640]; // Job pin images - card display
 
 const IMAGE_CONFIGS = {
   // Column images (max 600px)
@@ -53,28 +74,80 @@ async function* walk(dir) {
 
 import { mkdir } from 'fs/promises';
 
+// Convert decimal degrees to degrees/minutes/seconds for EXIF GPS
+function decimalToDMS(decimal) {
+  const absolute = Math.abs(decimal);
+  const degrees = Math.floor(absolute);
+  const minutesFloat = (absolute - degrees) * 60;
+  const minutes = Math.floor(minutesFloat);
+  const seconds = (minutesFloat - minutes) * 60;
+  
+  // EXIF GPS uses rationals [numerator, denominator]
+  return [
+    [degrees, 1],
+    [minutes, 1],
+    [Math.round(seconds * 10000), 10000]
+  ];
+}
+
+// Embed GPS coordinates into a JPEG file
+async function embedGPSCoordinates(filePath, lat, lng) {
+  try {
+    const imageData = await readFile(filePath);
+    const base64 = imageData.toString('binary');
+    
+    // Use piexif's helper to convert decimal degrees to DMS rational format
+    const latDMS = piexif.GPSHelper.degToDmsRational(Math.abs(lat));
+    const lngDMS = piexif.GPSHelper.degToDmsRational(Math.abs(lng));
+    
+    // Create GPS EXIF data using numeric tag keys
+    // 1 = GPSLatitudeRef, 2 = GPSLatitude, 3 = GPSLongitudeRef, 4 = GPSLongitude
+    const gpsIfd = {
+      1: lat >= 0 ? 'N' : 'S',
+      2: latDMS,
+      3: lng >= 0 ? 'E' : 'W',
+      4: lngDMS,
+    };
+    
+    const exifObj = { GPS: gpsIfd };
+    const exifBytes = piexif.dump(exifObj);
+    const newImageData = piexif.insert(exifBytes, base64);
+    
+    await writeFile(filePath, Buffer.from(newImageData, 'binary'));
+    return true;
+  } catch (err) {
+    console.error(`Failed to embed GPS in ${filePath}:`, err.message);
+    return false;
+  }
+}
+
 async function optimizeImage(imagePath, outputDir) {
-  const ext = extname(imagePath).toLowerCase();
+  const originalExt = extname(imagePath);
+  const ext = originalExt.toLowerCase();
   if (!IMAGE_EXTENSIONS.includes(ext)) return;
 
-  // Get the base filename
+  // Get the base filename and normalize extension to lowercase for output
   const filename = imagePath.split('/').pop();
+  const normalizedFilename = filename.slice(0, -originalExt.length) + ext;
   
   // Check if this image needs optimization
-  const requiredSizes = IMAGE_CONFIGS[filename];
+  // Job images (in /jobs/ directory) get JOB_SIZES automatically
+  const isJobImage = imagePath.includes('/jobs/');
+  const requiredSizes = isJobImage ? JOB_SIZES : IMAGE_CONFIGS[filename];
   if (!requiredSizes) {
     console.log(`Skipping ${filename} - no size configuration found`);
     return;
   }
 
-  const image = sharp(imagePath);
+  // Use rotate() with no arguments to auto-orient based on EXIF data
+  const image = sharp(imagePath).rotate();
   const metadata = await image.metadata();
 
   // Ensure output directory exists
   await mkdir(outputDir, { recursive: true });
 
   for (const width of requiredSizes) {
-    const resizedPath = join(outputDir, filename.replace(ext, `-${width}${ext}`));
+    const resizedPath = join(outputDir, normalizedFilename.replace(ext, `-${width}${ext}`));
     
     // If requested size is larger than original, copy the original with the larger size name
     if (width > metadata.width) {
@@ -100,6 +173,16 @@ async function optimizeImage(imagePath, outputDir) {
       await resized.png({ quality: 80, compressionLevel: 9 }).toFile(resizedPath);
     } else {
       await resized.jpeg({ quality: 80, progressive: true }).toFile(resizedPath);
+      
+      // Embed GPS coordinates for job images (JPEG only - EXIF not supported in WebP/PNG)
+      if (isJobImage) {
+        // Try both original and normalized filename for GPS lookup
+        const coords = jobCoordinates.get(filename) || jobCoordinates.get(normalizedFilename);
+        if (coords) {
+          await embedGPSCoordinates(resizedPath, coords.lat, coords.lng);
+          console.log(`  → Embedded GPS: ${coords.lat.toFixed(4)}, ${coords.lng.toFixed(4)}`);
+        }
+      }
     }
   }
 }

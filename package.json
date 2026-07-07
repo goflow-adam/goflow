@@ -40,8 +40,11 @@
     "@unocss/reset": "^66.1.0-beta.6",
     "@unocss/transformer-directives": "^66.1.0-beta.7",
     "astro-compress": "2.3.8",
+    "csv-parse": "^7.0.1",
+    "csv-stringify": "^6.8.1",
     "glob": "^11.0.2",
     "husky": "^9.1.7",
+    "piexif-ts": "^2.1.0",
     "rollup-plugin-visualizer": "^5.14.0",
     "schema-dts": "^1.1.5",
     "unocss": "^66.1.0-beta.6"

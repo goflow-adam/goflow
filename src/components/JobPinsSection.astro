@@ -1,0 +1,406 @@
+---
+/**
+ * JobPinsSection - Displays verified job pins for a region
+ * Shows completed jobs with photos, descriptions, and reviews
+ */
+
+import jobPinsData from '@/data/jobPins.json';
+
+interface JobPin {
+  jobId: string;
+  address: string;
+  city: string;
+  region: string;
+  completionDate: string;
+  description: string;
+  images: string[];
+  hasImages: boolean;
+  coordinates: { lat: number; lng: number } | null;
+  review: {
+    text: string;
+    rating: number;
+    reviewerName: string;
+    source: string;
+    date: string;
+  } | null;
+  shortDescription: string;
+  serviceCategories: string[];
+}
+
+interface Props {
+  region: string;
+  title?: string;
+  showMap?: boolean;
+  maxJobs?: number;
+  showOnlyWithImages?: boolean;
+}
+
+const { 
+  region,
+  title = "Recent Jobs in Your Area",
+  showMap = false,
+  maxJobs = 12,
+  showOnlyWithImages = false
+} = Astro.props;
+
+// Filter jobs for this region
+let jobs = (jobPinsData as JobPin[])
+  .filter(job => job.region === region)
+  .sort((a, b) => {
+    // Sort by date descending (most recent first)
+    const dateA = new Date(a.completionDate);
+    const dateB = new Date(b.completionDate);
+    return dateB.getTime() - dateA.getTime();
+  });
+
+// Optionally filter to only jobs with images
+if (showOnlyWithImages) {
+  jobs = jobs.filter(job => job.hasImages);
+}
+
+// Limit number of jobs shown
+jobs = jobs.slice(0, maxJobs);
+
+// Get jobs with coordinates for map
+const jobsWithCoords = jobs.filter(job => job.coordinates);
+
+// Format date for display
+function formatDate(dateStr: string): string {
+  const [month, day, year] = dateStr.split('/');
+  const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+}
+
+// Get city display name (remove state/zip if present)
+function getCityDisplay(city: string): string {
+  return city.split(',')[0].trim();
+}
+---
+
+{jobs.length > 0 && (
+  <section class="job-pins-section">
+    <h2>{title}</h2>
+    <p class="section-intro">
+      Verified plumbing jobs we've completed in your area. Real work, real locations, real results.
+    </p>
+    
+    {showMap && jobsWithCoords.length > 0 && (
+      <div 
+        class="job-pins-map" 
+        id="job-pins-map"
+        data-jobs={JSON.stringify(jobsWithCoords.map(j => ({
+          id: j.jobId,
+          lat: j.coordinates?.lat,
+          lng: j.coordinates?.lng,
+          city: j.city,
+          shortDesc: j.shortDescription,
+          date: formatDate(j.completionDate)
+        })))}
+      >
+        <div class="map-placeholder">Loading map...</div>
+      </div>
+    )}
+    
+    <div class="job-pins-grid">
+      {jobs.map((job) => (
+        <article 
+          class="job-pin-card" 
+          data-job-id={job.jobId}
+          itemscope 
+          itemtype="https://schema.org/Service"
+        >
+          <meta itemprop="name" content={`${job.shortDescription} - GOFLOW Plumbing`} />
+          <meta itemprop="serviceType" content={job.shortDescription} />
+          
+          <div itemprop="provider" itemscope itemtype="https://schema.org/LocalBusiness">
+            <meta itemprop="name" content="GOFLOW Plumbing" />
+            <meta itemprop="url" content="https://goflow.plumbing" />
+          </div>
+          
+          {job.coordinates && (
+            <div itemprop="areaServed" itemscope itemtype="https://schema.org/Place">
+              <meta itemprop="name" content={`${getCityDisplay(job.city)}, CA`} />
+              <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+                <meta itemprop="latitude" content={String(job.coordinates.lat)} />
+                <meta itemprop="longitude" content={String(job.coordinates.lng)} />
+              </div>
+            </div>
+          )}
+          
+          {job.hasImages && job.images[0] && (
+            <div class="job-image">
+              {(() => {
+                const img = job.images[0];
+                const ext = img.split('.').pop()?.toLowerCase() || 'jpg';
+                const baseName = img.slice(0, -(ext.length + 1));
+                const srcset = [320, 480, 640].map(w => `/images/jobs/generated/${baseName}-${w}.${ext} ${w}w`).join(', ');
+                return (
+                  <img 
+                    itemprop="image"
+                    src={`/images/jobs/generated/${baseName}-480.${ext}`}
+                    srcset={srcset}
+                    sizes="(max-width: 640px) 100vw, 320px"
+                    alt={`${job.shortDescription} in ${getCityDisplay(job.city)}`}
+                    loading="lazy"
+                    decoding="async"
+                    width="480"
+                    height="360"
+                  />
+                );
+              })()}
+            </div>
+          )}
+          
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-service">{job.shortDescription}</span>
+              <span class="job-location">{getCityDisplay(job.city)}</span>
+            </div>
+            
+            <p class="job-description" itemprop="description">{job.description}</p>
+            
+            <div class="job-meta">
+              <time itemprop="serviceOutput" datetime={job.completionDate}>{formatDate(job.completionDate)}</time>
+            </div>
+            
+            {job.review && (
+              <blockquote class="job-review" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                <p itemprop="reviewBody">"{job.review.text}"</p>
+                <footer>
+                  <cite itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    — <span itemprop="name">{job.review.reviewerName}</span>
+                  </cite>
+                  {job.review.rating && (
+                    <span 
+                      class="review-rating" 
+                      itemprop="reviewRating" 
+                      itemscope 
+                      itemtype="https://schema.org/Rating"
+                      aria-label={`${job.review.rating} out of 5 stars`}
+                    >
+                      <meta itemprop="ratingValue" content={String(job.review.rating)} />
+                      <meta itemprop="bestRating" content="5" />
+                      {'★'.repeat(job.review.rating)}
+                    </span>
+                  )}
+                </footer>
+              </blockquote>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+)}
+
+{showMap && jobsWithCoords.length > 0 && (
+  <script>
+    import L from 'leaflet';
+    import 'leaflet/dist/leaflet.css';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const mapElement = document.getElementById('job-pins-map');
+      if (!mapElement) return;
+
+      const jobs = JSON.parse(mapElement.dataset.jobs || '[]');
+      if (jobs.length === 0) return;
+
+      // Calculate center from job coordinates
+      const avgLat = jobs.reduce((sum: number, j: any) => sum + j.lat, 0) / jobs.length;
+      const avgLng = jobs.reduce((sum: number, j: any) => sum + j.lng, 0) / jobs.length;
+
+      const map = L.map('job-pins-map').setView([avgLat, avgLng], 11);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+      // Custom icon for job pins
+      const jobIcon = new L.Icon({
+        iconUrl: '/images/marker-icon.png',
+        iconRetinaUrl: '/images/marker-icon-2x.png',
+        shadowUrl: '/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      });
+
+      // Add markers for each job
+      jobs.forEach((job: any) => {
+        const marker = L.marker([job.lat, job.lng], { icon: jobIcon }).addTo(map);
+        marker.bindPopup(`
+          <strong>${job.shortDesc}</strong><br>
+          ${job.city}<br>
+          <small>${job.date}</small>
+        `);
+      });
+
+      // Fit bounds to show all markers
+      if (jobs.length > 1) {
+        const bounds = L.latLngBounds(jobs.map((j: any) => [j.lat, j.lng]));
+        map.fitBounds(bounds, { padding: [20, 20] });
+      }
+    });
+  </script>
+)}
+
+<style>
+  .job-pins-section {
+    margin: 3rem 0;
+  }
+
+  .job-pins-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary, #1F4A6F);
+  }
+
+  .section-intro {
+    color: #6B7280;
+    margin-bottom: 1.5rem;
+  }
+
+  .job-pins-map {
+    height: 300px;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    background: #f3f4f6;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Ensure Leaflet map stays below fixed header (z-50) */
+  .job-pins-map :global(.leaflet-pane),
+  .job-pins-map :global(.leaflet-control) {
+    z-index: 1 !important;
+  }
+  
+  .job-pins-map :global(.leaflet-top),
+  .job-pins-map :global(.leaflet-bottom) {
+    z-index: 2 !important;
+  }
+
+  .map-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #9CA3AF;
+  }
+
+  .job-pins-grid {
+    column-count: 3;
+    column-gap: 1.5rem;
+  }
+
+  .job-pin-card {
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+
+  .job-pin-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 1024px) {
+    .job-pins-grid {
+      column-count: 2;
+    }
+  }
+
+  .job-image {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: #f3f4f6;
+  }
+
+  .job-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .job-content {
+    padding: 1rem;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .job-service {
+    font-weight: 600;
+    color: var(--color-primary, #1F4A6F);
+  }
+
+  .job-location {
+    font-size: 0.875rem;
+    color: #6B7280;
+    white-space: nowrap;
+  }
+
+  .job-description {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: #374151;
+    margin-bottom: 0.75rem;
+  }
+
+  .job-meta {
+    font-size: 0.8125rem;
+    color: #9CA3AF;
+  }
+
+  .job-review {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: var(--color-primary, #1F4A6F);
+    border-radius: 0.25rem;
+  }
+
+  .job-review p {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #fff;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .job-review footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8125rem;
+  }
+
+  .job-review cite {
+    color: #509cba;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .review-rating {
+    color: #F59E0B;
+  }
+
+  @media (max-width: 640px) {
+    .job-pins-grid {
+      column-count: 1;
+    }
+
+    .job-pins-map {
+      height: 250px;
+    }
+  }
+</style>
