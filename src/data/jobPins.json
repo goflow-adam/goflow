@@ -182,8 +182,8 @@
     "region": "santa-rosa-plumbing",
     "completionDate": "07/01/2026",
     "description": "**Heat Pump Water Heater Installation Service:** Our customer was converting their home to all-electric appliances. We installed a new heat pump water heater, providing an energy-efficient source of hot water.",
-    "images": [],
-    "hasImages": false,
+    "images": ["1073.jpg"],
+    "hasImages": true,
     "coordinates": {
       "lat": 38.4627473,
       "lng": -122.6533789
@@ -599,8 +599,8 @@
     "region": "mill-valley-plumbing",
     "completionDate": "06/26/2026",
     "description": "**Shower Repair Service:** Our customer's shower had temperature control issues caused by a failed cartridge and pressure balancer. We replaced the components and restored proper temperature control.",
-    "images": [],
-    "hasImages": false,
+    "images": ["1071.jpg"],
+    "hasImages": true,
     "coordinates": null,
     "review": null
   },
@@ -1047,8 +1047,8 @@
     "region": "san-rafael-plumbing",
     "completionDate": "07/01/2026",
     "description": "**Water Heater Installation Service:** Our customer needed a new 50-gallon residential gas water heater. We installed a new American Standard water heater, restoring dependable hot water to the home.",
-    "images": [],
-    "hasImages": false,
+    "images": ["1076.jpg"],
+    "hasImages": true,
     "coordinates": {
       "lat": 37.9877294,
       "lng": -122.5781966
