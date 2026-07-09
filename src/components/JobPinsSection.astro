@@ -176,7 +176,7 @@ function parseMarkdownBold(text: string): string {
             </div>
             
             {job.review && (
-              <blockquote class="job-review" itemprop="review" itemscope itemtype="https://schema.org/Review">
+              <blockquote class="job-review">{/* </blockquote> itemprop="review" itemscope itemtype="https://schema.org/Review">*/}
                 <p itemprop="reviewBody">"{job.review.text}"</p>
                 <footer>
                   <cite itemprop="author" itemscope itemtype="https://schema.org/Person">
