@@ -75,6 +75,11 @@ function formatDate(dateStr: string): string {
 function getCityDisplay(city: string): string {
   return city.split(',')[0].trim();
 }
+
+// Parse **text** markdown bold syntax to <strong> tags
+function parseMarkdownBold(text: string): string {
+  return text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+}
 ---
 
 {jobs.length > 0 && (
@@ -157,7 +162,7 @@ function getCityDisplay(city: string): string {
               <span class="job-location">{getCityDisplay(job.city)}</span>
             </div>
             
-            <p class="job-description" itemprop="description">{job.description}</p>
+            <p class="job-description" itemprop="description" set:html={parseMarkdownBold(job.description)} />
             
             <div class="job-meta">
               <time itemprop="serviceOutput" datetime={job.completionDate}>{formatDate(job.completionDate)}</time>
