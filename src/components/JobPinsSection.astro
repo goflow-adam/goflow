@@ -24,7 +24,8 @@ interface JobPin {
     date: string;
   } | null;
   shortDescription: string;
-  serviceCategories: string[];
+  serviceType: string;
+  parentJobId?: string;
 }
 
 interface Props {
@@ -33,6 +34,8 @@ interface Props {
   showMap?: boolean;
   maxJobs?: number;
   showOnlyWithImages?: boolean;
+  serviceType?: string;
+  excludeServiceTypes?: string[];
 }
 
 const { 
@@ -40,12 +43,16 @@ const {
   title = "Recent Jobs in Your Area",
   showMap = false,
   maxJobs = 12,
-  showOnlyWithImages = false
+  showOnlyWithImages = false,
+  serviceType,
+  excludeServiceTypes = []
 } = Astro.props;
 
-// Filter jobs for this region
+// Filter jobs for this region and optionally by service type
 let jobs = (jobPinsData as JobPin[])
   .filter(job => job.region === region)
+  .filter(job => !serviceType || job.serviceType === serviceType)
+  .filter(job => !excludeServiceTypes.includes(job.serviceType))
   .sort((a, b) => {
     // Sort by date descending (most recent first)
     const dateA = new Date(a.completionDate);

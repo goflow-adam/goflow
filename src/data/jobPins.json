@@ -5,14 +5,16 @@
     "city": "San Rafael",
     "region": "san-rafael-plumbing",
     "completionDate": "05/01/2026",
-    "description": "**Drain Cleaning Service:** Our customer's upstairs shower drain was clogged and draining slowly. We professionally snaked and cleared the blockage, restoring normal drainage and getting the shower back in service.",
+    "description": "Our customer's upstairs shower drain was clogged and draining slowly. We professionally snaked and cleared the blockage, restoring normal drainage and getting the shower back in service.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 37.9735021,
       "lng": -122.5237613
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Drain Cleaning Service",
+    "serviceType": "drain"
   },
   {
     "jobId": "1065",
@@ -20,7 +22,7 @@
     "city": "Windsor",
     "region": "santa-rosa-plumbing",
     "completionDate": "06/17/2026",
-    "description": "**Hose Bib Installation Service:** Our customer wanted a new backyard hose bib with provisions for a future irrigation connection. We installed a new water line, shutoff valve, and hose bib, providing convenient outdoor water access and room for future expansion.",
+    "description": "Our customer wanted a new backyard hose bib with provisions for a future irrigation connection. We installed a new water line, shutoff valve, and hose bib, providing convenient outdoor water access and room for future expansion.",
     "images": [
       "1065.jpg"
     ],
@@ -29,7 +31,9 @@
       "lat": 38.5604074,
       "lng": -122.8147023
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Hose Bib Installation Service",
+    "serviceType": "fixture"
   },
   {
     "jobId": "1003",
@@ -37,13 +41,15 @@
     "city": "Santa Rosa",
     "region": "santa-rosa-plumbing",
     "completionDate": "03/05/2026",
-    "description": "**Toilet Repair Service:** Our customer's toilet would not flush properly because the chain had become disconnected from the flapper. We reattached the chain and restored normal toilet operation.",
+    "description": "Our customer's toilet would not flush properly because the chain had become disconnected from the flapper. We reattached the chain and restored normal toilet operation.",
     "images": [
       "1003.jpg"
     ],
     "hasImages": true,
     "coordinates": null,
-    "review": null
+    "review": null,
+    "shortDescription": "Toilet Repair Service",
+    "serviceType": "toilet"
   },
   {
     "jobId": "1024",
@@ -51,11 +57,13 @@
     "city": "Santa Rosa",
     "region": "santa-rosa-plumbing",
     "completionDate": "04/23/2026",
-    "description": "**Drain Cleaning and Leak Repair Service:** Our customer's sink drain was clogged and leaking due to a blockage in the p-trap. We removed the trap, cleared the obstruction, and reinstalled the drain, restoring proper flow and stopping the leak.",
+    "description": "Our customer's sink drain was clogged and leaking due to a blockage in the p-trap. We removed the trap, cleared the obstruction, and reinstalled the drain, restoring proper flow and stopping the leak.",
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null
+    "review": null,
+    "shortDescription": "Drain Cleaning and Leak Repair Service",
+    "serviceType": "drain"
   },
   {
     "jobId": "1072",
@@ -63,11 +71,13 @@
     "city": "Santa Rosa",
     "region": "santa-rosa-plumbing",
     "completionDate": "06/26/2026",
-    "description": "**Commercial Drain Cleaning Service:** Our customer's commercial bathroom sink was clogged and out of service. We power flushed the drain line, clearing the blockage and restoring normal drainage.",
+    "description": "Our customer's commercial bathroom sink was clogged and out of service. We power flushed the drain line, clearing the blockage and restoring normal drainage.",
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null
+    "review": null,
+    "shortDescription": "Commercial Drain Cleaning Service",
+    "serviceType": "drain"
   },
   {
     "jobId": "1036",
@@ -75,14 +85,16 @@
     "city": "Santa Rosa",
     "region": "santa-rosa-plumbing",
     "completionDate": "05/07/2026",
-    "description": "**Drain and Sewer Inspection Service:** Our customer's front yard drainage system had backed up and was no longer carrying water away properly. We inspected the line and discovered a significant root intrusion that was obstructing the piping.",
+    "description": "Our customer's front yard drainage system had backed up and was no longer carrying water away properly. We inspected the line and discovered a significant root intrusion that was obstructing the piping.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.4311917,
       "lng": -122.7528388
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Drain and Sewer Inspection Service",
+    "serviceType": "drain"
   },
   {
     "jobId": "1070",
@@ -90,7 +102,7 @@
     "city": "Sausalito",
     "region": "mill-valley-plumbing",
     "completionDate": "06/26/2026",
-    "description": "**Gas Line Installation Service:** Our customer wanted to add a gas-lit fireplace to their home. We installed a new gas line and shutoff valve, providing a safe and reliable fuel supply for the new fireplace.",
+    "description": "Our customer wanted to add a gas-lit fireplace to their home. We installed a new gas line and shutoff valve, providing a safe and reliable fuel supply for the new fireplace.",
     "images": [
       "1070-1.jpg",
       "1070-2.jpg"
@@ -100,7 +112,9 @@
       "lat": 37.850753,
       "lng": -122.482669
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Gas Line Installation Service",
+    "serviceType": "gas"
   },
   {
     "jobId": "1058",
@@ -108,11 +122,30 @@
     "city": "Greenbrae",
     "region": "san-rafael-plumbing",
     "completionDate": "06/12/2026",
-    "description": "**Toilet Maintenance and Repair Service:** During a routine toilet inspection, we discovered a disconnected fill valve tube and a leaking angle stop. We repaired both issues, restoring proper operation and eliminating the leaks.",
+    "description": "During a routine toilet inspection, we discovered a disconnected fill valve tube and a leaking angle stop. We repaired both issues, restoring proper operation and eliminating the leaks.",
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null
+    "review": null,
+    "shortDescription": "Toilet Maintenance and Repair Service",
+    "serviceType": "toilet"
+  },
+  {
+    "jobId": "1054",
+    "address": "41 Yarrow Way Santa Rosa CA 94507",
+    "city": "Santa Rosa",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "06/10/2026",
+    "description": "Our customer's tankless water heater had stopped producing hot water. We diagnosed the issue, rebooted the system, and restored normal operation.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.430339,
+      "lng": -122.7199738
+    },
+    "review": null,
+    "shortDescription": "Tankless Water Heater Repair Service",
+    "serviceType": "water-heater"
   },
   {
     "jobId": "1055",
@@ -120,7 +153,7 @@
     "city": "Novato",
     "region": "novato-plumbing",
     "completionDate": "06/10/2026",
-    "description": "**Water Heater Diagnostic Service:** Our customer's water heater was only producing lukewarm water. We performed diagnostic testing and determined that faulty electrical wiring was preventing the unit from operating properly.",
+    "description": "Our customer's water heater was only producing lukewarm water. We performed diagnostic testing and determined that faulty electrical wiring was preventing the unit from operating properly.",
     "images": [
       "1055-1.jpg",
       "1055-2.jpg",
@@ -131,7 +164,9 @@
       "lat": 38.1238983,
       "lng": -122.6016297
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Water Heater Diagnostic Service",
+    "serviceType": "water-heater"
   },
   {
     "jobId": "1069",
@@ -139,11 +174,13 @@
     "city": "Rohnert Park",
     "region": "santa-rosa-plumbing",
     "completionDate": "06/24/2026",
-    "description": "**Toilet Repair Service:** Our customer's toilet was leaking from the fill valve. We replaced the failed component, stopping the leak and restoring reliable operation.",
+    "description": "Our customer's toilet was leaking from the fill valve. We replaced the failed component, stopping the leak and restoring reliable operation.",
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null
+    "review": null,
+    "shortDescription": "Toilet Repair Service",
+    "serviceType": "toilet"
   },
   {
     "jobId": "1066",
@@ -151,14 +188,16 @@
     "city": "Mill Valley",
     "region": "mill-valley-plumbing",
     "completionDate": "06/18/2026",
-    "description": "**Garbage Disposal Installation Service:** Our customer needed a new garbage disposal in the kitchen. We installed the new unit using the existing extended flange, restoring reliable food waste disposal.",
+    "description": "Our customer needed a new garbage disposal in the kitchen. We installed the new unit using the existing extended flange, restoring reliable food waste disposal.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 37.8958082,
       "lng": -122.5371131
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Garbage Disposal Installation Service",
+    "serviceType": "fixture"
   },
   {
     "jobId": "1048",
@@ -166,134 +205,52 @@
     "city": "Petaluma",
     "region": "petaluma-plumbing",
     "completionDate": "05/27/2026",
-    "description": "**Bidet Toilet Repair Service:** Our customer's Toto Neorest 700H had flashing indicators and was not operating properly. We cleaned the filters, cleared debris from the lines, and performed a hard reset, restoring normal function.",
+    "description": "Our customer's Toto Neorest 700H had flashing indicators and was not operating properly. We cleaned the filters, cleared debris from the lines, and performed a hard reset, restoring normal function.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.2434624,
       "lng": -122.592099
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Bidet Toilet Repair Service",
+    "serviceType": "toilet"
   },
   {
-    "jobId": "1073",
-    "address": "5179 Firestone Place Santa Rosa CA 95409",
-    "city": "Santa Rosa",
-    "region": "santa-rosa-plumbing",
-    "completionDate": "07/01/2026",
-    "description": "**Heat Pump Water Heater Installation Service:** Our customer was converting their home to all-electric appliances. We installed a new heat pump water heater, providing an energy-efficient source of hot water.",
-    "images": ["1073.jpg"],
-    "hasImages": true,
-    "coordinates": {
-      "lat": 38.4627473,
-      "lng": -122.6533789
-    },
-    "review": null
-  },
-  {
-    "jobId": "1074",
-    "address": "5179 Firestone Place Santa Rosa CA 95409",
-    "city": "Santa Rosa",
-    "region": "santa-rosa-plumbing",
-    "completionDate": "07/01/2026",
-    "description": "**Water Main Repair Service:** Our customer had a water leak near the meter caused by a failed PVC fitting. We repaired the damaged piping and restored reliable water service.",
-    "images": [],
-    "hasImages": false,
-    "coordinates": {
-      "lat": 38.4627473,
-      "lng": -122.6533789
-    },
-    "review": null
-  },
-  {
-    "jobId": "1056",
+    "jobId": "1056-1",
     "address": "830 Fifth Avenue San Rafael, CA 94901",
     "city": "San Rafael",
     "region": "san-rafael-plumbing",
     "completionDate": "06/11/2026",
-    "description": "**Bathtub Drain Cleaning Service:** Our customer's bathtub drain was clogged and draining slowly. We snaked and cleared the line, restoring normal drainage.**Gas Leak Repair Service:** Our customer had a gas leak at the generator connection. We disassembled and reassembled the gas piping, tested for leaks, and restored safe operation.",
+    "description": "Our customer's bathtub drain was clogged and draining slowly. We snaked and cleared the line, restoring normal drainage.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 37.9735021,
       "lng": -122.5237613
     },
-    "review": null
+    "review": null,
+    "parentJobId": "1056",
+    "shortDescription": "Bathtub Drain Cleaning Service",
+    "serviceType": "drain"
   },
   {
-    "jobId": "1054",
-    "address": "41 Yarrow Way Santa Rosa CA 94507",
-    "city": "Santa Rosa",
-    "region": "santa-rosa-plumbing",
-    "completionDate": "06/10/2026",
-    "description": "**Tankless Water Heater Repair Service:** Our customer's tankless water heater had stopped producing hot water. We diagnosed the issue, rebooted the system, and restored normal operation.",
-    "images": [],
-    "hasImages": false,
-    "coordinates": {
-      "lat": 38.430339,
-      "lng": -122.7199738
-    },
-    "review": null
-  },
-  {
-    "jobId": "1047",
-    "address": "11 Edgehill Way San Rafael CA 94903",
+    "jobId": "1056-2",
+    "address": "830 Fifth Avenue San Rafael, CA 94901",
     "city": "San Rafael",
     "region": "san-rafael-plumbing",
-    "completionDate": "05/26/2026",
-    "description": "**Water Filtration and Faucet Installation Service:** Our customer wanted a new reverse osmosis system and kitchen faucet. We removed the old equipment and installed a new Waterdrop filtration system and Moen faucet, improving water quality and functionality.",
-    "images": [],
-    "hasImages": false,
-    "coordinates": null,
-    "review": {
-      "text": "This team was super kind and accommodating! They did a great job with a faucet replacement and installation of a new reverse osmosis water filter. I highly recommend them!",
-      "rating": 5,
-      "reviewerName": "Danny Geren, L.Ac.",
-      "source": "Google",
-      "date": "May 2026"
-    }
-  },
-  {
-    "jobId": "1012",
-    "address": "1545 Mary Pl Rohnert Park CA 94928",
-    "city": "Rohnert Park",
-    "region": "santa-rosa-plumbing",
-    "completionDate": "03/25/2026",
-    "description": "**Kitchen Drain Cleaning Service:** Our customer's kitchen drain was clogged due to grease buildup in the line. We cleared the blockage and identified a sag in the piping contributing to future buildup.",
+    "completionDate": "06/11/2026",
+    "description": "Our customer had a gas leak at the generator connection. We disassembled and reassembled the gas piping, tested for leaks, and restored safe operation.",
     "images": [],
     "hasImages": false,
     "coordinates": {
-      "lat": 38.3325528,
-      "lng": -122.6769724
+      "lat": 37.9735021,
+      "lng": -122.5237613
     },
-    "review": null
-  },
-  {
-    "jobId": "1046",
-    "address": "3878 Royal Manor Pl Santa Rosa CA 95404",
-    "city": "Santa Rosa",
-    "region": "santa-rosa-plumbing",
-    "completionDate": "05/21/2026",
-    "description": "**Sewer Ejector Pump and Toilet Repair Service:** Our customer had a backed-up sewer ejector system and a toilet that required resetting. We restored power to the pump, repaired the toilet, and returned the plumbing system to normal operation.",
-    "images": [],
-    "hasImages": false,
-    "coordinates": {
-      "lat": 38.4903148,
-      "lng": -122.6997341
-    },
-    "review": null
-  },
-  {
-    "jobId": "1075",
-    "address": "1082 Anita Ln Sebastopol CA 95472",
-    "city": "Sebastopol",
-    "region": "santa-rosa-plumbing",
-    "completionDate": "07/01/2026",
-    "description": "**Plumbing Evaluation Service:** Our customer was concerned about a hammering noise when flushing the toilet. We inspected the plumbing system and provided recommendations to address the issue.",
-    "images": [],
-    "hasImages": false,
-    "coordinates": null,
-    "review": null
+    "review": null,
+    "parentJobId": "1056",
+    "shortDescription": "Gas Leak Repair Service",
+    "serviceType": "gas"
   },
   {
     "jobId": "1020",
@@ -301,7 +258,7 @@
     "city": "Cotati",
     "region": "santa-rosa-plumbing",
     "completionDate": "04/10/2026",
-    "description": "**Tub Drain Leak Repair Service:** Our customer's tub drain was leaking due to buildup and deteriorated components. We rebuilt the drain assembly and reconnected the piping, stopping the leak.",
+    "description": "Our customer's tub drain was leaking due to buildup and deteriorated components. We rebuilt the drain assembly and reconnected the piping, stopping the leak.",
     "images": [
       "1020-1.webp",
       "1020-2.webp"
@@ -317,15 +274,155 @@
       "reviewerName": "Marcus Hernandez",
       "source": "Google",
       "date": "Apr 2026"
-    }
+    },
+    "shortDescription": "Tub Drain Leak Repair Service",
+    "serviceType": "drain"
   },
   {
-    "jobId": "1008",
+    "jobId": "1005",
+    "address": "100 Golf Course Drive Rohnert Park CA 94928",
+    "city": "Rohnert Park",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "03/06/2026",
+    "description": "A golf course restroom had multiple plumbing issues including a faulty flush cartridge, contaminated faucet controls, and a rocking toilet. We repaired the fixtures and restored proper operation to the restroom.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.3639658,
+      "lng": -122.703964
+    },
+    "review": null,
+    "shortDescription": "Commercial Plumbing Repair Service",
+    "serviceType": "general"
+  },
+  {
+    "jobId": "1073",
+    "address": "5179 Firestone Place Santa Rosa CA 95409",
+    "city": "Santa Rosa",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "07/01/2026",
+    "description": "Our customer was converting their home to all-electric appliances. We installed a new heat pump water heater, providing an energy-efficient source of hot water.",
+    "images": [
+      "1073.jpg"
+    ],
+    "hasImages": true,
+    "coordinates": {
+      "lat": 38.4627473,
+      "lng": -122.6533789
+    },
+    "review": null,
+    "shortDescription": "Heat Pump Water Heater Installation Service",
+    "serviceType": "water-heater"
+  },
+  {
+    "jobId": "1074",
+    "address": "5179 Firestone Place Santa Rosa CA 95409",
+    "city": "Santa Rosa",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "07/01/2026",
+    "description": "Our customer had a water leak near the meter caused by a failed PVC fitting. We repaired the damaged piping and restored reliable water service.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.4627473,
+      "lng": -122.6533789
+    },
+    "review": null,
+    "shortDescription": "Water Main Repair Service",
+    "serviceType": "general"
+  },
+  {
+    "jobId": "1047",
+    "address": "11 Edgehill Way San Rafael CA 94903",
+    "city": "San Rafael",
+    "region": "san-rafael-plumbing",
+    "completionDate": "05/26/2026",
+    "description": "Our customer wanted a new reverse osmosis system and kitchen faucet. We removed the old equipment and installed a new Waterdrop filtration system and Moen faucet, improving water quality and functionality.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": null,
+    "review": {
+      "text": "This team was super kind and accommodating! They did a great job with a faucet replacement and installation of a new reverse osmosis water filter. I highly recommend them!",
+      "rating": 5,
+      "reviewerName": "Danny Geren, L.Ac.",
+      "source": "Google",
+      "date": "May 2026"
+    },
+    "shortDescription": "Water Filtration and Faucet Installation Service",
+    "serviceType": "water-filtration"
+  },
+  {
+    "jobId": "1012",
+    "address": "1545 Mary Pl Rohnert Park CA 94928",
+    "city": "Rohnert Park",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "03/25/2026",
+    "description": "Our customer's kitchen drain was clogged due to grease buildup in the line. We cleared the blockage and identified a sag in the piping contributing to future buildup.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.3325528,
+      "lng": -122.6769724
+    },
+    "review": null,
+    "shortDescription": "Kitchen Drain Cleaning Service",
+    "serviceType": "drain"
+  },
+  {
+    "jobId": "1046",
+    "address": "3878 Royal Manor Pl Santa Rosa CA 95404",
+    "city": "Santa Rosa",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "05/21/2026",
+    "description": "Our customer had a backed-up sewer ejector system and a toilet that required resetting. We restored power to the pump, repaired the toilet, and returned the plumbing system to normal operation.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.4903148,
+      "lng": -122.6997341
+    },
+    "review": null,
+    "shortDescription": "Sewer Ejector Pump and Toilet Repair Service",
+    "serviceType": "drain"
+  },
+  {
+    "jobId": "1019",
+    "address": "547 Lydia Ct. South Rohnert Park CA 94928",
+    "city": "Rohnert Park",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "04/10/2026",
+    "description": "Our customer wanted a refrigerator water supply for a future ice maker. We installed a recessed ice maker box and connected it to the home's water system.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.3200253,
+      "lng": -122.6884669
+    },
+    "review": null,
+    "shortDescription": "Ice Maker Water Line Installation Service",
+    "serviceType": "fixture"
+  },
+  {
+    "jobId": "1075",
+    "address": "1082 Anita Ln Sebastopol CA 95472",
+    "city": "Sebastopol",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "07/01/2026",
+    "description": "Our customer was concerned about a hammering noise when flushing the toilet. We inspected the plumbing system and provided recommendations to address the issue.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": null,
+    "review": null,
+    "shortDescription": "Plumbing Evaluation Service",
+    "serviceType": "general"
+  },
+  {
+    "jobId": "1008-1",
     "address": "547 Lydia Ct. South Rohnert Park CA 94928",
     "city": "Rohnert Park",
     "region": "santa-rosa-plumbing",
     "completionDate": "03/13/2026",
-    "description": "**Hose Bib Installation Service:** Our customer wanted a new hose bib in a more convenient location in the backyard. We installed a new copper water line and hose bib, providing easy outdoor water access.\n**Water Hammer Repair Service:** Our customer's washing machine plumbing was causing loud hammering noises. We installed water hammer arresters and secured the piping, eliminating the noise and protecting the plumbing system.\n**Bathtub Waste and Overflow Replacement Service:** Our customer's bathtub drain assembly had failed. We replaced the waste and overflow assembly and installed new trim, restoring proper drainage.\n**Tub Spout Replacement Service:** Our customer's tub spout had failed and was allowing water into the wall. We replaced the spout and stopped the leak, protecting the home from water damage.\n**Toilet Installation Service:** Our customer wanted a new toilet in the hall bathroom. We removed the old toilet and installed the customer-supplied fixture with all new connections and seals.\n**Toilet Flange Repair Service:** Our customer's master bathroom toilet flange had rusted and failed. We rebuilt the drain connection, installed a new flange, and reinstalled the toilet, restoring reliable operation.",
+    "description": "Our customer wanted a new hose bib in a more convenient location in the backyard. We installed a new copper water line and hose bib, providing easy outdoor water access.",
     "images": [
       "1008.jpg",
       "1008-1.jpg"
@@ -335,22 +432,115 @@
       "lat": 38.3200253,
       "lng": -122.6884669
     },
-    "review": null
+    "review": null,
+    "parentJobId": "1008",
+    "shortDescription": "Hose Bib Installation Service",
+    "serviceType": "fixture"
   },
   {
-    "jobId": "1019",
+    "jobId": "1008-2",
     "address": "547 Lydia Ct. South Rohnert Park CA 94928",
     "city": "Rohnert Park",
     "region": "santa-rosa-plumbing",
-    "completionDate": "04/10/2026",
-    "description": "**Ice Maker Water Line Installation Service:** Our customer wanted a refrigerator water supply for a future ice maker. We installed a recessed ice maker box and connected it to the home's water system.",
-    "images": [],
-    "hasImages": false,
+    "completionDate": "03/13/2026",
+    "description": "Our customer's washing machine plumbing was causing loud hammering noises. We installed water hammer arresters and secured the piping, eliminating the noise and protecting the plumbing system.",
+    "images": [
+      "1008.jpg",
+      "1008-1.jpg"
+    ],
+    "hasImages": true,
     "coordinates": {
       "lat": 38.3200253,
       "lng": -122.6884669
     },
-    "review": null
+    "review": null,
+    "parentJobId": "1008",
+    "shortDescription": "Water Hammer Repair Service",
+    "serviceType": "general"
+  },
+  {
+    "jobId": "1008-3",
+    "address": "547 Lydia Ct. South Rohnert Park CA 94928",
+    "city": "Rohnert Park",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "03/13/2026",
+    "description": "Our customer's bathtub drain assembly had failed. We replaced the waste and overflow assembly and installed new trim, restoring proper drainage.",
+    "images": [
+      "1008.jpg",
+      "1008-1.jpg"
+    ],
+    "hasImages": true,
+    "coordinates": {
+      "lat": 38.3200253,
+      "lng": -122.6884669
+    },
+    "review": null,
+    "parentJobId": "1008",
+    "shortDescription": "Bathtub Waste and Overflow Replacement Service",
+    "serviceType": "fixture"
+  },
+  {
+    "jobId": "1008-4",
+    "address": "547 Lydia Ct. South Rohnert Park CA 94928",
+    "city": "Rohnert Park",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "03/13/2026",
+    "description": "Our customer's tub spout had failed and was allowing water into the wall. We replaced the spout and stopped the leak, protecting the home from water damage.",
+    "images": [
+      "1008.jpg",
+      "1008-1.jpg"
+    ],
+    "hasImages": true,
+    "coordinates": {
+      "lat": 38.3200253,
+      "lng": -122.6884669
+    },
+    "review": null,
+    "parentJobId": "1008",
+    "shortDescription": "Tub Spout Replacement Service",
+    "serviceType": "fixture"
+  },
+  {
+    "jobId": "1008-5",
+    "address": "547 Lydia Ct. South Rohnert Park CA 94928",
+    "city": "Rohnert Park",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "03/13/2026",
+    "description": "Our customer wanted a new toilet in the hall bathroom. We removed the old toilet and installed the customer-supplied fixture with all new connections and seals.",
+    "images": [
+      "1008.jpg",
+      "1008-1.jpg"
+    ],
+    "hasImages": true,
+    "coordinates": {
+      "lat": 38.3200253,
+      "lng": -122.6884669
+    },
+    "review": null,
+    "parentJobId": "1008",
+    "shortDescription": "Toilet Installation Service",
+    "serviceType": "toilet"
+  },
+  {
+    "jobId": "1008-6",
+    "address": "547 Lydia Ct. South Rohnert Park CA 94928",
+    "city": "Rohnert Park",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "03/13/2026",
+    "description": "Our customer's master bathroom toilet flange had rusted and failed. We rebuilt the drain connection, installed a new flange, and reinstalled the toilet, restoring reliable operation.",
+    "images": [
+      "1008.jpg",
+      "1008-1.jpg"
+    ],
+    "hasImages": true,
+    "coordinates": {
+      "lat": 38.3200253,
+      "lng": -122.6884669
+    },
+    "review": null,
+    "parentJobId": "1008",
+    "shortDescription": "Toilet Flange Repair Service",
+    "serviceType": "toilet"
   },
   {
     "jobId": "1049",
@@ -358,14 +548,16 @@
     "city": "Rohnert Park",
     "region": "santa-rosa-plumbing",
     "completionDate": "05/27/2026",
-    "description": "**Water Heater Repair Service:** Our customer's water heater had a failed pilot assembly. We replaced the pilot components and burner gaskets, restoring reliable hot water.",
+    "description": "Our customer's water heater had a failed pilot assembly. We replaced the pilot components and burner gaskets, restoring reliable hot water.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.3200253,
       "lng": -122.6884669
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Water Heater Repair Service",
+    "serviceType": "water-heater"
   },
   {
     "jobId": "1011",
@@ -373,11 +565,13 @@
     "city": "Petaluma",
     "region": "petaluma-plumbing",
     "completionDate": "03/24/2026",
-    "description": "**Steam Shower Modification Service:** Our customer wanted to relocate the steam shower outlet. We rerouted the piping and moved the shower head location, improving the function and layout of the steam shower.",
+    "description": "Our customer wanted to relocate the steam shower outlet. We rerouted the piping and moved the shower head location, improving the function and layout of the steam shower.",
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null
+    "review": null,
+    "shortDescription": "Steam Shower Modification Service",
+    "serviceType": "fixture"
   },
   {
     "jobId": "1022",
@@ -385,13 +579,15 @@
     "city": "Sebastopol",
     "region": "santa-rosa-plumbing",
     "completionDate": "04/15/2026",
-    "description": "**Grease Interceptor Replacement Service:** Our customer's commercial grease interceptor had failed and needed replacement. We installed a new grease interceptor and modified the piping to accommodate the new unit, restoring proper operation.",
+    "description": "Our customer's commercial grease interceptor had failed and needed replacement. We installed a new grease interceptor and modified the piping to accommodate the new unit, restoring proper operation.",
     "images": [
       "1022.jpg"
     ],
     "hasImages": true,
     "coordinates": null,
-    "review": null
+    "review": null,
+    "shortDescription": "Grease Interceptor Replacement Service",
+    "serviceType": "general"
   },
   {
     "jobId": "1031",
@@ -399,14 +595,16 @@
     "city": "Rohnert Park",
     "region": "santa-rosa-plumbing",
     "completionDate": "05/01/2026",
-    "description": "**Toilet Drain Cleaning Service:** Our customer's upstairs toilet was clogged and would not flush properly. We cleared the blockage and restored normal operation.",
+    "description": "Our customer's upstairs toilet was clogged and would not flush properly. We cleared the blockage and restored normal operation.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.3232062,
       "lng": -122.6695297
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Toilet Drain Cleaning Service",
+    "serviceType": "drain"
   },
   {
     "jobId": "1001",
@@ -414,7 +612,7 @@
     "city": "Rohnert Park",
     "region": "santa-rosa-plumbing",
     "completionDate": "02/23/2026",
-    "description": "**Wall-Hung Toilet Repair Service:** Our customer's wall-hung toilet was leaking at the seal. We removed and reseated the toilet with a new neoprene gasket, stopping the leak and restoring reliable operation.",
+    "description": "Our customer's wall-hung toilet was leaking at the seal. We removed and reseated the toilet with a new neoprene gasket, stopping the leak and restoring reliable operation.",
     "images": [
       "1001.jpg"
     ],
@@ -423,7 +621,9 @@
       "lat": 38.3639658,
       "lng": -122.703964
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Wall-Hung Toilet Repair Service",
+    "serviceType": "toilet"
   },
   {
     "jobId": "1002",
@@ -431,7 +631,7 @@
     "city": "Rohnert Park",
     "region": "santa-rosa-plumbing",
     "completionDate": "02/26/2026",
-    "description": "**Toilet Drain Cleaning Service:** A toilet on the golf course had become clogged and unusable. We cleared the blockage and restored normal function.",
+    "description": "A toilet on the golf course had become clogged and unusable. We cleared the blockage and restored normal function.",
     "images": [
       "1002.jpg"
     ],
@@ -440,37 +640,63 @@
       "lat": 38.3639658,
       "lng": -122.703964
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Toilet Drain Cleaning Service",
+    "serviceType": "drain"
   },
   {
-    "jobId": "1005",
-    "address": "100 Golf Course Drive Rohnert Park CA 94928",
-    "city": "Rohnert Park",
-    "region": "santa-rosa-plumbing",
-    "completionDate": "03/06/2026",
-    "description": "**Commercial Plumbing Repair Service:** A golf course restroom had multiple plumbing issues including a faulty flush cartridge, contaminated faucet controls, and a rocking toilet. We repaired the fixtures and restored proper operation to the restroom.",
-    "images": [],
-    "hasImages": false,
-    "coordinates": {
-      "lat": 38.3639658,
-      "lng": -122.703964
-    },
-    "review": null
-  },
-  {
-    "jobId": "1028",
+    "jobId": "1028-1",
     "address": "100 Golf Course Drive Rohnert Park CA 94928",
     "city": "Rohnert Park",
     "region": "santa-rosa-plumbing",
     "completionDate": "04/27/2026",
-    "description": "**Commercial Faucet Installation Service:** A sensor faucet in the golf course restroom had failed. We installed a new faucet matching the existing fixtures and restored reliable operation.**Wall-Hung Sink Repair Service:** A wall-hung sink had been removed and damaged. We reinstalled the sink, replaced the broken p-trap, and restored proper drainage.\n**Toilet Drain Cleaning Service:** A toilet on the south course was clogged and out of service. We snaked and cleared the line, restoring normal operation.",
+    "description": "A sensor faucet in the golf course restroom had failed. We installed a new faucet matching the existing fixtures and restored reliable operation.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.3639658,
       "lng": -122.703964
     },
-    "review": null
+    "review": null,
+    "parentJobId": "1028",
+    "shortDescription": "Commercial Faucet Installation Service",
+    "serviceType": "fixture"
+  },
+  {
+    "jobId": "1028-2",
+    "address": "100 Golf Course Drive Rohnert Park CA 94928",
+    "city": "Rohnert Park",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "04/27/2026",
+    "description": "A wall-hung sink had been removed and damaged. We reinstalled the sink, replaced the broken p-trap, and restored proper drainage.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.3639658,
+      "lng": -122.703964
+    },
+    "review": null,
+    "parentJobId": "1028",
+    "shortDescription": "Wall-Hung Sink Repair Service",
+    "serviceType": "fixture"
+  },
+  {
+    "jobId": "1028-3",
+    "address": "100 Golf Course Drive Rohnert Park CA 94928",
+    "city": "Rohnert Park",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "04/27/2026",
+    "description": "A toilet on the south course was clogged and out of service. We snaked and cleared the line, restoring normal operation.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.3639658,
+      "lng": -122.703964
+    },
+    "review": null,
+    "parentJobId": "1028",
+    "shortDescription": "Toilet Drain Cleaning Service",
+    "serviceType": "drain"
   },
   {
     "jobId": "1032",
@@ -478,7 +704,7 @@
     "city": "Rohnert Park",
     "region": "santa-rosa-plumbing",
     "completionDate": "05/01/2026",
-    "description": "**Water Heater Service:** The water heater serving the pub and bathrooms had gone out. We relit the water heater and restored hot water service.",
+    "description": "The water heater serving the pub and bathrooms had gone out. We relit the water heater and restored hot water service.",
     "images": [
       "1032.jpg"
     ],
@@ -487,7 +713,9 @@
       "lat": 38.3639658,
       "lng": -122.703964
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Water Heater Service",
+    "serviceType": "water-heater"
   },
   {
     "jobId": "1007",
@@ -495,13 +723,15 @@
     "city": "San Rafael",
     "region": "san-rafael-plumbing",
     "completionDate": "03/13/2026",
-    "description": "**Thermal Expansion Tank Installation Service:** Our customer's water heater was leaking due to pressure-related issues. We installed a new thermal expansion tank and repaired the hot water side of the mop sink, restoring proper operation.",
+    "description": "Our customer's water heater was leaking due to pressure-related issues. We installed a new thermal expansion tank and repaired the hot water side of the mop sink, restoring proper operation.",
     "images": [
       "1007.jpg"
     ],
     "hasImages": true,
     "coordinates": null,
-    "review": null
+    "review": null,
+    "shortDescription": "Thermal Expansion Tank Installation Service",
+    "serviceType": "general"
   },
   {
     "jobId": "1010",
@@ -509,23 +739,13 @@
     "city": "San Rafael",
     "region": "san-rafael-plumbing",
     "completionDate": "03/20/2026",
-    "description": "**Water Heater Code Upgrade Service:** Our customer's water heater required safety and code improvements. We installed bonding wires and a sediment trap, bringing the installation up to current standards.",
+    "description": "Our customer's water heater required safety and code improvements. We installed bonding wires and a sediment trap, bringing the installation up to current standards.",
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null
-  },
-  {
-    "jobId": "1017",
-    "address": "1 Blackfield Dr. #104 Belvedere Tiburon CA 94920",
-    "city": "Belvedere Tiburon",
-    "region": "marin-county-plumbing",
-    "completionDate": "04/07/2026",
-    "description": "**Sewer Ejector Pump Repair Service:** A sewer ejector system had a broken drain connection causing a leak. We replaced the damaged ABS fittings and restored proper operation.",
-    "images": [],
-    "hasImages": false,
-    "coordinates": null,
-    "review": null
+    "review": null,
+    "shortDescription": "Water Heater Code Upgrade Service",
+    "serviceType": "water-heater"
   },
   {
     "jobId": "1059",
@@ -533,7 +753,7 @@
     "city": "Santa Rosa",
     "region": "santa-rosa-plumbing",
     "completionDate": "06/12/2026",
-    "description": "**Water Leak Repair Service:** Our customer had a leaking pipe union that was causing water damage. We disassembled and resealed the connection, significantly reducing the leak.",
+    "description": "Our customer had a leaking pipe union that was causing water damage. We disassembled and resealed the connection, significantly reducing the leak.",
     "images": [
       "1059.jpg"
     ],
@@ -545,7 +765,23 @@
       "reviewerName": "Joseph Denning",
       "source": "Google",
       "date": "Jun 2026"
-    }
+    },
+    "shortDescription": "Water Leak Repair Service",
+    "serviceType": "leak"
+  },
+  {
+    "jobId": "1017",
+    "address": "1 Blackfield Dr. #104 Belvedere Tiburon CA 94920",
+    "city": "Belvedere Tiburon",
+    "region": "marin-county-plumbing",
+    "completionDate": "04/07/2026",
+    "description": "A sewer ejector system had a broken drain connection causing a leak. We replaced the damaged ABS fittings and restored proper operation.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": null,
+    "review": null,
+    "shortDescription": "Sewer Ejector Pump Repair Service",
+    "serviceType": "drain"
   },
   {
     "jobId": "1045",
@@ -553,14 +789,16 @@
     "city": "Petaluma",
     "region": "petaluma-plumbing",
     "completionDate": "05/21/2026",
-    "description": "**Bathroom Faucet Repair Service:** Our customer's bathroom faucet was leaking from worn internal components. We replaced the washers and seats, restoring proper operation and stopping the leak.",
+    "description": "Our customer's bathroom faucet was leaking from worn internal components. We replaced the washers and seats, restoring proper operation and stopping the leak.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.2382057,
       "lng": -122.6144819
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Bathroom Faucet Repair Service",
+    "serviceType": "fixture"
   },
   {
     "jobId": "1026",
@@ -568,14 +806,16 @@
     "city": "Novato",
     "region": "novato-plumbing",
     "completionDate": "04/24/2026",
-    "description": "**Toilet and Plumbing Repair Service:** Our customer had a separated tub drain and a leaking water supply line. We temporarily reattached the drain, replaced the leaking supply line, and installed a new toilet, restoring reliable function.",
+    "description": "Our customer had a separated tub drain and a leaking water supply line. We temporarily reattached the drain, replaced the leaking supply line, and installed a new toilet, restoring reliable function.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.1176177,
       "lng": -122.5651174
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Toilet and Plumbing Repair Service",
+    "serviceType": "toilet"
   },
   {
     "jobId": "1043",
@@ -583,14 +823,16 @@
     "city": "Corte Madera",
     "region": "marin-county-plumbing",
     "completionDate": "05/19/2026",
-    "description": "**Toilet Maintenance and Drain Cleaning Service:** Our customer wanted improved toilet performance and had a clogged kitchen sink. We adjusted the toilet for maximum flushing performance and cleared the kitchen drain, restoring normal operation.",
+    "description": "Our customer wanted improved toilet performance and had a clogged kitchen sink. We adjusted the toilet for maximum flushing performance and cleared the kitchen drain, restoring normal operation.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 37.9205602,
       "lng": -122.5025937
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Toilet Maintenance and Drain Cleaning Service",
+    "serviceType": "drain"
   },
   {
     "jobId": "1071",
@@ -598,11 +840,15 @@
     "city": "Mill Valley",
     "region": "mill-valley-plumbing",
     "completionDate": "06/26/2026",
-    "description": "**Shower Repair Service:** Our customer's shower had temperature control issues caused by a failed cartridge and pressure balancer. We replaced the components and restored proper temperature control.",
-    "images": ["1071.jpg"],
+    "description": "Our customer's shower had temperature control issues caused by a failed cartridge and pressure balancer. We replaced the components and restored proper temperature control.",
+    "images": [
+      "1071.jpg"
+    ],
     "hasImages": true,
     "coordinates": null,
-    "review": null
+    "review": null,
+    "shortDescription": "Shower Repair Service",
+    "serviceType": "fixture"
   },
   {
     "jobId": "1040",
@@ -610,14 +856,16 @@
     "city": "Glen Ellen",
     "region": "sonoma-plumbing",
     "completionDate": "05/18/2026",
-    "description": "**Sink Repair Service:** Our customer's sink stopper had become disconnected and would no longer operate correctly. We reconnected the stopper and restored normal function.",
+    "description": "Our customer's sink stopper had become disconnected and would no longer operate correctly. We reconnected the stopper and restored normal function.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.3678056,
       "lng": -122.5226899
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Sink Repair Service",
+    "serviceType": "fixture"
   },
   {
     "jobId": "1014",
@@ -625,7 +873,7 @@
     "city": "Santa Rosa",
     "region": "santa-rosa-plumbing",
     "completionDate": "03/31/2026",
-    "description": "**Moen Flo Smart Water Shutoff Installation Service:** Our customer wanted better protection against water damage. We installed a new Moen Flo automatic water shutoff valve and replaced a corroded pressure reducing valve, improving both leak protection and water system reliability.",
+    "description": "Our customer wanted better protection against water damage. We installed a new Moen Flo automatic water shutoff valve and replaced a corroded pressure reducing valve, improving both leak protection and water system reliability.",
     "images": [
       "1014.jpg"
     ],
@@ -634,7 +882,28 @@
       "lat": 38.4377077,
       "lng": -122.5893385
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Moen Flo Smart Water Shutoff Installation Service",
+    "serviceType": "smart-home"
+  },
+  {
+    "jobId": "1038",
+    "address": "237 Buena Tierra Way Windsor CA 95492",
+    "city": "Windsor",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "05/12/2026",
+    "description": "Our customer wanted automatic protection against water damage. We installed a new Moen Flo smart water shutoff valve on the home's main water line, providing whole-home leak detection and automatic shutoff protection.",
+    "images": [
+      "1038.jpg"
+    ],
+    "hasImages": true,
+    "coordinates": {
+      "lat": 38.5577735,
+      "lng": -122.7926911
+    },
+    "review": null,
+    "shortDescription": "Moen Flo Smart Water Shutoff Installation Service",
+    "serviceType": "smart-home"
   },
   {
     "jobId": "1033",
@@ -642,14 +911,16 @@
     "city": "Santa Rosa",
     "region": "santa-rosa-plumbing",
     "completionDate": "05/06/2026",
-    "description": "**Whole-Home Plumbing Repair Service:** Our inspection uncovered several plumbing issues throughout the home, including shower and drain problems. We completed the necessary repairs and restored proper operation to the plumbing system.",
+    "description": "Our inspection uncovered several plumbing issues throughout the home, including shower and drain problems. We completed the necessary repairs and restored proper operation to the plumbing system.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.4377077,
       "lng": -122.5893385
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Whole-Home Plumbing Repair Service",
+    "serviceType": "general"
   },
   {
     "jobId": "1042",
@@ -657,14 +928,16 @@
     "city": "Santa Rosa",
     "region": "santa-rosa-plumbing",
     "completionDate": "05/18/2026",
-    "description": "**Shower Cartridge Replacement Service:** Our customer's guest shower had a failed cartridge and the master shower could no longer reach full temperature. We replaced both shower cartridges, restoring proper temperature control and reliable operation.",
+    "description": "Our customer's guest shower had a failed cartridge and the master shower could no longer reach full temperature. We replaced both shower cartridges, restoring proper temperature control and reliable operation.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.4377077,
       "lng": -122.5893385
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Shower Cartridge Replacement Service",
+    "serviceType": "fixture"
   },
   {
     "jobId": "1051",
@@ -672,7 +945,7 @@
     "city": "Healdsburg",
     "region": "healdsburg-plumbing",
     "completionDate": "06/02/2026",
-    "description": "**Toilet Repair Service:** Our customer's toilet was making a hissing noise due to a worn-out fill valve. We replaced the fill valve with a Toto quiet-fill valve, restoring quiet and reliable operation.",
+    "description": "Our customer's toilet was making a hissing noise due to a worn-out fill valve. We replaced the fill valve with a Toto quiet-fill valve, restoring quiet and reliable operation.",
     "images": [],
     "hasImages": false,
     "coordinates": {
@@ -685,24 +958,9 @@
       "reviewerName": "Marcie E.",
       "source": "Thumbtack",
       "date": "May 2026"
-    }
-  },
-  {
-    "jobId": "1038",
-    "address": "237 Buena Tierra Way Windsor CA 95492",
-    "city": "Windsor",
-    "region": "santa-rosa-plumbing",
-    "completionDate": "05/12/2026",
-    "description": "**Moen Flo Smart Water Shutoff Installation Service:** Our customer wanted automatic protection against water damage. We installed a new Moen Flo smart water shutoff valve on the home's main water line, providing whole-home leak detection and automatic shutoff protection.",
-    "images": [
-      "1038.jpg"
-    ],
-    "hasImages": true,
-    "coordinates": {
-      "lat": 38.5577735,
-      "lng": -122.7926911
     },
-    "review": null
+    "shortDescription": "Toilet Repair Service",
+    "serviceType": "toilet"
   },
   {
     "jobId": "1013",
@@ -710,61 +968,16 @@
     "city": "Petaluma",
     "region": "petaluma-plumbing",
     "completionDate": "03/30/2026",
-    "description": "**Toilet and Shower Repair Service:** Our customer's toilet had a loud fill cycle and slow refill, and the shower had temperature control issues. We installed a new flush valve and replaced the shower cartridge, restoring proper operation to both fixtures.",
+    "description": "Our customer's toilet had a loud fill cycle and slow refill, and the shower had temperature control issues. We installed a new flush valve and replaced the shower cartridge, restoring proper operation to both fixtures.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.2612749,
       "lng": -122.6415881
     },
-    "review": null
-  },
-  {
-    "jobId": "1015",
-    "address": "1460 Sunrise Pkwy Petaluma CA 94954",
-    "city": "Petaluma",
-    "region": "petaluma-plumbing",
-    "completionDate": "04/02/2026",
-    "description": "**Plumbing Fixture Installation Service:** Our customer wanted to update fixtures throughout the home. We installed a new kitchen faucet, soap dispenser, and new bathroom faucets and drains, improving both appearance and functionality.",
-    "images": [
-      "1015.jpg"
-    ],
-    "hasImages": true,
-    "coordinates": {
-      "lat": 38.2612749,
-      "lng": -122.6415881
-    },
-    "review": null
-  },
-  {
-    "jobId": "1016",
-    "address": "1460 Sunrise Pkwy Petaluma CA 94954",
-    "city": "Petaluma",
-    "region": "petaluma-plumbing",
-    "completionDate": "04/06/2026",
-    "description": "**Water Filtration System Installation Service:** Our customer wanted to replace a bulky reverse osmosis system with a more compact solution. We installed a new under-sink water filtration system, improving water quality while freeing up cabinet space.",
-    "images": [],
-    "hasImages": false,
-    "coordinates": {
-      "lat": 38.2612749,
-      "lng": -122.6415881
-    },
-    "review": null
-  },
-  {
-    "jobId": "1029",
-    "address": "1460 Sunrise Pkwy Petaluma CA 94954",
-    "city": "Petaluma",
-    "region": "petaluma-plumbing",
-    "completionDate": "04/30/2026",
-    "description": "**Toilet Leak Repair Service:** Our customer's guest toilet was leaking between the tank and bowl. We replaced the failed tank gasket, stopping the leak and restoring reliable operation.",
-    "images": [],
-    "hasImages": false,
-    "coordinates": {
-      "lat": 38.2612749,
-      "lng": -122.6415881
-    },
-    "review": null
+    "review": null,
+    "shortDescription": "Toilet and Shower Repair Service",
+    "serviceType": "toilet"
   },
   {
     "jobId": "1057",
@@ -772,14 +985,16 @@
     "city": "Novato",
     "region": "novato-plumbing",
     "completionDate": "06/12/2026",
-    "description": "**Toilet and Angle Stop Repair Service:** Our customer's half-bath toilet had a leaking angle stop and a continuously running fill valve. We repaired the shutoff valve and replaced the fill valve, eliminating the leaks and restoring normal operation.",
+    "description": "Our customer's half-bath toilet had a leaking angle stop and a continuously running fill valve. We repaired the shutoff valve and replaced the fill valve, eliminating the leaks and restoring normal operation.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.0740479,
       "lng": -122.5595819
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Toilet and Angle Stop Repair Service",
+    "serviceType": "toilet"
   },
   {
     "jobId": "1021",
@@ -787,14 +1002,16 @@
     "city": "Petaluma",
     "region": "petaluma-plumbing",
     "completionDate": "04/10/2026",
-    "description": "**Drain and Toilet Repair Service:** Our customer's upstairs bathroom drain was leaking and interfering with drawer operation. We reconfigured the drain and installed a new flush valve in the toilet, restoring proper function to both fixtures.",
+    "description": "Our customer's upstairs bathroom drain was leaking and interfering with drawer operation. We reconfigured the drain and installed a new flush valve in the toilet, restoring proper function to both fixtures.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.2447857,
       "lng": -122.6030042
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Drain and Toilet Repair Service",
+    "serviceType": "drain"
   },
   {
     "jobId": "1018",
@@ -802,7 +1019,7 @@
     "city": "San Anselmo",
     "region": "san-rafael-plumbing",
     "completionDate": "04/09/2026",
-    "description": "**Moen Flo and Ice Maker Line Installation Service:** Our customer wanted whole-home leak protection and a new refrigerator water supply. We installed a Moen Flo smart shutoff valve and a new ice maker water line, improving both convenience and protection.",
+    "description": "Our customer wanted whole-home leak protection and a new refrigerator water supply. We installed a Moen Flo smart shutoff valve and a new ice maker water line, improving both convenience and protection.",
     "images": [
       "1018.jpg"
     ],
@@ -811,7 +1028,62 @@
       "lat": 37.9880733,
       "lng": -122.5809189
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Moen Flo and Ice Maker Line Installation Service",
+    "serviceType": "smart-home"
+  },
+  {
+    "jobId": "1016",
+    "address": "1460 Sunrise Pkwy Petaluma CA 94954",
+    "city": "Petaluma",
+    "region": "petaluma-plumbing",
+    "completionDate": "04/06/2026",
+    "description": "Our customer wanted to replace a bulky reverse osmosis system with a more compact solution. We installed a new under-sink water filtration system, improving water quality while freeing up cabinet space.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.2612749,
+      "lng": -122.6415881
+    },
+    "review": null,
+    "shortDescription": "Water Filtration System Installation Service",
+    "serviceType": "water-filtration"
+  },
+  {
+    "jobId": "1015",
+    "address": "1460 Sunrise Pkwy Petaluma CA 94954",
+    "city": "Petaluma",
+    "region": "petaluma-plumbing",
+    "completionDate": "04/02/2026",
+    "description": "Our customer wanted to update fixtures throughout the home. We installed a new kitchen faucet, soap dispenser, and new bathroom faucets and drains, improving both appearance and functionality.",
+    "images": [
+      "1015.jpg"
+    ],
+    "hasImages": true,
+    "coordinates": {
+      "lat": 38.2612749,
+      "lng": -122.6415881
+    },
+    "review": null,
+    "shortDescription": "Plumbing Fixture Installation Service",
+    "serviceType": "fixture"
+  },
+  {
+    "jobId": "1029",
+    "address": "1460 Sunrise Pkwy Petaluma CA 94954",
+    "city": "Petaluma",
+    "region": "petaluma-plumbing",
+    "completionDate": "04/30/2026",
+    "description": "Our customer's guest toilet was leaking between the tank and bowl. We replaced the failed tank gasket, stopping the leak and restoring reliable operation.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.2612749,
+      "lng": -122.6415881
+    },
+    "review": null,
+    "shortDescription": "Toilet Leak Repair Service",
+    "serviceType": "toilet"
   },
   {
     "jobId": "1064",
@@ -819,14 +1091,16 @@
     "city": "Rohnert Park",
     "region": "santa-rosa-plumbing",
     "completionDate": "06/17/2026",
-    "description": "**Water Heater Installation Service:** Our customer needed a new residential gas water heater. We installed a new American Standard water heater with all new safety and connection components, restoring reliable hot water.",
+    "description": "Our customer needed a new residential gas water heater. We installed a new American Standard water heater with all new safety and connection components, restoring reliable hot water.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.3716053,
       "lng": -122.6928791
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Water Heater Installation Service",
+    "serviceType": "water-heater"
   },
   {
     "jobId": "1034",
@@ -834,7 +1108,7 @@
     "city": "Sonoma",
     "region": "sonoma-plumbing",
     "completionDate": "05/06/2026",
-    "description": "**Garbage Disposal Installation Service:** Our customer supplied a new garbage disposal for the kitchen. We installed the unit and restored reliable food waste disposal.",
+    "description": "Our customer supplied a new garbage disposal for the kitchen. We installed the unit and restored reliable food waste disposal.",
     "images": [
       "1034.jpg"
     ],
@@ -843,7 +1117,9 @@
       "lat": 38.2965206,
       "lng": -122.4482971
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Garbage Disposal Installation Service",
+    "serviceType": "fixture"
   },
   {
     "jobId": "1023",
@@ -851,7 +1127,7 @@
     "city": "Novato",
     "region": "novato-plumbing",
     "completionDate": "04/22/2026",
-    "description": "**Gas Line Replacement Service:** Our customer's existing gas line had become corroded and deteriorated. We replaced the gas line and protected it against future corrosion, restoring a safe and reliable fuel supply.",
+    "description": "Our customer's existing gas line had become corroded and deteriorated. We replaced the gas line and protected it against future corrosion, restoring a safe and reliable fuel supply.",
     "images": [
       "1023-1.JPG",
       "1023-2.jpg",
@@ -868,7 +1144,9 @@
       "reviewerName": "Mitesh P.",
       "source": "Thumbtack",
       "date": "Apr 2026"
-    }
+    },
+    "shortDescription": "Gas Line Replacement Service",
+    "serviceType": "gas"
   },
   {
     "jobId": "1044",
@@ -876,11 +1154,13 @@
     "city": "Novato",
     "region": "novato-plumbing",
     "completionDate": "05/21/2026",
-    "description": "**Plumbing Remodel Service:** Our customer was remodeling and needed new plumbing fixtures and piping. We installed a new shower valve, bathtub, kitchen faucet, and water lines, completing the plumbing portion of the renovation.",
+    "description": "Our customer was remodeling and needed new plumbing fixtures and piping. We installed a new shower valve, bathtub, kitchen faucet, and water lines, completing the plumbing portion of the renovation.",
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null
+    "review": null,
+    "shortDescription": "Plumbing Remodel Service",
+    "serviceType": "general"
   },
   {
     "jobId": "1027",
@@ -888,11 +1168,13 @@
     "city": "Sonoma",
     "region": "sonoma-plumbing",
     "completionDate": "04/27/2026",
-    "description": "**Sewer Drain Cleaning Service:** Our customer's sewer line was blocked with roots, causing sewage to back up into the yard. We cleared the blockage and removed roots from the line, restoring proper drainage and preventing further overflow.",
+    "description": "Our customer's sewer line was blocked with roots, causing sewage to back up into the yard. We cleared the blockage and removed roots from the line, restoring proper drainage and preventing further overflow.",
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null
+    "review": null,
+    "shortDescription": "Sewer Drain Cleaning Service",
+    "serviceType": "drain"
   },
   {
     "jobId": "1061",
@@ -900,14 +1182,16 @@
     "city": "Rohnert Park",
     "region": "santa-rosa-plumbing",
     "completionDate": "06/15/2026",
-    "description": "**Angle Stop Installation Service:** Our customer needed new shutoff valves for a bathroom faucet. We installed two new angle stops and a new supply line, restoring reliable water service to the fixture.",
+    "description": "Our customer needed new shutoff valves for a bathroom faucet. We installed two new angle stops and a new supply line, restoring reliable water service to the fixture.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.3452388,
       "lng": -122.6809423
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Angle Stop Installation Service",
+    "serviceType": "fixture"
   },
   {
     "jobId": "1053",
@@ -915,29 +1199,59 @@
     "city": "Santa Rosa",
     "region": "santa-rosa-plumbing",
     "completionDate": "06/09/2026",
-    "description": "**Hot Water Recirculation System Repair Service:** Our customer's hot water recirculation system was not operating properly due to a failed comfort valve. We replaced the valve and restored proper hot water circulation throughout the home.",
+    "description": "Our customer's hot water recirculation system was not operating properly due to a failed comfort valve. We replaced the valve and restored proper hot water circulation throughout the home.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.4214407,
       "lng": -122.7231363
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Hot Water Recirculation System Repair Service",
+    "serviceType": "water-heater"
   },
   {
-    "jobId": "1004",
-    "address": "1025 Hwy 1 Bodega Bay CA 94923",
-    "city": "Bodega Bay",
-    "region": "sonoma-county-plumbing",
-    "completionDate": "03/05/2026",
-    "description": "**Drain Cleaning and Repair Service:** Our customer's drain line was clogged and required direct access for clearing. We cut into the piping, removed the blockage, and repaired the drain line, restoring normal drainage.**Toilet Repair Service:** Our customer's hall bathroom toilet had flushing issues caused by worn internal components. We installed a new flush valve and flapper, restoring reliable flushing performance.",
+    "jobId": "1037",
+    "address": "973 Butterfield Road San Anselmo CA 94960 USA",
+    "city": "San Anselmo",
+    "region": "san-rafael-plumbing",
+    "completionDate": "05/08/2026",
+    "description": "Our customer wanted additional protection against water damage. We installed a new Moen Flo automatic shutoff valve and helped set up the Wi-Fi and mobile app, providing convenient whole-home leak protection.",
+    "images": [
+      "1037-1.jpg",
+      "1037-2.jpg"
+    ],
+    "hasImages": true,
+    "coordinates": {
+      "lat": 37.9877294,
+      "lng": -122.5781966
+    },
+    "review": null,
+    "shortDescription": "Moen Flo Smart Water Shutoff Installation Service",
+    "serviceType": "smart-home"
+  },
+  {
+    "jobId": "1035",
+    "address": "2424 San Joaquin Ct Santa Rosa CA 95401",
+    "city": "Santa Rosa",
+    "region": "santa-rosa-plumbing",
+    "completionDate": "05/07/2026",
+    "description": "Our customer supplied a new Toto toilet for the upstairs bathroom. We installed the new toilet, connected new components, and hauled away the old fixture, restoring reliable operation.",
     "images": [],
     "hasImages": false,
     "coordinates": {
-      "lat": 38.330786,
-      "lng": -123.0467736
+      "lat": 38.4309448,
+      "lng": -122.7661711
     },
-    "review": null
+    "review": {
+      "text": "Adam was very helpful with scheduling and communication. Chris gave us great information and was able to get our job done quickly! Everything looks and works great! Thank you, both! We'll call again for our next plumbing need.",
+      "rating": 5,
+      "reviewerName": "Tara L.",
+      "source": "Thumbtack",
+      "date": "May 2026"
+    },
+    "shortDescription": "Toilet Installation Service",
+    "serviceType": "toilet"
   },
   {
     "jobId": "1052",
@@ -945,7 +1259,7 @@
     "city": "Santa Rosa",
     "region": "santa-rosa-plumbing",
     "completionDate": "06/05/2026",
-    "description": "**Gas Line Installation Service:** Our customer wanted to install a new gas range in the kitchen. We installed a new gas line and shutoff valve, providing a safe and reliable fuel supply for the appliance.",
+    "description": "Our customer wanted to install a new gas range in the kitchen. We installed a new gas line and shutoff valve, providing a safe and reliable fuel supply for the appliance.",
     "images": [
       "1052.jpg"
     ],
@@ -960,7 +1274,45 @@
       "reviewerName": "Roberto Saldana",
       "source": "Google",
       "date": "Jun 2026"
-    }
+    },
+    "shortDescription": "Gas Line Installation Service",
+    "serviceType": "gas"
+  },
+  {
+    "jobId": "1004-1",
+    "address": "1025 Hwy 1 Bodega Bay CA 94923",
+    "city": "Bodega Bay",
+    "region": "sonoma-county-plumbing",
+    "completionDate": "03/05/2026",
+    "description": "Our customer's drain line was clogged and required direct access for clearing. We cut into the piping, removed the blockage, and repaired the drain line, restoring normal drainage.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.330786,
+      "lng": -123.0467736
+    },
+    "review": null,
+    "parentJobId": "1004",
+    "shortDescription": "Drain Cleaning and Repair Service",
+    "serviceType": "drain"
+  },
+  {
+    "jobId": "1004-2",
+    "address": "1025 Hwy 1 Bodega Bay CA 94923",
+    "city": "Bodega Bay",
+    "region": "sonoma-county-plumbing",
+    "completionDate": "03/05/2026",
+    "description": "Our customer's hall bathroom toilet had flushing issues caused by worn internal components. We installed a new flush valve and flapper, restoring reliable flushing performance.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.330786,
+      "lng": -123.0467736
+    },
+    "review": null,
+    "parentJobId": "1004",
+    "shortDescription": "Toilet Repair Service",
+    "serviceType": "toilet"
   },
   {
     "jobId": "1039",
@@ -968,7 +1320,7 @@
     "city": "Sonoma",
     "region": "sonoma-plumbing",
     "completionDate": "05/13/2026",
-    "description": "**Water Heater Maintenance Service:** Our customer's water heater was due for preventative maintenance. We flushed the tank and installed a new anode rod, helping protect the tank from corrosion and extend the life of the water heater.",
+    "description": "Our customer's water heater was due for preventative maintenance. We flushed the tank and installed a new anode rod, helping protect the tank from corrosion and extend the life of the water heater.",
     "images": [
       "1039.jpg"
     ],
@@ -977,7 +1329,9 @@
       "lat": 38.29593,
       "lng": -122.4971959
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Water Heater Maintenance Service",
+    "serviceType": "water-heater"
   },
   {
     "jobId": "1060",
@@ -985,7 +1339,7 @@
     "city": "Mill Valley",
     "region": "mill-valley-plumbing",
     "completionDate": "06/15/2026",
-    "description": "**Garbage Disposal and Faucet Installation Service:** Our customer supplied a new garbage disposal and bathroom faucet. We installed both fixtures and corrected an electrical issue at the disposal outlet, restoring proper operation.",
+    "description": "Our customer supplied a new garbage disposal and bathroom faucet. We installed both fixtures and corrected an electrical issue at the disposal outlet, restoring proper operation.",
     "images": [
       "1060.jpg"
     ],
@@ -994,25 +1348,9 @@
       "lat": 37.8994594,
       "lng": -122.5311081
     },
-    "review": null
-  },
-  {
-    "jobId": "1037",
-    "address": "973 Butterfield Road San Anselmo CA 94960 USA",
-    "city": "San Anselmo",
-    "region": "san-rafael-plumbing",
-    "completionDate": "05/08/2026",
-    "description": "**Moen Flo Smart Water Shutoff Installation Service:** Our customer wanted additional protection against water damage. We installed a new Moen Flo automatic shutoff valve and helped set up the Wi-Fi and mobile app, providing convenient whole-home leak protection.",
-    "images": [
-      "1037-1.jpg",
-      "1037-2.jpg"
-    ],
-    "hasImages": true,
-    "coordinates": {
-      "lat": 37.9877294,
-      "lng": -122.5781966
-    },
-    "review": null
+    "review": null,
+    "shortDescription": "Garbage Disposal and Faucet Installation Service",
+    "serviceType": "fixture"
   },
   {
     "jobId": "1050",
@@ -1020,7 +1358,7 @@
     "city": "San Anselmo",
     "region": "san-rafael-plumbing",
     "completionDate": "05/29/2026",
-    "description": "**Underground Water Line Installation Service:** Our customer needed new underground water and irrigation piping. We installed new water lines, reconnected the home and irrigation systems, and installed a new backflow device, restoring reliable water service.",
+    "description": "Our customer needed new underground water and irrigation piping. We installed new water lines, reconnected the home and irrigation systems, and installed a new backflow device, restoring reliable water service.",
     "images": [
       "1050-1.jpg",
       "1050-2.jpg",
@@ -1038,7 +1376,9 @@
       "reviewerName": "Shaun S.",
       "source": "Yelp",
       "date": "Jun 2026"
-    }
+    },
+    "shortDescription": "Underground Water Line Installation Service",
+    "serviceType": "general"
   },
   {
     "jobId": "1076",
@@ -1046,14 +1386,18 @@
     "city": "San Anselmo",
     "region": "san-rafael-plumbing",
     "completionDate": "07/01/2026",
-    "description": "**Water Heater Installation Service:** Our customer needed a new 50-gallon residential gas water heater. We installed a new American Standard water heater, restoring dependable hot water to the home.",
-    "images": ["1076.jpg"],
+    "description": "Our customer needed a new 50-gallon residential gas water heater. We installed a new American Standard water heater, restoring dependable hot water to the home.",
+    "images": [
+      "1076.jpg"
+    ],
     "hasImages": true,
     "coordinates": {
       "lat": 37.9877294,
       "lng": -122.5781966
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Water Heater Installation Service",
+    "serviceType": "water-heater"
   },
   {
     "jobId": "1067",
@@ -1061,14 +1405,16 @@
     "city": "Santa Rosa",
     "region": "santa-rosa-plumbing",
     "completionDate": "06/22/2026",
-    "description": "**Water Heater Repair Service:** Our customer's water heater had a failed gas manifold and was not operating properly. We replaced the manifold and restored reliable hot water service.",
+    "description": "Our customer's water heater had a failed gas manifold and was not operating properly. We replaced the manifold and restored reliable hot water service.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.4441268,
       "lng": -122.7255053
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Water Heater Repair Service",
+    "serviceType": "water-heater"
   },
   {
     "jobId": "1025",
@@ -1076,7 +1422,7 @@
     "city": "Santa Rosa",
     "region": "santa-rosa-plumbing",
     "completionDate": "04/24/2026",
-    "description": "**Shower and Drain Cleaning Service:** Our customer's shower handle had become loose and the upstairs tub was draining slowly due to a hair blockage. We secured the handle and cleared the drain, restoring proper function.",
+    "description": "Our customer's shower handle had become loose and the upstairs tub was draining slowly due to a hair blockage. We secured the handle and cleared the drain, restoring proper function.",
     "images": [],
     "hasImages": false,
     "coordinates": {
@@ -1089,7 +1435,9 @@
       "reviewerName": "Sofia McKnight",
       "source": "Google",
       "date": "Apr 2026"
-    }
+    },
+    "shortDescription": "Shower and Drain Cleaning Service",
+    "serviceType": "drain"
   },
   {
     "jobId": "1062",
@@ -1097,7 +1445,7 @@
     "city": "Petaluma",
     "region": "petaluma-plumbing",
     "completionDate": "06/17/2026",
-    "description": "**P-Trap Replacement Service:** Our customer's bathroom drain was leaking due to a failed p-trap. We replaced the drain assembly and restored proper drainage.",
+    "description": "Our customer's bathroom drain was leaking due to a failed p-trap. We replaced the drain assembly and restored proper drainage.",
     "images": [
       "1062-1.jpg",
       "1062-2.jpg"
@@ -1107,7 +1455,9 @@
       "lat": 38.2455671,
       "lng": -122.6416115
     },
-    "review": null
+    "review": null,
+    "shortDescription": "P-Trap Replacement Service",
+    "serviceType": "general"
   },
   {
     "jobId": "1006",
@@ -1115,35 +1465,16 @@
     "city": "Petaluma",
     "region": "petaluma-plumbing",
     "completionDate": "03/13/2026",
-    "description": "**Pressure Reducing Valve Adjustment Service:** Our customer was experiencing water pressure issues in the home. We recalibrated the pressure reducing valve, improving water flow and system performance.",
+    "description": "Our customer was experiencing water pressure issues in the home. We recalibrated the pressure reducing valve, improving water flow and system performance.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 38.5396537,
       "lng": -122.8191932
     },
-    "review": null
-  },
-  {
-    "jobId": "1035",
-    "address": "2424 San Joaquin Ct Santa Rosa CA 95401",
-    "city": "Santa Rosa",
-    "region": "santa-rosa-plumbing",
-    "completionDate": "05/07/2026",
-    "description": "**Toilet Installation Service:** Our customer supplied a new Toto toilet for the upstairs bathroom. We installed the new toilet, connected new components, and hauled away the old fixture, restoring reliable operation.",
-    "images": [],
-    "hasImages": false,
-    "coordinates": {
-      "lat": 38.4309448,
-      "lng": -122.7661711
-    },
-    "review": {
-      "text": "Adam was very helpful with scheduling and communication. Chris gave us great information and was able to get our job done quickly! Everything looks and works great! Thank you, both! We'll call again for our next plumbing need.",
-      "rating": 5,
-      "reviewerName": "Tara L.",
-      "source": "Thumbtack",
-      "date": "May 2026"
-    }
+    "review": null,
+    "shortDescription": "Pressure Reducing Valve Adjustment Service",
+    "serviceType": "general"
   },
   {
     "jobId": "1041",
@@ -1151,13 +1482,15 @@
     "city": "Ross",
     "region": "marin-county-plumbing",
     "completionDate": "05/16/2026",
-    "description": "**Shower and Tub Drain Cleaning Service:** Our customer's shower and tub drain were clogged and draining slowly. We cleared the blockage and restored normal drainage.",
+    "description": "Our customer's shower and tub drain were clogged and draining slowly. We cleared the blockage and restored normal drainage.",
     "images": [],
     "hasImages": false,
     "coordinates": {
       "lat": 37.9708964,
       "lng": -122.554413
     },
-    "review": null
+    "review": null,
+    "shortDescription": "Shower and Tub Drain Cleaning Service",
+    "serviceType": "drain"
   }
 ]
