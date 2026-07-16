@@ -164,7 +164,13 @@
       "lat": 38.1238983,
       "lng": -122.6016297
     },
-    "review": null,
+    "review": {
+      "text": "GoFlow Plumbing did an outstanding job servicing our water heater for our condo in Novato. They were professional, thorough, and took the time to explain everything they found and the work they completed. I also appreciated that they provided helpful recommendations and trusted referrals for other items that may need attention in the future, without any pressure. I highly recommend GoFlow Plumbing for their quality workmanship, honesty, and excellent customer service.",
+      "rating": 5,
+      "reviewerName": "Paul W.",
+      "source": "Yelp",
+      "date": "Jul 2026"
+    },
     "shortDescription": "Water Heater Diagnostic Service",
     "serviceType": "water-heater"
   },
@@ -1348,7 +1354,6 @@
       "lat": 37.8994594,
       "lng": -122.5311081
     },
-    "review": null,
     "shortDescription": "Garbage Disposal and Faucet Installation Service",
     "serviceType": "fixture"
   },
