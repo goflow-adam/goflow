@@ -316,7 +316,13 @@
       "lat": 38.4627473,
       "lng": -122.6533789
     },
-    "review": null,
+    "review": {
+      "text": "Great experience having GoFlow replace my gas-fired hot water heater with an electric heat pump: a very reasonable and competitive estimate (including a no-cost pre-installation site visit), informative and cordial communication, flexible scheduling, on-time arrival, high attention to safety and Santa Rosa city requirements, and a neat and tidy installation. Placement of the new unit required some creative drain and pipe work, all done with a smile and no added expense. As luck would have it, our street-side water main developed a significant leak the day before the water heater was to be installed. A desperate call to GoFlow put THAT fix on the schedule as well... same day, a couple extra hours, and again a reasonable charge. I could not be happier and recommend GoFlow without hesitation. Kudos to both Chris (the man with the wrench) and Adam (the man on the office phone) for running a truly professional, customer focused and community minded business!",
+      "rating": 5,
+      "reviewerName": "Charles D.",
+      "source": "Yelp",
+      "date": "Jul 2026"
+    },
     "shortDescription": "Heat Pump Water Heater Installation Service",
     "serviceType": "water-heater"
   },
@@ -1497,5 +1503,28 @@
     "review": null,
     "shortDescription": "Shower and Tub Drain Cleaning Service",
     "serviceType": "drain"
+  },
+  {
+    "jobId": "1080",
+    "address": "1004 Princeton Dr, Sonoma, CA  95476",
+    "city": "Sonoma",
+    "region": "sonoma-plumbing",
+    "completionDate": "07/14/2026",
+    "description": "Our customer had miscellaneous leaks and fixes needed to put their home on the market. We used the home inspection reports to determine what needed to be fixed and took care of it in time for their showings.",
+    "images": ["1080.jpg"],
+    "hasImages": true,
+    "coordinates": {
+      "lat": 38.308597,
+      "lng": -122.495518
+    },
+    "review": {
+      "text": "Received a detailed estimate and the work was scheduled professionally. Received prompt service. When changes came up, they handled them with approval quickly and did not need me to manage them. Completed the work with above and beyond service and expert skills. Highly recommend!",
+      "rating": 5,
+      "reviewerName": "Jenny G.",
+      "source": "Yelp",
+      "date": "Jul 2026"
+    },
+    "shortDescription": "Leak Repairs and Drain Repairs",
+    "serviceType": "general"
   }
 ]

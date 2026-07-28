@@ -180,7 +180,7 @@ async function optimizeImage(imagePath, outputDir) {
         const coords = jobCoordinates.get(filename) || jobCoordinates.get(normalizedFilename);
         if (coords) {
           await embedGPSCoordinates(resizedPath, coords.lat, coords.lng);
-          console.log(`  → Embedded GPS: ${coords.lat.toFixed(4)}, ${coords.lng.toFixed(4)}`);
+          console.log(`  → Embedded GPS: ${coords.lat}, ${coords.lng}`);
         }
       }
     }
