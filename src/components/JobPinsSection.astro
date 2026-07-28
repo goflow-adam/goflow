@@ -5,6 +5,37 @@
  */
 
 import jobPinsData from '@/data/jobPins.json';
+import reviewsData from '@/data/reviews.json';
+
+interface Review {
+  id: string;
+  reviewerName: string;
+  date: string;
+  datePublished: string;
+  rating: number;
+  text: string;
+  source: string;
+  sourceLabel?: string;
+  url: string;
+  jobId: string | null;
+}
+
+interface JobPinRaw {
+  jobId: string;
+  address: string;
+  city: string;
+  region: string;
+  completionDate: string;
+  description: string;
+  images: string[];
+  hasImages: boolean;
+  coordinates: { lat: number; lng: number } | null;
+  reviewId?: string | null;
+  review?: null; // Legacy field, kept for backward compatibility
+  shortDescription: string;
+  serviceType: string;
+  parentJobId?: string;
+}
 
 interface JobPin {
   jobId: string;
@@ -28,6 +59,46 @@ interface JobPin {
   parentJobId?: string;
 }
 
+// Build a map of review IDs to review objects for quick lookup
+const reviewsMap = new Map<string, Review>();
+for (const review of reviewsData as Review[]) {
+  reviewsMap.set(review.id, review);
+}
+
+// Transform raw job pins to include resolved reviews
+function resolveJobPin(raw: JobPinRaw): JobPin {
+  let review: JobPin['review'] = null;
+  
+  if (raw.reviewId) {
+    const reviewData = reviewsMap.get(raw.reviewId);
+    if (reviewData) {
+      review = {
+        text: reviewData.text,
+        rating: reviewData.rating,
+        reviewerName: reviewData.reviewerName,
+        source: reviewData.source,
+        date: reviewData.date,
+      };
+    }
+  }
+  
+  return {
+    jobId: raw.jobId,
+    address: raw.address,
+    city: raw.city,
+    region: raw.region,
+    completionDate: raw.completionDate,
+    description: raw.description,
+    images: raw.images,
+    hasImages: raw.hasImages,
+    coordinates: raw.coordinates,
+    review,
+    shortDescription: raw.shortDescription,
+    serviceType: raw.serviceType,
+    parentJobId: raw.parentJobId,
+  };
+}
+
 interface Props {
   region: string;
   title?: string;
@@ -48,8 +119,8 @@ const {
   excludeServiceTypes = []
 } = Astro.props;
 
-// Filter jobs for this region and optionally by service type
-let jobs = (jobPinsData as JobPin[])
+// Filter jobs for this region and optionally by service type, then resolve reviews
+let jobs = (jobPinsData as JobPinRaw[])
   .filter(job => job.region === region)
   .filter(job => !serviceType || job.serviceType === serviceType)
   .filter(job => !excludeServiceTypes.includes(job.serviceType))
@@ -58,7 +129,8 @@ let jobs = (jobPinsData as JobPin[])
     const dateA = new Date(a.completionDate);
     const dateB = new Date(b.completionDate);
     return dateB.getTime() - dateA.getTime();
-  });
+  })
+  .map(resolveJobPin);
 
 // Optionally filter to only jobs with images
 if (showOnlyWithImages) {

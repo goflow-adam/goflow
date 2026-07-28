@@ -2,6 +2,20 @@ import type { WithContext, Plumber, OpeningHoursSpecification, GeoCoordinates, C
 import { createMinimalOrganizationInfo } from './MinimalOrganizationInfo';
 import { AreaService } from '../base/AreaService';
 import { GOFLOWSchema } from '../base/GOFLOWSchema';
+import reviewsData from '../../../data/reviews.json';
+
+interface ReviewData {
+  id: string;
+  reviewerName: string;
+  date: string;
+  datePublished: string;
+  rating: number;
+  text: string;
+  source: string;
+  sourceLabel?: string;
+  url: string;
+  jobId: string | null;
+}
 
 export class OrganizationSchema extends GOFLOWSchema<Plumber> {
   private constructor() {
@@ -89,7 +103,7 @@ export class OrganizationSchema extends GOFLOWSchema<Plumber> {
     return {
       '@type': 'AggregateRating',
       'ratingValue': '5.0',
-      'reviewCount': '9',
+      'reviewCount': String(reviewsData.length),
       'bestRating': '5',
       'worstRating': '1'
     } as AggregateRating;
@@ -196,153 +210,14 @@ export class OrganizationSchema extends GOFLOWSchema<Plumber> {
   }
 
   private getReviews(): Review[] {
-    const googleReviewUrl = 'https://www.google.com/search?q=goflow+plumbing#lrd=0x21ccd84811445dd1:0xbc645b3c34cce840,1,,,,';
-    return [
-      {
-        '@type': 'Review',
-        'author': {
-          '@type': 'Person',
-          'name': 'Barbara Norman'
-        },
-        'datePublished': '2026-03-31',
-        'reviewRating': {
-          '@type': 'Rating',
-          'ratingValue': '5',
-          'bestRating': '5',
-          'worstRating': '1'
-        },
-        'reviewBody': 'I can\'t say enough good things about these guys! My water heater started leaking Thursday night—right before family were to arrive for the weekend. I was panicking but they got someone out to my place in Oakmont first thing Friday. I had a brand new water heater before they arrived. Seriously saved my weekend! Chris was super professional and explained everything he was doing. I\'m so grateful they were able to squeeze me in on such short notice. Thank you thank you thank you!!',
-        'url': googleReviewUrl
-      } as Review,
-      {
-        '@type': 'Review',
-        'author': {
-          '@type': 'Person',
-          'name': 'Kyle P.'
-        },
-        'datePublished': '2026-03-19',
-        'reviewRating': {
-          '@type': 'Rating',
-          'ratingValue': '5',
-          'bestRating': '5',
-          'worstRating': '1'
-        },
-        'reviewBody': 'I got a great deal and everything fixed in a timely manner. I couldn\'t have asked for a better plumbing service. Chris, who I believe is the owner, was very friendly and professional. I would definitely recommend this company for any first time customers as you will find the only plumber you need to call.',
-        'url': 'https://www.yelp.com/biz/goflow-plumbing-sonoma?hrid=BzmZ6qxYL94ZYLDt7kDkiw'
-      } as Review,
-      {
-        '@type': 'Review',
-        'author': {
-          '@type': 'Person',
-          'name': 'Christina Danner'
-        },
-        'datePublished': '2025-09-09',
-        'reviewRating': {
-          '@type': 'Rating',
-          'ratingValue': '5',
-          'bestRating': '5',
-          'worstRating': '1'
-        },
-        'reviewBody': 'Great communication, thorough work, highly recommend!',
-        'url': 'https://www.facebook.com/goflow.plumbing.usa/reviews'
-      } as Review,
-      {
-        '@type': 'Review',
-        'author': {
-          '@type': 'Person',
-          'name': 'Kip B.'
-        },
-        'datePublished': '2024-10',
-        'reviewRating': {
-          '@type': 'Rating',
-          'ratingValue': '5',
-          'bestRating': '5',
-          'worstRating': '1'
-        },
-        'reviewBody': 'Chris knows what he\'s doing, is very conscientious and takes all the time necessary to get the job done right. His prices are the most reasonable I\'ve found. He\'s my new plumber, highly recommended.',
-        'url': 'https://www.angi.com/companylist/us/ca/rohnert-park/chris-torres-plumbing-reviews-1.htm#reviews'
-      } as Review,
-      {
-        '@type': 'Review',
-        'author': {
-          '@type': 'Person',
-          'name': 'Bert P.'
-        },
-        'datePublished': '2024-09',
-        'reviewRating': {
-          '@type': 'Rating',
-          'ratingValue': '5',
-          'bestRating': '5',
-          'worstRating': '1'
-        },
-        'reviewBody': 'Chris was prompt to reply to your texts. Chris was conscientious about letting you know he was going to be a little late and why. He was very polite, clean and organized. The job was completed faster than I expected. I am extremely pleased with his work and will highly recommend him. Would not hesitate to used him again. He also had a very competitive price.',
-        'url': 'https://www.angi.com/companylist/us/ca/rohnert-park/chris-torres-plumbing-reviews-1.htm#reviews'
-      } as Review,
-      {
-        '@type': 'Review',
-        'author': {
-          '@type': 'Person',
-          'name': 'Mark K.'
-        },
-        'datePublished': '2026-03',
-        'reviewRating': {
-          '@type': 'Rating',
-          'ratingValue': '5',
-          'bestRating': '5',
-          'worstRating': '1'
-        },
-        'reviewBody': 'I thought I had a crimped water line requiring trenching. Chris came out and determined the pressure valve needed cleaning. He didn\'t even push a replacement. Water flow in the house is now fantastic.',
-        'url': googleReviewUrl
-      } as Review,
-      {
-        '@type': 'Review',
-        'author': {
-          '@type': 'Person',
-          'name': 'Jason B.'
-        },
-        'datePublished': '2026-03',
-        'reviewRating': {
-          '@type': 'Rating',
-          'ratingValue': '5',
-          'bestRating': '5',
-          'worstRating': '1'
-        },
-        'reviewBody': 'Great experience with GOFLOW Plumbing. They do high-quality work and stand behind everything they do. Chris was super easy to work with and made the whole job stress-free. I\'ll be using them again for sure.',
-        'url': googleReviewUrl
-      } as Review,
-      {
-        '@type': 'Review',
-        'author': {
-          '@type': 'Person',
-          'name': 'Karen T.'
-        },
-        'datePublished': '2026-03',
-        'reviewRating': {
-          '@type': 'Rating',
-          'ratingValue': '5',
-          'bestRating': '5',
-          'worstRating': '1'
-        },
-        'reviewBody': 'I am really happy with the service I received from GOFLOW Plumbing. Chris was great to work with and everything turned out perfectly.',
-        'url': googleReviewUrl
-      } as Review,
-      {
-        '@type': 'Review',
-        'author': {
-          '@type': 'Person',
-          'name': 'Joseph Denning'
-        },
-        'datePublished': '2026-06',
-        'reviewRating': {
-          '@type': 'Rating',
-          'ratingValue': '5',
-          'bestRating': '5',
-          'worstRating': '1'
-        },
-        'reviewBody': 'Adam and his crew took care of a stubborn leak that multiple other companies could not handle. Shout out to him and his crew for their expertise in assessing the problem and quickly resolving it. Couldn\'t recommend these guys enough!!!',
-        'url': googleReviewUrl
-      } as Review
-    ];
+    return (reviewsData as ReviewData[]).map((review) => ({
+      '@type': 'Review',
+      'author': { '@type': 'Person', 'name': review.reviewerName },
+      'datePublished': review.datePublished,
+      'reviewRating': { '@type': 'Rating', 'ratingValue': String(review.rating), 'bestRating': '5', 'worstRating': '1' },
+      'reviewBody': review.text,
+      'url': review.url
+    } as Review));
   }
 
   public build(): WithContext<Plumber> {

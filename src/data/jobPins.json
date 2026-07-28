@@ -12,7 +12,7 @@
       "lat": 37.9735021,
       "lng": -122.5237613
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Drain Cleaning Service",
     "serviceType": "drain"
   },
@@ -31,7 +31,7 @@
       "lat": 38.5604074,
       "lng": -122.8147023
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Hose Bib Installation Service",
     "serviceType": "fixture"
   },
@@ -47,7 +47,7 @@
     ],
     "hasImages": true,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Toilet Repair Service",
     "serviceType": "toilet"
   },
@@ -61,7 +61,7 @@
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Drain Cleaning and Leak Repair Service",
     "serviceType": "drain"
   },
@@ -75,7 +75,7 @@
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Commercial Drain Cleaning Service",
     "serviceType": "drain"
   },
@@ -92,7 +92,7 @@
       "lat": 38.4311917,
       "lng": -122.7528388
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Drain and Sewer Inspection Service",
     "serviceType": "drain"
   },
@@ -112,7 +112,7 @@
       "lat": 37.850753,
       "lng": -122.482669
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Gas Line Installation Service",
     "serviceType": "gas"
   },
@@ -126,7 +126,7 @@
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Toilet Maintenance and Repair Service",
     "serviceType": "toilet"
   },
@@ -143,7 +143,7 @@
       "lat": 38.430339,
       "lng": -122.7199738
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Tankless Water Heater Repair Service",
     "serviceType": "water-heater"
   },
@@ -164,13 +164,7 @@
       "lat": 38.1238983,
       "lng": -122.6016297
     },
-    "review": {
-      "text": "GoFlow Plumbing did an outstanding job servicing our water heater for our condo in Novato. They were professional, thorough, and took the time to explain everything they found and the work they completed. I also appreciated that they provided helpful recommendations and trusted referrals for other items that may need attention in the future, without any pressure. I highly recommend GoFlow Plumbing for their quality workmanship, honesty, and excellent customer service.",
-      "rating": 5,
-      "reviewerName": "Paul W.",
-      "source": "Yelp",
-      "date": "Jul 2026"
-    },
+    "reviewId": "paul-w-2026-07",
     "shortDescription": "Water Heater Diagnostic Service",
     "serviceType": "water-heater"
   },
@@ -184,7 +178,7 @@
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Toilet Repair Service",
     "serviceType": "toilet"
   },
@@ -201,7 +195,7 @@
       "lat": 37.8958082,
       "lng": -122.5371131
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Garbage Disposal Installation Service",
     "serviceType": "fixture"
   },
@@ -218,7 +212,7 @@
       "lat": 38.2434624,
       "lng": -122.592099
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Bidet Toilet Repair Service",
     "serviceType": "toilet"
   },
@@ -235,7 +229,7 @@
       "lat": 37.9735021,
       "lng": -122.5237613
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1056",
     "shortDescription": "Bathtub Drain Cleaning Service",
     "serviceType": "drain"
@@ -253,7 +247,7 @@
       "lat": 37.9735021,
       "lng": -122.5237613
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1056",
     "shortDescription": "Gas Leak Repair Service",
     "serviceType": "gas"
@@ -274,13 +268,7 @@
       "lat": 38.3262698,
       "lng": -122.7153518
     },
-    "review": {
-      "text": "GOFLOW Plumbing has helped us at Empower Building Solutions with the plumbing for a few bathroom remodel projects we have completed. One being in Sonoma and the other in Marin County. Every time they have been responsive, professional, and complete quality work. We will definitely use them again and would recommend them to anyone looking for a quality plumbing company.",
-      "rating": 5,
-      "reviewerName": "Marcus Hernandez",
-      "source": "Google",
-      "date": "Apr 2026"
-    },
+    "reviewId": "marcus-hernandez-2026-04",
     "shortDescription": "Tub Drain Leak Repair Service",
     "serviceType": "drain"
   },
@@ -297,7 +285,7 @@
       "lat": 38.3639658,
       "lng": -122.703964
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Commercial Plumbing Repair Service",
     "serviceType": "general"
   },
@@ -316,13 +304,7 @@
       "lat": 38.4627473,
       "lng": -122.6533789
     },
-    "review": {
-      "text": "Great experience having GoFlow replace my gas-fired hot water heater with an electric heat pump: a very reasonable and competitive estimate (including a no-cost pre-installation site visit), informative and cordial communication, flexible scheduling, on-time arrival, high attention to safety and Santa Rosa city requirements, and a neat and tidy installation. Placement of the new unit required some creative drain and pipe work, all done with a smile and no added expense. As luck would have it, our street-side water main developed a significant leak the day before the water heater was to be installed. A desperate call to GoFlow put THAT fix on the schedule as well... same day, a couple extra hours, and again a reasonable charge. I could not be happier and recommend GoFlow without hesitation. Kudos to both Chris (the man with the wrench) and Adam (the man on the office phone) for running a truly professional, customer focused and community minded business!",
-      "rating": 5,
-      "reviewerName": "Charles D.",
-      "source": "Yelp",
-      "date": "Jul 2026"
-    },
+    "reviewId": "charles-d-2026-07",
     "shortDescription": "Heat Pump Water Heater Installation Service",
     "serviceType": "water-heater"
   },
@@ -339,7 +321,7 @@
       "lat": 38.4627473,
       "lng": -122.6533789
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Water Main Repair Service",
     "serviceType": "general"
   },
@@ -353,13 +335,7 @@
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": {
-      "text": "This team was super kind and accommodating! They did a great job with a faucet replacement and installation of a new reverse osmosis water filter. I highly recommend them!",
-      "rating": 5,
-      "reviewerName": "Danny Geren, L.Ac.",
-      "source": "Google",
-      "date": "May 2026"
-    },
+    "reviewId": "danny-geren-2026-05",
     "shortDescription": "Water Filtration and Faucet Installation Service",
     "serviceType": "water-filtration"
   },
@@ -376,7 +352,7 @@
       "lat": 38.3325528,
       "lng": -122.6769724
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Kitchen Drain Cleaning Service",
     "serviceType": "drain"
   },
@@ -393,7 +369,7 @@
       "lat": 38.4903148,
       "lng": -122.6997341
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Sewer Ejector Pump and Toilet Repair Service",
     "serviceType": "drain"
   },
@@ -410,7 +386,7 @@
       "lat": 38.3200253,
       "lng": -122.6884669
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Ice Maker Water Line Installation Service",
     "serviceType": "fixture"
   },
@@ -424,7 +400,7 @@
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Plumbing Evaluation Service",
     "serviceType": "general"
   },
@@ -444,7 +420,7 @@
       "lat": 38.3200253,
       "lng": -122.6884669
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1008",
     "shortDescription": "Hose Bib Installation Service",
     "serviceType": "fixture"
@@ -465,7 +441,7 @@
       "lat": 38.3200253,
       "lng": -122.6884669
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1008",
     "shortDescription": "Water Hammer Repair Service",
     "serviceType": "general"
@@ -486,7 +462,7 @@
       "lat": 38.3200253,
       "lng": -122.6884669
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1008",
     "shortDescription": "Bathtub Waste and Overflow Replacement Service",
     "serviceType": "fixture"
@@ -507,7 +483,7 @@
       "lat": 38.3200253,
       "lng": -122.6884669
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1008",
     "shortDescription": "Tub Spout Replacement Service",
     "serviceType": "fixture"
@@ -528,7 +504,7 @@
       "lat": 38.3200253,
       "lng": -122.6884669
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1008",
     "shortDescription": "Toilet Installation Service",
     "serviceType": "toilet"
@@ -549,7 +525,7 @@
       "lat": 38.3200253,
       "lng": -122.6884669
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1008",
     "shortDescription": "Toilet Flange Repair Service",
     "serviceType": "toilet"
@@ -567,7 +543,7 @@
       "lat": 38.3200253,
       "lng": -122.6884669
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Water Heater Repair Service",
     "serviceType": "water-heater"
   },
@@ -581,7 +557,7 @@
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Steam Shower Modification Service",
     "serviceType": "fixture"
   },
@@ -597,7 +573,7 @@
     ],
     "hasImages": true,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Grease Interceptor Replacement Service",
     "serviceType": "general"
   },
@@ -614,7 +590,7 @@
       "lat": 38.3232062,
       "lng": -122.6695297
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Toilet Drain Cleaning Service",
     "serviceType": "drain"
   },
@@ -633,7 +609,7 @@
       "lat": 38.3639658,
       "lng": -122.703964
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Wall-Hung Toilet Repair Service",
     "serviceType": "toilet"
   },
@@ -652,7 +628,7 @@
       "lat": 38.3639658,
       "lng": -122.703964
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Toilet Drain Cleaning Service",
     "serviceType": "drain"
   },
@@ -669,7 +645,7 @@
       "lat": 38.3639658,
       "lng": -122.703964
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1028",
     "shortDescription": "Commercial Faucet Installation Service",
     "serviceType": "fixture"
@@ -687,7 +663,7 @@
       "lat": 38.3639658,
       "lng": -122.703964
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1028",
     "shortDescription": "Wall-Hung Sink Repair Service",
     "serviceType": "fixture"
@@ -705,7 +681,7 @@
       "lat": 38.3639658,
       "lng": -122.703964
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1028",
     "shortDescription": "Toilet Drain Cleaning Service",
     "serviceType": "drain"
@@ -725,7 +701,7 @@
       "lat": 38.3639658,
       "lng": -122.703964
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Water Heater Service",
     "serviceType": "water-heater"
   },
@@ -741,7 +717,7 @@
     ],
     "hasImages": true,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Thermal Expansion Tank Installation Service",
     "serviceType": "general"
   },
@@ -755,7 +731,7 @@
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Water Heater Code Upgrade Service",
     "serviceType": "water-heater"
   },
@@ -771,13 +747,7 @@
     ],
     "hasImages": true,
     "coordinates": null,
-    "review": {
-      "text": "Adam and his crew took care of a stubborn leak that multiple other companies could not handle. Shout out to him and his crew for their expertise in assessing the problem and quickly resolving it. Couldn't recommend these guys enough!!!",
-      "rating": 5,
-      "reviewerName": "Joseph Denning",
-      "source": "Google",
-      "date": "Jun 2026"
-    },
+    "reviewId": "joseph-denning-2026-06",
     "shortDescription": "Water Leak Repair Service",
     "serviceType": "leak"
   },
@@ -791,7 +761,7 @@
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Sewer Ejector Pump Repair Service",
     "serviceType": "drain"
   },
@@ -808,7 +778,7 @@
       "lat": 38.2382057,
       "lng": -122.6144819
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Bathroom Faucet Repair Service",
     "serviceType": "fixture"
   },
@@ -825,7 +795,7 @@
       "lat": 38.1176177,
       "lng": -122.5651174
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Toilet and Plumbing Repair Service",
     "serviceType": "toilet"
   },
@@ -842,7 +812,7 @@
       "lat": 37.9205602,
       "lng": -122.5025937
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Toilet Maintenance and Drain Cleaning Service",
     "serviceType": "drain"
   },
@@ -858,7 +828,7 @@
     ],
     "hasImages": true,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Shower Repair Service",
     "serviceType": "fixture"
   },
@@ -875,7 +845,7 @@
       "lat": 38.3678056,
       "lng": -122.5226899
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Sink Repair Service",
     "serviceType": "fixture"
   },
@@ -894,7 +864,7 @@
       "lat": 38.4377077,
       "lng": -122.5893385
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Moen Flo Smart Water Shutoff Installation Service",
     "serviceType": "smart-home"
   },
@@ -913,7 +883,7 @@
       "lat": 38.5577735,
       "lng": -122.7926911
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Moen Flo Smart Water Shutoff Installation Service",
     "serviceType": "smart-home"
   },
@@ -930,7 +900,7 @@
       "lat": 38.4377077,
       "lng": -122.5893385
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Whole-Home Plumbing Repair Service",
     "serviceType": "general"
   },
@@ -947,7 +917,7 @@
       "lat": 38.4377077,
       "lng": -122.5893385
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Shower Cartridge Replacement Service",
     "serviceType": "fixture"
   },
@@ -964,13 +934,7 @@
       "lat": 38.6213264,
       "lng": -122.8713939
     },
-    "review": {
-      "text": "Fantastic experience. They got back to me immediately on my request and was able to come the next morning. Chris took care of both of my issues very quickly and was lovely to deal with. I would happily recommend them and we'll plan to use go flow in the future.",
-      "rating": 5,
-      "reviewerName": "Marcie E.",
-      "source": "Thumbtack",
-      "date": "May 2026"
-    },
+    "reviewId": "marcie-e-2026-05",
     "shortDescription": "Toilet Repair Service",
     "serviceType": "toilet"
   },
@@ -987,7 +951,7 @@
       "lat": 38.2612749,
       "lng": -122.6415881
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Toilet and Shower Repair Service",
     "serviceType": "toilet"
   },
@@ -1004,7 +968,7 @@
       "lat": 38.0740479,
       "lng": -122.5595819
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Toilet and Angle Stop Repair Service",
     "serviceType": "toilet"
   },
@@ -1021,7 +985,7 @@
       "lat": 38.2447857,
       "lng": -122.6030042
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Drain and Toilet Repair Service",
     "serviceType": "drain"
   },
@@ -1040,7 +1004,7 @@
       "lat": 37.9880733,
       "lng": -122.5809189
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Moen Flo and Ice Maker Line Installation Service",
     "serviceType": "smart-home"
   },
@@ -1057,7 +1021,7 @@
       "lat": 38.2612749,
       "lng": -122.6415881
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Water Filtration System Installation Service",
     "serviceType": "water-filtration"
   },
@@ -1076,7 +1040,7 @@
       "lat": 38.2612749,
       "lng": -122.6415881
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Plumbing Fixture Installation Service",
     "serviceType": "fixture"
   },
@@ -1093,7 +1057,7 @@
       "lat": 38.2612749,
       "lng": -122.6415881
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Toilet Leak Repair Service",
     "serviceType": "toilet"
   },
@@ -1110,7 +1074,7 @@
       "lat": 38.3716053,
       "lng": -122.6928791
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Water Heater Installation Service",
     "serviceType": "water-heater"
   },
@@ -1129,7 +1093,7 @@
       "lat": 38.2965206,
       "lng": -122.4482971
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Garbage Disposal Installation Service",
     "serviceType": "fixture"
   },
@@ -1150,13 +1114,7 @@
       "lat": 42.6493076,
       "lng": -73.7351527
     },
-    "review": {
-      "text": "Timely, responsive, professional. Fair pricing. All good things to say and would hire again. Thanks guys!",
-      "rating": 5,
-      "reviewerName": "Mitesh P.",
-      "source": "Thumbtack",
-      "date": "Apr 2026"
-    },
+    "reviewId": "mitesh-p-2026-04",
     "shortDescription": "Gas Line Replacement Service",
     "serviceType": "gas"
   },
@@ -1170,7 +1128,7 @@
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Plumbing Remodel Service",
     "serviceType": "general"
   },
@@ -1184,7 +1142,7 @@
     "images": [],
     "hasImages": false,
     "coordinates": null,
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Sewer Drain Cleaning Service",
     "serviceType": "drain"
   },
@@ -1201,7 +1159,7 @@
       "lat": 38.3452388,
       "lng": -122.6809423
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Angle Stop Installation Service",
     "serviceType": "fixture"
   },
@@ -1218,7 +1176,7 @@
       "lat": 38.4214407,
       "lng": -122.7231363
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Hot Water Recirculation System Repair Service",
     "serviceType": "water-heater"
   },
@@ -1238,7 +1196,7 @@
       "lat": 37.9877294,
       "lng": -122.5781966
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Moen Flo Smart Water Shutoff Installation Service",
     "serviceType": "smart-home"
   },
@@ -1255,13 +1213,7 @@
       "lat": 38.4309448,
       "lng": -122.7661711
     },
-    "review": {
-      "text": "Adam was very helpful with scheduling and communication. Chris gave us great information and was able to get our job done quickly! Everything looks and works great! Thank you, both! We'll call again for our next plumbing need.",
-      "rating": 5,
-      "reviewerName": "Tara L.",
-      "source": "Thumbtack",
-      "date": "May 2026"
-    },
+    "reviewId": "tara-l-2026-05",
     "shortDescription": "Toilet Installation Service",
     "serviceType": "toilet"
   },
@@ -1280,13 +1232,7 @@
       "lat": 38.4337223,
       "lng": -122.7618276
     },
-    "review": {
-      "text": "Go flow Plumbing was very professional and easy to work with they were fast, reliable and had very fair pricing!",
-      "rating": 5,
-      "reviewerName": "Roberto Saldana",
-      "source": "Google",
-      "date": "Jun 2026"
-    },
+    "reviewId": "roberto-saldana-2026-06",
     "shortDescription": "Gas Line Installation Service",
     "serviceType": "gas"
   },
@@ -1303,7 +1249,7 @@
       "lat": 38.330786,
       "lng": -123.0467736
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1004",
     "shortDescription": "Drain Cleaning and Repair Service",
     "serviceType": "drain"
@@ -1321,7 +1267,7 @@
       "lat": 38.330786,
       "lng": -123.0467736
     },
-    "review": null,
+    "reviewId": null,
     "parentJobId": "1004",
     "shortDescription": "Toilet Repair Service",
     "serviceType": "toilet"
@@ -1341,7 +1287,7 @@
       "lat": 38.29593,
       "lng": -122.4971959
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Water Heater Maintenance Service",
     "serviceType": "water-heater"
   },
@@ -1381,13 +1327,7 @@
       "lat": 37.9877294,
       "lng": -122.5781966
     },
-    "review": {
-      "text": "We have been in our San Anselmo home for 45 years and have done major remodels and countless simple home repairs. Hands down Chris at Goflow was the best plumbing contractor we've used and I know them all. We required a full water supply line replacement that was a challenging project. He was knowledgeable, persistent, and hardworking...and the pricing was very reasonable. Highly recommend.",
-      "rating": 5,
-      "reviewerName": "Shaun S.",
-      "source": "Yelp",
-      "date": "Jun 2026"
-    },
+    "reviewId": "shaun-s-2026-06",
     "shortDescription": "Underground Water Line Installation Service",
     "serviceType": "general"
   },
@@ -1406,7 +1346,7 @@
       "lat": 37.9877294,
       "lng": -122.5781966
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Water Heater Installation Service",
     "serviceType": "water-heater"
   },
@@ -1423,7 +1363,7 @@
       "lat": 38.4441268,
       "lng": -122.7255053
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Water Heater Repair Service",
     "serviceType": "water-heater"
   },
@@ -1440,13 +1380,7 @@
       "lat": 38.5134296,
       "lng": -122.7607963
     },
-    "review": {
-      "text": "It was my first time using GOFLOW and I am so impressed. On time, pleasant and professional. Chris got my drain unclogged and repaired my shower handle at a very reasonable price. I'm sure I will be calling them again!",
-      "rating": 5,
-      "reviewerName": "Sofia McKnight",
-      "source": "Google",
-      "date": "Apr 2026"
-    },
+    "reviewId": "sofia-mcknight-2026-04",
     "shortDescription": "Shower and Drain Cleaning Service",
     "serviceType": "drain"
   },
@@ -1466,7 +1400,7 @@
       "lat": 38.2455671,
       "lng": -122.6416115
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "P-Trap Replacement Service",
     "serviceType": "general"
   },
@@ -1483,7 +1417,7 @@
       "lat": 38.5396537,
       "lng": -122.8191932
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Pressure Reducing Valve Adjustment Service",
     "serviceType": "general"
   },
@@ -1500,7 +1434,7 @@
       "lat": 37.9708964,
       "lng": -122.554413
     },
-    "review": null,
+    "reviewId": null,
     "shortDescription": "Shower and Tub Drain Cleaning Service",
     "serviceType": "drain"
   },
@@ -1517,13 +1451,7 @@
       "lat": 38.308597,
       "lng": -122.495518
     },
-    "review": {
-      "text": "Received a detailed estimate and the work was scheduled professionally. Received prompt service. When changes came up, they handled them with approval quickly and did not need me to manage them. Completed the work with above and beyond service and expert skills. Highly recommend!",
-      "rating": 5,
-      "reviewerName": "Jenny G.",
-      "source": "Yelp",
-      "date": "Jul 2026"
-    },
+    "reviewId": "jenny-g-2026-07",
     "shortDescription": "Leak Repairs and Drain Repairs",
     "serviceType": "general"
   }
