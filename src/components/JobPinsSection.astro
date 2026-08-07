@@ -237,7 +237,7 @@ function parseMarkdownBold(text: string): string {
           
           <div class="job-content">
             <div class="job-header">
-              <span class="job-service">{job.shortDescription}</span>
+              <h3 class="job-service">{job.shortDescription}</h3>
               <span class="job-location">{getCityDisplay(job.city)}</span>
             </div>
             
@@ -426,6 +426,8 @@ function parseMarkdownBold(text: string): string {
 
   .job-service {
     font-weight: 600;
+    font-size: 1rem;
+    margin: 0;
     color: var(--color-primary, #1F4A6F);
   }
 

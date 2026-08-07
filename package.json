@@ -10,7 +10,10 @@
     "analyze": "ANALYZE=true astro build",
     "set-updated-dates": "node scripts/set-updated-dates.mjs",
     "extract-keywords": "node scripts/extract-keywords.mjs",
-    "compare-search": "node scripts/compare-search-result.mjs"
+    "compare-search": "node scripts/compare-search-result.mjs",
+    "validate": "html-validate 'dist/**/*.html'",
+    "check-images": "node scripts/check-broken-images.mjs",
+    "test": "npm run build && npm run validate && npm run check-images"
   },
   "overrides": {
     "esbuild": "0.18.20"
@@ -18,7 +21,6 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.110.0",
     "@astrojs/mdx": "^4.2.3",
-    "@astrojs/partytown": "^2.1.4",
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/sitemap": "^3.3.0",
     "@lucide/astro": "^0.575.0",
@@ -44,6 +46,7 @@
     "csv-parse": "^7.0.1",
     "csv-stringify": "^6.8.1",
     "glob": "^11.0.2",
+    "html-validate": "^10.0.0",
     "husky": "^9.1.7",
     "piexif-ts": "^2.1.0",
     "rollup-plugin-visualizer": "^5.14.0",

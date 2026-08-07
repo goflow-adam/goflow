@@ -6,8 +6,8 @@ const isProd = import.meta.env.PROD;
 <!-- Google Analytics Script - Only loads in production -->
 {measurementId && isProd && (
   <Fragment>
-    <script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
-    <script type="text/partytown" define:vars={{ measurementId }}>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+    <script define:vars={{ measurementId }}>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
