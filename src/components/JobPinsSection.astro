@@ -150,6 +150,12 @@ function formatDate(dateStr: string): string {
   return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 }
 
+// Format date for datetime attribute (ISO 8601: YYYY-MM-DD)
+function formatDateISO(dateStr: string): string {
+  const [month, day, year] = dateStr.split('/');
+  return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+}
+
 // Get city display name (remove state/zip if present)
 function getCityDisplay(city: string): string {
   return city.split(',')[0].trim();
@@ -244,7 +250,7 @@ function parseMarkdownBold(text: string): string {
             <p class="job-description" itemprop="description" set:html={parseMarkdownBold(job.description)} />
             
             <div class="job-meta">
-              <time itemprop="serviceOutput" datetime={job.completionDate}>{formatDate(job.completionDate)}</time>
+              <time itemprop="serviceOutput" datetime={formatDateISO(job.completionDate)}>{formatDate(job.completionDate)}</time>
             </div>
             
             {job.review && (
@@ -257,6 +263,7 @@ function parseMarkdownBold(text: string): string {
                   {job.review.rating && (
                     <span 
                       class="review-rating" 
+                      role="img"
                       itemprop="reviewRating" 
                       itemscope 
                       itemtype="https://schema.org/Rating"
