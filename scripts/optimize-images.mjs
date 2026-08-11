@@ -56,6 +56,7 @@ const IMAGE_CONFIGS = {
   'water-heater-expansion-tank.webp': COLUMN_SIZES,
   'moen-flow-install-bel-marin-keys-1.webp': COLUMN_SIZES,
   'delta-pro-certified.webp': COLUMN_SIZES,
+  'GOFLOW-Plumbing-Partners.png': COLUMN_SIZES,
 };
 const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp'];
 
