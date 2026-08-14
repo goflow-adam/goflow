@@ -1439,6 +1439,23 @@
     "serviceType": "drain"
   },
   {
+    "jobId": "1061",
+    "address": "1407 Jasmine Cir, Rohnert Park, Ca 94928",
+    "city": "Rohnert Park",
+    "region": "sonoma-county-plumbing",
+    "completionDate": "06/15/2026",
+    "description": "Our customer needed a couple new angle stops replaced and a supply line for bathroom faucet swapped out to stop a few leaks.",
+    "images": [],
+    "hasImages": false,
+    "coordinates": {
+      "lat": 38.3375,
+      "lng": -122.7078
+    },
+    "reviewId": "paulette-k-2026-08",
+    "shortDescription": "Water Valve Replacement",
+    "serviceType": "general"
+  },
+  {
     "jobId": "1080",
     "address": "1004 Princeton Dr, Sonoma, CA 95476",
     "city": "Sonoma",
